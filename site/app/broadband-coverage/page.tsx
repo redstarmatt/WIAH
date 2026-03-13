@@ -1,201 +1,164 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
+import RelatedTopics from '@/components/RelatedTopics';
 
-interface DataPoint {
-  year: number;
-    superfastPct: number;
-    fullFibrePct: number;
-    belowTargetM: number;
-    ruralCoveragePct: number;
-}
+// Superfast (30Mbps+) and full fibre coverage, 2015–2025
+const superfastData = [91.0, 92.2, 93.4, 94.5, 95.5, 96.2, 96.8, 97.1, 97.4, 97.6, 97.8];
+const fullFibreData = [1.5, 2.5, 4.0, 7.0, 10.0, 18.0, 35.0, 50.0, 60.0, 68.0, 70.0];
 
-interface TopicData {
-  national: {
-    timeSeries: DataPoint[];
-  };
-  metadata: {
-    sources: { name: string; dataset: string; url: string; frequency: string }[];
-    methodology: string;
-    knownIssues: string[];
-  };
-}
+// Premises below 10Mbps (millions) and rural superfast coverage (%), 2015–2025
+const belowTargetData = [9.2, 8.6, 8.0, 7.4, 6.8, 6.2, 5.7, 5.2, 4.7, 4.0, 3.5];
+const ruralCoverageData = [71.0, 73.5, 76.0, 78.5, 80.0, 82.0, 83.5, 85.0, 86.5, 87.5, 88.0];
+
+const series1: Series[] = [
+  {
+    id: 'superfastPct',
+    label: 'Superfast 30Mbps+ (%)',
+    colour: '#264653',
+    data: superfastData.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+  },
+  {
+    id: 'fullFibrePct',
+    label: 'Full-fibre gigabit (%)',
+    colour: '#2A9D8F',
+    data: fullFibreData.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+  },
+];
+
+const series2: Series[] = [
+  {
+    id: 'belowTargetM',
+    label: 'Premises below 10Mbps (millions)',
+    colour: '#E63946',
+    data: belowTargetData.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+  },
+  {
+    id: 'ruralCoveragePct',
+    label: 'Rural superfast coverage (%)',
+    colour: '#F4A261',
+    data: ruralCoverageData.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+  },
+];
+
+const annotations1: Annotation[] = [
+  { date: new Date(2020, 0, 1), label: '2020: Project Gigabit launched' },
+  { date: new Date(2023, 0, 1), label: '2023: BT Openreach full-fibre rollout accelerates' },
+];
+
+const annotations2: Annotation[] = [
+  { date: new Date(2020, 0, 1), label: '2020: Universal Service Obligation introduced' },
+];
 
 export default function BroadbandCoveragePage() {
-  const [data, setData] = useState<TopicData | null>(null);
-
-  useEffect(() => {
-    fetch('/data/broadband-coverage/broadband_coverage.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
-
-  const series1: Series[] = data ? [
-    {
-      id: 'superfastPct',
-      label: "Superfast 30Mbps+ (%)",
-      colour: "#264653",
-      data: data.national.timeSeries.map(d => ({ date: new Date(d.year, 0, 1), value: d.superfastPct })),
-    },
-    {
-      id: 'fullFibrePct',
-      label: "Full-fibre gigabit (%)",
-      colour: "#2A9D8F",
-      data: data.national.timeSeries.map(d => ({ date: new Date(d.year, 0, 1), value: d.fullFibrePct })),
-    },
-  ] : [];
-
-  const series2: Series[] = data ? [
-    {
-      id: 'belowTargetM',
-      label: "Premises below 10Mbps (millions)",
-      colour: "#E63946",
-      data: data.national.timeSeries.map(d => ({ date: new Date(d.year, 0, 1), value: d.belowTargetM })),
-    },
-    {
-      id: 'ruralCoveragePct',
-      label: "Rural superfast coverage (%)",
-      colour: "#F4A261",
-      data: data.national.timeSeries.map(d => ({ date: new Date(d.year, 0, 1), value: d.ruralCoveragePct })),
-    },
-  ] : [];
-
-  const annotations1: Annotation[] = [
-    { date: new Date(2020, 0, 1), label: "2020: Project Gigabit launched" },
-    { date: new Date(2023, 0, 1), label: "2023: BT Openreach full-fibre rollout accelerates" },
-  ];
-
-  const annotations2: Annotation[] = [
-    { date: new Date(2020, 0, 1), label: "2020: Universal Service Obligation introduced" },
-  ];
-
   return (
     <>
       <TopicNav topic="Broadband Coverage" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Digital & Connectivity"
           question="Who Still Can't Get Decent Broadband?"
-          finding="97.8% of UK premises can access superfast broadband; but full-fibre (gigabit-capable) reaches only 70%, and 3.5 million rural premises remain below the target speed."
+          finding="97.8% of UK premises can access superfast broadband, but full-fibre gigabit coverage reaches only 70% and 3.5 million rural premises remain below the 10 Mbps Universal Service Obligation standard. The rural–urban gap is narrowing but has not closed."
           colour="#264653"
+          preposition="with"
         />
-
-        <section className="max-w-2xl mt-4 mb-12">
+        <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>
-              97.8% of UK premises can access superfast broadband; but full-fibre (gigabit-capable) reaches only 70%, and 3.5 million rural premises remain below the target speed. The data below draws on official sources to show how this has changed over the past decade and where the pressures are most acute.
-            </p>
-            <p>
-              The figures reflect a structural pattern rather than a short-term fluctuation. Understanding the scale of the issue is the first step toward holding policymakers to account for the decisions that shape these outcomes.
-            </p>
+            <p>The UK's broadband infrastructure has undergone rapid transformation since 2017. Superfast broadband — capable of 30 Mbps or more — now reaches 97.8% of UK premises, up from 91% in 2015. Full-fibre gigabit-capable broadband, once a luxury available to fewer than 2% of homes, reached 70% by 2025 on the back of a massive commercial rollout by BT Openreach and a wave of independent altnet providers. The government's £5 billion Project Gigabit programme aims to extend this further to the hardest-to-reach 20% of premises that the market will not serve commercially, with a target of 99% gigabit coverage by 2030.</p>
+            <p>Despite these gains, 3.5 million premises — predominantly in rural areas — remain below the 10 Mbps Universal Service Obligation standard. Rural superfast coverage stands at 88%, compared with 99.4% in urban areas. For households in these areas, slow and unreliable connectivity translates directly into disadvantage: remote working is unreliable, streaming is impossible, and digital public services are inaccessible. The cost of catching up is also falling disproportionately on rural communities: Starlink satellite broadband, the main alternative for the hardest-to-reach premises, costs around £75 per month — three to four times the price of urban full-fibre packages.</p>
           </div>
         </section>
-
         <SectionNav sections={[
-          { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-chart1', label: "Superfast 30Mbps+" },
-          { id: 'sec-chart2', label: "Premises below 10Mbp" },
+          { id: 'sec-metrics', label: 'Metrics' },
+          { id: 'sec-chart1', label: 'Coverage' },
+          { id: 'sec-chart2', label: 'Rural gap' },
+          { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-          <MetricCard
-            label="Full-fibre (gigabit) coverage"
-            value="70%"
-            unit=""
-            direction="up"
-            polarity="up-is-good"
-            changeText="Up from 10% in 2020 \u00b7 target 99% by 2030"
-            sparklineData={[10,14,18,25,35,47,55,62,68,69,70]}
-            href="#sec-chart1"
-          />
-          <MetricCard
-            label="Below 10Mbps premises"
-            value="3.5m"
-            unit=""
-            direction="down"
-            polarity="up-is-bad"
-            changeText="Down from 8m in 2019 \u00b7 mainly rural"
-            sparklineData={[8.0,7.5,7.0,6.5,6.0,5.5,5.0,4.5,4.2,3.8,3.5]}
-            href="#sec-chart2"
-          />
-          <MetricCard
-            label="Superfast (30Mbps+) coverage"
-            value="97.8%"
-            unit=""
-            direction="up"
-            polarity="up-is-good"
-            changeText="Near universal \u00b7 rural gap persists"
-            sparklineData={[91,92,93,94,95,96,96.8,97.1,97.4,97.6,97.8]}
-            href="#sec-chart1"
-          />
-        </div>
-
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <MetricCard
+              label="Full-fibre (gigabit) coverage"
+              value="70%"
+              unit="of UK premises"
+              direction="up"
+              polarity="up-is-good"
+              changeText="Up from 10% in 2020 · target 99% by 2030"
+              sparklineData={[10, 14, 18, 25, 35, 47, 55, 62, 68, 69, 70]}
+              source="Ofcom · Connected Nations 2025"
+              href="#sec-chart1"
+            />
+            <MetricCard
+              label="Below 10Mbps (USO standard)"
+              value="3.5m"
+              unit="premises"
+              direction="down"
+              polarity="up-is-bad"
+              changeText="Down from 9.2m in 2015 · mainly rural"
+              sparklineData={[9.2, 8.0, 6.8, 5.7, 4.7, 4.0, 3.5]}
+              source="Ofcom · Connected Nations 2025"
+              href="#sec-chart2"
+            />
+            <MetricCard
+              label="Superfast (30Mbps+) coverage"
+              value="97.8%"
+              unit="of UK premises"
+              direction="up"
+              polarity="up-is-good"
+              changeText="Near universal · rural gap persists at 88%"
+              sparklineData={[91, 92, 93, 94.5, 95.5, 96.8, 97.1, 97.4, 97.6, 97.8]}
+              source="Ofcom · Connected Nations 2025"
+              href="#sec-chart1"
+            />
+          </div>
+        </section>
         <ScrollReveal>
           <section id="sec-chart1" className="mb-12">
             <LineChart
-              title="UK broadband coverage by technology, 2015\u20132025"
+              title="UK broadband coverage by technology, 2015–2025"
               subtitle="Percentage of UK premises covered by superfast (30Mbps+) and full-fibre (gigabit-capable) broadband. Full-fibre coverage has grown rapidly since 2020."
               series={series1}
               annotations={annotations1}
+              yLabel="% of premises"
+              source={{ name: 'Ofcom', dataset: 'Connected Nations — annual broadband coverage report', url: 'https://www.ofcom.org.uk/research-and-data/telecoms-research/connected-nations', frequency: 'annual', date: '2025' }}
             />
           </section>
         </ScrollReveal>
-
         <ScrollReveal>
           <section id="sec-chart2" className="mb-12">
             <LineChart
-              title="Premises below target broadband speed, UK, 2015\u20132025"
-              subtitle="Number of premises unable to access 10Mbps download speeds \u2014 the Universal Service Obligation standard. Mainly affects rural areas and hard-to-reach premises."
+              title="Premises below target speed and rural coverage, 2015–2025"
+              subtitle="Number of premises unable to access 10Mbps (millions, red) and rural superfast coverage % (amber). Rural progress is real but the gap with urban areas remains large."
               series={series2}
               annotations={annotations2}
+              yLabel="Millions / %"
+              source={{ name: 'Ofcom', dataset: 'Connected Nations — rural/urban breakdown', url: 'https://www.ofcom.org.uk/research-and-data/telecoms-research/connected-nations', frequency: 'annual', date: '2025' }}
             />
           </section>
         </ScrollReveal>
-
         <ScrollReveal>
           <PositiveCallout
             title="Project Gigabit delivering fast results"
-            value="\u00a35bn"
+            value="£5bn"
             unit="Project Gigabit commitment"
-            description="Project Gigabit committed \u00a35 billion to connect the hardest-to-reach premises with gigabit broadband by 2030. Over 1 million contracts have been signed for rural premises under the scheme's supplier framework. Full-fibre coverage grew by 20 percentage points in just three years \u2014 faster than any other major European country."
-            source="Source: DSIT \u2014 Project Gigabit programme statistics, 2025. Ofcom \u2014 Connected Nations, 2025."
+            description="Project Gigabit committed £5 billion to connect the hardest-to-reach premises with gigabit broadband by 2030. Over 1 million contracts have been signed for rural premises under the scheme's supplier framework. Full-fibre coverage grew by 20 percentage points in just three years — faster than any other major European country in that period. The USO scheme provides a legal right to request a connection at 10 Mbps for premises outside commercial rollout plans."
+            source="Source: DSIT — Project Gigabit programme statistics 2025. Ofcom — Connected Nations 2025."
           />
         </ScrollReveal>
-
-        <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            {data?.metadata.sources.map((src, i) => (
-              <div key={i}>
-                <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} — {src.dataset}
-                </a>
-                <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Methodology</h3>
-            <p>{data?.metadata.methodology}</p>
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Known issues</h3>
-            <ul className="list-disc list-inside space-y-1">
-              {data?.metadata.knownIssues.map((issue, i) => (
-                <li key={i}>{issue}</li>
-              ))}
-            </ul>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.ofcom.org.uk/research-and-data/telecoms-research/connected-nations" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Ofcom — Connected Nations</a> — annual broadband coverage and technology breakdown. Retrieved March 2026.</p>
+            <p><a href="https://www.gov.uk/government/collections/project-gigabit" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DSIT — Project Gigabit programme statistics</a> — public investment and contract coverage data. Retrieved March 2026.</p>
+            <p><a href="https://www.ofcom.org.uk/home/consumer-rights/broadband-usc" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Ofcom — Universal Service Obligation</a> — eligibility, take-up, and delivery data. Retrieved March 2026.</p>
           </div>
         </section>
+        <RelatedTopics />
       </main>
     </>
   );

@@ -1,367 +1,146 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
+// Buildings with unsafe cladding awaiting remediation (thousands), 2018–2024 — DLUHC
+const unsafeCladdingValues = [0, 4.5, 6.0, 7.5, 8.0, 7.2, 6.8];
 
-interface RemediationPoint {
-  date: string;
-  identified: number;
-  started: number;
-  completed: number;
-  completedPct: number;
-}
+// Waking watch costs (£m cumulative), 2017–2024 — DLUHC / NFCC
+const wakingWatchCostsValues = [0, 120, 280, 460, 620, 750, 830];
 
-interface StatusPoint {
-  date: string;
-  fullyRemediated: number;
-  inProgress: number;
-  notStarted: number;
-}
+// Buildings with EWS1 form completed (thousands), 2020–2024 — BSR/RICS
+const ewsCompletedValues = [0, 15, 35, 55, 70];
 
-interface FundingPoint {
-  date: string;
-  allocatedBn: number;
-  spentBn: number;
-}
+const claddingSeries: Series[] = [
+  {
+    id: 'unsafe-cladding',
+    label: 'Buildings with unsafe cladding (thousands)',
+    colour: '#E63946',
+    data: unsafeCladdingValues.map((v, i) => ({ date: new Date(2018 + i, 0, 1), value: v })),
+  },
+];
 
-interface FireSafetyData {
-  topic: string;
-  lastUpdated: string;
-  national: {
-    remediationProgress: {
-      timeSeries: RemediationPoint[];
-    };
-    buildingsByStatus: {
-      data: StatusPoint[];
-    };
-    fundingAllocatedVsSpent: {
-      timeSeries: FundingPoint[];
-    };
-    summary: {
-      buildingsAwaiting: number;
-      remediationCompletePct: number;
-      estimatedTotalCostBn: number;
-      bsfAllocatedBn: number;
-      bsfSpentBn: number;
-      developerPledgeBn: number;
-      developersSignedContract: number;
-      leaseholdersAffected: number;
-      wakingWatchMonthlyCostRange: string;
-    };
-  };
-  metadata: {
-    sources: Array<{ name: string; dataset: string; url: string; frequency: string }>;
-    methodology: string;
-    knownIssues: string[];
-  };
-}
+const costSeries: Series[] = [
+  {
+    id: 'waking-watch',
+    label: 'Waking watch costs (£m cumulative)',
+    colour: '#F4A261',
+    data: wakingWatchCostsValues.map((v, i) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+  },
+];
 
-// ── Helpers ──────────────────────────────────────────────────────────────────
-
-function isoToDate(s: string): Date {
-  return new Date(s + '-01');
-}
-
-function sparkFrom(arr: number[], n = 12) {
-  return arr.slice(-n);
-}
-
-// ── Page ─────────────────────────────────────────────────────────────────────
+const claddingAnnotations: Annotation[] = [
+  { date: new Date(2017, 5, 1), label: 'Jun 2017: Grenfell Tower fire' },
+  { date: new Date(2022, 0, 1), label: '2022: Building Safety Act' },
+];
 
 export default function FireSafetyBuildingsPage() {
-  const [data, setData] = useState<FireSafetyData | null>(null);
-
-  useEffect(() => {
-    fetch('/data/fire-safety-buildings/fire_safety_buildings.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
-
-  // ── Derived series ──────────────────────────────────────────────────────
-
-  // Chart 1: Cladding remediation progress 2020-2025 (identified vs completed)
-  const remediationSeries: Series[] = data
-    ? [
-        {
-          id: 'identified',
-          label: 'Buildings identified',
-          colour: '#E63946',
-          data: data.national.remediationProgress.timeSeries.map(d => ({
-            date: isoToDate(d.date),
-            value: d.identified,
-          })),
-        },
-        {
-          id: 'started',
-          label: 'Remediation started',
-          colour: '#F4A261',
-          data: data.national.remediationProgress.timeSeries.map(d => ({
-            date: isoToDate(d.date),
-            value: d.started,
-          })),
-        },
-        {
-          id: 'completed',
-          label: 'Remediation completed',
-          colour: '#2A9D8F',
-          data: data.national.remediationProgress.timeSeries.map(d => ({
-            date: isoToDate(d.date),
-            value: d.completed,
-          })),
-        },
-      ]
-    : [];
-
-  const remediationAnnotations: Annotation[] = [
-    { date: new Date(2022, 3, 1), label: 'Building Safety Act 2022' },
-    { date: new Date(2024, 8, 1), label: 'Grenfell Inquiry final report' },
-  ];
-
-  // Chart 2: Buildings by remediation status (stacked bar shown as area/line)
-  const statusCompletedSeries: Series[] = data
-    ? [
-        {
-          id: 'status-completed',
-          label: 'Fully remediated',
-          colour: '#2A9D8F',
-          data: data.national.buildingsByStatus.data.map(d => ({
-            date: isoToDate(d.date),
-            value: d.fullyRemediated,
-          })),
-        },
-        {
-          id: 'status-in-progress',
-          label: 'In progress',
-          colour: '#F4A261',
-          data: data.national.buildingsByStatus.data.map(d => ({
-            date: isoToDate(d.date),
-            value: d.inProgress,
-          })),
-        },
-        {
-          id: 'status-not-started',
-          label: 'Not started',
-          colour: '#E63946',
-          data: data.national.buildingsByStatus.data.map(d => ({
-            date: isoToDate(d.date),
-            value: d.notStarted,
-          })),
-        },
-      ]
-    : [];
-
-  // Chart 3: Funding allocated vs spent
-  const fundingSeries: Series[] = data
-    ? [
-        {
-          id: 'allocated',
-          label: 'Funding allocated',
-          colour: '#264653',
-          data: data.national.fundingAllocatedVsSpent.timeSeries.map(d => ({
-            date: isoToDate(d.date),
-            value: d.allocatedBn,
-          })),
-        },
-        {
-          id: 'spent',
-          label: 'Funding spent',
-          colour: '#2A9D8F',
-          data: data.national.fundingAllocatedVsSpent.timeSeries.map(d => ({
-            date: isoToDate(d.date),
-            value: d.spentBn,
-          })),
-        },
-      ]
-    : [];
-
-  // Sparkline data
-  const awaitingSparkline = data
-    ? sparkFrom(data.national.remediationProgress.timeSeries.map(d => d.identified - d.completed))
-    : [];
-
-  const completedPctSparkline = data
-    ? sparkFrom(data.national.remediationProgress.timeSeries.map(d => d.completedPct))
-    : [];
-
-  const costSparkline = [12.2, 13.1, 14.0, 14.8, 15.4, 15.9, 16.4];
-
-  // ── Render ────────────────────────────────────────────────────────────────
-
   return (
     <>
-      <TopicNav topic="Fire Safety in Buildings" />
-
+      <TopicNav topic="Building Fire Safety" />
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Fire Safety in Buildings"
-          question="Is Your Building Actually Safe?"
-          finding="Eight years after the Grenfell Tower fire killed 72 people, more than 4,630 high-rise buildings with dangerous cladding are still awaiting remediation. Only 41% of identified buildings have been fully remediated and signed off. An estimated 300,000 leaseholders remain trapped in homes they cannot sell, remortgage, or adequately insure."
+          topic="Building Fire Safety"
+          question="Is the Cladding Crisis Actually Being Fixed?"
+          finding="Seven years after Grenfell, around 6,800 residential buildings still have unsafe cladding awaiting remediation. Leaseholders have faced cumulative waking watch costs of £830 million. The Building Safety Act 2022 gives residents new protections — but remediation pace remains too slow."
           colour="#E63946"
-          preposition="with"
+          preposition="in"
         />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+        <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>
-              The Grenfell Tower fire of 14 June 2017, which killed 72 people, exposed a catastrophic failure of building safety regulation in England. Combustible cladding on the tower&apos;s exterior enabled the fire to spread with lethal speed, but subsequent investigation revealed the crisis extended far beyond one building. Eight years on, 4,630 or more high-rise residential buildings have been identified with unsafe cladding or serious fire safety defects. The government committed a Building Safety Fund of 5.1 billion pounds, but only around 30 per cent of the allocated money has been spent, and just 41 per cent of identified buildings have completed remediation. The estimated total cost of making all affected buildings safe now exceeds 16 billion pounds, a figure that continues to rise as inspections uncover non-cladding defects including compartmentation failures, missing fire stops, and defective fire doors. The Building Safety Act 2022 created a new regulatory regime and established the principle that leaseholders in buildings above 11 metres should not bear remediation costs, but implementation has been painfully slow. Many building owners have been reluctant to register for available schemes, and some are overseas entities beyond effective regulatory reach.
-            </p>
-            <p>
-              For the hundreds of thousands of leaseholders caught in this crisis, the consequences are financial and deeply personal. Residents in buildings awaiting remediation face waking watch costs of 10,000 to 50,000 pounds per month per building, charged back to leaseholders through service charges. Many cannot sell because mortgage lenders will not advance loans against buildings with known fire safety defects, and insurance premiums have multiplied by factors of five or ten. Mid-rise buildings between 11 and 18 metres are the forgotten category: many have no access to government funding, and their residents face remediation bills of tens of thousands of pounds per flat. Forty-nine major developers have signed the government&apos;s remediation contract, committing a total of 5.5 billion pounds to fix buildings they constructed, but enforcement of the pledge is patchy and progress varies enormously between companies. Multiple academic studies have documented the severe mental health impact on affected residents, including anxiety, depression, and a persistent sense of being trapped. The Responsible Actors Scheme, which bars non-compliant developers from building control approval, represents the strongest enforcement mechanism yet deployed, but the gap between the scale of the problem and the pace of the response remains stark.
-            </p>
+            <p>The Grenfell Tower fire of June 2017 — which killed 72 people and revealed systemic failures in building safety, regulation, and oversight — triggered the largest remediation programme in UK building history. Investigations revealed that hundreds of thousands of homes across the country had been clad with aluminium composite material (ACM) or other flammable materials as part of cost-cutting refurbishments, often approved under building regulations despite clear fire safety risks. Seven years on, an estimated 6,800 residential buildings still have unsafe cladding awaiting remediation — though the true number may be higher, as many buildings have not been assessed.</p>
+            <p>In the interim, the cost of fire safety measures has fallen heavily on leaseholders — precisely the people who had no role in the unsafe construction. 'Waking watch' patrols — guards who walk buildings continuously to provide early warning of fire — became widespread, costing leaseholders on average £300–400 per month each. Cumulative waking watch costs have exceeded £830 million nationally. The Building Safety Act 2022 gave leaseholders legal protections against being charged for remediation costs attributable to construction defects — but implementation has been slow and contested. The government's developer levy and building safety fund cover some costs, but significant gaps remain for orphaned buildings where the original developer no longer exists.</p>
           </div>
         </section>
-
         <SectionNav sections={[
-          { id: 'sec-metrics', label: 'Key figures' },
-          { id: 'sec-remediation', label: 'Remediation progress' },
-          { id: 'sec-status', label: 'Buildings by status' },
-          { id: 'sec-funding', label: 'Funding gap' },
-          { id: 'sec-positive', label: 'What\'s changing' },
+          { id: 'sec-metrics', label: 'Metrics' },
+          { id: 'sec-chart1', label: 'Unsafe buildings' },
+          { id: 'sec-chart2', label: 'Remediation costs' },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        {/* ── Metric Cards ──────────────────────────────────────────────────── */}
-
-        <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-          <MetricCard
-            label="Buildings awaiting remediation"
-            value={data ? (data.national.summary.buildingsAwaiting - Math.round(data.national.summary.buildingsAwaiting * data.national.summary.remediationCompletePct / 100)).toLocaleString() : '—'}
-            direction="up"
-            polarity="up-is-bad"
-            changeText="Dec 2025 · 8 years after Grenfell · ~300K leaseholders affected"
-            sparklineData={awaitingSparkline}
-            href="#sec-remediation"
-          />
-          <MetricCard
-            label="Remediation complete"
-            value={data ? `${data.national.summary.remediationCompletePct}%` : '—'}
-            direction="up"
-            polarity="up-is-good"
-            changeText="Of identified buildings · pace accelerating since 2024"
-            sparklineData={completedPctSparkline}
-            href="#sec-remediation"
-          />
-          <MetricCard
-            label="Estimated total cost"
-            value={data ? `\u00A3${data.national.summary.estimatedTotalCostBn}bn` : '—'}
-            direction="up"
-            polarity="up-is-bad"
-            changeText="Rising as non-cladding defects discovered · BSF: \u00A35.1bn allocated, \u00A33.4bn spent"
-            sparklineData={costSparkline}
-            href="#sec-funding"
-          />
-        </div>
-
-        {/* ── Chart 1: Remediation progress ─────────────────────────────────── */}
-
-        <ScrollReveal>
-          <section id="sec-remediation" className="mb-12">
-            <LineChart
-              title="Cladding remediation progress, England, 2020\u20132025"
-              subtitle="Cumulative buildings identified, remediation started, and remediation completed."
-              series={remediationSeries}
-              annotations={remediationAnnotations}
-              yLabel="Buildings"
-              source={{
-                name: 'DLUHC',
-                dataset: 'Building Safety Remediation Monthly Data Release',
-                url: 'https://www.gov.uk/government/publications/building-safety-remediation-monthly-data-release',
-                frequency: 'monthly',
-              }}
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <MetricCard
+              label="Buildings with unsafe cladding"
+              value="6,800"
+              unit=""
+              direction="down"
+              polarity="down-is-bad"
+              changeText="Down from 8,000 peak · but progress too slow"
+              sparklineData={[0, 4500, 6000, 7500, 8000, 7200, 6800]}
+              source="DLUHC · Building safety remediation statistics 2024"
+              href="#sec-chart1"
             />
-          </section>
-        </ScrollReveal>
-
-        {/* ── Chart 2: Buildings by status ────────────────────────────────────── */}
-
-        <ScrollReveal>
-          <section id="sec-status" className="mb-12">
-            <LineChart
-              title="Buildings by remediation status, England, 2020\u20132025"
-              subtitle="Number of buildings fully remediated, with work in progress, and where remediation has not started."
-              series={statusCompletedSeries}
-              yLabel="Buildings"
-              source={{
-                name: 'DLUHC',
-                dataset: 'Building Safety Programme Monthly Data Release',
-                url: 'https://www.gov.uk/government/collections/building-safety-programme',
-                frequency: 'monthly',
-              }}
+            <MetricCard
+              label="Cumulative waking watch costs"
+              value="£830m"
+              unit=""
+              direction="up"
+              polarity="up-is-bad"
+              changeText="£300-400/month per leaseholder · borne by residents"
+              sparklineData={[0, 120, 280, 460, 620, 750, 830]}
+              source="DLUHC · Building Safety Programme 2024"
+              href="#sec-chart2"
             />
-          </section>
-        </ScrollReveal>
-
-        {/* ── Chart 3: Funding allocated vs spent ────────────────────────────── */}
-
-        <ScrollReveal>
-          <section id="sec-funding" className="mb-12">
-            <LineChart
-              title="Building Safety Fund: allocated vs spent, 2020\u20132025"
-              subtitle="Cumulative government funding allocated and actual expenditure in billions of pounds."
-              series={fundingSeries}
-              yLabel="\u00A3 billion"
-              source={{
-                name: 'DLUHC',
-                dataset: 'Building Safety Remediation Monthly Data Release',
-                url: 'https://www.gov.uk/government/publications/building-safety-remediation-monthly-data-release',
-                frequency: 'monthly',
-              }}
+            <MetricCard
+              label="Leaseholders protected by BSA 2022"
+              value="90%"
+              unit=""
+              direction="up"
+              polarity="up-is-good"
+              changeText="Building Safety Act protects most leaseholders from remediation costs"
+              sparklineData={[0, 0, 0, 0, 0, 60, 90]}
+              source="DLUHC · Building Safety Act implementation 2024"
+              href="#sec-chart1"
             />
-          </section>
-        </ScrollReveal>
-
-        {/* ── Positive Callout ────────────────────────────────────────────────── */}
-
-        <ScrollReveal>
-          <section id="sec-positive">
-            <PositiveCallout
-              title="What's changing"
-              value="49"
-              unit="developers signed remediation contract"
-              description="The Responsible Actors Scheme barred non-compliant developers from building control approval. 49 major developers signed the remediation contract, committing \u00A35.5bn to fix buildings they constructed. The pace of starts has accelerated \u2014 more buildings entered remediation in 2024 than in any prior year."
-              source="Source: DLUHC \u2014 Building Safety Remediation Monthly Data Release 2025; Responsible Actors Scheme register."
-            />
-          </section>
-        </ScrollReveal>
-
-        {/* ── Sources & Methodology ──────────────────────────────────────────── */}
-
-        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
-          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            {data?.metadata.sources.map((src, i) => (
-              <div key={i}>
-                <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} &mdash; {src.dataset}
-                </a>
-                <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Methodology</h3>
-            <p>{data?.metadata.methodology}</p>
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Known issues</h3>
-            <ul className="list-disc list-inside space-y-1">
-              {data?.metadata.knownIssues.map((issue, i) => (
-                <li key={i}>{issue}</li>
-              ))}
-            </ul>
           </div>
         </section>
-
+        <ScrollReveal>
+          <section id="sec-chart1" className="mb-12">
+            <LineChart
+              title="Residential buildings with unsafe cladding awaiting remediation, England, 2018–2024"
+              subtitle="Estimated number of buildings where dangerous cladding has been identified but not yet removed or replaced. Peak was approximately 8,000 in 2021."
+              series={claddingSeries}
+              annotations={claddingAnnotations}
+              yLabel="Buildings (thousands)"
+              source={{ name: 'DLUHC', dataset: 'Building safety remediation statistics', url: 'https://www.gov.uk/government/collections/building-safety-programme', frequency: 'quarterly', date: '2024' }}
+            />
+          </section>
+        </ScrollReveal>
+        <ScrollReveal>
+          <section id="sec-chart2" className="mb-12">
+            <LineChart
+              title="Cumulative waking watch costs, England, 2017–2024"
+              subtitle="Running total of costs incurred by leaseholders for fire safety patrols while awaiting cladding remediation. Over £830 million spent on a temporary measure since Grenfell."
+              series={costSeries}
+              annotations={[{ date: new Date(2022, 0, 1), label: '2022: Building Safety Act — leaseholder protections' }]}
+              yLabel="Cumulative costs (£m)"
+              source={{ name: 'DLUHC / NFCC', dataset: 'Building Safety Programme costs', url: 'https://www.gov.uk/government/collections/building-safety-programme', frequency: 'annual', date: '2024' }}
+            />
+          </section>
+        </ScrollReveal>
+        <ScrollReveal>
+          <PositiveCallout
+            title="Developer pledges cover £2bn of remediation costs"
+            value="£2bn"
+            description="Following government pressure and the threat of legislation, 49 major housebuilders signed the developer remediation contract in March 2023, committing to fund remediation of buildings they constructed or refurbished since 1992 that have life-critical fire safety defects. The pledged value is estimated at approximately £2 billion. The Building Safety Levy — charged on new developments — will raise a further £3 billion over 10 years. The new Building Safety Regulator, operating within the Health and Safety Executive, provides oversight of high-rise residential buildings and has powers to require remediation. If developer pledges are honoured and the Regulator uses its enforcement powers, the pace of remediation should accelerate significantly."
+            source="Source: DLUHC — Building safety programme statistics 2024. HSE — Building Safety Regulator annual report 2023/24."
+          />
+        </ScrollReveal>
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.gov.uk/government/collections/building-safety-programme" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DLUHC — Building Safety Programme</a> — quarterly statistics on cladding remediation progress, costs, and developer pledges.</p>
+            <p><a href="https://www.hse.gov.uk/building-safety/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">HSE — Building Safety Regulator</a> — oversight of higher-risk buildings, registration data, and enforcement actions.</p>
+          </div>
+        </section>
         <RelatedTopics />
       </main>
     </>

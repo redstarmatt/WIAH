@@ -1,371 +1,182 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
-import LineChart, { Series } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ─────────────────────────────────────────────────────────────────────
+// Median download speed (Mbps), 2013–2024
+const speedData = [15, 18, 22, 28, 36, 46, 64, 80, 80, 95, 112, 126];
 
-interface SpeedPoint { year: number; medianMbps: number; }
-interface CoveragePoint { year: number; pct: number; }
-interface RuralUrbanPoint { year: number; urbanNot30MbpsPct: number; ruralNot30MbpsPct: number; }
-interface FiveGPoint { year: number; premisesPct: number; landmassPct: number; }
-interface UsagePoint { year: number; usedInternetPct: number; neverUsedPct: number; }
-interface TechPoint { technology: string; pct: number; }
+// Full fibre coverage (% of UK premises), 2017–2024
+const fullFibreData = [2, 4, 8, 14, 24, 38, 55, 68];
 
-interface BroadbandData {
-  national: {
-    speeds: { medianTimeSeries: SpeedPoint[]; latest: SpeedPoint };
-    coverage: {
-      fullFibreTimeSeries: CoveragePoint[];
-      gigabitTimeSeries: CoveragePoint[];
-      byTechnology: TechPoint[];
-      latestFullFibre: CoveragePoint;
-      latestGigabit: CoveragePoint;
-      governmentTarget: string;
-    };
-    ruralUrbanGap: { timeSeries: RuralUrbanPoint[]; latest: RuralUrbanPoint };
-    fiveG: { timeSeries: FiveGPoint[]; latest: FiveGPoint };
-    digitalInclusion: {
-      internetUsageTimeSeries: UsagePoint[];
-      latest: UsagePoint;
-      neverOnlineMillions: number;
-    };
-  };
-  metadata: {
-    sources: { name: string; dataset: string; url: string; frequency: string }[];
-    methodology: string;
-    knownIssues: string[];
-  };
-}
+// Gigabit-capable coverage (% of UK premises), 2017–2024
+const gigabitData = [3, 6, 12, 22, 40, 60, 75, 86];
 
-function yearToDate(y: number): Date { return new Date(y, 0, 1); }
+// Rural % without 30Mbps, 2019–2024
+const ruralGapData = [14.2, 12.8, 11.0, 9.5, 8.0, 6.5];
+
+// Urban % without 30Mbps, 2019–2024
+const urbanGapData = [2.1, 1.9, 1.7, 1.5, 1.3, 1.0];
+
+const speedSeries: Series[] = [
+  {
+    id: 'speed',
+    label: 'Median download speed (Mbps)',
+    colour: '#264653',
+    data: speedData.map((v, i) => ({ date: new Date(2013 + i, 0, 1), value: v })),
+  },
+];
+
+const coverageSeries: Series[] = [
+  {
+    id: 'gigabit',
+    label: 'Gigabit-capable (%)',
+    colour: '#264653',
+    data: gigabitData.map((v, i) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+  },
+  {
+    id: 'fullfibre',
+    label: 'Full fibre / FTTP (%)',
+    colour: '#2A9D8F',
+    data: fullFibreData.map((v, i) => ({ date: new Date(2017 + i, 0, 1), value: v })),
+  },
+];
+
+const ruralUrbanSeries: Series[] = [
+  {
+    id: 'rural',
+    label: 'Rural — % without decent broadband',
+    colour: '#E63946',
+    data: ruralGapData.map((v, i) => ({ date: new Date(2019 + i, 0, 1), value: v })),
+  },
+  {
+    id: 'urban',
+    label: 'Urban — % without decent broadband',
+    colour: '#6B7280',
+    data: urbanGapData.map((v, i) => ({ date: new Date(2019 + i, 0, 1), value: v })),
+  },
+];
+
+const speedAnnotations: Annotation[] = [
+  { date: new Date(2020, 0, 1), label: '2020: Pandemic drives demand surge' },
+  { date: new Date(2022, 0, 1), label: '2022: Full fibre rollout accelerates' },
+];
+
+const coverageAnnotations: Annotation[] = [
+  { date: new Date(2020, 0, 1), label: '2020: Project Gigabit launched' },
+  { date: new Date(2023, 0, 1), label: '2023: Openreach full-fibre target raised' },
+];
 
 export default function BroadbandPage() {
-  const [data, setData] = useState<BroadbandData | null>(null);
-
-  useEffect(() => {
-    fetch('/data/broadband/broadband.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
-
-  // 1. Median speeds
-  const speedSeries: Series[] = data
-    ? [{
-        id: 'speed',
-        label: 'Median download speed (Mbps)',
-        colour: '#264653',
-        data: data.national.speeds.medianTimeSeries.map(d => ({
-          date: yearToDate(d.year),
-          value: d.medianMbps,
-        })),
-      }]
-    : [];
-
-  // 2. Full fibre + gigabit coverage
-  const coverageSeries: Series[] = data
-    ? [
-        {
-          id: 'gigabit',
-          label: 'Gigabit-capable (%)',
-          colour: '#264653',
-          data: data.national.coverage.gigabitTimeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.pct,
-          })),
-        },
-        {
-          id: 'fullfibre',
-          label: 'Full fibre / FTTP (%)',
-          colour: '#2A9D8F',
-          data: data.national.coverage.fullFibreTimeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.pct,
-          })),
-        },
-      ]
-    : [];
-
-  // 3. Rural vs urban gap
-  const ruralUrbanSeries: Series[] = data
-    ? [
-        {
-          id: 'rural',
-          label: 'Rural — % without decent broadband',
-          colour: '#E63946',
-          data: data.national.ruralUrbanGap.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.ruralNot30MbpsPct,
-          })),
-        },
-        {
-          id: 'urban',
-          label: 'Urban — % without decent broadband',
-          colour: '#6B7280',
-          data: data.national.ruralUrbanGap.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.urbanNot30MbpsPct,
-          })),
-        },
-      ]
-    : [];
-
-  // 4. Internet usage (never online)
-  const neverOnlineSeries: Series[] = data
-    ? [{
-        id: 'neveronline',
-        label: '% adults who have never used internet',
-        colour: '#6B7280',
-        data: data.national.digitalInclusion.internetUsageTimeSeries.map(d => ({
-          date: yearToDate(d.year),
-          value: d.neverUsedPct,
-        })),
-      }]
-    : [];
-
-  const latestSpeed = data?.national.speeds.latest;
-  const latestFibre = data?.national.coverage.latestFullFibre;
-  const latestGigabit = data?.national.coverage.latestGigabit;
-  const latestRural = data?.national.ruralUrbanGap.latest;
-
   return (
     <>
       <TopicNav topic="Broadband & Digital" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Broadband & Digital"
           question="Are You Actually Connected?"
-          finding={
-            latestFibre && latestRural
-              ? `Full fibre broadband has reached ${latestFibre.pct}% of UK premises — but ${latestRural.ruralNot30MbpsPct}% of rural homes still can't get the minimum 30 Mbps standard.`
-              : 'Full fibre reaches 68% of UK homes — but rural Britain is still waiting.'
-          }
+          finding="Full fibre broadband has reached 68% of UK premises — up from just 2% in 2017 — and median download speeds have risen eightfold to 126 Mbps. But 6.5% of rural homes still cannot get the minimum 30 Mbps standard, six times the urban rate, and 1.5 million households with school-age children lack any home broadband connection."
           colour="#264653"
+          preposition="with"
         />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+        <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Full fibre broadband reached approximately 68% of UK premises by 2024, up from just 2% in 2017, driven by BT Openreach, Virgin Media O2, and a wave of altnet operators. On the government's original target of national full fibre by 2025, the programme is running two to three years behind; Spain, France, and Sweden each surpassed 75% FTTP coverage by 2022, largely through publicly backed rollout. The government's £5 billion Project Gigabit programme targets the 20% of premises the market will not reach commercially, but procurement has been slow. An estimated 685,000 premises remain below the Universal Service Obligation of 10 Mbps. Social tariffs for Universal Credit claimants are available at £10–£20 per month, but only around 30% of the 4.2 million eligible households have taken one up — and 1.5 million households with school-age children still lack any home broadband connection.</p>
-            <p>The rural–urban gap is the defining inequality. Full fibre reaches 73% of urban premises but only 37% of rural ones; 6.5% of rural homes cannot receive the 30 Mbps &ldquo;decent broadband&rdquo; standard, six times the urban rate of 1%. Rural households on legacy ADSL connections face download speeds of 5–10 Mbps and upload speeds below 1 Mbps, making remote work and video consultation unreliable. Starlink satellite provides a £75-per-month alternative for around 150,000 rural subscribers, but at triple the cost of urban full fibre — a connectivity premium paid by those already at a geographic disadvantage.</p>
+            <p>Full fibre broadband reached approximately 68% of UK premises by 2024, up from just 2% in 2017, driven by BT Openreach, Virgin Media O2, and a wave of altnet operators. On the government's original target of national full fibre by 2025, the programme is running two to three years behind; Spain, France, and Sweden each surpassed 75% FTTP coverage by 2022. The government's £5 billion Project Gigabit programme targets the 20% of premises the market will not reach commercially, but procurement has been slow. An estimated 685,000 premises remain below the Universal Service Obligation of 10 Mbps. Social tariffs for Universal Credit claimants are available at £10–£20 per month, but only around 30% of the 4.2 million eligible households have taken one up.</p>
+            <p>The rural–urban gap is the defining inequality. Full fibre reaches 73% of urban premises but only 37% of rural ones; 6.5% of rural homes cannot receive the 30 Mbps "decent broadband" standard, six times the urban rate of 1%. Rural households on legacy ADSL connections face download speeds of 5–10 Mbps and upload speeds below 1 Mbps, making remote work and video consultation unreliable. Starlink satellite provides a £75-per-month alternative for around 150,000 rural subscribers — at triple the cost of urban full fibre, a connectivity premium paid by those already at a geographic disadvantage.</p>
           </div>
         </section>
-
         <SectionNav sections={[
-          { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-speeds', label: 'Speeds & Coverage' },
-          { id: 'sec-digital-divide', label: 'Digital Divide' },
+          { id: 'sec-metrics', label: 'Metrics' },
+          { id: 'sec-chart1', label: 'Speeds' },
+          { id: 'sec-chart2', label: 'Coverage' },
+          { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        {/* Metric cards */}
-        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-          <MetricCard
-            label="Median download speed"
-            value={latestSpeed ? latestSpeed.medianMbps.toFixed(0) : '—'}
-            unit="Mbps"
-            direction="up"
-            polarity="up-is-good"
-            changeText={
-              latestSpeed
-                ? `Up from 15 Mbps in 2013 · 8× faster in 10 years`
-                : 'Loading…'
-            }
-            sparklineData={
-              data
-                ? data.national.speeds.medianTimeSeries.slice(-8).map(d => d.medianMbps)
-                : []
-            }
-            source="Ofcom · Home Broadband Performance tracker"
-            baseline="Fast enough to stream 4K video on 25 devices at once — 8× faster than a decade ago"
-          />
-          <MetricCard
-            label="Full fibre coverage"
-            value={latestFibre ? latestFibre.pct.toFixed(0) : '—'}
-            unit="% of premises"
-            direction="up"
-            polarity="up-is-good"
-            changeText={
-              latestGigabit
-                ? `${latestGigabit.pct}% gigabit-capable · Govt target: 100% by 2030`
-                : 'Loading…'
-            }
-            sparklineData={
-              data
-                ? data.national.coverage.fullFibreTimeSeries.slice(-8).map(d => d.pct)
-                : []
-            }
-            source="Ofcom · Connected Nations 2024"
-            baseline="2 in 3 homes now have a direct fibre connection — up from 1 in 50 in 2017"
-          />
-          <MetricCard
-            label="Rural broadband gap"
-            value={latestRural ? latestRural.ruralNot30MbpsPct.toFixed(1) : '—'}
-            unit="% without 30Mbps"
-            direction="down"
-            polarity="up-is-bad"
-            changeText={
-              latestRural
-                ? `Urban: ${latestRural.urbanNot30MbpsPct}% · Rural: ${latestRural.ruralNot30MbpsPct}% — 6× gap`
-                : 'Loading…'
-            }
-            sparklineData={
-              data
-                ? data.national.ruralUrbanGap.timeSeries.slice(-6).map(d => d.ruralNot30MbpsPct)
-                : []
-            }
-            source="Ofcom · Connected Nations 2024"
-            baseline="6.5% of rural homes can't get 30 Mbps — six times worse than urban areas (1%)"
-          />
-        </div>
-        
-
-        {/* Chart 1: Speeds */}
-        <div id="sec-speeds">
-        {speedSeries.length > 0 ? (
-          <LineChart
-            title="UK median broadband download speed, 2013–2024"
-            subtitle="Median residential broadband download speed (Mbps), measured via Ofcom SamKnows panel."
-            series={speedSeries}
-            annotations={[
-              { date: new Date(2019, 0), label: '2019: Lockdown demand surge' },
-            ]}
-            yLabel="Mbps"
-            source={{
-              name: 'Ofcom',
-              dataset: 'Home Broadband Performance',
-              frequency: 'annual',
-              url: 'https://www.ofcom.org.uk/research-and-data/telecoms-research/broadband-research/broadband-speeds',
-            }}
-          />
-        ) : (
-          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
-        )}
-
-        {/* Chart 2: Coverage */}
-        {coverageSeries.length > 0 ? (
-          <LineChart
-            title="Gigabit and full fibre broadband coverage, 2017–2024"
-            subtitle="% of UK premises that can receive gigabit-capable or full fibre broadband. Govt target: universal gigabit by 2030."
-            series={coverageSeries}
-            targetLine={{ value: 100, label: '2030 target' }}
-            yLabel="% premises"
-            source={{
-              name: 'Ofcom',
-              dataset: 'Connected Nations — annual broadband coverage report',
-              frequency: 'annual',
-              url: 'https://www.ofcom.org.uk/research-and-data/telecoms-research/connected-nations',
-            }}
-          />
-        ) : (
-          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
-        )}
-
-        {/* Coverage by technology table */}
-        {data && (
-          <section className="mb-12">
-            <h3 className="text-lg font-bold text-wiah-black mb-1">Coverage by technology, 2024</h3>
-            <p className="text-sm text-wiah-mid font-mono mb-4">% of UK premises able to receive each connection type.</p>
-            <div className="space-y-2">
-              {data.national.coverage.byTechnology.map(t => (
-                <div key={t.technology} className="flex items-center gap-3">
-                  <span className="w-48 text-sm text-wiah-black font-sans shrink-0">{t.technology}</span>
-                  <div className="flex-1 bg-wiah-light rounded overflow-hidden h-5">
-                    <div
-                      className="h-full rounded"
-                      style={{ width: `${t.pct}%`, backgroundColor: '#264653' }}
-                    />
-                  </div>
-                  <span className="w-16 text-right font-mono text-sm font-bold text-wiah-black">{t.pct}%</span>
-                </div>
-              ))}
-            </div>
-            <p className="font-mono text-[11px] text-wiah-mid mt-3">Source: Ofcom Connected Nations 2024.</p>
-          </section>
-        )}
-
-        </div>{/* end sec-speeds */}
-
-        {/* Chart 3: Rural vs urban */}
-        <div id="sec-digital-divide">
-        {ruralUrbanSeries.length > 0 ? (
-          <LineChart
-            title="Rural vs urban broadband gap, 2019–2024"
-            subtitle="% of premises unable to receive 30 Mbps (Ofcom's 'decent broadband' standard). Rural gap is narrowing but remains large."
-            series={ruralUrbanSeries}
-            yLabel="% without 30Mbps"
-            source={{
-              name: 'Ofcom',
-              dataset: 'Connected Nations — rural/urban breakdown',
-              frequency: 'annual',
-              url: 'https://www.ofcom.org.uk/research-and-data/telecoms-research/connected-nations',
-            }}
-          />
-        ) : (
-          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
-        )}
-
-        {/* Chart 4: Digital inclusion */}
-        {neverOnlineSeries.length > 0 ? (
-          <LineChart
-            title="Adults who have never used the internet, 2011–2024"
-            subtitle="% of UK adults who have never used the internet (ONS annual survey). Concentrated among over-75s, people with disabilities, and lowest income groups."
-            series={neverOnlineSeries}
-            yLabel="Percent of adults"
-            source={{
-              name: 'ONS',
-              dataset: 'Internet users, Great Britain',
-              frequency: 'annual',
-              url: 'https://www.ons.gov.uk/businessindustryandtrade/itandinternetindustry/bulletins/internetusers',
-            }}
-          />
-        ) : (
-          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
-        )}
-
-        {/* Positive callout */}
-        <ScrollReveal>
-        <PositiveCallout
-          title="What's improving"
-          value="8×"
-          unit="faster"
-          description="UK median broadband speeds have risen eightfold since 2013 — from 15 Mbps to 126 Mbps. The proportion of adults who have never used the internet has fallen from 16% to under 4% in 12 years. The government's Project Gigabit is accelerating full fibre rollout to hard-to-reach rural areas, and 5G now covers 91% of UK premises outdoors."
-          source="Source: Ofcom Connected Nations 2024. ONS Internet users 2024."
-        />
-        </ScrollReveal>
-
-        </div>{/* end sec-digital-divide */}
-
-        {/* Sources */}
-        <section className="border-t border-wiah-border pt-8">
-          <h2 className="text-lg font-bold text-wiah-black mb-4">Sources &amp; methodology</h2>
-          <ul className="space-y-2 font-mono text-xs text-wiah-mid">
-            {data?.metadata.sources.map((src, i) => (
-              <li key={i}>
-                <a href={src.url} className="underline hover:text-wiah-blue" target="_blank" rel="noreferrer">
-                  {src.name} — {src.dataset} ({src.frequency})
-                </a>
-              </li>
-            ))}
-          </ul>
-          <p className="font-mono text-xs text-wiah-mid mt-4">{data?.metadata.methodology}</p>
-          {data?.metadata.knownIssues && data.metadata.knownIssues.length > 0 && (
-            <div className="mt-4">
-              <p className="font-mono text-xs text-wiah-mid font-bold mb-1">Known issues:</p>
-              <ul className="list-disc list-inside space-y-1 font-mono text-xs text-wiah-mid">
-                {data.metadata.knownIssues.map((issue, i) => <li key={i}>{issue}</li>)}
-              </ul>
-            </div>
-          )}
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <MetricCard
+              label="Median download speed"
+              value="126"
+              unit="Mbps (2024)"
+              direction="up"
+              polarity="up-is-good"
+              changeText="Up from 15 Mbps in 2013 · 8× faster in 11 years"
+              sparklineData={[15, 22, 36, 64, 80, 95, 112, 126]}
+              source="Ofcom · Home Broadband Performance 2024"
+              href="#sec-chart1"
+            />
+            <MetricCard
+              label="Full fibre coverage"
+              value="68%"
+              unit="of UK premises"
+              direction="up"
+              polarity="up-is-good"
+              changeText="86% gigabit-capable · Govt target: 99% by 2030"
+              sparklineData={[2, 4, 8, 14, 24, 38, 55, 68]}
+              source="Ofcom · Connected Nations 2024"
+              href="#sec-chart2"
+            />
+            <MetricCard
+              label="Rural broadband gap"
+              value="6.5%"
+              unit="rural without 30Mbps"
+              direction="down"
+              polarity="up-is-bad"
+              changeText="Urban: 1% · Rural: 6.5% — 6× gap persists"
+              sparklineData={[14.2, 12.8, 11.0, 9.5, 8.0, 6.5]}
+              source="Ofcom · Connected Nations 2024"
+              href="#sec-chart2"
+            />
+          </div>
         </section>
-              <RelatedTopics />
+        <ScrollReveal>
+          <section id="sec-chart1" className="mb-12">
+            <LineChart
+              title="UK median broadband download speed, 2013–2024"
+              subtitle="Median residential broadband download speed (Mbps), measured via Ofcom SamKnows panel. Eightfold improvement in eleven years driven by full fibre rollout."
+              series={speedSeries}
+              annotations={speedAnnotations}
+              yLabel="Mbps"
+              source={{ name: 'Ofcom', dataset: 'Home Broadband Performance', url: 'https://www.ofcom.org.uk/research-and-data/telecoms-research/broadband-research/broadband-speeds', frequency: 'annual', date: '2024' }}
+            />
+          </section>
+        </ScrollReveal>
+        <ScrollReveal>
+          <section id="sec-chart2" className="mb-12">
+            <LineChart
+              title="Gigabit and full fibre broadband coverage, 2017–2024"
+              subtitle="% of UK premises that can receive gigabit-capable or full fibre (FTTP) broadband. Government target: universal gigabit capability by 2030."
+              series={coverageSeries}
+              annotations={coverageAnnotations}
+              targetLine={{ value: 99, label: '2030 target' }}
+              yLabel="% premises"
+              source={{ name: 'Ofcom', dataset: 'Connected Nations — annual broadband coverage report', url: 'https://www.ofcom.org.uk/research-and-data/telecoms-research/connected-nations', frequency: 'annual', date: '2024' }}
+            />
+          </section>
+        </ScrollReveal>
+        <ScrollReveal>
+          <PositiveCallout
+            title="Speeds have risen eightfold in a decade"
+            value="8×"
+            unit="faster than 2013"
+            description="UK median broadband speeds have risen eightfold since 2013 — from 15 Mbps to 126 Mbps. The proportion of adults who have never used the internet has fallen from 16% to under 4% in 12 years. The government's Project Gigabit is accelerating full fibre rollout to hard-to-reach rural areas, and 5G now covers 91% of UK premises outdoors. Social tariffs from all major providers now offer broadband from £10 per month for Universal Credit recipients."
+            source="Source: Ofcom Connected Nations 2024. ONS Internet users 2024."
+          />
+        </ScrollReveal>
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.ofcom.org.uk/research-and-data/telecoms-research/connected-nations" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Ofcom — Connected Nations</a> — annual broadband coverage and technology breakdown. Retrieved March 2026.</p>
+            <p><a href="https://www.ofcom.org.uk/research-and-data/telecoms-research/broadband-research/broadband-speeds" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Ofcom — Home Broadband Performance</a> — median speed measurements via SamKnows panel. Retrieved March 2026.</p>
+            <p><a href="https://www.ons.gov.uk/businessindustryandtrade/itandinternetindustry/bulletins/internetusers" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS — Internet users, Great Britain</a> — digital inclusion data. Retrieved March 2026.</p>
+          </div>
+        </section>
+        <RelatedTopics />
       </main>
     </>
   );

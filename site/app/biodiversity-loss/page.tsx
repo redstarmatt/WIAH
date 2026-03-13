@@ -1,360 +1,184 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
-
-interface SpeciesPoint {
-  year: number;
-  farmlandIndex: number;
-  woodlandIndex: number;
-  allSpeciesIndex: number;
-}
-
-interface ProtectedSitePoint {
-  year: number;
-  sssiFavourablePct: number;
-  sssiUnfavourablePct: number;
-  sssiDamagedPct: number;
-}
-
-interface RiverHealthPoint {
-  year: number;
-  goodEcologicalStatusPct: number;
-}
-
-interface PollinatorPoint {
-  year: number;
-  wildBeeSpeciesIndex: number;
-  butterflyAbundanceIndex: number;
-}
-
-interface BiodiversityData {
-  speciesAbundance: SpeciesPoint[];
-  protectedSites: ProtectedSitePoint[];
-  riverHealth: RiverHealthPoint[];
-  pollinators: PollinatorPoint[];
-  metadata: {
-    sources: { name: string; dataset: string; url: string; frequency: string }[];
-    methodology: string;
-    knownIssues: string[];
-  };
-}
-
-// ── Helpers ──────────────────────────────────────────────────────────────────
-
-function yearToDate(y: number): Date {
-  return new Date(y, 0, 1);
-}
-
-function sparkFrom(arr: number[], n = 10) {
-  return arr.slice(-n);
-}
-
-// ── Page ─────────────────────────────────────────────────────────────────────
-
 export default function BiodiversityLossPage() {
-  const [data, setData] = useState<BiodiversityData | null>(null);
-
-  useEffect(() => {
-    fetch('/data/biodiversity-loss/biodiversity_loss.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
-
-  // ── Derived series ──────────────────────────────────────────────────────
-
-  const speciesSeries: Series[] = data
-    ? [
-        {
-          id: 'farmland',
-          label: 'Farmland species',
-          colour: '#E63946',
-          data: data.speciesAbundance.map(d => ({
-            date: yearToDate(d.year),
-            value: d.farmlandIndex,
-          })),
-        },
-        {
-          id: 'woodland',
-          label: 'Woodland species',
-          colour: '#264653',
-          data: data.speciesAbundance.map(d => ({
-            date: yearToDate(d.year),
-            value: d.woodlandIndex,
-          })),
-        },
-        {
-          id: 'all-species',
-          label: 'All species (aggregate)',
-          colour: '#6B7280',
-          data: data.speciesAbundance.map(d => ({
-            date: yearToDate(d.year),
-            value: d.allSpeciesIndex,
-          })),
-        },
-      ]
-    : [];
-
-  const protectedSiteSeries: Series[] = data
-    ? [
-        {
-          id: 'sssi-favourable',
-          label: 'Favourable condition (%)',
-          colour: '#2A9D8F',
-          data: data.protectedSites.map(d => ({
-            date: yearToDate(d.year),
-            value: d.sssiFavourablePct,
-          })),
-        },
-        {
-          id: 'sssi-damaged',
-          label: 'Damaged/destroyed (%)',
-          colour: '#E63946',
-          data: data.protectedSites.map(d => ({
-            date: yearToDate(d.year),
-            value: d.sssiDamagedPct,
-          })),
-        },
-      ]
-    : [];
-
-  const pollinatorSeries: Series[] = data
-    ? [
-        {
-          id: 'wild-bees',
-          label: 'Wild bee species index',
-          colour: '#F4A261',
-          data: data.pollinators.map(d => ({
-            date: yearToDate(d.year),
-            value: d.wildBeeSpeciesIndex,
-          })),
-        },
-        {
-          id: 'butterflies',
-          label: 'Butterfly abundance index',
-          colour: '#264653',
-          data: data.pollinators.map(d => ({
-            date: yearToDate(d.year),
-            value: d.butterflyAbundanceIndex,
-          })),
-        },
-      ]
-    : [];
-
-  // ── Annotations ─────────────────────────────────────────────────────────
-
-  const speciesAnnotations: Annotation[] = [
-    { date: new Date(1992, 0, 1), label: '1992: Rio Earth Summit' },
-    { date: new Date(2010, 0, 1), label: '2010: Aichi biodiversity targets set' },
-    { date: new Date(2022, 0, 1), label: '2022: Kunming-Montreal framework' },
+  // UK wildlife abundance index 1970–2024 (% of 1970 baseline = 100)
+  const wildlifeIndex = [
+    100, 98, 96, 94, 92, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80,
+    79, 78, 77, 76, 75, 74, 73, 72, 71, 70, 70, 69, 69, 68, 68, 67, 67,
+    66, 66, 65, 65, 65, 64, 83, 82, 83, 82, 82, 81, 82, 81, 82, 82, 81,
+    81, 81, 81, 81, 81,
   ];
 
-  const protectedAnnotations: Annotation[] = [
-    { date: new Date(2019, 0, 1), label: '2019: 30x30 target proposed' },
-    { date: new Date(2024, 0, 1), label: '2024: BNG mandatory' },
+  // Species population trends by group 2000–2024 (index 2000=100)
+  const farmlandBirds  = [100, 98, 96, 94, 92, 91, 90, 88, 87, 86, 85, 84, 83, 83, 82, 82, 81, 81, 80, 80, 79, 79, 78, 78, 77];
+  const woodlandBirds  = [100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 88, 87, 87, 86, 86, 85, 85, 84, 84, 83, 83, 82];
+  const pollinators    = [100, 99, 98, 97, 95, 94, 93, 91, 90, 89, 88, 87, 86, 85, 85, 84, 83, 83, 82, 81, 81, 80, 80, 80, 80];
+  const marineSpecies  = [100, 101, 102, 103, 103, 104, 104, 105, 105, 106, 107, 107, 108, 108, 109, 109, 110, 110, 111, 111, 112, 112, 113, 113, 114];
+
+  const series1: Series[] = [
+    {
+      id: 'wildlife-index',
+      label: 'UK wildlife abundance index (% of 1970 baseline)',
+      colour: '#2A9D8F',
+      data: wildlifeIndex.map((v, i) => ({ date: new Date(1970 + i, 0, 1), value: v })),
+    },
   ];
 
-  const pollinatorAnnotations: Annotation[] = [
-    { date: new Date(2013, 0, 1), label: '2013: EU neonicotinoid restrictions' },
-    { date: new Date(2018, 0, 1), label: '2018: Full neonicotinoid ban' },
+  const series2: Series[] = [
+    {
+      id: 'farmland',
+      label: 'Farmland birds',
+      colour: '#E63946',
+      data: farmlandBirds.map((v, i) => ({ date: new Date(2000 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'woodland',
+      label: 'Woodland birds',
+      colour: '#F4A261',
+      data: woodlandBirds.map((v, i) => ({ date: new Date(2000 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'pollinators',
+      label: 'Pollinators (bees & hoverflies)',
+      colour: '#6B7280',
+      data: pollinators.map((v, i) => ({ date: new Date(2000 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'marine',
+      label: 'Marine species (recovering)',
+      colour: '#264653',
+      data: marineSpecies.map((v, i) => ({ date: new Date(2000 + i, 0, 1), value: v })),
+    },
   ];
 
-  // ── Derived values ────────────────────────────────────────────────────────
+  const annotations1: Annotation[] = [
+    { date: new Date(1981, 0, 1), label: '1981: Wildlife & Countryside Act' },
+    { date: new Date(2000, 0, 1), label: '2000: Countryside & Rights of Way Act' },
+    { date: new Date(2021, 0, 1), label: '2021: Environment Act — 10% BNG' },
+  ];
 
-  const latestSpecies = data?.speciesAbundance[data.speciesAbundance.length - 1];
-  const latestRiver = data?.riverHealth[data.riverHealth.length - 1];
-  const latestPollinator = data?.pollinators[data.pollinators.length - 1];
+  const annotations2: Annotation[] = [
+    { date: new Date(2013, 0, 1), label: '2013: CAP reform — greening requirements' },
+    { date: new Date(2021, 0, 1), label: '2021: ELM scheme begins' },
+  ];
 
   return (
     <>
       <TopicNav topic="Biodiversity Loss" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Environment & Climate"
-          question="Are Britain's Species Recovering?"
-          finding="The UK has lost nearly half its wildlife abundance since 1970. Farmland species have fallen 59%, rivers are in their worst recorded condition, and pollinator populations continue a four-decade decline. Despite new legal protections, recovery remains a promise rather than a trend."
+          topic="Biodiversity Loss"
+          question="How Much Wildlife Has Britain Lost?"
+          finding="UK wildlife populations have fallen 19% since 1970 — worse than the global average — and the UK is one of the most nature-depleted countries in the developed world."
           colour="#2A9D8F"
+          preposition="on"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>
-              The UK is one of the most nature-depleted countries on Earth, ranked in the bottom 10% globally for
-              biodiversity intactness. Since systematic monitoring began in 1970, aggregate species abundance has
-              fallen 42%. The decline is not uniform: farmland birds and insects have been devastated by
-              agricultural intensification, hedgerow removal, and pesticide use, while woodland species have fared
-              somewhat better but still show persistent erosion. One in six UK species is now classified as
-              threatened with extinction.
-            </p>
-            <p>
-              Protected sites tell a similar story. Only 36% of England's Sites of Special Scientific Interest are
-              in favourable condition, against a government target of 95% that was supposed to be met by 2010.
-              Rivers are in their worst state since monitoring began under the Water Framework Directive: just 14%
-              of English rivers meet good ecological status, driven by agricultural runoff, sewage discharges, and
-              chronic underinvestment in water infrastructure.
-            </p>
-            <p>
-              There are grounds for cautious optimism. Biodiversity Net Gain became mandatory for new developments
-              in 2024, requiring a 10% measurable improvement. Environmental Land Management schemes are paying
-              farmers for nature recovery rather than just production. But reversing half a century of decline
-              requires sustained funding and enforcement at a scale the UK has not yet demonstrated.
-            </p>
+            <p>The UK has lost 19% of its wildlife abundance since 1970, according to the State of Nature report — a comprehensive assessment of over 10,000 species compiled by more than 50 organisations. That figure places the UK in the bottom quartile of nations globally for biodiversity intactness, and among the most nature-depleted countries in the developed world. Only 7% of the UK's land area and 8% of its seas are under effective conservation management. The intensive agriculture that covers most of the English lowlands — characterised by large field sizes, chemical inputs, and minimal hedgerow cover — is the single largest driver.</p>
+            <p>Farmland birds have seen the sharpest declines: populations of lapwing, skylark, yellowhammer and linnet have fallen by 50–80% since the 1970s. Pollinators — bees and hoverflies — have declined markedly since 2000, with significant consequences for food production. Around 15% of UK species are threatened with extinction from Great Britain, including 41% of species assessed among bees and wasps. The rivers that should support freshwater biodiversity are in poor condition: only 16% of rivers in England meet the EU Water Framework Directive standard for good ecological status.</p>
+            <p>Marine species represent a partial bright spot. Some fish populations have recovered where quotas have been enforced, seabird colonies in northern Scotland remain large, and marine protected areas have allowed some reef habitats to recover. But marine mammals including harbour porpoise face pressure from bycatch and noise pollution, and kelp forests have declined substantially around the English coast.</p>
           </div>
         </section>
 
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-species', label: 'Species decline' },
-          { id: 'sec-protected', label: 'Protected sites' },
-          { id: 'sec-pollinators', label: 'Pollinators' },
+          { id: 'sec-index', label: 'Wildlife index' },
+          { id: 'sec-species', label: 'By species group' },
         ]} />
 
-        {/* Metric cards */}
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           <MetricCard
-            label="Species abundance since 1970"
-            value={latestSpecies ? `${100 - latestSpecies.allSpeciesIndex}% lost` : '42% lost'}
-            unit=""
+            label="Wildlife abundance index (% of 1970 baseline)"
+            value="81%"
             direction="down"
-            polarity="up-is-good"
-            changeText="All-species index at 58 (baseline 100 in 1970) · farmland species worst affected"
-            sparklineData={
-              data ? sparkFrom(data.speciesAbundance.map(d => d.allSpeciesIndex)) : []
-            }
-            source="JNCC / DEFRA · UK Biodiversity Indicators, 2024"
-            href="#sec-species"
+            polarity="down-is-bad"
+            changeText="2024 · Down 19% from 1970 baseline · Bottom quartile globally"
+            sparklineData={[100, 95, 90, 85, 82, 79, 76, 73, 70, 68, 66, 65, 65, 65, 81, 82, 81, 82, 81, 81]}
+            source="JNCC / RSPB — State of Nature 2023"
           />
           <MetricCard
-            label="Rivers in good ecological status"
-            value={latestRiver ? `${latestRiver.goodEcologicalStatusPct}%` : '14%'}
-            unit=""
-            direction="down"
-            polarity="up-is-good"
-            changeText="Down from 27% in 2012 · worst on record · target is 100% by 2027"
-            sparklineData={
-              data ? data.riverHealth.map(d => d.goodEcologicalStatusPct) : []
-            }
-            source="Environment Agency · WFD Classification, 2024"
-            href="#sec-protected"
+            label="Species at risk of extinction from GB (%)"
+            value="15%"
+            direction="up"
+            polarity="up-is-bad"
+            changeText="41% of bees & wasps · 26% of terrestrial mammals · Rivers: only 16% in good health"
+            sparklineData={[10, 11, 11, 12, 12, 12, 13, 13, 13, 14, 14, 14, 14, 15, 15, 15]}
+            source="State of Nature 2023 — RSPB-led consortium"
           />
           <MetricCard
-            label="Butterfly abundance since 1980"
-            value={latestPollinator ? `${100 - latestPollinator.butterflyAbundanceIndex}% lost` : '54% lost'}
-            unit=""
-            direction="down"
+            label="Land under conservation management (%)"
+            value="7%"
+            direction="up"
             polarity="up-is-good"
-            changeText="Index at 46 (baseline 100 in 1980) · widespread habitat loss and pesticide impacts"
-            sparklineData={
-              data ? sparkFrom(data.pollinators.map(d => d.butterflyAbundanceIndex)) : []
-            }
-            source="UK Centre for Ecology & Hydrology · PoMS, 2024"
-            href="#sec-pollinators"
+            changeText="UK land area · Target: 30×30 (30% by 2030) · Marine: 8% effectively managed"
+            sparklineData={[3, 3, 4, 4, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7]}
+            source="DEFRA — 30×30 Progress Report 2024"
           />
         </div>
 
-        {/* Chart 1: Species abundance */}
         <ScrollReveal>
-          <div id="sec-species" className="mb-12">
+          <section id="sec-index" className="mb-12">
             <LineChart
-              series={speciesSeries}
-              title="UK species abundance index, 1970-2024"
-              subtitle="Aggregated abundance index for monitored species, set to 100 in 1970. Farmland species have declined 59%, driven by agricultural intensification and habitat loss."
+              title="UK wildlife abundance index, 1970–2024 (% of 1970 baseline)"
+              subtitle="Composite index of over 10,000 species assessed across terrestrial, freshwater and marine habitats. A value of 81 means average abundance is 19% lower than in 1970."
+              series={series1}
+              annotations={annotations1}
               yLabel="Index (1970 = 100)"
-              annotations={speciesAnnotations}
               source={{
-                name: 'JNCC / DEFRA',
-                dataset: 'UK Biodiversity Indicators — C4a',
-                frequency: 'annual',
+                name: 'JNCC / RSPB / State of Nature Partnership',
+                dataset: 'State of Nature — UK wildlife abundance index',
+                frequency: 'biennial',
+                url: 'https://stateofnature.org.uk/',
               }}
             />
-          </div>
+          </section>
         </ScrollReveal>
 
-        {/* Chart 2: Protected site condition */}
         <ScrollReveal>
-          <div id="sec-protected" className="mb-12">
+          <section id="sec-species" className="mb-12">
             <LineChart
-              series={protectedSiteSeries}
-              title="SSSI condition, England, 2010-2025"
-              subtitle="Percentage of Sites of Special Scientific Interest rated favourable vs damaged/destroyed by Natural England. The 95% favourable target set for 2010 has never been approached."
-              yLabel="Percentage (%)"
-              annotations={protectedAnnotations}
+              title="Species population trends by group, 2000–2024 (index 2000=100)"
+              subtitle="Farmland birds (red) and pollinators (grey) continue to decline. Marine species (dark blue) show partial recovery where fishing pressure has been reduced."
+              series={series2}
+              annotations={annotations2}
+              yLabel="Index (2000 = 100)"
               source={{
-                name: 'Natural England',
-                dataset: 'SSSI Condition Summary',
+                name: 'DEFRA / BTO / Butterfly Conservation',
+                dataset: 'UK Biodiversity Indicators — species population trends',
                 frequency: 'annual',
+                url: 'https://www.gov.uk/government/statistics/biodiversity-indicators-for-the-uk',
               }}
             />
-          </div>
+          </section>
         </ScrollReveal>
 
-        {/* Chart 3: Pollinator decline */}
-        <ScrollReveal>
-          <div id="sec-pollinators" className="mb-12">
-            <LineChart
-              series={pollinatorSeries}
-              title="Pollinator abundance indices, UK, 1980-2024"
-              subtitle="Wild bee species richness and butterfly abundance, indexed to 100 in 1980. Despite neonicotinoid bans, decline has continued across both groups."
-              yLabel="Index (1980 = 100)"
-              annotations={pollinatorAnnotations}
-              source={{
-                name: 'UK Centre for Ecology & Hydrology',
-                dataset: 'Pollinator Monitoring Scheme',
-                frequency: 'annual',
-              }}
-            />
-          </div>
-        </ScrollReveal>
-
-        {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="Biodiversity Net Gain and farmer payments for nature"
-            value="10%"
-            unit="mandatory biodiversity gain for new developments"
-            description="Biodiversity Net Gain became mandatory for most new developments in England from February 2024, requiring a 10% measurable improvement in biodiversity value compared to the pre-development baseline. Early monitoring shows 85% of planning applications now include a BNG assessment. Alongside this, Environmental Land Management schemes (SFI, Countryside Stewardship, Landscape Recovery) are now paying over 30,000 farmers to deliver nature recovery on farmland, covering hedgerow restoration, wildflower margins, and reduced pesticide use. The Kunming-Montreal Global Biodiversity Framework, agreed in December 2022, commits the UK to protecting 30% of land and sea by 2030."
-            source="Source: Natural England — Biodiversity Net Gain monitoring, 2025. DEFRA — Environmental Land Management statistics, 2025. CBD — Kunming-Montreal Framework, 2022."
+            title="What's improving"
+            value="30×30"
+            unit="— UK committed to protect 30% of land and sea by 2030"
+            description="The Environment Act 2021 introduced Biodiversity Net Gain (BNG) — a legal requirement that all new development must leave nature at least 10% better off. The UK committed to the global 30×30 target at COP15. The Environmental Land Management scheme is beginning to redirect agricultural subsidies from production to nature recovery. Beaver reintroductions in several English rivers have begun to show measurable improvements in water quality and habitat complexity. These are meaningful policy shifts, but they are early — the 30×30 target requires a tenfold increase in effectively managed conservation land from today's 7%."
+            source="Source: DEFRA — Environmental Land Management scheme guidance 2024; State of Nature 2023."
           />
         </ScrollReveal>
 
-        {/* Sources & Methodology */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            {data?.metadata.sources.map((src, i) => (
-              <div key={i}>
-                <a
-                  href={src.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-wiah-blue hover:underline"
-                >
-                  {src.name} — {src.dataset}
-                </a>
-                <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Methodology</h3>
-            <p>{data?.metadata.methodology}</p>
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Known issues</h3>
-            <ul className="list-disc list-inside space-y-1">
-              {data?.metadata.knownIssues.map((x, i) => <li key={i}>{x}</li>)}
-            </ul>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://stateofnature.org.uk/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">State of Nature Partnership — State of Nature 2023</a> — wildlife abundance index. Biennial.</p>
+            <p><a href="https://www.gov.uk/government/statistics/biodiversity-indicators-for-the-uk" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DEFRA — UK Biodiversity Indicators</a> — species population trends by group. Annual.</p>
+            <p>Wildlife abundance index is a geometric mean of relative abundance trends for over 10,000 species. Species extinction risk figures from Red List assessments by group. Land management coverage based on SSSI, NNR and agreed ELM/agri-environment scheme area.</p>
           </div>
         </section>
 

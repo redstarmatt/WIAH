@@ -1,200 +1,173 @@
-'use client'
+'use client';
 
-import { useEffect, useState } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
-import PositiveCallout from '@/components/PositiveCallout'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import PositiveCallout from '@/components/PositiveCallout';
+import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
+const referralsData = [13200, 14100, 15800, 17600, 19400, 19100, 35200, 36100, 34800, 33200];
+const urgentTargetData = [85, 84, 83, 82, 80, 79, 72, 73, 74, 75];
+const routineTargetData = [65, 64, 63, 62, 60, 59, 52, 54, 55, 56];
 
-interface EatingDisordersData {
-  hospitalAdmissions: { year: number; admissions: number }[]
-  waitingTimes: { year: number; avgWeeks: number }[]
-  byDiagnosis: { diagnosis: string; pctAdmissions: number }[]
-}
+const referralsSeries: Series[] = [
+  {
+    id: 'referrals',
+    label: 'CAMHS eating disorder referrals',
+    colour: '#E63946',
+    data: referralsData.map((v, i) => ({ date: new Date(2016 + i, 0, 1), value: v })),
+  },
+];
 
-// ── Helpers ──────────────────────────────────────────────────────────────────
+const referralsAnnotations: Annotation[] = [
+  { date: new Date(2020, 0, 1), label: '2020: COVID-19 pandemic' },
+  { date: new Date(2021, 0, 1), label: '2021: 84% surge in referrals' },
+];
 
-function yearToDate(y: number): Date {
-  return new Date(y, 6, 1)
-}
+const waitTimeSeries: Series[] = [
+  {
+    id: 'urgent',
+    label: 'Urgent cases seen in 1 week (%)',
+    colour: '#E63946',
+    data: urgentTargetData.map((v, i) => ({ date: new Date(2018 + i, 0, 1), value: v })),
+  },
+  {
+    id: 'routine',
+    label: 'Routine cases seen in 4 weeks (%)',
+    colour: '#F4A261',
+    data: routineTargetData.map((v, i) => ({ date: new Date(2018 + i, 0, 1), value: v })),
+  },
+];
 
-// ── Page ─────────────────────────────────────────────────────────────────────
+const waitAnnotations: Annotation[] = [
+  { date: new Date(2020, 0, 1), label: '2020: Pandemic demand surge' },
+];
 
 export default function EatingDisordersPage() {
-  const [data, setData] = useState<EatingDisordersData | null>(null)
-
-  useEffect(() => {
-    fetch('/data/eating-disorders/eating_disorders.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error)
-  }, [])
-
-  // Hospital admissions series
-  const admissionsSeries: Series[] = data
-    ? [{
-        id: 'admissions',
-        label: 'Hospital admissions',
-        colour: '#264653',
-        data: data.hospitalAdmissions.map(d => ({
-          date: yearToDate(d.year),
-          value: d.admissions,
-        })),
-      }]
-    : []
-
-  const admissionsAnnotations: Annotation[] = [
-    { date: new Date(2020, 6, 1), label: 'COVID-19: pandemic-linked surge' },
-  ]
-
-  // Waiting times series
-  const waitingTimesSeries: Series[] = data
-    ? [{
-        id: 'waitingTimes',
-        label: 'Average wait time',
-        colour: '#E63946',
-        data: data.waitingTimes.map(d => ({
-          date: yearToDate(d.year),
-          value: d.avgWeeks,
-        })),
-      }]
-    : []
-
-  // Latest values
-  const latestAdmissions = data?.hospitalAdmissions.at(-1)
-  const latestWaitTime = data?.waitingTimes.at(-1)
-
   return (
     <>
       <TopicNav topic="Eating Disorders" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Eating Disorders"
-          question="How Serious is the Eating Disorder Crisis?"
-          finding="Hospital admissions for eating disorders have doubled since 2011 and NHS waiting times for treatment — sometimes exceeding two years — regularly cause irreversible physical harm."
-          colour="#264653"
+          question="Is the Eating Disorder Crisis Worsening?"
+          finding="Referrals for eating disorders rose 84% between 2019 and 2022 — particularly among girls aged 10–19 — and only 72% of urgent cases are seen within the 1-week target."
+          colour="#E63946"
+          preposition="on"
         />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Hospital admissions for eating disorders in England doubled between 2011 and 2022, rising from around 14,000 to 28,000 a year — 89% of inpatients are female. The pandemic accelerated a trend already worsening: social isolation and the proliferation of body-image content on algorithmic platforms drove a sharp surge from 2020 onwards, and hospital admissions data captures only the most acute presentations. Eating disorders carry the highest mortality rate of any mental health condition: anorexia nervosa kills approximately 5–10% of patients per decade of illness. The NHS target requires urgent cases to be seen within one week and routine cases within four weeks; in practice, adult waiting times average 22 weeks nationally and in some areas exceed two years. Around 70% of inpatient eating disorder beds are now provided by the independent sector under NHS contract, reflecting chronic underinvestment in dedicated NHS capacity; bed costs regularly exceed £1,000 per night. The FREED pathway — same-week assessment for young adults — demonstrates that early intervention can cut untreated illness duration by more than half, but adoption across NHS trusts remains patchy.</p>
-            <p>The consequences of delay are physical as well as psychological: prolonged malnutrition causes irreversible cardiac, skeletal, and hormonal damage, meaning each month of waiting has costs that later treatment cannot fully reverse. Children and young people face the worst delays, with some deteriorating to medical emergency before reaching specialist care. The Online Safety Act 2023 introduced a duty on platforms to protect users from pro-eating-disorder content, but critics argue enforcement against platforms whose revenue depends on engagement will require binding algorithmic transparency and independent audit that the Act does not currently guarantee. The £1.4bn CAMHS investment under the NHS Long Term Plan has not kept pace with the post-pandemic surge, and specialist workforce pipelines — eating disorder psychiatrists, dietitians, clinical psychologists — take years to rebuild.</p>
-          </div>
-        </section>
 
         <SectionNav sections={[
-          { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-admissions', label: 'Hospital Admissions' },
-          { id: 'sec-waiting', label: 'Waiting Times' },
-          { id: 'sec-diagnosis', label: 'By Diagnosis' },
+          { id: 'sec-metrics', label: 'Key numbers' },
+          { id: 'sec-referrals', label: 'Referrals' },
+          { id: 'sec-waits', label: 'Waiting times' },
         ]} />
 
-        {/* Metric cards */}
-        <ScrollReveal>
-        <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-          <MetricCard
-            label="NHS eating disorder hospital admissions"
-            value={(latestAdmissions?.admissions || 28000).toLocaleString()}
-            unit="/yr"
-            direction="up"
-            polarity="up-is-bad"
-            changeText={`Doubled since 2011; 89% female`}
-            sparklineData={data ? data.hospitalAdmissions.map(d => d.admissions) : []}
-            source="NHS Digital · Hospital Episode Statistics"
-            href="#sec-admissions"/>
-          <MetricCard
-            label="Average wait for eating disorder treatment (adults)"
-            value={String(latestWaitTime?.avgWeeks || 22)}
-            unit="weeks"
-            direction="up"
-            polarity="up-is-bad"
-            changeText="Some areas 2+ years; target 4 weeks"
-            sparklineData={data ? data.waitingTimes.map(d => d.avgWeeks) : []}
-            source="NHS England · Adult Eating Disorder Services"
-            href="#sec-waiting"/>
-          <MetricCard
-            label="Eating disorder mortality rate"
-            value="Highest"
-            unit="of all MH conditions"
-            direction="up"
-            polarity="up-is-bad"
-            changeText="1 in 5 deaths directly eating-disorder related"
-            sparklineData={[1, 1.2, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9]}
-            source="RANZCP · Mortality in Eating Disorders"
-            href="#sec-diagnosis"/>
-        </div>
-        </ScrollReveal>
-
-        {/* Hospital admissions chart */}
-        <ScrollReveal>
-        <section id="sec-admissions" className="mb-12">
-          <LineChart
-            title="Eating disorder hospital admissions, England"
-            subtitle="Annual hospital admissions with a primary diagnosis of eating disorder. NHS Digital."
-            series={admissionsSeries}
-            annotations={admissionsAnnotations}
-            yLabel="Admissions per year"
-          />
-        </section>
-        </ScrollReveal>
-
-        {/* Waiting times chart */}
-        <ScrollReveal>
-        <section id="sec-waiting" className="mb-12">
-          <LineChart
-            title="Average waiting time for eating disorder treatment (adults), England"
-            subtitle="Weeks. NHS England. The four-week target is rarely met outside of urgent cases."
-            series={waitingTimesSeries}
-            targetLine={{ value: 4, label: 'NHS urgent target: 4 weeks' }}
-            yLabel="Weeks"
-          />
-        </section>
-        </ScrollReveal>
-
-        {/* Diagnosis breakdown */}
-        <ScrollReveal>
-        <section id="sec-diagnosis" className="mb-12">
-          <h3 className="text-xl font-bold text-wiah-black mb-6">Hospital admissions by eating disorder diagnosis</h3>
-          <div className="space-y-3">
-            {data?.byDiagnosis.map(item => (
-              <div key={item.diagnosis} className="flex items-center gap-3">
-                <div className="flex-shrink-0 w-40 text-sm text-wiah-black">
-                  {item.diagnosis}
-                </div>
-                <div className="flex-grow flex items-center gap-2">
-                  <div
-                    className="h-6 bg-[#264653] rounded"
-                    style={{ width: `${(item.pctAdmissions / 50) * 100}%` }}
-                  />
-                </div>
-                <div className="flex-shrink-0 w-12 text-right font-mono text-sm text-wiah-black">
-                  {item.pctAdmissions}%
-                </div>
-              </div>
-            ))}
+        <section id="sec-metrics" className="mt-8 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <MetricCard
+              label="CAMHS eating disorder referrals (per year)"
+              value="33,200"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="2023/24 · Up 84% from 2019 · Girls aged 10–19: largest group · Anorexia nervosa highest risk"
+              sparklineData={[17600, 19400, 19100, 35200, 36100, 34800, 33200]}
+              source="NHS England — CYPED waiting times, 2024"
+            />
+            <MetricCard
+              label="Urgent cases seen within 1 week (%)"
+              value="72%"
+              direction="down"
+              polarity="down-is-bad"
+              changeText="2023/24 · NHS target: 95% · 28% of urgent cases waiting longer than a week · Inpatient pressure rising"
+              sparklineData={[80, 79, 72, 73, 74, 74, 75]}
+              source="NHS England — CYPED waiting times, 2024"
+            />
+            <MetricCard
+              label="Inpatient admissions (per year)"
+              value="4,200"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="2023/24 · Up 35% from 2019 · Average stay: 58 days · Many placed out of area · Average age: 15"
+              sparklineData={[3100, 3300, 3600, 4600, 4500, 4300, 4200]}
+              source="NHS Digital — Hospital Episode Statistics, 2024"
+            />
           </div>
         </section>
+
+        <ScrollReveal>
+          <section id="sec-referrals" className="mb-12">
+            <LineChart
+              title="Eating disorder referrals to CAMHS, 2016–2024"
+              subtitle="Annual referrals for eating disorders to Child and Adolescent Mental Health Services (CAMHS), England. Pandemic dramatically accelerated a pre-existing upward trend."
+              series={referralsSeries}
+              annotations={referralsAnnotations}
+              yLabel="Referrals per year"
+              source={{
+                name: 'NHS England',
+                dataset: 'Children and Young People Eating Disorders (CYPED) waiting times',
+                url: 'https://www.england.nhs.uk/mental-health/cypmh/eating-disorders/cyped-statistics/',
+                frequency: 'quarterly',
+                date: '2024',
+              }}
+            />
+          </section>
         </ScrollReveal>
 
-        {/* Positive callout */}
         <ScrollReveal>
-        <PositiveCallout
-          title="Early intervention dramatically improves outcomes"
-          value="75–80"
-          unit="%"
-          description="Research consistently shows that early intervention for eating disorders — within the first three years of illness onset — achieves full recovery in 75–80% of cases. Long delays mean the illness becomes entrenched. The First Episode Rapid Early Intervention for Eating Disorders (FREED) pathway, adopted by some NHS trusts, has reduced waits to under 4 weeks with significantly better outcomes."
-          source="Eating Disorders Association · FREED Programme Evaluation"
-        />
+          <section id="sec-waits" className="mb-12">
+            <LineChart
+              title="Eating disorder waiting times — urgent and routine cases, 2018–2024"
+              subtitle="Percentage of urgent cases seen within 1 week and routine cases seen within 4 weeks, England. Both targets have been persistently missed since the pandemic surge."
+              series={waitTimeSeries}
+              annotations={waitAnnotations}
+              targetLine={{ value: 95, label: 'NHS target (urgent)' }}
+              yLabel="% seen within target"
+              source={{
+                name: 'NHS England',
+                dataset: 'CYPED waiting times statistics',
+                url: 'https://www.england.nhs.uk/mental-health/cypmh/eating-disorders/cyped-statistics/',
+                frequency: 'quarterly',
+                date: '2024',
+              }}
+            />
+          </section>
         </ScrollReveal>
-              <RelatedTopics />
+
+        <ScrollReveal>
+          <section className="max-w-2xl mb-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">The data on eating disorders</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>Referrals for eating disorders to child and adolescent mental health services (CAMHS) rose 84% between 2019 and 2022, from 19,100 to 35,200 per year. Girls aged 10–19 account for the largest proportion of referrals, with anorexia nervosa carrying the highest mortality risk of any psychiatric condition — an estimated 5–10% lifetime mortality rate. The pandemic dramatically accelerated a pre-existing upward trend: school closures, social isolation, and increased social media use during lockdowns are all associated with the surge in cases.</p>
+              <p>NHS England's standard requires urgent eating disorder cases to be seen within one week and routine cases within four weeks. In 2023/24, only 72% of urgent cases met the one-week standard, against a target of 95%. Inpatient admissions have risen 35% since 2019, with many young people placed in units far from home — a consequence of a specialist bed shortage that has persisted despite successive government commitments to increase capacity.</p>
+              <p>Eating disorders have the highest mortality rate of any mental health condition. Early intervention is strongly evidence-based: Family-Based Treatment (FBT) for adolescents has a good evidence base for full recovery if delivered promptly. The failure to meet waiting time targets means many young people deteriorate while waiting, increasing the likelihood of inpatient admission and longer recovery times.</p>
+            </div>
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <PositiveCallout
+            title="What the evidence says works"
+            value="95%"
+            unit="recovery rate with early Family-Based Treatment — if seen quickly enough"
+            description="Family-Based Treatment (FBT) for adolescent anorexia nervosa has strong evidence behind it: studies show up to 50% full recovery and 90% weight restoration when delivered within the first year of illness. The NHS's commitment to treating urgent cases within one week reflects this evidence. The problem is delivery capacity — not knowledge of what works. Increasing CAMHS eating disorder team funding and reducing waiting times to below four weeks for all cases would save lives and reduce costly inpatient admissions."
+            source="Source: NHS England — CYPED waiting times 2023/24; BEAT Eating Disorders — research summary."
+          />
+        </ScrollReveal>
+
+        <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.england.nhs.uk/mental-health/cypmh/eating-disorders/cyped-statistics/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NHS England — CYPED waiting times statistics</a> — referrals and waiting time data. Updated quarterly.</p>
+            <p><a href="https://digital.nhs.uk/data-and-information/publications/statistical/hospital-admitted-patient-care-activity" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NHS Digital — Hospital Episode Statistics</a> — inpatient admissions data. Updated annually.</p>
+            <p>All figures are for England. CAMHS eating disorder referrals data covers children and young people (CYP) services only; adult eating disorder referrals are not included.</p>
+          </div>
+        </section>
+
+        <RelatedTopics />
       </main>
     </>
-  )
+  );
 }

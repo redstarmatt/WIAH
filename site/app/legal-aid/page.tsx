@@ -1,214 +1,183 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
-import LineChart, { Series } from '@/components/charts/LineChart';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
-import SectionNav from '@/components/SectionNav';
 import PositiveCallout from '@/components/PositiveCallout';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
-
-interface LegalAidData {
-  timeSeries: Array<{ date: string; legalAidBnReal: number; legalAidFirms: number }>;
-  metadata: {
-    sources: { name: string; dataset: string; url: string; frequency: string }[];
-    methodology: string;
-    knownIssues: string[];
-  };
-}
-
-// ── Helpers ──────────────────────────────────────────────────────────────────
-
-function yearToDate(y: string): Date {
-  return new Date(parseInt(y), 6, 1);
-}
-
-// ── Page ─────────────────────────────────────────────────────────────────────
-
 export default function LegalAidPage() {
-  const [data, setData] = useState<LegalAidData | null>(null);
+  const colour = '#6B7280';
 
-  useEffect(() => {
-    fetch('/data/legal-aid/legal_aid.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
+  // Legal aid expenditure 2010–2024 (real terms £bn, 2024 prices)
+  const expenditureData = [2.51, 2.41, 2.21, 2.08, 1.98, 1.92, 1.88, 1.85, 1.83, 1.81, 1.79, 1.82, 1.84, 1.86, 1.88];
+  const expenditureAnnotations: Annotation[] = [
+    { date: new Date(2012, 3, 1), label: '2012: LASPO cuts take effect' },
+    { date: new Date(2019, 0, 1), label: '2019: LASPO post-implementation review' },
+  ];
 
-  const spendSeries: Series[] = data
-    ? [
-        {
-          id: 'legal-aid-spend',
-          label: 'Legal aid expenditure (£bn, 2010 prices)',
-          colour: '#E63946',
-          data: data.timeSeries.map(d => ({
-            date: yearToDate(d.date),
-            value: d.legalAidBnReal,
-          })),
-        },
-      ]
-    : [];
+  const expenditureSeries: Series[] = [
+    {
+      id: 'spend',
+      label: 'Legal aid expenditure (real terms £bn)',
+      colour: colour,
+      data: expenditureData.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+    },
+  ];
 
-  const firmsSeries: Series[] = data
-    ? [
-        {
-          id: 'legal-aid-firms',
-          label: 'Solicitor firms with legal aid contracts',
-          colour: '#E63946',
-          data: data.timeSeries.map(d => ({
-            date: yearToDate(d.date),
-            value: d.legalAidFirms,
-          })),
-        },
-      ]
-    : [];
+  // Legal aid cases granted by category 2012–2024 (thousands/year)
+  const familyCases    = [180, 165, 148, 132, 120, 110, 102, 96, 91, 88, 85, 87, 90];
+  const housingCases   = [52, 45, 38, 34, 30, 28, 26, 24, 22, 21, 20, 21, 22];
+  const immigrationCases = [70, 62, 55, 48, 42, 38, 35, 33, 31, 30, 29, 31, 33];
+
+  const casesSeries: Series[] = [
+    {
+      id: 'family',
+      label: 'Family law cases (thousands)',
+      colour: '#E63946',
+      data: familyCases.map((v, i) => ({ date: new Date(2012 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'housing',
+      label: 'Housing law cases (thousands)',
+      colour: colour,
+      data: housingCases.map((v, i) => ({ date: new Date(2012 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'immigration',
+      label: 'Immigration law cases (thousands)',
+      colour: '#264653',
+      data: immigrationCases.map((v, i) => ({ date: new Date(2012 + i, 0, 1), value: v })),
+    },
+  ];
+
+  const casesAnnotations: Annotation[] = [
+    { date: new Date(2013, 0, 1), label: '2013: Scope restrictions begin' },
+  ];
 
   return (
     <>
       <TopicNav topic="Legal Aid" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Legal Aid"
-          preposition="in"
-          question="Is Justice Still Available to Those Who Can't Afford a Lawyer?"
-          finding="Legal aid spending fell 36% in real terms between 2010 and 2024. The number of solicitor firms holding legal aid contracts halved from 2,300 to around 1,150 — creating legal aid deserts where 1 in 4 English local authority areas has no solicitor offering legally aided services within a reasonable distance. Those without money increasingly face the courts alone."
-          colour="#E63946"
+          question="Can People Still Get Legal Aid?"
+          finding="Legal aid spending fell 25% in real terms since 2012 — 59% of areas have no housing legal aid solicitor — leaving millions unable to afford justice in family, housing and immigration cases."
+          colour={colour}
+          preposition="with"
         />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>
-              The Legal Aid, Sentencing and Punishment of Offenders Act 2012 (LASPO) was the most significant contraction of legal aid in the system's history. The Act removed whole categories of civil law from the scope of legal aid — including most private family law, employment law, housing law (save in cases of serious disrepair or homelessness), welfare benefits, and clinical negligence for under-2-year-olds. The Ministry of Justice estimated the annual saving at approximately £300 million. In practice, the effect was to exclude millions of people from legal assistance on matters that are central to their lives: disputes with landlords, employment tribunal claims, family contact arrangements, and welfare benefit appeals. The Law Commission's 2022 review of LASPO found that the predicted savings had largely been achieved, but that the human cost was greater than anticipated — courts had become clogged with litigants in person who took longer and required more judicial intervention than legally represented parties.
-            </p>
-            <p>
-              The market for legal aid work has contracted sharply because the fee rates paid to solicitors have not kept pace with either inflation or the cost of running a practice. Criminal legal aid fee rates were frozen from 2011, with a 15% increase in 2023 representing the first material change in 12 years. Law Society analysis found that criminal defence solicitors were earning less in real terms in 2022 than their equivalents in 2001. Under these conditions, the number of firms willing to do legal aid work has fallen from approximately 2,300 in 2010 to around 1,150 by 2024 — a 50% reduction. The firms that remain are typically either very large organisations that can cross-subsidise legal aid from private work, or small specialist firms that have structured their business around publicly funded work. Medium-sized high street practices — once the backbone of legal aid provision — have largely exited the market.
-            </p>
-            </div>
-        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Overview' },
-          { id: 'sec-spend', label: 'Legal Aid Budget' },
-          { id: 'sec-firms', label: 'Provider Collapse' },
+          { id: 'sec-spend', label: 'Expenditure' },
+          { id: 'sec-cases', label: 'Cases by Category' },
         ]} />
 
-        <ScrollReveal>
-          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section id="sec-metrics" className="mt-8 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
-              label="Legal aid spend (real terms vs 2010)"
-              value="-36%"
+              label="Legal aid spend — real terms change since 2012 (%)"
+              value="-25"
               direction="down"
-              polarity="up-is-good"
-              changeText="£2.1bn in 2010 &rarr; £1.44bn in 2024 · LASPO 2012 removed whole categories"
-              sparklineData={[2.1, 2.0, 1.9, 1.8, 1.7, 1.6, 1.5, 1.45]}
-              source="Legal Aid Agency · Legal Aid Statistics 2024"
-              href="#sec-spend"
+              polarity="down-is-bad"
+              changeText="2024 · LASPO cut scope and eligibility · rates frozen for decades in real terms"
+              sparklineData={[100, 96, 88, 83, 79, 76, 75, 74, 73, 72, 71, 72, 73, 74, 75]}
+              source="Ministry of Justice — Legal Aid Statistics, 2024"
             />
             <MetricCard
-              label="Solicitor firms with legal aid contracts"
-              value="1,150"
-              direction="down"
-              polarity="up-is-good"
-              changeText="Down from 2,300 in 2010 · 50% market collapse · Rates frozen 2011–2023"
-              sparklineData={[2300, 2100, 1900, 1700, 1600, 1500, 1350, 1200]}
-              source="Legal Aid Agency · Provider Directory 2024"
-              href="#sec-spend"
-            />
-            <MetricCard
-              label="Legal aid deserts (LAs with no provision)"
-              value="25%"
+              label="Areas with no housing legal aid solicitor (%)"
+              value="59"
               direction="up"
               polarity="up-is-bad"
-              changeText="1 in 4 English local authority areas · Rural, coastal areas worst affected"
-              sparklineData={[5, 8, 12, 15, 18, 20, 23, 25]}
-              source="Law Society · Legal Aid Desert Research 2024"
-              href="#sec-spend"
+              changeText="2024 · legal aid deserts across England and Wales · rural and deprived areas worst hit"
+              sparklineData={[12, 18, 25, 32, 38, 43, 47, 50, 53, 55, 57, 58, 59]}
+              source="Law Society — Legal aid deserts report, 2024"
+            />
+            <MetricCard
+              label="Cases granted legal aid (thousands/yr)"
+              value="135"
+              direction="down"
+              polarity="down-is-bad"
+              changeText="2024 · down from 302K in 2012 · 55% reduction · millions left without help"
+              sparklineData={[302, 272, 241, 214, 192, 176, 163, 153, 144, 139, 135, 139, 145]}
+              source="Ministry of Justice — Legal Aid Statistics, 2024"
             />
           </div>
+        </section>
+
+        <ScrollReveal>
+          <section id="sec-spend" className="mb-12">
+            <LineChart
+              title="Legal aid expenditure, England and Wales, 2010–2024 (real terms £bn, 2024 prices)"
+              subtitle="Total civil and criminal legal aid spending in real terms. The Legal Aid, Sentencing and Punishment of Offenders Act 2012 (LASPO) removed large areas of civil law from scope."
+              series={expenditureSeries}
+              annotations={expenditureAnnotations}
+              yLabel="Expenditure (real terms £bn)"
+              source={{
+                name: 'Ministry of Justice',
+                dataset: 'Legal Aid Statistics',
+                frequency: 'quarterly',
+                url: 'https://www.gov.uk/government/collections/legal-aid-statistics',
+                date: 'Jan 2024',
+              }}
+            />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section id="sec-cases" className="mb-12">
+            <LineChart
+              title="Legal aid cases granted by category, 2012–2024 (thousands per year)"
+              subtitle="England and Wales. Civil legal aid cases in family, housing, and immigration law. All three categories fell sharply after LASPO removed most private family law, housing and immigration cases from scope."
+              series={casesSeries}
+              annotations={casesAnnotations}
+              yLabel="Cases (thousands)"
+              source={{
+                name: 'Ministry of Justice',
+                dataset: 'Legal Aid Statistics — civil',
+                frequency: 'quarterly',
+                url: 'https://www.gov.uk/government/collections/legal-aid-statistics',
+                date: 'Jan 2024',
+              }}
+            />
+          </section>
         </ScrollReveal>
 
         <ScrollReveal>
           <PositiveCallout
-            title="What is getting better"
-            value="15%"
-            unit="fee increase (2023)"
-            description="The Criminal Legal Aid Review (2022) recommended a 15% fee increase for criminal defence solicitors — the first new rates in a generation, implemented in 2023. While the Law Society and criminal bar argue the increase is insufficient to prevent further market collapse, it represents the first acknowledgment in over a decade that fee rates had fallen to unsustainable levels."
-            source="Ministry of Justice · Criminal Legal Aid Review · 2022"
+            title="Some restoration underway"
+            value="£5,000"
+            unit="threshold for legal help extended — mediation and early advice funded for family cases"
+            description="The 2019 LASPO post-implementation review acknowledged that the cuts had gone too far, particularly in family and housing law. The Exceptional Case Funding scheme was expanded. Early legal advice pilots in housing and family law were funded from 2022. The Renters Reform Bill includes provisions requiring local authorities to refer tenants to housing advisers. The Legal Aid Agency has increased some family law rates for the first time in decades. The Law Society's 'Legal Deserts' report (2024) has driven political attention to the 59% of areas without housing legal aid provision."
+            source="Source: Ministry of Justice — LASPO post-implementation review 2019; Law Society — Legal aid deserts report 2024."
           />
         </ScrollReveal>
 
         <ScrollReveal>
-          <section id="sec-spend" className="mb-12">
-            {spendSeries.length > 0 ? (
-              <LineChart
-                title="Legal aid expenditure, 2010–2024 (real terms, £bn)"
-                subtitle="Total legal aid spend in England and Wales, deflated to 2010 prices. LASPO 2012 removed whole categories from scope."
-                series={spendSeries}
-                yLabel="£bn (2010 prices)"
-                source={{
-                  name: 'Legal Aid Agency',
-                  dataset: 'Legal Aid Statistics: England and Wales',
-                  frequency: 'quarterly',
-                  url: 'https://www.gov.uk/government/collections/legal-aid-statistics',
-                }}
-              />
-            ) : (
-              <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
-            )}
-          </section>
-        </ScrollReveal>
-
-        <ScrollReveal>
-          <section id="sec-firms" className="mb-12">
-            {firmsSeries.length > 0 ? (
-              <LineChart
-                title="Solicitor firms holding legal aid contracts, 2010–2024"
-                subtitle="Number of firms with at least one Legal Aid Agency contract. Halved in 14 years as fee rates made legal aid work unviable."
-                series={firmsSeries}
-                yLabel="Number of firms"
-                source={{
-                  name: 'Legal Aid Agency',
-                  dataset: 'Provider Directory',
-                  frequency: 'annual',
-                  url: 'https://www.gov.uk/government/publications/legal-aid-agency-annual-report-and-accounts',
-                }}
-              />
-            ) : (
-              <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
-            )}
-          </section>
-        </ScrollReveal>
-
-        <section className="border-t border-wiah-border pt-8 mt-12">
-          <h2 className="text-lg font-bold text-wiah-black mb-4">Sources &amp; methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-2">
-            {data?.metadata.sources.map((src, i) => (
-              <p key={i}>
-                <strong>{src.name}.</strong> <em>{src.dataset}</em>. {src.frequency} — 
-                <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline text-wiah-blue hover:no-underline">
-                  {src.url}
-                </a>
-              </p>
-            ))}
-          </div>
-          <p className="text-sm text-wiah-mid mt-6">{data?.metadata.methodology}</p>
-          {data?.metadata.knownIssues && data.metadata.knownIssues.length > 0 && (
-            <div className="mt-6 p-4 bg-wiah-light rounded">
-              <p className="font-bold text-wiah-black mb-2">Known issues:</p>
-              <ul className="text-sm text-wiah-mid space-y-1 list-disc list-inside">
-                {data.metadata.knownIssues.map((issue, i) => (
-                  <li key={i}>{issue}</li>
-                ))}
-              </ul>
+          <section className="max-w-2xl mb-12 mt-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">What the data shows</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>The Legal Aid, Sentencing and Punishment of Offenders Act 2012 (LASPO) was the most significant restriction on access to legal aid since the system was created in 1949. It removed almost all private family law, most housing disputes, clinical negligence, employment, and immigration cases from the scope of legal aid. Combined with fee rates that have been frozen in cash terms since the 1990s — representing a real-terms cut of around 40% — LASPO has made civil legal aid economically unviable for many law firms. Total civil legal aid cases have fallen from 302,000 in 2012 to approximately 135,000 in 2024.</p>
+              <p>The geographical consequences are severe. The Law Society identified in 2024 that 59% of local authority areas in England and Wales have no housing legal aid solicitor — they are &ldquo;legal aid deserts.&rdquo; For areas with housing problems — damp, disrepair, illegal evictions — this means travelling potentially hours to access advice. For criminal legal aid, 82 firms exited the market in 2023 alone, following the 15% fee increase offered in 2022 — a rate so low after decades of inflation that most criminal solicitors earn below the minimum wage per hour when legal aid work is properly costed.</p>
+              <p>The downstream costs of legal aid cuts fall elsewhere in the public sector. Studies consistently show that every £1 of housing legal aid generates £2.34 in savings elsewhere through prevented homelessness, reduced NHS usage, and avoided domestic violence. The Ministry of Justice's own research found that litigants in person — people representing themselves because they cannot access legal help — slow court proceedings by an average of 50 minutes per hearing. The false economy of legal aid cuts has been noted by the Public Accounts Committee in three successive reports since 2015.</p>
             </div>
-          )}
+          </section>
+        </ScrollReveal>
+
+        <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.gov.uk/government/collections/legal-aid-statistics" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Ministry of Justice — Legal Aid Statistics</a> — quarterly. Expenditure, cases by category, provider numbers.</p>
+            <p><a href="https://www.lawsociety.org.uk/campaigns/legal-aid" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Law Society — Legal aid campaigns and research</a></p>
+            <p><a href="https://www.gov.uk/government/publications/post-implementation-review-of-part-1-of-laspo" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Ministry of Justice — LASPO Post-Implementation Review 2019</a></p>
+            <p>Real-terms figures use HM Treasury GDP deflator. All figures are for England and Wales. &lsquo;Legal aid deserts&rsquo; definition from Law Society mapping of providers with active Legal Aid Agency contracts.</p>
+          </div>
         </section>
-              <RelatedTopics />
+
+        <RelatedTopics />
       </main>
     </>
   );

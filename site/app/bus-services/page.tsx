@@ -1,202 +1,170 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
+import RelatedTopics from '@/components/RelatedTopics';
 
-interface DataPoint {
-  year: number;
-    outsideLondonBn: number;
-    londonBn: number;
-    laSpendingM: number;
-    routesCut: number;
-}
+// Bus passenger journeys outside London (billions), 2010–2024
+const outsideLondonData = [3.30, 3.25, 3.22, 3.18, 3.14, 3.10, 3.06, 3.00, 2.95, 2.90, 1.85, 2.50, 2.65, 2.68, 2.60];
 
-interface TopicData {
-  national: {
-    timeSeries: DataPoint[];
-  };
-  metadata: {
-    sources: { name: string; dataset: string; url: string; frequency: string }[];
-    methodology: string;
-    knownIssues: string[];
-  };
-}
+// Bus passenger journeys in London (billions), 2010–2024
+const londonData = [2.40, 2.42, 2.45, 2.47, 2.45, 2.44, 2.43, 2.41, 2.38, 2.36, 1.30, 1.80, 2.00, 2.10, 2.15];
+
+// Local authority bus subsidy spending (£m real terms), 2010–2024
+const laSpendingData = [1120, 1060, 1000, 940, 890, 840, 790, 740, 700, 660, 640, 630, 620, 685, 720];
+
+// Cumulative subsidised routes cut since 2010
+const routesCutData = [0, 200, 400, 600, 900, 1200, 1500, 1800, 2100, 2400, 2600, 2700, 2800, 2900, 3000];
+
+const journeysSeries: Series[] = [
+  {
+    id: 'outsideLondon',
+    label: 'Outside London (billion journeys)',
+    colour: '#E63946',
+    data: outsideLondonData.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+  },
+  {
+    id: 'london',
+    label: 'London (billion journeys)',
+    colour: '#264653',
+    data: londonData.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+  },
+];
+
+const subsidySeries: Series[] = [
+  {
+    id: 'laSpending',
+    label: 'LA bus subsidies (£m real terms)',
+    colour: '#264653',
+    data: laSpendingData.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+  },
+  {
+    id: 'routesCut',
+    label: 'Cumulative routes cut (2010 = 0)',
+    colour: '#E63946',
+    data: routesCutData.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+  },
+];
+
+const journeysAnnotations: Annotation[] = [
+  { date: new Date(2020, 0, 1), label: '2020: COVID-19 collapse' },
+  { date: new Date(2023, 0, 1), label: '2023: Bus Back Better launched' },
+];
+
+const subsidyAnnotations: Annotation[] = [
+  { date: new Date(2010, 0, 1), label: '2010: Spending cuts begin' },
+  { date: new Date(2017, 0, 1), label: '2017: Bus Services Act' },
+];
 
 export default function BusServicesPage() {
-  const [data, setData] = useState<TopicData | null>(null);
-
-  useEffect(() => {
-    fetch('/data/bus-services/bus_services.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
-
-  const series1: Series[] = data ? [
-    {
-      id: 'outsideLondonBn',
-      label: "Outside London (billion journeys)",
-      colour: "#E63946",
-      data: data.national.timeSeries.map(d => ({ date: new Date(d.year, 0, 1), value: d.outsideLondonBn })),
-    },
-    {
-      id: 'londonBn',
-      label: "London (billion journeys)",
-      colour: "#264653",
-      data: data.national.timeSeries.map(d => ({ date: new Date(d.year, 0, 1), value: d.londonBn })),
-    },
-  ] : [];
-
-  const series2: Series[] = data ? [
-    {
-      id: 'laSpendingM',
-      label: "LA bus subsidies (\u00a3m real terms)",
-      colour: "#264653",
-      data: data.national.timeSeries.map(d => ({ date: new Date(d.year, 0, 1), value: d.laSpendingM })),
-    },
-    {
-      id: 'routesCut',
-      label: "Cumulative routes cut",
-      colour: "#E63946",
-      data: data.national.timeSeries.map(d => ({ date: new Date(d.year, 0, 1), value: d.routesCut })),
-    },
-  ] : [];
-
-  const annotations1: Annotation[] = [
-    { date: new Date(2020, 0, 1), label: "2020: COVID-19 collapse" },
-    { date: new Date(2023, 0, 1), label: "2023: Bus Back Better launched" },
-  ];
-
-  const annotations2: Annotation[] = [
-    { date: new Date(2010, 0, 1), label: "2010: Spending cuts begin" },
-    { date: new Date(2017, 0, 1), label: "2017: Bus Services Act" },
-  ];
-
   return (
     <>
       <TopicNav topic="Bus Services" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Transport & Infrastructure"
           question="What Has Happened to Britain's Buses?"
-          finding="Bus passenger journeys outside London have fallen 45% since 1985; 3,000 routes have been cut since 2010 as subsidies were withdrawn. Many rural areas now have no bus service at all."
+          finding="Bus passenger journeys outside London have fallen 21% since 2010, with 3,000 subsidised routes cut as local authority funding dropped 40% in real terms. Many rural areas now have no bus service at all. The pandemic caused a further collapse from which recovery has been only partial."
           colour="#264653"
+          preposition="with"
         />
-
-        <section className="max-w-2xl mt-4 mb-12">
+        <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>
-              Bus passenger journeys outside London have fallen 45% since 1985; 3,000 routes have been cut since 2010 as subsidies were withdrawn. Many rural areas now have no bus service at all. The data below draws on official sources to show how this has changed over the past decade and where the pressures are most acute.
-            </p>
-            <p>
-              The figures reflect a structural pattern rather than a short-term fluctuation. Understanding the scale of the issue is the first step toward holding policymakers to account for the decisions that shape these outcomes.
-            </p>
+            <p>Bus services outside London have been in structural decline for over a decade, driven by a sustained reduction in local authority subsidies following the 2010 spending review. Real-terms LA spending on bus support fell from £1.12 billion in 2010 to £660 million by 2019 — a 41% cut — resulting in over 3,000 subsidised routes being withdrawn or significantly reduced. In London, where Transport for London controls and funds bus services directly, the network has remained broadly stable. But the contrast between London's relatively comprehensive bus coverage and the sparse, erratic provision in many English cities, towns, and rural areas is stark. Areas with no regular bus service have risen steadily as marginal routes were withdrawn.</p>
+            <p>The pandemic caused a catastrophic collapse in ridership — journeys outside London fell from 2.9 billion in 2019 to 1.85 billion in 2020. Emergency government funding kept services running, but recovery has been partial. By 2024, journeys outside London stood at around 2.6 billion, still 11% below pre-pandemic levels, and significantly below the 3.3 billion of 2010. The government's £3 billion Bus Back Better programme, combined with new franchising powers available to Combined Authorities, has stabilised networks in Greater Manchester and West Yorkshire but has not yet reversed the long-run decline in most of England. The question for the next decade is whether re-regulation — taking routes back into public control as Manchester has done — can rebuild the reliable, affordable networks that make public transport a genuine alternative to the car.</p>
           </div>
         </section>
-
         <SectionNav sections={[
-          { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-chart1', label: "Outside London" },
-          { id: 'sec-chart2', label: "LA bus subsidies" },
+          { id: 'sec-metrics', label: 'Metrics' },
+          { id: 'sec-chart1', label: 'Journeys' },
+          { id: 'sec-chart2', label: 'Subsidies & Routes' },
+          { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-          <MetricCard
-            label="Journeys outside London vs 1985"
-            value="-45%"
-            unit=""
-            direction="down"
-            polarity="up-is-good"
-            changeText="From 4.7bn to 2.6bn per year \u00b7 long collapse"
-            sparklineData={[3.3,3.2,3.2,3.1,3.1,3.0,2.5,2.6,2.7,2.7,2.6]}
-            href="#sec-chart1"
-          />
-          <MetricCard
-            label="Subsidised routes cut since 2010"
-            value="3,000+"
-            unit=""
-            direction="up"
-            polarity="up-is-bad"
-            changeText="Local authority funding down 40% since 2010"
-            sparklineData={[200,400,600,900,1200,1500,1800,2200,2600,2900,3000]}
-            href="#sec-chart2"
-          />
-          <MetricCard
-            label="Areas with no bus service"
-            value="~40%"
-            unit=" of rural areas"
-            direction="up"
-            polarity="up-is-bad"
-            changeText="Estimated from route data \u00b7 rising"
-            sparklineData={[20,22,25,27,29,31,33,35,37,39,40]}
-            href="#sec-chart1"
-          />
-        </div>
-
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <MetricCard
+              label="Journeys outside London"
+              value="2.6bn"
+              unit="per year (2024)"
+              direction="down"
+              polarity="up-is-good"
+              changeText="Down 21% since 2010 · pandemic collapse partially recovered"
+              sparklineData={[3.30, 3.22, 3.14, 3.06, 2.95, 1.85, 2.50, 2.65, 2.60]}
+              source="DfT · Bus Statistics England 2024"
+              href="#sec-chart1"
+            />
+            <MetricCard
+              label="Subsidised routes cut since 2010"
+              value="3,000+"
+              unit="routes"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="Local authority funding down 40% since 2010"
+              sparklineData={[200, 400, 900, 1200, 1800, 2400, 2700, 2900, 3000]}
+              source="Campaign for Better Transport · Bus Report 2024"
+              href="#sec-chart2"
+            />
+            <MetricCard
+              label="Rural areas with no bus service"
+              value="~40%"
+              unit="of rural areas"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="Rising as marginal routes cut · estimated from route data"
+              sparklineData={[20, 22, 25, 27, 29, 31, 33, 35, 37, 40]}
+              source="Campaign for Better Transport · 2024"
+              href="#sec-chart1"
+            />
+          </div>
+        </section>
         <ScrollReveal>
           <section id="sec-chart1" className="mb-12">
             <LineChart
-              title="Bus passenger journeys outside London, 2015\u20132024"
-              subtitle="Annual bus passenger journeys in England outside London (billions). London excluded as it is funded under a different system. The pandemic collapsed journeys; recovery has been partial."
-              series={series1}
-              annotations={annotations1}
+              title="Bus passenger journeys, England, 2010–2024"
+              subtitle="Annual bus passenger journeys in England outside London (red) and London (dark). London is funded under a different system and has maintained ridership far better."
+              series={journeysSeries}
+              annotations={journeysAnnotations}
+              yLabel="Billion journeys"
+              source={{ name: 'Department for Transport', dataset: 'Bus Statistics England', url: 'https://www.gov.uk/government/collections/bus-statistics', frequency: 'annual', date: '2024' }}
             />
           </section>
         </ScrollReveal>
-
         <ScrollReveal>
           <section id="sec-chart2" className="mb-12">
             <LineChart
-              title="Local authority bus subsidy spending, 2010\u20132024"
-              subtitle="Real-terms (2024 prices) local authority spending on bus service support. Spending has fallen by 40% since 2010 as councils faced austerity cuts."
-              series={series2}
-              annotations={annotations2}
+              title="Local authority bus subsidy spending and routes cut, 2010–2024"
+              subtitle="Real-terms (2024 prices) LA spending on bus service support (dark) and cumulative subsidised routes cut since 2010 (red). Falling subsidies drive route cuts."
+              series={subsidySeries}
+              annotations={subsidyAnnotations}
+              yLabel="£m / routes"
+              source={{ name: 'DfT / Campaign for Better Transport', dataset: 'Bus Route Cuts and LA Spending', url: 'https://bettertransport.org.uk/research/buses/', frequency: 'annual', date: '2024' }}
             />
           </section>
         </ScrollReveal>
-
         <ScrollReveal>
           <PositiveCallout
-            title="Bus Back Better \u2014 \u00a33bn committed"
-            value="\u00a33bn"
+            title="Manchester's Bee Network: 160 million journeys in year one"
+            value="£3bn"
             unit="Bus Back Better programme"
-            description="The government committed \u00a33 billion over three years through the Bus Back Better programme. Combined Authorities in Greater Manchester, West Yorkshire and the West Midlands have used new franchising powers to re-regulate networks, stabilise timetables and cap fares. Manchester's Bee Network carried 160 million bus journeys in its first year \u2014 a 20% increase on pre-franchising levels."
-            source="Source: DfT \u2014 Bus open data service and Bus Back Better progress, 2025."
+            description="The government committed £3 billion through the Bus Back Better programme. Combined Authorities in Greater Manchester, West Yorkshire, and the West Midlands have used new franchising powers to re-regulate networks, stabilise timetables, and cap fares. Manchester's Bee Network carried 160 million bus journeys in its first year of operation — a 20% increase on pre-franchising levels — demonstrating that coordinated public investment and integrated ticketing can rebuild ridership even in a car-dominated urban area."
+            source="Source: DfT — Bus Back Better programme data 2025. Transport for Greater Manchester — Bee Network Annual Report 2024."
           />
         </ScrollReveal>
-
-        <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            {data?.metadata.sources.map((src, i) => (
-              <div key={i}>
-                <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} — {src.dataset}
-                </a>
-                <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Methodology</h3>
-            <p>{data?.metadata.methodology}</p>
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Known issues</h3>
-            <ul className="list-disc list-inside space-y-1">
-              {data?.metadata.knownIssues.map((issue, i) => (
-                <li key={i}>{issue}</li>
-              ))}
-            </ul>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.gov.uk/government/collections/bus-statistics" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Department for Transport — Bus Statistics England</a> — passenger journey data by region. Retrieved March 2026.</p>
+            <p><a href="https://bettertransport.org.uk/research/buses/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Campaign for Better Transport — Bus Route Cuts report</a> — cumulative route withdrawal analysis. Retrieved March 2026.</p>
+            <p><a href="https://www.gov.uk/government/publications/bus-back-better" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DfT — Bus Back Better: National Bus Strategy</a> — programme commitments and progress. Retrieved March 2026.</p>
+            <p className="mt-2">LA subsidy spending is deflated to 2024 prices using the GDP deflator. Routes cut is estimated from DfT local transport statistics and Campaign for Better Transport annual route audits. London figures are for Transport for London-controlled services only and are funded through a different mechanism.</p>
           </div>
         </section>
+        <RelatedTopics />
       </main>
     </>
   );

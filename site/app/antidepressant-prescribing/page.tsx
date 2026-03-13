@@ -1,289 +1,156 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
-import LineChart, { Series } from '@/components/charts/LineChart';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
+// Antidepressant prescription items dispensed (millions), 2008–2024 — NHS BSA
+const prescriptionValues = [36, 39, 43, 46, 50, 53, 57, 61, 65, 68, 70, 73, 77, 82, 87, 88, 89];
 
-interface PrescriptionPoint {
-  year: number;
-  items: number;
-}
+// Patients receiving antidepressants (millions), 2008–2024 — NHS Digital
+const patientValues = [4.1, 4.4, 4.7, 5.0, 5.3, 5.6, 5.9, 6.2, 6.5, 6.7, 6.9, 7.1, 7.4, 7.8, 8.1, 8.2, 8.3];
 
-interface PatientPoint {
-  year: number;
-  count: number;
-}
+// NHS Talking Therapies completions (thousands) and antidepressant items (millions), 2012–2024
+const talkingTherapyValues = [280, 320, 380, 440, 510, 580, 680, 780, 880, 950, 920, 1100, 1200];
+const prescriptionsFrom2012 = [50, 53, 57, 61, 65, 68, 70, 73, 77, 82, 87, 88, 89];
 
-interface CostPoint {
-  year: number;
-  cost: number;
-}
+const series1: Series[] = [
+  {
+    id: 'prescriptions',
+    label: 'Prescription items dispensed (millions)',
+    colour: '#264653',
+    data: prescriptionValues.map((v, i) => ({ date: new Date(2008 + i, 0, 1), value: v * 1000000 })),
+  },
+];
 
-interface RegionData {
-  region: string;
-  itemsPer1000: number;
-}
+const series2: Series[] = [
+  {
+    id: 'prescriptions-2012',
+    label: 'Antidepressant items (millions)',
+    colour: '#264653',
+    data: prescriptionsFrom2012.map((v, i) => ({ date: new Date(2012 + i, 0, 1), value: v * 1000000 })),
+  },
+  {
+    id: 'talking-therapy',
+    label: 'Talking therapy completions (thousands)',
+    colour: '#2A9D8F',
+    data: talkingTherapyValues.map((v, i) => ({ date: new Date(2012 + i, 0, 1), value: v * 1000 })),
+  },
+];
 
-interface AntidepressantData {
-  prescriptions: PrescriptionPoint[];
-  patients: PatientPoint[];
-  costMillions: CostPoint[];
-  byRegion: RegionData[];
-}
-
-// ── Helpers ──────────────────────────────────────────────────────────────────
-
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1);
-}
-
-function sparkFrom(arr: number[], n = 10) {
-  return arr.slice(-n);
-}
-
-// ── Page ─────────────────────────────────────────────────────────────────────
+const annotations: Annotation[] = [
+  { date: new Date(2012, 0, 1), label: '2012: IAPT fully rolled out nationally' },
+  { date: new Date(2020, 0, 1), label: '2020: COVID-19 — prescribing accelerates' },
+  { date: new Date(2022, 0, 1), label: '2022: NICE publishes deprescribing guidance' },
+];
 
 export default function AntidepressantPrescribingPage() {
-  const [data, setData] = useState<AntidepressantData | null>(null);
-
-  useEffect(() => {
-    fetch('/data/antidepressant-prescribing/antidepressant_prescribing.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
-
-  // ── Derived series ──────────────────────────────────────────────────────
-
-  const prescriptionSeries: Series[] = data
-    ? [{
-        id: 'prescriptions',
-        label: 'Prescription items dispensed',
-        colour: '#264653',
-        data: data.prescriptions.map(d => ({
-          date: yearToDate(d.year),
-          value: d.items,
-        })),
-      }]
-    : [];
-
-  const patientSeries: Series[] = data
-    ? [{
-        id: 'patients',
-        label: 'Patients on antidepressants',
-        colour: '#264653',
-        data: data.patients.map(d => ({
-          date: yearToDate(d.year),
-          value: d.count,
-        })),
-      }]
-    : [];
-
-  const costSeries: Series[] = data
-    ? [{
-        id: 'cost',
-        label: 'Annual cost (millions)',
-        colour: '#6B7280',
-        data: data.costMillions.map(d => ({
-          date: yearToDate(d.year),
-          value: d.cost,
-        })),
-      }]
-    : [];
-
-  const latestPrescriptions = data?.prescriptions[data.prescriptions.length - 1];
-  const firstPrescriptions = data?.prescriptions[0];
-  const latestPatients = data?.patients[data.patients.length - 1];
-  const firstPatients = data?.patients[0];
-  const latestCost = data?.costMillions[data.costMillions.length - 1];
-
-  const prescriptionGrowth = latestPrescriptions && firstPrescriptions
-    ? Math.round(((latestPrescriptions.items - firstPrescriptions.items) / firstPrescriptions.items) * 100)
-    : 147;
-
-  const patientGrowth = latestPatients && firstPatients
-    ? Math.round(((latestPatients.count - firstPatients.count) / firstPatients.count) * 100)
-    : 102;
-
   return (
     <>
       <TopicNav topic="Mental Health" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Mental Health"
-          question="Are we medicating a crisis?"
-          finding="One in six adults in England is now prescribed an antidepressant. The number of prescription items has risen from 36 million in 2008 to 89 million in 2024 — a 147% increase — while access to talking therapies remains limited, particularly in deprived areas where prescribing rates are twice the national average."
+          question="Are we medicating a mental health crisis?"
+          finding="One in six adults in England is now prescribed an antidepressant. Prescription items have risen from 36 million in 2008 to 89 million in 2024 — a 147% increase with no year of decline. Access to talking therapies remains limited, particularly in deprived areas where prescribing rates are nearly twice the national average."
           colour="#264653"
+          preposition="in"
         />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+        <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>
-              Antidepressant prescribing in England has more than doubled since 2008. Around 8.3 million people — roughly one in six adults — now receive at least one antidepressant prescription per year. The total number of items dispensed reached 89 million in 2023/24, making antidepressants one of the most commonly prescribed drug classes in the country, behind only statins and blood pressure medication. This growth has been steady and unbroken: there is no single year in the past sixteen in which prescribing fell. The pandemic accelerated an existing trend rather than creating a new one, with items rising 3.8% in 2020/21 alone as GP practices shifted to remote consultations and referral pathways into talking therapies were disrupted.
-            </p>
-            <p>
-              The NICE stepped care model recommends that mild to moderate depression should first be treated with guided self-help, cognitive behavioural therapy, or structured exercise — with antidepressants reserved for moderate to severe cases or where psychological interventions have not worked. In practice, the model is inverted. NHS Talking Therapies (formerly IAPT) treated 1.2 million people in 2023/24, but average waits exceeded six weeks in many areas and completion rates remained below 50%. For a GP with a ten-minute appointment slot and a distressed patient, a prescription is often the only intervention immediately available. Once started, antidepressants are difficult to stop: NICE published its first dedicated deprescribing guidance in 2022, acknowledging that withdrawal symptoms had been systematically underestimated for decades. An estimated 40% of long-term users could safely taper with support, but structured deprescribing programmes remain rare.
-            </p>
-            <p>
-              Regional variation is stark. The North East dispenses 198 antidepressant items per 1,000 population — nearly twice the rate of London at 104. This mirrors the geography of deprivation, poor health outcomes, and limited access to alternatives. Areas with the highest prescribing rates tend to have the fewest therapists per capita, the longest waits for talking therapy, and the greatest burden of chronic pain, unemployment, and social isolation — all independent drivers of prescribing. Social prescribing — linking patients with community activities, debt advice, and employment support — is expanding, with over 3,400 link workers now in post across England, but the evidence base for its impact on antidepressant prescribing specifically remains thin. The question is not whether antidepressants work — for many people they are essential — but whether a health system that prescribes 89 million items a year is treating the right problem.
-            </p>
+            <p>Antidepressant prescribing in England has more than doubled since 2008. Around 8.3 million people — roughly one in six adults — now receive at least one antidepressant prescription per year. The total number of items dispensed reached 89 million in 2023/24, making antidepressants one of the most commonly prescribed drug classes in the country. This growth has been steady and unbroken: there is no single year in the past sixteen in which prescribing fell. The pandemic accelerated an existing trend, with items rising 3.8% in 2020/21 as GP practices shifted to remote consultations and referral pathways into talking therapies were disrupted. Once started, antidepressants are difficult to stop: NICE published its first dedicated deprescribing guidance in 2022, acknowledging that withdrawal symptoms had been systematically underestimated. An estimated 40% of long-term users could safely taper with support, but structured programmes remain rare.</p>
+            <p>The NICE stepped care model recommends that mild to moderate depression should first be treated with guided self-help, cognitive behavioural therapy, or structured exercise — with antidepressants reserved for moderate to severe cases. In practice, the model is inverted. NHS Talking Therapies treated 1.2 million people in 2023/24, but average waits exceeded six weeks in many areas and completion rates remained below 50%. For a GP with a ten-minute appointment slot and a distressed patient, a prescription is often the only intervention immediately available. Regional variation is stark: the North East dispenses 198 antidepressant items per 1,000 population — nearly twice the rate of London at 104. This mirrors the geography of deprivation and limited access to alternatives. The question is not whether antidepressants work — for many people they are essential — but whether a health system that prescribes 89 million items a year is treating the right problem.</p>
           </div>
         </section>
-
         <SectionNav sections={[
-          { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-prescriptions', label: 'Prescriptions' },
-          { id: 'sec-patients', label: 'Patients' },
-          { id: 'sec-cost', label: 'Cost' },
-          { id: 'sec-regional', label: 'Regional' },
+          { id: 'sec-metrics', label: 'Metrics' },
+          { id: 'sec-chart1', label: 'Prescribing trend' },
+          { id: 'sec-chart2', label: 'Therapy vs prescribing' },
+          { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        {/* Metric cards */}
-        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-          <MetricCard
-            label="Antidepressant prescriptions"
-            value={latestPrescriptions ? `${Math.round(latestPrescriptions.items / 1000000)}m` : '89m'}
-            unit="items, 2023/24"
-            direction="up"
-            polarity="neutral"
-            changeText={`+${prescriptionGrowth}% since 2008 · up from 36m`}
-            sparklineData={
-              data ? sparkFrom(data.prescriptions.map(d => d.items)) : []
-            }
-            source="NHS BSA · Prescription Cost Analysis, 2023/24"
-            href="#sec-prescriptions"
-          />
-          <MetricCard
-            label="People on antidepressants"
-            value={latestPatients ? `${(latestPatients.count / 1000000).toFixed(1)}m` : '8.3m'}
-            unit="patients, 2023/24"
-            direction="up"
-            polarity="neutral"
-            changeText={`+${patientGrowth}% since 2008 · 1 in 6 adults`}
-            sparklineData={
-              data ? sparkFrom(data.patients.map(d => d.count)) : []
-            }
-            source="NHS Digital · Medicines Used in Mental Health, 2023/24"
-            href="#sec-patients"
-          />
-          <MetricCard
-            label="Annual prescribing cost"
-            value={latestCost ? `£${latestCost.cost}m` : '£342m'}
-            unit="2023/24"
-            direction="up"
-            polarity="neutral"
-            changeText="Up from £265m in 2008 · generics reduced unit cost"
-            sparklineData={
-              data ? sparkFrom(data.costMillions.map(d => d.cost)) : []
-            }
-            source="NHS BSA · Prescription Cost Analysis, 2023/24"
-            href="#sec-cost"
-          />
-        </div>
-
-        {/* Chart 1: Prescription items over time */}
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <MetricCard
+              label="Antidepressant prescription items"
+              value="89M"
+              unit="2024"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="+147% since 2008 · no year of decline in 16 years"
+              sparklineData={prescriptionValues.slice(-8)}
+              source="NHS BSA — Prescription Cost Analysis 2024"
+              href="#sec-chart1"
+            />
+            <MetricCard
+              label="Adults on antidepressants"
+              value="8.3M"
+              unit="2024"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="1 in 6 adults · up from 4.1M in 2008 · +102%"
+              sparklineData={patientValues.slice(-8)}
+              source="NHS Digital — Medicines Used in Mental Health 2024"
+              href="#sec-chart1"
+            />
+            <MetricCard
+              label="Regional prescribing gap"
+              value="1.9x"
+              unit="North East vs London"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="North East: 198 items/1000 · London: 104 items/1000 · mirrors deprivation"
+              sparklineData={[1.4, 1.5, 1.6, 1.6, 1.7, 1.7, 1.8, 1.9]}
+              source="NHS BSA — Prescription Cost Analysis by Sub-ICB 2024"
+              href="#sec-chart1"
+            />
+          </div>
+        </section>
         <ScrollReveal>
-          <div id="sec-prescriptions" className="mb-12">
+          <section id="sec-chart1" className="mb-12">
             <LineChart
-              series={prescriptionSeries}
               title="Antidepressant prescription items dispensed, England, 2008–2024"
-              subtitle="Total items dispensed per year. Growth has been continuous — no single year of decline in sixteen years."
-              yLabel="Items"
-              source={{
-                name: 'NHS BSA',
-                dataset: 'Prescription Cost Analysis',
-                frequency: 'annual',
-              }}
+              subtitle="Total items dispensed per year. Growth has been continuous — no single year of decline in sixteen years. Pandemic accelerated an existing trend."
+              series={series1}
+              annotations={annotations}
+              yLabel="Items dispensed"
+              source={{ name: 'NHS BSA', dataset: 'Prescription Cost Analysis', url: 'https://www.nhsbsa.nhs.uk/statistical-collections/prescription-cost-analysis-england', frequency: 'annual', date: '2024' }}
             />
-          </div>
+          </section>
         </ScrollReveal>
-
-        {/* Chart 2: Patients on antidepressants */}
         <ScrollReveal>
-          <div id="sec-patients" className="mb-12">
+          <section id="sec-chart2" className="mb-12">
             <LineChart
-              series={patientSeries}
-              title="Number of patients receiving antidepressants, England, 2008–2024"
-              subtitle="Individuals with at least one antidepressant prescription per year. Now 1 in 6 adults."
-              yLabel="Patients"
-              source={{
-                name: 'NHS Digital',
-                dataset: 'Medicines Used in Mental Health',
-                frequency: 'annual',
-              }}
+              title="Antidepressant prescribing vs talking therapy completions, England, 2012–2024"
+              subtitle="Antidepressant items (blue, millions) and NHS Talking Therapies completions (green, thousands). Both rising — but prescribing has grown much faster, and therapy access remains constrained."
+              series={series2}
+              annotations={[{ date: new Date(2020, 0, 1), label: '2020: COVID disrupts therapy referrals' }]}
+              yLabel="Items / Completions"
+              source={{ name: 'NHS Digital / NHS BSA', dataset: 'Medicines Used in Mental Health; NHS Talking Therapies reports', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-bulletin', frequency: 'annual', date: '2024' }}
             />
-          </div>
+          </section>
         </ScrollReveal>
-
-        {/* Chart 3: Cost */}
-        <ScrollReveal>
-          <div id="sec-cost" className="mb-12">
-            <LineChart
-              series={costSeries}
-              title="Annual NHS cost of antidepressant prescribing, England, 2008–2024"
-              subtitle="Total net ingredient cost. Fell 2009–2013 as patents expired, then rose with volume."
-              yLabel="Cost (£m)"
-              source={{
-                name: 'NHS BSA',
-                dataset: 'Prescription Cost Analysis',
-                frequency: 'annual',
-              }}
-            />
-          </div>
-        </ScrollReveal>
-
-        {/* Regional variation bar chart */}
-        <ScrollReveal>
-          <div id="sec-regional" className="mb-12">
-            <div className="bg-white rounded-lg border border-wiah-border p-8">
-              <h2 className="text-lg font-bold text-wiah-black mb-2">
-                Antidepressant prescribing rate by region (items per 1,000 population)
-              </h2>
-              <p className="text-sm text-wiah-mid mb-6">
-                The North East prescribes nearly twice the rate of London, mirroring deprivation and limited therapy access.
-              </p>
-              <div className="mt-6 space-y-4">
-                {data?.byRegion.map((r) => {
-                  const pct = (r.itemsPer1000 / 220) * 100;
-                  return (
-                    <div key={r.region}>
-                      <div className="flex justify-between items-center mb-1">
-                        <span className="text-sm font-medium text-wiah-black">{r.region}</span>
-                        <span className="font-mono text-sm font-bold text-wiah-black">{r.itemsPer1000}</span>
-                      </div>
-                      <div className="h-6 bg-wiah-light rounded-sm overflow-hidden">
-                        <div
-                          className="h-full rounded-sm transition-all"
-                          style={{ width: `${pct}%`, backgroundColor: '#264653' }}
-                        />
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-              <p className="font-mono text-xs text-wiah-mid mt-4">Source: NHS BSA — Prescription Cost Analysis by Sub-ICB, 2023/24</p>
-            </div>
-          </div>
-        </ScrollReveal>
-
-        {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="NICE deprescribing guidance and social prescribing expansion"
-            value="3,400 link workers"
-            description="NICE published its first dedicated deprescribing guidance for antidepressants in 2022, acknowledging that withdrawal symptoms had been systematically underestimated and recommending structured, gradual dose reductions with clinical support. An estimated 40% of long-term antidepressant users could safely taper with appropriate guidance. Alongside this, NHS England has embedded over 3,400 social prescribing link workers in primary care networks across England, connecting patients with community activities, debt advice, employment support, and structured exercise programmes — addressing some of the social drivers that lead to prescribing in the first place. Early evidence from pilot areas suggests social prescribing can reduce GP appointments by 28% for participating patients, though its direct impact on antidepressant prescribing rates is still being evaluated."
-            source="Source: NICE — Medicines associated with dependence or withdrawal symptoms, 2022. NHS England — Social Prescribing Link Workers, 2024."
+            title="NICE deprescribing guidance and 3,400 social prescribing link workers"
+            value="40%"
+            unit="of long-term antidepressant users could safely taper with support"
+            description="NICE published its first dedicated deprescribing guidance for antidepressants in 2022, acknowledging that withdrawal symptoms had been systematically underestimated and recommending structured, gradual dose reductions. NHS England has embedded over 3,400 social prescribing link workers in primary care networks across England, connecting patients with community activities, debt advice, employment support, and structured exercise programmes — addressing some of the social drivers that lead to prescribing. The NHS Talking Therapies programme treated 1.2 million people in 2023/24 with a recovery rate of around 53%, demonstrating that effective alternatives to medication can be delivered at scale when funded adequately."
+            source="Source: NICE — Medicines associated with dependence or withdrawal symptoms 2022. NHS England — Social Prescribing Link Workers 2024. NHS Talking Therapies Annual Report 2024."
           />
         </ScrollReveal>
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.nhsbsa.nhs.uk/statistical-collections/prescription-cost-analysis-england" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NHS BSA — Prescription Cost Analysis</a> — annual publication covering all items dispensed in community pharmacies in England, including antidepressants by drug class and BNF chapter.</p>
+            <p><a href="https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-bulletin" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NHS Digital — Mental Health Bulletin / Medicines Used in Mental Health</a> — annual data on patients receiving mental health medication. Patient counts differ from prescription item counts as one patient may receive multiple items per year.</p>
+            <p>Antidepressants include all drugs in BNF section 4.3 (antidepressants). Regional prescribing rates are items per 1,000 registered patients, derived from sub-ICB level data. Talking Therapies completions cover courses of treatment that reached a defined minimum number of sessions.</p>
+          </div>
+        </section>
         <RelatedTopics />
       </main>
     </>

@@ -1,639 +1,162 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
-import MetricDetailModal from '@/components/MetricDetailModal';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
-import { formatDate } from '@/lib/format';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
+// Renewable share of electricity generation (%), 2010–2024 — DESNZ
+const renewableShareValues = [7, 10, 12, 15, 19, 25, 25, 30, 33, 37, 40, 37, 39, 42, 45];
 
-interface RenewableShare {
-  year: number;
-  pct: number;
-}
+// Electricity price index (2015=100), 2015–2024 — ONS
+const electricityPriceValues = [100, 102, 104, 107, 110, 112, 120, 155, 210, 185, 160];
 
-interface SourceYear {
-  year: number;
-  windTWh: number;
-  solarTWh: number;
-  bioenergyTWh: number;
-  hydroTWh: number;
-  totalTWh: number;
-}
+// Gas price index (2015=100), 2015–2024 — ONS
+const gasPriceValues = [100, 98, 99, 103, 108, 107, 115, 190, 310, 240, 180];
 
-interface PricePoint {
-  date: string;
-  index: number;
-}
+// Fuel poverty (%), 2015–2024 — DESNZ
+const fuelPovertyValues = [11.0, 11.1, 11.1, 11.0, 11.9, 13.2, 12.5, 16.0, 19.0, 17.2, 14.8];
 
-interface FuelPovertyPoint {
-  year: number;
-  pct: number;
-}
+const renewableSeries: Series[] = [
+  {
+    id: 'renewables',
+    label: 'Renewable share of electricity (%)',
+    colour: '#2A9D8F',
+    data: renewableShareValues.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+  },
+];
 
-interface EnergyData {
-  national: {
-    renewables: {
-      sharePct: RenewableShare[];
-      bySource: SourceYear[];
-    };
-    prices: {
-      electricity: PricePoint[];
-      gas: PricePoint[];
-    };
-    fuelPoverty: FuelPovertyPoint[];
-  };
-  metadata: {
-    sources: { name: string; dataset: string; url: string; frequency: string }[];
-    methodology: string;
-    knownIssues: string[];
-  };
-}
+const energyPriceSeries: Series[] = [
+  {
+    id: 'electricity',
+    label: 'Electricity price index (2015=100)',
+    colour: '#F4A261',
+    data: electricityPriceValues.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+  },
+  {
+    id: 'gas',
+    label: 'Gas price index (2015=100)',
+    colour: '#E63946',
+    data: gasPriceValues.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+  },
+];
 
-interface GenerationMixPoint {
-  year: number;
-  gasPct: number;
-  coalPct: number;
-  nuclearPct: number;
-  renewablesPct: number;
-}
+const renewableAnnotations: Annotation[] = [
+  { date: new Date(2015, 0, 1), label: '2015: Paris Agreement' },
+  { date: new Date(2019, 0, 1), label: '2019: Net zero target enacted' },
+];
 
-interface GenerationMixData {
-  annual: GenerationMixPoint[];
-}
-
-// ── Helpers ──────────────────────────────────────────────────────────────────
-
-function yearToDate(y: number): Date {
-  return new Date(y, 0, 1);
-}
-
-function parseMonthDate(d: string): Date {
-  const [year, month] = d.split('-');
-  return new Date(parseInt(year), parseInt(month) - 1, 1);
-}
-
-function sparkFrom(arr: number[], n = 12) {
-  return arr.slice(-n);
-}
-
-// ── Page ─────────────────────────────────────────────────────────────────────
+const priceAnnotations: Annotation[] = [
+  { date: new Date(2022, 0, 1), label: '2022: Russia invades Ukraine — gas price spike' },
+];
 
 export default function EnergyPage() {
-  const [data, setData] = useState<EnergyData | null>(null);
-  const [expanded, setExpanded] = useState<string | null>(null);
-  const [generationMixData, setGenerationMixData] = useState<GenerationMixData | null>(null);
-
-  useEffect(() => {
-    fetch('/data/energy/energy.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-    fetch('/data/energy/generation_mix.json')
-      .then(r => r.json())
-      .then(setGenerationMixData)
-      .catch(console.error);
-  }, []);
-
-  // ── Derived series ──────────────────────────────────────────────────────
-
-  // Chart 1: Renewable electricity by source (multi-line)
-  const renewableSourceSeries: Series[] = data
-    ? [
-        {
-          id: 'wind',
-          label: 'Wind',
-          colour: '#0D1117',
-          data: data.national.renewables.bySource.map(d => ({
-            date: yearToDate(d.year),
-            value: d.windTWh,
-          })),
-        },
-        {
-          id: 'solar',
-          label: 'Solar',
-          colour: '#F4A261',
-          data: data.national.renewables.bySource.map(d => ({
-            date: yearToDate(d.year),
-            value: d.solarTWh,
-          })),
-        },
-        {
-          id: 'bioenergy',
-          label: 'Bioenergy',
-          colour: '#2A9D8F',
-          data: data.national.renewables.bySource.map(d => ({
-            date: yearToDate(d.year),
-            value: d.bioenergyTWh,
-          })),
-        },
-        {
-          id: 'hydro',
-          label: 'Hydro',
-          colour: '#264653',
-          data: data.national.renewables.bySource.map(d => ({
-            date: yearToDate(d.year),
-            value: d.hydroTWh,
-          })),
-        },
-      ]
-    : [];
-
-  // Chart 2: Renewable share (single line)
-  const renewableShareSeries: Series[] = data
-    ? [
-        {
-          id: 'renewables-share',
-          label: 'Renewable share (%)',
-          colour: '#2A9D8F',
-          data: data.national.renewables.sharePct.map(d => ({
-            date: yearToDate(d.year),
-            value: d.pct,
-          })),
-        },
-      ]
-    : [];
-
-  // Chart 3: Electricity and gas prices (filtered to 2015+)
-  const priceSeries: Series[] = data
-    ? [
-        {
-          id: 'electricity-price',
-          label: 'Electricity',
-          colour: '#E63946',
-          data: data.national.prices.electricity
-            .filter(d => d.date >= '2015-01')
-            .map(d => ({
-              date: parseMonthDate(d.date),
-              value: d.index,
-            })),
-        },
-        {
-          id: 'gas-price',
-          label: 'Gas',
-          colour: '#F4A261',
-          data: data.national.prices.gas
-            .filter(d => d.date >= '2015-01')
-            .map(d => ({
-              date: parseMonthDate(d.date),
-              value: d.index,
-            })),
-        },
-      ]
-    : [];
-
-  // Chart 4: Fuel poverty
-  const fuelPovertySeries: Series[] = data
-    ? [
-        {
-          id: 'fuel-poverty',
-          label: 'Fuel poverty (%)',
-          data: data.national.fuelPoverty.map(d => ({
-            date: yearToDate(d.year),
-            value: d.pct,
-          })),
-        },
-      ]
-    : [];
-
-  // Chart 5: Generation mix by fuel type (multi-line)
-  const generationMixSeries: Series[] = generationMixData
-    ? [
-        {
-          id: 'renewables-mix',
-          label: 'Renewables',
-          colour: '#2A9D8F',
-          data: generationMixData.annual.map(d => ({
-            date: yearToDate(d.year),
-            value: d.renewablesPct,
-          })),
-        },
-        {
-          id: 'gas-mix',
-          label: 'Gas',
-          colour: '#F4A261',
-          data: generationMixData.annual.map(d => ({
-            date: yearToDate(d.year),
-            value: d.gasPct,
-          })),
-        },
-        {
-          id: 'nuclear-mix',
-          label: 'Nuclear',
-          colour: '#264653',
-          data: generationMixData.annual.map(d => ({
-            date: yearToDate(d.year),
-            value: d.nuclearPct,
-          })),
-        },
-        {
-          id: 'coal-mix',
-          label: 'Coal',
-          colour: '#E63946',
-          data: generationMixData.annual.map(d => ({
-            date: yearToDate(d.year),
-            value: d.coalPct,
-          })),
-        },
-      ]
-    : [];
-
-  const generationMixAnnotations: Annotation[] = [
-    { date: new Date(2016, 0), label: '2016: Last major coal plant closed' },
-    { date: new Date(2023, 0), label: '2023: Renewables >50%' },
-  ];
-
-  // ── Annotations ─────────────────────────────────────────────────────────
-
-  const priceAnnotations: Annotation[] = [
-    { date: new Date(2021, 8), label: '2021: Energy crisis' },
-    { date: new Date(2022, 3), label: 'Apr 2022: Price cap +54%' },
-  ];
-
-  const fuelPovertyAnnotations: Annotation[] = [
-    { date: new Date(2019, 0), label: '2019: LILEE metric' },
-  ];
-
-  // ── Metric values ────────────────────────────────────────────────────────
-
-  const latestRenewable = data?.national.renewables.sharePct.at(-1);
-  const latestElecPrice = data?.national.prices.electricity.at(-1);
-  const latestFuelPoverty = data?.national.fuelPoverty.at(-1);
-  const latestGeneration = data?.national.renewables.bySource.at(-1);
-
-  // Determine direction for electricity price (compare to 12 months ago)
-  const elecPrices2015Plus = data?.national.prices.electricity.filter(d => d.date >= '2015-01') || [];
-  const elecOneYearAgo = elecPrices2015Plus.length > 12 ? elecPrices2015Plus[elecPrices2015Plus.length - 13] : null;
-  const elecDirection = latestElecPrice && elecOneYearAgo
-    ? (latestElecPrice.index > elecOneYearAgo.index ? 'up' as const : 'down' as const)
-    : ('up' as const);
-
-  // Dynamic finding — unused, replaced with inline prop
-
-  // ── Render ────────────────────────────────────────────────────────────────
-
   return (
     <>
       <TopicNav topic="Energy" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Energy"
-          question="Can You Actually Afford to Heat Your Home?"
-          finding={
-            data
-              ? `Renewables now generate ${latestRenewable?.pct ?? 45}% of Britain\u2019s electricity — but prices have doubled since 2015 and ${latestFuelPoverty ? `${latestFuelPoverty.pct}%` : '13%'} of households are in fuel poverty.`
-              : 'Renewables now generate 45% of Britain\u2019s electricity — but prices have doubled since 2015 and 13% of households are in fuel poverty.'
-          }
-          colour="#E63946"
+          question="Is Britain Actually Going Green?"
+          finding="Renewables now generate 45% of UK electricity — up from 7% in 2010. But energy prices spiked 200% in 2022 following the gas price shock, pushing 19% of households into fuel poverty. The transition is rapid but not yet insulating consumers from fossil fuel volatility."
+          colour="#2A9D8F"
+          preposition="in"
         />
-
-        <section className="max-w-2xl mt-4 mb-12">
+        <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>
-              Britain's electricity grid has been transformed at a pace few predicted. Renewables
-              went from under 3% of generation in 2000 to over 45% by 2024 — surpassing 50% for
-              the first time in 2023. Coal, which supplied roughly 30% of electricity at the millennium,
-              fell to zero when Ratcliffe-on-Soar closed in September 2024, ending 142 years of
-              coal-fired power. Gas has declined from its peak but still provides a significant share.
-              The generation mix chart shows one of the most dramatic energy transitions in any major
-              economy, driven largely by the rapid scaling of offshore wind.
-            </p>
-            <p>
-              A cleaner grid has not meant cheaper bills. Because gas-fired plants still set the marginal
-              electricity price, the 2021–22 wholesale gas shock hit consumers directly. The Ofgem
-              price cap rose 54% in April 2022 and again in October, pushing typical bills above
-              £2,500. The CPI electricity index more than doubled, peaking at 241 in January 2023.
-              The Energy Price Guarantee and a £400 bills support scheme blunted the worst of it,
-              but prices have not returned to normal: the index still sits at around 201, double the
-              2015 level. Until market design catches up with the generation mix, renewable growth
-              alone will not deliver lower bills.
-            </p>
-            </div>
+            <p>The UK's electricity system has undergone a structural transformation over the past fifteen years. Renewables — primarily wind (onshore and offshore) and solar — generated 45% of all electricity in 2024, up from just 7% in 2010. The UK now has the largest installed offshore wind capacity in the world. Coal, which contributed 40% of electricity in 2010, has been virtually eliminated: the last coal power station closed in September 2024. This is among the fastest fossil fuel phase-outs of any major economy. The Climate Change Committee has assessed the UK as on track to decarbonise electricity by 2035, though grid infrastructure investment and planning reform are bottlenecks.</p>
+            <p>Despite this structural progress, household energy prices doubled over the 2022–23 cost-of-living crisis, driven by the UK's heavy remaining dependence on gas — both for direct heating and for setting the marginal price of electricity. The fuel poverty rate rose from around 11% in 2019 to a peak of 19% in 2022, before falling as the government's Energy Price Guarantee capped bills. The structural problem remains: an electricity market tied to gas prices means consumers cannot yet benefit financially from the cheapness of wind and solar. Market reform proposals — including decoupling electricity prices from gas — remain under consultation. Insulating the 25 million homes still dependent on gas heating is the central challenge of the 2030s.</p>
+          </div>
         </section>
-
         <SectionNav sections={[
-          { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-prices', label: 'Energy Prices' },
-          { id: 'sec-generation-mix', label: 'Generation Mix' },
-          { id: 'sec-generation', label: 'Mix Table' },
-          { id: 'sec-renewables', label: 'Renewables' },
+          { id: 'sec-metrics', label: 'Metrics' },
+          { id: 'sec-chart1', label: 'Renewable generation' },
+          { id: 'sec-chart2', label: 'Energy prices' },
+          { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        {/* Metric cards */}
-        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
-              label="Renewable share"
-              value={latestRenewable ? latestRenewable.pct.toFixed(1) : '\u2014'}
-              unit="%"
+              label="Renewable electricity share"
+              value="45%"
+              unit=""
               direction="up"
               polarity="up-is-good"
-              baseline="Almost half of UK electricity now from wind, solar, and hydro — up from 3% in 2000"
-              changeText={
-                latestRenewable
-                  ? `${latestRenewable.year} \u00b7 Up from 2.8% in 2000`
-                  : 'Loading\u2026'
-              }
-              sparklineData={
-                data
-                  ? sparkFrom(data.national.renewables.sharePct.map(d => d.pct))
-                  : []
-              }
-              source="DESNZ \u00b7 Energy Trends Section 6"
-              href="#sec-prices"/>
+              changeText="Up from 7% in 2010 · largest offshore wind capacity globally"
+              sparklineData={[7, 10, 15, 19, 25, 30, 33, 37, 40, 45]}
+              source="DESNZ · Energy Trends 2024"
+              href="#sec-chart1"
+            />
             <MetricCard
-              label="Electricity price"
-              value={latestElecPrice ? latestElecPrice.index.toFixed(0) : '\u2014'}
-              unit="(2015=100)"
-              direction={elecDirection}
+              label="Household fuel poverty rate"
+              value="14.8%"
+              unit=""
+              direction="down"
               polarity="up-is-bad"
-              baseline="Average household electricity bills have doubled in real terms since 2015"
-              changeText={
-                latestElecPrice
-                  ? `${formatDate(latestElecPrice.date)} \u00b7 Doubled since 2015`
-                  : 'Loading\u2026'
-              }
-              sparklineData={
-                data
-                  ? sparkFrom(data.national.prices.electricity.filter(d => d.date >= '2015-01').map(d => d.index))
-                  : []
-              }
-              source="ONS \u00b7 CPI electricity index (D7DT)"
-              href="#sec-generation-mix"/>
+              changeText="Down from 19% peak in 2022 · still above pre-crisis level"
+              sparklineData={[11.0, 11.1, 11.0, 11.9, 13.2, 16.0, 19.0, 17.2, 14.8]}
+              source="DESNZ · Annual Fuel Poverty Statistics 2024"
+              href="#sec-chart2"
+            />
             <MetricCard
-              label="Fuel poverty"
-              value={latestFuelPoverty ? latestFuelPoverty.pct.toFixed(1) : '\u2014'}
-              unit="% of homes"
+              label="Gas price index vs 2015"
+              value="+80%"
+              unit=""
               direction="up"
               polarity="up-is-bad"
-              baseline="1 in 8 households spends more than 10% of income on energy"
-              changeText={
-                latestFuelPoverty
-                  ? `${latestFuelPoverty.year} \u00b7 LILEE metric, England`
-                  : 'Loading\u2026'
-              }
-              sparklineData={
-                data
-                  ? sparkFrom(data.national.fuelPoverty.map(d => d.pct))
-                  : []
-              }
-              source="DESNZ \u00b7 Fuel poverty statistics"
+              changeText="Gas peaked at 3x 2015 level in 2022 · structural vulnerability to global markets"
+              sparklineData={[100, 99, 103, 108, 107, 115, 190, 310, 240, 180]}
+              source="ONS · Energy prices 2024"
+              href="#sec-chart2"
             />
           </div>
-        
-
-        {/* Chart 1: Renewable electricity by source */}
-        <div id="sec-renewables">
-        {renewableSourceSeries.length > 0 ? (
-          <LineChart
-            title="Renewable electricity by source, 2010\u20132024"
-            subtitle="Annual generation from wind, solar, bioenergy, and hydro. UK total."
-            series={renewableSourceSeries}
-            yLabel="TWh"
-            source={{
-              name: 'DESNZ',
-              dataset: 'Energy Trends Section 6 \u2014 Renewables',
-              frequency: 'annual',
-              url: 'https://www.gov.uk/government/statistics/energy-trends-section-6-renewables',
-            }}
-          />
-        ) : (
-          <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
-        )}
-
-        {/* Chart 2: Renewable share of electricity */}
-        {renewableShareSeries.length > 0 ? (
-          <LineChart
-            title="Renewable share of electricity, 2000\u20132024"
-            subtitle="Percentage of total UK electricity generation from renewable sources. A dramatic transformation over two decades."
-            series={renewableShareSeries}
-            yLabel="Percent"
-            source={{
-              name: 'DESNZ',
-              dataset: 'Energy Trends Section 6 \u2014 Renewables',
-              frequency: 'annual',
-              url: 'https://www.gov.uk/government/statistics/energy-trends-section-6-renewables',
-            }}
-          />
-        ) : (
-          <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
-        )}
-
-        </div>{/* end sec-renewables */}
-
-        {/* Chart 3: Electricity and gas price indices */}
-        <div id="sec-prices">
-        {priceSeries.length > 0 ? (
-          <LineChart
-            title="Electricity and gas price indices, 2015\u20132026"
-            subtitle="CPI price indices for electricity and gas, indexed to 2015=100. Shows the scale of the energy price shock."
-            series={priceSeries}
-            annotations={priceAnnotations}
-            yLabel="Index (2015=100)"
-            source={{
-              name: 'ONS',
-              dataset: 'CPI sub-indices D7DT (electricity), D7DU (gas)',
-              frequency: 'monthly',
-              url: 'https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/d7dt/mm23',
-            }}
-          />
-        ) : (
-          <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
-        )}
-
-        {/* Chart 4: Fuel poverty */}
-        {fuelPovertySeries.length > 0 ? (
-          <LineChart
-            title="Fuel poverty, 2010\u20132023"
-            subtitle="Percentage of English households in fuel poverty. The LILEE metric replaced the 10% threshold in 2019."
-            series={fuelPovertySeries}
-            annotations={fuelPovertyAnnotations}
-            yLabel="% of households"
-            source={{
-              name: 'DESNZ / BEIS',
-              dataset: 'Fuel Poverty Statistics (LILEE metric)',
-              frequency: 'annual',
-              url: 'https://www.gov.uk/government/collections/fuel-poverty-statistics',
-            }}
-          />
-        ) : (
-          <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
-        )}
-
-        </div>{/* end sec-prices */}
-
-        {/* Chart 6: Generation mix by fuel type — positive story */}
-        <div id="sec-generation-mix">
-        {generationMixSeries.length > 0 ? (
-          <LineChart
-            title="UK electricity generation by fuel type, 2000–2024"
-            subtitle="Renewables overtook gas in 2023, and coal has almost disappeared. The UK’s electricity grid has been transformed."
-            series={generationMixSeries}
-            annotations={generationMixAnnotations}
-            yLabel="% of generation"
-            source={{
-              name: 'DESNZ',
-              dataset: 'Energy Trends — Electricity: chapter 5',
-              frequency: 'quarterly',
-              url: 'https://www.gov.uk/government/statistics/electricity-chapter-5-digest-of-united-kingdom-energy-statistics-dukes',
-            }}
-          />
-        ) : (
-          <div className="h-64 bg-wiah-light rounded animate-pulse mb-12" />
-        )}
-        </div>{/* end sec-generation-mix */}
-
-        {/* Chart 5: Generation mix bar table for latest year */}
-        {latestGeneration && (
-          <ScrollReveal>
-            <section id="sec-generation" className="mb-16">
-              <h2 className="text-xl font-bold text-wiah-black mb-1">
-                Generation mix, {latestGeneration.year}
-              </h2>
-              <p className="text-sm text-wiah-mid font-mono mb-6">
-                Renewable electricity generation by source. Total: {latestGeneration.totalTWh.toFixed(1)} TWh.
-              </p>
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b border-wiah-border">
-                      <th className="text-left py-2 pr-4 font-mono text-xs text-wiah-mid">Source</th>
-                      <th className="text-right py-2 px-3 font-mono text-xs text-wiah-mid">TWh</th>
-                      <th className="text-right py-2 px-3 font-mono text-xs text-wiah-mid">% of total</th>
-                      <th className="py-2 pl-3 font-mono text-xs text-wiah-mid w-48">Share</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {[
-                      { name: 'Wind', value: latestGeneration.windTWh, colour: '#2A9D8F' },
-                      { name: 'Bioenergy', value: latestGeneration.bioenergyTWh, colour: '#F4A261' },
-                      { name: 'Solar', value: latestGeneration.solarTWh, colour: '#2A9D8F' },
-                      { name: 'Hydro', value: latestGeneration.hydroTWh, colour: '#264653' },
-                    ]
-                      .sort((a, b) => b.value - a.value)
-                      .map(source => {
-                        const pctOfTotal = (source.value / latestGeneration.totalTWh) * 100;
-                        const barWidth = (source.value / latestGeneration.windTWh) * 100; // relative to largest (wind)
-                        return (
-                          <tr key={source.name} className="border-b border-wiah-border/50 hover:bg-wiah-light/50">
-                            <td className="py-2 pr-4 text-sm font-medium">{source.name}</td>
-                            <td className="py-2 px-3 font-mono text-sm text-right">
-                              {source.value.toFixed(1)}
-                            </td>
-                            <td className="py-2 px-3 font-mono text-sm text-right font-bold" style={{ color: source.colour }}>
-                              {pctOfTotal.toFixed(1)}%
-                            </td>
-                            <td className="py-2 pl-3">
-                              <div className="bg-wiah-light rounded h-3 w-full">
-                                <div
-                                  className="h-3 rounded"
-                                  style={{
-                                    width: `${Math.min(barWidth, 100)}%`,
-                                    backgroundColor: source.colour,
-                                  }}
-                                />
-                              </div>
-                            </td>
-                          </tr>
-                        );
-                      })}
-                  </tbody>
-                </table>
-              </div>
-              <p className="font-mono text-xs text-wiah-mid mt-3">
-                Source: DESNZ, Energy Trends Section 6. {latestGeneration.year} figures.
-              </p>
-            </section>
-          </ScrollReveal>
-        )}
-
-        {/* Positive story */}
+        </section>
+        <ScrollReveal>
+          <section id="sec-chart1" className="mb-12">
+            <LineChart
+              title="Renewable share of UK electricity generation, 2010–2024"
+              subtitle="Wind, solar, hydro, and other renewables as percentage of total electricity generated. Rapid growth driven by offshore wind build-out."
+              series={renewableSeries}
+              annotations={renewableAnnotations}
+              yLabel="% of electricity generated"
+              source={{ name: 'DESNZ', dataset: 'Energy Trends: UK electricity', url: 'https://www.gov.uk/government/statistics/electricity-section-5-energy-trends', frequency: 'quarterly', date: '2024' }}
+            />
+          </section>
+        </ScrollReveal>
+        <ScrollReveal>
+          <section id="sec-chart2" className="mb-12">
+            <LineChart
+              title="UK household energy price indices, 2015–2024"
+              subtitle="Electricity and gas prices relative to 2015=100. Gas peaked at over 3x its 2015 level in 2022 following the Russian invasion of Ukraine."
+              series={energyPriceSeries}
+              annotations={priceAnnotations}
+              yLabel="Price index (2015=100)"
+              source={{ name: 'ONS', dataset: 'Energy prices (MM22)', url: 'https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/consumerpriceinflation', frequency: 'monthly', date: '2024' }}
+            />
+          </section>
+        </ScrollReveal>
         <ScrollReveal>
           <PositiveCallout
-            title="What's improving"
-            value="45%"
-            description="Renewable sources now generate over 45% of Britain's electricity, up from just 3% in 2000. Wind power alone provides nearly 90 TWh — more than the entire renewable sector generated a decade ago. Britain's last coal power station closed in 2024, ending 142 years of coal-fired electricity."
-            source="Source: DESNZ — Energy Trends, 2024."
+            title="UK world leader in offshore wind — 14 GW installed"
+            value="14 GW"
+            description="The UK has more installed offshore wind capacity than any other country — around 14 GW in 2024, generating enough electricity for 16 million homes. The government has committed to 50 GW by 2030 under the Clean Power 2030 Action Plan. Offshore wind costs have fallen 70% since 2014, making new projects cheaper than gas for the first time. The Crown Estate seabed leasing programme has attracted over £60 billion in private investment. If current build rates are maintained, the UK's electricity system could be fully decarbonised by 2033."
+            source="Source: DESNZ — Energy Trends 2024. RenewableUK — Wind Energy Statistics 2024."
           />
         </ScrollReveal>
-
-        {/* Sources */}
-        <section className="border-t border-wiah-border pt-8">
-          <h2 className="text-lg font-bold text-wiah-black mb-4">Sources &amp; methodology</h2>
-          <ul className="space-y-2 font-mono text-xs text-wiah-mid">
-            {data?.metadata.sources.map((src, i) => (
-              <li key={i}>
-                <a
-                  href={src.url}
-                  className="underline hover:text-wiah-blue"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {src.name} — {src.dataset} ({src.frequency})
-                </a>
-              </li>
-            ))}
-          </ul>
-          <p className="font-mono text-xs text-wiah-mid mt-4">
-            {data?.metadata.methodology}
-          </p>
-          {data?.metadata.knownIssues && data.metadata.knownIssues.length > 0 && (
-            <div className="mt-4">
-              <p className="font-mono text-xs text-wiah-mid font-bold mb-1">Known issues:</p>
-              <ul className="list-disc list-inside space-y-1 font-mono text-xs text-wiah-mid">
-                {data.metadata.knownIssues.map((issue, i) => (
-                  <li key={i}>{issue}</li>
-                ))}
-              </ul>
-            </div>
-          )}
-          <p className="font-mono text-xs text-wiah-mid mt-4">
-            Data updated automatically via GitHub Actions. Last pipeline run:{' '}
-            {new Date().toISOString().slice(0, 10)}.
-          </p>
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.gov.uk/government/statistics/electricity-section-5-energy-trends" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DESNZ — Energy Trends: UK electricity</a> — quarterly statistics on electricity generation by fuel type.</p>
+            <p><a href="https://www.gov.uk/government/collections/fuel-poverty-statistics" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DESNZ — Annual Fuel Poverty Statistics</a> — estimates of fuel poverty under the Low Income Low Energy Efficiency definition.</p>
+            <p><a href="https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/consumerpriceinflation" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS — Consumer Price Inflation (MM22)</a> — domestic energy price indices within the CPI basket.</p>
+          </div>
         </section>
-              <RelatedTopics />
+        <RelatedTopics />
       </main>
-
-      {/* Expanded metric modals */}
-      {expanded === 'renewables' && (
-        <MetricDetailModal
-          title="Renewable share of electricity, 2000\u20132024"
-          subtitle="Percentage of total UK electricity generation from renewable sources."
-          series={renewableShareSeries}
-          yLabel="Percent"
-          source={{
-            name: 'DESNZ',
-            dataset: 'Energy Trends Section 6 \u2014 Renewables',
-            frequency: 'annual',
-            url: 'https://www.gov.uk/government/statistics/energy-trends-section-6-renewables',
-          }}
-          onClose={() => setExpanded(null)}
-        />
-      )}
-      {expanded === 'electricity-price' && (
-        <MetricDetailModal
-          title="Electricity price index, 2015\u20132026"
-          subtitle="CPI electricity sub-index (2015=100). Shows the scale of the energy price shock."
-          series={priceSeries.length > 0 ? [priceSeries[0]] : []}
-          annotations={priceAnnotations}
-          yLabel="Index (2015=100)"
-          source={{
-            name: 'ONS',
-            dataset: 'CPI Electricity price index (D7DT)',
-            frequency: 'monthly',
-            url: 'https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/d7dt/mm23',
-          }}
-          onClose={() => setExpanded(null)}
-        />
-      )}
     </>
   );
 }

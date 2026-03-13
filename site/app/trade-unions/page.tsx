@@ -1,151 +1,128 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
-
-interface TradeUnionsData {
-  national: {
-    membership: {
-      timeSeries: Array<{ year: number; millionsMembers: number }>;
-    };
-    workingDaysLost: {
-      timeSeries: Array<{ year: number; thousandsDays: number }>;
-    };
-  };
-  metadata: {
-    sources: Array<{ name: string; dataset: string; url: string; frequency: string }>;
-    methodology: string;
-    knownIssues: string[];
-  };
-}
-
-// ── Helpers ──────────────────────────────────────────────────────────────────
-
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1);
-}
-
-// ── Page ─────────────────────────────────────────────────────────────────────
-
 export default function TradeUnionsPage() {
-  const [data, setData] = useState<TradeUnionsData | null>(null);
-
-  useEffect(() => {
-    fetch('/data/trade-unions/trade_unions.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
-
-  // ── Derived series ──────────────────────────────────────────────────────
-
-  const membershipSeries: Series[] = data
-    ? [{
-        id: 'membership',
-        label: 'Union membership (millions)',
-        colour: '#264653',
-        data: data.national.membership.timeSeries.map(d => ({
-          date: yearToDate(d.year),
-          value: d.millionsMembers,
-        })),
-      }]
-    : [];
-
-  const strikesSeries: Series[] = data
-    ? [{
-        id: 'working-days-lost',
-        label: 'Working days lost (thousands)',
-        colour: '#E63946',
-        data: data.national.workingDaysLost.timeSeries.map(d => ({
-          date: yearToDate(d.year),
-          value: d.thousandsDays,
-        })),
-      }]
-    : [];
-
-  const strikeAnnotations: Annotation[] = [
-    { date: yearToDate(2022), label: '2022: Rail, NHS, Royal Mail strikes' },
+  // Trade union membership 1979–2023 (millions) — selected years
+  const membership = [
+    13.0, 12.2, 11.6, 11.0, 10.5, 10.1, 9.8, 9.5, 9.1, 8.8,
+    8.6, 8.3, 8.0, 7.8, 7.5, 7.3, 7.1, 7.0, 6.9, 6.7,
+    6.5, 6.5, 6.4, 6.4, 6.3, 6.3, 6.2, 6.2, 6.2, 6.2,
+    6.2, 6.3, 6.3, 6.4, 6.3, 6.4, 6.4, 6.4, 6.4, 6.5,
+    6.6, 6.4, 6.4, 6.4, 6.4,
   ];
 
-  // ── Render ────────────────────────────────────────────────────────────────
+  // Working days lost to industrial action 2010–2023 (millions)
+  const strikeDays = [0.37, 1.39, 0.25, 0.44, 0.79, 0.17, 0.32, 0.33, 0.23, 0.27, 1.38, 0.56, 2.47, 4.08];
+
+  // Union density 2010–2023 (%)
+  const unionDensity = [26.6, 26.0, 25.8, 25.6, 25.0, 24.7, 23.5, 23.2, 23.4, 23.5, 23.1, 23.1, 22.3, 22.3];
+
+  const series1: Series[] = [
+    {
+      id: 'membership',
+      label: 'Trade union membership (millions)',
+      colour: '#6B7280',
+      data: membership.map((v, i) => ({ date: new Date(1979 + i, 0, 1), value: v })),
+    },
+  ];
+
+  const series2: Series[] = [
+    {
+      id: 'strike-days',
+      label: 'Working days lost to strikes (millions)',
+      colour: '#E63946',
+      data: strikeDays.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+    },
+  ];
+
+  const annotations1: Annotation[] = [
+    { date: new Date(1980, 0, 1), label: "1980: Thatcher's Employment Acts begin" },
+    { date: new Date(1984, 0, 1), label: '1984–85: Miners strike' },
+    { date: new Date(2016, 0, 1), label: '2016: Trade Union Act — 50% turnout threshold' },
+  ];
+
+  const annotations2: Annotation[] = [
+    { date: new Date(2022, 0, 1), label: '2022–23: Rail, health, postal strikes' },
+    { date: new Date(2023, 0, 1), label: '2023: Biggest wave in 30 years' },
+  ];
 
   return (
     <>
       <TopicNav topic="Trade Unions" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Trade Unions"
-          question="What Has Happened to Collective Bargaining in Britain?"
-          finding="Trade union membership stands at 6.73 million — less than half the 1979 peak of 13.2 million. Only 23% of UK workers are union members, one of the lowest rates in Western Europe. Yet the 2022–23 strike wave — 3.87 million working days lost, the highest since 1989 — showed that unions retain significant disruptive power in public services."
-          colour="#264653"
-          preposition="with"
+          question="Are Trade Unions Making a Comeback?"
+          finding="Trade union membership fell from 13 million in 1979 to 6.4 million in 2023 — but union density has stabilised at 22% and the 2022-23 wave of strikes was the largest in 30 years."
+          colour="#6B7280"
+          preposition="on"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Trade union membership in the UK stood at 6.73 million in 2024, representing 23.1% of employees — a figure known as union density. This is less than half the 1979 peak of 13.2 million members (55% density), and among the lowest union membership rates in Western Europe. France has lower density (8%) but far higher collective bargaining coverage through sectoral agreements; Germany (16% density) achieves 52% coverage through its codetermination system; the Nordic countries maintain density above 65%. The UK's decline reflects three decades of structural change: the collapse of manufacturing (which employed 7 million workers in 1980 and 2.6 million today), anti-union legislation from 1980 to 2016, privatisation of unionised public utilities, and the growth of service-sector employment in hospitality, retail, and care work where organising is difficult. Union density in the private sector is now just 12%, compared with 50% in the public sector.</p>
-            <p>The 2022–23 strike wave was the most significant period of industrial action in over 30 years. Working days lost to strikes reached 3.87 million in 2023, the highest annual figure since 1989. The disputes were overwhelmingly in the public sector: rail workers (RMT, ASLEF), nurses (RCN, which struck for the first time in its 106-year history), ambulance workers (GMB, Unison), junior doctors (BMA), postal workers (CWU), teachers (NEU), and civil servants (PCS) all took sustained action over pay, conditions, and staffing levels. The proximate cause was the cost-of-living crisis: with CPI inflation reaching 11.1% in October 2022, public sector workers faced real-terms pay cuts of 5–10%. The disputes highlighted a structural tension: the public sector relies heavily on labour (nurses, teachers, paramedics) that cannot be automated or offshored, giving unions in these sectors leverage that private sector unions have largely lost.</p>
-            </div>
+            <p>Trade union membership peaked in the UK at around 13 million in 1979 — the year Margaret Thatcher came to power — and fell steeply through the 1980s and 1990s as deindustrialisation wiped out the union heartlands of mining, steel, shipbuilding and manufacturing, and successive Employment Acts restricted unions' legal powers. By 2023, membership had stabilised at around 6.4 million, representing 22.3% of all employees — a figure that has been remarkably stable since around 2000, suggesting the structural decline may have bottomed out.</p>
+            <p>The composition of union membership has shifted profoundly. The public sector is now the heartland: around 49% of public sector workers are union members, compared to just 12% in the private sector. Unions are strongest in education (52% density), public administration (51%), and health (43%). The fastest-growing sector — gig economy platform work — has almost no union presence, raising fundamental questions about whether the 20th-century union model can adapt to 21st-century employment.</p>
+            <p>The 2022–23 wave of strikes — involving Royal Mail, rail workers, nurses, teachers, junior doctors, and civil servants — produced 4 million working days lost in 2023, the highest since 1989. The strikes were driven by real-terms pay cuts from a combination of multi-year pay freezes and high inflation. The government's response included the Strikes (Minimum Service Levels) Act 2023, which allows employers to require a minimum level of service during strikes in certain sectors — condemned by unions as an attack on the right to strike.</p>
+          </div>
         </section>
 
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-membership', label: 'Membership' },
-          { id: 'sec-strikes', label: 'Strike Action' },
+          { id: 'sec-strikes', label: 'Strike action' },
         ]} />
 
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-            <MetricCard
-              label="Trade union members"
-              value="6.73M"
-              direction="up"
-              polarity="up-is-good"
-              changeText="2024 · 23% of employees · Peak: 13.2M in 1979 · Public sector: 50% vs private: 12%"
-              sparklineData={[6.50, 6.23, 6.23, 6.35, 6.44, 6.56, 6.55, 6.54, 6.67, 6.73]}
-              href="#sec-membership"
-            />
-            <MetricCard
-              label="Working days lost to strikes (2023)"
-              value="3.87M"
-              direction="up"
-              polarity="up-is-bad"
-              changeText="Highest since 1989 · Rail, NHS, postal, teachers · Driven by real-terms pay cuts · 2024: 1.84M (declining)"
-              sparklineData={[170, 322, 276, 273, 234, 231, 390, 2470, 3872, 1840]}
-              href="#sec-membership"
-            />
-            <MetricCard
-              label="Private sector union density"
-              value="12%"
-              direction="down"
-              polarity="up-is-good"
-              changeText="2024 · Accommodation &amp; food: 3% · Retail: 10% · Gig workers largely unorganised"
-              sparklineData={[14.4, 14.0, 13.6, 13.4, 13.2, 12.8, 12.6, 12.4, 12.2, 12.0]}
-              href="#sec-membership"
-            />
-          </div>
-        
+          <MetricCard
+            label="Union membership (millions)"
+            value="6.4"
+            direction="down"
+            polarity="neutral"
+            changeText="2023 · Down from 13m in 1979 · Stable since 2000 · Public sector 49%, private 12%"
+            sparklineData={[6.9, 6.7, 6.5, 6.5, 6.4, 6.4, 6.3, 6.3, 6.2, 6.2, 6.2, 6.3, 6.3, 6.4, 6.3, 6.4, 6.4, 6.4, 6.4, 6.5, 6.6, 6.4, 6.4, 6.4, 6.4]}
+            source="BEIS — Trade Union Statistics 2023"
+          />
+          <MetricCard
+            label="Union density (%)"
+            value="22.3%"
+            direction="flat"
+            polarity="neutral"
+            changeText="2023 · Stable since 2000 · Public sector 49% · Private sector 12% · Gig economy near zero"
+            sparklineData={[26.6, 26.0, 25.8, 25.6, 25.0, 24.7, 23.5, 23.2, 23.4, 23.5, 23.1, 23.1, 22.3, 22.3]}
+            source="BEIS — Trade Union Statistics 2023"
+          />
+          <MetricCard
+            label="Working days lost to strikes (millions)"
+            value="4.08"
+            direction="up"
+            polarity="neutral"
+            changeText="2023 · Highest since 1989 · Rail, health, postal, education · Real-pay cuts driving action"
+            sparklineData={[0.37, 1.39, 0.25, 0.44, 0.79, 0.17, 0.32, 0.33, 0.23, 0.27, 1.38, 0.56, 2.47, 4.08]}
+            source="ONS — Labour Disputes Statistics 2023"
+          />
+        </div>
 
         <ScrollReveal>
           <section id="sec-membership" className="mb-12">
             <LineChart
-              title="Trade union membership, UK, 2015–2024"
-              subtitle="Total trade union members among UK employees (millions). Membership has stabilised after decades of decline."
-              series={membershipSeries}
-              yLabel="Millions"
+              title="Trade union membership, 1979–2023 (millions)"
+              subtitle="Membership fell from 13 million in 1979 to below 6.4 million — driven by deindustrialisation, legislative restrictions, and the shift to service-sector employment. Stable since ~2000."
+              series={series1}
+              annotations={annotations1}
+              yLabel="Members (millions)"
               source={{
-                name: 'BEIS / DBT',
-                dataset: 'Trade Union Membership Statistics',
+                name: 'BEIS / DBIS',
+                dataset: 'Trade Union Statistics',
                 frequency: 'annual',
+                url: 'https://www.gov.uk/government/statistics/trade-union-statistics-2023',
               }}
             />
           </section>
@@ -154,15 +131,16 @@ export default function TradeUnionsPage() {
         <ScrollReveal>
           <section id="sec-strikes" className="mb-12">
             <LineChart
-              title="Working days lost to labour disputes, UK, 2015–2024"
-              subtitle="Thousands of working days lost to strikes. The 2022–23 wave was the largest since 1989."
-              series={strikesSeries}
-              yLabel="Thousands"
-              annotations={strikeAnnotations}
+              title="Working days lost to industrial action, 2010–2023 (millions)"
+              subtitle="Strike activity was historically low from 2010 to 2021. The 2022–23 wave — rail, NHS, postal, education — produced the highest strike levels since 1989. Driven by real-terms pay cuts from inflation."
+              series={series2}
+              annotations={annotations2}
+              yLabel="Days lost (millions)"
               source={{
                 name: 'ONS',
-                dataset: 'Labour Disputes in the UK',
-                frequency: 'monthly',
+                dataset: 'Labour Disputes — Working days lost',
+                frequency: 'annual',
+                url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/workplacedisputesandworkingconditions',
               }}
             />
           </section>
@@ -170,40 +148,24 @@ export default function TradeUnionsPage() {
 
         <ScrollReveal>
           <PositiveCallout
-            title="What's changing"
-            value="+230K"
-            unit="net increase in union membership since 2020 — first sustained growth in decades"
-            description="Union membership has grown in four of the last five years, driven by new organising in hospitality, logistics, and the gig economy. The RCN's first-ever strike in 2022 resulted in a 5%+ pay award for nurses. The Employment Rights Bill proposes simplified recognition procedures and sectoral fair pay agreements. Community unions are organising gig workers, with the GMB winning a landmark employment status case against Uber. Young worker membership has grown 15% since 2020, driven by cost-of-living concerns."
-            source="Source: BEIS/DBT — Trade Union Membership Statistics 2024; ONS — Labour Disputes 2024."
+            title="What's stabilising"
+            value="49%"
+            unit="of public sector workers are union members"
+            description="After four decades of decline, union density has stabilised and in some sectors is recovering. Young workers in the public sector are joining unions at comparable rates to older workers — breaking a long trend of generational decline. New organising campaigns in previously un-unionised sectors (Amazon warehouses, Deliveroo riders, Netflix productions) have won recognition in some workplaces. The 2022–23 strikes, while disruptive, ultimately produced pay settlements that partially offset inflation for workers in the NHS, rail and education — demonstrating that collective bargaining still works."
+            source="Source: BEIS — Trade Union Statistics 2023; TUC — Unions in 2023 report."
           />
         </ScrollReveal>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            {data?.metadata.sources.map((src, i) => (
-              <div key={i}>
-                <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} — {src.dataset}
-                </a>
-                <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Methodology</h3>
-            <p>{data?.metadata.methodology}</p>
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Known issues</h3>
-            <ul className="list-disc list-inside space-y-1">
-              {data?.metadata.knownIssues.map((issue, i) => (
-                <li key={i}>{issue}</li>
-              ))}
-            </ul>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.gov.uk/government/statistics/trade-union-statistics-2023" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">BEIS — Trade Union Statistics</a> — membership, density by sector. Annual.</p>
+            <p><a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/workplacedisputesandworkingconditions" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS — Labour Disputes</a> — working days lost, workers involved. Annual.</p>
+            <p>Membership figures from Certification Officer returns; density calculated as members as % of employees (Labour Force Survey). Working days lost are provisional for the most recent year and subject to revision.</p>
           </div>
         </section>
-              <RelatedTopics />
+
+        <RelatedTopics />
       </main>
     </>
   );

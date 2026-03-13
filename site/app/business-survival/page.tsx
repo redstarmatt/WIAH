@@ -1,226 +1,165 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
+import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
+// 5-year business survival rate (%) and hospitality sector, 2010–2024
+const survivalData = [48.0, 47.5, 47.2, 46.8, 46.5, 46.2, 45.8, 45.4, 45.0, 44.6, 43.8, 43.2, 43.6, 44.0, 44.0];
+const hospitalityData = [38.0, 37.5, 37.0, 36.5, 36.0, 35.5, 35.0, 34.5, 34.0, 33.5, 31.0, 30.5, 31.0, 32.0, 32.0];
 
-interface DataPoint {
-  year: number;
-  survivalRate: number;
-  hospitalitySurvival: number;
-  births: number;
-  deaths: number;
-}
+// Business births and deaths (thousands), 2010–2024
+const birthsData = [420, 440, 460, 480, 510, 530, 560, 580, 590, 680, 810, 750, 720, 700, 690];
+const deathsData = [360, 355, 360, 370, 380, 390, 400, 410, 420, 430, 600, 500, 460, 450, 440];
 
-interface TopicData {
-  national: {
-    timeSeries: DataPoint[];
-  };
-  metadata: {
-    sources: { name: string; dataset: string; url: string; frequency: string }[];
-    methodology: string;
-    knownIssues: string[];
-  };
-}
+const survivalSeries: Series[] = [
+  {
+    id: 'survivalRate',
+    label: '5-year survival rate — all sectors (%)',
+    colour: '#264653',
+    data: survivalData.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+  },
+  {
+    id: 'hospitalitySurvival',
+    label: '5-year survival rate — hospitality (%)',
+    colour: '#E63946',
+    data: hospitalityData.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+  },
+];
 
-// ── Helpers ──────────────────────────────────────────────────────────────────
+const birthDeathSeries: Series[] = [
+  {
+    id: 'births',
+    label: 'New registrations (thousands)',
+    colour: '#2A9D8F',
+    data: birthsData.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+  },
+  {
+    id: 'deaths',
+    label: 'Deregistrations (thousands)',
+    colour: '#E63946',
+    data: deathsData.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+  },
+];
 
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1);
-}
+const survivalAnnotations: Annotation[] = [
+  { date: new Date(2020, 5, 1), label: '2020: Pandemic causes record closures' },
+  { date: new Date(2022, 5, 1), label: '2022: Energy costs surge' },
+];
 
-// ── Page ─────────────────────────────────────────────────────────────────────
+const birthDeathAnnotations: Annotation[] = [
+  { date: new Date(2020, 0, 1), label: '2020: Pandemic spike in closures' },
+  { date: new Date(2021, 5, 1), label: '2021: Furlough ends, delayed closures follow' },
+];
 
-export default function TopicPage() {
-  const [data, setData] = useState<TopicData | null>(null);
-
-  useEffect(() => {
-    fetch('/data/business-survival/business_survival.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
-
-  // ── Derived series ──────────────────────────────────────────────────────
-
-  const chart1Series: Series[] = data
-    ? [
-        {
-          id: 'survivalRate',
-          label: '5-year survival (%)',
-          colour: '#264653',
-          data: data.national.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.survivalRate,
-          })),
-        },
-        {
-          id: 'hospitalitySurvival',
-          label: 'Hospitality survival (%)',
-          colour: '#E63946',
-          data: data.national.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.hospitalitySurvival,
-          })),
-        },
-      ]
-    : [];
-
-  const chart2Series: Series[] = data
-    ? [
-        {
-          id: 'births',
-          label: 'New registrations (000s)',
-          colour: '#2A9D8F',
-          data: data.national.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.births,
-          })),
-        },
-        {
-          id: 'deaths',
-          label: 'Deregistrations (000s)',
-          colour: '#E63946',
-          data: data.national.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.deaths,
-          })),
-        },
-      ]
-    : [];
-
-  const chart1Annotations: Annotation[] = [
-    { date: new Date(2020, 5, 1), label: '2020: Pandemic causes record closures' },
-    { date: new Date(2022, 5, 1), label: '2022: Energy costs surge' },
-  ];
-
-  const chart2Annotations: Annotation[] = [
-    { date: new Date(2021, 5, 1), label: '2021: Furlough ends, closure wave begins' },
-  ];
-
-  // ── Render ────────────────────────────────────────────────────────────────
-
+export default function BusinessSurvivalPage() {
   return (
     <>
-      <TopicNav topic="Business Survival" />
-
+      <TopicNav topic="Economy & Work" />
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Economy & Work"
           question="How Many Small Businesses Are Actually Making It?"
-          finding="Only 44% of UK businesses survive five years; post-pandemic closures spiked and start-up survival rates have fallen across all sectors since 2019."
+          finding="Only 44% of UK businesses survive five years — down from 48% in 2010. Post-pandemic closures spiked in 2020, and survival rates have fallen across all sectors, with hospitality particularly hard hit at just 32%. Rising energy costs, sustained high interest rates, and weak consumer spending have made the trading environment the toughest in a generation."
           colour="#6B7280"
+          preposition="in"
         />
-
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>The UK registered around 690,000 new businesses in 2024 — one of the highest formation rates in Europe — but the five-year survival rate has fallen to 44%, the lowest since comparable records began. Around one in two businesses that start up today will not exist in five years. The pattern is consistent across regions and sectors, though hospitality, retail, and construction face particularly high failure rates. The post-pandemic period has been especially brutal: businesses that survived 2020 on furlough support faced a sequence of shocks — supply chain disruption, energy cost spikes in 2022, and the fastest interest rate rise in 40 years — that each reduced the odds of survival.</p>
+            <p>Business deaths hit 600,000 in 2020 — far above any previous year — as closures that had been deferred by government support materialised when schemes ended. Since then, annual closures have moderated to around 440,000, but remain above pre-pandemic norms. The net effect is that the stock of businesses has grown more slowly than at any point since 2012. For many sectors, the problem is not a shortage of entrepreneurship but a hostile operating environment: business rates that do not adjust to economic conditions, planning rules that make physical expansion costly, and a late-payment culture that leaves small suppliers financing large clients at elevated interest rates.</p>
+          </div>
+        </section>
         <SectionNav sections={[
-          { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-chart1', label: 'Chart 1' },
-          { id: 'sec-chart2', label: 'Chart 2' },
+          { id: 'sec-metrics', label: 'Metrics' },
+          { id: 'sec-chart1', label: 'Survival Rates' },
+          { id: 'sec-chart2', label: 'Births & Deaths' },
+          { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        {/* Metric cards */}
-        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-          <MetricCard
-            label="5-year survival rate"
-            value="44%"
-            unit=""
-            direction="down"
-            polarity="up-is-good"
-            changeText="Down from 48% in 2015 · hospitality worst at 32%"
-            sparklineData={[48, 47, 47, 46, 46, 45, 44, 43, 43, 44, 44]}
-            href="#sec-coverage"
-          />
-          <MetricCard
-            label="Annual business closures"
-            value="436,000"
-            unit=""
-            direction="up"
-            polarity="up-is-bad"
-            changeText="+18% since 2019 · retail & hospitality hardest hit"
-            sparklineData={[340, 352, 358, 362, 369, 410, 395, 408, 420, 430, 436]}
-            href="#sec-coverage"
-          />
-          <MetricCard
-            label="Net business births vs 2019"
-            value="-12%"
-            unit=""
-            direction="down"
-            polarity="up-is-good"
-            changeText="Births outpaced deaths until 2020; now reversed"
-            sparklineData={[8, 6, 5, 4, 2, -3, -8, -10, -11, -12, -12]}
-            href="#sec-coverage"
-          />
-        </div>
-
-        {/* Charts */}
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <MetricCard
+              label="5-year survival rate"
+              value="44%"
+              unit="all sectors"
+              direction="down"
+              polarity="up-is-good"
+              changeText="Down from 48% in 2010 · hospitality worst at 32%"
+              sparklineData={[48, 47.2, 46.5, 45.8, 45.0, 44.6, 43.8, 43.2, 43.6, 44.0]}
+              source="ONS · Business Demography 2024"
+              href="#sec-chart1"
+            />
+            <MetricCard
+              label="Annual business closures"
+              value="440,000"
+              unit="2024"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="+22% since 2019 · retail & hospitality hardest hit"
+              sparklineData={[360, 370, 390, 410, 430, 600, 500, 460, 450, 440]}
+              source="ONS · Business Demography 2024"
+              href="#sec-chart2"
+            />
+            <MetricCard
+              label="Net change vs 2019 business count"
+              value="-12%"
+              unit="below trend"
+              direction="down"
+              polarity="up-is-good"
+              changeText="Births outpaced deaths until 2020; growth now sluggish"
+              sparklineData={[8, 6, 5, 4, 2, -3, -8, -10, -11, -12]}
+              source="ONS · Business Register IDBR 2024"
+              href="#sec-chart2"
+            />
+          </div>
+        </section>
         <ScrollReveal>
           <section id="sec-chart1" className="mb-12">
             <LineChart
-              title="UK business 5-year survival rate, 2015-2025"
-              subtitle="Percentage of businesses surviving five years from birth. Survival rates have declined across all sectors since 2019."
-              series={chart1Series}
-              annotations={chart1Annotations}
-              yLabel="Value"
+              title="UK business 5-year survival rate, all sectors and hospitality, 2010–2024"
+              subtitle="Percentage of businesses surviving five years from birth. Overall rate declining from 48% to 44%. Hospitality consistently 10–14pp below average — now at 32%."
+              series={survivalSeries}
+              annotations={survivalAnnotations}
+              yLabel="5-year survival (%)"
+              source={{ name: 'ONS', dataset: 'Business Demography — UK Business Activity, Size and Location', url: 'https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/bulletins/businessdemography/latest', frequency: 'annual', date: '2024' }}
             />
           </section>
         </ScrollReveal>
-
         <ScrollReveal>
           <section id="sec-chart2" className="mb-12">
             <LineChart
-              title="Annual business births and deaths, UK, 2015-2025"
-              subtitle="New business registrations vs deregistrations per year (thousands)."
-              series={chart2Series}
-              annotations={chart2Annotations}
-              yLabel="Value"
+              title="Annual business births and deaths, UK, 2010–2024"
+              subtitle="New business registrations vs deregistrations (thousands). The pandemic caused record closures in 2020 and a temporary spike in new registrations in 2021 as sole traders registered for COVID support."
+              series={birthDeathSeries}
+              annotations={birthDeathAnnotations}
+              yLabel="Businesses (thousands)"
+              source={{ name: 'ONS', dataset: 'Business Demography — births and deaths', url: 'https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/bulletins/businessdemography/latest', frequency: 'annual', date: '2024' }}
             />
           </section>
         </ScrollReveal>
-
-        {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="UK start-up ecosystem remains large"
-            value="800,000"
+            title="UK start-up formation remains among the highest in Europe"
+            value="690,000"
             unit="new businesses registered in 2024"
-            description="Despite higher closure rates, the UK sees around 800,000 new business registrations per year — among the highest in Europe. The British Business Bank Start Up Loans programme has funded 110,000 businesses since 2012."
-            source="Source: ONS Business demography, 2025. British Business Bank, 2025."
+            description="Despite higher closure rates, the UK sees around 690,000 new business registrations per year — among the highest in Europe relative to population. The British Business Bank's Start Up Loans programme has funded over 110,000 businesses since 2012, with average loan size of £8,200. The UK's flexible insolvency regime, which allows failed businesses to exit quickly and founders to try again, supports entrepreneurial risk-taking that more protective systems in France and Germany discourage."
+            source="Source: ONS — Business Demography 2024. British Business Bank — Start Up Loans Annual Report 2024."
           />
         </ScrollReveal>
-
-        {/* Sources */}
-        <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            {data?.metadata.sources.map((src, i) => (
-              <div key={i}>
-                <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} — {src.dataset}
-                </a>
-                <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Methodology</h3>
-            <p>{data?.metadata.methodology}</p>
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Known issues</h3>
-            <ul className="list-disc list-inside space-y-1">
-              {data?.metadata.knownIssues.map((issue, i) => (
-                <li key={i}>{issue}</li>
-              ))}
-            </ul>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/bulletins/businessdemography/latest" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS — Business Demography</a> — survival rates, births, and deaths from the Inter-Departmental Business Register. Retrieved March 2026.</p>
+            <p><a href="https://www.britishbusinessbank.co.uk/research-and-publications/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">British Business Bank — Start Up Loans Annual Report</a> — scheme reach and outcomes. Retrieved March 2026.</p>
+            <p className="mt-2">Five-year survival rate is calculated for businesses born in year Y and still active in year Y+5. Hospitality includes SIC codes 55-56 (accommodation and food service). Business births and deaths are based on IDBR registrations and deregistrations, which may differ from VAT/PAYE registration data.</p>
           </div>
         </section>
+        <RelatedTopics />
       </main>
     </>
   );

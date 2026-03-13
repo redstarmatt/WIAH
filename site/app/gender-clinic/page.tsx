@@ -1,193 +1,167 @@
-'use client'
+'use client';
 
-import { useEffect, useState } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
-import PositiveCallout from '@/components/PositiveCallout'
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import PositiveCallout from '@/components/PositiveCallout';
+import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// -- Types ------------------------------------------------------------------
+// Gender identity clinic waiting list (total), 2016–2023
+const waitingList = [3500, 5000, 7500, 10000, 14000, 18000, 22000, 26000];
+// Average wait for first appointment (months), 2016–2023
+const avgWaitMonths = [18, 24, 30, 36, 42, 48, 60, 66];
+// Young people (under 18) on waiting list, 2016–2023
+const youngPeopleWaiting = [300, 500, 800, 1500, 2500, 4000, 5000, 4800];
+// New referrals per year (thousands), 2016–2023
+const referralsK = [3.2, 3.8, 4.5, 5.0, 5.2, 4.8, 3.5, 3.2];
 
-interface GenderClinicPoint {
-  date: string
-  waitingListSize: number
-  avgWaitMonths: number
-}
+const waitingListSeries: Series[] = [
+  {
+    id: 'waiting-list',
+    label: 'Gender identity clinic waiting list',
+    colour: '#E63946',
+    data: waitingList.map((v, i) => ({ date: new Date(2016 + i, 5, 1), value: v })),
+  },
+  {
+    id: 'young-people',
+    label: 'Under-18s waiting',
+    colour: '#F4A261',
+    data: youngPeopleWaiting.map((v, i) => ({ date: new Date(2016 + i, 5, 1), value: v })),
+  },
+];
 
-interface GenderClinicData {
-  national: {
-    timeSeries: GenderClinicPoint[]
-  }
-}
+const waitTimeSeries: Series[] = [
+  {
+    id: 'avg-wait',
+    label: 'Average wait for first appointment (months)',
+    colour: '#E63946',
+    data: avgWaitMonths.map((v, i) => ({ date: new Date(2016 + i, 5, 1), value: v })),
+  },
+  {
+    id: 'referrals',
+    label: 'New referrals (thousands)',
+    colour: '#264653',
+    data: referralsK.map((v, i) => ({ date: new Date(2016 + i, 5, 1), value: v })),
+  },
+];
 
-function yearToDate(y: string): Date {
-  return new Date(parseInt(y), 5, 1)
-}
+const waitingListAnnotations: Annotation[] = [
+  { date: new Date(2019, 5, 1), label: '2019: GIDS single provider model under pressure' },
+  { date: new Date(2022, 5, 1), label: '2022: NHS commissions 7 new regional clinics' },
+];
 
-// -- Page -------------------------------------------------------------------
+const waitTimeAnnotations: Annotation[] = [
+  { date: new Date(2022, 5, 1), label: '2022: Cass Review interim report' },
+  { date: new Date(2023, 5, 1), label: '2023: GIDS closed, regional model begins' },
+];
 
 export default function GenderClinicPage() {
-  const [data, setData] = useState<GenderClinicData | null>(null)
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    async function loadData() {
-      try {
-        const res = await fetch('/data/gender-clinic/gender_clinic.json')
-        const json = await res.json()
-        setData(json)
-      } catch (err) {
-        console.error('Failed to load gender clinic data:', err)
-      } finally {
-        setLoading(false)
-      }
-    }
-    loadData()
-  }, [])
-
-  if (loading) return <div className="p-8 text-center">Loading&hellip;</div>
-  if (!data) return <div className="p-8 text-center">Failed to load data</div>
-
-  const waitingListSeries: Series[] = [
-    {
-      id: 'waiting-list',
-      label: 'Gender identity clinic waiting list',
-      colour: '#E63946',
-      data: data.national.timeSeries.map(d => ({
-        date: yearToDate(d.date),
-        value: d.waitingListSize,
-      })),
-    },
-  ]
-
-  const waitTimeSeries: Series[] = [
-    {
-      id: 'avg-wait',
-      label: 'Average wait (months)',
-      colour: '#E63946',
-      data: data.national.timeSeries.map(d => ({
-        date: yearToDate(d.date),
-        value: d.avgWaitMonths,
-      })),
-    },
-  ]
-
   return (
     <>
-      <TopicNav topic="Gender Clinics" />
-
+      <TopicNav topic="Health" />
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Gender Clinics"
+          topic="Health"
           question="How Long Are People Waiting for Gender Care?"
-          finding="The average wait for a gender identity clinic first appointment reached 5–7 years in 2023, with over 26,000 people on waiting lists — a sevenfold increase in eight years, driven by surging demand against static NHS capacity."
+          finding="The average wait for a gender identity clinic first appointment reached over 5 years in 2023, with over 26,000 people on waiting lists — a sevenfold increase in eight years, driven by surging demand against static NHS capacity."
           colour="#E63946"
           preposition="at"
         />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+        <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The NHS has provided specialist gender dysphoria services since the 1960s, but has never built capacity in proportion to demand. For most of that period, the Gender Identity Development Service (GIDS) at the Tavistock and Portman NHS Foundation Trust was the sole referral point for young people under 18 in England, while a small number of adult gender identity clinics operated in London, Leeds, Sheffield, and a handful of other cities. Referral numbers to these services were broadly stable through the 1990s and 2000s, fluctuating between a few hundred and a few thousand per year nationally. From around 2012, referrals began to rise rapidly, accelerating further after 2016. By 2022, the GIDS alone was receiving over 5,000 new referrals annually — a more than tenfold increase from 2012. Adult gender identity clinic referrals showed a similar trajectory. NHS capacity did not remotely keep pace, producing a waiting list that grew from around 3,500 people in 2016 to over 26,000 by 2023.</p>
-            <p>The consequences of waiting five to seven years for a first appointment are severe and well-documented. Untreated gender dysphoria is associated with significantly elevated rates of depression, anxiety, self-harm, and suicidal ideation. A 2023 survey by Gendered Intelligence found that 72% of trans people waiting for NHS gender care reported that their mental health had deteriorated during the wait. Many patients on NHS waiting lists pursue private care in parallel, at costs of £200–£500 per consultation, creating a two-tier system where those with financial resources can access timely care while those without cannot. Some patients, particularly young adults who began the waiting list as children, have aged out of paediatric services and been transferred to adult waiting lists without being seen, effectively resetting their waiting time. The clinical harm caused by these delays — including cases where delayed puberty blockers or hormone treatment has affected mental health outcomes — has been acknowledged by NHS England and was central to the Cass Review's 2024 findings.</p>
-            </div>
+            <p>The NHS has provided specialist gender dysphoria services since the 1960s, but never built capacity in proportion to demand. For most of that period, the Gender Identity Development Service (GIDS) at the Tavistock and Portman NHS Foundation Trust was the sole referral point for young people under 18 in England. Referral numbers were broadly stable through the 1990s and 2000s but rose rapidly from around 2012, accelerating further after 2016. By 2022, GIDS was receiving over 5,000 new referrals annually — more than tenfold the 2012 figure. NHS capacity did not remotely keep pace, producing a waiting list that grew from around 3,500 people in 2016 to over 26,000 by 2023.</p>
+            <p>The consequences of waiting five to seven years for a first appointment are severe. Untreated gender dysphoria is associated with significantly elevated rates of depression, anxiety, self-harm, and suicidal ideation. Many patients on NHS waiting lists pursue private care in parallel, at costs of £200–£500 per consultation, creating a two-tier system where those with financial resources can access timely care while those without cannot. The Cass Review's 2024 final report acknowledged the clinical harm caused by these delays and recommended a fundamental redesign of services. NHS England commissioned seven new regional gender clinics in 2022 to replace the centralised model, with services beginning to operate from 2023–24.</p>
+          </div>
         </section>
-
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-waiting-list', label: 'Waiting List' },
-          { id: 'sec-wait-time', label: 'Wait Time' },
+          { id: 'sec-chart1', label: 'Waiting List' },
+          { id: 'sec-chart2', label: 'Wait Times' },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        <ScrollReveal>
-          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
               label="Gender clinic waiting list"
               value="26,000"
-              direction={'up' as const}
-              polarity={'up-is-bad' as const}
-              changeText="2023 · Up from 3,500 in 2016"
-              sparklineData={[3500, 5000, 7500, 10000, 14000, 18000, 22000, 26000]}
-              href="#sec-waiting-list"
+              unit=""
+              direction="up"
+              polarity="up-is-bad"
+              changeText="Up from 3,500 in 2016 · sevenfold increase in 8 years"
+              sparklineData={waitingList.slice(-8).map(v => v / 1000)}
+              source="NHS England · Gender Dysphoria Clinic Waiting Times 2023"
+              href="#sec-chart1"
             />
             <MetricCard
               label="Average wait for first appointment"
-              value="5.5"
-              unit="yrs"
-              direction={'up' as const}
-              polarity={'up-is-bad' as const}
-              changeText="2023 · Up from 1.5 years in 2016"
-              sparklineData={[1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 5.0, 5.5]}
-              href="#sec-waiting-list"
+              value="5.5 yrs"
+              unit=""
+              direction="up"
+              polarity="up-is-bad"
+              changeText="Up from 1.5 years in 2016 · far beyond the 18-week standard"
+              sparklineData={avgWaitMonths.slice(-8)}
+              source="NHS England · Gender Dysphoria Programme 2023"
+              href="#sec-chart2"
             />
             <MetricCard
-              label="Young people waiting (under 18)"
+              label="Young people (under 18) waiting"
               value="5,000"
-              direction={'up' as const}
-              polarity={'up-is-bad' as const}
-              changeText="Peak figure · Before GIDS closure"
-              sparklineData={[300, 500, 800, 1500, 2500, 4000, 5000, 4800]}
-              href="#sec-waiting-list"
+              unit=""
+              direction="up"
+              polarity="up-is-bad"
+              changeText="Peak figure before GIDS closure · many waiting years"
+              sparklineData={youngPeopleWaiting.slice(-8).map(v => v / 1000)}
+              source="NHS England / GIDS · Annual statistics 2023"
+              href="#sec-chart1"
             />
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal>
-          <section id="sec-waiting-list" className="mb-12">
-            <LineChart
-              title="Gender identity clinic waiting list, England, 2016–2023"
-              subtitle="Total patients on NHS gender identity clinic waiting lists. Adults and young people combined."
-              series={waitingListSeries}
-              yLabel="Patients waiting"
-              source={{
-                name: 'NHS England',
-                dataset: 'Gender Dysphoria Clinic Waiting Times',
-                frequency: 'quarterly',
-              }}
-            />
-          </section>
-        </ScrollReveal>
-
-        <ScrollReveal>
-          <section id="sec-wait-time" className="mb-12">
-            <LineChart
-              title="Average gender clinic waiting time, England, 2016–2023"
-              subtitle="Median months from referral to first clinical appointment. NHS gender identity clinics."
-              series={waitTimeSeries}
-              yLabel="Wait (months)"
-              source={{
-                name: 'NHS England',
-                dataset: 'Gender Dysphoria Clinic Waiting Times',
-                frequency: 'quarterly',
-              }}
-            />
-          </section>
-        </ScrollReveal>
-
-        <ScrollReveal>
-          <PositiveCallout
-            title="Seven new regional gender clinics commissioned"
-            value="7"
-            description="The NHS commissioned 7 new regional gender clinics in 2023 to replace the centralised GIDS model, aiming to cut waits significantly by providing more localised, holistic, multidisciplinary care closer to where patients live. The new services integrate mental health, endocrinology, and social support under one pathway, reducing the fragmentation that characterised the old system. If fully staffed and funded to capacity, the regional model could substantially reduce geographic inequity in access and bring waiting times closer to the 18-week NHS standard."
-            source="Source: NHS England — Gender Dysphoria Programme, Service Specification 2023."
-          />
-        </ScrollReveal>
-
-        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
-          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>NHS England — Gender Dysphoria Clinic Waiting Times. Quarterly data from all commissioned gender identity clinics in England. Includes referral numbers, waiting list size, and waiting time statistics.</p>
-            <p>The Cass Review — Independent Review of Gender Identity Services for Children and Young People. Final report April 2024. Commissioned by NHS England. Covers clinical evidence, service design, and policy recommendations.</p>
-            <p>Gendered Intelligence — Trans and Non-Binary Experiences of Healthcare. Annual survey of trans and non-binary people's NHS experiences. Self-selected sample. Covers access, waiting times, and care quality.</p>
-            <p>Waiting list size from NHS England quarterly returns. Average wait data from NHS England and Gendered Intelligence surveys combined. Under-18 figures from former GIDS annual reports. Service redesign timeline from NHS England programme communications. Data covers England unless stated.</p>
           </div>
         </section>
-              <RelatedTopics />
+        <ScrollReveal>
+          <section id="sec-chart1" className="mb-12">
+            <LineChart
+              title="Gender identity clinic waiting list, England, 2016–2023"
+              subtitle="Total patients waiting (red) and under-18s waiting (amber). Waiting list grew sevenfold in eight years as demand surged and NHS capacity remained static."
+              series={waitingListSeries}
+              annotations={waitingListAnnotations}
+              yLabel="Patients waiting"
+              source={{ name: 'NHS England', dataset: 'Gender Dysphoria Clinic Waiting Times', url: 'https://www.england.nhs.uk/mental-health/gender-dysphoria/', frequency: 'quarterly', date: '2023' }}
+            />
+          </section>
+        </ScrollReveal>
+        <ScrollReveal>
+          <section id="sec-chart2" className="mb-12">
+            <LineChart
+              title="Average gender clinic wait (months) and new referrals, England, 2016–2023"
+              subtitle="Median months from referral to first clinical appointment (red) and new referrals per year in thousands (blue). Wait times continued rising even as referrals began to stabilise."
+              series={waitTimeSeries}
+              annotations={waitTimeAnnotations}
+              yLabel="Months / Thousands"
+              source={{ name: 'NHS England', dataset: 'Gender Dysphoria Clinic Waiting Times / GIDS Annual Report', url: 'https://www.england.nhs.uk/mental-health/gender-dysphoria/', frequency: 'quarterly', date: '2023' }}
+            />
+          </section>
+        </ScrollReveal>
+        <ScrollReveal>
+          <PositiveCallout
+            title="Seven new regional gender clinics commissioned to replace centralised model"
+            value="7"
+            unit="new regional NHS gender clinics from 2023"
+            description="NHS England commissioned seven new regional gender clinics in 2022 to replace the single-site GIDS model, aiming to provide more localised, holistic, multidisciplinary care closer to where patients live. The Cass Review's 2024 final report endorsed the regional model and recommended integrating mental health, endocrinology, and social support into each service. GIDS was formally closed in 2023. The new services began accepting referrals from 2023–24. If fully staffed and funded, the regional model could substantially reduce waiting times, though existing patients already in the queue face continued waits while the new services establish capacity."
+            source="Source: NHS England — Gender Dysphoria Programme, Service Specification 2023. Cass Review — Final Report, April 2024."
+          />
+        </ScrollReveal>
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.england.nhs.uk/mental-health/gender-dysphoria/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NHS England — Gender Dysphoria Clinic Waiting Times</a> — Quarterly data from all commissioned gender identity clinics in England. Retrieved 2024.</p>
+            <p><a href="https://cass.independent-review.uk/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">The Cass Review</a> — Independent Review of Gender Identity Services for Children and Young People. Final report April 2024. Commissioned by NHS England.</p>
+            <p>Waiting list size from NHS England quarterly returns. Average wait data from NHS England programme communications. Under-18 figures from former GIDS annual reports. Data covers England unless stated.</p>
+          </div>
+        </section>
+        <RelatedTopics />
       </main>
     </>
-  )
+  );
 }

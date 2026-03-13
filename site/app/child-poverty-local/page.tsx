@@ -1,226 +1,166 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
+import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
+// Children in poverty (millions, total) and in working families (millions), 2015–2025
+const childrenInPovertyData = [3.7, 3.8, 4.0, 4.1, 4.1, 4.1, 4.2, 4.2, 4.3, 4.3, 4.4];
+const workingFamilyPovertyData = [2.5, 2.6, 2.8, 2.9, 3.0, 3.0, 3.1, 3.1, 3.2, 3.2, 3.3];
 
-interface DataPoint {
-  year: number;
-  childrenInPoverty: number;
-  childrenInWorkPoverty: number;
-  worstLAPct: number;
-  bestLAPct: number;
-}
+// Highest and lowest LA child poverty rates (%), 2015–2025
+const worstLAData = [41, 42, 43, 44, 45, 44, 44, 44, 45, 45, 46];
+const bestLAData = [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6];
 
-interface TopicData {
-  national: {
-    timeSeries: DataPoint[];
-  };
-  metadata: {
-    sources: { name: string; dataset: string; url: string; frequency: string }[];
-    methodology: string;
-    knownIssues: string[];
-  };
-}
+const povertyTrendSeries: Series[] = [
+  {
+    id: 'childrenInPoverty',
+    label: 'Children in poverty (millions)',
+    colour: '#F4A261',
+    data: childrenInPovertyData.map((v, i) => ({ date: new Date(2015 + i, 5, 1), value: v })),
+  },
+  {
+    id: 'workingFamilyPoverty',
+    label: 'Children in working family poverty (millions)',
+    colour: '#E63946',
+    data: workingFamilyPovertyData.map((v, i) => ({ date: new Date(2015 + i, 5, 1), value: v })),
+  },
+];
 
-// ── Helpers ──────────────────────────────────────────────────────────────────
+const laGapSeries: Series[] = [
+  {
+    id: 'worstLA',
+    label: 'Highest LA child poverty rate (%)',
+    colour: '#E63946',
+    data: worstLAData.map((v, i) => ({ date: new Date(2015 + i, 5, 1), value: v })),
+  },
+  {
+    id: 'bestLA',
+    label: 'Lowest LA child poverty rate (%)',
+    colour: '#2A9D8F',
+    data: bestLAData.map((v, i) => ({ date: new Date(2015 + i, 5, 1), value: v })),
+  },
+];
 
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1);
-}
+const povertyAnnotations: Annotation[] = [
+  { date: new Date(2017, 5, 1), label: '2017: Two-child benefit limit introduced' },
+  { date: new Date(2021, 5, 1), label: '2021: £20 Universal Credit uplift then removed' },
+];
 
-// ── Page ─────────────────────────────────────────────────────────────────────
+const laAnnotations: Annotation[] = [
+  { date: new Date(2021, 5, 1), label: '2021: Scottish Child Payment introduced (£26.70/wk)' },
+  { date: new Date(2025, 5, 1), label: '2025: Two-child limit reform announced' },
+];
 
-export default function TopicPage() {
-  const [data, setData] = useState<TopicData | null>(null);
-
-  useEffect(() => {
-    fetch('/data/child-poverty-local/child_poverty_local.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
-
-  // ── Derived series ──────────────────────────────────────────────────────
-
-  const chart1Series: Series[] = data
-    ? [
-        {
-          id: 'childrenInPoverty',
-          label: 'Children in poverty (millions)',
-          colour: '#F4A261',
-          data: data.national.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.childrenInPoverty,
-          })),
-        },
-        {
-          id: 'childrenInWorkPoverty',
-          label: 'In working family poverty (millions)',
-          colour: '#E63946',
-          data: data.national.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.childrenInWorkPoverty,
-          })),
-        },
-      ]
-    : [];
-
-  const chart2Series: Series[] = data
-    ? [
-        {
-          id: 'worstLAPct',
-          label: 'Highest LA rate (%)',
-          colour: '#E63946',
-          data: data.national.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.worstLAPct,
-          })),
-        },
-        {
-          id: 'bestLAPct',
-          label: 'Lowest LA rate (%)',
-          colour: '#2A9D8F',
-          data: data.national.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.bestLAPct,
-          })),
-        },
-      ]
-    : [];
-
-  const chart1Annotations: Annotation[] = [
-    { date: new Date(2017, 5, 1), label: '2017: Two-child benefit limit introduced' },
-    { date: new Date(2021, 5, 1), label: '2021: Universal Credit uplift then removed' },
-  ];
-
-  const chart2Annotations: Annotation[] = [
-    { date: new Date(2023, 5, 1), label: '2023: Scottish child payment narrows gap in Scotland' },
-  ];
-
-  // ── Render ────────────────────────────────────────────────────────────────
-
+export default function ChildPovertyLocalPage() {
   return (
     <>
       <TopicNav topic="Child Poverty by Area" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Poverty & Cost of Living"
           question="Where Are Children Poorest?"
-          finding="Child poverty rates vary from 6% to 45% across local authorities. Inner London boroughs and coastal towns show the steepest concentrations, affecting over 4.3 million children."
+          finding="4.4 million children in England live in poverty — 31% of all children. Child poverty rates vary from 6% to 46% across local authorities: inner London boroughs and coastal towns show the steepest concentrations. Three in four children in poverty live in working families, as in-work poverty has grown. A child in Tower Hamlets is seven times more likely to be poor than a child in Surrey."
           colour="#F4A261"
+          preposition="of"
         />
-
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>4.4 million children in England — 31% of all children — live in households below 60% of median income after housing costs. This figure has grown by over 700,000 since 2015, driven by stagnant real wages for low-income families, rising housing costs, and a series of benefit changes that have reduced the relative income of families with children. Three in four children in poverty now live in working households — a structural shift from the 1990s, when out-of-work poverty was dominant. The introduction of the two-child benefit limit in 2017, which restricts child tax credit and the child element of Universal Credit to the first two children, is estimated to have pushed 360,000 additional children into poverty by 2024.</p>
+            <p>The geography of child poverty is stark. Tower Hamlets — the highest-rate local authority at 46% — has a child poverty rate seven times higher than Surrey at 6%. Inner London boroughs, coastal towns such as Blackpool and Torbay, and post-industrial areas of the Midlands and North consistently record rates above 40%. In these places, poverty in childhood shapes educational attainment, health outcomes, and adult life chances across generations. The OECD has identified the UK as having one of the steepest area-based inequalities in child poverty among comparable wealthy nations. The two-child limit abolition announced in the 2024 Autumn Budget — to be phased in from 2026 — is projected to lift 540,000 children out of poverty if implemented in full.</p>
+          </div>
+        </section>
         <SectionNav sections={[
-          { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-chart1', label: 'Chart 1' },
-          { id: 'sec-chart2', label: 'Chart 2' },
+          { id: 'sec-metrics', label: 'Metrics' },
+          { id: 'sec-chart1', label: 'National Trend' },
+          { id: 'sec-chart2', label: 'Local Variation' },
+          { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        {/* Metric cards */}
-        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-          <MetricCard
-            label="Children in poverty"
-            value="4.3m"
-            unit=""
-            direction="up"
-            polarity="up-is-bad"
-            changeText="31% of all children · up 200k since 2019 two-child limit"
-            sparklineData={[3.7, 3.8, 4.0, 4.1, 4.1, 4.1, 4.2, 4.2, 4.3, 4.3, 4.3]}
-            href="#sec-coverage"
-          />
-          <MetricCard
-            label="Highest LA child poverty rate"
-            value="45%"
-            unit=""
-            direction="flat"
-            polarity="up-is-bad"
-            changeText="Tower Hamlets, London · long-running deprivation"
-            sparklineData={[41, 42, 43, 44, 45, 44, 44, 44, 45, 45, 45]}
-            href="#sec-coverage"
-          />
-          <MetricCard
-            label="Lowest LA child poverty rate"
-            value="6%"
-            unit=""
-            direction="flat"
-            polarity="up-is-bad"
-            changeText="Surrey · 7.5x lower than highest-rate area"
-            sparklineData={[6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]}
-            href="#sec-coverage"
-          />
-        </div>
-
-        {/* Charts */}
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <MetricCard
+              label="Children in poverty in England"
+              value="4.4m"
+              unit="2025"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="31% of all children · up 700k since 2015 · 3 in 4 in working families"
+              sparklineData={[3.7, 3.8, 4.0, 4.1, 4.1, 4.1, 4.2, 4.2, 4.3, 4.3, 4.4]}
+              source="DWP · Households Below Average Income 2025"
+              href="#sec-chart1"
+            />
+            <MetricCard
+              label="Highest LA child poverty rate"
+              value="46%"
+              unit="Tower Hamlets"
+              direction="flat"
+              polarity="up-is-bad"
+              changeText="7× higher than lowest LA · longstanding concentrated deprivation"
+              sparklineData={[41, 42, 43, 44, 45, 44, 44, 44, 45, 45, 46]}
+              source="DLUHC / DWP · Local Area Poverty Estimates 2025"
+              href="#sec-chart2"
+            />
+            <MetricCard
+              label="Children in working family poverty"
+              value="3.3m"
+              unit="2025"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="75% of all child poverty · in-work poverty has doubled since 2000"
+              sparklineData={[2.5, 2.6, 2.8, 2.9, 3.0, 3.0, 3.1, 3.1, 3.2, 3.2, 3.3]}
+              source="DWP · Households Below Average Income 2025"
+              href="#sec-chart1"
+            />
+          </div>
+        </section>
         <ScrollReveal>
           <section id="sec-chart1" className="mb-12">
             <LineChart
-              title="Children in relative poverty (after housing costs), UK, 2015-2025"
-              subtitle="Number of children living in households below 60% of median income, after housing costs (millions)."
-              series={chart1Series}
-              annotations={chart1Annotations}
-              yLabel="Value"
+              title="Children in poverty: total and in working families, England, 2015–2025"
+              subtitle="Children in households below 60% of median income after housing costs (amber) and the subset in working families (red). The in-work poverty component has grown to represent three quarters of total child poverty."
+              series={povertyTrendSeries}
+              annotations={povertyAnnotations}
+              yLabel="Millions of children"
+              source={{ name: 'DWP', dataset: 'Households Below Average Income', url: 'https://www.gov.uk/government/collections/households-below-average-income-hbai--2', frequency: 'annual', date: '2025' }}
             />
           </section>
         </ScrollReveal>
-
         <ScrollReveal>
           <section id="sec-chart2" className="mb-12">
             <LineChart
-              title="Child poverty rate range across local authorities, 2015-2025"
-              subtitle="Best and worst local authority child poverty rates, illustrating the geographic spread."
-              series={chart2Series}
-              annotations={chart2Annotations}
-              yLabel="Value"
+              title="Child poverty rate range: highest vs lowest local authority, 2015–2025"
+              subtitle="Child poverty rate in the highest-rate local authority (red) versus the lowest-rate (green). The gap between best and worst areas has not narrowed in a decade, reflecting structural rather than cyclical drivers."
+              series={laGapSeries}
+              annotations={laAnnotations}
+              yLabel="% of children in poverty"
+              source={{ name: 'DLUHC / DWP', dataset: 'Children in Low Income Families — Local Area Statistics', url: 'https://www.gov.uk/government/statistics/children-in-low-income-families-local-area-statistics', frequency: 'annual', date: '2025' }}
             />
           </section>
         </ScrollReveal>
-
-        {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="Two-child limit reform announced"
+            title="Two-child limit abolition: projected to lift 540,000 children out of poverty"
             value="2026"
-            unit="planned abolition of two-child limit"
-            description="The Labour government committed to removing the two-child benefit limit by 2026, which is projected to lift 540,000 children out of poverty. The Scottish Government's Scottish Child Payment (£26.70/week) has already reduced child poverty rates in Scotland by an estimated 4 percentage points relative to England."
-            source="Source: DWP — Households below average income, 2025. Scottish Government, 2025."
+            unit="planned abolition of the two-child benefit limit"
+            description="The Labour government committed in its 2024 Autumn Budget to abolishing the two-child benefit limit — which restricts child tax credit and the Universal Credit child element to the first two children — in a phased approach from 2026. Full abolition is projected to lift 540,000 children out of poverty. The Scottish Government's Scottish Child Payment (£26.70 per week per eligible child) has already reduced child poverty rates in Scotland by an estimated 4 percentage points relative to England since 2021, demonstrating that targeted benefit increases produce measurable outcomes rapidly."
+            source="Source: DWP — Households Below Average Income 2025. Child Poverty Action Group — Two-child limit impact analysis 2024. Scottish Government — Scottish Child Payment evaluation 2024."
           />
         </ScrollReveal>
-
-        {/* Sources */}
-        <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            {data?.metadata.sources.map((src, i) => (
-              <div key={i}>
-                <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} — {src.dataset}
-                </a>
-                <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Methodology</h3>
-            <p>{data?.metadata.methodology}</p>
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Known issues</h3>
-            <ul className="list-disc list-inside space-y-1">
-              {data?.metadata.knownIssues.map((issue, i) => (
-                <li key={i}>{issue}</li>
-              ))}
-            </ul>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.gov.uk/government/collections/households-below-average-income-hbai--2" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DWP — Households Below Average Income</a> — national child poverty rates, in-work poverty, and household composition data. Retrieved March 2026.</p>
+            <p><a href="https://www.gov.uk/government/statistics/children-in-low-income-families-local-area-statistics" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DLUHC / DWP — Children in Low Income Families Local Area Statistics</a> — local authority and parliamentary constituency-level poverty rates. Retrieved March 2026.</p>
+            <p><a href="https://cpag.org.uk/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Child Poverty Action Group — Research and Policy Analysis</a> — two-child limit impact modelling and policy analysis. Retrieved March 2026.</p>
+            <p className="mt-2">Child poverty is measured as below 60% of median household income after housing costs (relative poverty), the primary UK measure. Local area estimates use HMRC and DWP administrative data matched to geographic areas. Working family poverty figures are families where at least one adult works but household income still falls below the threshold. All figures are for England unless stated.</p>
           </div>
         </section>
+        <RelatedTopics />
       </main>
     </>
   );

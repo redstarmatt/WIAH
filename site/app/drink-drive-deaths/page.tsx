@@ -1,164 +1,152 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// -- Types ------------------------------------------------------------------
+// Drink-drive deaths, 2012–2023 — DfT
+const deathValues = [260, 240, 250, 230, 220, 250, 280, 290, 210, 260, 280, 270];
 
-interface DrinkDriveRow {
-  year: number
-  deaths?: number
-  seriousInjuries?: number
-  convictions?: number
-}
+// Serious injuries, 2012–2023 — DfT
+const injuryValues = [1200, 1110, 1170, 1250, 1200, 1300, 1330, 1320, 970, 1180, 1360, 1290];
 
-interface DrinkDriveDeathsData {
-  topic: string
-  lastUpdated: string
-  timeSeries: DrinkDriveRow[]
-}
+const deathsSeries: Series[] = [
+  {
+    id: 'deaths',
+    label: 'Drink-drive deaths',
+    colour: '#E63946',
+    data: deathValues.map((v, i) => ({ date: new Date(2012 + i, 0, 1), value: v })),
+  },
+];
 
-function yearToDate(y: number): Date {
-  return new Date(y, 0, 1)
-}
+const combinedSeries: Series[] = [
+  {
+    id: 'deaths',
+    label: 'Drink-drive deaths',
+    colour: '#E63946',
+    data: deathValues.map((v, i) => ({ date: new Date(2012 + i, 0, 1), value: v })),
+  },
+  {
+    id: 'serious-injuries',
+    label: 'Serious injuries',
+    colour: '#F4A261',
+    data: injuryValues.map((v, i) => ({ date: new Date(2012 + i, 0, 1), value: v })),
+  },
+];
 
-// -- Page -------------------------------------------------------------------
+const annotations: Annotation[] = [
+  { date: new Date(2014, 0, 1), label: '2014: Scotland lowers limit to 50mg' },
+];
 
 export default function DrinkDriveDeathsPage() {
-  const [data, setData] = useState<DrinkDriveDeathsData | null>(null)
-
-  useEffect(() => {
-    fetch('/data/drink-drive-deaths/drink_drive_deaths.json')
-      .then(res => res.json())
-      .then(setData)
-      .catch(console.error)
-  }, [])
-
-  const deathsSeries: Series[] = data
-    ? [
-        {
-          id: 'deaths',
-          label: 'Drink-drive deaths',
-          colour: '#E63946',
-          data: data.timeSeries
-            .filter(d => d.deaths !== undefined)
-            .map(d => ({
-              date: yearToDate(d.year),
-              value: d.deaths!,
-            })),
-        },
-      ]
-    : []
-
-  const injuriesSeries: Series[] = data
-    ? [
-        {
-          id: 'seriousInjuries',
-          label: 'Serious injuries',
-          colour: '#F4A261',
-          data: data.timeSeries
-            .filter(d => d.seriousInjuries !== undefined)
-            .map(d => ({
-              date: yearToDate(d.year),
-              value: d.seriousInjuries!,
-            })),
-        },
-      ]
-    : []
-
   return (
     <>
-      <TopicNav topic="Drink Drive Deaths" />
-
+      <TopicNav topic="Transport" />
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Drink Drive Deaths"
+          topic="Transport"
           question="Is Drink Driving Still Killing People?"
-          finding="280 people died in drink-drive collisions in 2022 — the same number as a decade ago, despite stricter enforcement and campaigning."
+          finding="270 people died in drink-drive collisions in 2023 — the same number as a decade ago, despite stricter enforcement. England and Wales retain the highest legal alcohol limit in Western Europe at 80mg/100ml."
           colour="#E63946"
+          preposition="in"
         />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+        <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Drink driving deaths in Great Britain fell dramatically through the 1980s and 1990s, but progress has stalled completely since the early 2010s. Deaths have oscillated between 210 and 290 per year for over a decade, with the 2023 figure at 270. England and Wales retain the highest legal alcohol limit for driving in Western Europe at 80mg per 100ml of blood. Scotland lowered its limit to 50mg in 2014, in line with the rest of Europe, and recorded a measurable reduction in drink-drive casualties. Multiple road safety organisations, the British Medical Association, and the Parliamentary Advisory Council for Transport Safety have recommended the same change for England and Wales; ministers have consistently declined to act, citing rural community and hospitality industry impacts. Modelling by the Transport Research Laboratory estimated that lowering the limit would prevent around 25 deaths per year in England alone. The number of police breath tests administered has fallen substantially since 2009 as officer numbers fell and breath testing operations were deprioritised, while random breath testing — permitted across most of Europe — is not currently allowed in England and Wales.</p>
-            <p>The moral arithmetic is straightforward. Around 270 people die annually in collisions involving a driver over the legal limit — a figure that has not changed materially in a decade. A proven intervention is available, has been implemented without apparent harm in Scotland and across Europe, and has a strong evidence base. The decision not to implement it is a political choice with measurable, fatal consequences. The drink-drive deaths that occur in England and Wales include drivers over 50mg but below the 80mg limit — a group who would face prosecution in Scotland and most of the EU but who are legal drivers in England and Wales.</p>
+            <p>Drink driving deaths in Great Britain fell dramatically through the 1980s and 1990s, but progress has stalled completely since the early 2010s. Deaths have oscillated between 210 and 290 per year for over a decade, with the 2023 figure at 270. England and Wales retain the highest legal alcohol limit for driving in Western Europe at 80mg per 100ml of blood. Scotland lowered its limit to 50mg in 2014, in line with the rest of Europe, and recorded a measurable reduction in drink-drive casualties. Multiple road safety organisations, the British Medical Association, and the Parliamentary Advisory Council for Transport Safety have recommended the same change for England and Wales; ministers have consistently declined to act, citing rural community and hospitality industry impacts. Modelling by the Transport Research Laboratory estimated that lowering the limit would prevent around 25 deaths per year in England alone.</p>
+            <p>The number of police breath tests administered has fallen substantially since 2009 as officer numbers fell and breath testing operations were deprioritised. Random breath testing — permitted across most of Europe — is not currently allowed in England and Wales. The moral arithmetic is straightforward: a proven intervention is available, has been implemented without apparent harm in Scotland and across Europe, and has a strong evidence base. The decision not to implement it is a political choice with measurable, fatal consequences.</p>
           </div>
         </section>
-
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-chart', label: 'Deaths &amp; Injuries' },
+          { id: 'sec-chart1', label: 'Deaths trend' },
+          { id: 'sec-chart2', label: 'Deaths & injuries' },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        <ScrollReveal>
-          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
-              label="Deaths 2023"
+              label="Drink-drive deaths 2023"
               value="270"
               unit=""
               direction="flat"
               polarity="up-is-bad"
-              changeText="no long-term progress since 2012"
-              sparklineData={[260, 240, 250, 280, 290, 210, 260, 280, 270]}
-              href="#sec-chart"source="DfT · Reported Road Casualties 2023"
+              changeText="No long-term progress since 2012 · was 290 in 2018"
+              sparklineData={[260, 240, 250, 230, 250, 280, 290, 270]}
+              source="DfT · Reported Road Casualties 2023"
+              href="#sec-chart1"
             />
             <MetricCard
-              label="Serious injuries"
+              label="Serious injuries 2023"
               value="1,290"
               unit=""
               direction="flat"
               polarity="up-is-bad"
-              changeText="plateau in casualties since 2012 · limit discussion needed"
-              sparklineData={[1200, 1110, 1170, 1330, 1320, 970, 1180, 1360, 1290]}
-              href="#sec-chart"source="DfT · Reported Road Casualties 2023"
+              changeText="Plateau since 2012 · limit discussion needed"
+              sparklineData={[1200, 1170, 1250, 1300, 1330, 970, 1360, 1290]}
+              source="DfT · Reported Road Casualties 2023"
+              href="#sec-chart2"
             />
             <MetricCard
-              label="England/Wales limit"
-              value="80mg/100ml"
-              unit=""
+              label="England/Wales legal limit"
+              value="80mg"
+              unit="/100ml"
               direction="flat"
               polarity="up-is-bad"
-              changeText="vs Scotland's 50mg · evidence supports lower limit"
-              sparklineData={[80, 80, 80, 80, 80, 80, 80, 80, 80]}
-              href="#sec-chart"source="Road Traffic Act 1988 · unchanged since 1967"
+              changeText="vs Scotland's 50mg · unchanged since 1967"
+              sparklineData={[80, 80, 80, 80, 80, 80, 80, 80]}
+              source="Road Traffic Act 1988 · unchanged since 1967"
+              href="#sec-chart1"
             />
           </div>
-        </ScrollReveal>
-
+        </section>
         <ScrollReveal>
-          <section id="sec-chart" className="mb-12">
+          <section id="sec-chart1" className="mb-12">
             <LineChart
-              title="Drink-drive deaths and serious injuries, 2012–2023"
-              subtitle="Reported road casualties in collisions where at least one driver was over the legal limit. Great Britain."
-              series={[...deathsSeries, ...injuriesSeries]}
-              yLabel="Casualties"
-              source={{
-                name: 'Department for Transport',
-                dataset: 'Reported Road Casualties Great Britain',
-                frequency: 'annual',
-              }}
+              title="Drink-drive deaths, Great Britain, 2012–2023"
+              subtitle="Estimated fatalities in collisions where at least one driver was over the legal limit. Progress has stalled since 2012."
+              series={deathsSeries}
+              annotations={annotations}
+              yLabel="Deaths"
+              source={{ name: 'Department for Transport', dataset: 'Reported Road Casualties Great Britain', url: 'https://www.gov.uk/government/collections/road-accidents-and-safety-statistics', frequency: 'annual', date: '2023' }}
             />
           </section>
         </ScrollReveal>
-
+        <ScrollReveal>
+          <section id="sec-chart2" className="mb-12">
+            <LineChart
+              title="Drink-drive deaths and serious injuries, Great Britain, 2012–2023"
+              subtitle="Both deaths and serious injuries show a plateau — enforcement-only approach has reached its limit."
+              series={combinedSeries}
+              annotations={[]}
+              yLabel="Casualties"
+              source={{ name: 'Department for Transport', dataset: 'Reported Road Casualties Great Britain', url: 'https://www.gov.uk/government/collections/road-accidents-and-safety-statistics', frequency: 'annual', date: '2023' }}
+            />
+          </section>
+        </ScrollReveal>
+        <ScrollReveal>
+          <PositiveCallout
+            title="Scotland's lower limit cut casualties"
+            value="50mg/100ml"
+            unit="Scotland's legal limit since December 2014"
+            description="Scotland lowered its drink-drive limit from 80mg to 50mg per 100ml in December 2014, in line with most of Europe. Research found a measurable reduction in drink-drive casualties in the years following the change. The Transport Research Laboratory has modelled that the same reduction in England and Wales would prevent approximately 25 deaths per year. The evidence base is strong; the political will has not yet followed."
+            source="Source: Transport Scotland — Road Casualties Scotland 2023. Transport Research Laboratory — drink drive limit research."
+          />
+        </ScrollReveal>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>Department for Transport — Reported Road Casualties Great Britain. Annual statistical release including drink-drive casualty estimates. gov.uk/government/collections/road-accidents-and-safety-statistics</p>
-            <p>Ministry of Justice — Criminal Justice Statistics. Drink-drive convictions by offence type. gov.uk/government/collections/criminal-justice-statistics</p>
-            <p>Transport Research Laboratory — Evidence base for lower legal alcohol limit. trl.co.uk</p>
-            <p>Drink-drive casualties are estimated figures, not exact counts. Police record whether drink driving was a contributory factor at the scene. The DfT applies a statistical model to adjust for underreporting and non-breathalysted casualties, producing annual estimates. These estimates carry uncertainty and are revised on a rolling 3-year basis. The legal limit of 80mg/100ml of blood (equivalent to 35 micrograms per 100ml of breath) has applied in England and Wales since 1967.</p>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.gov.uk/government/collections/road-accidents-and-safety-statistics" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Department for Transport — Reported Road Casualties Great Britain</a> — annual statistical release including drink-drive casualty estimates.</p>
+            <p><a href="https://www.gov.uk/government/collections/criminal-justice-statistics" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Ministry of Justice — Criminal Justice Statistics</a> — drink-drive convictions by offence type.</p>
+            <p>Drink-drive casualties are estimated figures applying a DfT statistical model to adjust for underreporting and non-breathalysted casualties. These estimates carry uncertainty and are revised on a rolling 3-year basis.</p>
           </div>
         </section>
-              <RelatedTopics />
+        <RelatedTopics />
       </main>
     </>
-  )
+  );
 }

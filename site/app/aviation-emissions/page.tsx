@@ -1,187 +1,149 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
-import LineChart, { Series } from '@/components/charts/LineChart';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-interface AviationData {
-  national: {
-    timeSeries: Array<{ date: string; emissionsMt: number; passengersMillion: number }>;
-  };
-  metadata: {
-    sources: Array<{ name: string; dataset: string; url: string; frequency: string }>;
-    methodology: string;
-    knownIssues: string[];
-  };
-}
+// UK aviation CO2 emissions (MtCO2), 2010–2024 — DESNZ
+const emissionsValues = [31.2, 32.4, 33.1, 33.8, 34.2, 34.9, 35.2, 35.8, 36.1, 36.4, 12.8, 17.2, 29.4, 33.8, 35.0];
 
-function yearToDate(y: string): Date {
-  return new Date(parseInt(y), 6, 1);
-}
+// UK airport passengers (millions), 2010–2024 — CAA
+const passengersValues = [211, 219, 225, 232, 238, 244, 252, 258, 263, 270, 82, 104, 196, 250, 266];
+
+// Air Passenger Duty revenue (£bn), 2014–2024 — HMRC
+const apdRevenueValues = [2.9, 3.0, 3.1, 3.2, 3.4, 3.5, 3.7, 1.4, 1.8, 3.4, 3.7];
+
+const series1: Series[] = [
+  {
+    id: 'emissions',
+    label: 'Aviation CO₂ emissions (MtCO₂)',
+    colour: '#E63946',
+    data: emissionsValues.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+  },
+];
+
+const series2: Series[] = [
+  {
+    id: 'passengers',
+    label: 'UK airport passengers (millions)',
+    colour: '#264653',
+    data: passengersValues.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+  },
+];
+
+const annotations: Annotation[] = [
+  { date: new Date(2019, 0, 1), label: '2019: Pre-COVID peak — 270M passengers' },
+  { date: new Date(2020, 0, 1), label: '2020: COVID-19 — 70% traffic collapse' },
+  { date: new Date(2022, 0, 1), label: '2022: Jet Zero Strategy published' },
+];
 
 export default function AviationEmissionsPage() {
-  const [data, setData] = useState<AviationData | null>(null);
-
-  useEffect(() => {
-    fetch('/data/aviation-emissions/aviation_emissions.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
-
-  const emissionsSeries: Series[] = data
-    ? [{
-        id: 'aviation-emissions',
-        label: 'Aviation CO\u2082 emissions',
-        colour: '#E63946',
-        data: data.national.timeSeries.map(d => ({ date: yearToDate(d.date), value: d.emissionsMt })),
-      }]
-    : [];
-
-  const passengersSeries: Series[] = data
-    ? [{
-        id: 'passengers',
-        label: 'UK airport passengers',
-        colour: '#E63946',
-        data: data.national.timeSeries.map(d => ({ date: yearToDate(d.date), value: d.passengersMillion })),
-      }]
-    : [];
-
   return (
     <>
       <TopicNav topic="Aviation Emissions" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Aviation Emissions"
-          question="Is Flying Wrecking Britain's Climate Goals?"
-          finding="Aviation accounts for 7–8% of the UK's total climate impact — more than rail and buses combined — yet it benefits from an estimated £7bn per year in tax exemptions: no fuel duty and no VAT on international flights. Passenger numbers have recovered to pre-pandemic levels and continue to grow."
+          topic="Environment & Climate"
+          question="Is flying wrecking Britain's climate goals?"
+          finding="Aviation accounts for 7–8% of the UK's total climate impact — more than rail and buses combined. Passenger numbers have fully recovered to pre-pandemic levels at 266 million. Aviation benefits from an estimated £7 billion in annual tax exemptions: no fuel duty and no VAT on international flights. The Climate Change Committee has warned that unconstrained demand growth is incompatible with net zero."
           colour="#E63946"
+          preposition="with"
         />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+        <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Aviation is one of the hardest sectors to decarbonise and one of the fastest growing sources of UK emissions. Direct CO2 from UK aviation amounted to around 35 million tonnes in 2023 — roughly equivalent to CO2 from all UK cars for four months. But CO2 is only part of the story: contrails, water vapour, and nitrogen oxides emitted at altitude have a warming effect estimated at 2 to 4 times the CO2 figure alone, meaning aviation's total climate impact is equivalent to perhaps 80–140 million tonnes of CO2-equivalent — around 7–8% of the UK's total. This is more than the combined climate impact of all UK rail, bus, and domestic shipping. Only around half the UK population flies in any given year, and the most frequent fliers — roughly 15% of adults who take more than three return flights per year — account for an estimated 70% of all flights. The distributional dimension of aviation emissions is therefore striking: a relatively small group of frequent fliers is responsible for a disproportionate share of one of the most climate-intensive activities.</p>
-            <p>Aviation enjoys what critics describe as extraordinary fiscal privilege. Unlike road vehicles, aviation kerosene carries no fuel duty in the UK — a 1944 Chicago Convention provision that has never been updated for the climate era. International flights are zero-rated for VAT. HMRC analysis suggests the combined value of these exemptions is around £7bn per year. The only aviation tax is Air Passenger Duty (APD), which raised around £3.7bn in 2023–24 — well below the estimated cost of the exemptions. By comparison, a litre of petrol attracts 52.95p in fuel duty plus 20% VAT. The Climate Change Committee has consistently recommended reforming APD to better reflect climate costs, proposing a frequent flier levy and higher rates for long-haul flights. The government has instead frozen or reduced APD rates in recent years and expanded APD exemptions for domestic aviation.</p>
-            </div>
+            <p>Aviation is one of the hardest sectors to decarbonise and one of the fastest-growing sources of UK emissions. Direct CO2 from UK aviation amounts to around 35 million tonnes annually — roughly equivalent to all UK car emissions for four months. But CO2 is only part of the story: contrails, water vapour, and nitrogen oxides emitted at altitude have a warming effect estimated at 2–4 times the CO2 figure, meaning aviation's total climate impact is equivalent to perhaps 80–140 million tonnes of CO2-equivalent. Only around half the UK population flies in any given year, and the most frequent fliers — roughly 15% of adults — account for an estimated 70% of all flights. Aviation has recovered fully from COVID: 266 million passengers used UK airports in 2024, above the 2019 pre-pandemic record.</p>
+            <p>Aviation enjoys extraordinary fiscal privilege. Aviation kerosene carries no fuel duty — a 1944 Chicago Convention provision never updated for the climate era. International flights are zero-rated for VAT. HMRC analysis suggests the combined value of these exemptions is around £7 billion per year. The only aviation tax, Air Passenger Duty, raised £3.7 billion in 2023/24 — well below the estimated cost of exemptions. By comparison, a litre of petrol attracts 52.95p in fuel duty plus 20% VAT. The Climate Change Committee has consistently recommended reforming APD to better reflect climate costs, and proposed a frequent flier levy and higher rates for long-haul flights. The government has instead frozen or reduced APD rates in recent years. The Jet Zero Strategy (2022) set a target of net zero aviation by 2050, primarily relying on Sustainable Aviation Fuel — but the CCC has cautioned that SAF supply is deeply uncertain and that demand management will also be necessary.</p>
+          </div>
         </section>
-
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-emissions', label: 'Emissions' },
-          { id: 'sec-passengers', label: 'Passengers' },
+          { id: 'sec-chart1', label: 'Emissions' },
+          { id: 'sec-chart2', label: 'Passengers' },
+          { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        <ScrollReveal>
-          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
               label="Aviation share of UK climate impact"
-              value="7.5"
-              unit="%"
+              value="7–8%"
+              unit="including contrail effects"
               direction="flat"
               polarity="up-is-bad"
-              changeText="Includes contrail and NOx effects — CO2 alone is around 4%"
-              sparklineData={[7.1, 7.2, 7.3, 7.4, 7.5, 2.9, 3.8, 6.8, 7.5]}
-              source="DESNZ — UK GHG national statistics (with radiative forcing)"
-              href="#sec-emissions"
+              changeText="CO2 alone: ~4% · contrail warming effect 2–4x CO2 · more than all rail and buses"
+              sparklineData={emissionsValues.slice(-8)}
+              source="DESNZ — UK GHG National Statistics 2024"
+              href="#sec-chart1"
             />
             <MetricCard
-              label="Annual aviation tax exemption"
+              label="Annual aviation tax exemption value"
               value="£7bn"
+              unit="estimated"
               direction="flat"
               polarity="up-is-bad"
-              changeText="No fuel duty, no VAT on international flights — APD raises £3.7bn"
-              sparklineData={[5.5, 5.8, 6.0, 6.3, 6.5, 6.7, 6.9, 7.0]}
-              source="HMRC — Tax expenditures and ready reckoners 2024"
-              href="#sec-emissions"
+              changeText="No fuel duty · no VAT on international flights · APD raises £3.7bn"
+              sparklineData={apdRevenueValues}
+              source="HMRC — Tax Expenditures and Ready Reckoners 2024"
+              href="#sec-chart1"
             />
             <MetricCard
-              label="UK airport passengers (2023)"
-              value="250M"
+              label="UK airport passengers"
+              value="266M"
+              unit="2024"
               direction="up"
               polarity="up-is-bad"
-              changeText="Fully recovered from COVID — projected 370M by 2050"
-              sparklineData={[240, 253, 265, 280, 175, 120, 200, 230]}
-              source="CAA — UK aviation activity statistics 2024"
-              href="#sec-emissions"
+              changeText="Above 2019 pre-COVID peak · projected 370M by 2050"
+              sparklineData={passengersValues.slice(-8)}
+              source="CAA — UK Aviation Activity Statistics 2024"
+              href="#sec-chart2"
             />
           </div>
-        </ScrollReveal>
-
+        </section>
         <ScrollReveal>
-          <section id="sec-emissions" className="mb-12">
+          <section id="sec-chart1" className="mb-12">
             <LineChart
-              title="UK aviation CO\u2082 emissions, 2010\u20132024"
-              subtitle="Territorial aviation CO\u2082 in million tonnes. COVID dip 2020\u201321, rapid recovery. DESNZ GHG statistics."
-              series={emissionsSeries}
-              yLabel="MtCO\u2082"
+              title="UK aviation CO₂ emissions, 2010–2024"
+              subtitle="Territorial aviation CO₂ in million tonnes. COVID caused a 70% collapse in 2020, followed by rapid recovery. Emissions returned to near pre-pandemic levels by 2024."
+              series={series1}
+              annotations={annotations}
+              yLabel="MtCO₂"
+              source={{ name: 'DESNZ', dataset: 'UK Greenhouse Gas National Statistics', url: 'https://www.gov.uk/government/collections/uk-greenhouse-gas-emissions-statistics', frequency: 'annual', date: '2024' }}
             />
           </section>
         </ScrollReveal>
-
         <ScrollReveal>
-          <section id="sec-passengers" className="mb-12">
+          <section id="sec-chart2" className="mb-12">
             <LineChart
-              title="Passengers at UK airports, 2010\u20132024"
-              subtitle="Total terminal passengers (millions) across all UK airports. CAA aviation activity statistics."
-              series={passengersSeries}
+              title="Passengers at UK airports, 2010–2024"
+              subtitle="Total terminal passengers (millions) across all UK airports. Fully recovered from COVID by 2024, exceeding pre-pandemic peak. Growth forecast to continue through the 2030s."
+              series={series2}
+              annotations={[{ date: new Date(2020, 0, 1), label: '2020: COVID-19 — 70% traffic collapse' }]}
               yLabel="Passengers (millions)"
+              source={{ name: 'Civil Aviation Authority', dataset: 'UK Aviation Activity Statistics', url: 'https://www.caa.co.uk/data-and-analysis/uk-aviation-market/airports/', frequency: 'annual', date: '2024' }}
             />
           </section>
         </ScrollReveal>
-
         <ScrollReveal>
           <PositiveCallout
-            title="SAF Mandate &amp; Hydrogen Testing"
+            title="SAF mandate and Jet Zero Strategy — ambition on paper"
             value="10%"
-            unit="SAF blend required by 2030"
-            description="Sustainable Aviation Fuel mandates require 10% SAF by 2030 and 22% by 2040, giving the UK one of the world's most ambitious SAF timelines. Rolls-Royce has successfully tested hydrogen-powered jet engines, demonstrating the technical feasibility of zero-emission aviation. Three UK SAF production plants were under development in 2024. SAF can reduce lifecycle emissions by over 70% compared to conventional jet fuel."
-            source="Source: DfT — Jet Zero Strategy 2022; Rolls-Royce hydrogen engine test 2023."
+            unit="Sustainable Aviation Fuel blend required by 2030 under UK mandate"
+            description="The UK Sustainable Aviation Fuel mandate requires 10% SAF blending by 2030, rising to 22% by 2040 — one of the world's most ambitious SAF timelines. SAF can reduce lifecycle emissions by over 70% compared to conventional jet fuel. Three UK SAF production plants were under development in 2024. Rolls-Royce has successfully tested hydrogen-powered jet engines, demonstrating the technical feasibility of zero-emission aviation. However, the Climate Change Committee has cautioned that SAF supply is deeply uncertain and that current global production falls far short of what the Jet Zero Strategy assumes. The CCC's advice is that demand management — including frequent flier levies and reformed aviation taxation — will also be necessary to stay within carbon budgets compatible with net zero."
+            source="Source: DfT — Jet Zero Strategy 2022. Climate Change Committee — Progress Report to Parliament 2024. Rolls-Royce — Hydrogen engine test results 2023."
           />
         </ScrollReveal>
-
-        <ScrollReveal>
-          <section className="mt-8 pt-12 border-t border-wiah-border">
-            <h2 className="font-sans text-2xl font-bold text-wiah-black mb-6">Sources &amp; Methodology</h2>
-            {data && (
-              <div className="font-sans text-sm space-y-6">
-                <div>
-                  <h3 className="font-bold text-wiah-black mb-2">Data sources</h3>
-                  <ul className="space-y-2">
-                    {data.metadata.sources.map((src, idx) => (
-                      <li key={idx} className="text-wiah-mid">
-                        <strong className="text-wiah-black">{src.name}:</strong> 
-                        <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline text-wiah-blue">
-                          {src.dataset}
-                        </a>
-                         ({src.frequency})
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="font-bold text-wiah-black mb-2">Methodology</h3>
-                  <p className="text-wiah-mid">{data.metadata.methodology}</p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-wiah-black mb-2">Known issues</h3>
-                  <ul className="list-disc list-inside space-y-1">
-                    {data.metadata.knownIssues.map((issue, idx) => (
-                      <li key={idx} className="text-wiah-mid">{issue}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            )}
-          </section>
-        </ScrollReveal>
-              <RelatedTopics />
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.gov.uk/government/collections/uk-greenhouse-gas-emissions-statistics" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DESNZ — UK Greenhouse Gas National Statistics</a> — annual publication. Aviation CO2 figures are territorial emissions from flights departing UK airports (domestic flights counted in full; international flights counted to the midpoint). Contrail and non-CO2 warming effects are estimated separately using IPCC radiative forcing factors.</p>
+            <p><a href="https://www.caa.co.uk/data-and-analysis/uk-aviation-market/airports/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Civil Aviation Authority — UK Aviation Activity Statistics</a> — annual. Total terminal passengers at all UK airports. APD revenue from HMRC Tax Receipts and National Insurance Contributions.</p>
+          </div>
+        </section>
+        <RelatedTopics />
       </main>
     </>
   );

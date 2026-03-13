@@ -1,233 +1,147 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-interface DrugDeathsData {
-  national: {
-    drugPoisoningDeaths: {
-      timeSeries: Array<{ year: number; deaths: number }>;
-      latestYear: number;
-      latestDeaths: number;
-      note: string;
-    };
-    scotlandDeathRate: {
-      timeSeries: Array<{ year: number; deathsPer100k: number }>;
-      latestYear: number;
-      latestRate: number;
-      absoluteDeaths2022: number;
-      euComparison: string;
-    };
-    bySubstance: Array<{ substance: string; pct: number }>;
-    drugTreatment: {
-      timeSeries: Array<{ year: number; inTreatmentThousands: number }>;
-      latestYear: number;
-      latestThousands: number;
-      recoveryRatePct: number;
-      fundingCutSince2013Pct: number;
-      newInvestmentBillionGBP: number;
-      newInvestmentPeriod: string;
-    };
-    naloxone: {
-      distributedDoses2022: number;
-      note: string;
-    };
-  };
-}
+// Drug poisoning deaths, England & Wales, 2012–2022 — ONS
+const poisoningValues = [2652, 2732, 2952, 3346, 3744, 3756, 4359, 4393, 4561, 4859, 4907];
+
+// Scotland drug death rate per 100k, 2013–2022 — NRS
+const scotlandRateValues = [6.8, 9.2, 12.3, 15.8, 17.5, 20.1, 21.3, 22.1, 22.4, 22.4];
+
+const poisoningSeries: Series[] = [
+  {
+    id: 'deaths',
+    label: 'Drug poisoning deaths (England & Wales)',
+    colour: '#E63946',
+    data: poisoningValues.map((v, i) => ({ date: new Date(2012 + i, 0, 1), value: v })),
+  },
+];
+
+const scotlandSeries: Series[] = [
+  {
+    id: 'scotland-rate',
+    label: 'Deaths per 100,000 (Scotland)',
+    colour: '#E63946',
+    data: scotlandRateValues.map((v, i) => ({ date: new Date(2013 + i, 0, 1), value: v })),
+  },
+];
+
+const poisoningAnnotations: Annotation[] = [
+  { date: new Date(2016, 0, 1), label: '2016: First record broken' },
+  { date: new Date(2020, 0, 1), label: '2020: COVID lockdown surge' },
+];
 
 export default function DrugDeathsPage() {
-  const [data, setData] = useState<DrugDeathsData | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch('/data/drug-deaths/drug_deaths.json')
-      .then((res) => res.json())
-      .then((json) => {
-        setData(json);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error(err);
-        setLoading(false);
-      });
-  }, []);
-
-  if (loading) return <div className="p-8">Loading...</div>;
-  if (!data) return <div className="p-8">Error loading data</div>;
-
-  const poisoningData = data.national.drugPoisoningDeaths;
-  const scotlandData = data.national.scotlandDeathRate;
-  const substanceData = data.national.bySubstance;
-
-  // Chart 1: Drug poisoning deaths over time
-  const poisoningSeries: Series[] = [
-    {
-      id: 'deaths',
-      label: 'Deaths',
-      colour: '#E63946',
-      data: poisoningData.timeSeries.map((d) => ({
-        date: new Date(d.year, 0, 1),
-        value: d.deaths,
-      })),
-    },
-  ];
-
-  const poisoningAnnotations: Annotation[] = [
-    { date: new Date(2016, 0, 1), label: '2016: First record broken' },
-    { date: new Date(2020, 0, 1), label: '2020: COVID lockdown surge' },
-  ];
-
-  // Chart 2: Scotland death rate
-  const scotlandSeries: Series[] = [
-    {
-      id: 'rate',
-      label: 'Deaths per 100,000',
-      colour: '#E63946',
-      data: scotlandData.timeSeries.map((d) => ({
-        date: new Date(d.year, 0, 1),
-        value: d.deathsPer100k,
-      })),
-    },
-  ];
-
-  const maxSubstancePct = Math.max(...substanceData.map((s) => s.pct));
-
   return (
     <>
-      <TopicNav topic="Drug Deaths" />
-      <TopicHeader
-        topic="Drug Deaths"
-        question="Why Is Britain's Drug Death Toll Rising?"
-        finding="Drug poisoning deaths in England and Wales reached 4,907 in 2022 — a record. Scotland's rate is the highest in Europe at 22.4 deaths per 100,000. Drug treatment funding has been cut 30% in real terms since 2013. Opioids — mainly heroin — account for 48% of all drug deaths."
-        colour="#E63946"
-      />
-
-      <main className="max-w-4xl mx-auto px-5 py-12">
-
-        {/* Metric Cards */}
-        <ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
+      <TopicNav topic="Health" />
+      <main className="max-w-5xl mx-auto px-6 py-12">
+        <TopicHeader
+          topic="Health"
+          question="Why Is Britain's Drug Death Toll Rising?"
+          finding="Drug poisoning deaths in England and Wales reached 4,907 in 2022 — a record. Scotland's rate is the highest in Europe at 22.4 deaths per 100,000. Drug treatment funding was cut 30% in real terms between 2013 and 2020."
+          colour="#E63946"
+          preposition="in"
+        />
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Drug poisoning deaths in England and Wales rose from 2,652 in 2012 to a record 4,907 in 2022, climbing in nearly every intervening year. Opioids account for 48% of fatalities; cocaine for 18%; benzodiazepines — increasingly mixed into street heroin — for 12%. These are not deaths concentrated among young recreational users: the typical profile is a man in his 40s or 50s with a long history of opioid dependency, tracking back to the heroin epidemic that flooded post-industrial towns in the 1980s and 1990s. Scotland's rate of 22.4 deaths per 100,000 is the highest in Europe — three times England's — driven by concentrated poverty in post-industrial cities like Glasgow and Dundee. From 2023, nitazenes and other synthetic opioids were detected in the UK supply with increasing frequency, raising the risk of mass casualty events seen in North America.</p>
+            <p>Drug treatment funding fell by around 35% in real terms from 2013 to 2020, hollowing out the infrastructure needed to reach people at highest risk. The 2021 Ten-Year Drugs Plan committed £780 million over three years to rebuilding the treatment system. By 2022/23, 275,896 adults were in structured treatment, with 45% completing free from dependence. Community naloxone distribution reached 110,000 doses in 2022; in high-coverage areas it has been shown to reduce overdose deaths by 30%. The fundamental challenge remains: demand for treatment outstrips supply in many areas, and the cohort of long-term opioid users is ageing with compounding health needs.</p>
+          </div>
+        </section>
+        <SectionNav sections={[
+          { id: 'sec-metrics', label: 'Metrics' },
+          { id: 'sec-chart1', label: 'Deaths trend' },
+          { id: 'sec-chart2', label: 'Scotland rate' },
+          { id: 'sec-sources', label: 'Sources' },
+        ]} />
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
-              label="Drug poisoning deaths (England &amp; Wales)"
+              label="Drug poisoning deaths (England & Wales)"
               value="4,907"
+              unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="2022 · Record high · Up from 2,652 in 2012 · Opioids: 48% of all drug deaths · Cocaine: rising fast"
-              sparklineData={[2652, 2732, 2952, 3346, 3744, 3756, 4359, 4393, 4561, 4859, 4907]}
+              changeText="2022 · Record high · up from 2,652 in 2012"
+              sparklineData={[2652, 2952, 3346, 3744, 4359, 4393, 4561, 4859, 4907]}
+              source="ONS · Deaths related to drug poisoning 2022"
+              href="#sec-chart1"
             />
             <MetricCard
-              label="Scotland drug death rate per 100K"
+              label="Scotland drug death rate per 100k"
               value="22.4"
+              unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="2022 · Highest in Europe · 3× England rate · 1,051 deaths · Crack cocaine &amp; opioids · Crisis in deprived areas"
+              changeText="2022 · Highest in Europe · 3× England rate"
               sparklineData={[6.8, 9.2, 12.3, 17.5, 21.3, 22.4]}
+              source="National Records of Scotland · Drug-related deaths 2022"
+              href="#sec-chart2"
             />
             <MetricCard
               label="People in drug treatment (England)"
               value="275K"
+              unit=""
               direction="flat"
               polarity="up-is-good"
-              changeText="2022/23 · 45% complete treatment 'free from dependence' · Treatment funding cut 30% real-terms since 2013 · New investment: £780M 2022–25"
+              changeText="2022/23 · 45% complete treatment free from dependence"
               sparklineData={[300, 310, 295, 280, 273, 270, 271, 275]}
+              source="OHID · Adult substance misuse treatment statistics 2022/23"
+              href="#sec-chart1"
             />
           </div>
-        </ScrollReveal>
-
-        {/* Chart 1: Drug poisoning deaths trend */}
+        </section>
         <ScrollReveal>
-          <div className="mb-12">
+          <section id="sec-chart1" className="mb-12">
             <LineChart
-              title="Drug poisoning deaths, England &amp; Wales, 2012–2022"
-              subtitle="Includes all drug poisoning deaths where drug mentioned on death certificate"
+              title="Drug poisoning deaths, England & Wales, 2012–2022"
+              subtitle="All drug poisoning deaths where substances are mentioned on the death certificate. Near-continuous rise over a decade."
               series={poisoningSeries}
               annotations={poisoningAnnotations}
               yLabel="Deaths"
+              source={{ name: 'ONS', dataset: 'Deaths related to drug poisoning in England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/deathsrelatedtodrugpoisoningenglandandwales/latest', frequency: 'annual', date: '2022' }}
             />
-          </div>
+          </section>
         </ScrollReveal>
-
-        {/* Chart 2: Scotland death rate */}
         <ScrollReveal>
-          <div className="mb-12">
+          <section id="sec-chart2" className="mb-12">
             <LineChart
               title="Drug death rate, Scotland, 2013–2022"
-              subtitle="Deaths per 100,000 population. Highest rate in Europe."
+              subtitle="Deaths per 100,000 population. Scotland has the highest rate in Europe — approximately three times that of England and Wales."
               series={scotlandSeries}
+              annotations={[]}
               yLabel="Deaths per 100,000"
+              source={{ name: 'National Records of Scotland', dataset: 'Drug-related deaths in Scotland', url: 'https://www.nrscotland.gov.uk/statistics-and-data/statistics/statistics-by-theme/vital-events/deaths/drug-related-deaths-in-scotland', frequency: 'annual', date: '2022' }}
             />
-          </div>
+          </section>
         </ScrollReveal>
-
-        {/* Chart 3: By substance */}
-        <ScrollReveal>
-          <div className="mb-12">
-            <h3 className="text-lg font-bold text-wiah-black mb-4">Drug deaths by substance (England &amp; Wales, 2022)</h3>
-            <div className="space-y-3">
-              {substanceData.map((item) => (
-                <div key={item.substance} className="flex items-center gap-3">
-                  <div className="w-32 text-sm text-wiah-mid font-mono">{item.substance}</div>
-                  <div className="flex-1 bg-wiah-light rounded">
-                    <div
-                      className="bg-wiah-red h-6 rounded flex items-center justify-end pr-3"
-                      style={{ width: `${(item.pct / maxSubstancePct) * 100}%` }}
-                    >
-                      <span className="text-xs font-bold text-white">{item.pct}%</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <p className="text-xs text-wiah-mid font-mono mt-4">Source: ONS — Deaths related to drug poisoning 2022</p>
-          </div>
-        </ScrollReveal>
-
-        {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="Life-saving naloxone"
+            title="Naloxone saving lives"
             value="110K"
-            unit="naloxone doses distributed in 2022 — a life-saving overdose reversal drug"
-            description="Naloxone reverses opioid overdose and saves lives in minutes. NHS England expanded community naloxone distribution in 2023, with 110,000 doses distributed in 2022 through drug services, pharmacies, and community organisations. The Ten-Year Drugs Plan (&ldquo;From Harm to Hope&rdquo;, 2021) committed £780 million over 2022–25 to rebuild the drug treatment system after a decade of funding cuts — a 30% real-terms reduction since 2013. Recovery rates have improved: 45% of those completing treatment are recorded as free from dependence. Take-home naloxone programmes have been shown to reduce overdose deaths by 30% in areas with high coverage."
+            unit="naloxone doses distributed in 2022"
+            description="Naloxone reverses opioid overdose and saves lives in minutes. NHS England expanded community naloxone distribution in 2023, with 110,000 doses distributed through drug services, pharmacies, and community organisations. The Ten-Year Drugs Plan committed £780 million over 2022–25 to rebuild the treatment system. Recovery rates have improved: 45% of those completing treatment are recorded as free from dependence. Take-home naloxone programmes reduce overdose deaths by 30% in areas with high coverage."
             source="Source: ONS — Drug poisoning deaths 2022; OHID — Adult substance misuse treatment statistics 2022/23."
           />
         </ScrollReveal>
-
-        {/* Context section */}
-        <ScrollReveal>
-          <section className="max-w-2xl border-t border-wiah-border pt-12 mt-12">
-            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>
-                Drug poisoning deaths in England and Wales rose from 2,652 in 2012 to a record 4,907 in 2022, climbing in every intervening year. Opioids account for 48% of fatalities; cocaine for 18%; benzodiazepines — increasingly mixed into street heroin — for 12%. Scotland's rate of 22.4 deaths per 100,000 is the highest in Europe — three times England's — driven by concentrated poverty in post-industrial communities and an ageing opioid-using population. From 2023, nitazenes and other synthetic opioids were detected in the UK supply, prompting national monitoring alerts.
-              </p>
-              <p>
-                Dame Carol Black's 2020–21 review found the treatment system had been &ldquo;deliberately dismantled&rdquo; by cuts: funding fell 30% in real terms from 2013. The Ten-Year Drugs Plan &ldquo;From Harm to Hope&rdquo; (2021) committed £780 million over 2022–25. By 2022/23, 275,896 adults were in structured treatment, with 45% completing free from dependence. Community naloxone distribution reached 110,000 doses in 2022; in high-coverage areas it has been shown to reduce overdose deaths by 30%.
-              </p>
-            </div>
-          </section>
-        </ScrollReveal>
-
-        {/* Methodology */}
-        <ScrollReveal>
-          <section className="border-t border-wiah-border pt-12 mt-12">
-            <h2 className="text-2xl font-bold text-wiah-black mb-4">Sources &amp; methodology</h2>
-            <div className="prose prose-sm max-w-none text-wiah-black">
-              <ul>
-                <li><strong>Drug poisoning deaths:</strong> ONS Deaths related to drug poisoning in England and Wales. Annual publication. Includes all deaths where drug poisoning is mentioned on the death certificate.</li>
-                <li><strong>Scotland rates:</strong> National Records of Scotland drug-related deaths statistics. Uses slightly different classification from ONS.</li>
-                <li><strong>Drug treatment:</strong> OHID / UKHSA Adult substance misuse treatment statistics. Data from National Drug Treatment Monitoring System (NDTMS) — all adults in structured community or residential treatment in England.</li>
-                <li><strong>Known issues:</strong> Deaths lag by 12–18 months due to inquest process. Scotland's classification differs slightly from ONS. Treatment numbers reflect programme completions, not new starts.</li>
-              </ul>
-            </div>
-          </section>
-        </ScrollReveal>
-              <RelatedTopics />
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/deathsrelatedtodrugpoisoningenglandandwales/latest" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS — Deaths related to drug poisoning in England and Wales</a> — annual publication based on coroner's verdicts.</p>
+            <p><a href="https://www.nrscotland.gov.uk/statistics-and-data/statistics/statistics-by-theme/vital-events/deaths/drug-related-deaths-in-scotland" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">National Records of Scotland — Drug-related deaths in Scotland</a> — annual statistics using slightly different classification from ONS.</p>
+            <p><a href="https://www.ndtms.net/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">OHID / NDTMS — Adult substance misuse treatment statistics</a> — adults in structured drug and alcohol treatment in England.</p>
+            <p>Deaths lag by 12–18 months due to the inquest process. Scotland uses a different mortality coding approach from England and Wales.</p>
+          </div>
+        </section>
+        <RelatedTopics />
       </main>
     </>
   );

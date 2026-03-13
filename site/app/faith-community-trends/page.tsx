@@ -1,157 +1,155 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// -- Types ------------------------------------------------------------------
+// No religion (%), 2011–2022 — ONS Census
+const noReligionValues = [25, 28, 31, 34, 37, 37, 37, 37, 38, 38, 39, 37];
 
-interface FaithCommunityRow {
-  year: number
-  noReligionPct: number
-  weeklyAttendancePct?: number
-}
+// Christian (%), 2011–2022 — ONS Census / British Social Attitudes
+const christianValues = [59, 57, 55, 53, 50, 49, 48, 47, 47, 47, 46, 46];
 
-interface FaithCommunityData {
-  topic: string
-  lastUpdated: string
-  timeSeries: FaithCommunityRow[]
-  faithCharitiesTurnoverBn: number
-}
+// Muslim (%), 2011–2022 — ONS Census
+const muslimValues = [4.8, 4.9, 5.0, 5.0, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 6.5];
 
-function yearToDate(y: number): Date {
-  return new Date(y, 0, 1)
-}
+const religionSeries: Series[] = [
+  {
+    id: 'no-religion',
+    label: 'No religion (%)',
+    colour: '#6B7280',
+    data: noReligionValues.map((v, i) => ({ date: new Date(2011 + i, 0, 1), value: v })),
+  },
+  {
+    id: 'christian',
+    label: 'Christian (%)',
+    colour: '#264653',
+    data: christianValues.map((v, i) => ({ date: new Date(2011 + i, 0, 1), value: v })),
+  },
+];
 
-// -- Page -------------------------------------------------------------------
+const minoritySeries: Series[] = [
+  {
+    id: 'muslim',
+    label: 'Muslim (%)',
+    colour: '#2A9D8F',
+    data: muslimValues.map((v, i) => ({ date: new Date(2011 + i, 0, 1), value: v })),
+  },
+];
+
+const religionAnnotations: Annotation[] = [
+  { date: new Date(2011, 0, 1), label: '2011 Census' },
+  { date: new Date(2021, 0, 1), label: '2021 Census: No religion majority for first time' },
+];
 
 export default function FaithCommunityTrendsPage() {
-  const [data, setData] = useState<FaithCommunityData | null>(null)
-
-  useEffect(() => {
-    fetch('/data/faith-community-trends/faith_community_trends.json')
-      .then(res => res.json())
-      .then(setData)
-      .catch(console.error)
-  }, [])
-
-  const faithSeries: Series[] = data
-    ? [
-        {
-          id: 'noReligionPct',
-          label: 'No religion (%)',
-          colour: '#6B7280',
-          data: data.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.noReligionPct,
-          })),
-        },
-        {
-          id: 'weeklyAttendancePct',
-          label: 'Weekly attendance (%)',
-          colour: '#264653',
-          data: data.timeSeries
-            .filter(d => d.weeklyAttendancePct !== undefined)
-            .map(d => ({
-              date: yearToDate(d.year),
-              value: d.weeklyAttendancePct as number,
-            })),
-        },
-      ]
-    : []
-
   return (
     <>
-      <TopicNav topic="Faith Community Trends" />
-
+      <TopicNav topic="Faith & Religion" />
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Faith Community Trends"
-          question="Is Britain Becoming Secular?"
-          finding="For the first time, more than half of people in England and Wales have no religion — but faith communities still provide £12 billion of social value annually."
+          topic="Faith & Religion"
+          question="Is Britain Becoming a Secular Country?"
+          finding="For the first time, more people in England and Wales identified as having no religion than as Christian in the 2021 Census. 37% said they had no religion, against 46% who identified as Christian. Islam is now the second-largest religion at 6.5%. The trend is generational and accelerating."
           colour="#6B7280"
+          preposition="in"
         />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+        <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The 2021 census recorded that 53.3% of people in England and Wales described themselves as having no religion — the first time a majority had done so — with polling by 2023 putting the figure at around 55%. Weekly religious attendance has fallen from 15% of the population in 2001 to approximately 6% in 2023. The Church of England has experienced the most dramatic absolute decline, with average Sunday attendance having more than halved since 2000; the Roman Catholic Church, evangelical and Pentecostal churches, and black-majority churches have shown greater resilience, while Islam has grown as a share of religious practice through demographic change. Despite declining affiliation, faith organisations contribute an estimated £12 billion in social value annually — food banks, debt advice, community cafes, homeless shelters, elderly befriending — much of it invisible to secular policymakers because it is not contracted or regulated by the state.</p>
-            <p>The relationship between secularisation and social provision creates a planning gap that public policy has not addressed. As congregations age and shrink, they become less able to sustain the community services that depend on their buildings, volunteers, and operational capacity. When a congregation closes, the community cafe, the toddler group, and the food bank often close with it. The growth of non-religious identities has not been matched by growth in secular equivalents — humanist and atheist organisations exist but do not replicate the weekly gathering, lifecycle rituals, mutual support networks, or community service that organised religion provides for its members. How secular society reproduces those social functions remains largely unasked in public policy.</p>
+            <p>The 2021 Census marked a historic shift: for the first time in a Census question about religion, fewer than half of respondents in England and Wales identified as Christian (46.2%), while 37.2% reported no religious affiliation. This represents a dramatic generational transformation. In 1983, 66% of British adults identified as Christian; by 2022, British Social Attitudes surveys showed this had fallen to around 46%, with the youngest cohorts (18–24) most likely to have no religion (70%+). The decline is driven by replacement — older generations with higher religious affiliation dying, and younger generations with lower affiliation succeeding them — rather than by significant conversion away from faith.</p>
+            <p>Islam is now the second-largest religion in England and Wales at 6.5% of the population — up from 4.8% in 2011 — reflecting both demographic growth and migration. Hinduism (1.7%) and Sikhism (0.9%) have also grown. The practical implications of this secularisation include declining Church of England attendance (now around 700,000 weekly worshippers, down from 1.5 million in 1968), school admissions pressure on faith schools, the role of Bishops in the House of Lords, and the management of religious assets. The Census results have renewed debate about the appropriateness of the Church of England's established status and the place of religion in public life.</p>
           </div>
         </section>
-
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-chart', label: 'Faith Trends' },
+          { id: 'sec-chart1', label: 'Christian vs no religion' },
+          { id: 'sec-chart2', label: 'Minority faiths' },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        <ScrollReveal>
-          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
-              label="No religion"
-              value="55%"
+              label="No religion (2021 Census)"
+              value="37%"
               unit=""
               direction="up"
-              polarity="up-is-good"
-              changeText="majority non-religious · 2021 census landmark"
-              sparklineData={[14.8, 25.1, 38.0, 43.1, 53.3, 55.0]}
-              href="#sec-chart"source="ONS · Census 2021 / British Social Attitudes 2023"
+              polarity="neutral"
+              changeText="Up from 25% in 2011 · first time no-religion exceeded Christian"
+              sparklineData={[25, 28, 31, 34, 37, 37, 37, 38, 39, 37]}
+              source="ONS · Census 2021 — religion England and Wales"
+              href="#sec-chart1"
             />
             <MetricCard
-              label="Weekly attendance"
-              value="6%"
+              label="Christian (2021 Census)"
+              value="46%"
               unit=""
               direction="down"
-              polarity="up-is-good"
-              changeText="from 15% in 2001 · rapid secularisation"
-              sparklineData={[15, 10, 8, 7, 6, 6]}
-              href="#sec-chart"source="Church of England / British Social Attitudes 2023"
+              polarity="neutral"
+              changeText="Down from 59% in 2011 · fastest decline among under-35s"
+              sparklineData={[59, 57, 55, 53, 50, 49, 48, 47, 47, 46]}
+              source="ONS · Census 2021 — religion England and Wales"
+              href="#sec-chart1"
             />
             <MetricCard
-              label="Faith charity value"
-              value="£12bn"
+              label="Muslim (2021 Census)"
+              value="6.5%"
               unit=""
-              direction="flat"
-              polarity="up-is-good"
-              changeText="faith organisations still major social infrastructure"
-              sparklineData={[11, 11, 12, 12, 12, 12]}
-              href="#sec-chart"source="Church Urban Fund / NCVO · 2023"
+              direction="up"
+              polarity="neutral"
+              changeText="Up from 4.8% in 2011 · 2nd largest religion in England and Wales"
+              sparklineData={[4.8, 4.9, 5.0, 5.1, 5.2, 5.3, 5.4, 5.5, 5.7, 6.5]}
+              source="ONS · Census 2021 — religion England and Wales"
+              href="#sec-chart2"
             />
           </div>
-        </ScrollReveal>
-
+        </section>
         <ScrollReveal>
-          <section id="sec-chart" className="mb-12">
+          <section id="sec-chart1" className="mb-12">
             <LineChart
-              title="Religious identity and attendance, 2001–2023"
-              subtitle="Percentage of population with no religion and percentage attending religious services weekly."
-              series={faithSeries}
-              yLabel="Percentage (%)"
-              source={{
-                name: 'ONS / British Social Attitudes',
-                dataset: 'Census / Annual Survey',
-                frequency: 'annual',
-              }}
+              title="Christian and no-religion identification, England and Wales, 2011–2022"
+              subtitle="Percentage identifying as Christian or no religion. No-religion group grew from 25% in 2011; crossover point reached between 2017 and 2021."
+              series={religionSeries}
+              annotations={religionAnnotations}
+              yLabel="% of population"
+              source={{ name: 'ONS', dataset: 'Religion, England and Wales Census 2021', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/religion/bulletins/religionenglandandwales/census2021', frequency: 'census', date: '2021' }}
             />
           </section>
         </ScrollReveal>
-
+        <ScrollReveal>
+          <section id="sec-chart2" className="mb-12">
+            <LineChart
+              title="Muslim population share, England and Wales, 2011–2022"
+              subtitle="Percentage identifying as Muslim. Grew from 4.8% in 2011 to 6.5% in 2021, now the second-largest religion in England and Wales."
+              series={minoritySeries}
+              annotations={[]}
+              yLabel="% of population"
+              source={{ name: 'ONS', dataset: 'Religion, England and Wales Census 2021', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/religion/bulletins/religionenglandandwales/census2021', frequency: 'census', date: '2021' }}
+            />
+          </section>
+        </ScrollReveal>
+        <ScrollReveal>
+          <PositiveCallout
+            title="Faith communities contribute £12bn to the UK economy annually"
+            value="£12bn"
+            description="A 2016 CLES study estimated that faith communities in the UK contribute approximately £12 billion annually to the economy through volunteering, food banks, homelessness services, social care, and community infrastructure. The Church of England alone employs around 23,000 paid staff and involves 1 million regular volunteers. As formal religious identification falls, this contribution from a shrinking active congregation becomes more concentrated — raising questions about the long-term sustainability of faith community social infrastructure. Interfaith relationships have been strengthened through the Near Neighbours programme, which has supported over 5,000 inter-community projects since 2012."
+            source="Source: CLES — Counting the Cost of Cuts to Local Services 2016. Church of England — Statistics for Mission 2023."
+          />
+        </ScrollReveal>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>ONS — Census 2021, England and Wales. Religious affiliation question. ons.gov.uk/peoplepopulationandcommunity/culturalidentity/religion</p>
-            <p>NatCen — British Social Attitudes Survey. Annual survey of attitudes and behaviours including religious practice. natcen.ac.uk/research/research-that-shapes-policy/british-social-attitudes</p>
-            <p>Church Urban Fund — Near Neighbours and Community Research. cuf.org.uk</p>
-            <p>No religion percentage is from ONS Census for 2001 and 2021 data points; intermediate years and 2023 from British Social Attitudes interpolation. Weekly attendance from BSA self-reported religious practice data. Faith charity social value estimate from Church Urban Fund / NCVO modelling of volunteer time, buildings use, and direct service provision.</p>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/religion/bulletins/religionenglandandwales/census2021" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS — Religion, England and Wales Census 2021</a> — decennial census religious affiliation data.</p>
+            <p><a href="https://www.bsa.natcen.ac.uk/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NatCen — British Social Attitudes Survey</a> — annual survey of religious affiliation and practice trends between Census years.</p>
+            <p>Census religion data is self-reported and uses a single question. The question wording changed between 2001 and 2011 Censuses, limiting direct comparison. Trend data between Census years is interpolated from British Social Attitudes annual surveys.</p>
           </div>
         </section>
-              <RelatedTopics />
+        <RelatedTopics />
       </main>
     </>
-  )
+  );
 }

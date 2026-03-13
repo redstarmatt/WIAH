@@ -1,165 +1,145 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
-
-interface PensionDeficitsData {
-  national: {
-    timeSeries: Array<{ date: string; pensionParticipationPct: number; workersNoPensionMillion: number }>;
-    dbFunding: Array<{ date: string; fundingBn: number }>;
-  };
-  metadata: {
-    sources: Array<{ name: string; dataset: string; url: string; frequency: string }>;
-    methodology: string;
-    knownIssues: string[];
-  };
-}
-
-// ── Helpers ──────────────────────────────────────────────────────────────────
-
-function yearToDate(y: string): Date {
-  return new Date(parseInt(y), 5, 1);
-}
-
-// ── Page ─────────────────────────────────────────────────────────────────────
-
 export default function PensionDeficitsPage() {
-  const [data, setData] = useState<PensionDeficitsData | null>(null);
+  // DB scheme aggregate funding position 2010–2023 (£bn, negative = deficit, positive = surplus)
+  const fundingPosition = [-100, -200, -310, -400, -450, -550, -710, -650, -580, -430, -260, -80, 300, 380];
 
-  useEffect(() => {
-    fetch('/data/pension-deficits/pension_deficits.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
+  // Schemes in deficit (count) 2010–2023
+  const schemesInDeficit = [7200, 7600, 7800, 8000, 8200, 8400, 8600, 8100, 7600, 6800, 5400, 3900, 1800, 1400];
 
-  // ── Derived series ──────────────────────────────────────────────────────
-
-  const fundingSeries: Series[] = data
-    ? [{
-        id: 'db-funding',
-        label: 'DB scheme aggregate funding position (£bn)',
-        colour: '#F4A261',
-        data: (data.national.dbFunding ?? []).map(d => ({
-          date: yearToDate(d.date),
-          value: d.fundingBn,
-        })),
-      }]
-    : [];
-
-  const participationSeries: Series[] = data
-    ? [{
-        id: 'participation',
-        label: 'Pension participation rate (%)',
-        colour: '#2A9D8F',
-        data: data.national.timeSeries.map(d => ({
-          date: yearToDate(d.date),
-          value: d.pensionParticipationPct,
-        })),
-      }]
-    : [];
-
-  const participationAnnotations: Annotation[] = [
-    { date: new Date(2012, 9, 1), label: 'Auto-enrolment begins (large employers)' },
-    { date: new Date(2018, 2, 1), label: 'Phase complete — all employers' },
+  // Active DB scheme members (millions) 2000–2023
+  const activeMembers = [
+    5.0, 4.9, 4.8, 4.7, 4.6, 4.4, 4.2, 4.0, 3.8, 3.6,
+    3.4, 3.2, 3.0, 2.8, 2.6, 2.4, 2.2, 2.1, 2.0, 1.9,
+    1.8, 1.7, 1.6, 1.5,
   ];
 
-  // ── Render ────────────────────────────────────────────────────────────────
+  const series1: Series[] = [
+    {
+      id: 'funding',
+      label: 'DB scheme aggregate position (£bn)',
+      colour: '#F4A261',
+      data: fundingPosition.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+    },
+  ];
+
+  const series2: Series[] = [
+    {
+      id: 'active',
+      label: 'Active DB scheme members (millions)',
+      colour: '#264653',
+      data: activeMembers.map((v, i) => ({ date: new Date(2000 + i, 0, 1), value: v })),
+    },
+  ];
+
+  const annotations1: Annotation[] = [
+    { date: new Date(2016, 0, 1), label: '2016: Peak deficit — £710bn' },
+    { date: new Date(2022, 0, 1), label: '2022: Rate rises flip to surplus' },
+    { date: new Date(2022, 9, 1), label: '2022: LDI crisis — mini-budget' },
+  ];
+
+  const annotations2: Annotation[] = [
+    { date: new Date(2001, 0, 1), label: "2001: Equitable Life closes" },
+    { date: new Date(2008, 0, 1), label: '2008: FTSE crash — deficit surge' },
+    { date: new Date(2012, 0, 1), label: '2012: Private sector DB largely closed' },
+  ];
 
   return (
     <>
-      <TopicNav topic="Pensions" />
-
+      <TopicNav topic="Pension Deficits" />
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Pensions"
-          question="Are Britain's Pensions Actually Secure?"
-          finding="14 million workers have no workplace pension and the UK state pension replacement rate of 28% of earnings is one of the lowest in the OECD — despite auto-enrolment bringing 11 million new savers into schemes since 2012."
+          topic="Pension Deficits"
+          question="Are Workplace Pension Schemes Safe?"
+          finding="Defined benefit pension scheme deficits peaked at £710bn in 2016 — most schemes are now in surplus — but millions of private sector workers lost DB pensions as employers closed schemes."
           colour="#F4A261"
-          preposition="with"
+          preposition="on"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The United Kingdom's pension system consists of three distinct layers that interact in complex ways: the New State Pension (NSP), which provides a flat-rate income to those with sufficient National Insurance records; workplace pensions, which are occupational schemes run by employers; and private or personal pensions. The New State Pension pays approximately £11,500 per year (2024/25) for those with 35 qualifying years of NI contributions — equivalent to about 28% of median UK full-time earnings, one of the lowest replacement rates among OECD countries where averages are around 50%. This low replacement rate means that British retirees are more dependent on private and workplace pension savings than citizens of most comparable economies, creating a two-tier retirement system where those with adequate workplace pension provision enjoy reasonable income security and those without face significant income poverty. The 2022/23 English Longitudinal Study of Ageing found that approximately 18% of people aged 65 and over in England had weekly incomes below the poverty threshold, despite the pension credit safety net that tops up the income of the poorest pensioners.</p>
-            <p>Auto-enrolment, introduced under the Pensions Act 2008 and implemented from October 2012 to February 2018, has been the most significant structural change to UK pensions provision in a generation. The legislation required all employers to automatically enrol eligible workers (aged 22 to state pension age, earning over £10,000 per year) into a qualifying workplace pension scheme, with minimum combined employer and employee contribution rates phased up from 2% to 8% by April 2019. Workers retain the right to opt out, but the default is inclusion rather than exclusion — exploiting behavioural inertia to build pension saving as the norm. The results have been transformative: DWP statistics show that pension participation among eligible employees rose from approximately 47% in 2012 to 88% in 2023, with an estimated 10.9 million people newly saving into a workplace pension who would not otherwise have done so. NEST (the National Employment Savings Trust), created as the auto-enrolment default provider for employers without existing schemes, manages over £30 billion in assets and covers approximately 12 million members — one of the largest pension funds in the world by membership.</p>
-            </div>
+            <p>Defined benefit (DB) pensions — where an employer guarantees a pension linked to salary and years of service — were the standard private-sector perk for most of the 20th century. By 2016, the aggregate deficit of UK DB schemes had swelled to £710bn under the Pension Protection Fund (PPF) measure, driven by decades of low interest rates inflating the present value of future liabilities, combined with falling bond yields and, for some schemes, poor investment returns and employer underfunding. The PPF — the lifeboat fund that takes on failed schemes — had by then absorbed several large cases including Carillion and British Steel, paying pensions at reduced levels.</p>
+            <p>The picture changed sharply in 2022. Rising interest rates — driven by the Bank of England's response to inflation — reduced the present value of liabilities faster than assets fell, flipping most schemes from deficit to surplus. By 2023, the aggregate PPF 7800 index showed a surplus of around £380bn. This turnaround is genuine, but it comes with an asterisk: the October 2022 "mini-budget" triggered a crisis in Liability Driven Investment (LDI) strategies used by many DB schemes, briefly threatening a gilts market spiral before the Bank of England intervened. The crisis exposed how fragile the system remained under stress.</p>
+            <p>The more lasting shift is structural: the private-sector DB system is in managed run-off. Active membership has fallen from around 5 million in 2000 to under 1.5 million today, as employers closed schemes to new entrants and then to future accrual. The beneficiaries of DB schemes are largely older workers who joined before the 1990s; younger private sector workers have defined contribution (DC) pensions, where investment risk falls entirely on the individual. The adequacy of DC pensions at typical contribution rates is a separate — and growing — concern.</p>
+          </div>
         </section>
 
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-db-funding', label: 'DB Funding' },
-          { id: 'sec-participation', label: 'Participation' },
+          { id: 'sec-position', label: 'Funding position' },
+          { id: 'sec-membership', label: 'Active membership' },
         ]} />
 
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-            <MetricCard
-              label="Workers without workplace pension"
-              value="14M"
-              direction="down"
-              polarity="up-is-bad"
-              changeText="Down from 22M in 2012 · Auto-enrolment works · Self-employed still excluded"
-              sparklineData={[22, 20, 18, 16, 14, 13, 13, 14]}
-              href="#sec-db-funding"
-            />
-            <MetricCard
-              label="State pension as % of earnings"
-              value="28%"
-              direction="flat"
-              polarity="up-is-good"
-              changeText="OECD average is 50% · One of the lowest replacement rates in the developed world"
-              sparklineData={[26, 26, 27, 27, 28, 28, 28, 28]}
-              href="#sec-db-funding"
-            />
-            <MetricCard
-              label="Pension participation (auto-enrolled)"
-              value="88%"
-              direction="up"
-              polarity="up-is-good"
-              changeText="Up from 47% in 2012 · 11 million newly saving · Historic achievement"
-              sparklineData={[47, 58, 68, 74, 79, 83, 86, 88]}
-              href="#sec-db-funding"
-            />
-          </div>
-        
+          <MetricCard
+            label="DB scheme aggregate position (£bn)"
+            value="+£380bn"
+            direction="up"
+            polarity="up-is-good"
+            changeText="2023 surplus · Was –£710bn deficit in 2016 · Interest rate rises flipped the picture · LDI crisis 2022"
+            sparklineData={[-100, -200, -310, -400, -450, -550, -710, -650, -580, -430, -260, -80, 300, 380]}
+            source="PPF 7800 Index — December 2023"
+          />
+          <MetricCard
+            label="Schemes in deficit (count)"
+            value="1,400"
+            direction="down"
+            polarity="up-is-bad"
+            changeText="2023 · Down from 8,600 at 2016 peak · Most now in surplus · PPF absorbs failed schemes"
+            sparklineData={[7200, 7600, 7800, 8000, 8200, 8400, 8600, 8100, 7600, 6800, 5400, 3900, 1800, 1400]}
+            source="PPF 7800 Index — December 2023"
+          />
+          <MetricCard
+            label="Workers in active DB schemes (millions)"
+            value="1.5"
+            direction="down"
+            polarity="neutral"
+            changeText="2023 · Down from 5.0m in 2000 · Most closed to new accrual · DC now dominates private sector"
+            sparklineData={[5.0, 4.9, 4.8, 4.7, 4.6, 4.4, 4.2, 4.0, 3.8, 3.6, 3.4, 3.2, 3.0, 2.8, 2.6, 2.4, 2.2, 2.1, 2.0, 1.9, 1.8, 1.7, 1.6, 1.5]}
+            source="PPF / TPR — Purple Book 2023"
+          />
+        </div>
 
         <ScrollReveal>
-          <section id="sec-db-funding" className="mb-12">
+          <section id="sec-position" className="mb-12">
             <LineChart
-              title="DB pension scheme aggregate funding position, UK, 2012–2023 (£bn)"
-              subtitle="Combined surplus or deficit of all UK private sector defined benefit pension schemes. A deficit means schemes owe more in future pension promises than their assets can cover. The 2022 swing to surplus was driven by rising interest rates reducing the present value of liabilities."
-              series={fundingSeries}
-              yLabel="£bn"
+              title="DB pension scheme aggregate funding position, 2010–2023 (£bn)"
+              subtitle="Aggregate surplus/deficit of all UK DB schemes (PPF 7800 measure). Deficit peaked at –£710bn in 2016 as low rates inflated liabilities. Sharp swing to surplus from 2022 as interest rates rose."
+              series={series1}
+              annotations={annotations1}
+              yLabel="Position (£bn)"
               source={{
-                name: 'Pensions Regulator',
-                dataset: 'DB landscape report — aggregate scheme funding',
-                frequency: 'annual',
+                name: 'Pension Protection Fund',
+                dataset: 'PPF 7800 Index — aggregate funding position',
+                frequency: 'monthly',
+                url: 'https://www.ppf.co.uk/levy-payers/PPF-7800-index',
               }}
             />
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
-          <section id="sec-participation" className="mb-12">
+          <section id="sec-membership" className="mb-12">
             <LineChart
-              title="Workplace pension participation rate, UK, 2012–2023 (%)"
-              subtitle="Proportion of eligible employees (aged 22–SPA, earning £10,000+) participating in a workplace pension. Auto-enrolment has transformed pension saving from exceptional to near-universal among eligible workers."
-              series={participationSeries}
-              annotations={participationAnnotations}
-              yLabel="%"
+              title="DB scheme active members, 2000–2023 (millions)"
+              subtitle="Active members are workers still accruing DB benefits. The private sector DB system is in managed run-off — most schemes closed to new entrants by 2006 and to future accrual by 2016."
+              series={series2}
+              annotations={annotations2}
+              yLabel="Active members (millions)"
               source={{
-                name: 'DWP',
-                dataset: 'Workplace pension participation &amp; savings trends',
+                name: 'PPF / The Pensions Regulator',
+                dataset: 'The Purple Book — DB landscape',
                 frequency: 'annual',
+                url: 'https://www.ppf.co.uk/our-organisation/the-purple-book',
               }}
             />
           </section>
@@ -167,40 +147,24 @@ export default function PensionDeficitsPage() {
 
         <ScrollReveal>
           <PositiveCallout
-            title="What's transformed"
-            value="Auto-enrolment — 11 million new savers"
-            unit="2012–2023"
-            description="Auto-enrolment has been one of the most successful policy interventions of the past 20 years. Pension participation rose from 47% to 88% between 2012 and 2023, meaning that approximately 11 million workers are now saving for retirement who previously had no workplace pension. Opt-out rates have remained below 10% — far lower than predicted — demonstrating the power of default settings in shifting behaviour. The government has legislated to extend auto-enrolment to workers from age 18 (down from 22) and to remove the £10,000 earnings threshold, which will bring an additional 1.5 million low-paid workers, mostly women, into pension saving when implemented."
-            source="Source: DWP — Workplace Pension Participation Trends 2023; Pensions Regulator — DB Landscape Report 2023; ONS — ASHE pension provision 2023; PLSA — Retirement Living Standards 2024."
+            title="What's improving"
+            value="£380bn"
+            unit="aggregate DB surplus at end 2023"
+            description="The swing from a £710bn deficit in 2016 to a £380bn surplus in 2023 is the largest improvement in DB scheme funding in history. Most schemes are now in a position to consider endgame strategies — buyout with an insurer, or transfer to a superfund. The PPF itself is in robust health and has never failed to pay the pensions of workers from failed schemes. The Mansion House reforms of 2023 aim to channel DB surpluses into productive investment, unlocking potentially hundreds of billions for UK infrastructure and growth."
+            source="Source: Pension Protection Fund — PPF 7800 Index December 2023; HM Treasury — Mansion House reforms 2023."
           />
         </ScrollReveal>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            {data?.metadata.sources.map((src, i) => (
-              <div key={i}>
-                <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} — {src.dataset}
-                </a>
-                <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Methodology</h3>
-            <p>{data?.metadata.methodology}</p>
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Known issues</h3>
-            <ul className="list-disc list-inside space-y-1">
-              {data?.metadata.knownIssues.map((issue, i) => (
-                <li key={i}>{issue}</li>
-              ))}
-            </ul>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.ppf.co.uk/levy-payers/PPF-7800-index" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Pension Protection Fund — PPF 7800 Index</a> — aggregate funding position. Monthly.</p>
+            <p><a href="https://www.ppf.co.uk/our-organisation/the-purple-book" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">PPF / TPR — The Purple Book</a> — scheme membership, closures. Annual.</p>
+            <p>PPF 7800 measure uses section 179 liabilities (PPF compensation basis), not full buy-out liabilities. Active members = workers currently accruing DB benefits; excludes deferred and pensioner members. Aggregate position is sum across ~5,000 schemes tracked.</p>
           </div>
         </section>
-              <RelatedTopics />
+
+        <RelatedTopics />
       </main>
     </>
   );

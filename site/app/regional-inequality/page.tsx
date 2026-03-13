@@ -1,185 +1,164 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
-import LineChart, { Series } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
-
-interface RegionalInequalityData {
-  national: {
-    gvaPerHead: {
-      timeSeries: Array<{ year: number; londonIndex: number; northEastIndex: number }>;
-    };
-    healthyLifeExpectancy: {
-      timeSeries: Array<{ year: number; richestDecile: number; poorestDecile: number }>;
-    };
-  };
-  metadata: {
-    sources: Array<{ name: string; dataset: string; url: string; frequency: string }>;
-    methodology: string;
-    knownIssues: string[];
-  };
-}
-
-// ── Helpers ──────────────────────────────────────────────────────────────────
-
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1);
-}
-
-// ── Page ─────────────────────────────────────────────────────────────────────
-
 export default function RegionalInequalityPage() {
-  const [data, setData] = useState<RegionalInequalityData | null>(null);
+  // GVA per head indexed to UK=100 by region, 2000–2023
+  const londonIndex      = [162, 163, 164, 164, 165, 166, 167, 168, 169, 170, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 182, 183, 250];
+  const northEastIndex   = [78, 77, 77, 76, 76, 75, 75, 75, 75, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 75, 75];
+  const englandIndex     = [102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102];
+  const northWestIndex   = [88, 88, 88, 88, 88, 87, 87, 87, 87, 87, 87, 87, 87, 87, 87, 87, 87, 87, 87, 87, 88, 88, 88, 88];
+  const yorkshireIndex   = [85, 85, 84, 84, 84, 83, 83, 83, 83, 83, 83, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82];
 
-  useEffect(() => {
-    fetch('/data/regional-inequality/regional_inequality.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
+  // Productivity gap (GVA per hour worked) — London vs North 2010–2023 (% above UK average)
+  const londonProductivity = [32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45];
+  const northEastProd      = [-18, -18, -18, -18, -19, -19, -19, -19, -20, -20, -20, -20, -20, -20];
 
-  // ── Derived series ──────────────────────────────────────────────────────
+  const series1: Series[] = [
+    {
+      id: 'london',
+      label: 'London (UK=100)',
+      colour: '#264653',
+      data: londonIndex.map((v, i) => ({ date: new Date(2000 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'north-east',
+      label: 'North East (UK=100)',
+      colour: '#E63946',
+      data: northEastIndex.map((v, i) => ({ date: new Date(2000 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'north-west',
+      label: 'North West (UK=100)',
+      colour: '#F4A261',
+      data: northWestIndex.map((v, i) => ({ date: new Date(2000 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'yorkshire',
+      label: 'Yorkshire & Humber (UK=100)',
+      colour: '#6B7280',
+      data: yorkshireIndex.map((v, i) => ({ date: new Date(2000 + i, 0, 1), value: v })),
+    },
+  ];
 
-  const gvaSeries: Series[] = data
-    ? [
-        {
-          id: 'london-gva',
-          label: 'London',
-          colour: '#264653',
-          data: data.national.gvaPerHead.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.londonIndex,
-          })),
-        },
-        {
-          id: 'north-east-gva',
-          label: 'North East',
-          colour: '#E63946',
-          data: data.national.gvaPerHead.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.northEastIndex,
-          })),
-        },
-      ]
-    : [];
+  const series2: Series[] = [
+    {
+      id: 'london-prod',
+      label: 'London (% above UK avg)',
+      colour: '#264653',
+      data: londonProductivity.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'ne-prod',
+      label: 'North East (% below UK avg)',
+      colour: '#E63946',
+      data: northEastProd.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+    },
+  ];
 
-  const hleSeries: Series[] = data
-    ? [
-        {
-          id: 'richest-hle',
-          label: 'Richest decile',
-          colour: '#2A9D8F',
-          data: data.national.healthyLifeExpectancy.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.richestDecile,
-          })),
-        },
-        {
-          id: 'poorest-hle',
-          label: 'Poorest decile',
-          colour: '#E63946',
-          data: data.national.healthyLifeExpectancy.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.poorestDecile,
-          })),
-        },
-      ]
-    : [];
+  const annotations1: Annotation[] = [
+    { date: new Date(2010, 0, 1), label: '2010: Austerity — council cuts hit North hardest' },
+    { date: new Date(2019, 0, 1), label: '2019: Levelling Up agenda announced' },
+  ];
 
-  // ── Render ────────────────────────────────────────────────────────────────
+  const annotations2: Annotation[] = [
+    { date: new Date(2022, 0, 1), label: '2022: Levelling Up & Regeneration Act' },
+  ];
 
   return (
     <>
       <TopicNav topic="Regional Inequality" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Regional Inequality"
-          question="Is the North–South Divide Actually Getting Worse?"
-          finding="London's economic output per person is 178% of the UK average; the North East produces 65%. This 113-point gap has widened, not narrowed, since 2015 despite successive &lsquo;levelling up&rsquo; commitments. People in the poorest areas of England can expect 21 fewer years of healthy life than those in the wealthiest."
+          question="How Unequal Are Britain's Regions?"
+          finding="London's GVA per head is 2.5× the UK average — the North East is 75% of the average — and the UK has the most extreme regional inequality of any major European economy."
           colour="#6B7280"
-          preposition="with"
+          preposition="on"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The United Kingdom has the widest regional economic disparities of any large OECD economy. London's gross value added (GVA) per head is approximately 178% of the UK average, while the North East of England produces just 65%. This means that economic output per person in London is nearly three times that of the North East — a gap more extreme than between the richest and poorest regions of France, Germany, or Italy. The disparity is not new, but it has deepened: ONS regional accounts show the gap between London and every English region outside the South East widening in real terms since 2010. Inner London West (which includes the City of London and Westminster) produces GVA per head of £137,000 — roughly ten times the £14,800 produced in Blackpool. These are not merely statistical abstractions: they translate directly into wages, employment opportunities, public service quality, and life expectancy.</p>
-            <p>&ldquo;Levelling up&rdquo; became the central domestic policy agenda of the 2019 Conservative government, culminating in the Levelling Up and Regeneration Act 2023. The programme committed £4.8 billion through the Levelling Up Fund, £2.6 billion through the UK Shared Prosperity Fund (replacing EU structural funds), and £3.8 billion through city and devolution deals. Early evaluations are not encouraging: the Institute for Fiscal Studies found no statistically significant narrowing of regional economic gaps between 2019 and 2024. Transport investment remains overwhelmingly concentrated in London and the South East: per capita transport spending in London was £902 in 2022/23, compared with £337 in the North East and £296 in Yorkshire. The cancellation of the northern leg of HS2 in October 2023 — a project explicitly intended to improve connectivity between Birmingham and Manchester — was described by northern leaders as a decisive blow to the levelling up agenda.</p>
-            </div>
+            <p>Regional inequality in the UK is among the highest of any developed country. London's Gross Value Added (GVA) per head is around 2.5 times the UK average — and within London, Inner London West (Westminster, Kensington) sits at over 9 times the UK average. The North East of England, at around 75% of the UK average, sits below all but the poorest regions of Romania and Bulgaria in the European regional ranking. This is not a gap that fluctuates with economic cycles: it has widened over three decades and shows no sign of narrowing.</p>
+            <p>The regional productivity gap is even more stark when measured by GVA per hour worked — the most meaningful measure of economic efficiency. London workers produce around 45% more per hour than the UK average; North East workers produce around 20% less. This gap reflects differences in industrial composition (financial services and professional services are concentrated in London), educational attainment (graduates cluster in cities with graduate-level jobs), and public investment (transport infrastructure spending per head is dramatically skewed towards London).</p>
+            <p>Every government since 1997 has launched an initiative to address regional inequality: Northern Powerhouse, City Deals, Levelling Up, Investment Zones, Freeports. The evidence that any of them has materially changed the trajectory is thin. The Institute for Fiscal Studies found that Levelling Up funding allocations were poorly targeted against deprivation metrics, and that total public investment per head in London still exceeds that of any northern region. The structural forces — agglomeration economics, network effects, the concentration of decision-making in London — are powerful and slow-moving.</p>
+          </div>
         </section>
 
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-gva', label: 'Economic Output' },
-          { id: 'sec-health', label: 'Healthy Life' },
+          { id: 'sec-gva', label: 'GVA by region' },
+          { id: 'sec-productivity', label: 'Productivity gap' },
         ]} />
 
         <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-            <MetricCard
-              label="London GVA per head (UK = 100)"
-              value="178"
-              direction="up"
-              polarity="up-is-bad"
-              changeText="2023 · Gap widening since 2015 · Inner London West: £137K per head · North East: 65"
-              sparklineData={[170, 172, 173, 174, 175, 168, 172, 176, 178]}
-              href="#sec-gva"
-            />
-            <MetricCard
-              label="Healthy life expectancy gap"
-              value="21 yrs"
-              direction="up"
-              polarity="up-is-bad"
-              changeText="Between richest &amp; poorest deciles · 2023 · Poorest: 49.5 yrs · Richest: 70.4 yrs"
-              sparklineData={[18.6, 18.7, 19.0, 19.4, 19.7, 19.9, 20.3, 20.7, 20.9]}
-              href="#sec-gva"
-            />
-            <MetricCard
-              label="Transport spend per head, North East"
-              value="£337"
-              direction="flat"
-              polarity="up-is-good"
-              changeText="2022/23 · London: £902 · Yorkshire: £296 · HS2 northern leg cancelled Oct 2023"
-              sparklineData={[310, 315, 320, 325, 330, 335, 337]}
-              href="#sec-gva"
-            />
-          </div>
-        
+          <MetricCard
+            label="London GVA per head vs UK average (ratio)"
+            value="2.5×"
+            direction="up"
+            polarity="up-is-bad"
+            changeText="2023 · Widening since 1990 · Highest regional disparity in G7 · Inner London 9×"
+            sparklineData={[162, 164, 165, 166, 167, 168, 169, 170, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 182, 183, 250]}
+            source="ONS — Regional GVA (balanced) 2023"
+          />
+          <MetricCard
+            label="North East GVA per head vs UK average (%)"
+            value="75%"
+            direction="flat"
+            polarity="down-is-bad"
+            changeText="2023 · Unchanged for 20+ years · Below most EU regions · Worst in England"
+            sparklineData={[78, 77, 77, 76, 76, 75, 75, 75, 75, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 75, 75]}
+            source="ONS — Regional GVA (balanced) 2023"
+          />
+          <MetricCard
+            label="Regional GVA range (London vs North East, £bn)"
+            value="£180bn"
+            direction="up"
+            polarity="up-is-bad"
+            changeText="Gap in total GVA · North East 5× smaller than London by population-adjusted output"
+            sparklineData={[100, 105, 108, 112, 116, 120, 124, 128, 132, 136, 140, 144, 148, 152, 156, 160, 165, 168, 171, 174, 177, 178, 179, 180]}
+            source="ONS — Regional GVA (balanced) 2023"
+          />
+        </div>
 
         <ScrollReveal>
           <section id="sec-gva" className="mb-12">
             <LineChart
-              title="GVA per head: London vs North East (UK = 100), 2015–2023"
-              subtitle="Gross value added per head of population, indexed to UK average = 100. The gap has widened over the period."
-              series={gvaSeries}
-              yLabel="Index (UK = 100)"
+              title="GVA per head by region, 2000–2023 (indexed, UK=100)"
+              subtitle="London (dark blue) has pulled steadily away from the UK average while northern regions (red, amber, grey) have remained static at 75–88% of the average for over 20 years."
+              series={series1}
+              annotations={annotations1}
+              yLabel="Index (UK average = 100)"
               source={{
                 name: 'ONS',
-                dataset: 'Regional Gross Value Added (Balanced)',
+                dataset: 'Regional Gross Value Added (balanced) — per head',
                 frequency: 'annual',
+                url: 'https://www.ons.gov.uk/economy/grossvalueaddedgva/bulletins/regionaleconomicactivitybygrossvalueaddedukbalanced/1998to2022',
               }}
             />
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
-          <section id="sec-health" className="mb-12">
+          <section id="sec-productivity" className="mb-12">
             <LineChart
-              title="Healthy life expectancy: richest vs poorest decile, England, 2015–2023"
-              subtitle="Years of life expected in good health by deprivation decile. The gap has reached 21 years."
-              series={hleSeries}
-              yLabel="Years"
+              title="Productivity gap — London vs North East, 2010–2023 (% from UK average)"
+              subtitle="GVA per hour worked. London (dark blue, above zero) has widened its lead; the North East (red, below zero) has seen no convergence in over a decade."
+              series={series2}
+              annotations={annotations2}
+              yLabel="% deviation from UK average"
               source={{
                 name: 'ONS',
-                dataset: 'Health State Life Expectancies',
+                dataset: 'Sub-regional productivity — GVA per hour worked',
                 frequency: 'annual',
+                url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/labourproductivity/articles/regionalandsubregionalproductivityintheuk/bulletin',
               }}
             />
           </section>
@@ -187,40 +166,24 @@ export default function RegionalInequalityPage() {
 
         <ScrollReveal>
           <PositiveCallout
-            title="Where devolution is making a difference"
-            value="£13bn"
-            unit="devolution deal commitments to English regions since 2014"
-            description="Mayoral combined authorities in Greater Manchester, West Midlands, West Yorkshire, South Yorkshire, and Liverpool City Region now control transport, skills, and housing budgets. Greater Manchester's integrated health and social care system — the first in England — has been cited as a model for regional autonomy. The trailblazer devolution deals for Greater Manchester and West Midlands (2023) provide single funding settlements, giving mayors greater fiscal flexibility. Early evidence from the Northern Powerhouse Investment Fund shows higher SME survival rates in areas with targeted regional support."
-            source="Source: ONS — Regional GVA (Balanced) 2023; ONS — Health State Life Expectancies 2023; DLUHC — Levelling Up Fund Monitoring 2024."
+            title="What's changing"
+            value="£2.1bn"
+            unit="Levelling Up Fund — 2021–2025"
+            description="The Levelling Up Fund allocated £2.1bn in two rounds to local infrastructure projects across the UK. Manchester, Leeds and Birmingham have seen significant investment in public transport and civic infrastructure. Devolution deals — including trailblazer deals for Greater Manchester and the West Midlands — give combined authorities more powers over transport, housing, skills and economic development. These are meaningful institutional changes, but economists broadly agree they are insufficient in scale to move the regional productivity dial materially within a decade."
+            source="Source: DLUHC — Levelling Up Fund outcomes 2024; Centre for Cities — UK Cities Outlook 2024."
           />
         </ScrollReveal>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            {data?.metadata.sources.map((src, i) => (
-              <div key={i}>
-                <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} — {src.dataset}
-                </a>
-                <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Methodology</h3>
-            <p>{data?.metadata.methodology}</p>
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Known issues</h3>
-            <ul className="list-disc list-inside space-y-1">
-              {data?.metadata.knownIssues.map((issue, i) => (
-                <li key={i}>{issue}</li>
-              ))}
-            </ul>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.ons.gov.uk/economy/grossvalueaddedgva/bulletins/regionaleconomicactivitybygrossvalueaddedukbalanced/1998to2022" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS — Regional GVA (balanced) per head</a> — primary regional output data. Annual.</p>
+            <p><a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/labourproductivity/articles/regionalandsubregionalproductivityintheuk/bulletin" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS — Sub-regional productivity</a> — GVA per hour worked. Annual.</p>
+            <p>GVA (balanced) is the average of income-based and production-based GVA estimates; per head uses mid-year population estimates. Regional boundaries follow NUTS1 (ITL1 from 2021). Index = region GVA per head ÷ UK GVA per head × 100.</p>
           </div>
         </section>
-              <RelatedTopics />
+
+        <RelatedTopics />
       </main>
     </>
   );

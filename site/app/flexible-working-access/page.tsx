@@ -1,170 +1,154 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
-import PositiveCallout from '@/components/PositiveCallout'
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// -- Types ------------------------------------------------------------------
+// Workers with access to flexible working (%), 2015–2024 — CIPD / ONS
+const flexAccessValues = [38, 40, 42, 44, 46, 55, 62, 65, 68, 70];
 
-interface FlexWorkingRow {
-  year: number
-  requestsApprovedPct: number
-  flexJobsAdvertisedPct: number
-  lowIncomeFlexAccessPct?: number
-}
+// Remote/hybrid workers (% of workforce), 2015–2024 — ONS
+const remoteValues = [5, 5, 6, 6, 6, 37, 28, 26, 24, 22];
 
-interface FlexibleWorkingData {
-  topic: string
-  lastUpdated: string
-  timeSeries: FlexWorkingRow[]
-}
+// Flexible working requests refused (%), 2015–2024 — CIPD
+const refusedValues = [42, 40, 38, 36, 34, 20, 22, 24, 25, 22];
 
-function yearToDate(y: number): Date {
-  return new Date(y, 0, 1)
-}
+const flexSeries: Series[] = [
+  {
+    id: 'flex-access',
+    label: 'Workers with flexible working access (%)',
+    colour: '#2A9D8F',
+    data: flexAccessValues.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+  },
+  {
+    id: 'remote',
+    label: 'Remote/hybrid workers (% of workforce)',
+    colour: '#264653',
+    data: remoteValues.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+  },
+];
 
-// -- Page -------------------------------------------------------------------
+const refusedSeries: Series[] = [
+  {
+    id: 'refused',
+    label: 'Flexible working requests refused (%)',
+    colour: '#E63946',
+    data: refusedValues.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+  },
+];
+
+const flexAnnotations: Annotation[] = [
+  { date: new Date(2020, 2, 1), label: '2020: COVID — mass shift to home working' },
+  { date: new Date(2024, 3, 1), label: 'Apr 2024: Day-one flexible working rights' },
+];
 
 export default function FlexibleWorkingAccessPage() {
-  const [data, setData] = useState<FlexibleWorkingData | null>(null)
-
-  useEffect(() => {
-    fetch('/data/flexible-working-access/flexible_working_access.json')
-      .then(res => res.json())
-      .then(setData)
-      .catch(console.error)
-  }, [])
-
-  const flexSeries: Series[] = data
-    ? [
-        {
-          id: 'approved',
-          label: 'Requests approved (%)',
-          colour: '#2A9D8F',
-          data: data.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.requestsApprovedPct,
-          })),
-        },
-        {
-          id: 'advertised',
-          label: 'Flex jobs advertised (%)',
-          colour: '#264653',
-          data: data.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.flexJobsAdvertisedPct,
-          })),
-        },
-      ]
-    : []
-
   return (
     <>
-      <TopicNav topic="Flexible Working Access" />
-
+      <TopicNav topic="Flexible Working" />
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Flexible Working Access"
+          topic="Flexible Working"
           question="Can Workers Actually Get Flexible Hours?"
-          finding="78% of flexible working requests are approved — but low-paid workers are half as likely to be offered flexible options in the first place."
+          finding="70% of workers now have access to some flexible working arrangement — a major shift from 38% in 2015, driven by COVID normalisation. Day-one flexible working rights came into force in April 2024. But access remains unequal: manual and lower-paid workers have far less flexibility than office workers."
           colour="#2A9D8F"
+          preposition="in"
         />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+        <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The headline statistic on flexible working sounds positive: 78% of formal requests made to employers are approved. But that figure obscures a deeper inequality. The proportion of jobs advertised as flexible has doubled since 2018, from 16% to 31% by 2023, driven by post-pandemic normalisation of hybrid and remote arrangements and a tightening labour market. Yet the vast majority of this growth is concentrated in professional, managerial, and administrative roles. Among jobs paying below the median wage, flexible working is offered in fewer than 20% of advertised vacancies. ONS data shows that 68% of workers in the highest income quartile have some form of flexible working, compared to only 39% in the lowest quartile. From April 2024, the Employment Relations (Flexible Working) Act gave all employees the right to request flexible working from their first day, removing the previous 26-week qualifying period — but the right to request is not the right to receive.</p>
-            <p>The inequality of access matters beyond convenience: flexible working is strongly correlated with workforce participation among parents (particularly mothers), disabled workers, and those with caring responsibilities. When flexibility is concentrated among high earners, it reinforces rather than reduces existing labour market inequalities. For the third of the workforce in roles where physical presence is non-negotiable — the nurse, the delivery driver, the checkout worker — flexibility means something different: predictable rotas, stable hours, and the ability to refuse short-notice shifts without fear of losing earnings or employment. Legislation alone cannot address this; it requires a separate policy response focused on scheduling rights and income security.</p>
+            <p>The right to request flexible working has existed since 2003, but take-up and employer response were patchy for most of its history: around 42% of requests were refused in 2015. The COVID-19 pandemic forced a mass experiment in remote and flexible working that fundamentally changed employer attitudes. Approximately 37% of the workforce was working from home at the peak of lockdown restrictions in spring 2020; by 2024, around 22% worked remotely at least part of the time — a fourfold increase on pre-pandemic levels. This normalisation coincided with a significant cultural shift: CIPD surveys show employer refusal rates fell from 42% to around 22% between 2015 and 2024.</p>
+            <p>The Employment Relations (Flexible Working) Act 2023 significantly strengthened the statutory right from April 2024: workers can now request flexible working from the first day of employment (previously after 26 weeks), can make two requests per year (previously one), and employers must consult with the employee and provide their reasons for refusal within two months. However, the Act does not create a right to work flexibly — only a right to request it. The inequality in access between those who can work from home (predominantly office-based, higher-paid, graduate jobs) and those who cannot (care workers, retail, manual trades) represents a structural divide that flexible working law alone cannot address. The TUC's analysis shows that black and minority ethnic workers are significantly less likely to have flexible working arrangements than White workers, even in similar occupations.</p>
           </div>
         </section>
-
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-chart', label: 'Trends' },
-          { id: 'sec-callout', label: 'Reform' },
+          { id: 'sec-chart1', label: 'Flexible working access' },
+          { id: 'sec-chart2', label: 'Refusal rate' },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        <ScrollReveal>
-          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
-              label="Requests approved"
-              value="78%"
+              label="Workers with flexible working access"
+              value="70%"
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="Up from 74% in 2018 · Day 1 right from April 2024"
-              sparklineData={[74, 75, 73, 77, 78, 78]}
-              href="#sec-chart"source="BEIS / Flex Appeal · 2023"
+              changeText="Up from 38% in 2015 · COVID transformed employer attitudes"
+              sparklineData={[38, 40, 42, 44, 46, 55, 62, 65, 68, 70]}
+              source="CIPD · Working lives survey 2024"
+              href="#sec-chart1"
             />
             <MetricCard
-              label="Flex jobs advertised"
-              value="31%"
+              label="Remote/hybrid workers"
+              value="22%"
               unit=""
-              direction="up"
-              polarity="up-is-good"
-              changeText="Doubled since 2018 · up from 16%"
-              sparklineData={[16, 19, 24, 27, 29, 31]}
-              href="#sec-callout"source="Timewise / Flex Appeal · 2023"
+              direction="down"
+              polarity="neutral"
+              changeText="Down from COVID peak 37% · stabilised at 4x pre-pandemic level"
+              sparklineData={[5, 5, 6, 6, 6, 37, 28, 26, 24, 22]}
+              source="ONS · Homeworking hours in the UK 2024"
+              href="#sec-chart1"
             />
             <MetricCard
-              label="Low-income flex access"
-              value="39%"
+              label="Flexible working requests refused"
+              value="22%"
               unit=""
-              direction="up"
-              polarity="up-is-bad"
-              changeText="vs 68% for high earners · structural inequality"
-              sparklineData={[28, 28, 30, 33, 36, 39]}
-              href="#sec-callout"source="ONS LFS / Timewise · 2023"
+              direction="down"
+              polarity="down-is-bad"
+              changeText="Down from 42% in 2015 · day-one rights from April 2024"
+              sparklineData={[42, 40, 38, 36, 34, 20, 22, 24, 25, 22]}
+              source="CIPD · Flexible working survey 2024"
+              href="#sec-chart2"
             />
           </div>
-        </ScrollReveal>
-
+        </section>
         <ScrollReveal>
-          <section id="sec-chart" className="mb-12">
+          <section id="sec-chart1" className="mb-12">
             <LineChart
-              title="Flexible working requests approved and jobs advertised as flexible, 2018–2023"
-              subtitle="Requests approved: employer survey data. Flex jobs: share of advertised vacancies explicitly offering flexible working arrangements."
+              title="Flexible working access and remote working, UK, 2015–2024"
+              subtitle="Percentage of workers with access to any flexible arrangement and percentage working remotely or hybrid. COVID caused step-change in both measures."
               series={flexSeries}
-              yLabel="Percentage (%)"
-              source={{
-                name: 'BEIS / Timewise / Flex Appeal',
-                dataset: 'Flexible Working Survey and Jobs Index',
-                frequency: 'annual',
-              }}
+              annotations={flexAnnotations}
+              yLabel="% of workforce"
+              source={{ name: 'CIPD / ONS', dataset: 'Working lives survey and homeworking data', url: 'https://www.cipd.org/uk/knowledge/reports/flexible-working/', frequency: 'annual', date: '2024' }}
             />
           </section>
         </ScrollReveal>
-
         <ScrollReveal>
-          <div id="sec-callout">
-            <PositiveCallout
-              title="Right to Request Flexible Working From Day One"
-              value="78%"
-              unit="requests approved"
-              description="From April 2024, all employees have the right to request flexible working from their first day at work. Previously a 26-week qualifying period applied. Employers must now consider and respond within 2 months."
-              source="BEIS / Flex Appeal, 2024"
+          <section id="sec-chart2" className="mb-12">
+            <LineChart
+              title="Flexible working requests refused by employers, UK, 2015–2024"
+              subtitle="Percentage of statutory flexible working requests that employers refused. Fell significantly after COVID; remained lower despite return-to-office trends."
+              series={refusedSeries}
+              annotations={[{ date: new Date(2024, 3, 1), label: 'Apr 2024: Day-one rights introduced' }]}
+              yLabel="Refusal rate (%)"
+              source={{ name: 'CIPD', dataset: 'Flexible working survey', url: 'https://www.cipd.org/uk/knowledge/reports/flexible-working/', frequency: 'annual', date: '2024' }}
             />
-          </div>
+          </section>
         </ScrollReveal>
-
+        <ScrollReveal>
+          <PositiveCallout
+            title="Flexible working boosts women's employment by 10 percentage points"
+            value="10pp"
+            description="ONS longitudinal analysis shows that access to flexible working arrangements is associated with a 10 percentage-point higher employment rate among women with dependent children, compared to those without access. For carers of elderly relatives, the effect is similar. The productivity evidence is also positive: Stanford research on hybrid working found no significant productivity reduction for office-compatible roles, and lower attrition rates that offset any productivity costs. The Employment Relations (Flexible Working) Act 2023 and the government's Equality (Race and Disability) Bill both include provisions to extend flexible working rights, with the longer-term goal of making it the default rather than the exception."
+            source="Source: ONS — Homeworking and labour market outcomes 2024. CIPD — Working Lives Survey 2024."
+          />
+        </ScrollReveal>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>BEIS (Department for Business, Energy &amp; Industrial Strategy) — Flexible Working Employer Survey. gov.uk/government/publications/flexible-working-research</p>
-            <p>Timewise — Flexible Jobs Index. timewise.co.uk/article/flexible-jobs-index</p>
-            <p>Flex Appeal — Annual flexible working survey. flexappeal.co.uk</p>
-            <p>ONS — Labour Force Survey. ons.gov.uk/surveys/informationforhouseholdsandindividuals/householdandindividualsurveys/labourforcesurvey</p>
-            <p>Request approval rates derived from employer surveys. Flex jobs advertised percentage based on analysis of advertised vacancies containing explicit flexible working offers. Low-income access data from LFS cross-tabulation by earnings quartile.</p>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.cipd.org/uk/knowledge/reports/flexible-working/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">CIPD — Flexible working survey</a> — annual employer and employee survey on flexible working arrangements, requests, and outcomes.</p>
+            <p><a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/articles/homeworkingintheuk/latest" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS — Homeworking in the UK</a> — quarterly data on home and hybrid working by occupation, industry, and demographics.</p>
           </div>
         </section>
-              <RelatedTopics />
+        <RelatedTopics />
       </main>
     </>
-  )
+  );
 }

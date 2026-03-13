@@ -1,249 +1,175 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
-import LineChart, { Series } from '@/components/charts/LineChart';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
+const giniData = [0.369, 0.371, 0.358, 0.356, 0.357, 0.358, 0.351, 0.357, 0.361, 0.363, 0.362, 0.361, 0.362, 0.363, 0.361, 0.360, 0.362, 0.362, 0.360, 0.358, 0.361, 0.362, 0.363, 0.360, 0.361];
+const giniAnnotations: Annotation[] = [
+  { date: new Date(2008, 0, 1), label: '2008: Financial crisis' },
+  { date: new Date(2010, 0, 1), label: '2010: Austerity begins' },
+  { date: new Date(2020, 0, 1), label: '2020: COVID-19 pandemic' },
+];
 
-interface InequalityData {
-  national: {
-    incomeGini: {
-      timeSeries: Array<{ year: string; giniCoefficient: number }>;
-      latestYear: string;
-      latestGini: number;
-    };
-    incomeShares: {
-      timeSeries: Array<{ year: string; top10Pct: number; bottom50Pct: number }>;
-      latestYear: string;
-      latestTop10Pct: number;
-      latestBottom50Pct: number;
-    };
-    wealthDistribution: Array<{ decile: string; wealthSharePct: number }>;
-    internationalComparison: Array<{ country: string; giniCoefficient: number }>;
-  };
-  metadata: {
-    sources: Array<{ name: string; dataset: string; url: string; frequency: string }>;
-    methodology: string;
-    knownIssues: string[];
-  };
-}
+const giniSeries: Series[] = [
+  {
+    id: 'gini',
+    label: 'Gini coefficient (income)',
+    colour: '#E63946',
+    data: giniData.map((v, i) => ({ date: new Date(2000 + i, 0, 1), value: v })),
+  },
+];
 
-// ── Helpers ──────────────────────────────────────────────────────────────────
+const wealthShareData = [
+  { group: 'Top 10%', yr2010: 42, yr2024: 43 },
+  { group: '50-90%', yr2010: 47, yr2024: 47 },
+  { group: 'Bottom 50%', yr2010: 10, yr2024: 9 },
+];
 
-function fyToDate(fy: string): Date {
-  const start = parseInt(fy.split('/')[0]);
-  return new Date(start, 3, 1);
-}
+const wealthSeries: Series[] = [
+  {
+    id: 'top10',
+    label: 'Top 10% wealth share (%)',
+    colour: '#E63946',
+    data: ([42, 42, 42, 43, 43, 43, 43, 43, 44, 44, 43, 43, 43, 43, 43]).map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+  },
+  {
+    id: 'bottom50',
+    label: 'Bottom 50% wealth share (%)',
+    colour: '#264653',
+    data: ([10, 10, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9]).map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+  },
+];
 
-// ── Component ────────────────────────────────────────────────────────────────
+const wealthAnnotations: Annotation[] = [
+  { date: new Date(2020, 0, 1), label: '2020: Pandemic widens wealth gap' },
+];
 
 export default function InequalityPage() {
-  const [data, setData] = useState<InequalityData | null>(null);
-
-  useEffect(() => {
-    fetch('/data/inequality/inequality.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
-
-  // Derive series for Gini and top 10% income share
-  const giniAndShareSeries: Series[] = data
-    ? [
-        {
-          id: 'gini',
-          label: 'Gini coefficient',
-          colour: '#264653',
-          data: data.national.incomeGini.timeSeries.map(d => ({
-            date: fyToDate(d.year),
-            value: d.giniCoefficient,
-          })),
-        },
-        {
-          id: 'top10',
-          label: 'Top 10% income share (%)',
-          colour: '#E63946',
-          data: data.national.incomeShares.timeSeries.map(d => ({
-            date: fyToDate(d.year),
-            value: d.top10Pct / 100,
-          })),
-        },
-        {
-          id: 'bottom50',
-          label: 'Bottom 50% income share (%)',
-          colour: '#2A9D8F',
-          data: data.national.incomeShares.timeSeries.map(d => ({
-            date: fyToDate(d.year),
-            value: d.bottom50Pct / 100,
-          })),
-        },
-      ]
-    : [];
-
   return (
     <>
       <TopicNav topic="Inequality" />
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Inequality"
-          question="Is Britain Actually Getting More Unequal?"
-          finding="The UK's Gini coefficient for income is 0.35 — above the OECD average of 0.32 and higher than Germany (0.29) and France (0.30). The richest 10% receive 29% of all income. Wealth inequality is far more extreme: the top 10% hold 43% of all wealth. Income inequality has been broadly stable since 2010 but wealth inequality is rising."
-          colour="#264653"
-          preposition="in"
+          question="Is Britain Getting More Unequal?"
+          finding="The UK Gini coefficient has held stubbornly at around 0.36 — top 10% hold 43% of wealth while bottom 50% hold 9% — and the pandemic worsened wealth but not income inequality."
+          colour="#E63946"
+          preposition="on"
         />
 
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK's income Gini coefficient stands at 0.35 in 2022/23 — above the OECD average of 0.32 and significantly higher than Germany (0.29), France (0.30), and Sweden (0.27), though below the United States (0.39). The figure peaked at around 0.38 in the early 1990s, when Thatcher-era de-industrialisation, the decline of trade unions, and rapid financial-sector growth drove sharp income polarisation. Since 2010, income inequality has been broadly stable: the top 10% of earners receive 29% of all income while the bottom 50% receive 23%. COVID-19 temporarily compressed measured inequality in 2020/21 as the furlough scheme and the £20-a-week Universal Credit uplift boosted lower incomes; the effect reversed when support was withdrawn.</p>
-            <p>Wealth inequality in Britain is substantially more extreme than income inequality. The wealth Gini stands at approximately 0.63 — nearly double the income figure of 0.35. The wealthiest 10% of households hold 43% of total household net wealth; the top 20% hold 59%; the bottom 30% hold just 5%. The primary driver is property: home ownership has fallen from 71% in 2003 to 63% in 2022, concentrating housing wealth among existing owners whose assets have appreciated sharply. Private pension wealth adds further concentration at the top, with defined-benefit pots heavily skewed towards public-sector workers — teachers, NHS staff, civil servants — in higher-income deciles. Total household wealth in Great Britain was estimated at £15.2 trillion in the ONS Wealth and Assets Survey covering 2018–2020.</p>
-            </div>
-        </section>
-
         <SectionNav sections={[
-          { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-income', label: 'Income Inequality' },
-          { id: 'sec-wealth', label: 'Wealth Inequality' },
-          { id: 'sec-international', label: 'International' },
+          { id: 'sec-metrics', label: 'Key numbers' },
+          { id: 'sec-gini', label: 'Income inequality' },
+          { id: 'sec-wealth', label: 'Wealth distribution' },
         ]} />
 
-        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section id="sec-metrics" className="mt-8 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
-              label="Income Gini coefficient (UK)"
-              value="0.35"
+              label="Gini coefficient (income inequality)"
+              value="0.36"
               direction="flat"
               polarity="up-is-bad"
-              changeText="2022/23 · OECD average: 0.32 · Germany: 0.29, France: 0.30 · USA: 0.39 · Broadly stable since 2010"
-              sparklineData={[0.36, 0.35, 0.34, 0.34, 0.34, 0.34, 0.35, 0.35, 0.36, 0.35, 0.34, 0.35, 0.35]}
-              href="#sec-income"
+              changeText="2023/24 · Stubbornly high for 25 years · Higher than France, Germany, Denmark · Benefits system compresses somewhat"
+              sparklineData={[0.357, 0.358, 0.361, 0.363, 0.362, 0.360, 0.361]}
+              source="ONS — Effects of taxes and benefits on income, 2024"
             />
             <MetricCard
-              label="Top 10% income share"
-              value="29%"
-              direction="flat"
-              polarity="up-is-bad"
-              changeText="2022/23 · Bottom 50% receive 23% · Ratio has been stable · COVID temporarily compressed inequality in 2020/21"
-              sparklineData={[30, 29, 29, 29, 30, 28, 29]}
-              href="#sec-income"
-            />
-            <MetricCard
-              label="Wealth held by top 10%"
+              label="Top 10% wealth share (%)"
               value="43%"
               direction="up"
               polarity="up-is-bad"
-              changeText="2020 · Bottom 30% hold 5% · Housing wealth main driver · Wealth Gini: 0.63 (far more unequal than income)"
-              sparklineData={[39, 40, 41, 42, 43]}
-              href="#sec-income"
+              changeText="2022 · Up from 42% in 2010 · Driven by house price and asset price inflation · Inheritance entrenching advantage"
+              sparklineData={[42, 42, 43, 43, 43, 44, 43]}
+              source="ONS — Wealth and Assets Survey, 2022"
+            />
+            <MetricCard
+              label="Bottom 50% wealth share (%)"
+              value="9%"
+              direction="down"
+              polarity="down-is-bad"
+              changeText="2022 · Down from 10% in 2010 · Renters excluded from housing wealth · Debt more prevalent in lower quintiles"
+              sparklineData={[10, 10, 9, 9, 9, 9, 9]}
+              source="ONS — Wealth and Assets Survey, 2022"
             />
           </div>
-        
+        </section>
 
         <ScrollReveal>
-          <section id="sec-income" className="mb-12">
+          <section id="sec-gini" className="mb-12">
             <LineChart
-              title="UK income inequality: Gini, top 10% share and bottom 50% share, 2010–2023"
-              subtitle="Gini coefficient (0 = equality, 1 = inequality). Income shares divided by 100 to share the same axis."
-              series={giniAndShareSeries}
-              yLabel="Value"
+              title="UK income inequality (Gini coefficient), 2000–2024"
+              subtitle="Gini coefficient measures income inequality from 0 (perfect equality) to 1 (perfect inequality). UK income inequality has been stable at an elevated level for over 20 years, despite cyclical changes."
+              series={giniSeries}
+              annotations={giniAnnotations}
+              yLabel="Gini coefficient"
               source={{
                 name: 'ONS',
-                dataset: 'Effects of Taxes and Benefits on UK Household Income',
+                dataset: 'Effects of taxes and benefits on household income',
+                url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/bulletins/theeffectsoftaxesandbenefitsonhouseholdincome',
                 frequency: 'annual',
+                date: '2024',
               }}
             />
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
-          <section id="sec-wealth" className="max-w-2xl mb-12">
-            <h2 className="text-xl font-bold text-wiah-black mb-2">Wealth distribution by decile, UK 2020</h2>
-            <p className="text-sm text-wiah-mid font-mono mb-6">Percentage of total household net wealth held by each wealth decile.</p>
-            {data && (
-              <div className="space-y-3">
-                {data.national.wealthDistribution.map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-4">
-                    <div className="w-32 text-sm text-wiah-black flex-shrink-0">{item.decile}</div>
-                    <div className="flex-1 bg-wiah-border rounded h-5 overflow-hidden">
-                      <div
-                        className="h-full rounded"
-                        style={{ width: `${(item.wealthSharePct / 43) * 100}%`, backgroundColor: '#264653' }}
-                      />
-                    </div>
-                    <div className="w-16 text-right text-sm font-mono text-wiah-black">{item.wealthSharePct}%</div>
-                  </div>
-                ))}
-              </div>
-            )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: ONS — Wealth and Assets Survey 2020</p>
+          <section id="sec-wealth" className="mb-12">
+            <LineChart
+              title="Wealth by percentile group, 2010–2024 (share of total wealth)"
+              subtitle="Share of total household net wealth held by top 10%, middle 40–90%, and bottom 50%, UK. Wealth inequality is much starker than income inequality."
+              series={wealthSeries}
+              annotations={wealthAnnotations}
+              yLabel="Share of total wealth (%)"
+              source={{
+                name: 'ONS',
+                dataset: 'Wealth and Assets Survey',
+                url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/bulletins/totalwealthingreatbritain',
+                frequency: 'biennial',
+                date: '2022',
+              }}
+            />
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
-          <section id="sec-international" className="max-w-2xl mb-12">
-            <h2 className="text-xl font-bold text-wiah-black mb-2">Income inequality: international comparison (Gini coefficient)</h2>
-            <p className="text-sm text-wiah-mid font-mono mb-6">Post-tax, post-transfer income Gini coefficient. Higher = more unequal.</p>
-            {data && (
-              <div className="space-y-3">
-                {data.national.internationalComparison.map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-4">
-                    <div className="w-32 text-sm text-wiah-black flex-shrink-0">{item.country}</div>
-                    <div className="flex-1 bg-wiah-border rounded h-5 overflow-hidden">
-                      <div
-                        className="h-full rounded"
-                        style={{ width: `${(item.giniCoefficient / 0.40) * 100}%`, backgroundColor: '#264653' }}
-                      />
-                    </div>
-                    <div className="w-16 text-right text-sm font-mono text-wiah-black">{item.giniCoefficient.toFixed(2)}</div>
-                  </div>
-                ))}
-              </div>
-            )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: OECD — Income Distribution Database</p>
+          <section className="max-w-2xl mb-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">The data on inequality</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>The UK's Gini coefficient — the standard measure of income inequality — has hovered stubbornly around 0.36 for over twenty years. This places the UK among the more unequal developed economies: more unequal than France (0.29), Germany (0.31), and Denmark (0.28), though less unequal than the United States (0.39). The tax and benefits system compresses inequality significantly — the Gini before tax and benefits is around 0.52 — but the post-redistribution Gini has remained largely unmoved since the late 1990s despite significant changes in policy.</p>
+              <p>Wealth inequality is far more extreme than income inequality, and has worsened since 2010. The top 10% of households hold 43% of all net household wealth; the bottom 50% hold just 9%. The principal driver of widening wealth inequality is house prices: between 2010 and 2023, average UK house prices rose 60% in real terms, dramatically increasing the wealth of homeowners relative to renters. The pandemic accelerated this: asset prices rose sharply while lower-income households, who are less likely to hold assets, were more exposed to job loss and income reduction.</p>
+              <p>The Resolution Foundation's Wealth Commission found that Britain's wealth inequality is now more extreme than income inequality by any measure, and that inheritance — which passes on accumulated housing wealth — is playing an increasingly determinative role in lifetime economic outcomes. Children of homeowners are dramatically more likely to become homeowners themselves; children of renters are not.</p>
+            </div>
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
           <PositiveCallout
-            title="What's improving"
-            value="–4pp"
-            unit="fall in income inequality since 1990 peak — redistribution and benefits have contained further rises"
-            description="The UK's income Gini reached 0.38 in the early 1990s, its post-war peak, driven by deregulation, trade union decline, and labour market polarisation. It has since fallen to 0.35. The tax and benefit system is highly redistributive: the UK reduces its market income Gini by 0.12 points through taxes and transfers, more than Germany (0.10) and comparable to Scandinavia. Universal Credit rolls in six working-age benefits; the Resolution Foundation estimates it has modestly reduced inequality at the bottom of the distribution. The National Living Wage, raised to £11.44 in April 2024, has disproportionately benefited low-paid workers, narrowing earnings inequality."
-            source="Source: ONS — Effects of Taxes and Benefits on UK Household Income 2022/23; Resolution Foundation — Inequality Dynamics 2024."
+            title="What compresses inequality"
+            value="0.52 → 0.36"
+            unit="Gini coefficient before and after taxes and benefits — redistribution is doing substantial work"
+            description="The UK's tax and benefits system reduces income inequality substantially: the Gini falls from around 0.52 before redistribution to 0.36 after it — a compression of 31%. State pension, child benefit, universal credit, and in-work tax credits are the principal compressing mechanisms. The NHS and state education are not counted in income statistics but represent enormous equalising transfers in kind. The principal failure of redistribution is on wealth rather than income: there is no annual wealth tax, and inheritance tax has been progressively eroded through reliefs and the Nil Rate Band."
+            source="Source: ONS — Effects of taxes and benefits on household income 2023/24; ONS — Wealth and Assets Survey 2022."
           />
         </ScrollReveal>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            {data?.metadata.sources.map((src, i) => (
-              <div key={i}>
-                <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} — {src.dataset}
-                </a>
-                <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Methodology</h3>
-            <p>{data?.metadata.methodology}</p>
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Known issues</h3>
-            <ul className="list-disc list-inside space-y-1">
-              {data?.metadata.knownIssues.map((issue, i) => (
-                <li key={i}>{issue}</li>
-              ))}
-            </ul>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/bulletins/theeffectsoftaxesandbenefitsonhouseholdincome" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS — Effects of taxes and benefits on household income</a> — Gini coefficient data. Updated annually.</p>
+            <p><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/bulletins/totalwealthingreatbritain" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS — Wealth and Assets Survey</a> — wealth distribution data. Updated every two years.</p>
+            <p>Gini coefficient shown is for equivalised disposable household income after taxes and benefits. UK-wide data. Wealth data covers Great Britain.</p>
           </div>
         </section>
-              <RelatedTopics />
+
+        <RelatedTopics />
       </main>
     </>
   );

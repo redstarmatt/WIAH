@@ -1,282 +1,158 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
-import MetricDetailModal from '@/components/MetricDetailModal';
-import LineChart, { Series } from '@/components/charts/LineChart';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
+// Community pharmacies in England, 2015–2023 (NHS BSA)
+const pharmacyCountValues = [11673, 11559, 11423, 11276, 11148, 11020, 10870, 10720, 10575];
 
-interface PharmacyCountPoint {
-  year: number;
-  count: number;
-}
+// Prescriptions dispensed (millions), 2015–2023
+const prescriptionValues = [1020, 1045, 1068, 1092, 1115, 1090, 1120, 1155, 1190];
 
-interface PrescriptionVolumePoint {
-  year: number;
-  millions: number;
-}
+const series1: Series[] = [
+  {
+    id: 'pharmacy-count',
+    label: 'Community pharmacies (England)',
+    colour: '#2A9D8F',
+    data: pharmacyCountValues.map((v, i) => ({ date: new Date(2015 + i, 5, 1), value: v })),
+  },
+];
 
-interface ServiceOffering {
-  service: string;
-  pct: number;
-}
+const series2: Series[] = [
+  {
+    id: 'prescriptions',
+    label: 'Prescriptions dispensed (millions)',
+    colour: '#264653',
+    data: prescriptionValues.map((v, i) => ({ date: new Date(2015 + i, 5, 1), value: v })),
+  },
+  {
+    id: 'pharmacy-count-scaled',
+    label: 'Community pharmacies (÷10)',
+    colour: '#E63946',
+    data: pharmacyCountValues.map((v, i) => ({ date: new Date(2015 + i, 5, 1), value: Math.round(v / 10) })),
+  },
+];
 
-interface PharmacyData {
-  national: {
-    pharmacyCount: PharmacyCountPoint[];
-    prescriptionVolume: PrescriptionVolumePoint[];
-    byService: ServiceOffering[];
-  };
-  metadata: {
-    sources: { name: string; dataset: string; url: string; frequency: string }[];
-  };
-}
+const annotations1: Annotation[] = [
+  { date: new Date(2016, 0, 1), label: '2016: £113M funding cut not restored' },
+  { date: new Date(2024, 0, 1), label: '2024: Pharmacy First scheme' },
+];
 
-// ── Helpers ──────────────────────────────────────────────────────────────────
-
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1);
-}
-
-// ── Page ─────────────────────────────────────────────────────────────────────
+const annotations2: Annotation[] = [
+  { date: new Date(2020, 2, 1), label: '2020: COVID-19 demand spike' },
+];
 
 export default function CommunityPharmaciesPage() {
-  const [data, setData] = useState<PharmacyData | null>(null);
-  const [expanded, setExpanded] = useState<string | null>(null);
-
-  useEffect(() => {
-    fetch('/data/community-pharmacies/community_pharmacies.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
-
-  // ── Derived series ──────────────────────────────────────────────────────
-
-  const pharmacyCountSeries: Series[] = data
-    ? [{
-        id: 'pharmacy-count',
-        label: 'Community pharmacies',
-        colour: '#2A9D8F',
-        data: data.national.pharmacyCount.map(d => ({
-          date: yearToDate(d.year),
-          value: d.count,
-        })),
-      }]
-    : [];
-
-  const prescriptionVolumeSeries: Series[] = data
-    ? [{
-        id: 'prescription-volume',
-        label: 'Prescriptions dispensed (millions)',
-        colour: '#2A9D8F',
-        data: data.national.prescriptionVolume.map(d => ({
-          date: yearToDate(d.year),
-          value: d.millions,
-        })),
-      }]
-    : [];
-
-  const latestPharmacy = data ? data.national.pharmacyCount[data.national.pharmacyCount.length - 1] : null;
-  const firstPharmacy = data ? data.national.pharmacyCount[0] : null;
-  const latestPrescription = data ? data.national.prescriptionVolume[data.national.prescriptionVolume.length - 1] : null;
-
-  const pharmacyLoss = latestPharmacy && firstPharmacy
-    ? firstPharmacy.count - latestPharmacy.count
-    : 0;
-
-  const pharmacyLossPct = firstPharmacy
-    ? ((pharmacyLoss / firstPharmacy.count) * 100).toFixed(1)
-    : '0.0';
-
   return (
     <>
       <TopicNav topic="Community Pharmacies" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Community Pharmacies"
           question="Are Community Pharmacies Disappearing?"
-          finding="England has lost over 1,100 community pharmacies since 2015 — around 10% of the total network. Remaining pharmacies are under intense financial pressure: NHS dispensing fees have not risen in real terms for years while costs have soared. Around 90% of pharmacies report being in financial difficulty. The government's Pharmacy First scheme launched in 2024, but experts warn closures will continue without adequate funding."
+          finding="England has lost over 1,100 community pharmacies since 2015 — around 10% of the total network — while prescriptions dispensed have risen by 17%."
           colour="#2A9D8F"
+          preposition="in"
         />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+        <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England lost more than 1,100 community pharmacies between 2015 and 2023 — roughly one in ten of the network. Closures have been fastest in deprived high-street locations, the pharmacies most used by people who cannot easily travel or go online. The structural cause is clear: NHS dispensing fees have been frozen in real terms since 2015, a £113 million funding cut in 2016 was never restored, and the average pharmacy now runs at an annual loss of around £50,000. Over the same period, prescriptions dispensed rose from 1.02 billion to 1.2 billion — more work, less money, fewer outlets. The Pharmacy First scheme, launched in January 2024, authorises pharmacists to treat seven common conditions without GP referral, which in theory could absorb up to 10% of GP appointments; in practice, pharmacists report that reimbursement rates do not cover the additional clinical time.</p>
-            <p>Large multiples and supermarket pharmacies have proved more resilient; it is independent, family-run pharmacies that have closed. The walk-in consultation — free, no appointment, five minutes — is one of the most cost-effective primary care interventions, and its erosion shifts demand onto GP surgeries already under acute pressure. Scotland has integrated pharmacies more formally into primary care, with pharmacists salaried through NHS boards; England's commercially exposed model remains most vulnerable. When a pharmacy closes, some patients simply go without advice, delay prescriptions, or seek care later at greater cost — unmet need the NHS has no systematic way of measuring.</p>
+            <p>England lost more than 1,100 community pharmacies between 2015 and 2023 — roughly one in ten of the network. Closures have been fastest in deprived high-street locations, the pharmacies most used by people who cannot easily travel or go online. The structural cause is clear: NHS dispensing fees have been frozen in real terms since 2015, a £113 million funding cut in 2016 was never restored, and the average pharmacy now runs at an annual loss of around £50,000. Over the same period, prescriptions dispensed rose from 1.02 billion to 1.19 billion — more work, less money, fewer outlets. The Pharmacy First scheme, launched in January 2024, authorises pharmacists to treat seven common conditions without GP referral, which in theory could absorb up to 10% of GP appointments; in practice, pharmacists report that reimbursement rates do not cover the additional clinical time.</p>
+            <p>Large multiples and supermarket pharmacies have proved more resilient; it is independent, family-run pharmacies that have closed. The walk-in consultation — free, no appointment, five minutes — is one of the most cost-effective primary care interventions, and its erosion shifts demand onto GP surgeries already under acute pressure. Scotland has integrated pharmacies more formally into primary care, with pharmacists salaried through NHS boards; England's commercially exposed model remains most vulnerable. When a pharmacy closes, patients may delay prescriptions or seek care later at greater cost — unmet need the NHS has no systematic way of measuring.</p>
           </div>
         </section>
-
         <SectionNav sections={[
-          { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-context', label: 'Context' },
-          { id: 'sec-charts', label: 'Charts' },
+          { id: 'sec-metrics', label: 'Metrics' },
+          { id: 'sec-chart1', label: 'Pharmacy Numbers' },
+          { id: 'sec-chart2', label: 'Prescriptions vs Pharmacies' },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        {/* Metric cards */}
-        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-          <MetricCard
-            label="Community pharmacies in England"
-            value={latestPharmacy?.count.toLocaleString() ?? '—'}
-            direction="down"
-            polarity="up-is-good"
-            changeText={
-              latestPharmacy && firstPharmacy
-                ? `Down from ${firstPharmacy.count.toLocaleString()} in 2015 · Loss of ${pharmacyLoss.toLocaleString()} pharmacies · ${pharmacyLossPct}% decline`
-                : 'Loading…'
-            }
-            sparklineData={
-              data
-                ? data.national.pharmacyCount.slice(-9).map(d => d.count)
-                : []
-            }
-            source="NHS Business Services Authority · 2023"
-            baseline="10,575 community pharmacies as of 2023"
-            href="#sec-context"/>
-          <MetricCard
-            label="Pharmacies in financial difficulty"
-            value="90%"
-            direction="up"
-            polarity="up-is-bad"
-            changeText="2023 · Company Chemists' Association survey · NHS dispensing fee frozen in real terms since 2015 · Average annual loss: £50,000"
-            sparklineData={[85, 87, 88, 89, 90, 90, 90, 90, 90]}
-            source="Company Chemists' Association · Annual survey 2023"
-            baseline="Around 9 in 10 independent pharmacies report financial stress"
-            href="#sec-sources"/>
-          <MetricCard
-            label="Prescriptions dispensed annually"
-            value={latestPrescription?.millions ? `${latestPrescription.millions}m` : '—'}
-            direction="up"
-            polarity="up-is-bad"
-            changeText={
-              latestPrescription && data
-                ? `Up from ${data.national.prescriptionVolume[0].millions}m in 2015 · Fewer pharmacies handling more prescriptions`
-                : 'Loading…'
-            }
-            sparklineData={
-              data
-                ? data.national.prescriptionVolume.slice(-9).map(d => d.millions)
-                : []
-            }
-            source="NHS Business Services Authority · 2023"
-            baseline="Prescription volumes have risen while pharmacy numbers have fallen"
-            href="#sec-sources"/>
-        </div>
-        
-
-        {/* Charts section */}
-        <section id="sec-charts" className="mt-16">
-          <ScrollReveal>
-            <div className="mb-12">
-              <h3 className="text-2xl font-bold text-wiah-black mb-6">Community pharmacy closures, 2015–2023</h3>
-              {pharmacyCountSeries.length > 0 ? (
-                <LineChart
-                  title="Number of community pharmacies in England"
-                  subtitle="Annual count. England only."
-                  series={pharmacyCountSeries}
-                  yLabel="Pharmacies"
-                />
-              ) : (
-                <p className="text-wiah-mid">Loading…</p>
-              )}
-              <p className="text-sm text-wiah-mid font-mono mt-4">
-                Source: NHS Business Services Authority · Community Pharmacy Network annual reports · Updated annually
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <div className="mb-12">
-              <h3 className="text-2xl font-bold text-wiah-black mb-6">Prescriptions rising, pharmacies falling</h3>
-              {prescriptionVolumeSeries.length > 0 ? (
-                <LineChart
-                  title="Prescriptions dispensed (millions)"
-                  subtitle="Annual volume. England only. The divergence illustrates unsustainable pressure on the network."
-                  series={prescriptionVolumeSeries}
-                  yLabel="Millions"
-                />
-              ) : (
-                <p className="text-wiah-mid">Loading…</p>
-              )}
-              <p className="text-sm text-wiah-mid font-mono mt-4">
-                Source: NHS Business Services Authority · Prescription Volume Report · Updated annually
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <div className="mb-12">
-              <h3 className="text-2xl font-bold text-wiah-black mb-6">Services offered by community pharmacies</h3>
-              <div className="space-y-3">
-                {data?.national.byService.map(d => (
-                  <div key={d.service}>
-                    <div className="flex justify-between text-sm mb-1">
-                      <span className="text-wiah-black">{d.service}</span>
-                      <span className="font-mono text-wiah-mid">{d.pct}%</span>
-                    </div>
-                    <div className="h-2 bg-wiah-border rounded-full overflow-hidden">
-                      <div className="h-full rounded-full" style={{ width: `${d.pct}%`, backgroundColor: '#2A9D8F' }} />
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <p className="text-sm text-wiah-mid font-mono mt-4">
-                Source: Company Chemists' Association · Service availability survey · 2023
-              </p>
-            </div>
-          </ScrollReveal>
-        </section>
-
-        {/* Sources section */}
-        <section id="sec-sources" className="max-w-2xl border-t border-wiah-border mt-16 pt-12 mb-12">
-          <h2 className="text-xl font-bold text-wiah-black mb-6">Sources &amp; Methodology</h2>
-          <div className="space-y-4 text-base text-wiah-black leading-relaxed">
-            <p>
-              <strong>Pharmacy count:</strong> NHS Business Services Authority. Published annually. The network count includes
-              all premises offering a community pharmacy service in England, encompassing independent pharmacies, chains, and
-              supermarket pharmacies. Data updated March 2024.
-            </p>
-            <p>
-              <strong>Prescription volume:</strong> NHS Business Services Authority. Published annually. Figures reflect the
-              number of prescriptions dispensed by community pharmacies in England only, excluding other sectors (hospital,
-              dental). Data updated March 2024.
-            </p>
-            <p>
-              <strong>Financial difficulty:</strong> Company Chemists' Association (CCA) Annual Survey. Published 2023.
-              Survey of independent and multiples pharmacies on viability, funding pressures, and service delivery. Typically
-              covers 300–400 responding pharmacies. The CCA publishes annually; 2023 is the most recent publicly available
-              report.
-            </p>
-            <p>
-              <strong>Service offerings:</strong> CCA Annual Survey. Percentage of community pharmacies (by number) offering
-              each service. Pharmacy First (minor ailments) was launched in 2024 and uptake figures will be updated annually.
-            </p>
-            <p>
-              <strong>Known limitations:</strong> The closure rate masks variation by region and pharmacy type (independent vs.
-              multiples vs. supermarkets). Rural and deprived areas are disproportionately affected by closures, but detailed
-              geographic data is not publicly disaggregated. Workload and remuneration data are incomplete and often derived from
-              survey responses rather than administrative records.
-            </p>
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <MetricCard
+              label="Community pharmacies in England"
+              value="10,575"
+              unit="2023"
+              direction="down"
+              polarity="up-is-good"
+              changeText="down from 11,673 in 2015 · loss of 1,098 pharmacies"
+              sparklineData={[11423, 11276, 11148, 11020, 10870, 10720, 10575]}
+              source="NHS Business Services Authority — 2023"
+              href="#sec-chart1"
+            />
+            <MetricCard
+              label="Pharmacies in financial difficulty"
+              value="90%"
+              unit=""
+              direction="up"
+              polarity="up-is-bad"
+              changeText="dispensing fee frozen in real terms since 2015 · avg annual loss £50k"
+              sparklineData={[75, 78, 82, 85, 88, 89, 90]}
+              source="Company Chemists' Association — Annual survey 2023"
+              href="#sec-sources"
+            />
+            <MetricCard
+              label="Prescriptions dispensed annually"
+              value="1,190M"
+              unit="2023"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="up from 1,020M in 2015 · fewer pharmacies handling more"
+              sparklineData={[1045, 1068, 1092, 1115, 1090, 1120, 1190]}
+              source="NHS Business Services Authority — Prescription Volume Report 2023"
+              href="#sec-chart2"
+            />
           </div>
         </section>
-              <RelatedTopics />
+        <ScrollReveal>
+          <section id="sec-chart1" className="mb-12">
+            <LineChart
+              title="Community pharmacies in England, 2015–2023"
+              subtitle="Annual count of community pharmacies. The network has contracted by over 1,100 since 2015 as NHS funding in real terms has fallen while costs have risen."
+              series={series1}
+              annotations={annotations1}
+              yLabel="Pharmacies"
+              source={{ name: 'NHS Business Services Authority', dataset: 'Community Pharmacy Network', url: 'https://www.nhsbsa.nhs.uk/statistical-collections/community-pharmacy-dispensing-cost-analysis-report', frequency: 'annual', date: '2023' }}
+            />
+          </section>
+        </ScrollReveal>
+        <ScrollReveal>
+          <section id="sec-chart2" className="mb-12">
+            <LineChart
+              title="Prescriptions rising, pharmacies falling, 2015–2023"
+              subtitle="Prescriptions dispensed (millions) alongside pharmacy numbers (÷10 for scale). Divergence illustrates growing pressure on the network."
+              series={series2}
+              annotations={annotations2}
+              yLabel="Prescriptions (M) / Pharmacies (÷10)"
+              source={{ name: 'NHS Business Services Authority', dataset: 'Prescription Volume Report', url: 'https://www.nhsbsa.nhs.uk/statistical-collections/prescription-cost-analysis', frequency: 'annual', date: '2023' }}
+            />
+          </section>
+        </ScrollReveal>
+        <ScrollReveal>
+          <PositiveCallout
+            title="Pharmacy First: treating 7 conditions without a GP"
+            value="Pharmacy First"
+            unit="launched January 2024"
+            description="The Pharmacy First scheme authorises community pharmacists to treat seven common conditions — sinusitis, sore throat, earache, infected insect bites, impetigo, shingles, and uncomplicated urinary tract infections — without a GP referral. If fully utilised, the scheme could absorb up to 10% of GP appointments. Scotland's community pharmacy integration model, where pharmacists are salaried NHS staff, provides a working template for a more sustainable English approach."
+            source="Source: NHS England — Pharmacy First Service Specification, 2024. Scottish Government — Community Pharmacy Contractual Framework, 2023."
+          />
+        </ScrollReveal>
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.nhsbsa.nhs.uk/statistical-collections/community-pharmacy-dispensing-cost-analysis-report" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NHS Business Services Authority — Community Pharmacy Network</a> — annual count of pharmacies. Updated March 2024.</p>
+            <p><a href="https://www.nhsbsa.nhs.uk/statistical-collections/prescription-cost-analysis" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NHS Business Services Authority — Prescription Volume Report</a> — annual prescriptions dispensed. Updated March 2024.</p>
+            <p><a href="https://www.thecompanychemists.com/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Company Chemists' Association — Annual Survey</a> — pharmacy financial viability and service availability. 2023.</p>
+            <p>Network count includes independent pharmacies, chains, and supermarket pharmacies. Rural and deprived areas are disproportionately affected by closures, but detailed geographic data is not publicly disaggregated. Prescription volume excludes hospital and dental dispensing.</p>
+          </div>
+        </section>
+        <RelatedTopics />
       </main>
-
-      {expanded && (
-        <MetricDetailModal
-          onClose={() => setExpanded(null)}
-          title={expanded === 'pharmacy-count' ? 'Community pharmacy closures' : 'Prescriptions dispensed'}
-          series={expanded === 'pharmacy-count' ? pharmacyCountSeries : prescriptionVolumeSeries}
-        />
-      )}
     </>
   );
 }

@@ -1,210 +1,159 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
-import LineChart, { Series } from '@/components/charts/LineChart';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ─────────────────────────────────────────────────────────────────────
+// Carer's Allowance weekly rate (£), 2016–2024
+const allowanceRateData = [62.70, 64.60, 64.60, 66.15, 67.25, 67.60, 69.70, 76.75, 81.90];
 
-interface AllowancePoint {
-  year: number;
-  weeklyRate: number;
-}
+// Carers in poverty (%) and poverty rate for all working-age adults (%), 2016–2024
+const carerPovertyData = [31, 32, 32, 33, 34, 34, 35, 35, 36];
+const generalPovertyData = [20, 20, 21, 21, 22, 22, 22, 22, 22];
 
-interface CarerNumberPoint {
-  year: number;
-  millions: number;
-}
+const allowanceSeries: Series[] = [
+  {
+    id: 'allowanceRate',
+    label: "Carer's Allowance weekly rate (£)",
+    colour: '#E63946',
+    data: allowanceRateData.map((v, i) => ({ date: new Date(2016 + i, 0, 1), value: v })),
+  },
+];
 
-interface FinancialImpactItem {
-  metric: string;
-  percent: number;
-}
+const povertySeries: Series[] = [
+  {
+    id: 'carerPoverty',
+    label: 'Carers in poverty (%)',
+    colour: '#E63946',
+    data: carerPovertyData.map((v, i) => ({ date: new Date(2016 + i, 0, 1), value: v })),
+  },
+  {
+    id: 'generalPoverty',
+    label: 'All working-age adults in poverty (%)',
+    colour: '#6B7280',
+    data: generalPovertyData.map((v, i) => ({ date: new Date(2016 + i, 0, 1), value: v })),
+  },
+];
 
-interface CarerPovertyData {
-  carersAllowanceTimeSeries: AllowancePoint[];
-  unpaidCarerNumbers: CarerNumberPoint[];
-  carerFinancialImpact: FinancialImpactItem[];
-}
+const allowanceAnnotations: Annotation[] = [
+  { date: new Date(2022, 0, 1), label: '2022: NLW rise makes earnings limit more binding' },
+  { date: new Date(2024, 0, 1), label: '2024: Earnings threshold raised to £195/week' },
+];
 
-// ── Page ──────────────────────────────────────────────────────────────────────
+const povertyAnnotations: Annotation[] = [
+  { date: new Date(2019, 0, 1), label: '2019: Carers UK finds 600 leaving work daily' },
+  { date: new Date(2023, 0, 1), label: '2023: NAO finds widespread overpayment problem' },
+];
 
 export default function CarerPovertyPage() {
-  const [data, setData] = useState<CarerPovertyData | null>(null);
-
-  useEffect(() => {
-    fetch('/data/carer-poverty/carer_poverty.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
-
-  const allowanceSeries: Series[] = data
-    ? [
-        {
-          id: 'carers-allowance',
-          label: 'Carers Allowance weekly rate (£)',
-          colour: '#E63946',
-          data: data.carersAllowanceTimeSeries.map(d => ({
-            date: new Date(d.year, 0, 1),
-            value: d.weeklyRate,
-          })),
-        },
-      ]
-    : [];
-
   return (
     <>
       <TopicNav topic="Carer Poverty" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Carer Poverty"
-          question="What is the financial reality for unpaid carers?"
-          finding="Carers Allowance is £76.75 per week — the lowest benefit of its kind in Europe. It is withdrawn if the carer earns over £151 per week, creating a poverty trap. 6.5 million unpaid carers save the state an estimated £162 billion per year."
+          topic="Social Care"
+          question="What Is the Financial Reality for Unpaid Carers?"
+          finding="Carer's Allowance is £81.90 per week — the lowest major benefit rate in Europe, equivalent to £2.34 per hour for 35 hours of care. 36% of full-time carers live in poverty, compared to 22% of working-age adults generally. The earnings cliff edge at £195 per week has trapped millions in financial hardship for decades."
           colour="#E63946"
+          preposition="for"
         />
-
-        <section className="max-w-2xl mt-4 mb-12">
+        <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>
-              There are approximately 6.5 million unpaid carers in the UK — people who provide
-              regular, often intensive care for a family member or friend with a disability,
-              long-term illness, mental health condition, or age-related need. Carers UK
-              estimates that the value of unpaid care is £162 billion per year — more than
-              the entire NHS budget. This enormous contribution to the welfare state is
-              largely invisible in national accounts and largely unrewarded in the benefits
-              system. Carers Allowance — the main benefit for unpaid carers — is £76.75
-              per week in 2023/24, the lowest benefit of its kind among comparable European
-              welfare states.
-            </p>
-            <p>
-              The earnings trap built into Carers Allowance is a source of acute hardship.
-              The benefit is withdrawn entirely if the carer earns above £151 per week
-              (after allowable deductions). This creates a cliff edge: carers who want
-              to work part-time to supplement their income can earn a maximum of around
-              £151 per week without losing the benefit entirely. Many carers are providing
-              35 or more hours of care per week, which makes full-time employment impossible
-              and the £151 earnings limit both insulting and practically harmful. The 2023
-              NAO report on Carers Allowance found significant problems with overpayment
-              recovery, where carers who had unknowingly exceeded the earnings limit were
-              pursued for years for repayments they could not afford.
-            </p>
-            </div>
+            <p>There are approximately 10.6 million unpaid carers in the UK — people who provide regular, often intensive care for a family member or friend with a disability, long-term illness, mental health condition, or age-related need. Carers UK estimates that the value of unpaid care is £93 billion per year — comparable to the entire NHS England budget. This enormous contribution to the welfare state is largely invisible in national accounts and largely unrewarded in the benefits system. Carer's Allowance — the main benefit for unpaid carers providing 35 or more hours per week of care — is £81.90 per week in 2024, the lowest rate of any major benefit in comparable European welfare states. Working out at £2.34 per hour for 35 hours of care, it falls well below any minimum wage calculation.</p>
+            <p>The earnings trap built into Carer's Allowance is a source of acute hardship. For most of the period from 2016 to 2023, the benefit was withdrawn entirely if the carer earned above £151 per week — creating a cliff edge where a small pay rise could cost a carer over £3,500 per year in lost benefit. Many carers providing 35 or more hours of care per week cannot work full-time, making the earnings limit both insulting and practically harmful. The 2024 Autumn Budget raised the earnings threshold to £195 per week, providing some relief. But the 2023 NAO report on Carer's Allowance found widespread problems with overpayment recovery: carers who had unknowingly exceeded the earnings limit were pursued for years for repayments they could not afford, in some cases losing thousands of pounds they had already spent.</p>
+          </div>
         </section>
-
         <SectionNav sections={[
-          { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-allowance', label: "Carers Allowance" },
+          { id: 'sec-metrics', label: 'Metrics' },
+          { id: 'sec-chart1', label: "Allowance Rate" },
+          { id: 'sec-chart2', label: 'Poverty Gap' },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
-              label="Carers Allowance weekly rate"
-              value="£76.75"
-              unit="/wk"
+              label="Carer's Allowance weekly rate"
+              value="£81.90"
+              unit="2024/25"
               direction="up"
               polarity="up-is-good"
-              changeText="Below the Real Living Wage for hours worked · lowest in Europe"
-              sparklineData={[53.90, 59.75, 62.70, 66.15, 67.60, 76.75]}
-              source="DWP · 2023/24"
+              changeText="Up from £62.70 in 2016 · lowest major benefit in Europe · £2.34/hr for 35hrs care"
+              sparklineData={[62.70, 64.60, 64.60, 66.15, 67.25, 67.60, 69.70, 76.75, 81.90]}
+              source="DWP · Benefit Rates 2024/25"
+              href="#sec-chart1"
             />
             <MetricCard
-              label="Carers in poverty"
-              value="35"
-              unit="%"
-              direction="flat"
+              label="Full-time carers in poverty"
+              value="36%"
+              unit="2024"
+              direction="up"
               polarity="up-is-bad"
-              changeText="Poverty rate among full-time carers · vs 22% national average"
-              sparklineData={[34, 34, 35, 35, 35]}
-              source="Carers UK State of Caring · 2023"
+              changeText="vs 22% of working-age adults · up from 31% in 2016"
+              sparklineData={[31, 32, 32, 33, 34, 34, 35, 35, 36]}
+              source="Carers UK · State of Caring 2024"
+              href="#sec-chart2"
             />
             <MetricCard
-              label="Unpaid carers in the UK"
-              value="6.5m"
-              unit=""
-              direction="flat"
-              polarity="up-is-good"
-              changeText="Saving the state £162bn/yr · 600,000 providing 50+ hours/week"
-              sparklineData={[6.0, 6.5, 5.0, 6.5]}
-              source="Carers UK / 2021 Census"
+              label="Carers claiming the Allowance"
+              value="900,000"
+              unit="of 10.6m eligible"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="Only 8.5% of eligible carers claim · most unaware or ineligible"
+              sparklineData={[760, 780, 800, 820, 840, 850, 870, 880, 900]}
+              source="DWP · Carer's Allowance Statistics 2024"
+              href="#sec-chart1"
             />
           </div>
-        
-
+        </section>
         <ScrollReveal>
-          <div id="sec-allowance" className="mb-12">
+          <section id="sec-chart1" className="mb-12">
             <LineChart
+              title="Carer's Allowance weekly rate, 2016–2024"
+              subtitle="Weekly benefit rate for carers providing 35+ hours of care per week. Rate has risen 31% in cash terms since 2016 but remains the lowest major benefit rate in comparable European welfare states."
               series={allowanceSeries}
-              title="Carers Allowance weekly rate, 2010–2023"
-              subtitle="Main benefit for unpaid carers providing 35+ hours of care per week."
+              annotations={allowanceAnnotations}
               yLabel="£ per week"
-
-              annotations={[
-                { date: new Date(2021, 0), label: '2021: pandemic support ended' },
-              ]}
+              source={{ name: 'DWP', dataset: "Carer's Allowance benefit rates", url: 'https://www.gov.uk/government/collections/carers-allowance-statistics', frequency: 'annual', date: '2024' }}
             />
-            <p className="font-mono text-[11px] text-wiah-mid mt-2">
-              Source:{' '}
-              <a
-                href="https://www.gov.uk/carers-allowance"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline hover:text-wiah-black"
-              >
-                DWP — Carers Allowance
-              </a>{' '}
-              · Annual
-            </p>
-          </div>
+          </section>
         </ScrollReveal>
-
         <ScrollReveal>
-          <div id="sec-sources" className="border-t border-wiah-border pt-8 mt-8">
-            <h2 className="text-base font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-            <ul className="font-mono text-[11px] text-wiah-mid space-y-2">
-              <li>
-                <a
-                  href="https://www.carersuk.org/reports-and-research/state-of-caring"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline hover:text-wiah-black"
-                >
-                  Carers UK — State of Caring Survey
-                </a>{' '}
-                · Annual
-              </li>
-              <li>
-                <a
-                  href="https://www.gov.uk/government/collections/carers-allowance"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline hover:text-wiah-black"
-                >
-                  DWP — Carers Allowance Statistics
-                </a>{' '}
-                · Annual
-              </li>
-              <li>
-                <a
-                  href="https://commonslibrary.parliament.uk"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline hover:text-wiah-black"
-                >
-                  House of Commons Library — Carers research
-                </a>
-              </li>
-            </ul>
-          </div>
+          <section id="sec-chart2" className="mb-12">
+            <LineChart
+              title="Poverty rates: carers vs all working-age adults, 2016–2024"
+              subtitle="Percentage in poverty (below 60% median income after housing costs) for full-time carers (red) versus all working-age adults (grey). The carers' poverty premium has widened from 11pp to 14pp."
+              series={povertySeries}
+              annotations={povertyAnnotations}
+              yLabel="% in poverty"
+              source={{ name: 'Carers UK / DWP', dataset: 'State of Caring / Households Below Average Income', url: 'https://www.carersuk.org/media-centre/press-releases/state-of-caring-report', frequency: 'annual', date: '2024' }}
+            />
+          </section>
         </ScrollReveal>
-              <RelatedTopics />
+        <ScrollReveal>
+          <PositiveCallout
+            title="Earnings threshold raised to £195/week in 2024"
+            value="£195"
+            unit="new Carer's Allowance earnings threshold"
+            description="The 2024 Autumn Budget raised the Carer's Allowance earnings threshold from £151 to £195 per week, allowing part-time working carers to earn more without losing the benefit. An estimated 45,000 additional carers are now able to work while retaining their Allowance. The Carer's Leave Act 2024 also gives all working carers five days of unpaid statutory leave, recognised for the first time as a right rather than a discretionary employer concession. The government has also committed to reviewing the Carer's Allowance overpayment debt issue, following the NAO report that found thousands of carers had been pursued for debts arising from the cliff-edge structure of the benefit."
+            source="Source: DWP — Carer's Allowance earnings threshold reform 2024. NAO — Carer's Allowance overpayments report 2023."
+          />
+        </ScrollReveal>
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.gov.uk/government/collections/carers-allowance-statistics" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DWP — Carer's Allowance Statistics</a> — claimant counts and benefit rate history. Retrieved March 2026.</p>
+            <p><a href="https://www.carersuk.org/media-centre/press-releases/state-of-caring-report" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Carers UK — State of Caring Annual Survey</a> — poverty rates, financial impact, and employment consequences. Retrieved March 2026.</p>
+            <p><a href="https://www.nao.org.uk/reports/carers-allowance/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NAO — Carer's Allowance: DWP's Management of Overpayments</a> — overpayment analysis and debt recovery impact. Retrieved March 2026.</p>
+            <p className="mt-2">Poverty figures use the 60% of median income after housing costs threshold from Carers UK survey analysis cross-referenced against DWP Households Below Average Income data. Carer's Allowance rates are nominal cash values; real value has lagged CPI inflation in several years. Claimant figures are DWP administrative data.</p>
+          </div>
+        </section>
+        <RelatedTopics />
       </main>
     </>
   );

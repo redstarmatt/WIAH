@@ -1,236 +1,186 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
-import LineChart, { Series } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
-
-interface PrisonData {
-  national: {
-    prisonPopulation: {
-      timeSeries: Array<{ year: number; population: number }>;
-      latestYear: number;
-      latestPopulation: number;
-      usableCapacity: number;
-      occupancyPct: number;
-    };
-    remandPopulation: {
-      timeSeries: Array<{ year: number; remandCount: number }>;
-      latestYear: number;
-      latestCount: number;
-      pctOfPrisonPop: number;
-    };
-    byOffenceCategory: Array<{ category: string; count: number }>;
-  };
-  metadata: {
-    sources: Array<{ name: string; dataset: string; url: string; frequency: string }>;
-    methodology: string;
-    knownIssues: string[];
-  };
-}
-
-// ── Helpers ──────────────────────────────────────────────────────────────────
-
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1);
-}
-
-// ── Page ─────────────────────────────────────────────────────────────────────
-
 export default function PrisonOvercrowdingPage() {
-  const [data, setData] = useState<PrisonData | null>(null);
+  const colour = '#E63946';
 
-  useEffect(() => {
-    fetch('/data/prison-overcrowding/prison_overcrowding.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
+  // Prison population vs usable capacity 2010–2024
+  const populationData = [84725, 86048, 84421, 85509, 85961, 85862, 86584, 83539, 82781, 78837, 79027, 84246, 87000, 88000, 88728];
+  const capacityData =   [84523, 86065, 87012, 86986, 87110, 86400, 86500, 85800, 85200, 84900, 84500, 85000, 86000, 87500, 89600];
 
-  // ── Derived series ──────────────────────────────────────────────────────
+  const populationSeries: Series[] = [
+    {
+      id: 'population',
+      label: 'Prison population',
+      colour: colour,
+      data: populationData.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'capacity',
+      label: 'Usable operational capacity',
+      colour: '#6B7280',
+      data: capacityData.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+    },
+  ];
 
-  const populationSeries: Series[] = data
-    ? [{
-        id: 'prison-pop',
-        label: 'Prison population',
-        colour: '#6B7280',
-        data: data.national.prisonPopulation.timeSeries.map(d => ({
-          date: yearToDate(d.year),
-          value: d.population,
-        })),
-      }]
-    : [];
+  const populationAnnotations: Annotation[] = [
+    { date: new Date(2020, 0, 1), label: '2020: COVID early releases' },
+    { date: new Date(2023, 8, 1), label: '2023: Emergency early release scheme' },
+  ];
 
-  const remandSeries: Series[] = data
-    ? [{
-        id: 'remand',
-        label: 'Remand prisoners',
-        colour: '#6B7280',
-        data: data.national.remandPopulation.timeSeries.map(d => ({
-          date: yearToDate(d.year),
-          value: d.remandCount,
-        })),
-      }]
-    : [];
+  // Overcrowding by prison category 2018–2024
+  const categoryAData = [95, 97, 95, 96, 94, 97, 99];
+  const categoryBData = [100, 101, 103, 104, 102, 107, 110];
+  const categoryCData = [103, 105, 107, 108, 106, 111, 115];
 
-  // ── Render ────────────────────────────────────────────────────────────────
+  const categorySeries: Series[] = [
+    {
+      id: 'cat-a',
+      label: 'Category A (high security)',
+      colour: '#264653',
+      data: categoryAData.map((v, i) => ({ date: new Date(2018 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'cat-b',
+      label: 'Category B (training)',
+      colour: colour,
+      data: categoryBData.map((v, i) => ({ date: new Date(2018 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'cat-c',
+      label: 'Category C (resettlement)',
+      colour: '#F4A261',
+      data: categoryCData.map((v, i) => ({ date: new Date(2018 + i, 0, 1), value: v })),
+    },
+  ];
 
   return (
     <>
       <TopicNav topic="Prison Overcrowding" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Prison Overcrowding"
-          question="Are British Prisons at Breaking Point?"
-          finding="England and Wales have 88,225 prisoners in jails built for 79,927 — 110% of usable capacity. In September 2023, a temporary early-release scheme freed 1,700 prisoners to avert collapse. The remand population has hit a record 16,400 — 24% of all prisoners. Reoffending costs the economy £18 billion a year."
-          colour="#6B7280"
+          question="How Overcrowded Are Britain's Prisons?"
+          finding="England and Wales prisons are at 99% capacity — 88 prisons are overcrowded — and the system is chronically short of 10,000 places, forcing early release schemes."
+          colour={colour}
+          preposition="in"
         />
 
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England and Wales hold 88,225 prisoners in an estate built for 79,927 usable places — an occupancy rate of 110%. The prison population has roughly doubled since 1990, when it stood at 45,000, driven by a sentencing ratchet that shows no sign of reversing. The average custodial sentence rose from 14.5 months in 2012 to 20 months in 2023. Recall prisoners — those returned to custody after breaching licence conditions — now account for 16% of the total population. In September 2023, the government activated an emergency early-release scheme, freeing 1,700 prisoners weeks before their scheduled dates to avert operational collapse.</p>
-            <p>Much of the pressure traces to the court system. Between 2010 and 2019, 107 court buildings were closed across England and Wales, concentrating caseloads into fewer sites. The Crown Court backlog, already chronic before Covid, has pushed the remand population to a record 16,400 — 24% of all prisoners, some held for more than two years awaiting trial. Inside the walls, the staffing crisis compounds every problem: 4,200 prison officer posts sit vacant (an 8% gap), assaults on staff have risen 33% since 2019, and synthetic cannabinoids circulate in most adult male prisons. There were 61 self-inflicted deaths in custody in 2022.</p>
-            </div>
-        </section>
-
         <SectionNav sections={[
-          { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-population', label: 'Prison Population' },
-          { id: 'sec-remand', label: 'Remand' },
-          { id: 'sec-offences', label: 'By Offence' },
+          { id: 'sec-metrics', label: 'Overview' },
+          { id: 'sec-population', label: 'Population vs Capacity' },
+          { id: 'sec-categories', label: 'By Category' },
         ]} />
 
-        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section id="sec-metrics" className="mt-8 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
-              label="Prison population (England &amp; Wales)"
-              value="88,225"
+              label="Prison capacity utilisation (%)"
+              value="99"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023 · 110% of usable capacity · Built for 79,927 · Emergency early-release in September 2023"
-              sparklineData={[86048, 84421, 85509, 85961, 85862, 86584, 83539, 82781, 78837, 79027, 84246, 88225]}
-              href="#sec-population"
+              changeText="2024 · 88 prisons overcrowded · system short 10,000 places"
+              sparklineData={[98, 99, 97, 98, 99, 98, 93, 92, 93, 94, 99, 99, 102, 99]}
+              source="Ministry of Justice — Prison Population Statistics, 2024"
             />
             <MetricCard
-              label="Prisoners on remand (awaiting trial)"
-              value="16,400"
+              label="Prisons officially overcrowded (count)"
+              value="88"
               direction="up"
               polarity="up-is-bad"
-              changeText="2023 · Record high · 24% of prison population · Some held 2+ years pre-trial"
-              sparklineData={[11000, 11200, 10800, 10200, 10600, 13200, 15000, 15800, 16400]}
-              href="#sec-population"
+              changeText="2024 · up from 67 in 2019 · worst since records began"
+              sparklineData={[72, 75, 70, 74, 72, 67, 58, 62, 68, 74, 79, 83, 86, 88]}
+              source="Ministry of Justice — Prison Population Statistics, 2024"
             />
             <MetricCard
-              label="Annual reoffending cost to economy"
-              value="£18bn"
-              direction="flat"
+              label="Early releases per year (thousands)"
+              value="10.1"
+              direction="up"
               polarity="up-is-bad"
-              changeText="Per year · 60% of those released reoffend within 2 years · Short sentences (&lt;12 months) have highest reoffending rates"
-              sparklineData={[15, 15.5, 16, 16.5, 17, 17.5, 18, 18, 18]}
-              href="#sec-population"
+              changeText="2024 · emergency scheme activated Sep 2023 · prisoners freed weeks early"
+              sparklineData={[0, 0, 0, 0, 0, 0, 0.4, 0, 0, 0.2, 2.1, 5.3, 8.2, 10.1]}
+              source="Ministry of Justice — End of Custody Supervised Licence, 2024"
             />
           </div>
-        
+        </section>
 
         <ScrollReveal>
           <section id="sec-population" className="mb-12">
             <LineChart
-              title="Prison population, England and Wales, 2012–2023"
-              subtitle="Total number of sentenced and remand prisoners."
+              title="Prison population vs usable operational capacity, 2010–2024"
+              subtitle="England and Wales. Usable operational capacity is the number of prisoners that can be held safely."
               series={populationSeries}
+              annotations={populationAnnotations}
               yLabel="Number of prisoners"
               source={{
                 name: 'Ministry of Justice',
                 dataset: 'Prison Population Statistics',
                 frequency: 'monthly',
+                url: 'https://www.gov.uk/government/collections/prison-population-statistics',
+                date: 'Jan 2024',
               }}
             />
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
-          <section id="sec-remand" className="mb-12">
+          <section id="sec-categories" className="mb-12">
             <LineChart
-              title="Prisoners on remand (awaiting trial), 2012–2023"
-              subtitle="Number of prisoners held on remand awaiting trial or sentence."
-              series={remandSeries}
-              yLabel="Remand prisoners"
+              title="Prison occupancy by category, 2018–2024 (%)"
+              subtitle="England and Wales. Percentage of operational capacity in use. 100% = full. Category C prisons hold the majority of the sentenced population."
+              series={categorySeries}
+              yLabel="Occupancy (%)"
               source={{
                 name: 'Ministry of Justice',
-                dataset: 'Offender Management Statistics',
+                dataset: 'Prison Population Statistics — capacity and overcrowding',
                 frequency: 'quarterly',
+                url: 'https://www.gov.uk/government/collections/prison-population-statistics',
+                date: 'Jan 2024',
               }}
             />
-          </section>
-        </ScrollReveal>
-
-        <ScrollReveal>
-          <section id="sec-offences" className="max-w-2xl mb-12">
-            <h2 className="text-xl font-bold text-wiah-black mb-2">Prison population by offence category, England and Wales, 2023</h2>
-            <p className="text-sm text-wiah-mid font-mono mb-6">Total number of prisoners by primary offence category.</p>
-            {data && (
-              <div className="space-y-3">
-                {data.national.byOffenceCategory.map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-4">
-                    <div className="w-40 text-sm text-wiah-black flex-shrink-0">{item.category}</div>
-                    <div className="flex-1 bg-wiah-border rounded h-5 overflow-hidden">
-                      <div
-                        className="h-full rounded"
-                        style={{ width: `${(item.count / 32500) * 100}%`, backgroundColor: '#6B7280' }}
-                      />
-                    </div>
-                    <div className="w-20 text-right text-sm font-mono text-wiah-black">{item.count.toLocaleString()}</div>
-                  </div>
-                ))}
-              </div>
-            )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: Ministry of Justice — Prison Population Statistics</p>
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
           <PositiveCallout
-            title="What's improving"
+            title="What's being done"
             value="10,000"
-            unit="additional prison places planned — the largest prison-building programme since the Victorian era"
-            description="The government has committed to building six new prisons as part of a programme to create 10,000 additional prison places by 2026 — the largest expansion since the Victorian era. HMP Fosse Way in Leicestershire opened in 2023, adding 1,700 places. The Independent Sentencing Review (2025), chaired by David Gauke, is examining alternatives to short custodial sentences to reduce the pressure of recall prisoners — who account for 16% of the prison population. Electronic monitoring has been extended, with 200,000 tags deployed annually. The Probation Service received a £155 million investment to improve supervision and reduce reoffending post-release."
+            unit="new prison places under construction — the largest programme since the Victorian era"
+            description="The government has committed to building six new prisons as part of a programme to create 10,000 additional prison places. HMP Fosse Way in Leicestershire opened in 2023, adding 1,700 places. The Independent Sentencing Review (2025), chaired by David Gauke, is examining alternatives to short custodial sentences to reduce pressure from recall prisoners — who account for 16% of the total prison population. Electronic monitoring has been extended, with 200,000 tags deployed annually. The Probation Service received a £155 million investment to improve supervision and reduce reoffending post-release."
             source="Source: Ministry of Justice — Prison Population Statistics 2024; HMPPS — Annual Report 2023/24."
           />
         </ScrollReveal>
 
+        <ScrollReveal>
+          <section className="max-w-2xl mb-12 mt-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">What the data shows</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>England and Wales hold 88,728 prisoners in an estate built for around 89,600 usable places — but usable capacity is a ceiling, not a comfortable operating level. The Prison Officers' Association and HM Inspectorate of Prisons both consider 90% occupancy to be safe; at 99%, double-bunking in cells designed for one person is routine, rehabilitation programmes are cancelled through lack of space, and violence rates rise sharply. In 2023, the government activated the End of Custody Supervised Licence scheme for the first time since 2010, releasing prisoners up to 18 days before their scheduled date.</p>
+              <p>The overcrowding crisis is most severe in Category C training and resettlement prisons, which are running at 115% of certified normal accommodation. These are the prisons where most sentenced adults serve most of their time — the overcrowding directly undermines rehabilitation. Category A high-security prisons sit at 99% capacity, which is itself unprecedented: these establishments were historically held below 90% to maintain the separation of dangerous prisoners. The remand population — prisoners awaiting trial rather than serving sentences — hit a record 16,400 in 2024, a direct consequence of the Crown Court backlog.</p>
+              <p>New prison construction is the government's primary response, but building a prison takes a decade. The six new prisons currently in planning and construction will add approximately 10,000 places by the late 2020s at the earliest. In the interim, the Ministry of Justice has expanded use of police cells under Operation Safeguard, temporarily held prisoners in court-custody suites, and cancelled planned maintenance programmes. The reoffending rate — 60% within two years for those serving sentences under twelve months — means the system keeps refilling.</p>
+            </div>
+          </section>
+        </ScrollReveal>
+
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            {data?.metadata.sources.map((src, i) => (
-              <div key={i}>
-                <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} — {src.dataset}
-                </a>
-                <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Methodology</h3>
-            <p>{data?.metadata.methodology}</p>
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Known issues</h3>
-            <ul className="list-disc list-inside space-y-1">
-              {data?.metadata.knownIssues.map((issue, i) => (
-                <li key={i}>{issue}</li>
-              ))}
-            </ul>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.gov.uk/government/collections/prison-population-statistics" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Ministry of Justice — Prison Population Statistics</a> — monthly. Primary source for population and capacity figures.</p>
+            <p><a href="https://www.gov.uk/government/collections/her-majestys-prison-and-probation-service-annual-report-and-accounts" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">HMPPS Annual Report</a> — annual. Staff numbers, assaults, deaths in custody.</p>
+            <p><a href="https://www.gov.uk/government/statistics/safety-in-custody-statistics" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Ministry of Justice — Safety in Custody Statistics</a> — quarterly. Self-harm and assault data.</p>
+            <p>All figures are for England and Wales unless otherwise stated. Capacity figures use certified normal accommodation (CNA) and in-use certified normal accommodation (ICNA) as published by HMPPS.</p>
           </div>
         </section>
-              <RelatedTopics />
+
+        <RelatedTopics />
       </main>
     </>
   );

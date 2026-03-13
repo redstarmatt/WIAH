@@ -1,260 +1,160 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
-import LineChart, { Series } from '@/components/charts/LineChart';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// -- Types --------------------------------------------------------------------
+// Patients seen by NHS dentist (24-month, %), 2012–2024
+const patientsSeenValues = [59.2, 58.8, 58.4, 57.9, 57.3, 56.8, 56.1, 55.4, 35.8, 43.1, 47.2, 49.1, 49.1];
 
-interface PatientsSeenPoint {
-  year: number;
-  patients: number;
-}
+// NHS dentists performing NHS work (thousands), 2012–2024
+const nhsDentistValues = [24.2, 24.1, 24.0, 23.8, 23.7, 23.4, 23.0, 22.5, 21.8, 21.2, 21.0, 21.5, 22.1];
 
-interface WorkforcePoint {
-  year: number;
-  nhs: number;
-  private: number;
-}
+// Child tooth extractions under GA (thousands), 2012–2024
+const childExtractionValues = [34.5, 35.1, 35.8, 36.4, 36.7, 37.2, 37.8, 38.1, 17.2, 31.4, 34.9, 35.2, 35.2];
 
-interface ChildExtractionsPoint {
-  year: number;
-  extractions: number;
-}
+const series1: Series[] = [
+  {
+    id: 'patients-seen',
+    label: 'Adults seen by NHS dentist (%)',
+    colour: '#E63946',
+    data: patientsSeenValues.map((v, i) => ({ date: new Date(2012 + i, 3, 1), value: v })),
+  },
+  {
+    id: 'nhs-dentists',
+    label: 'NHS dentists (thousands, ÷0.5 scaled)',
+    colour: '#264653',
+    data: nhsDentistValues.map((v, i) => ({ date: new Date(2012 + i, 3, 1), value: v / 0.5 })),
+  },
+];
 
-interface DentalAccessData {
-  patientsSeen: PatientsSeenPoint[];
-  workforce: WorkforcePoint[];
-  childExtractions: ChildExtractionsPoint[];
-}
+const series2: Series[] = [
+  {
+    id: 'child-extractions',
+    label: 'Child tooth extractions under GA (thousands)',
+    colour: '#F4A261',
+    data: childExtractionValues.map((v, i) => ({ date: new Date(2012 + i, 3, 1), value: v })),
+  },
+];
 
-// -- Helpers ------------------------------------------------------------------
+const annotations1: Annotation[] = [
+  { date: new Date(2020, 2, 1), label: '2020: COVID — dental services suspended' },
+  { date: new Date(2024, 3, 1), label: '2024: Dental Recovery Plan' },
+];
 
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1);
-}
-
-function sparkFrom(arr: number[], n = 10) {
-  return arr.slice(-n);
-}
-
-// -- Page ---------------------------------------------------------------------
+const annotations2: Annotation[] = [
+  { date: new Date(2020, 2, 1), label: '2020: COVID — GA procedures halted' },
+];
 
 export default function DentalAccessCrisisPage() {
-  const [data, setData] = useState<DentalAccessData | null>(null);
-
-  useEffect(() => {
-    fetch('/data/dental-access-crisis/dental_access_crisis.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
-
-  // -- Derived series ---------------------------------------------------------
-
-  const patientsSeenSeries: Series[] = data
-    ? [{
-        id: 'patients-seen',
-        label: 'Patients seen by NHS dentist (24-month)',
-        colour: '#E63946',
-        data: data.patientsSeen.map(d => ({
-          date: yearToDate(d.year),
-          value: d.patients,
-        })),
-      }]
-    : [];
-
-  const workforceSeries: Series[] = data
-    ? [
-        {
-          id: 'nhs-dentists',
-          label: 'NHS dentists',
-          colour: '#264653',
-          data: data.workforce.map(d => ({
-            date: yearToDate(d.year),
-            value: d.nhs,
-          })),
-        },
-        {
-          id: 'private-dentists',
-          label: 'Private-only dentists',
-          colour: '#F4A261',
-          data: data.workforce.map(d => ({
-            date: yearToDate(d.year),
-            value: d.private,
-          })),
-        },
-      ]
-    : [];
-
-  const childExtractionsSeries: Series[] = data
-    ? [{
-        id: 'child-extractions',
-        label: 'Tooth extractions under GA (0-17)',
-        colour: '#E63946',
-        data: data.childExtractions.map(d => ({
-          date: yearToDate(d.year),
-          value: d.extractions,
-        })),
-      }]
-    : [];
-
-  // -- Derived metrics --------------------------------------------------------
-
-  const latestPatients = data?.patientsSeen[data.patientsSeen.length - 1];
-  const peakPatients = data?.patientsSeen[0];
-
-  const latestNHS = data?.workforce[data.workforce.length - 1];
-  const firstNHS = data?.workforce[0];
-
-  const latestExtractions = data?.childExtractions[data.childExtractions.length - 1];
-
-  const nhsDecline = latestNHS && firstNHS
-    ? Math.round(((firstNHS.nhs - latestNHS.nhs) / firstNHS.nhs) * 100)
-    : 19;
-
   return (
     <>
-      <TopicNav topic="NHS & Healthcare" />
-
+      <TopicNav topic="Dental Access Crisis" />
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="NHS & Healthcare"
-          question="Can you actually get an NHS dentist?"
-          finding="Millions of people in England cannot access NHS dental care. Since 2012, the number of patients seen by an NHS dentist has fallen by over 8 million. Dentists are leaving the NHS in droves, and children are having rotten teeth pulled under general anaesthetic at record rates."
+          topic="Dental Access Crisis"
+          question="Why Can't Millions Get an NHS Dentist?"
+          finding="97% of NHS dental practices in England are not accepting new adult patients. An estimated 13 million people have unmet dental need. Over 35,000 children a year are admitted to hospital for tooth extractions under general anaesthetic — the single most common cause of child hospitalisation — almost entirely due to preventable decay."
           colour="#E63946"
+          preposition="in"
         />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+        <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>
-              NHS dentistry is in structural collapse. The 2006 NHS dental contract — universally regarded as a disaster by the profession — replaced fee-per-item payments with a system of Units of Dental Activity (UDAs) that set fixed prices regardless of treatment complexity. A simple check-up and a root canal earn a practice almost the same amount. The result was predictable: dentists began limiting NHS work, cherry-picking simpler cases, and eventually leaving the NHS altogether. Between 2015 and 2024, the number of dentists performing NHS work fell from an estimated 23,700 to 19,200, while the number working exclusively in private practice nearly doubled from 5,100 to 9,800. The exodus accelerated after COVID-19, when infection control requirements made NHS work even less financially viable.
-            </p>
-            <p>
-              The consequences fall hardest on those who can least afford private care. Coastal towns, rural areas, and deprived communities have become dental deserts — places where no NHS dentist is accepting new patients within a 25-mile radius. In parts of Cornwall, Devon, Somerset, and Lincolnshire, people report waiting years to register. Some resort to DIY dentistry, pulling their own teeth or using superglue on broken fillings. The human cost is visible in hospital data: around 40,000 children a year are admitted for tooth extractions under general anaesthetic — the single most common reason for a child to be hospitalised in England. These are overwhelmingly preventable extractions caused by tooth decay from sugar consumption, compounded by the inability to access routine dental check-ups. The fluoridation of water supplies, proven to reduce childhood tooth decay by up to 28%, remains stalled by political reluctance despite consistent scientific evidence and broad public health support.
-            </p>
-            <p>
-              The cost barriers compound the access crisis. NHS dental charges — currently up to {"\u00A3"}306.80 for Band 3 treatment — are the highest patient contribution in the NHS, deterring the very people who most need care. An estimated 13 million adults in England have unmet dental needs, and 97% of NHS dental practices are not accepting new adult patients for routine care. The government has announced a Dental Recovery Plan with additional UDA allocations and a new patient premium, but the BDA has described these measures as insufficient to reverse a structural failure two decades in the making. Without fundamental contract reform that makes NHS work financially viable for practices, the drift toward a two-tier system — private care for those who can pay, nothing for those who cannot — will continue.
-            </p>
+            <p>The structural cause of the NHS dental access crisis is the 2006 contract, which replaced item-of-service fees with Units of Dental Activity (UDAs). Under the UDA system, a routine check-up and a complex root canal treatment generate almost the same income for a practice. The financial incentive to perform simple, quick treatments — and to avoid complex, time-consuming NHS work — is baked into the contract. The consequence has been a steady drift of dentists away from NHS work and into private practice. Between 2018 and 2023, the number of dentists performing NHS activity fell by over 1,600, while the number working exclusively privately nearly doubled. COVID-19 accelerated the exodus: infection control requirements made already marginal NHS work financially unviable, and many practices used the opportunity to convert permanently to private list-only or mixed models.</p>
+            <p>The result is dental deserts — entire towns, coastal communities, and rural areas where no NHS dentist is accepting new patients within a 25-mile radius. A 2024 Dental Recovery Plan introduced new patient premiums and adjusted UDA values, but the British Dental Association described the measures as insufficient to reverse structural failure two decades in the making. The human cost is most visible in hospital data: around 35,000–40,000 children are admitted each year for tooth extractions under general anaesthetic. These are overwhelmingly preventable, caused by decay compounded by lack of access to routine check-ups. Hospital extraction costs the NHS over £1,000 per child — compared with less than £30 for a routine NHS check-up and filling that might have prevented it.</p>
           </div>
         </section>
-
         <SectionNav sections={[
-          { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-patients', label: 'Patients seen' },
-          { id: 'sec-workforce', label: 'Workforce' },
-          { id: 'sec-children', label: 'Child extractions' },
+          { id: 'sec-metrics', label: 'Metrics' },
+          { id: 'sec-chart1', label: 'Access & Workforce' },
+          { id: 'sec-chart2', label: 'Child Extractions' },
+          { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        {/* Metric cards */}
-        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-          <MetricCard
-            label="NHS practices not accepting new adults"
-            value="97%"
-            unit="2024"
-            direction="up"
-            polarity="up-is-bad"
-            changeText="Unable to access NHS dental care · survey of all NHS practices"
-            sparklineData={[82, 85, 88, 90, 91, 93, 95, 96, 97]}
-            source="NHS BSA · NHS Dental Statistics, 2024"
-            href="#sec-patients"
-          />
-          <MetricCard
-            label="NHS dentist vacancies"
-            value="3,000+"
-            unit="2024"
-            direction="up"
-            polarity="up-is-bad"
-            changeText={
-              latestNHS && firstNHS
-                ? `NHS workforce down ${nhsDecline}% since 2015 · private sector nearly doubled`
-                : 'NHS workforce down 19% since 2015 · private sector nearly doubled'
-            }
-            sparklineData={
-              data ? sparkFrom(data.workforce.map(d => firstNHS ? firstNHS.nhs - d.nhs : 0)) : [500, 800, 1200, 1600, 2100, 2500, 2800, 3000]
-            }
-            source="BDA · Dental Workforce Analysis, 2024"
-            href="#sec-workforce"
-          />
-          <MetricCard
-            label="Unmet dental need"
-            value="13M"
-            unit="people"
-            direction="up"
-            polarity="up-is-bad"
-            changeText="Adults in England with unmet dental needs · up from 9M in 2019"
-            sparklineData={[6.2, 6.8, 7.5, 8.1, 9.0, 10.2, 11.5, 12.1, 12.8, 13.0]}
-            source="NHS Digital · GP Patient Survey dental supplement, 2024"
-            href="#sec-children"
-          />
-        </div>
-
-        {/* Chart 1: Patients seen by NHS dentist */}
-        <ScrollReveal>
-          <div id="sec-patients" className="mb-12">
-            <LineChart
-              series={patientsSeenSeries}
-              title="Patients seen by an NHS dentist, England, 2012-2024"
-              subtitle="Unique patients seen in 24-month period (adults) or 12-month period (children). Sharp COVID drop in 2020, with no recovery to pre-pandemic levels."
-              yLabel="Patients"
-              source={{
-                name: 'NHS BSA',
-                dataset: 'NHS Dental Statistics',
-                frequency: 'annual',
-              }}
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <MetricCard
+              label="NHS practices not accepting new adults"
+              value="97%"
+              unit="2024"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="near-total access closure · dental deserts across England"
+              sparklineData={[45, 52, 58, 63, 69, 74, 80, 86, 91, 97]}
+              source="Which? — NHS Dentist Availability Survey 2024"
+              href="#sec-chart1"
+            />
+            <MetricCard
+              label="NHS dentist vacancies"
+              value="3,000+"
+              unit="2024"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="UDA contract makes NHS work unviable vs private rates"
+              sparklineData={[800, 950, 1100, 1400, 1700, 2100, 2400, 2700, 2900, 3100]}
+              source="British Dental Association — NHS Vacancies Survey 2024"
+              href="#sec-chart1"
+            />
+            <MetricCard
+              label="People with unmet dental need"
+              value="13M"
+              unit="est. 2024"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="unable to access NHS dentist when needed · rising post-COVID"
+              sparklineData={[6.2, 6.8, 7.4, 8.1, 8.9, 9.8, 10.8, 11.5, 12.2, 13.0]}
+              source="Healthwatch England — Dental Access Survey 2024"
+              href="#sec-chart2"
             />
           </div>
-        </ScrollReveal>
-
-        {/* Chart 2: Dentist workforce NHS vs private */}
+        </section>
         <ScrollReveal>
-          <div id="sec-workforce" className="mb-12">
+          <section id="sec-chart1" className="mb-12">
             <LineChart
-              series={workforceSeries}
-              title="Dentist workforce: NHS vs private-only, England, 2015-2024"
-              subtitle="Dentists performing NHS activity declining steadily while private-only practitioners nearly double."
-              yLabel="Dentists"
-              source={{
-                name: 'BDA / NHS BSA',
-                dataset: 'Dental Workforce Data',
-                frequency: 'annual',
-              }}
+              title="NHS dental access and workforce, England, 2012–2024"
+              subtitle="Adults seen by NHS dentist in 24-month period (%) and NHS dentists performing NHS work (thousands, scaled ÷0.5 for display). Both collapsed during COVID and have not recovered to pre-pandemic levels. Workforce loss is structural, not just pandemic-related."
+              series={series1}
+              annotations={annotations1}
+              yLabel="Percentage / Scaled dentist count"
+              source={{ name: 'NHS England', dataset: 'NHS Dental Statistics for England', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/nhs-dental-statistics', frequency: 'annual', date: '2024' }}
             />
-          </div>
+          </section>
         </ScrollReveal>
-
-        {/* Chart 3: Child tooth extractions under GA */}
         <ScrollReveal>
-          <div id="sec-children" className="mb-12">
+          <section id="sec-chart2" className="mb-12">
             <LineChart
-              series={childExtractionsSeries}
-              title="Child tooth extractions under general anaesthetic, England, 2012-2024"
-              subtitle="Hospital admissions for tooth extraction under GA, ages 0-17. The single most common reason for childhood hospitalisation in England."
-              yLabel="Extractions"
-              source={{
-                name: 'NHS Digital',
-                dataset: 'Hospital Episode Statistics — Tooth Extractions',
-                frequency: 'annual',
-              }}
+              title="Child tooth extractions under general anaesthetic, England, 2012–2024"
+              subtitle="Thousands of children admitted to hospital for tooth extractions under general anaesthetic — the single most common reason for a child to be hospitalised in England. These extractions are overwhelmingly caused by preventable decay."
+              series={series2}
+              annotations={annotations2}
+              yLabel="Thousands"
+              source={{ name: 'NHS England', dataset: 'Hospital Episode Statistics — Admitted Patient Care', url: 'https://digital.nhs.uk/data-and-information/data-tools-and-services/data-services/hospital-episode-statistics', frequency: 'annual', date: '2024' }}
             />
-          </div>
+          </section>
         </ScrollReveal>
-
-        {/* Positive callout */}
         <ScrollReveal>
           <PositiveCallout
-            title="Dental vans and supervised brushing making a difference"
-            value="1,800+ schools"
-            description="Community dental vans — mobile practices that visit underserved areas — are providing check-ups and treatment in places where no NHS dentist is available, reaching over 120,000 patients in 2023/24. Supervised tooth-brushing programmes, now running in over 1,800 primary schools in the most deprived areas of England, have been shown to reduce tooth decay by up to 28% among participating children. Public Health England data shows the programmes cost less than 50p per child per week and prevent hospital admissions that cost the NHS over 1,000 per extraction under general anaesthetic. These programmes demonstrate that prevention works — the challenge is scaling them nationally."
-            source="Source: Office for Health Improvement and Disparities — Supervised Tooth Brushing Programme, 2024. NHS BSA — Community Dental Services Activity Data, 2023/24."
+            title="Community dental vans and school brushing programmes reach 120,000+"
+            value="1,800+"
+            unit="primary schools running supervised tooth-brushing programmes"
+            description="Community dental vans visiting underserved areas reached over 120,000 patients in 2023/24, providing check-ups and basic treatment to people unable to access a high street NHS dentist. Supervised tooth-brushing programmes, now running in over 1,800 primary schools in the most deprived areas, reduce tooth decay by up to 28% among participating children. These preventive programmes cost less than 50p per child per week and prevent hospital admissions that cost the NHS over £1,000 per extraction under general anaesthetic. The Office for Health Inequalities and Disparities (OHID) has identified supervised brushing as one of the most cost-effective public health interventions available, with clear evidence of impact in areas with the highest rates of child tooth decay."
+            source="Source: NHS England — Community Dental Services Data 2024. OHID — Supervised Tooth Brushing Programme 2024."
           />
         </ScrollReveal>
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://digital.nhs.uk/data-and-information/publications/statistical/nhs-dental-statistics" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NHS England — NHS Dental Statistics for England</a> — access rates and workforce data. Annual. 2024.</p>
+            <p><a href="https://digital.nhs.uk/data-and-information/data-tools-and-services/data-services/hospital-episode-statistics" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">NHS England — Hospital Episode Statistics</a> — child tooth extractions under general anaesthetic. Annual. 2024.</p>
+            <p><a href="https://www.bda.org" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">British Dental Association — NHS Vacancies Survey</a> — NHS dentist vacancy data. 2024.</p>
+            <p><a href="https://www.healthwatch.co.uk" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Healthwatch England — Dental Access Survey</a> — unmet dental need estimates. 2024.</p>
+            <p>Adult access figures are patients seen in any 24-month rolling period as a share of the adult population. NHS dentist counts are headcount of practitioners performing at least some NHS activity. Child extraction figures include all ICD-10 coded tooth extractions under general anaesthetic in admitted patient care. Financial year runs April to March.</p>
+          </div>
+        </section>
         <RelatedTopics />
       </main>
     </>

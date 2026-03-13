@@ -1,144 +1,162 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// -- Types ------------------------------------------------------------------
+// Net dwelling additions England, 2015–2023 (DLUHC)
+const netAdditionsValues = [170990, 189650, 217350, 222190, 241130, 215920, 221070, 232820, 234400];
 
-interface TimeSeriesPoint {
-  year: number
-  netAdditions: number
-  completions: number
-}
+// New home completions (private + affordable), 2015–2023
+const completionsValues = [142850, 163940, 183570, 195290, 204590, 178580, 188610, 191010, 187000];
 
-interface ConstructionHousebuildingData {
-  timeSeries: TimeSeriesPoint[]
-  target: number
-}
+// Planning permissions granted (thousands), 2015–2023
+const planningValues = [350, 340, 320, 330, 325, 290, 310, 314, 257];
 
-function yearToDate(y: number): Date {
-  return new Date(y, 0, 1)
-}
+const series1: Series[] = [
+  {
+    id: 'net-additions',
+    label: 'Net dwelling additions',
+    colour: '#F4A261',
+    data: netAdditionsValues.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+  },
+  {
+    id: 'completions',
+    label: 'New home completions',
+    colour: '#264653',
+    data: completionsValues.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+  },
+];
 
-// -- Page -------------------------------------------------------------------
+const series2: Series[] = [
+  {
+    id: 'planning',
+    label: 'Planning permissions granted (thousands)',
+    colour: '#6B7280',
+    data: planningValues.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v * 1000 })),
+  },
+];
+
+const annotations1: Annotation[] = [
+  { date: new Date(2019, 0, 1), label: '2019: 241k — closest to target' },
+  { date: new Date(2020, 2, 1), label: '2020: COVID disruption' },
+];
+
+const annotations2: Annotation[] = [
+  { date: new Date(2022, 0, 1), label: '2022: Nutrient neutrality ruling halts 160k homes' },
+  { date: new Date(2024, 0, 1), label: '2024: Planning reform — mandatory targets' },
+];
 
 export default function ConstructionHousebuildingPage() {
-  const [data, setData] = useState<ConstructionHousebuildingData | null>(null)
-
-  useEffect(() => {
-    fetch('/data/construction-housebuilding/construction_housebuilding.json')
-      .then(res => res.json())
-      .then(setData)
-      .catch(console.error)
-  }, [])
-
-  const netAdditionsSeries: Series[] = data
-    ? [{
-        id: 'net-additions',
-        label: 'Net dwelling additions',
-        colour: '#F4A261',
-        data: data.timeSeries.map(d => ({
-          date: yearToDate(d.year),
-          value: d.netAdditions,
-        })),
-      }]
-    : []
-
-  const targetAnnotation = data ? data.target : 300000
-
   return (
     <>
       <TopicNav topic="Housebuilding" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Housebuilding"
+          topic="Housing"
           question="Are We Building Enough Homes?"
-          finding="England built 234,400 net new homes in 2022/23 — a third fewer than the government's 300,000-a-year target."
+          finding="England built 234,400 net new homes in 2022/23 — a third fewer than the government's 300,000-a-year target, which has never been met in the post-war era."
           colour="#F4A261"
+          preposition="in"
         />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+        <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England added 234,400 net new dwellings in 2022/23 — 65,600 short of the government&rsquo;s 300,000-a-year target, which has never been met in the post-war era. The closest was 2019/20 at 241,130, before the pandemic disrupted construction. Cumulative under-supply runs into millions of units and is widely regarded as the primary driver of the English housing affordability crisis. Planning permissions fell 18% year-on-year, with nutrient neutrality rulings alone halting an estimated 160,000 homes in the pipeline. Social and affordable housing completions were approximately 30,000 in 2022/23 — a fraction of assessed need. The 2024 government reforms aim to mandate rather than merely target local housebuilding and reintroduce mandatory housing targets into local plans.</p>
-            <p>The shortfall is geographically concentrated. London, the South East, and the commuter belt face the most acute need, with high land costs and viability constraints making development difficult. Parts of northern England and the Midlands face a different challenge: areas of low demand where construction risks oversupply in already-struggling markets. Labour shortages, materials cost inflation, and the economics of high-density development constrain builders independently of planning policy. Private rents have risen sharply as supply remains constrained, and affordable housing grant funding has been eroded in real terms by construction cost inflation, meaning the same budget now delivers fewer homes than in 2019.</p>
+            <p>England added 234,400 net new dwellings in 2022/23 — 65,600 short of the government's 300,000-a-year target, which has never been met in the post-war era. The closest was 2019/20 at 241,130, before the pandemic disrupted construction. Cumulative under-supply runs into millions of units and is widely regarded as the primary driver of England's housing affordability crisis. Planning permissions fell 18% year-on-year, with nutrient neutrality rulings alone halting an estimated 160,000 homes in the pipeline. Social and affordable housing completions were approximately 30,000 in 2022/23 — a fraction of assessed need. The 2024 government reforms aim to mandate rather than merely target local housebuilding by reintroducing mandatory housing targets into local plans.</p>
+            <p>The shortfall is geographically concentrated. London, the South East, and the commuter belt face the most acute need, with high land costs and viability constraints making development difficult. Labour shortages, materials cost inflation, and the economics of high-density development constrain builders independently of planning policy. Private rents have risen sharply as supply remains constrained, and affordable housing grant funding has been eroded in real terms by construction cost inflation, meaning the same budget now delivers fewer homes than in 2019.</p>
           </div>
         </section>
-
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-chart', label: 'Net Additions' },
+          { id: 'sec-chart1', label: 'Completions vs Target' },
+          { id: 'sec-chart2', label: 'Planning Permissions' },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        <ScrollReveal>
-          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
               label="Net dwelling additions 2022/23"
               value="234,400"
               unit=""
               direction="flat"
               polarity="up-is-good"
-              changeText="78% of 300k target · shortfall 65,600/year"
-              sparklineData={[170990, 189650, 217350, 222190, 241130, 215920, 221070, 232820, 234400]}
-              href="#sec-chart"source="DLUHC · Housing Supply England 2023"
+              changeText="78% of 300k target · shortfall of 65,600/year"
+              sparklineData={[189650, 217350, 222190, 241130, 215920, 221070, 232820, 234400]}
+              source="DLUHC — Housing Supply England 2023"
+              href="#sec-chart1"
             />
             <MetricCard
               label="New home completions"
               value="187,000"
               unit=""
-              direction="flat"
+              direction="down"
               polarity="up-is-good"
               changeText="lowest since 2013 · materials costs hit output"
-              sparklineData={[142850, 163940, 183570, 195290, 204590, 178580, 188610, 191010, 187000]}
-              href="#sec-chart"source="DLUHC · 2023"
+              sparklineData={[163940, 183570, 195290, 204590, 178580, 188610, 191010, 187000]}
+              source="DLUHC — 2023"
+              href="#sec-chart1"
             />
             <MetricCard
               label="Planning permissions granted"
-              value="257k"
+              value="257,000"
               unit=""
               direction="down"
               polarity="up-is-good"
-              changeText="down 18% year-on-year · planning reform needed"
-              sparklineData={[350000, 340000, 320000, 330000, 325000, 290000, 310000, 314000, 257000]}
-              href="#sec-chart"source="DLUHC · 2023"
+              changeText="down 18% year-on-year · nutrient neutrality rulings"
+              sparklineData={[320000, 330000, 325000, 290000, 310000, 314000, 257000]}
+              source="DLUHC — Planning Permission Statistics 2023"
+              href="#sec-chart2"
             />
           </div>
-        </ScrollReveal>
-
+        </section>
         <ScrollReveal>
-          <section id="sec-chart" className="mb-12">
+          <section id="sec-chart1" className="mb-12">
             <LineChart
-              title="Net new homes built in England, 2015–2023"
-              subtitle={`Annual net dwelling additions. Target: ${targetAnnotation.toLocaleString()} homes per year. England has never met this target.`}
-              series={netAdditionsSeries}
-              yLabel="Net additions"
-              source={{
-                name: 'DLUHC',
-                dataset: 'Housing Supply: Net Additional Dwellings England',
-                frequency: 'annual',
-              }}
+              title="New homes built in England, 2015–2023"
+              subtitle="Net dwelling additions and new home completions annually. The 300,000-a-year target has never been met. The 2024 planning reforms aim to make targets mandatory."
+              series={series1}
+              annotations={annotations1}
+              yLabel="Dwellings"
+              source={{ name: 'DLUHC', dataset: 'Housing Supply: Net Additional Dwellings England', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-net-supply-of-housing', frequency: 'annual', date: '2023' }}
             />
           </section>
         </ScrollReveal>
-
+        <ScrollReveal>
+          <section id="sec-chart2" className="mb-12">
+            <LineChart
+              title="Planning permissions granted, England, 2015–2023"
+              subtitle="Annual planning permissions for residential development. Fell sharply from 2022 as nutrient neutrality rulings blocked sites and viability deteriorated."
+              series={series2}
+              annotations={annotations2}
+              yLabel="Permissions"
+              source={{ name: 'DLUHC', dataset: 'Planning Permission Statistics', url: 'https://www.gov.uk/government/collections/planning-permissions-england', frequency: 'quarterly', date: '2023' }}
+            />
+          </section>
+        </ScrollReveal>
+        <ScrollReveal>
+          <PositiveCallout
+            title="2024 planning reform: mandatory local housing targets restored"
+            value="300,000"
+            unit="annual target — reform to make it mandatory"
+            description="The 2024 government planning reforms reintroduce mandatory housing targets into local plans, removing the flexibility that allowed councils to set their own lower targets. The reforms also simplify the National Planning Policy Framework and introduce new rules to unlock urban brownfield sites. Modelling by the Centre for Cities suggests the reforms could add 370,000 additional homes over five years if fully implemented — though delivery depends on planning capacity, infrastructure funding, and construction industry capacity."
+            source="Source: DLUHC — National Planning Policy Framework consultation 2024. Centre for Cities — Housing supply modelling, 2024."
+          />
+        </ScrollReveal>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p>DLUHC — Housing Supply: Net Additional Dwellings England. Published annually. gov.uk/government/statistical-data-sets/live-tables-on-net-supply-of-housing</p>
-            <p>Homes England — Affordable Homes Programme Data. homesengland.gov.uk</p>
-            <p>DLUHC — Planning Permission Statistics. gov.uk/government/collections/planning-permissions-england</p>
-            <p>Net additions include new build completions, conversions from other uses, changes of use within residential, and minus demolitions. Data is for England only; Scotland, Wales, and Northern Ireland have separate housing statistics. The 300,000 target was set by the Conservative government in 2019; the current government has maintained this target. Financial year data (April-March) is used.</p>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.gov.uk/government/statistical-data-sets/live-tables-on-net-supply-of-housing" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DLUHC — Housing Supply: Net Additional Dwellings England</a> — published annually. Financial year (April–March) data.</p>
+            <p><a href="https://www.gov.uk/government/collections/planning-permissions-england" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DLUHC — Planning Permission Statistics</a> — quarterly data. Published annually as calendar year totals.</p>
+            <p><a href="https://www.homesengland.gov.uk/research/data-and-research/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Homes England — Affordable Homes Programme Data</a> — affordable housing completions by tenure.</p>
+            <p>Net additions include new build completions, conversions, changes of use, minus demolitions. Data is for England only. The 300,000 target applies to England. Financial year data (April–March) is used throughout.</p>
           </div>
         </section>
-              <RelatedTopics />
+        <RelatedTopics />
       </main>
     </>
-  )
+  );
 }

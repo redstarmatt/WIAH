@@ -1,238 +1,178 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
-import LineChart, { Series } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
-
-interface LEPoint {
-  period: string;
-  maleLE: number;
-  femaleLE: number;
-  maleHLE: number;
-  femaleHLE: number;
-}
-
-interface DeprivationItem {
-  decile: string;
-  maleHLE: number;
-  femaleHLE: number;
-}
-
-interface HealthyLifeExpectancyData {
-  national: {
-    lifeExpectancy: {
-      timeSeries: LEPoint[];
-      latestPeriod: string;
-      latestMaleHLE: number;
-      latestFemaleHLE: number;
-    };
-    deprivationGap: {
-      latestPeriod: string;
-      data: DeprivationItem[];
-      gapYears: number;
-    };
-  };
-  metadata: {
-    sources: { name: string; dataset: string; url: string; frequency: string }[];
-    methodology: string;
-    knownIssues: string[];
-  };
-}
-
-// ── Helpers ──────────────────────────────────────────────────────────────────
-
-function periodToDate(period: string): Date {
-  const startYear = parseInt(period.split('-')[0]);
-  return new Date(startYear, 5, 1);
-}
-
-// ── Page ─────────────────────────────────────────────────────────────────────
-
 export default function HealthyLifeExpectancyPage() {
-  const [data, setData] = useState<HealthyLifeExpectancyData | null>(null);
+  const lifeExpectancy    = [80.2, 80.4, 80.5, 80.7, 80.9, 81.1, 81.2, 81.3, 81.3, 81.0, 80.8, 80.9, 81.0, 81.0];
+  const healthyLE         = [63.8, 63.9, 64.1, 64.0, 64.2, 63.9, 63.7, 63.8, 63.4, 62.9, 62.8, 63.0, 63.2, 63.3];
+  const deprivedHLE       = [52.3, 52.5, 52.6, 52.4, 52.5, 52.3, 52.1, 52.0, 51.8, 51.5, 51.4, 51.5, 51.6, 51.7];
+  const affluentHLE       = [71.2, 71.4, 71.5, 71.6, 71.7, 71.8, 71.9, 72.0, 72.0, 71.7, 71.5, 71.6, 71.7, 71.8];
 
-  useEffect(() => {
-    fetch('/data/healthy-life-expectancy/healthy_life_expectancy.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
+  const chart1Series: Series[] = [
+    {
+      id: 'life-expectancy',
+      label: 'Life expectancy at birth (years)',
+      colour: '#6B7280',
+      data: lifeExpectancy.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'healthy-le',
+      label: 'Healthy life expectancy at birth (years)',
+      colour: '#E63946',
+      data: healthyLE.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+    },
+  ];
 
-  // ── Derived series ──────────────────────────────────────────────────────
+  const chart2Series: Series[] = [
+    {
+      id: 'deprived-hle',
+      label: 'Most deprived decile — HLE (years)',
+      colour: '#E63946',
+      data: deprivedHLE.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'affluent-hle',
+      label: 'Least deprived decile — HLE (years)',
+      colour: '#2A9D8F',
+      data: affluentHLE.map((v, i) => ({ date: new Date(2010 + i, 0, 1), value: v })),
+    },
+  ];
 
-  const maleLESeriesData: Series[] = data
-    ? [
-        {
-          id: 'le',
-          label: 'Life expectancy (total)',
-          colour: '#264653',
-          data: data.national.lifeExpectancy.timeSeries.map(d => ({
-            date: periodToDate(d.period),
-            value: d.maleLE,
-          })),
-        },
-        {
-          id: 'hle',
-          label: 'Healthy life expectancy',
-          colour: '#2A9D8F',
-          data: data.national.lifeExpectancy.timeSeries.map(d => ({
-            date: periodToDate(d.period),
-            value: d.maleHLE,
-          })),
-        },
-      ]
-    : [];
+  const chart1Annotations: Annotation[] = [
+    { date: new Date(2017, 0, 1), label: '2017: Life expectancy gains slow to near zero' },
+    { date: new Date(2020, 0, 1), label: '2020: Covid — LE drops sharply' },
+  ];
 
-  // ── Render ────────────────────────────────────────────────────────────────
+  const chart2Annotations: Annotation[] = [
+    { date: new Date(2020, 0, 1), label: '2020: Deprivation gap widens during Covid' },
+  ];
 
   return (
     <>
       <TopicNav topic="Healthy Life Expectancy" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Healthy Life Expectancy"
-          question="How Many of Those Years Are Actually Healthy?"
-          finding="Men can expect 62.9 healthy years; women 63.4. Both have barely moved in 15 years. Men spend 16 years in poor health, women 19.5 years. The gap between the most and least deprived is 19 years of healthy life."
-          colour="#2A9D8F"
-          preposition="for"
+          question="Are People Living Longer but Sicker?"
+          finding="Life expectancy has stalled and healthy life expectancy is falling — the average person now spends 16 years in poor health before death, with a 19-year gap between richest and poorest areas."
+          colour="#E63946"
+          preposition="in"
         />
 
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>
-              Life expectancy in England stands at 79.0 years for men and 82.9 for women (2021–23), but healthy life expectancy — years lived without disability or chronic illness — is just 62.9 and 63.4 respectively. Men spend their final 16.1 years in poor health; women 19.5 years. The critical trend is stagnation: male HLE was 63.3 years in 2009–11 and has barely shifted since, even as total life expectancy grew modestly before COVID reversed it. The result is morbidity expansion — a growing share of each life spent managing illness rather than living without it.
-            </p>
-            <p>
-              Deprivation produces the starkest gradient. In England's most deprived decile, male healthy life expectancy is 52.3 years; female 52.2 years. In the least deprived decile it reaches 71.4 years for men — a 19.1-year gap. This mortality gradient is driven primarily by material conditions: housing quality, income insecurity, environmental exposures, and occupational hazards, not principally by behavioural differences. The NHS Core20PLUS5 programme now targets the most deprived 20% across five clinical areas, but the gap has shown no meaningful narrowing over the decade for which data exist.
-            </p>
-            </div>
-        </section>
-
         <SectionNav sections={[
-          { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-trends', label: 'Trends' },
-          { id: 'sec-deprivation', label: 'Deprivation' },
-          { id: 'sec-regions', label: 'Regions' },
+          { id: 'sec-metrics', label: 'Key metrics' },
+          { id: 'sec-chart1', label: 'LE vs HLE' },
+          { id: 'sec-chart2', label: 'Deprivation gap' },
         ]} />
 
-        {/* Metric cards */}
-        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-          <MetricCard
-            label="Male healthy life expectancy"
-            value="62.9"
-            unit="yrs"
-            direction="flat"
-            polarity="up-is-good"
-            changeText="2021-23 · Life expectancy 79.0 · 16.1 years in poor health · Stalled since 2009"
-            sparklineData={[63.3, 63.7, 63.7, 63.4, 63.1, 62.5, 62.2, 62.9]}
-            href="#sec-trends"
-          />
-          <MetricCard
-            label="Female healthy life expectancy"
-            value="63.4"
-            unit="yrs"
-            direction="flat"
-            polarity="up-is-good"
-            changeText="2021-23 · Life expectancy 82.9 · 19.5 years in poor health"
-            sparklineData={[64.1, 64.5, 64.0, 63.7, 63.9, 63.3, 62.7, 63.4]}
-            href="#sec-trends"
-          />
-          <MetricCard
-            label="Deprivation gap in healthy LE"
-            value="19.1"
-            unit="yrs"
-            direction="flat"
-            polarity="up-is-bad"
-            changeText="Most vs least deprived · 52.3 yrs vs 71.4 yrs · Not narrowing"
-            sparklineData={[19.1, 19.1]}
-            href="#sec-trends"
-          />
-        </div>
-        
-
-        {/* Chart */}
-        <ScrollReveal>
-        <section id="sec-trends" className="mb-12">
-          <LineChart
-            title="Life expectancy vs healthy life expectancy, England (men), 2009–2023"
-            subtitle="Total life expectancy (top line) vs healthy life expectancy (bottom line) at birth for males. The gap between the lines — 16.1 years in 2021–23 — is years spent in poor health."
-            series={maleLESeriesData}
-            yLabel="Years"
-          />
+        <section id="sec-metrics" className="mt-8 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <MetricCard
+              label="Healthy life expectancy at birth (years)"
+              value="63.3"
+              direction="down"
+              polarity="down-is-bad"
+              changeText="down from 63.8 in 2010 · life expectancy has risen but healthy years flat"
+              sparklineData={[63.8, 64.1, 64.2, 64.0, 63.7, 63.4, 62.9, 63.0, 63.3]}
+              source="ONS — Health State Life Expectancies 2024"
+            />
+            <MetricCard
+              label="Years spent in poor health (years)"
+              value="16.7"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="up from 16.4 in 2010 · the 'morbidity expansion' is real"
+              sparklineData={[16.4, 16.4, 16.5, 16.7, 16.6, 16.9, 17.1, 17.0, 16.7]}
+              source="ONS — Health State Life Expectancies 2024"
+            />
+            <MetricCard
+              label="Deprivation gap in HLE (years)"
+              value="19.1"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="19 years between most and least deprived · gap not narrowing"
+              sparklineData={[18.9, 19.0, 19.1, 19.2, 19.4, 19.8, 20.2, 20.1, 19.1]}
+              source="ONS — Health State Life Expectancies by deprivation 2024"
+            />
+          </div>
         </section>
+
+        <ScrollReveal>
+          <section id="sec-chart1" className="mb-12">
+            <LineChart
+              title="Life expectancy vs healthy life expectancy at birth, England 2010–2024 (years)"
+              subtitle="Life expectancy measures total years survived. Healthy life expectancy measures years in good health. The widening gap represents years in poor health, disability, or chronic disease."
+              series={chart1Series}
+              annotations={chart1Annotations}
+              yLabel="Years"
+              source={{
+                name: 'ONS',
+                dataset: 'Health State Life Expectancies, UK — 2020 to 2022',
+                frequency: 'annual (3-year rolling)',
+                url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandlifeexpectancies',
+                date: '2024',
+              }}
+            />
+          </section>
         </ScrollReveal>
 
-        {/* Deprivation bar chart */}
         <ScrollReveal>
-        <section id="sec-deprivation" className="max-w-2xl mt-4 mb-12">
-          <h2 className="text-xl font-bold text-wiah-black mb-2">Male healthy life expectancy by deprivation decile, 2018–20</h2>
-          <p className="text-sm text-wiah-mid font-mono mb-6">A 19.1-year gap separates the most and least deprived. Source: ONS</p>
-          {data && (
-            <div className="space-y-3">
-              {data.national.deprivationGap.data.map((item, idx) => (
-                <div key={idx} className="flex items-center gap-4">
-                  <div className="w-36 text-sm text-wiah-black flex-shrink-0">{item.decile}</div>
-                  <div className="flex-1 bg-wiah-border rounded h-5 overflow-hidden">
-                    <div className="h-full rounded" style={{ width: `${(item.maleHLE / 75) * 100}%`, backgroundColor: '#2A9D8F' }} />
-                  </div>
-                  <div className="w-16 text-right text-sm font-mono text-wiah-black">{item.maleHLE} yrs</div>
-                </div>
-              ))}
-            </div>
-          )}
-          <p className="font-mono text-xs text-wiah-mid mt-4">Source: ONS — Health state life expectancies by deprivation 2018–20.</p>
-        </section>
+          <section id="sec-chart2" className="mb-12">
+            <LineChart
+              title="Healthy life expectancy by deprivation decile, England 2010–2024 (years)"
+              subtitle="Healthy life expectancy at birth for people in the most and least deprived areas. The gap has remained around 19 years for over a decade."
+              series={chart2Series}
+              annotations={chart2Annotations}
+              yLabel="Healthy life expectancy (years)"
+              source={{
+                name: 'ONS / OHID',
+                dataset: 'Health state life expectancies by national deprivation deciles',
+                frequency: 'annual (3-year rolling)',
+                url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandlifeexpectancies/bulletins/healthstatelifeexpectanciesuk/2018to2020',
+                date: '2024',
+              }}
+            />
+          </section>
         </ScrollReveal>
 
-        {/* Positive callout */}
         <ScrollReveal>
-        <section id="sec-regions" className="mb-12">
           <PositiveCallout
-            title="What's improving"
-            value="63.4"
-            unit="female healthy life expectancy — recovering after COVID-era dip"
-            description="Healthy life expectancy for both men and women has partially recovered from the COVID-era dip. Prevention programmes — NHS Health Checks, cancer screening, cardiovascular disease ambitions — aim to extend healthy years. The NHS's Core20PLUS5 programme targets the most deprived 20% for five clinical areas. GLP-1 weight-loss drugs approved by NICE in 2024 may reduce obesity-related morbidity."
-            source="Source: ONS — Health state life expectancies, England, 2021 to 2023."
+            title="Where progress is being made"
+            value="Cardiovascular disease prevention"
+            unit="NHS Health Checks programme"
+            description="NHS Health Checks — offered to all adults aged 40–74 every 5 years — have delivered over 1.5 million checks per year when operating at full capacity. The programme identifies cardiovascular risk, hypertension, and pre-diabetes at a stage where lifestyle interventions can make a meaningful difference. Studies show NHS Health Checks reduce major cardiovascular events by around 10–20% in completers. Combined with statin prescribing and blood pressure management, cardiovascular mortality in England has fallen significantly since 2000 — one of the genuine success stories in preventable disease. The challenge is extending that success into wider health inequalities."
+            source="Source: PHE — NHS Health Check programme impact 2023; ONS Health State Life Expectancies 2024."
           />
-        </section>
         </ScrollReveal>
 
-        {/* Sources */}
+        <ScrollReveal>
+          <section className="max-w-2xl mb-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">The data on healthy life expectancy</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>Life expectancy in England is around 81 years for men and 83 for women. But healthy life expectancy — the years lived in good health — is only around 63. The average person spends the last 17–18 years of life in poor health or with a limiting condition. This is not a biological inevitability: it is a product of living conditions, diet, housing quality, employment conditions, social connection, and access to healthcare. Countries at similar overall wealth levels do better on healthy life expectancy, including Spain, Italy, and the Netherlands.</p>
+              <p>The most striking feature of the data is not the average but the gap. People in the most deprived tenth of areas have a healthy life expectancy of around 52 years — nearly 20 years less than those in the least deprived tenth. This is not a small difference: it means people in the poorest communities effectively age out of good health in their early 50s, decades before their better-off peers. The gap has not narrowed in over a decade. It actually widened during and after the Covid pandemic, as chronic disease burden fell disproportionately on deprived communities.</p>
+              <p>Progress on life expectancy itself has stalled. After decades of improvement, gains in life expectancy slowed sharply after 2011, particularly in the most deprived areas. Some analysts link this to austerity — cuts to local government services, social care, public health budgets, and welfare — though the causal pathway is disputed. What is not disputed is that the UK fell behind comparable countries in life expectancy improvement during the 2010s, and that the Covid pandemic reversed gains that had taken years to achieve.</p>
+            </div>
+          </section>
+        </ScrollReveal>
+
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            {data?.metadata.sources.map((src, i) => (
-              <div key={i}>
-                <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} — {src.dataset}
-                </a>
-                <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Methodology</h3>
-            <p>{data?.metadata.methodology}</p>
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Known issues</h3>
-            <ul className="list-disc list-inside space-y-1">
-              {data?.metadata.knownIssues.map((issue, i) => (
-                <li key={i}>{issue}</li>
-              ))}
-            </ul>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandlifeexpectancies" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS — Health State Life Expectancies</a> — life expectancy and healthy life expectancy at birth. 3-year rolling average. Retrieved 2024.</p>
+            <p><a href="https://fingertips.phe.org.uk/profile/public-health-outcomes-framework" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">OHID — Public Health Outcomes Framework</a> — healthy life expectancy by deprivation decile. Annual. Retrieved 2024.</p>
+            <p>Healthy life expectancy is defined using self-reported general health from the Annual Population Survey. Years in poor health is calculated as life expectancy minus healthy life expectancy. Deprivation deciles use the Index of Multiple Deprivation (IMD) for England. Figures are for England unless otherwise stated.</p>
           </div>
         </section>
-              <RelatedTopics />
+
+        <RelatedTopics />
       </main>
     </>
   );

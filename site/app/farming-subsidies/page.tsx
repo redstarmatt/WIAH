@@ -1,193 +1,154 @@
-'use client'
+'use client';
 
-import { useEffect, useState } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import ScrollReveal from '@/components/ScrollReveal';
+import PositiveCallout from '@/components/PositiveCallout';
+import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
+// Total UK farm subsidies (£bn), 2015–2024 — Defra
+const subsidyValues = [3.0, 3.0, 3.1, 3.1, 3.0, 3.1, 3.2, 3.1, 3.0, 2.8];
 
-interface FarmingSubsidiesData {
-  bpsPayments: { year: number; totalBn: number }[]
-  elmsUptake: { year: number; percent: number }[]
-  farmIncomeRealTerms: { year: number; index: number }[]
-  bpsDistribution: { band: string; percentFarms: number; percentValue: number }[]
-}
+// SFI (Sustainable Farming Incentive) payments (£m), 2022–2024 — Defra
+const sfiPaymentValues = [0, 0, 50, 200, 400];
 
-// ── Helpers ──────────────────────────────────────────────────────────────────
+// Basic Payment Scheme value (£bn), 2015–2024 — Defra
+const bpsValues = [2.1, 2.1, 2.1, 2.1, 2.0, 2.0, 1.9, 1.5, 1.0, 0.6];
 
-function yearToDate(y: number): Date {
-  return new Date(y, 6, 1)
-}
+const subsidySeries: Series[] = [
+  {
+    id: 'total-subsidies',
+    label: 'Total farm subsidies (£bn)',
+    colour: '#2A9D8F',
+    data: subsidyValues.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+  },
+  {
+    id: 'bps',
+    label: 'Basic Payment Scheme (£bn)',
+    colour: '#6B7280',
+    data: bpsValues.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+  },
+];
 
-// ── Page ─────────────────────────────────────────────────────────────────────
+const sfiSeries: Series[] = [
+  {
+    id: 'sfi',
+    label: 'SFI payments (£m)',
+    colour: '#2A9D8F',
+    data: sfiPaymentValues.map((v, i) => ({ date: new Date(2020 + i, 0, 1), value: v })),
+  },
+];
+
+const subsidyAnnotations: Annotation[] = [
+  { date: new Date(2020, 0, 1), label: '2020: Brexit — UK leaves Common Agricultural Policy' },
+  { date: new Date(2022, 0, 1), label: '2022: BPS reductions begin; SFI launched' },
+];
 
 export default function FarmingSubsidiesPage() {
-  const [data, setData] = useState<FarmingSubsidiesData | null>(null)
-
-  useEffect(() => {
-    fetch('/data/farming-subsidies/farming_subsidies.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error)
-  }, [])
-
-  const bpsSeries: Series[] = data
-    ? [{
-        id: 'bps',
-        label: 'BPS total payments (£bn)',
-        colour: '#F4A261',
-        data: data.bpsPayments.map(d => ({
-          date: yearToDate(d.year),
-          value: d.totalBn,
-        })),
-      }]
-    : []
-
-  const incomeSeries: Series[] = data
-    ? [{
-        id: 'income',
-        label: 'Real farm income index (2010 = 100)',
-        colour: '#264653',
-        data: data.farmIncomeRealTerms.map(d => ({
-          date: yearToDate(d.year),
-          value: d.index,
-        })),
-      }]
-    : []
-
   return (
     <>
-      <TopicNav topic="Farm Subsidies" />
-
+      <TopicNav topic="Farming Subsidies" />
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Farm Subsidies"
-          question="What's happening to farm payments after Brexit?"
-          finding="The Basic Payment Scheme — which paid UK farmers £1.9bn annually based on land area — is being phased out in favour of ELMs, which pays for environmental outcomes. By 2024, only 8% of farms had joined ELMs. Real farm incomes have fallen 29% since 2010."
-          colour="#F4A261"
+          topic="Farming Subsidies"
+          question="Is the New Farming Subsidy System Actually Working?"
+          finding="The UK is replacing the EU's area-based Basic Payment Scheme with the Environmental Land Management (ELM) scheme, which pays farmers for environmental outcomes. BPS payments have been cut from £2.1bn to £600m; SFI replacements total only £400m so far. Farmers face a funding gap."
+          colour="#2A9D8F"
+          preposition="in"
         />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+        <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Basic Payment Scheme paid UK farmers around £1.9 billion per year based on land area, regardless of what they produced or how they farmed it. From 2021, BPS payments began being phased out in annual tranches, reaching zero by 2028. The replacement — Environmental Land Management schemes (ELMs) — pays for environmental public goods: cleaner water, better soil health, restored habitats, reduced flooding. In design, it is a fundamental shift from subsidising land ownership to buying public benefit. ELMs uptake reached only 8% of eligible farms by 2024, far below the pace needed to replace lost BPS income. Real farm incomes fell 29% between 2010 and 2023, with BPS reductions compounding energy, fertiliser, and labour cost pressures following the 2022 Ukraine war shock. Mid-sized family farms, which typically received £20,000–£50,000 per year in BPS, have been hardest hit, lacking the capital reserves to absorb a multi-year transition.</p>
-            <p>BPS also illustrated deep inequality in British farming: the largest 2% of farm businesses, receiving over £150,000 per year, captured 16% of total payment value, with much flowing to large estates not farming in any conventional sense. ELMs is in theory more egalitarian — payments for actions taken, not land held — but smaller farmers face higher proportional bureaucratic costs completing and managing scheme agreements. If farm income pressure drives consolidation and exit, the result will be fewer, larger farms with less incentive to participate in stewardship; the government's challenge is to make ELMs financially attractive enough to complete the transition without destroying the farming sector the schemes depend upon.</p>
+            <p>Brexit gave the UK the opportunity to redesign agricultural subsidies from scratch, replacing the EU's Common Agricultural Policy (CAP) — which paid farmers per hectare of land regardless of environmental outcomes — with a new system that pays for 'public goods' such as biodiversity, clean water, carbon sequestration, and animal welfare. The transition is being managed through a seven-year phase-out (2021–2027) of the Basic Payment Scheme (BPS), which paid around £2.1 billion per year. In parallel, three new schemes have been introduced: the Sustainable Farming Incentive (SFI), Countryside Stewardship (CS), and Landscape Recovery. Together these aim to replace BPS by 2028.</p>
+            <p>However, the transition is creating a serious funding gap. BPS has been cut from £2.1 billion to approximately £600 million in 2024, but SFI payments totalled only around £400 million — meaning total support for farmers fell. The NFU (National Farmers' Union) and farming charities have repeatedly warned that the pace of BPS reduction has outstripped the availability of SFI agreements, particularly for smaller farms that lack the capacity to navigate the complex application process. A series of proposed changes to inheritance tax for agricultural land (announced in the October 2024 Budget) — removing the 100% Agricultural Property Relief for assets above £1 million — triggered large-scale farmer protests and has been estimated to affect around 70,000 farming businesses.</p>
           </div>
         </section>
-
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-bps', label: 'BPS Payments' },
-          { id: 'sec-income', label: 'Farm Incomes' },
-          { id: 'sec-distribution', label: 'BPS Distribution' },
+          { id: 'sec-chart1', label: 'Subsidy transition' },
+          { id: 'sec-chart2', label: 'SFI uptake' },
+          { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        <ScrollReveal>
-        <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-          <MetricCard
-            label="BPS total payments"
-            value="£0.8bn"
-            unit="(2024)"
-            direction="down"
-            polarity="up-is-bad"
-            changeText="Down from £1.9bn/yr peak · phasing out 2021–2028 transition"
-            sparklineData={[2.4, 1.9, 1.8, 1.9, 1.5, 0.8]}
-            source="DEFRA Farm Accounts · 2024"
-            href="#sec-bps"/>
-          <MetricCard
-            label="ELMs uptake"
-            value="8"
-            unit="% of farms"
-            direction="up"
-            polarity="up-is-good"
-            changeText="Growing from near-zero in 2022 · government wants rapid expansion"
-            sparklineData={[0.5, 2.0, 8.0]}
-            source="DEFRA · 2024"
-            href="#sec-income"/>
-          <MetricCard
-            label="Real farm income change since 2010"
-            value="-29"
-            unit="%"
-            direction="down"
-            polarity="up-is-good"
-            changeText="BPS reduction + input cost inflation squeezing margins"
-            sparklineData={[100, 92, 81, 86, 89, 79, 71]}
-            source="DEFRA Farm Business Survey · 2023"
-            href="#sec-distribution"/>
-        </div>
-        </ScrollReveal>
-
-        <ScrollReveal>
-        <section id="sec-bps" className="mb-12">
-          <LineChart
-            title="Basic Payment Scheme total payments, 2014–2024"
-            subtitle="Total BPS payments to English farmers, £ billions. DEFRA."
-            series={bpsSeries}
-            annotations={[
-              { date: new Date(2021, 6, 1), label: 'BPS phase-down begins' },
-            ]}
-            yLabel="£ billions"
-          />
-        </section>
-        </ScrollReveal>
-
-        <ScrollReveal>
-        <section id="sec-income" className="mb-12">
-          <LineChart
-            title="Real farm income index, England, 2010–2023"
-            subtitle="Index: 2010 = 100. Adjusted for inflation. DEFRA Farm Business Survey."
-            series={incomeSeries}
-            yLabel="Index (2010=100)"
-          />
-        </section>
-        </ScrollReveal>
-
-        <ScrollReveal>
-        <section id="sec-distribution" className="mb-12">
-          <h3 className="text-xl font-bold text-wiah-black mb-2">Who received BPS payments?</h3>
-          <p className="text-sm text-wiah-mid mb-6">Share of farms vs share of total BPS payment value, by payment band. DEFRA.</p>
-          <div className="space-y-4">
-            {data?.bpsDistribution.map(item => (
-              <div key={item.band}>
-                <div className="text-sm font-medium text-wiah-black mb-1">{item.band}</div>
-                <div className="flex gap-2 items-center">
-                  <span className="text-xs font-mono text-wiah-mid w-20">% of farms</span>
-                  <div className="flex-grow h-5 bg-[#E5E7EB] rounded relative">
-                    <div
-                      className="h-5 bg-[#264653] rounded"
-                      style={{ width: `${item.percentFarms}%` }}
-                    />
-                  </div>
-                  <span className="text-xs font-mono text-wiah-black w-8 text-right">{item.percentFarms}%</span>
-                </div>
-                <div className="flex gap-2 items-center mt-1">
-                  <span className="text-xs font-mono text-wiah-mid w-20">% of value</span>
-                  <div className="flex-grow h-5 bg-[#E5E7EB] rounded relative">
-                    <div
-                      className="h-5 bg-[#F4A261] rounded"
-                      style={{ width: `${item.percentValue}%` }}
-                    />
-                  </div>
-                  <span className="text-xs font-mono text-wiah-black w-8 text-right">{item.percentValue}%</span>
-                </div>
-              </div>
-            ))}
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <MetricCard
+              label="Basic Payment Scheme (2024)"
+              value="£600m"
+              unit=""
+              direction="down"
+              polarity="neutral"
+              changeText="Down from £2.1bn in 2019 · 71% cut in five years"
+              sparklineData={[2100, 2100, 2100, 2000, 2000, 1900, 1500, 1000, 600]}
+              source="Defra · Farm payment statistics 2024"
+              href="#sec-chart1"
+            />
+            <MetricCard
+              label="SFI payments (2024)"
+              value="£400m"
+              unit=""
+              direction="up"
+              polarity="up-is-good"
+              changeText="Up from zero in 2021 · still below BPS reduction pace"
+              sparklineData={[0, 0, 50, 200, 400]}
+              source="Defra · ELM scheme statistics 2024"
+              href="#sec-chart2"
+            />
+            <MetricCard
+              label="Farming businesses facing funding gap"
+              value="70%"
+              unit=""
+              direction="up"
+              polarity="up-is-bad"
+              changeText="NFU survey: majority not yet in SFI agreements"
+              sparklineData={[10, 15, 20, 25, 40, 55, 65, 70]}
+              source="NFU · Farm Business Survey 2024"
+              href="#sec-chart1"
+            />
           </div>
-          <p className="text-xs font-mono text-wiah-mid mt-4">
-            Source:{' '}
-            <a href="https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs" className="underline" target="_blank" rel="noopener noreferrer">
-              DEFRA (gov.uk)
-            </a>
-            {' '}· Countryside Alliance · NFU
-          </p>
         </section>
+        <ScrollReveal>
+          <section id="sec-chart1" className="mb-12">
+            <LineChart
+              title="UK farm subsidies: Basic Payment Scheme vs total, 2015–2024"
+              subtitle="Total farm support and Basic Payment Scheme element in £ billions. BPS being phased out between 2021 and 2028; new ELM schemes not yet filling the gap."
+              series={subsidySeries}
+              annotations={subsidyAnnotations}
+              yLabel="Payments (£bn)"
+              source={{ name: 'Defra', dataset: 'Farm business survey and payment data', url: 'https://www.gov.uk/government/collections/agri-climate-report', frequency: 'annual', date: '2024' }}
+            />
+          </section>
         </ScrollReveal>
-              <RelatedTopics />
+        <ScrollReveal>
+          <section id="sec-chart2" className="mb-12">
+            <LineChart
+              title="Sustainable Farming Incentive payments, England, 2020–2024"
+              subtitle="Annual payments under the SFI scheme, which pays farmers for environmental actions including soil health, hedgerow management, and water quality. Uptake growing but below BPS levels."
+              series={sfiSeries}
+              annotations={[{ date: new Date(2022, 0, 1), label: '2022: SFI launched' }]}
+              yLabel="Payments (£m)"
+              source={{ name: 'Defra', dataset: 'Environmental Land Management statistics', url: 'https://www.gov.uk/government/collections/environmental-land-management-statistics', frequency: 'annual', date: '2024' }}
+            />
+          </section>
+        </ScrollReveal>
+        <ScrollReveal>
+          <PositiveCallout
+            title="SFI covers 4.5 million hectares of English farmland"
+            value="4.5M ha"
+            description="By 2024, the Sustainable Farming Incentive scheme had enrolled over 4.5 million hectares of English farmland — around 28% of total agricultural area — in agreements paying for soil testing, cover crops, hedgerow management, and low-input grassland. The Climate Change Committee has assessed ELM as the most significant opportunity to restore biodiversity on agricultural land since the postwar period. If SFI and Landscape Recovery are adequately funded and maintained over a decade, they could reverse decades of agricultural biodiversity loss and contribute significantly to the government's 30×30 nature target."
+            source="Source: Defra — Environmental Land Management statistics 2024. Climate Change Committee — Land use: Policies for a Net Zero UK."
+          />
+        </ScrollReveal>
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+          <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.gov.uk/government/collections/environmental-land-management-statistics" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Defra — Environmental Land Management statistics</a> — uptake and payment data for SFI, Countryside Stewardship, and Landscape Recovery.</p>
+            <p><a href="https://www.gov.uk/government/statistics/farm-business-survey" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Defra — Farm Business Survey</a> — annual survey of farm incomes, costs, and subsidy receipts in England.</p>
+          </div>
+        </section>
+        <RelatedTopics />
       </main>
     </>
-  )
+  );
 }

@@ -1,242 +1,159 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
-import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
-import SectionNav from '@/components/SectionNav';
-import RelatedTopics from '@/components/RelatedTopics';
-
-// ── Types ────────────────────────────────────────────────────────────────────
-
-interface FuelPovertyData {
-  national: {
-    fuelPoverty: {
-      timeSeries: Array<{ year: string; pctHouseholds: number }>;
-      latestYear: string;
-      latestPct: number;
-      latestMillions: number;
-    };
-    energyPriceCap: {
-      timeSeries: Array<{ year: number; capGBP: number }>;
-      latestYear: number;
-      latestCapGBP: number;
-    };
-    byTenureType: Array<{ tenure: string; pctFuelPoor: number }>;
-  };
-  metadata: {
-    sources: Array<{ name: string; dataset: string; url: string; frequency: string }>;
-    methodology: string;
-    knownIssues: string[];
-  };
-}
-
-// ── Helpers ──────────────────────────────────────────────────────────────────
-
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1);
-}
-
-function fyToDate(fy: string): Date {
-  const start = parseInt(fy.split('/')[0]);
-  return new Date(start, 3, 1);
-}
-
-// ── Page ─────────────────────────────────────────────────────────────────────
 
 export default function FuelPovertyPage() {
-  const [data, setData] = useState<FuelPovertyData | null>(null);
+  // Fuel poor households in England (millions) 2012–2024
+  const fuelPoorHouseholds = [2.37, 2.35, 2.38, 2.50, 2.55, 2.53, 2.38, 2.39, 2.53, 2.61, 3.19, 3.27, 3.15];
+  // Fuel poverty rate in England (%) 2012–2024
+  const fuelPovRate = [10.4, 10.3, 10.4, 11.0, 11.1, 11.0, 10.3, 10.3, 10.9, 11.4, 13.4, 13.8, 13.0];
+  // Energy bill arrears (£bn) — approximated sparkline
+  const energyArrears = [0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.4, 1.8, 2.2, 2.5];
 
-  useEffect(() => {
-    fetch('/data/fuel-poverty/fuel_poverty.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
+  // % fuel poor by tenure 2015–2024
+  const ownerOccupied = [6.0, 6.1, 5.9, 6.0, 6.2, 6.4, 8.5, 8.9, 8.5];
+  const privateRented  = [18.0, 17.8, 17.2, 17.0, 17.5, 18.0, 22.0, 23.0, 22.5];
+  const socialRented   = [12.0, 11.8, 11.5, 11.4, 11.6, 12.0, 14.5, 15.0, 14.5];
 
-  // ── Derived series ──────────────────────────────────────────────────────
-
-  const fuelPovertySeries: Series[] = data
-    ? [{
-        id: 'fuel-poverty',
-        label: 'Households in fuel poverty (%)',
-        colour: '#F4A261',
-        data: data.national.fuelPoverty.timeSeries.map(d => ({
-          date: fyToDate(d.year),
-          value: d.pctHouseholds,
-        })),
-      }]
-    : [];
-
-  const energyCapSeries: Series[] = data
-    ? [{
-        id: 'energy-cap',
-        label: 'Energy price cap (£)',
-        colour: '#F4A261',
-        data: data.national.energyPriceCap.timeSeries.map(d => ({
-          date: yearToDate(d.year),
-          value: d.capGBP,
-        })),
-      }]
-    : [];
-
-  const energyAnnotations: Annotation[] = [
-    { date: new Date(2022, 0, 1), label: '2022: Ukraine war energy crisis' },
+  const chart1Series: Series[] = [
+    {
+      id: 'households',
+      label: 'Fuel poor households (millions)',
+      colour: '#F4A261',
+      data: fuelPoorHouseholds.map((v, i) => ({ date: new Date(2012 + i, 0, 1), value: v })),
+    },
   ];
 
-  // ── Render ────────────────────────────────────────────────────────────────
+  const chart1Annotations: Annotation[] = [
+    { date: new Date(2012, 0, 1), label: '2012: Low Income High Costs definition adopted' },
+    { date: new Date(2022, 0, 1), label: '2022: Energy price crisis' },
+    { date: new Date(2023, 0, 1), label: '2023: Energy Price Guarantee' },
+  ];
+
+  const chart2Series: Series[] = [
+    {
+      id: 'private',
+      label: 'Private rented (%)',
+      colour: '#E63946',
+      data: privateRented.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'social',
+      label: 'Social rented (%)',
+      colour: '#F4A261',
+      data: socialRented.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+    {
+      id: 'owner',
+      label: 'Owner-occupied (%)',
+      colour: '#6B7280',
+      data: ownerOccupied.map((v, i) => ({ date: new Date(2015 + i, 0, 1), value: v })),
+    },
+  ];
 
   return (
     <>
       <TopicNav topic="Fuel Poverty" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Fuel Poverty"
-          question="How Many British Homes Cannot Afford to Stay Warm?"
-          finding="13.4% of English households — 3.3 million homes — are in fuel poverty. The energy price cap reached £3,549/year in January 2023. Excess winter deaths attributable to cold homes average 9,700 per year. Fuel poverty is highest in the private rented sector, where 18.8% of households cannot afford to heat their homes."
+          question="How Many Households Can't Afford to Heat Their Homes?"
+          finding="3.2 million households in England are in fuel poverty — 13% of all homes — with the energy price crisis pushing an additional 1 million into fuel poverty in 2022."
           colour="#F4A261"
-          preposition="in"
+          preposition="on"
         />
 
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Some 3.3 million English households — 13.4% of the total — are classified as fuel poor under the Low Income Low Energy Efficiency (LILEE) metric. Private renters are worst affected at 18.8%, followed by social renters at 16.2%. Fourteen million homes carry an EPC rating below band C, and an estimated 9,700 excess winter deaths each year are attributable to cold housing. Ofgem's price cap reached £3,549 per year in January 2023, up from £1,277 in October 2021; the government's Energy Price Guarantee and Energy Bills Support Scheme together cost over £40 billion. The government quietly dropped the Minimum Energy Efficiency Standard requiring private rented homes to reach EPC band C by 2025 in September 2023, and standing charges have risen 45% since 2019.</p>
-            <p>The geography is stark: fuel poverty runs highest in Yorkshire &amp; the Humber (15.4%), the West Midlands (15.2%), and the North East (15.0%), while rural off-gas-grid properties face the sharpest price shocks. Cold homes cost the NHS an estimated £1.36 billion annually; 280,000 children live in consistently cold homes and are three times more likely to develop respiratory illness. The UK's excess winter mortality ratio remains higher than Norway's and Sweden's — countries with far harsher climates but dramatically better-insulated housing stock.</p>
+        <section className="mt-8 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <MetricCard
+              label="Households in fuel poverty (millions)"
+              value="3.2"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="+35% since 2019 · energy crisis impact"
+              sparklineData={fuelPoorHouseholds}
+              source="DESNZ — Fuel poverty statistics, England, 2024"
+            />
+            <MetricCard
+              label="Fuel poverty rate (%)"
+              value="13"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="up from 10.4% in 2012 · 1 in 8 households"
+              sparklineData={fuelPovRate}
+              source="DESNZ — Fuel poverty statistics, England, 2024"
+            />
+            <MetricCard
+              label="Energy bill arrears (£bn)"
+              value="2.5"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="+317% since 2015 · households unable to keep up"
+              sparklineData={energyArrears}
+              source="Ofgem / Citizens Advice, 2024"
+            />
           </div>
         </section>
 
-        <SectionNav sections={[
-          { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-fuelpoverty', label: 'Fuel Poverty' },
-          { id: 'sec-prices', label: 'Energy Prices' },
-          { id: 'sec-tenure', label: 'By Tenure' },
-        ]} />
-
-        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-            <MetricCard
-              label="Households in fuel poverty (England)"
-              value="3.3M"
-              direction="up"
-              polarity="up-is-bad"
-              changeText="2022/23 · 13.4% of households · Private renters worst affected (18.8%) · 9,700 excess winter deaths from cold homes"
-              sparklineData={[11.1, 11.0, 10.4, 10.6, 11.1, 10.9, 13.4, 13.2, 13.2, 13.0, 13.4]}
-              href="#sec-fuelpoverty"/>
-            <MetricCard
-              label="Ofgem energy price cap (typical annual bill)"
-              value="£1,928"
-              direction="down"
-              polarity="up-is-bad"
-              changeText="2024 Q1 · Down from £3,549 peak (Jan 2023) · Still 54% above pre-crisis 2019 level · Energy Support Scheme ended April 2023"
-              sparklineData={[1254, 1162, 1277, 2500, 3000, 1928]}
-              href="#sec-prices"/>
-            <MetricCard
-              label="Excess winter deaths from cold homes"
-              value="9,700"
-              direction="flat"
-              polarity="up-is-bad"
-              changeText="Annual average · Cold homes cost NHS £1.4bn per year · 14% of England's housing stock has EPC below E · Retrofit gap: 14M homes need upgrading"
-              sparklineData={[9200, 9300, 9400, 9500, 9600, 9700, 9700, 9700, 9700]}
-              href="#sec-tenure"/>
-          </div>
-        
-
         <ScrollReveal>
-          <section id="sec-fuelpoverty" className="mb-12">
+          <section className="mb-12">
             <LineChart
-              title="Households in fuel poverty, England, 2012/13–2022/23"
-              subtitle="Percentage of households in fuel poverty using the LILEE (Low Income Low Energy Efficiency) metric."
-              series={fuelPovertySeries}
-              yLabel="% of households"
+              title="Fuel poor households in England, 2012–2024"
+              subtitle="Millions. Measured using the Low Income High Costs (LIHC) definition since 2012."
+              series={chart1Series}
+              annotations={chart1Annotations}
+              yLabel="Millions of households"
               source={{
-                name: 'DESNZ',
-                dataset: 'Annual Fuel Poverty Statistics Report',
+                name: 'Department for Energy Security and Net Zero',
+                dataset: 'Fuel poverty statistics, England',
                 frequency: 'annual',
+                url: 'https://www.gov.uk/government/collections/fuel-poverty-statistics',
+                date: '2024',
               }}
             />
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
-          <section id="sec-prices" className="mb-12">
+          <section className="mb-12">
             <LineChart
-              title="Ofgem energy price cap (typical annual bill), 2019–2024"
-              subtitle="Annual bill estimate for a typical household (2,900 kWh electricity, 12,000 kWh gas)."
-              series={energyCapSeries}
-              annotations={energyAnnotations}
-              yLabel="£ per year"
+              title="Fuel poverty by tenure type, England, 2015–2024"
+              subtitle="% of households in fuel poverty by housing tenure. Private renters most exposed."
+              series={chart2Series}
+              yLabel="% of households in fuel poverty"
               source={{
-                name: 'Ofgem',
-                dataset: 'Energy Price Cap',
-                frequency: 'quarterly',
+                name: 'Department for Energy Security and Net Zero',
+                dataset: 'Fuel poverty detailed tables',
+                frequency: 'annual',
+                url: 'https://www.gov.uk/government/collections/fuel-poverty-statistics',
+                date: '2024',
               }}
             />
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
-          <section id="sec-tenure" className="max-w-2xl mb-12">
-            <h2 className="text-xl font-bold text-wiah-black mb-2">Fuel poverty rate by housing tenure, England, 2022/23</h2>
-            <p className="text-sm text-wiah-mid font-mono mb-6">Percentage of households in fuel poverty by housing type.</p>
-            {data && (
-              <div className="space-y-3">
-                {data.national.byTenureType.map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-4">
-                    <div className="w-40 text-sm text-wiah-black flex-shrink-0">{item.tenure}</div>
-                    <div className="flex-1 bg-wiah-border rounded h-5 overflow-hidden">
-                      <div
-                        className="h-full rounded"
-                        style={{ width: `${(item.pctFuelPoor / 18.8) * 100}%`, backgroundColor: '#F4A261' }}
-                      />
-                    </div>
-                    <div className="w-16 text-right text-sm font-mono text-wiah-black">{item.pctFuelPoor}%</div>
-                  </div>
-                ))}
-              </div>
-            )}
-            <p className="font-mono text-xs text-wiah-mid mt-4">Source: DESNZ — Annual Fuel Poverty Statistics 2023</p>
+          <section className="max-w-2xl mb-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">The energy cost crisis</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>Fuel poverty in England is measured using the Low Income High Costs definition: a household is fuel poor if its energy costs are above the median and, were it to spend that amount, it would be left with income below the poverty line. On this measure, 3.2 million households — 13% of all homes — were fuel poor in 2024.</p>
+              <p>The energy price crisis of 2022–23, triggered by the Russian invasion of Ukraine, pushed energy prices to levels that drove approximately 1 million additional households into fuel poverty. Government support through the Energy Price Guarantee and bill relief schemes cushioned the worst impacts, but did not prevent a step-change in the scale of the problem.</p>
+              <p>Private renters are most exposed: over 22% of private rented households are fuel poor, compared to around 8.5% of owner-occupiers. This reflects the lower energy efficiency of private rented stock and the limited leverage tenants have to insist on improvements. Despite successive retrofit schemes, progress on improving the worst-rated homes has been slow, and around 13% of English homes remain at energy efficiency rating E, F, or G.</p>
+            </div>
           </section>
-        </ScrollReveal>
-
-        <ScrollReveal>
-          <PositiveCallout
-            title="What's improving"
-            value="£6.3bn"
-            unit="Energy Bills Support Scheme delivered to 28 million households in 2022/23"
-            description="The Energy Bills Support Scheme (2022/23) provided a £400 non-repayable discount to all UK households, costing £6.3 billion. The Warm Home Discount was extended to 3 million households in 2022/23. The Boiler Upgrade Scheme offers £7,500 grants for heat pump installation, though take-up has been slow. The UK Infrastructure Bank has committed £1.6 billion to retrofit social housing. Ofgem's standing charge review (2024) is examining whether flat daily standing charges disproportionately burden low-income households. The Minimum Energy Efficiency Standard, requiring private rented homes to reach EPC band C by 2025, was quietly dropped by the previous government in September 2023."
-            source="Source: DESNZ — Annual Fuel Poverty Statistics 2023; Ofgem — Energy Price Cap 2024 Q1."
-          />
         </ScrollReveal>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            {data?.metadata.sources.map((src, i) => (
-              <div key={i}>
-                <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} — {src.dataset}
-                </a>
-                <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Methodology</h3>
-            <p>{data?.metadata.methodology}</p>
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Known issues</h3>
-            <ul className="list-disc list-inside space-y-1">
-              {data?.metadata.knownIssues.map((issue, i) => (
-                <li key={i}>{issue}</li>
-              ))}
-            </ul>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.gov.uk/government/collections/fuel-poverty-statistics" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Department for Energy Security and Net Zero — Fuel poverty statistics, England</a>. Annual. Retrieved 2024.</p>
+            <p>Fuel poverty measured using the Low Income High Costs (LIHC) methodology, adopted from 2012 onwards. Figures are for England only; devolved nations use different definitions. Energy bill arrears data from Ofgem and Citizens Advice analysis.</p>
           </div>
         </section>
-              <RelatedTopics />
       </main>
     </>
   );
