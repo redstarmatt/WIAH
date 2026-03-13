@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Businesses rated 4 or 5 (%), 2015–2024
 const highRatedPct = [71, 73, 74, 75, 76, 72, 68, 65, 65, 65];
@@ -43,6 +45,12 @@ const complianceAnnotations: Annotation[] = [
 const inspectorAnnotations: Annotation[] = [
   { date: new Date(2010, 5, 1), label: '2010: Austerity cuts begin' },
   { date: new Date(2021, 5, 1), label: '2021: LA recruitment drive' },
+];
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Food Standards Agency', dataset: 'Annual report on foodborne illness', date: '2024' },
+  { num: 2, name: 'Food Standards Agency', dataset: 'Food Hygiene Rating Scheme statistics', url: 'https://www.food.gov.uk/safety-hygiene/food-hygiene-rating-scheme', date: '2024' },
+  { num: 3, name: 'Food Standards Agency', dataset: 'Local authority enforcement monitoring', url: 'https://www.food.gov.uk/business-guidance/local-authority-enforcement', date: '2024' },
 ];
 
 export default function FoodHygieneCompliancePage() {
