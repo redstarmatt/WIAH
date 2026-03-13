@@ -143,9 +143,13 @@ export default function CervicalScreeningPage() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <PositiveCallout>
-            Cervical screening prevents around 5,000 cases of cervical cancer per year in England. The HPV vaccination programme — now achieving over 80% coverage among school-age girls and boys — will reduce future incidence substantially. For women already outside vaccination cohorts, cervical screening remains the primary protection.
-          </PositiveCallout>
+          <PositiveCallout
+            title="Screening Saves Lives"
+            value="5,000"
+            unit="cases prevented"
+            description="Cervical screening prevents around 5,000 cases of cervical cancer per year in England. The HPV vaccination programme — now achieving over 80% coverage among school-age girls and boys — will reduce future incidence substantially. For women already outside vaccination cohorts, cervical screening remains the primary protection."
+            source="NHS England, Cervical Screening Programme"
+          />
         </ScrollReveal>
 
         <ScrollReveal>
@@ -167,12 +171,7 @@ export default function CervicalScreeningPage() {
           </div>
         </section>
 
-        <RelatedTopics topics={[
-          { href: '/breast-screening', label: 'Breast Screening' },
-          { href: '/hpv-vaccination', label: 'HPV Vaccination' },
-          { href: '/cancer-screening-uptake', label: 'Cancer Screening Uptake' },
-          { href: '/nhs-screening', label: 'NHS Screening' },
-        ]} />
+        <RelatedTopics />
       </main>
     </>
   );

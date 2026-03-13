@@ -132,9 +132,13 @@ export default function HighStreetVacancyPage() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <PositiveCallout>
-            Some vacant high street units are being repurposed as housing, community hubs, workspaces and health facilities. The government&rsquo;s High Street Task Force has supported over 100 town centres since 2021. Permitted development rights changes allow more straightforward conversion of commercial space to residential use.
-          </PositiveCallout>
+          <PositiveCallout
+            title="Town Centres Supported"
+            value="100"
+            unit="towns"
+            description="Some vacant high street units are being repurposed as housing, community hubs, workspaces and health facilities. The government's High Street Task Force has supported over 100 town centres since 2021. Permitted development rights changes allow more straightforward conversion of commercial space to residential use."
+            source="DLUHC, High Street Task Force"
+          />
         </ScrollReveal>
 
         <ScrollReveal>

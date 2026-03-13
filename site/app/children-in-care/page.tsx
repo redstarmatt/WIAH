@@ -137,9 +137,12 @@ export default function ChildrenInCarePage() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <PositiveCallout>
-            Kinship care — children placed with grandparents, aunts, uncles or family friends — is significantly cheaper than residential care and produces better outcomes. Around 162,000 children in England live with kinship carers, many without formal legal recognition. The 2023 Kinship Care Strategy committed £33m to support kinship families, the first dedicated funding of its kind.
-          </PositiveCallout>
+          <PositiveCallout
+            title="Kinship Care Funded"
+            value="£33m"
+            description="Kinship care — children placed with grandparents, aunts, uncles or family friends — is significantly cheaper than residential care and produces better outcomes. Around 162,000 children in England live with kinship carers, many without formal legal recognition. The 2023 Kinship Care Strategy committed £33m to support kinship families, the first dedicated funding of its kind."
+            source="Department for Education, Kinship Care Strategy 2023"
+          />
         </ScrollReveal>
 
         <ScrollReveal>

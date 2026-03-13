@@ -138,9 +138,12 @@ export default function NeetYoungPeoplePage() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <PositiveCallout>
-            Youth Hubs — co-located services combining employment support, mental health, housing advice and skills provision — have shown promising results in areas where they operate. Evidence from the Department for Work and Pensions and National Careers Service suggests that integrated support is more effective than single-service referrals for young people with complex NEET barriers.
-          </PositiveCallout>
+          <PositiveCallout
+            title="Integrated Support Works"
+            value="Youth Hubs"
+            description="Youth Hubs — co-located services combining employment support, mental health, housing advice and skills provision — have shown promising results in areas where they operate. Evidence from the Department for Work and Pensions and National Careers Service suggests that integrated support is more effective than single-service referrals for young people with complex NEET barriers."
+            source="Department for Work and Pensions, Youth Hubs Programme"
+          />
         </ScrollReveal>
 
         <ScrollReveal>

@@ -147,9 +147,13 @@ export default function FinancialAbuseElderlyPage() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <PositiveCallout>
-            The Office of the Public Guardian received over 9,000 referrals for attorney misconduct in 2024 — nearly double the 2019 figure — reflecting improved reporting and greater public awareness of power of attorney abuse. Specialist police units focused on elder fraud have improved prosecution rates, though volume remains low relative to estimated offending.
-          </PositiveCallout>
+          <PositiveCallout
+            title="Reporting Increasing"
+            value="9,000"
+            unit="referrals"
+            description="The Office of the Public Guardian received over 9,000 referrals for attorney misconduct in 2024 — nearly double the 2019 figure — reflecting improved reporting and greater public awareness of power of attorney abuse. Specialist police units focused on elder fraud have improved prosecution rates, though volume remains low relative to estimated offending."
+            source="Office of the Public Guardian, Annual Report 2024"
+          />
         </ScrollReveal>
 
         <ScrollReveal>
@@ -171,12 +175,7 @@ export default function FinancialAbuseElderlyPage() {
           </div>
         </section>
 
-        <RelatedTopics topics={[
-          { href: '/loneliness-elderly', label: 'Loneliness Among Older People' },
-          { href: '/dementia', label: 'Dementia' },
-          { href: '/scam-losses', label: 'Scam Losses' },
-          { href: '/social-care', label: 'Social Care' },
-        ]} />
+        <RelatedTopics />
       </main>
     </>
   );

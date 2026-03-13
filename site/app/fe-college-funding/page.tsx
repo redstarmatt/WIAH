@@ -133,9 +133,12 @@ export default function FeCollegeFundingPage() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <PositiveCallout>
-            The Skills and Post-16 Education Act 2022 introduced a new Lifelong Loan Entitlement, enabling adults to access loan funding for modular courses at FE colleges for the first time from 2025. This could significantly widen access to retraining for adults who cannot commit to full-time study.
-          </PositiveCallout>
+          <PositiveCallout
+            title="Lifelong Learning Access"
+            value="2025"
+            description="The Skills and Post-16 Education Act 2022 introduced a new Lifelong Loan Entitlement, enabling adults to access loan funding for modular courses at FE colleges for the first time from 2025. This could significantly widen access to retraining for adults who cannot commit to full-time study."
+            source="Department for Education, Skills and Post-16 Education Act 2022"
+          />
         </ScrollReveal>
 
         <ScrollReveal>

@@ -139,9 +139,12 @@ export default function GpListSizePage() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <PositiveCallout>
-            The Additional Roles Reimbursement Scheme (ARRS) has funded over 30,000 new roles in primary care networks including pharmacists, physiotherapists, and social prescribing link workers. While these roles do not replace GPs, they handle a substantial share of consultations that would otherwise fall to doctors, providing some relief to list-size pressures.
-          </PositiveCallout>
+          <PositiveCallout
+            title="New Roles Funded"
+            value="30,000"
+            description="The Additional Roles Reimbursement Scheme (ARRS) has funded over 30,000 new roles in primary care networks including pharmacists, physiotherapists, and social prescribing link workers. While these roles do not replace GPs, they handle a substantial share of consultations that would otherwise fall to doctors, providing some relief to list-size pressures."
+            source="NHS England, Additional Roles Reimbursement Scheme"
+          />
         </ScrollReveal>
 
         <ScrollReveal>

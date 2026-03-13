@@ -126,9 +126,13 @@ export default function DiagnosticImagingWaitsPage() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <PositiveCallout>
-            The Community Diagnostic Centres (CDC) programme has created over 160 new diagnostic hubs across England by 2024, adding significant MRI, CT and ultrasound capacity outside hospitals. Early evidence suggests CDCs are reaching patients who would not previously have attended hospital appointments, improving equity of access as well as throughput.
-          </PositiveCallout>
+          <PositiveCallout
+            title="New Diagnostic Hubs"
+            value="160"
+            unit="centres"
+            description="The Community Diagnostic Centres (CDC) programme has created over 160 new diagnostic hubs across England by 2024, adding significant MRI, CT and ultrasound capacity outside hospitals. Early evidence suggests CDCs are reaching patients who would not previously have attended hospital appointments, improving equity of access as well as throughput."
+            source="NHS England, Community Diagnostic Centres Programme"
+          />
         </ScrollReveal>
 
         <ScrollReveal>

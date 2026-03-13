@@ -134,9 +134,13 @@ export default function HolidayHungerPage() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <PositiveCallout>
-            The Holiday Activities and Food (HAF) programme — expanded nationally from 2021 — reached approximately 650,000 children in 2023–24, providing free holiday clubs with food for children eligible for free school meals. That is around 34% of the eligible population. Local authority delivery varies substantially; the programme is not yet universally accessible.
-          </PositiveCallout>
+          <PositiveCallout
+            title="Holiday Programme Expanding"
+            value="650,000"
+            unit="children"
+            description="The Holiday Activities and Food (HAF) programme — expanded nationally from 2021 — reached approximately 650,000 children in 2023–24, providing free holiday clubs with food for children eligible for free school meals. That is around 34% of the eligible population. Local authority delivery varies substantially; the programme is not yet universally accessible."
+            source="Department for Education, Holiday Activities and Food Programme"
+          />
         </ScrollReveal>
 
         <ScrollReveal>
@@ -158,12 +162,7 @@ export default function HolidayHungerPage() {
           </div>
         </section>
 
-        <RelatedTopics topics={[
-          { href: '/food-banks', label: 'Food Banks' },
-          { href: '/child-poverty', label: 'Child Poverty' },
-          { href: '/free-school-meals-gap', label: 'Free School Meals Gap' },
-          { href: '/food-insecurity', label: 'Food Insecurity' },
-        ]} />
+        <RelatedTopics />
       </main>
     </>
   );
