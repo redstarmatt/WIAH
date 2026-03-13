@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DfE', dataset: 'School Food Standards compliance monitoring', url: 'https://www.gov.uk/government/publications/school-food-standards-resources-for-schools', date: '2024' },
+  { num: 2, name: 'DfE', dataset: 'Free School Meals: Eligibility and Uptake statistics', url: 'https://www.gov.uk/government/collections/statistics-pupils-characteristics', date: '2024' },
+  { num: 3, name: 'DfE', dataset: 'Universal Infant Free School Meals programme statistics', url: 'https://www.gov.uk/government/publications/universal-infant-free-school-meals', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -76,7 +84,7 @@ export default function SchoolMealsStandardsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>School food standards introduced in 2014 prescribe minimum nutritional requirements for school meals, and in 2023 89% of schools met them — up from 87% in 2015. Approximately 2.1 million pupils (24% of state school pupils) were eligible for free school meals in 2024, of whom 88% were actually claiming — leaving around 250,000 eligible children not receiving a meal. Universal Infant Free School Meals (UIFSM) provides a free meal to every Reception–Year 2 child regardless of income and has achieved 88% uptake, with strong evidence it improves attainment and reduces FSM stigma — but universality ends abruptly at Year 3. Food price inflation has pushed primary school meals to £2.80–£3.10, making the weekly cost roughly £14–16 per child for non-eligible families and pushing some toward packed lunches of significantly worse nutritional quality.</p>
+            <p>School food standards introduced in 2014 prescribe minimum nutritional requirements for school meals, and in 2023 89% of schools met them — up from 87% in 2015.<Cite nums={1} /> Approximately 2.1 million pupils (24% of state school pupils) were eligible for free school meals in 2024, of whom 88% were actually claiming — leaving around 250,000 eligible children not receiving a meal.<Cite nums={2} /> Universal Infant Free School Meals (UIFSM) provides a free meal to every Reception–Year 2 child regardless of income and has achieved 88% uptake, with strong evidence it improves attainment and reduces FSM stigma — but universality ends abruptly at Year 3.<Cite nums={3} /> Food price inflation has pushed primary school meals to £2.80–£3.10, making the weekly cost roughly £14–16 per child for non-eligible families and pushing some toward packed lunches of significantly worse nutritional quality.</p>
             <p>The 12% non-take-up gap — around 250,000 children — reflects stigma, administrative barriers, and low awareness, and is concentrated in the most deprived communities. Extending UIFSM to all primary years would cost approximately £600 million annually; secondary extension would cost over £1 billion. The previous government rejected both on cost grounds. For families with multiple school-age children, school meals represent a meaningful financial pressure that in aggregate determines whether children arrive at school ready to learn, and the children most affected by non-uptake and unaffordability are those whose nutrition matters most.</p>
           </div>
         </section>
@@ -147,6 +155,10 @@ export default function SchoolMealsStandardsPage() {
             source="Source: DfE, School Food Standards, 2024"
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

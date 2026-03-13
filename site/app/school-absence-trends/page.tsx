@@ -8,6 +8,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DfE', dataset: 'Pupil absence in schools in England', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/pupil-absence-in-schools-in-england', date: '2024' },
+  { num: 2, name: 'Education Endowment Foundation', dataset: 'COVID-19 and pupil attainment — absence and outcomes research', url: 'https://educationendowmentfoundation.org.uk', date: '2023' },
+  { num: 3, name: 'DfE', dataset: 'Pupil absence — by pupil characteristic', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/pupil-absence-in-schools-in-england', date: '2024' },
+];
 
 const overallAbsenceData = [4.6, 4.6, 4.7, 4.8, 4.9, 5.0, 4.9, 7.5, 6.7, 6.5];
 const persistentAbsenceData = [10.9, 11.1, 11.2, 11.8, 13.1, 13.0, 12.1, 22.3, 21.2, 20.8];
@@ -149,9 +157,9 @@ export default function SchoolAbsenceTrendsPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on school absence</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Persistent absenteeism — defined as missing 10% or more of school sessions — hit 22.3% of pupils in 2022/23, double the pre-pandemic rate of around 11%. In 2023/24 this fell slightly to 20.8%, but remains the highest rate in modern records and affects an estimated 1.44 million children. Overall absence — any sessions missed — stands at 6.5%, a third higher than in 2018/19. Collectively, pupils are missing around 50 million sessions per year.</p>
-              <p>The absence crisis is not evenly distributed. Pupils eligible for free school meals — a proxy for poverty — have persistent absence rates of 36.5%, more than double the 17% rate for non-disadvantaged pupils. Pupils with special educational needs and disabilities (SEND) are absent at similar elevated rates. The causes of disadvantaged pupils' higher absence are multiple: illness from poor housing, inability to afford transport or school uniform, caring responsibilities, and in some cases schools making it clear — directly or indirectly — that certain pupils are unwanted.</p>
-              <p>The pandemic's role was catalytic rather than causative: absence was already rising before COVID-19, and the pandemic appears to have disrupted the habit of attendance in ways that have proved persistent. Research by Education Endowment Foundation suggests each additional week of school missed is associated with lower attainment — and that the attainment gap between disadvantaged and non-disadvantaged pupils has widened significantly post-pandemic.</p>
+              <p>Persistent absenteeism — defined as missing 10% or more of school sessions — hit 22.3% of pupils in 2022/23, double the pre-pandemic rate of around 11%.<Cite nums={1} /> In 2023/24 this fell slightly to 20.8%, but remains the highest rate in modern records and affects an estimated 1.44 million children. Overall absence — any sessions missed — stands at 6.5%, a third higher than in 2018/19. Collectively, pupils are missing around 50 million sessions per year.</p>
+              <p>The absence crisis is not evenly distributed. Pupils eligible for free school meals — a proxy for poverty — have persistent absence rates of 36.5%, more than double the 17% rate for non-disadvantaged pupils.<Cite nums={3} /> Pupils with special educational needs and disabilities (SEND) are absent at similar elevated rates. The causes of disadvantaged pupils' higher absence are multiple: illness from poor housing, inability to afford transport or school uniform, caring responsibilities, and in some cases schools making it clear — directly or indirectly — that certain pupils are unwanted.</p>
+              <p>The pandemic's role was catalytic rather than causative: absence was already rising before COVID-19, and the pandemic appears to have disrupted the habit of attendance in ways that have proved persistent. Research by Education Endowment Foundation suggests each additional week of school missed is associated with lower attainment — and that the attainment gap between disadvantaged and non-disadvantaged pupils has widened significantly post-pandemic.<Cite nums={2} /></p>
             </div>
           </section>
         </ScrollReveal>
@@ -165,6 +173,10 @@ export default function SchoolAbsenceTrendsPage() {
             source="Source: DfE — Pupil absence in schools in England 2023/24; EEF — COVID-19 and pupil attainment."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

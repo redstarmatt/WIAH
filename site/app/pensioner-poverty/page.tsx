@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DWP', dataset: 'Households Below Average Income (HBAI)', url: 'https://www.gov.uk/government/statistics/households-below-average-income-hbai', date: '2024', note: 'Pensioner poverty rate 18%; 2.1 million pensioners below 60% median income AHC' },
+  { num: 2, name: 'DWP', dataset: 'State Pension Rates', url: 'https://www.gov.uk/government/publications/state-pension-rates', date: '2024/25', note: 'Full new state pension £221.20/week' },
+  { num: 3, name: 'DWP', dataset: 'Pension Credit Take-Up Statistics', url: 'https://www.gov.uk/government/statistics/pension-credit-take-up', date: '2024', note: '850,000 eligible non-claimants; £1.5bn unclaimed' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -102,10 +110,10 @@ export default function PensionerPovertyPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Pensioner poverty fell dramatically from around 40% in the early 1990s to 13% by 2012, driven by Pension Credit and real-terms state pension increases — one of the more significant social policy achievements of that era. Since then progress has stalled: the rate has drifted back to 18%, with approximately 2.1 million pensioners living below 60% of median income after housing costs, the highest rate since 2011. The full new state pension reached £221.20 per week in 2024/25 under the triple lock, but around 850,000 eligible pensioners do not claim Pension Credit — roughly 40% of those entitled — leaving £1.5 billion unclaimed annually. From autumn 2024, the Winter Fuel Payment was restricted to Pension Credit recipients, further concentrating hardship on those least likely to be claiming it.
+              Pensioner poverty fell dramatically from around 40% in the early 1990s to 13% by 2012, driven by Pension Credit and real-terms state pension increases — one of the more significant social policy achievements of that era. Since then progress has stalled: the rate has drifted back to 18%, with approximately 2.1 million pensioners living below 60% of median income after housing costs, the highest rate since 2011.<Cite nums={1} /> The full new state pension reached £221.20 per week in 2024/25 under the triple lock, but around 850,000 eligible pensioners do not claim Pension Credit — roughly 40% of those entitled — leaving £1.5 billion unclaimed annually.<Cite nums={3} /> From autumn 2024, the Winter Fuel Payment was restricted to Pension Credit recipients, further concentrating hardship on those least likely to be claiming it.
             </p>
             <p>
-              The burden of pensioner poverty falls along predictable lines. Single female pensioners face a 24% poverty rate, compared to 14% for couples, reflecting lower lifetime earnings, caring career breaks, and incomplete NI records. Disabled pensioners face 28%. Private renting among pensioners has grown from 5% in 2000 to over 15% today, and private renters face a substantially higher poverty risk than owner-occupiers. Wales records the highest pensioner poverty rate (19%), with elevated rates also in the North East, coastal retirement towns, and former industrial areas. The WASPI cohort — women born in the 1950s affected by the 2010 Pensions Act — received an Ombudsman ruling of maladministration in 2024, but the question of compensation remains unresolved.
+              The burden of pensioner poverty falls along predictable lines. Single female pensioners face a 24% poverty rate, compared to 14% for couples, reflecting lower lifetime earnings, caring career breaks, and incomplete NI records.<Cite nums={1} /> Disabled pensioners face 28%. Private renting among pensioners has grown from 5% in 2000 to over 15% today, and private renters face a substantially higher poverty risk than owner-occupiers.<Cite nums={1} /> Wales records the highest pensioner poverty rate (19%), with elevated rates also in the North East, coastal retirement towns, and former industrial areas. The WASPI cohort — women born in the 1950s affected by the 2010 Pensions Act — received an Ombudsman ruling of maladministration in 2024, but the question of compensation remains unresolved.
             </p>
           </div>
         </section>
@@ -242,6 +250,10 @@ export default function PensionerPovertyPage() {
           source="Source: DWP State Pension rates, 2024."
         />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="border-t border-wiah-border pt-8 mt-12">

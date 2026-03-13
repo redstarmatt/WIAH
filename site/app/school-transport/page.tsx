@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DLUHC', dataset: 'Section 251 Local Authority Education Expenditure', url: 'https://www.gov.uk/government/collections/section-251-materials', date: '2024', note: 'SEND transport spending doubled from £750m (2018-19) to £1.5bn (2023-24); 10-15% of some authorities\' total education budgets' },
+  { num: 2, name: 'DfE', dataset: 'SEND Statistics — Education, Health and Care Plans', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/education-health-and-care-plans', date: '2024', note: 'Children eligible rose from 98,000 in 2015 to 155,000 in 2024; some authorities paying £40,000+ per child for taxi provision' },
+  { num: 3, name: 'DfE', dataset: 'Post-16 Transport and Travel Support Guidance', url: 'https://www.gov.uk/government/publications/post-16-transport-to-education-and-training', date: '2023', note: 'Transport costs cited as barrier to continuing education by 12% of young people in rural areas' },
+  { num: 4, name: 'National Audit Office', dataset: 'Support for Pupils with SEND', url: 'https://www.nao.org.uk/reports/support-for-pupils-with-special-educational-needs-and-disabilities/', date: '2024', note: 'DSG deficit exceeding £4bn nationally; average SEND journey times risen from 42 to 62 minutes' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -156,10 +165,10 @@ export default function SchoolTransportPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Home-to-school transport is a statutory duty for local authorities in England: children living beyond distance thresholds (two miles for under-eights, three miles for over-eights) from their nearest suitable school are entitled to free transport. For children with special educational needs and disabilities, this duty extends further — transport must be provided where it is specified in Section H of an Education, Health and Care Plan. The system is under extraordinary pressure. SEND transport spending by local authorities has doubled from £750 million in 2018-19 to over £1.5 billion in 2023-24, now consuming 10-15% of some authorities' total education budgets. The number of children eligible has risen in lockstep with the explosion in EHCPs, from 98,000 in 2015 to over 155,000 in 2024. Many authorities have outsourced transport to private operators at inflated contract rates, with some paying over £40,000 per year for a single child's taxi provision. The Dedicated Schools Grant deficit — now exceeding £4 billion nationally — is being driven in significant part by these spiralling transport obligations.
+              Home-to-school transport is a statutory duty for local authorities in England: children living beyond distance thresholds (two miles for under-eights, three miles for over-eights) from their nearest suitable school are entitled to free transport. For children with special educational needs and disabilities, this duty extends further — transport must be provided where it is specified in Section H of an Education, Health and Care Plan. The system is under extraordinary pressure. SEND transport spending by local authorities has doubled from £750 million in 2018-19 to over £1.5 billion in 2023-24, now consuming 10-15% of some authorities' total education budgets.<Cite nums={1} /> The number of children eligible has risen in lockstep with the explosion in EHCPs, from 98,000 in 2015 to over 155,000 in 2024. Many authorities have outsourced transport to private operators at inflated contract rates, with some paying over £40,000 per year for a single child's taxi provision.<Cite nums={2} /> The Dedicated Schools Grant deficit — now exceeding £4 billion nationally — is being driven in significant part by these spiralling transport obligations.<Cite nums={4} />
             </p>
             <p>
-              The human cost is borne by children. Some SEND pupils with EHCPs are travelling 90 minutes or more each way because their named school is the only provision that can meet their needs within the local authority area — or beyond it. Average SEND journey times have risen from 42 minutes in 2015 to 62 minutes in 2024. In rural areas, the picture is compounded by the loss of mainstream school bus routes: over 20% of non-statutory rural school bus services have been cut since 2015 as councils have withdrawn discretionary funding. For non-eligible families on low incomes, transport costs of £500 to £1,000 per year per child represent a genuine barrier to school choice. Post-16 transport is not free at all, creating a documented barrier to college attendance in rural and semi-rural areas — the DfE's own research found that transport costs were cited as a reason for not continuing in education by 12% of young people in rural areas. Getting to school should be simple. For a growing number of families, it is anything but.
+              The human cost is borne by children. Some SEND pupils with EHCPs are travelling 90 minutes or more each way because their named school is the only provision that can meet their needs within the local authority area — or beyond it. Average SEND journey times have risen from 42 minutes in 2015 to 62 minutes in 2024.<Cite nums={4} /> In rural areas, the picture is compounded by the loss of mainstream school bus routes: over 20% of non-statutory rural school bus services have been cut since 2015 as councils have withdrawn discretionary funding. For non-eligible families on low incomes, transport costs of £500 to £1,000 per year per child represent a genuine barrier to school choice. Post-16 transport is not free at all, creating a documented barrier to college attendance in rural and semi-rural areas — the DfE's own research found that transport costs were cited as a reason for not continuing in education by 12% of young people in rural areas.<Cite nums={3} /> Getting to school should be simple. For a growing number of families, it is anything but.
             </p>
           </div>
         </section>
@@ -252,6 +261,10 @@ export default function SchoolTransportPage() {
             source="Source: DLUHC — Section 251 Local Authority Education Expenditure. DfE — SEND Statistics. National Audit Office — Support for Pupils with SEND, 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

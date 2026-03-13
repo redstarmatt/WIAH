@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Nationwide Building Society', dataset: 'School catchment area house price premium analysis', url: 'https://www.nationwide.co.uk', date: '2024' },
+  { num: 2, name: 'DfE', dataset: 'School admissions appeals in England', url: 'https://www.gov.uk/government/collections/statistics-school-applications', date: '2024' },
+  { num: 3, name: 'DfE', dataset: 'Schools, pupils and their characteristics — FSM data', url: 'https://explore-education-statistics.service.gov.uk', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -126,10 +134,10 @@ export default function SchoolCatchmentInequalityPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              England's schools admissions system is formally blind to income. In practice, the combination of catchment areas, sibling priority, and proximity criteria has created a geography of educational access that closely mirrors the housing market. Families who can afford to live near Outstanding or Good schools pay a measurable premium to do so — averaging £40,000 in 2024 and rising every year since 2015. This catchment premium is a de facto private education levy: you pay it in house prices rather than school fees.
+              England's schools admissions system is formally blind to income. In practice, the combination of catchment areas, sibling priority, and proximity criteria has created a geography of educational access that closely mirrors the housing market. Families who can afford to live near Outstanding or Good schools pay a measurable premium to do so — averaging £40,000 in 2024 and rising every year since 2015.<Cite nums={1} /> This catchment premium is a de facto private education levy: you pay it in house prices rather than school fees.
             </p>
             <p>
-              The social sorting effect shows clearly in Free School Meal data. Oversubscribed schools — those turning away applicants — have FSM rates approximately 40% lower than the surrounding area average, meaning that the most sought-after state schools serve proportionally far fewer disadvantaged children than their communities contain. This is not the result of discriminatory admissions policy; it is the mechanical consequence of catchment geography and house prices. The trend has been remarkably stable since 2018, suggesting that Pupil Premium funding and Fair Access Protocols have not materially shifted the underlying pattern.
+              The social sorting effect shows clearly in Free School Meal data. Oversubscribed schools — those turning away applicants — have FSM rates approximately 40% lower than the surrounding area average, meaning that the most sought-after state schools serve proportionally far fewer disadvantaged children than their communities contain.<Cite nums={3} /> This is not the result of discriminatory admissions policy; it is the mechanical consequence of catchment geography and house prices. The trend has been remarkably stable since 2018, suggesting that Pupil Premium funding and Fair Access Protocols have not materially shifted the underlying pattern.<Cite nums={2} />
             </p>
           </div>
         </section>
@@ -211,6 +219,10 @@ export default function SchoolCatchmentInequalityPage() {
             source="Source: DfE — School admissions appeals 2024; Nationwide building society school catchment premium analysis 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

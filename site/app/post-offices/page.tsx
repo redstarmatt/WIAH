@@ -7,6 +7,15 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Post Office Ltd', dataset: 'Annual Network Report', url: 'https://corporate.postoffice.co.uk/our-media/insights-and-research/', date: '2024', note: '19,800 branches in 2000; approximately 11,500 by 2024; 42% reduction' },
+  { num: 2, name: 'CPRE', dataset: 'Rural Services Report', date: '2024', note: '48% of rural post offices lost since 2000' },
+  { num: 3, name: 'House of Commons Library', dataset: 'Post Office Network Change Programme', date: '2008', note: '2,500 branches closed in 2007-08 consolidation round' },
+  { num: 4, name: 'Post Office Horizon Compensation Scheme', dataset: 'Quarterly Reports', date: '2024', note: 'Over 900 sub-postmasters wrongly prosecuted 1999-2015; fewer than 1,000 of 700+ convicted received full compensation' },
+];
 
 export default function PostOfficesPage() {
   // Post Office branch count 2000–2024
@@ -52,9 +61,9 @@ export default function PostOfficesPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK Post Office network stood at around 19,800 branches in 2000 — the culmination of over 350 years as one of the most extensive retail networks in the country. By 2024, that number had fallen to approximately 11,500, a reduction of 42%. The steepest decline came between 2007 and 2008, when the Labour government's Network Change Programme closed around 2,500 branches in a single consolidation round.</p>
-            <p>Rural branches have been disproportionately affected, with 48% of rural post offices lost since 2000. For many villages, the post office was the last public facility — combining banking, benefits payments, and parcel services in a single location. Its loss compounds existing access problems in communities already cut off by bus cuts and bank branch closures.</p>
-            <p>The Horizon IT scandal — in which over 900 sub-postmasters were wrongly prosecuted between 1999 and 2015 due to a faulty Fujitsu accounting system — devastated the institution and made recruitment of new sub-postmasters significantly harder. By 2024, fewer than 1,000 of the 700+ wrongly convicted had received full compensation.</p>
+            <p>The UK Post Office network stood at around 19,800 branches in 2000 — the culmination of over 350 years as one of the most extensive retail networks in the country. By 2024, that number had fallen to approximately 11,500, a reduction of 42%.<Cite nums={1} /> The steepest decline came between 2007 and 2008, when the Labour government's Network Change Programme closed around 2,500 branches in a single consolidation round.<Cite nums={3} /></p>
+            <p>Rural branches have been disproportionately affected, with 48% of rural post offices lost since 2000.<Cite nums={2} /> For many villages, the post office was the last public facility — combining banking, benefits payments, and parcel services in a single location. Its loss compounds existing access problems in communities already cut off by bus cuts and bank branch closures.</p>
+            <p>The Horizon IT scandal — in which over 900 sub-postmasters were wrongly prosecuted between 1999 and 2015 due to a faulty Fujitsu accounting system — devastated the institution and made recruitment of new sub-postmasters significantly harder.<Cite nums={4} /> By 2024, fewer than 1,000 of the 700+ wrongly convicted had received full compensation.<Cite nums={4} /></p>
           </div>
         </section>
 
@@ -132,6 +141,10 @@ export default function PostOfficesPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

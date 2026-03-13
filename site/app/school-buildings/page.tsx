@@ -8,6 +8,15 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DfE', dataset: 'School Condition Data — maintenance backlog', url: 'https://www.gov.uk/government/collections/school-condition', date: '2023' },
+  { num: 2, name: 'DfE', dataset: 'RAAC Concrete in Schools Survey', url: 'https://www.gov.uk/government/news/raac-concrete-in-schools-survey-findings', date: '2023' },
+  { num: 3, name: 'DfE', dataset: 'School Rebuilding Programme', url: 'https://www.gov.uk/government/collections/school-condition', date: '2024' },
+  { num: 4, name: 'Health and Safety Executive', dataset: 'Asbestos in schools — teacher mortality estimates', url: 'https://www.hse.gov.uk', date: '2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -104,7 +113,7 @@ export default function SchoolBuildingsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The capital maintenance backlog for English schools stood at £15 billion in 2023, more than double the £6.7 billion recorded in 2011. One in three school buildings was constructed before 1976; around 4% are rated critical condition and 17% poor, translating into leaking roofs, broken boilers, and structures that cannot safely be occupied. The RAAC crisis of autumn 2023 made this impossible to ignore: 174 schools were confirmed to contain Reinforced Autoclaved Aerated Concrete — a material that can fail catastrophically with little warning — disrupting the education of more than 700,000 pupils at the start of the academic year. Asbestos, present in around 80% of pre-1985 schools, is estimated to cause more than 170 teacher deaths per year. These hazards have been catalogued in successive government surveys and consistently underfunded: school capital spending was cut around 40% in real terms between 2010 and 2014, and the School Rebuilding Programme's commitment to rebuild 500 schools by 2030 has proceeded slowly.</p>
+            <p>The capital maintenance backlog for English schools stood at £15 billion in 2023, more than double the £6.7 billion recorded in 2011.<Cite nums={1} /> One in three school buildings was constructed before 1976; around 4% are rated critical condition and 17% poor, translating into leaking roofs, broken boilers, and structures that cannot safely be occupied. The RAAC crisis of autumn 2023 made this impossible to ignore: 174 schools were confirmed to contain Reinforced Autoclaved Aerated Concrete — a material that can fail catastrophically with little warning — disrupting the education of more than 700,000 pupils at the start of the academic year.<Cite nums={2} /> Asbestos, present in around 80% of pre-1985 schools, is estimated to cause more than 170 teacher deaths per year.<Cite nums={4} /> These hazards have been catalogued in successive government surveys and consistently underfunded: school capital spending was cut around 40% in real terms between 2010 and 2014, and the School Rebuilding Programme's commitment to rebuild 500 schools by 2030 has proceeded slowly.<Cite nums={3} /></p>
             <p>The burden of deteriorating buildings falls disproportionately on pupils in deprived areas, where councils squeezed by a decade of funding reductions have had less capacity to supplement central capital allocations. Academy trusts with large portfolios of older buildings face particular challenges, as maintenance liability transferred with the schools but funding did not always follow. Scotland and Wales have both invested more systematically in their school estates in recent years, widening the gap with large parts of England.</p>
           </div>
         </section>
@@ -228,6 +237,10 @@ export default function SchoolBuildingsPage() {
               </p>
             </section>
           )}
+        </div>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
         </div>
 
         <section id="sec-sources" className="border-t border-wiah-border pt-8">

@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Pension Protection Fund', dataset: 'PPF 7800 Index', url: 'https://www.ppf.co.uk/levy-payers/PPF-7800-index', date: '2023', note: 'Aggregate funding position swung from -£710bn to +£380bn' },
+  { num: 2, name: 'PPF / The Pensions Regulator', dataset: 'The Purple Book — DB landscape', url: 'https://www.ppf.co.uk/our-organisation/the-purple-book', date: '2023', note: 'Active DB membership fell from 5m to 1.5m' },
+  { num: 3, name: 'HM Treasury', dataset: 'Mansion House Reforms', date: '2023', note: 'Aims to channel DB surpluses into productive investment' },
+];
 
 export default function PensionDeficitsPage() {
   // DB scheme aggregate funding position 2010–2023 (£bn, negative = deficit, positive = surplus)
@@ -67,9 +75,9 @@ export default function PensionDeficitsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Defined benefit (DB) pensions — where an employer guarantees a pension linked to salary and years of service — were the standard private-sector perk for most of the 20th century. By 2016, the aggregate deficit of UK DB schemes had swelled to £710bn under the Pension Protection Fund (PPF) measure, driven by decades of low interest rates inflating the present value of future liabilities, combined with falling bond yields and, for some schemes, poor investment returns and employer underfunding. The PPF — the lifeboat fund that takes on failed schemes — had by then absorbed several large cases including Carillion and British Steel, paying pensions at reduced levels.</p>
-            <p>The picture changed sharply in 2022. Rising interest rates — driven by the Bank of England's response to inflation — reduced the present value of liabilities faster than assets fell, flipping most schemes from deficit to surplus. By 2023, the aggregate PPF 7800 index showed a surplus of around £380bn. This turnaround is genuine, but it comes with an asterisk: the October 2022 "mini-budget" triggered a crisis in Liability Driven Investment (LDI) strategies used by many DB schemes, briefly threatening a gilts market spiral before the Bank of England intervened. The crisis exposed how fragile the system remained under stress.</p>
-            <p>The more lasting shift is structural: the private-sector DB system is in managed run-off. Active membership has fallen from around 5 million in 2000 to under 1.5 million today, as employers closed schemes to new entrants and then to future accrual. The beneficiaries of DB schemes are largely older workers who joined before the 1990s; younger private sector workers have defined contribution (DC) pensions, where investment risk falls entirely on the individual. The adequacy of DC pensions at typical contribution rates is a separate — and growing — concern.</p>
+            <p>Defined benefit (DB) pensions — where an employer guarantees a pension linked to salary and years of service — were the standard private-sector perk for most of the 20th century. By 2016, the aggregate deficit of UK DB schemes had swelled to £710bn under the Pension Protection Fund (PPF) measure, driven by decades of low interest rates inflating the present value of future liabilities, combined with falling bond yields and, for some schemes, poor investment returns and employer underfunding.<Cite nums={1} /> The PPF — the lifeboat fund that takes on failed schemes — had by then absorbed several large cases including Carillion and British Steel, paying pensions at reduced levels.</p>
+            <p>The picture changed sharply in 2022. Rising interest rates — driven by the Bank of England's response to inflation — reduced the present value of liabilities faster than assets fell, flipping most schemes from deficit to surplus. By 2023, the aggregate PPF 7800 index showed a surplus of around £380bn.<Cite nums={1} /> This turnaround is genuine, but it comes with an asterisk: the October 2022 "mini-budget" triggered a crisis in Liability Driven Investment (LDI) strategies used by many DB schemes, briefly threatening a gilts market spiral before the Bank of England intervened. The crisis exposed how fragile the system remained under stress.</p>
+            <p>The more lasting shift is structural: the private-sector DB system is in managed run-off. Active membership has fallen from around 5 million in 2000 to under 1.5 million today, as employers closed schemes to new entrants and then to future accrual.<Cite nums={2} /> The beneficiaries of DB schemes are largely older workers who joined before the 1990s; younger private sector workers have defined contribution (DC) pensions, where investment risk falls entirely on the individual. The adequacy of DC pensions at typical contribution rates is a separate — and growing — concern.</p>
           </div>
         </section>
 
@@ -154,6 +162,10 @@ export default function PensionDeficitsPage() {
             source="Source: Pension Protection Fund — PPF 7800 Index December 2023; HM Treasury — Mansion House reforms 2023."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

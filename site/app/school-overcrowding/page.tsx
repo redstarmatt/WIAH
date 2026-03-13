@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DfE', dataset: 'School Capacity (SCAP) Survey', url: 'https://www.gov.uk/government/collections/statistics-school-capacity', date: '2024' },
+  { num: 2, name: 'DfE', dataset: 'RAAC Concrete in Schools Survey', url: 'https://www.gov.uk/government/news/raac-concrete-in-schools-survey-findings', date: '2023' },
+  { num: 3, name: 'DfE / ESFA', dataset: 'Education and Skills Funding Agency — Basic Need Capital Programme', url: 'https://www.gov.uk/government/organisations/education-and-skills-funding-agency', date: '2024' },
+];
 
 interface SchoolOvercrowdingDataPoint {
   year: number
@@ -59,8 +67,8 @@ export default function SchoolOvercrowdingPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Approximately 400,000 children attend schools operating above their designed capacity. Secondary schools are more overcrowded than primaries in aggregate, reflecting a demographic bulge as the large primary cohorts of the early 2010s progress through the system — the secondary places crunch is projected to peak in 2026–27. The school condition backlog exceeds £14 billion, and RAAC remediation has further reduced effective capacity in 174 schools, creating additional pressure on neighbouring institutions. Class sizes have grown as budget pressures interact with rising pupil numbers; in STEM subjects, teacher shortages mean available teachers cover larger groups. Place supply meets demand in aggregate but has significant local mismatches that create overcrowding in popular schools and underutilisation in less popular ones.</p>
-            <p>Large class sizes have a well-evidenced negative relationship with progress for children with additional needs, EAL pupils, and those requiring individualised support — the pupils who bear the heaviest cost of overcrowding are those who can least afford it. In areas of high housing growth, new schools are required ahead of or alongside development but capital funding constraints mean schools frequently open late, leaving interim overcrowding as parents in new developments have limited choice. The RAAC crisis is the acute face of a chronic problem: deferred capital maintenance compressing effective capacity in the schools that serve communities with the fewest alternatives.</p>
+            <p>Approximately 400,000 children attend schools operating above their designed capacity.<Cite nums={1} /> Secondary schools are more overcrowded than primaries in aggregate, reflecting a demographic bulge as the large primary cohorts of the early 2010s progress through the system — the secondary places crunch is projected to peak in 2026–27. The school condition backlog exceeds £14 billion, and RAAC remediation has further reduced effective capacity in 174 schools, creating additional pressure on neighbouring institutions.<Cite nums={2} /> Class sizes have grown as budget pressures interact with rising pupil numbers; in STEM subjects, teacher shortages mean available teachers cover larger groups. Place supply meets demand in aggregate but has significant local mismatches that create overcrowding in popular schools and underutilisation in less popular ones.</p>
+            <p>Large class sizes have a well-evidenced negative relationship with progress for children with additional needs, EAL pupils, and those requiring individualised support — the pupils who bear the heaviest cost of overcrowding are those who can least afford it. In areas of high housing growth, new schools are required ahead of or alongside development but capital funding constraints mean schools frequently open late, leaving interim overcrowding as parents in new developments have limited choice.<Cite nums={3} /> The RAAC crisis is the acute face of a chronic problem: deferred capital maintenance compressing effective capacity in the schools that serve communities with the fewest alternatives.</p>
           </div>
         </section>
 
@@ -113,6 +121,10 @@ export default function SchoolOvercrowdingPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

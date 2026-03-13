@@ -8,7 +8,17 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'RSPCA', dataset: 'Annual Cruelty and Neglect Statistics', url: 'https://www.rspca.org.uk/whatwedo/latest/facts', date: '2023' },
+  { num: 2, name: 'PDSA', dataset: 'Animal Wellbeing (PAW) Report', url: 'https://www.pdsa.org.uk/what-we-do/pdsa-animal-wellbeing-report', date: '2023' },
+  { num: 3, name: 'NHS Digital', dataset: 'Hospital Admitted Patient Care — Dog Bites and Strikes (ICD-10 W54)', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/hospital-admitted-patient-care-activity', date: '2023' },
+  { num: 4, name: 'ADCH', dataset: 'Annual Sector Report — Rescue Centre Capacity', url: 'https://www.adch.org.uk/sector-report', date: '2024' },
+  { num: 5, name: 'Defra', dataset: 'Animal Welfare (Sentience) Act 2022', url: 'https://www.legislation.gov.uk/ukpga/2022/22', date: '2022' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -93,10 +103,10 @@ export default function PetWelfarePage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The UK experienced a pet ownership surge during the COVID-19 pandemic: an estimated 3.2 million new pets were acquired between 2020 and 2021, many by first-time owners making impulsive decisions during lockdowns. The consequences are now unfolding at scale. Rescue centres operated by ADCH member organisations reported occupancy rates above 100% in 2023 and 2024, meaning they are housing more animals than their facilities were designed for. The RSPCA&rsquo;s cruelty line received 137,000 reports in 2023, up from 109,800 in 2019 — a 25% rise that reflects both genuine welfare deterioration and a cost-of-living crisis that has made pet ownership unaffordable for millions. The PDSA estimates that 5.2 million pets across the UK are not receiving veterinary treatment they need, primarily due to cost — the average annual expense of owning a dog has risen to roughly &pound;2,000, up 30% since 2020. Puppy farming persists despite Lucy&rsquo;s Law, which banned third-party puppy sales in 2020; online platforms like Gumtree and Facebook Marketplace remain largely unregulated marketplaces for breeders operating below the radar. The exotic pet trade is a growing concern, with the RSPCA reporting rising numbers of reptiles, primates, and other non-traditional animals being surrendered or seized.
+              The UK experienced a pet ownership surge during the COVID-19 pandemic: an estimated 3.2 million new pets were acquired between 2020 and 2021, many by first-time owners making impulsive decisions during lockdowns. The consequences are now unfolding at scale. Rescue centres operated by ADCH member organisations reported occupancy rates above 100% in 2023 and 2024, meaning they are housing more animals than their facilities were designed for.<Cite nums={4} /> The RSPCA&rsquo;s cruelty line received 137,000 reports in 2023, up from 109,800 in 2019 — a 25% rise that reflects both genuine welfare deterioration and a cost-of-living crisis that has made pet ownership unaffordable for millions.<Cite nums={1} /> The PDSA estimates that 5.2 million pets across the UK are not receiving veterinary treatment they need, primarily due to cost — the average annual expense of owning a dog has risen to roughly &pound;2,000, up 30% since 2020.<Cite nums={2} /> Puppy farming persists despite Lucy&rsquo;s Law, which banned third-party puppy sales in 2020; online platforms like Gumtree and Facebook Marketplace remain largely unregulated marketplaces for breeders operating below the radar. The exotic pet trade is a growing concern, with the RSPCA reporting rising numbers of reptiles, primates, and other non-traditional animals being surrendered or seized.<Cite nums={1} />
             </p>
             <p>
-              Dog attacks have become a significant public health issue: over 8,000 people were admitted to hospital in England in 2023 after being bitten or struck by a dog, a 15% increase since 2019. The XL Bully ban, introduced in February 2024 following a series of fatal attacks, required owners to register their dogs on the Index of Exempted Dogs — over 50,000 were registered and 18,000 exemption applications submitted, but early data suggests a substantial number have been surrendered or euthanised rather than registered. Meanwhile, livestock worrying by dogs costs farmers an estimated &pound;2 million per year across more than 15,000 reported incidents, destroying livelihoods in rural communities. The Animal Welfare (Sentience) Act 2022 formally recognised animals as sentient beings in law for the first time, establishing an Animal Sentience Committee to scrutinise government policy — a landmark moment in principle, though enforcement resources remain thin and the committee&rsquo;s practical influence on policy outcomes is still being tested.
+              Dog attacks have become a significant public health issue: over 8,000 people were admitted to hospital in England in 2023 after being bitten or struck by a dog, a 15% increase since 2019.<Cite nums={3} /> The XL Bully ban, introduced in February 2024 following a series of fatal attacks, required owners to register their dogs on the Index of Exempted Dogs — over 50,000 were registered and 18,000 exemption applications submitted, but early data suggests a substantial number have been surrendered or euthanised rather than registered. Meanwhile, livestock worrying by dogs costs farmers an estimated &pound;2 million per year across more than 15,000 reported incidents, destroying livelihoods in rural communities. The Animal Welfare (Sentience) Act 2022 formally recognised animals as sentient beings in law for the first time, establishing an Animal Sentience Committee to scrutinise government policy — a landmark moment in principle, though enforcement resources remain thin and the committee&rsquo;s practical influence on policy outcomes is still being tested.<Cite nums={5} />
             </p>
           </div>
         </section>
@@ -215,6 +225,10 @@ export default function PetWelfarePage() {
             source="Source: RSPCA Annual Prosecutions Data 2023; DEFRA — Animal Welfare (Sentience) Act 2022."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="border-t border-wiah-border pt-8 mt-12">

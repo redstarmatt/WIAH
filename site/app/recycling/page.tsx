@@ -8,6 +8,8 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -83,6 +85,12 @@ function yearToDate(y: number): Date {
 }
 
 const TOPIC_COLOUR = '#5C7A4E';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Defra', dataset: 'Local authority collected waste management statistics (WasteDataFlow)', url: 'https://www.gov.uk/government/statistical-data-sets/env18-local-authority-collected-waste-annual-results-tables', date: '2023' },
+  { num: 2, name: 'Defra', dataset: 'National Packaging Waste Database / UK Statistics on Waste', url: 'https://www.gov.uk/government/statistics/uk-waste-data', date: '2023' },
+  { num: 3, name: 'Defra / Environment Agency', dataset: 'UK Statistics on Waste — overseas waste shipments', url: 'https://www.gov.uk/government/statistical-data-sets/waste-statistics', date: '2022' },
+];
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -165,18 +173,18 @@ export default function RecyclingPage() {
               When you sort your recycling, you&apos;re doing your part — but the journey from your bin
               to a recycled product is longer, messier and more uncertain than most people assume.
               England&apos;s overall recycling rate has been stuck at roughly 44% since 2011, far from
-              the government&apos;s 65% target for 2035. But that average conceals a story of profound
+              the government&apos;s 65% target for 2035.<Cite nums={1} /> But that average conceals a story of profound
               inequality: in South Oxfordshire, two thirds of household waste is recycled; in Tower
-              Hamlets, fewer than one in five bins make it through.
+              Hamlets, fewer than one in five bins make it through.<Cite nums={1} />
             </p>
             <p>
               Even collected recycling faces barriers. About 18% of material arriving at sorting
               facilities is rejected as contaminated — a yoghurt carton with food residue, a plastic bag
-              wrapped around loose cans — and goes to landfill or incineration instead. Plastic is the
+              wrapped around loose cans — and goes to landfill or incineration instead.<Cite nums={2} /> Plastic is the
               weakest link: only types 1 and 2 are reliably processed in the UK; the other five plastic
-              codes rarely have a viable domestic end market. Until 2018, much of the remainder was
+              codes rarely have a viable domestic end market.<Cite nums={2} /> Until 2018, much of the remainder was
               shipped to China. Since Beijing banned imports, the UK has scrambled to find new routes —
-              Turkey, Malaysia, Indonesia — with significantly less oversight at the other end.
+              Turkey, Malaysia, Indonesia — with significantly less oversight at the other end.<Cite nums={3} />
             </p>
           </div>
         </section>
@@ -487,6 +495,10 @@ export default function RecyclingPage() {
             </div>
           </div>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* ── Sources ─────────────────────────────────────────────────────────── */}
         <section id="sec-sources" className="mt-16 pt-12 border-t border-wiah-border">

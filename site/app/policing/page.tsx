@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Home Office', dataset: 'Police Workforce, England and Wales', url: 'https://www.gov.uk/government/collections/police-workforce-england-and-wales', date: '2024', note: '143,734 officers in 2010; low of 121,700 by 2018; record 149,566 by March 2022; slipped to 145,700 by 2024' },
+  { num: 2, name: 'Home Office', dataset: 'Crime Outcomes in England and Wales', url: 'https://www.gov.uk/government/statistics/crime-outcomes-in-england-and-wales-2022-to-2023', date: '2023', note: 'Charge rate fell from 15.5% in 2014 to 5.6% in 2023; fewer than 400,000 charges from 6.8 million recorded crimes' },
+  { num: 3, name: 'ONS', dataset: 'Crime Survey for England and Wales — Public Confidence', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice', date: '2023', note: 'Public confidence dropped 9pp in two years to 54.1%' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -139,10 +147,10 @@ export default function PolicingPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              England and Wales had 143,734 police officers in 2010. Austerity cut 22,000 of them, driving numbers to a low of 121,700 by 2018. The government's 20,000 officer uplift programme, launched in 2019, pushed headcount to a record 149,566 by March 2022 — but the recovery proved fragile. By 2024, numbers had slipped to 145,700 as forces struggled to retain recruits. The population grew 6% over the same period, meaning even the 2022 record left the officer-to-population ratio below its 2010 level. More officers in absolute terms; fewer per person served.
+              England and Wales had 143,734 police officers in 2010. Austerity cut 22,000 of them, driving numbers to a low of 121,700 by 2018.<Cite nums={1} /> The government's 20,000 officer uplift programme, launched in 2019, pushed headcount to a record 149,566 by March 2022 — but the recovery proved fragile. By 2024, numbers had slipped to 145,700 as forces struggled to retain recruits.<Cite nums={1} /> The population grew 6% over the same period, meaning even the 2022 record left the officer-to-population ratio below its 2010 level. More officers in absolute terms; fewer per person served.
             </p>
             <p>
-              The charge rate has collapsed. In 2014, 15.5% of police-recorded crimes resulted in a charge or summons; by 2023 that figure was 5.6%. Of the 6.8 million crimes recorded in 2022/23, fewer than 400,000 led to a charge — meaning 94 in every 100 reported offences produced no criminal proceedings. For rape, the charge rate fell below 2%. The CPS raised its evidential threshold under the Full Code Test after the Janner affair, which police blame for the decline; critics counter that forces deprioritised volume crime and allowed investigative capacity to atrophy.
+              The charge rate has collapsed. In 2014, 15.5% of police-recorded crimes resulted in a charge or summons; by 2023 that figure was 5.6%.<Cite nums={2} /> Of the 6.8 million crimes recorded in 2022/23, fewer than 400,000 led to a charge — meaning 94 in every 100 reported offences produced no criminal proceedings.<Cite nums={2} /> For rape, the charge rate fell below 2%. The CPS raised its evidential threshold under the Full Code Test after the Janner affair, which police blame for the decline; critics counter that forces deprioritised volume crime and allowed investigative capacity to atrophy.
             </p>
             </div>
         </section>
@@ -235,6 +243,10 @@ export default function PolicingPage() {
           source="Source: Home Office — Police workforce, England and Wales, March 2022."
         />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

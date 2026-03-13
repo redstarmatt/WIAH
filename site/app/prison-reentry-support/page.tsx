@@ -8,6 +8,15 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ministry of Justice', dataset: 'Proven Reoffending Statistics', url: 'https://www.gov.uk/government/collections/proven-reoffending-statistics', date: '2024' },
+  { num: 2, name: 'HMPPS', dataset: 'Prison Discharge Rules — Discharge Grant', date: '2023' },
+  { num: 3, name: 'HMPPS', dataset: 'Prison Population Data — Accommodation on Release', url: 'https://www.gov.uk/government/statistics/prison-population-figures-2024', date: '2024' },
+  { num: 4, name: 'Prison Reform Trust', dataset: 'Bromley Briefings Prison Factfile', url: 'https://prisonreformtrust.org.uk/publication/bromley-briefings-prison-factfile/', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -75,8 +84,8 @@ export default function PrisonReentrySupportPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Every year around 55,000 adults are released from prison in England and Wales. Nearly half will commit a proven further offence within twelve months — a rate that has barely shifted over the past decade, hovering between 44% and 47%. The discharge grant — the lump sum given to people leaving prison with no other financial support — has remained at £46 since 2008, losing around a third of its real value to inflation. Fifteen per cent of people are still released without settled housing confirmed. Research consistently shows accommodation insecurity is the single strongest predictor of reoffending, and that the first 24–72 hours after release are the highest risk period — a window the current system does almost nothing to support.</p>
-            <p>The conditions that drive reoffending are being reproduced at release rather than addressed during sentence. People who secure employment after release reoffend at roughly half the rate of those without work, yet employer attitudes and DBS check requirements make job search extremely difficult. The period immediately after release is also a high-risk time for drug overdose, as opioid tolerance drops during custody. These are known, solvable problems; what has been missing is the political will to fund the answer at scale, for a population with limited political voice.</p>
+            <p>Every year around 55,000 adults are released from prison in England and Wales.<Cite nums={1} /> Nearly half will commit a proven further offence within twelve months — a rate that has barely shifted over the past decade, hovering between 44% and 47%.<Cite nums={1} /> The discharge grant — the lump sum given to people leaving prison with no other financial support — has remained at £46 since 2008, losing around a third of its real value to inflation.<Cite nums={2} /> Fifteen per cent of people are still released without settled housing confirmed.<Cite nums={3} /> Research consistently shows accommodation insecurity is the single strongest predictor of reoffending, and that the first 24–72 hours after release are the highest risk period — a window the current system does almost nothing to support.<Cite nums={4} /></p>
+            <p>The conditions that drive reoffending are being reproduced at release rather than addressed during sentence. People who secure employment after release reoffend at roughly half the rate of those without work, yet employer attitudes and DBS check requirements make job search extremely difficult.<Cite nums={4} /> The period immediately after release is also a high-risk time for drug overdose, as opioid tolerance drops during custody.<Cite nums={4} /> These are known, solvable problems; what has been missing is the political will to fund the answer at scale, for a population with limited political voice.</p>
           </div>
         </section>
 
@@ -136,6 +145,10 @@ export default function PrisonReentrySupportPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

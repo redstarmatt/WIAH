@@ -7,6 +7,15 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DESNZ', dataset: 'Energy Company Obligation and Great British Insulation Scheme Statistics', url: 'https://www.gov.uk/government/collections/energy-company-obligation', date: '2024' },
+  { num: 2, name: 'National Infrastructure Commission', dataset: 'Net Zero Infrastructure Gap Report', url: 'https://nic.org.uk/', date: '2024', note: '300,000 homes/year target; 2m/year for net zero' },
+  { num: 3, name: 'Climate Change Committee', dataset: 'Net Zero Pathway — Buildings', url: 'https://www.theccc.org.uk/', date: '2024', note: '500,000 trained retrofit workers needed by 2030' },
+  { num: 4, name: 'BPIE', dataset: 'EU Building Renovation Statistics', url: 'https://www.bpie.eu/publications/', date: '2024' },
+];
 
 export default function RetrofitInsulationPage() {
   // Chart 1: Homes insulated under government schemes 2015–2024 (thousands)
@@ -140,12 +149,16 @@ export default function RetrofitInsulationPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on home insulation</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>The UK insulates its homes at a fraction of the rate needed for net zero — and at a fraction of comparable European countries. Only around 60,000 homes received insulation under government schemes in 2023, against a target of 300,000 and a net-zero requirement of around 2 million per year from the late 2020s. The UK rate is roughly a quarter of the European average for comparable housing stocks.</p>
-              <p>The collapse from 380,000 insulations in 2015 to 60,000 in 2023 reflects a decade of policy instability. The Green Deal (2013) failed after low uptake. The Green Homes Grant launched in 2020 was cancelled after just six months following administrative chaos, wasting significant contractor investment. In 2023, the government dropped proposals to require landlords to bring rented properties to EPC C by 2028, removing the key market incentive for the private rented sector — the worst-performing part of the housing stock.</p>
-              <p>The workforce challenge matches the financing gap. Meeting 2030 insulation targets would require around 500,000 trained retrofit workers — against a current trained workforce of under 50,000. The skills pipeline does not exist at scale, and without clear long-term policy commitment, contractors will not invest in training. An average whole-house retrofit costs £15,000–£25,000, which most households cannot fund from savings, and a national retrofit financing mechanism remains absent.</p>
+              <p>The UK insulates its homes at a fraction of the rate needed for net zero — and at a fraction of comparable European countries. Only around 60,000 homes received insulation under government schemes in 2023, against a target of 300,000 and a net-zero requirement of around 2 million per year from the late 2020s.<Cite nums={[1, 2]} /> The UK rate is roughly a quarter of the European average for comparable housing stocks.<Cite nums={4} /></p>
+              <p>The collapse from 380,000 insulations in 2015 to 60,000 in 2023 reflects a decade of policy instability.<Cite nums={1} /> The Green Deal (2013) failed after low uptake. The Green Homes Grant launched in 2020 was cancelled after just six months following administrative chaos, wasting significant contractor investment. In 2023, the government dropped proposals to require landlords to bring rented properties to EPC C by 2028, removing the key market incentive for the private rented sector — the worst-performing part of the housing stock.</p>
+              <p>The workforce challenge matches the financing gap. Meeting 2030 insulation targets would require around 500,000 trained retrofit workers — against a current trained workforce of under 50,000.<Cite nums={3} /> The skills pipeline does not exist at scale, and without clear long-term policy commitment, contractors will not invest in training. An average whole-house retrofit costs £15,000–£25,000, which most households cannot fund from savings, and a national retrofit financing mechanism remains absent.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

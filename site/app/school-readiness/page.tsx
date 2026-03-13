@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DfE', dataset: 'Early Years Foundation Stage Profile results', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/early-years-foundation-stage-profile-results', date: 'November 2024' },
+  { num: 2, name: 'DfE', dataset: 'EYFSP additional tables — disadvantage gap', url: 'https://www.gov.uk/government/statistics/early-years-foundation-stage-profile-results-2023-to-2024', date: 'November 2024' },
+  { num: 3, name: 'Education Policy Institute', dataset: 'Annual Report — London effect and early years', url: 'https://epi.org.uk', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -157,13 +165,13 @@ export default function SchoolReadinessPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Every September, around 650,000 children in England start Reception class. By the following summer, their teachers assess whether each child has reached a &quot;good level of development&quot; across communication, physical skills, personal development, literacy, and maths. That single measure — the EYFSP — is the closest thing we have to a national answer on school readiness. Before the pandemic, the trend was encouraging: the proportion of children meeting the standard rose from 52% in 2013 to nearly 72% in 2019, driven by expanded free childcare entitlements, the Troubled Families programme, and sustained investment in early years settings. Then school closures wiped out almost all of that progress overnight.
+              Every September, around 650,000 children in England start Reception class. By the following summer, their teachers assess whether each child has reached a &quot;good level of development&quot; across communication, physical skills, personal development, literacy, and maths. That single measure — the EYFSP — is the closest thing we have to a national answer on school readiness. Before the pandemic, the trend was encouraging: the proportion of children meeting the standard rose from 52% in 2013 to nearly 72% in 2019, driven by expanded free childcare entitlements, the Troubled Families programme, and sustained investment in early years settings.<Cite nums={1} /> Then school closures wiped out almost all of that progress overnight.
             </p>
             <p>
-              The 2021/22 results, the first since COVID, showed GLD achievement had fallen to 65.2% — roughly where it had been in 2015. Two years on, the figure has recovered to 67.7%, but it remains four percentage points below the pre-pandemic peak and the pace of recovery is slowing. More troubling is what the headline number conceals. Children from disadvantaged backgrounds — measured by free school meal eligibility — saw a sharper drop and a slower recovery. The gap between FSM-eligible children and their peers widened from 17 percentage points in 2019 to over 19 points in 2022 and has barely narrowed since. Communication and language skills were hit hardest: children who spent their formative years in lockdown missed the incidental social interaction that underpins spoken language development, and speech and language therapy services were already stretched thin before the pandemic doubled demand.
+              The 2021/22 results, the first since COVID, showed GLD achievement had fallen to 65.2% — roughly where it had been in 2015. Two years on, the figure has recovered to 67.7%, but it remains four percentage points below the pre-pandemic peak and the pace of recovery is slowing. More troubling is what the headline number conceals. Children from disadvantaged backgrounds — measured by free school meal eligibility — saw a sharper drop and a slower recovery. The gap between FSM-eligible children and their peers widened from 17 percentage points in 2019 to over 19 points in 2022 and has barely narrowed since.<Cite nums={2} /> Communication and language skills were hit hardest: children who spent their formative years in lockdown missed the incidental social interaction that underpins spoken language development, and speech and language therapy services were already stretched thin before the pandemic doubled demand.
             </p>
             <p>
-              The regional picture adds another dimension. London consistently outperforms every other region, with 71.2% of children achieving GLD, while the North East lags at 64.2%. This gap is not new — it tracks closely with child poverty rates and per-pupil early years funding — but it has widened since 2022. The government&apos;s expansion of funded childcare hours to younger age groups may help over time, but the immediate challenge is workforce: early years settings report record vacancy rates, and practitioner pay remains well below primary school teacher salaries. The children who started school in September 2025 were born during the pandemic. Their outcomes will test whether the system has truly adapted or merely returned to a trajectory that was already too slow.
+              The regional picture adds another dimension. London consistently outperforms every other region, with 71.2% of children achieving GLD, while the North East lags at 64.2%.<Cite nums={[1, 3]} /> This gap is not new — it tracks closely with child poverty rates and per-pupil early years funding — but it has widened since 2022. The government&apos;s expansion of funded childcare hours to younger age groups may help over time, but the immediate challenge is workforce: early years settings report record vacancy rates, and practitioner pay remains well below primary school teacher salaries. The children who started school in September 2025 were born during the pandemic. Their outcomes will test whether the system has truly adapted or merely returned to a trajectory that was already too slow.
             </p>
           </div>
         </section>
@@ -329,6 +337,10 @@ export default function SchoolReadinessPage() {
             source="Source: DfE — EYFSP regional tables, 2023/24. Education Policy Institute — Annual Report 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources & Methodology */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

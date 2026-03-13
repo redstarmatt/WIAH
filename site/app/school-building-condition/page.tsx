@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DfE', dataset: 'RAAC Concrete in Schools Survey', url: 'https://www.gov.uk/government/news/raac-concrete-in-schools-survey-findings', date: '2023' },
+  { num: 2, name: 'DfE', dataset: 'Condition of School Buildings Survey', url: 'https://www.gov.uk/government/collections/school-condition', date: '2023' },
+  { num: 3, name: 'DfE', dataset: 'School Rebuilding Programme statistics', url: 'https://www.gov.uk/government/collections/school-condition', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -141,10 +149,10 @@ export default function SchoolBuildingConditionPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The RAAC crisis of September 2023 brought England's school estate into sharp focus, but the structural concrete problem was the visible tip of a much larger iceberg. RAAC — a lightweight aerated concrete used in flat roofs and floors between roughly 1950 and 1990 — was identified in 235 schools following emergency surveys, causing hundreds of classrooms to be closed at the start of term. Several schools were entirely shut for weeks. The immediate cost was £1 billion in emergency remediation funding, but this addresses only the most acute structural risk.
+              The RAAC crisis of September 2023 brought England's school estate into sharp focus, but the structural concrete problem was the visible tip of a much larger iceberg. RAAC — a lightweight aerated concrete used in flat roofs and floors between roughly 1950 and 1990 — was identified in 235 schools following emergency surveys, causing hundreds of classrooms to be closed at the start of term.<Cite nums={1} /> Several schools were entirely shut for weeks. The immediate cost was £1 billion in emergency remediation funding, but this addresses only the most acute structural risk.
             </p>
             <p>
-              The broader picture is a maintenance backlog estimated at £6.7 billion by the DfE's own condition surveys, accumulated over decades of under-investment. One in five school buildings — approximately 4,000 schools — is now rated in poor or very poor condition. The Priority Schools Building Programme, later renamed the School Rebuilding Programme, was targeting 500 rebuilds over 10 years at completion rates of 20–28 per year. At that pace, it would take over 140 years to address the backlog. The programme covers only the most structurally dangerous buildings; it does not address the wider stock of leaking roofs, inadequate heating, poor ventilation, and outdated facilities that affect teaching and learning every day.
+              The broader picture is a maintenance backlog estimated at £6.7 billion by the DfE's own condition surveys, accumulated over decades of under-investment.<Cite nums={2} /> One in five school buildings — approximately 4,000 schools — is now rated in poor or very poor condition. The Priority Schools Building Programme, later renamed the School Rebuilding Programme, was targeting 500 rebuilds over 10 years at completion rates of 20–28 per year.<Cite nums={3} /> At that pace, it would take over 140 years to address the backlog. The programme covers only the most structurally dangerous buildings; it does not address the wider stock of leaking roofs, inadequate heating, poor ventilation, and outdated facilities that affect teaching and learning every day.
             </p>
           </div>
         </section>
@@ -239,6 +247,10 @@ export default function SchoolBuildingConditionPage() {
             source="Source: DfE School Rebuilding Programme statistics · DfE Condition of School Buildings Survey."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

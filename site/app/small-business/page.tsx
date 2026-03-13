@@ -9,6 +9,16 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'The Insolvency Service', dataset: 'Company Insolvency Statistics', url: 'https://www.gov.uk/government/collections/insolvency-statistics', date: 'Q4 2024' },
+  { num: 2, name: 'ONS', dataset: 'Business Demography, UK', url: 'https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/bulletins/businessdemography/latest', date: '2024' },
+  { num: 3, name: 'Federation of Small Businesses', dataset: 'Late Payment Report', url: 'https://www.fsb.org.uk/', date: '2024' },
+  { num: 4, name: 'British Retail Consortium', dataset: 'Retail sector analysis', url: 'https://brc.org.uk/', date: '2023' },
+  { num: 5, name: 'National Audit Office', dataset: 'Bounce Back Loan Scheme fraud estimate', url: 'https://www.nao.org.uk/', date: '2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -93,8 +103,8 @@ export default function SmallBusinessPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Small and medium-sized enterprises account for 99.9% of the UK's 5.5 million businesses, employ 16.7 million people, and generate approximately £2.3 trillion in annual turnover. Yet the environment for small businesses has deteriorated sharply since 2022. Company insolvencies in England and Wales reached 27,500 in 2024, the highest level since records began in their current form in 1993. This exceeds the peak during the 2008–09 financial crisis and represents an 88% increase on 2019 levels. The surge is driven by a toxic combination of factors: post-pandemic debt from Bounce Back Loans (of which £47 billion was disbursed, with an estimated £4.9 billion in fraud), rising interest rates that doubled borrowing costs between 2022 and 2024, energy costs that remain 40–50% above pre-crisis levels for business tariffs, and persistent labour shortages in hospitality, construction, and logistics.</p>
-            <p>The five-year survival rate for new businesses has fallen from 44% for firms born in 2013 to approximately 38% for those born in 2019. ONS business demography data shows that while business births recovered from the pandemic, deaths have outpaced births in seven of the last ten quarters. The retail sector has been hardest hit: over 17,000 retail stores closed in 2023, and the British Retail Consortium reports a net loss of 6,000 stores per year since 2018. Late payment remains a structural problem: the Federation of Small Businesses estimates that £23 billion is owed to SMEs in overdue invoices at any given time, with the average small firm waiting 52 days for payment despite standard 30-day terms. The Prompt Payment Code is voluntary and has no enforcement mechanism; large companies that breach its terms face no penalties beyond potential removal from the code's signatory list.</p>
+            <p>Small and medium-sized enterprises account for 99.9% of the UK's 5.5 million businesses, employ 16.7 million people, and generate approximately £2.3 trillion in annual turnover.<Cite nums={2} /> Yet the environment for small businesses has deteriorated sharply since 2022. Company insolvencies in England and Wales reached 27,500 in 2024, the highest level since records began in their current form in 1993.<Cite nums={1} /> This exceeds the peak during the 2008–09 financial crisis and represents an 88% increase on 2019 levels. The surge is driven by a toxic combination of factors: post-pandemic debt from Bounce Back Loans (of which £47 billion was disbursed, with an estimated £4.9 billion in fraud),<Cite nums={5} /> rising interest rates that doubled borrowing costs between 2022 and 2024, energy costs that remain 40–50% above pre-crisis levels for business tariffs, and persistent labour shortages in hospitality, construction, and logistics.</p>
+            <p>The five-year survival rate for new businesses has fallen from 44% for firms born in 2013 to approximately 38% for those born in 2019.<Cite nums={2} /> ONS business demography data shows that while business births recovered from the pandemic, deaths have outpaced births in seven of the last ten quarters. The retail sector has been hardest hit: over 17,000 retail stores closed in 2023, and the British Retail Consortium reports a net loss of 6,000 stores per year since 2018.<Cite nums={4} /> Late payment remains a structural problem: the Federation of Small Businesses estimates that £23 billion is owed to SMEs in overdue invoices at any given time, with the average small firm waiting 52 days for payment despite standard 30-day terms.<Cite nums={3} /> The Prompt Payment Code is voluntary and has no enforcement mechanism; large companies that breach its terms face no penalties beyond potential removal from the code's signatory list.</p>
             </div>
         </section>
 
@@ -177,6 +187,10 @@ export default function SmallBusinessPage() {
             source="Source: The Insolvency Service — Company Insolvency Statistics Q4 2024; ONS — Business Demography 2024; FSB — Late Payment Report 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

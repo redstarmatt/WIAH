@@ -8,6 +8,8 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // -- Types ------------------------------------------------------------------
 
@@ -25,6 +27,12 @@ interface RefugeeMentalHealthSupportData {
 function yearToDate(y: number): Date {
   return new Date(y, 0, 1)
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Refugee Council', dataset: 'Mental health and wellbeing research', url: 'https://www.refugeecouncil.org.uk/our-work/research/mental-health/', date: '2024' },
+  { num: 2, name: 'NHS Digital', dataset: 'Improving Access to Psychological Therapies (IAPT) Dataset', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/psychological-therapies-report-on-the-use-of-iapt-services', date: '2024' },
+  { num: 3, name: 'British Red Cross', dataset: 'Access to services for people seeking asylum', url: 'https://www.redcross.org.uk/about-us/what-we-do/uk-services/', date: '2024' },
+];
 
 // -- Page -------------------------------------------------------------------
 
@@ -75,8 +83,8 @@ export default function RefugeeMentalHealthSupportPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Approximately 65–70% of refugees and asylum seekers arriving in England have experienced one or more traumatic events including war, torture, sexual violence, or dangerous migration journeys; PTSD, depression, and anxiety are significantly more prevalent in this population than in the general public. Yet only around 15% of those with clinical need access specialist mental health support — down from 18% in 2016 — while the average wait for NHS Talking Therapies (formerly IAPT) has grown from 10 weeks in 2016 to 18 weeks in 2024. Multiple barriers compound: language and communication, GP gatekeeping, cultural differences in how distress is conceptualised, and the specific obstacles created by insecure immigration status. NHS Talking Therapies was designed for mild-to-moderate conditions in the general population; complex PTSD of the severity common in refugee populations requires trauma-focused therapies with specific practitioner training not uniformly available in standard NHS pathways.</p>
-            <p>Specialist refugee mental health services — Freedom from Torture, the Helen Bamber Foundation — offer highly skilled trauma therapy, but their capacity is a small fraction of the need. Untreated mental health conditions can impair an individual's ability to give coherent, consistent testimony — the testimony on which Home Office asylum decisions are based — meaning people with strong cases may be refused without medico-legal reports contextualising trauma's effect on memory and narration. The stresses of the asylum process itself — uncertainty about status, poor hotel accommodation, restricted work rights, potential destitution — compound pre-existing mental health difficulties throughout what are often years-long waits.</p>
+            <p>Approximately 65–70% of refugees and asylum seekers arriving in England have experienced one or more traumatic events including war, torture, sexual violence, or dangerous migration journeys; PTSD, depression, and anxiety are significantly more prevalent in this population than in the general public.<Cite nums={1} /> Yet only around 15% of those with clinical need access specialist mental health support — down from 18% in 2016 — while the average wait for NHS Talking Therapies (formerly IAPT) has grown from 10 weeks in 2016 to 18 weeks in 2024.<Cite nums={2} /> Multiple barriers compound: language and communication, GP gatekeeping, cultural differences in how distress is conceptualised, and the specific obstacles created by insecure immigration status.<Cite nums={3} /> NHS Talking Therapies was designed for mild-to-moderate conditions in the general population; complex PTSD of the severity common in refugee populations requires trauma-focused therapies with specific practitioner training not uniformly available in standard NHS pathways.<Cite nums={2} /></p>
+            <p>Specialist refugee mental health services — Freedom from Torture, the Helen Bamber Foundation — offer highly skilled trauma therapy, but their capacity is a small fraction of the need.<Cite nums={1} /> Untreated mental health conditions can impair an individual's ability to give coherent, consistent testimony — the testimony on which Home Office asylum decisions are based — meaning people with strong cases may be refused without medico-legal reports contextualising trauma's effect on memory and narration.<Cite nums={3} /> The stresses of the asylum process itself — uncertainty about status, poor hotel accommodation, restricted work rights, potential destitution — compound pre-existing mental health difficulties throughout what are often years-long waits.<Cite nums={[1, 3]} /></p>
           </div>
         </section>
 
@@ -136,6 +144,10 @@ export default function RefugeeMentalHealthSupportPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

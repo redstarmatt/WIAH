@@ -9,6 +9,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -61,6 +63,13 @@ function yearToDate(y: number): Date {
 function sparkFrom(arr: number[], n = 10) {
   return arr.slice(-n);
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Crime in England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice', date: '2024' },
+  { num: 2, name: 'CPS', dataset: 'Violence Against Women and Girls Report', url: 'https://www.cps.gov.uk/publication/violence-against-women-and-girls', date: '2023/24' },
+  { num: 3, name: 'Home Office', dataset: 'Crime Outcomes in England and Wales', url: 'https://www.gov.uk/government/statistics/crime-outcomes-in-england-and-wales', date: '2023/24' },
+  { num: 4, name: 'Home Office', dataset: 'Operation Soteria Evaluation', date: '2024' },
+];
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -155,9 +164,9 @@ export default function RapeReportingRatePage() {
         {/* ── Editorial context ────────────────────────────────────────────── */}
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The scale of the gap between reporting and justice in rape cases is difficult to overstate. In 2023, 70,633 rapes were reported to police in England and Wales — more than double the figure from just eight years earlier. Some of that increase reflects genuine rises in offending, but the dominant driver is improved willingness to report, particularly following the #MeToo movement, high-profile prosecutions, and sustained campaigning by survivors. The Crime Survey for England and Wales suggests the underlying prevalence of sexual violence has not risen at the same rate as police-recorded figures. What has changed is that more victims are coming forward. The system they encounter when they do is not equipped to meet them.</p>
-            <p>The charge rate — the proportion of recorded rapes that result in a suspect being charged — collapsed from 7.5% in 2015 to just 1.4% in 2019, a period now widely recognised as a crisis. Multiple inquiries identified the causes: police forces adopted an overly cautious approach to evidence-gathering after several high-profile disclosure failures, subjecting complainants to invasive digital device examinations and exhaustive credibility assessments. CPS prosecutors, under pressure from internal conviction rate targets, became reluctant to charge cases they considered difficult to win. The result was that cases were dropped at every stage — not because evidence was absent, but because the system selected for certainty rather than justice. Victims, subjected to investigations lasting over a year on average, withdrew in growing numbers. By 2023, 57% of reported rapes were closed because the victim did not support further action.</p>
-            <p>The government published its End-to-End Rape Review in 2021, and there has been measurable — if fragile — improvement since. The charge rate recovered from its 2019 nadir of 1.4% to 4.0% in 2023, and the conviction rate among those cases that do reach court rose to 68.2%, the highest on record. Operation Soteria, a research-led programme that refocuses investigations on suspect behaviour rather than victim credibility, has been adopted by every police force in England and Wales. Early results are promising: participating forces showed faster case progression and higher charge rates. But the structural deficit remains enormous. Even at 4%, fewer than 3,000 of the 70,633 reported rapes resulted in a charge. Average investigation times remain above 500 days. And independent estimates suggest that only around one in six rapes is reported to police at all — meaning the true charge rate per offence committed is closer to 0.7%.</p>
+            <p>The scale of the gap between reporting and justice in rape cases is difficult to overstate. In 2023, 70,633 rapes were reported to police in England and Wales — more than double the figure from just eight years earlier.<Cite nums={1} /> Some of that increase reflects genuine rises in offending, but the dominant driver is improved willingness to report, particularly following the #MeToo movement, high-profile prosecutions, and sustained campaigning by survivors. The Crime Survey for England and Wales suggests the underlying prevalence of sexual violence has not risen at the same rate as police-recorded figures.<Cite nums={1} /> What has changed is that more victims are coming forward. The system they encounter when they do is not equipped to meet them.</p>
+            <p>The charge rate — the proportion of recorded rapes that result in a suspect being charged — collapsed from 7.5% in 2015 to just 1.4% in 2019, a period now widely recognised as a crisis.<Cite nums={2} /> Multiple inquiries identified the causes: police forces adopted an overly cautious approach to evidence-gathering after several high-profile disclosure failures, subjecting complainants to invasive digital device examinations and exhaustive credibility assessments. CPS prosecutors, under pressure from internal conviction rate targets, became reluctant to charge cases they considered difficult to win.<Cite nums={2} /> The result was that cases were dropped at every stage — not because evidence was absent, but because the system selected for certainty rather than justice. Victims, subjected to investigations lasting over a year on average, withdrew in growing numbers. By 2023, 57% of reported rapes were closed because the victim did not support further action.<Cite nums={3} /></p>
+            <p>The government published its End-to-End Rape Review in 2021, and there has been measurable — if fragile — improvement since. The charge rate recovered from its 2019 nadir of 1.4% to 4.0% in 2023, and the conviction rate among those cases that do reach court rose to 68.2%, the highest on record.<Cite nums={2} /> Operation Soteria, a research-led programme that refocuses investigations on suspect behaviour rather than victim credibility, has been adopted by every police force in England and Wales.<Cite nums={4} /> Early results are promising: participating forces showed faster case progression and higher charge rates. But the structural deficit remains enormous. Even at 4%, fewer than 3,000 of the 70,633 reported rapes resulted in a charge.<Cite nums={[1, 2]} /> Average investigation times remain above 500 days. And independent estimates suggest that only around one in six rapes is reported to police at all — meaning the true charge rate per offence committed is closer to 0.7%.<Cite nums={1} /></p>
           </div>
         </section>
 
@@ -324,6 +333,10 @@ export default function RapeReportingRatePage() {
             source="Source: CPS — VAWG Report 2023/24. Home Office — Operation Soteria evaluation, 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* ── Sources & Methodology ────────────────────────────────────────── */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

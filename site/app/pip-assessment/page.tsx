@@ -8,7 +8,16 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DWP', dataset: 'Personal Independence Payment Statistics', url: 'https://www.gov.uk/government/collections/personal-independence-payment-statistics', date: '2025' },
+  { num: 2, name: 'HMCTS', dataset: 'Tribunal Statistics Quarterly', url: 'https://www.gov.uk/government/collections/tribunals-statistics', date: '2025' },
+  { num: 3, name: 'National Audit Office', dataset: 'PIP and ESA Assessments', url: 'https://www.nao.org.uk', date: '2024' },
+  { num: 4, name: 'Work and Pensions Select Committee', dataset: 'PIP Assessment Process Report', url: 'https://committees.parliament.uk/committee/164/work-and-pensions-committee/', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -169,7 +178,7 @@ export default function PipAssessmentPage() {
               Personal Independence Payment is the main disability benefit in England and Wales,
               replacing Disability Living Allowance from 2013. It is meant to help with the extra
               costs of living with a long-term health condition or disability. The caseload has more
-              than doubled in a decade, from 1.6 million in 2015 to 3.7 million in 2025. This growth
+              than doubled in a decade, from 1.6 million in 2015 to 3.7 million in 2025.<Cite nums={1} /> This growth
               reflects both the ongoing reassessment of legacy DLA claimants and a sharp rise in new
               claims, particularly for mental health conditions among working-age adults.
             </p>
@@ -177,20 +186,20 @@ export default function PipAssessmentPage() {
               The assessment process itself has become a flashpoint. Claimants are assessed by
               private contractors — currently Capita and Atos — using a points-based functional
               assessment. Of those who are initially refused and pursue an appeal to the First-tier
-              Tribunal, 73% have the decision overturned in their favour. This overturn rate has
+              Tribunal, 73% have the decision overturned in their favour.<Cite nums={2} /> This overturn rate has
               risen every year since PIP was introduced. It suggests not that tribunals are too
               generous, but that initial assessments systematically underweight evidence — a finding
               echoed by the National Audit Office, the Work and Pensions Select Committee, and
-              disability charities. The human cost is substantial: claimants report deteriorating
+              disability charities.<Cite nums={[3, 4]} /> The human cost is substantial: claimants report deteriorating
               mental health during the process, and some withdraw valid claims rather than face
               reassessment.
             </p>
             <p>
               Average waiting times have nearly tripled, from 8 weeks in 2015 to 21 weeks in 2025,
-              with some regions exceeding 26 weeks. The backlog is driven by rising claim volumes
+              with some regions exceeding 26 weeks.<Cite nums={1} /> The backlog is driven by rising claim volumes
               outstripping assessment capacity. In 2025, the government introduced automatic award
               renewals for certain severe conditions — a welcome change, but one that affects only a
-              small fraction of the caseload. For most claimants, the process remains slow, opaque,
+              small fraction of the caseload.<Cite nums={1} /> For most claimants, the process remains slow, opaque,
               and adversarial.
             </p>
           </div>
@@ -360,6 +369,10 @@ export default function PipAssessmentPage() {
             source="Source: DWP — PIP statistics quarterly, 2025. HMCTS — Tribunal statistics Q4 2025. NAO — PIP and ESA assessments, 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources & Methodology */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

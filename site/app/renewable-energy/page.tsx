@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DESNZ', dataset: 'Energy Trends Section 6: Renewables', url: 'https://www.gov.uk/government/statistics/energy-trends-section-6-renewables', date: '2024' },
+  { num: 2, name: 'DESNZ', dataset: 'Energy Consumption in the UK', url: 'https://www.gov.uk/government/statistics/energy-consumption-in-the-uk', date: '2024' },
+  { num: 3, name: 'Climate Change Committee', dataset: 'Progress in reducing emissions — 2024 Report', url: 'https://www.theccc.org.uk/publication/2024-progress-report/', date: '2024', note: 'Heat pump installation rates vs 600,000/year target' },
+  { num: 4, name: 'Crown Estate', dataset: 'UK Offshore Wind Report 2024', url: 'https://www.thecrownestate.co.uk/', date: '2024' },
+];
 
 export default function RenewableEnergyPage() {
   // Renewable share of electricity generation 2010–2024 (%)
@@ -81,9 +90,9 @@ export default function RenewableEnergyPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK's electricity system has been transformed in fifteen years. Renewables generated just 7% of electricity in 2010; by 2023 that had risen to 42%, and exceeded 45% in 2024. Offshore wind has been the engine of that change — the UK operates the world's largest offshore wind fleet, with 15.4GW installed by 2024. The last coal-fired power station closed in September 2024, making the UK the first G7 country to phase out coal entirely. On some days in 2023 and 2024, renewables supplied over 80% of electricity demand.</p>
-            <p>But electricity is only part of the energy picture. When you include heat (mostly gas boilers) and transport (mostly petrol and diesel), total energy from renewable sources is only around 13–14%. Decarbonising these sectors — swapping gas boilers for heat pumps and petrol cars for EVs — is the harder and more expensive phase. Heat pump installations run at around 50,000–60,000 a year, compared to the government's own target of 600,000 by 2028.</p>
-            <p>The moratorium on onshore wind in England between 2015 and 2022 — a political constraint with no engineering justification — cost roughly seven years of the cheapest form of new generation. Its lifting has opened new pipeline, but planning and grid connection delays mean benefits will take years to materialise.</p>
+            <p>The UK's electricity system has been transformed in fifteen years. Renewables generated just 7% of electricity in 2010; by 2023 that had risen to 42%, and exceeded 45% in 2024.<Cite nums={1} /> Offshore wind has been the engine of that change — the UK operates the world's largest offshore wind fleet, with 15.4GW installed by 2024.<Cite nums={4} /> The last coal-fired power station closed in September 2024, making the UK the first G7 country to phase out coal entirely. On some days in 2023 and 2024, renewables supplied over 80% of electricity demand.<Cite nums={1} /></p>
+            <p>But electricity is only part of the energy picture. When you include heat (mostly gas boilers) and transport (mostly petrol and diesel), total energy from renewable sources is only around 13–14%.<Cite nums={2} /> Decarbonising these sectors — swapping gas boilers for heat pumps and petrol cars for EVs — is the harder and more expensive phase. Heat pump installations run at around 50,000–60,000 a year, compared to the government's own target of 600,000 by 2028.<Cite nums={3} /></p>
+            <p>The moratorium on onshore wind in England between 2015 and 2022 — a political constraint with no engineering justification — cost roughly seven years of the cheapest form of new generation.<Cite nums={1} /> Its lifting has opened new pipeline, but planning and grid connection delays mean benefits will take years to materialise.</p>
           </div>
         </section>
 
@@ -168,6 +177,10 @@ export default function RenewableEnergyPage() {
             source="Source: DESNZ — Energy Trends 2024; Crown Estate — UK Offshore Wind Report 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

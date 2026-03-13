@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Annual Survey of Hours and Earnings (ASHE)', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/annualsurveyofhoursandearnings', date: '2024', note: 'Public sector pay 3.2% below private sector in real terms by 2022; narrowed to -0.8% by 2024' },
+  { num: 2, name: 'IFS / DfE', dataset: 'School Workforce Census', url: 'https://www.gov.uk/government/collections/statistics-school-workforce', date: '2024', note: 'Teachers starting salaries fell approximately 12% in real terms between 2010 and 2022' },
+  { num: 3, name: 'ONS', dataset: 'Labour Disputes Statistics', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/workplacedisputesandworkingconditions/datasets/labourdisputesbysectorandcause', date: '2024', note: 'Strike days lost in 2022–23 reached approximately 4.2 million — highest since 1980s' },
+];
 
 interface PublicSectorPayGapData {
   topic: string
@@ -58,7 +66,7 @@ export default function PublicSectorPayGapPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>From 2010, a combination of pay freezes and caps limiting rises to 1% (2012–2017) then 2%, plus stronger private sector growth, eroded public sector wages relative to private equivalents. By 2022, ONS ASHE data showed public sector pay stood 3.2% below equivalent private sector pay in real terms — the largest gap since comparable data begins. Teachers' starting salaries fell approximately 12% in real terms between 2010 and 2022; NHS clinical staff faced similar erosion. Strike days lost in 2022–23 reached approximately 4.2 million — the highest level since the 1980s — involving nurses, paramedics, teachers, junior doctors, and civil servants. The 2023 pay review body settlements, accepted in full for the first time in years at an estimated cost of £6 billion, partially closed the gap; by 2024 the public–private differential had narrowed to around &minus;0.8%.</p>
+            <p>From 2010, a combination of pay freezes and caps limiting rises to 1% (2012–2017) then 2%, plus stronger private sector growth, eroded public sector wages relative to private equivalents. By 2022, ONS ASHE data showed public sector pay stood 3.2% below equivalent private sector pay in real terms — the largest gap since comparable data begins.<Cite nums={1} /> Teachers' starting salaries fell approximately 12% in real terms between 2010 and 2022; NHS clinical staff faced similar erosion.<Cite nums={2} /> Strike days lost in 2022–23 reached approximately 4.2 million — the highest level since the 1980s — involving nurses, paramedics, teachers, junior doctors, and civil servants.<Cite nums={3} /> The 2023 pay review body settlements, accepted in full for the first time in years at an estimated cost of £6 billion, partially closed the gap; by 2024 the public–private differential had narrowed to around &minus;0.8%.</p>
             <p>The gap is widest at junior and mid-career levels — precisely where recruitment competition with the private sector is most intense. NHS workforce plans requiring significant expansion in staffing cannot be delivered if pay remains materially below private equivalents for the same qualifications. The public-private pay gap is not uniform across the nations: Scotland and Wales have partially diverged through devolved pay decisions, while London weighting means the gap is narrowest in the capital and widest in parts of the North and Midlands where private sector wages are lower.</p>
           </div>
         </section>
@@ -119,6 +127,10 @@ export default function PublicSectorPayGapPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DESNZ', dataset: 'Smart Meters Statistical Release', url: 'https://www.gov.uk/government/collections/smart-meters-statistics', date: '2024' },
+  { num: 2, name: 'DESNZ', dataset: 'Smart Meter Impact Assessment', url: 'https://www.gov.uk/government/publications/smart-metering-implementation-programme-cost-benefit-analysis', date: '2024' },
+  { num: 3, name: 'DCC', dataset: 'Data Communications Company — SMETS1 enrolment progress', date: '2024' },
+];
 
 interface SmartMeterRolloutData {
   topic: string
@@ -70,8 +78,8 @@ export default function SmartMeterRolloutPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK smart meter rollout — the largest energy infrastructure programme since the National Grid — began in 2012 with a target of universal installation by 2020, revised first to 2024, then 2025. By March 2024, approximately 35.7 million smart meters had been installed, covering 57% of eligible meters. The first-generation SMETS1 meters, installed between 2014 and 2018, used proprietary communications tied to the original supplier: when a customer switched, the meter lost its smart capability and reverted to a standard &ldquo;dumb&rdquo; meter. An estimated 8.9 million SMETS1 meters remain in dumb mode as of 2024 — 25% of all installed devices — despite an ongoing remote enrolment programme into the national DCC network. DESNZ targets 80% installation coverage by 2025 and 90% by 2030, but achieving this requires resolving the SMETS1 backlog, overcoming consumer opt-outs (5–10% of contacted households), and reaching hard-to-serve properties in rural and multiple-occupancy buildings.</p>
-            <p>The economic case for smart meters rests on system-level benefits that only materialise at scale. A working smart meter with an in-home display saves the average household an estimated £87 per year through behaviour change and accurate billing. But the larger prize is demand-side flexibility: shifting electricity consumption to periods of high renewable generation and low grid stress, which becomes critical as intermittent renewables approach 50–70% of the generation mix. Every meter stuck in dumb mode is infrastructure that cannot participate in that transition, undermining the £13 billion programme's purpose and delaying the grid balancing the net zero transition depends on.</p>
+            <p>The UK smart meter rollout — the largest energy infrastructure programme since the National Grid — began in 2012 with a target of universal installation by 2020, revised first to 2024, then 2025. By March 2024, approximately 35.7 million smart meters had been installed, covering 57% of eligible meters.<Cite nums={1} /> The first-generation SMETS1 meters, installed between 2014 and 2018, used proprietary communications tied to the original supplier: when a customer switched, the meter lost its smart capability and reverted to a standard &ldquo;dumb&rdquo; meter. An estimated 8.9 million SMETS1 meters remain in dumb mode as of 2024 — 25% of all installed devices — despite an ongoing remote enrolment programme into the national DCC network.<Cite nums={3} /> DESNZ targets 80% installation coverage by 2025 and 90% by 2030, but achieving this requires resolving the SMETS1 backlog, overcoming consumer opt-outs (5–10% of contacted households), and reaching hard-to-serve properties in rural and multiple-occupancy buildings.<Cite nums={1} /></p>
+            <p>The economic case for smart meters rests on system-level benefits that only materialise at scale. A working smart meter with an in-home display saves the average household an estimated £87 per year through behaviour change and accurate billing.<Cite nums={2} /> But the larger prize is demand-side flexibility: shifting electricity consumption to periods of high renewable generation and low grid stress, which becomes critical as intermittent renewables approach 50–70% of the generation mix. Every meter stuck in dumb mode is infrastructure that cannot participate in that transition, undermining the £13 billion programme's purpose and delaying the grid balancing the net zero transition depends on.<Cite nums={[1, 2]} /></p>
           </div>
         </section>
 
@@ -131,6 +139,10 @@ export default function SmartMeterRolloutPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

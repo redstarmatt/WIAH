@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Which?', dataset: 'School Uniform Survey', url: 'https://www.which.co.uk/news/article/school-uniform-costs/', date: '2024', note: 'Average cost £435 per child in 2024; 38% increase since 2015; outpacing general inflation' },
+  { num: 2, name: 'The Children\'s Society', dataset: 'School Uniform Report', url: 'https://www.childrenssociety.org.uk/information/professionals/resources/school-uniform-report', date: '2023', note: '£435 represents 2.8% of lowest quintile income; only 30% of schools offer grants or exchanges' },
+  { num: 3, name: 'Department for Education', dataset: 'School Uniforms Statutory Guidance', url: 'https://www.gov.uk/government/publications/school-uniforms', date: '2021', note: 'School Uniforms Act 2021 required schools to have regard to cost; compliance inconsistent' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -64,8 +72,8 @@ export default function SchoolUniformCostsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The average cost of a school uniform in England reached £435 per child in 2024 — a 38% increase since 2015, outpacing general inflation. The rise reflects the mandatory use of branded school-specific items that cannot be bought from supermarkets, the growing number of academies setting their own requirements without the constraints applied to maintained schools, and post-pandemic clothing cost inflation. The School Uniforms Act 2021 required schools to have regard to cost and consult parents before introducing new items, but compliance has been inconsistent and enforcement mechanisms are weak. Only around 30% of schools offer uniform grants, second-hand sales, or exchange schemes — and those that do typically operate them on a discretionary basis with limited advertising.</p>
-            <p>For families in the lowest income quintile, £435 represents approximately 2.8% of annual income — the equivalent of two weeks&rsquo; food spending — and the cost falls in a concentrated burst at the start of each academic year alongside stationery, PE kit, and bags. Families with multiple school-age children can face a total bill exceeding £1,000. Research consistently finds that children who cannot afford the correct uniform experience bullying, social exclusion, and reduced attendance; teachers report children being sent home for wearing incorrect items their families cannot replace. Uniform costs are not a minor issue — they are one of multiple financial pressures that determine whether children arrive at school ready to learn.</p>
+            <p>The average cost of a school uniform in England reached £435 per child in 2024 — a 38% increase since 2015, outpacing general inflation.<Cite nums={1} /> The rise reflects the mandatory use of branded school-specific items that cannot be bought from supermarkets, the growing number of academies setting their own requirements without the constraints applied to maintained schools, and post-pandemic clothing cost inflation. The School Uniforms Act 2021 required schools to have regard to cost and consult parents before introducing new items, but compliance has been inconsistent and enforcement mechanisms are weak.<Cite nums={3} /> Only around 30% of schools offer uniform grants, second-hand sales, or exchange schemes — and those that do typically operate them on a discretionary basis with limited advertising.<Cite nums={2} /></p>
+            <p>For families in the lowest income quintile, £435 represents approximately 2.8% of annual income — the equivalent of two weeks&rsquo; food spending — and the cost falls in a concentrated burst at the start of each academic year alongside stationery, PE kit, and bags.<Cite nums={2} /> Families with multiple school-age children can face a total bill exceeding £1,000. Research consistently finds that children who cannot afford the correct uniform experience bullying, social exclusion, and reduced attendance; teachers report children being sent home for wearing incorrect items their families cannot replace. Uniform costs are not a minor issue — they are one of multiple financial pressures that determine whether children arrive at school ready to learn.</p>
           </div>
         </section>
 
@@ -125,6 +133,10 @@ export default function SchoolUniformCostsPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

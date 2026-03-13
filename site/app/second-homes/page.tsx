@@ -9,6 +9,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import PositiveCallout from '@/components/PositiveCallout';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DLUHC', dataset: 'Council Tax Statistics', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-council-tax', date: '2023', note: '272,000 second homes in England; up from 178,000 in 2010 (+53%)' },
+  { num: 2, name: 'AirDNA', dataset: 'UK Short-Term Rental Market Report', date: '2023', note: '230,000 short-term let properties; market barely existed before 2015' },
+  { num: 3, name: 'ONS / Land Registry', dataset: 'House Price Index by Local Authority', url: 'https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/housepriceindex/latestrelease', date: '2023', note: 'St Ives median house prices 13x median local earnings; Lake District up to 35% of properties non-primary residence' },
+  { num: 4, name: 'DLUHC / Welsh Government', dataset: 'Levelling-up and Regeneration Act — Council Tax Premiums & STL Licensing', date: '2024', note: '100-300% council tax premiums on second homes; Wales STL licensing showing properties returning to long-term rental' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -101,10 +110,10 @@ export default function SecondHomesPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The second home and short-term let market in England has expanded dramatically since 2010, shaped by a confluence of low interest rates, rising urban incomes, and the growth of platform rental businesses. DLUHC council tax data records 272,000 second homes in England in 2023 — properties declared to local authorities as a secondary residence — up from approximately 178,000 in 2010, a 53% increase. Alongside registered second homes, an estimated 230,000 properties are now let on a short-term basis through platforms including Airbnb, Vrbo, and regional alternatives — a market that barely existed before 2015. The combined effect is that in many coastal and rural areas, a substantial share of the housing stock is functionally unavailable to households seeking permanent, affordable homes.
+              The second home and short-term let market in England has expanded dramatically since 2010, shaped by a confluence of low interest rates, rising urban incomes, and the growth of platform rental businesses. DLUHC council tax data records 272,000 second homes in England in 2023 — properties declared to local authorities as a secondary residence — up from approximately 178,000 in 2010, a 53% increase.<Cite nums={1} /> Alongside registered second homes, an estimated 230,000 properties are now let on a short-term basis through platforms including Airbnb, Vrbo, and regional alternatives — a market that barely existed before 2015.<Cite nums={2} /> The combined effect is that in many coastal and rural areas, a substantial share of the housing stock is functionally unavailable to households seeking permanent, affordable homes.
             </p>
             <p>
-              The geographic concentration is stark. In St Ives in Cornwall, a 2016 local referendum resulted in a planning restriction preventing newly built homes from being sold as second homes or holiday lets — one of the first in the country. Despite this, existing second home ownership continues to push median house prices to more than 13 times median local earnings. In the Lake District, Ofcom data suggests that up to 35% of properties in some parishes are registered neither as a primary residence nor as a commercial business — they are simply empty for most of the year. The Norfolk Broads, the Yorkshire Dales, and the Pembrokeshire coast show similar patterns. The consequence is a hollowing out of year-round community life: schools lose pupils, GP practices lose patients to register, and community organisations lose members as the permanently resident population declines.
+              The geographic concentration is stark. In St Ives in Cornwall, a 2016 local referendum resulted in a planning restriction preventing newly built homes from being sold as second homes or holiday lets — one of the first in the country. Despite this, existing second home ownership continues to push median house prices to more than 13 times median local earnings.<Cite nums={3} /> In the Lake District, Ofcom data suggests that up to 35% of properties in some parishes are registered neither as a primary residence nor as a commercial business — they are simply empty for most of the year. The Norfolk Broads, the Yorkshire Dales, and the Pembrokeshire coast show similar patterns. The consequence is a hollowing out of year-round community life: schools lose pupils, GP practices lose patients to register, and community organisations lose members as the permanently resident population declines.
             </p>
             </div>
         </section>
@@ -201,6 +210,10 @@ export default function SecondHomesPage() {
             )}
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="border-t border-wiah-border pt-8 mt-12">
           <h2 className="text-lg font-bold text-wiah-black mb-4">Sources &amp; methodology</h2>

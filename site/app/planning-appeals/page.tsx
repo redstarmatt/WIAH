@@ -8,7 +8,16 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Planning Inspectorate', dataset: 'Annual Report and Accounts — Appeal Decisions', url: 'https://www.gov.uk/government/organisations/planning-inspectorate', date: '2024' },
+  { num: 2, name: 'DLUHC', dataset: 'Planning Applications in England', url: 'https://www.gov.uk/government/collections/planning-applications-statistics', date: '2024' },
+  { num: 3, name: 'CMA', dataset: 'Housebuilding Market Study', url: 'https://www.gov.uk/cma-cases/housebuilding-market-study', date: '2024' },
+  { num: 4, name: 'Planning Advisory Service', dataset: 'LPA Staffing Survey', url: 'https://www.local.gov.uk/pas', date: '2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -138,10 +147,10 @@ export default function PlanningAppealsPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              England's planning system operates on a presumption in favour of sustainable development — yet in practice, the planning appeal process has become a second decision-making tier dominated by developer resources and planning inspector discretion. When a local planning authority refuses a housing application, developers can appeal to the Planning Inspectorate. In 2024, 43% of housing appeals succeeded, meaning planning inspectors overruled locally elected councils in nearly half of all contested housing decisions. The financial stakes are substantial: industry estimates put the annual value of permissions won on appeal at over £1 billion.
+              England's planning system operates on a presumption in favour of sustainable development — yet in practice, the planning appeal process has become a second decision-making tier dominated by developer resources and planning inspector discretion. When a local planning authority refuses a housing application, developers can appeal to the Planning Inspectorate. In 2024, 43% of housing appeals succeeded, meaning planning inspectors overruled locally elected councils in nearly half of all contested housing decisions.<Cite nums={1} /> The financial stakes are substantial: industry estimates put the annual value of permissions won on appeal at over £1 billion.
             </p>
             <p>
-              The planning pipeline paradox compounds the picture. Despite 260,000 homes sitting with extant planning permission but not yet started, the homebuilding industry argues permissions are constrained by viability, infrastructure costs, and market absorption rates. Critics, including the Competition and Markets Authority in its 2024 report, point to land banking — the practice of holding permissions until conditions improve — as a structural feature of the speculative land model that underpins major housebuilders. Average planning decision times have risen to 11.8 weeks for major applications, a direct consequence of local authority planning department cuts that removed nearly a third of planning officers between 2010 and 2023.
+              The planning pipeline paradox compounds the picture. Despite 260,000 homes sitting with extant planning permission but not yet started, the homebuilding industry argues permissions are constrained by viability, infrastructure costs, and market absorption rates.<Cite nums={2} /> Critics, including the Competition and Markets Authority in its 2024 report, point to land banking — the practice of holding permissions until conditions improve — as a structural feature of the speculative land model that underpins major housebuilders.<Cite nums={3} /> Average planning decision times have risen to 11.8 weeks for major applications, a direct consequence of local authority planning department cuts that removed nearly a third of planning officers between 2010 and 2023.<Cite nums={4} />
             </p>
           </div>
         </section>

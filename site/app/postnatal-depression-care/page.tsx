@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England / NICE', dataset: 'Perinatal Mental Health Programme — Access and Outcomes Data', url: 'https://www.england.nhs.uk/mental-health/perinatal/', date: 'Jan 2026', note: '1 in 5 new mothers affected (~140,000/yr in England); detection rate risen from 38% to 51%' },
+  { num: 2, name: 'NHS England', dataset: 'Perinatal Mental Health Waiting Times — ICB-level Returns', url: 'https://www.england.nhs.uk/mental-health/perinatal/', date: 'Jan 2026', note: 'National average wait 7.8 weeks; worst region exceeds 16 weeks; NHS standard is 4 weeks' },
+  { num: 3, name: 'Centre for Mental Health / LSBU', dataset: 'Economic Cost of Perinatal Mental Illness', url: 'https://www.lsbu.ac.uk/research/centres/cmhp/perinatal-mental-health-economic-cost', date: 'Jan 2026', note: 'Long-run cost estimated at £8.1 billion per year' },
+];
 
 export default function PostnatalDepressionCarePage() {
   // PND detection and treatment rates 2015-2024 (%)
@@ -173,12 +181,16 @@ export default function PostnatalDepressionCarePage() {
           <section id="sec-context" className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data in context</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Postnatal depression is one of the most common complications of childbirth: approximately one in five new mothers — around 140,000 women each year in England — will experience a perinatal mental health condition, ranging from postnatal depression and anxiety to, in rarer cases, postpartum psychosis. Untreated perinatal mental health conditions carry serious consequences not just for mothers but for their children: secure attachment in infancy, early cognitive development, and long-term emotional regulation are all affected when maternal mental health goes unsupported. The economic case for treatment is overwhelming: the long-run cost of perinatal mental illness to UK society has been estimated at £8.1 billion per year, largely in impacts on children.</p>
-              <p>Despite a clear evidence base and a strong policy commitment, the gap between prevalence and detection remains wide. Half of new mothers with postnatal depression go unidentified by health services. The barriers are multiple: a cultural reluctance among new mothers to disclose distress, fear of stigma or that children will be removed, inconsistent application of validated screening tools (such as the Edinburgh Postnatal Depression Scale) in health visitor contacts, and time pressures on overstretched community health teams. Detection rates have improved from 38% to 51% over a decade, but a system that misses half the cases it is designed to find has significant room to improve.</p>
-              <p>For those who are detected and referred, waiting times present the next barrier. The NHS access standard for perinatal mental health services is four weeks from referral to first appointment. The national average is now 7.8 weeks and in the worst-performing areas it exceeds 16 weeks — four times the standard. This is not an abstract statistic: the perinatal period is one of rapid change for both mother and child, and a delay of three or four months before treatment begins can determine the trajectory of the entire early parenting relationship. Regional variation of this magnitude reflects differences in ICB investment and commissioning priority, not clinical need.</p>
+              <p>Postnatal depression is one of the most common complications of childbirth: approximately one in five new mothers — around 140,000 women each year in England — will experience a perinatal mental health condition, ranging from postnatal depression and anxiety to, in rarer cases, postpartum psychosis.<Cite nums={1} /> Untreated perinatal mental health conditions carry serious consequences not just for mothers but for their children: secure attachment in infancy, early cognitive development, and long-term emotional regulation are all affected when maternal mental health goes unsupported. The economic case for treatment is overwhelming: the long-run cost of perinatal mental illness to UK society has been estimated at £8.1 billion per year, largely in impacts on children.<Cite nums={3} /></p>
+              <p>Despite a clear evidence base and a strong policy commitment, the gap between prevalence and detection remains wide. Half of new mothers with postnatal depression go unidentified by health services. The barriers are multiple: a cultural reluctance among new mothers to disclose distress, fear of stigma or that children will be removed, inconsistent application of validated screening tools (such as the Edinburgh Postnatal Depression Scale) in health visitor contacts, and time pressures on overstretched community health teams. Detection rates have improved from 38% to 51% over a decade, but a system that misses half the cases it is designed to find has significant room to improve.<Cite nums={1} /></p>
+              <p>For those who are detected and referred, waiting times present the next barrier. The NHS access standard for perinatal mental health services is four weeks from referral to first appointment. The national average is now 7.8 weeks and in the worst-performing areas it exceeds 16 weeks — four times the standard.<Cite nums={2} /> This is not an abstract statistic: the perinatal period is one of rapid change for both mother and child, and a delay of three or four months before treatment begins can determine the trajectory of the entire early parenting relationship. Regional variation of this magnitude reflects differences in ICB investment and commissioning priority, not clinical need.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

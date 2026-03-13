@@ -5,6 +5,14 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DfE', dataset: 'Phonics Screening Check and Key Stage 1 Assessments: England', url: 'https://www.gov.uk/government/statistics/phonics-screening-check-and-key-stage-1-assessments-england', date: 'Sep 2023' },
+  { num: 2, name: 'DfE', dataset: 'Key Stage 1 Attainment — Disadvantaged Pupils', url: 'https://explore-education-statistics.service.gov.uk/', date: 'Sep 2023' },
+];
+
 export default function PhonicsOutcomesPage() {
 
   const sparkData = [58,64,69,73,76,77,79];
@@ -107,11 +115,15 @@ export default function PhonicsOutcomesPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">Phonics First Has Transformed Early Reading in England</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>The introduction of the phonics screening check in 2012, combined with the mandating of systematic synthetic phonics as the primary method for teaching early reading, has produced measurable improvements. 79% of Year 1 pupils now meet the expected standard, up from 58% when the check was introduced. England's performance in international literacy surveys has improved accordingly.</p>
-              <p>The debate about phonics was long and sometimes acrimonious, with proponents of whole-language and mixed-methods approaches resisting the change. The evidence is now clear enough that the debate has largely resolved in favour of phonics-first. The remaining gap between disadvantaged pupils and their peers — 14 percentage points — reflects factors beyond reading methodology: vocabulary gaps from limited language exposure in early childhood, attendance, and the quality of early years provision. Phonics is necessary but not sufficient.</p>
+              <p>The introduction of the phonics screening check in 2012, combined with the mandating of systematic synthetic phonics as the primary method for teaching early reading, has produced measurable improvements. 79% of Year 1 pupils now meet the expected standard, up from 58% when the check was introduced.<Cite nums={1} /> England's performance in international literacy surveys has improved accordingly.</p>
+              <p>The debate about phonics was long and sometimes acrimonious, with proponents of whole-language and mixed-methods approaches resisting the change. The evidence is now clear enough that the debate has largely resolved in favour of phonics-first. The remaining gap between disadvantaged pupils and their peers — 14 percentage points — reflects factors beyond reading methodology: vocabulary gaps from limited language exposure in early childhood, attendance, and the quality of early years provision.<Cite nums={2} /> Phonics is necessary but not sufficient.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

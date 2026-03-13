@@ -8,6 +8,16 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ministry of Justice', dataset: 'Proven Reoffending Statistics Quarterly Bulletin', url: 'https://www.gov.uk/government/statistics/proven-reoffending-statistics-quarterly-bulletin-england-and-wales', date: '2024' },
+  { num: 2, name: 'HM Treasury / MoJ', dataset: 'Cost of Reoffending Analysis', date: '2023' },
+  { num: 3, name: 'Howard League for Penal Reform', dataset: 'Reoffending Data Analysis', url: 'https://howardleague.org/', date: '2024' },
+  { num: 4, name: 'Institute for Fiscal Studies', dataset: 'Short Custodial Sentences and Reoffending', date: '2023' },
+  { num: 5, name: 'Ministry of Justice', dataset: 'What Works to Reduce Reoffending', date: '2024' },
+];
 
 const reoffendingData = [26.4, 26.0, 25.6, 25.4, 25.6, 25.8, 26.0, 25.9, 25.7, 25.5, 25.3, 25.2, 25.1, 25.2, 25.0];
 const reoffendingAnnotations: Annotation[] = [
@@ -144,9 +154,9 @@ export default function PrisonReoffendingPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on prison reoffending</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>25% of adults released from prison reoffend within a year — a figure that has barely moved for fifteen years despite significant policy changes, including the ill-fated privatisation of probation services in 2015 under Transforming Rehabilitation and its subsequent renationalisation in 2021. Around 80,000 adults reoffend annually, generating an estimated £18 billion in annual costs to the criminal justice system, NHS, and victims.</p>
-              <p>The failure of short sentences stands out starkly in the data. For people serving sentences of under one year — who make up around 40% of all prison releases — the reoffending rate is 58%. Criminological research is fairly clear why: a short sentence is long enough to destroy a person's housing, employment, and family relationships, but not long enough to deliver meaningful rehabilitation, education, or treatment for substance misuse. The evidence base for community sentences — particularly those with supervision and intensive support — is consistently better than for short custodial sentences for non-violent offenders.</p>
-              <p>England and Wales has one of the highest incarceration rates in Western Europe — 150 per 100,000 population — yet reoffending rates are far higher than countries with similar or lower rates of imprisonment. Scotland's approach, which has moved significantly toward diversion and community disposals for low-level offending since the Christie Commission in 2011, shows that a different approach is achievable within the UK.</p>
+              <p>25% of adults released from prison reoffend within a year — a figure that has barely moved for fifteen years despite significant policy changes, including the ill-fated privatisation of probation services in 2015 under Transforming Rehabilitation and its subsequent renationalisation in 2021.<Cite nums={1} /> Around 80,000 adults reoffend annually, generating an estimated £18 billion in annual costs to the criminal justice system, NHS, and victims.<Cite nums={2} /></p>
+              <p>The failure of short sentences stands out starkly in the data. For people serving sentences of under one year — who make up around 40% of all prison releases — the reoffending rate is 58%.<Cite nums={1} /> Criminological research is fairly clear why: a short sentence is long enough to destroy a person's housing, employment, and family relationships, but not long enough to deliver meaningful rehabilitation, education, or treatment for substance misuse.<Cite nums={4} /> The evidence base for community sentences — particularly those with supervision and intensive support — is consistently better than for short custodial sentences for non-violent offenders.<Cite nums={5} /></p>
+              <p>England and Wales has one of the highest incarceration rates in Western Europe — 150 per 100,000 population — yet reoffending rates are far higher than countries with similar or lower rates of imprisonment.<Cite nums={3} /> Scotland's approach, which has moved significantly toward diversion and community disposals for low-level offending since the Christie Commission in 2011, shows that a different approach is achievable within the UK.</p>
             </div>
           </section>
         </ScrollReveal>
@@ -160,6 +170,10 @@ export default function PrisonReoffendingPage() {
             source="Source: MoJ — Proven reoffending statistics 2024; MoJ — What Works to Reduce Reoffending."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

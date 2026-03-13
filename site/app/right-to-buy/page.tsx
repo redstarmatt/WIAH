@@ -9,6 +9,16 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'MHCLG', dataset: 'Live Tables on Social Housing Sales', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-social-housing-sales', date: '2024' },
+  { num: 2, name: 'DLUHC', dataset: 'Local Authority Housing Statistics — Dwelling Stock', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-dwelling-stock-including-vacants', date: '2024' },
+  { num: 3, name: 'MHCLG', dataset: 'Right to Buy Replacement Data', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-social-housing-sales', date: '2024', note: 'Replacement ratio 0.29 — one in three replaced' },
+  { num: 4, name: 'DLUHC', dataset: 'Local Authority Housing Statistics — Waiting Lists', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-rents-lettings-and-tenancies', date: '2024' },
+  { num: 5, name: 'Inside Housing / Savills', dataset: 'Former RTB properties in PRS analysis', url: 'https://www.insidehousing.co.uk/', date: '2024', note: '40% of former RTB homes now in private rented sector' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -169,7 +179,7 @@ export default function RightToBuyPage() {
               tenants the right to purchase their home at a substantial discount, creating a
               "property-owning democracy." In its first decade, it was transformative. Over 1.5
               million homes were sold between 1980 and 1990, and home ownership in England rose from
-              55% to 67%. For millions of families, it was a genuine path to security and wealth
+              55% to 67%.<Cite nums={1} /> For millions of families, it was a genuine path to security and wealth
               accumulation that had previously been closed to them. But the policy contained a
               structural flaw that would take decades to become fully visible: there was no
               obligation to replace what was sold. The receipts were not ringfenced for new social
@@ -179,23 +189,23 @@ export default function RightToBuyPage() {
             <p>
               The numbers are stark. England had 5.48 million social homes in 1980. Today it has
               3.16 million, a net loss of 2.32 million units, even accounting for housing association
-              development and stock transfers. The 2012 reinvigoration of the scheme, which raised
+              development and stock transfers.<Cite nums={2} /> The 2012 reinvigoration of the scheme, which raised
               maximum discounts to 70% of property value (up to {"\u00A3"}87,200 in London), led to a
               brief surge in sales but did not solve the replacement problem. The government pledged
               "one-for-one replacement" but defined this on a national, not local, basis and counted
               affordable rent homes (at up to 80% of market rent) as replacements. By 2024, the
               actual replacement ratio had fallen to 0.29: for every home sold, fewer than one in
-              three was rebuilt. The gap between the rhetoric of replacement and the reality of
+              three was rebuilt.<Cite nums={3} /> The gap between the rhetoric of replacement and the reality of
               depletion has been consistent and measurable.
             </p>
             <p>
               The consequences are now visible across multiple datasets. Social housing waiting lists,
               which fell after 2012 partly due to tightened eligibility rules, have risen in every
-              year since 2018 and now stand at 1.31 million households. Temporary accommodation
+              year since 2018 and now stand at 1.31 million households.<Cite nums={4} /> Temporary accommodation
               placements have reached record levels. The average wait for a social home in London
               exceeds ten years. Meanwhile, an estimated 40% of former Right to Buy properties are
               now in the private rented sector, often let at market rents to tenants receiving housing
-              benefit, meaning the state effectively pays more for housing it once owned. The policy
+              benefit, meaning the state effectively pays more for housing it once owned.<Cite nums={5} /> The policy
               created genuine individual opportunity, but at a collective cost that is still
               compounding.
             </p>
@@ -367,6 +377,10 @@ export default function RightToBuyPage() {
             source="Source: DLUHC — Right to Buy Receipts Retention Policy, 2022. Local authority housing returns 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <RelatedTopics />
       </main>

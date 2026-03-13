@@ -8,6 +8,13 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DWP', dataset: 'Pension Credit Take-Up Estimate', url: 'https://www.gov.uk/government/statistics/pension-credit-take-up', date: '2025', note: '£2.2bn unclaimed annually by 880,000 eligible pensioners' },
+  { num: 2, name: 'DWP', dataset: 'Pension Credit Statistics', url: 'https://www.gov.uk/government/collections/pension-credit-statistics', date: '2024', note: 'Take-up rate stuck at 63% for a decade' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -194,6 +201,10 @@ export default function TopicPage() {
             source="Source: DWP — Pension Credit statistics and take-up estimate, 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

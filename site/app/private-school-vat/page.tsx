@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DfE', dataset: 'VAT on Private Schools — Impact Assessment', date: '2025' },
+  { num: 2, name: 'HM Treasury', dataset: 'VAT Education Receipts Q1 2025', date: '2025' },
+  { num: 3, name: 'Independent Schools Council', dataset: 'ISC Annual Census 2025', url: 'https://www.isc.co.uk/research/', date: '2025' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -134,10 +142,10 @@ export default function PrivateSchoolVatPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The removal of VAT exemption from private school fees in January 2025 was the most significant structural change to the independent education sector in decades. The government projected that 40,000 pupils would transfer to state schools as a consequence, generating revenue of approximately £1.5 billion per year to fund 6,500 new state school teachers. Early data suggests the actual transfer was somewhat lower — around 35,000 by May 2025 — partly because larger, more financially resilient schools absorbed much of the VAT cost internally through fee restructuring, bursary adjustments, and cost efficiency, passing through an average of 6.5% to parents rather than the full 20%.
+              The removal of VAT exemption from private school fees in January 2025 was the most significant structural change to the independent education sector in decades. The government projected that 40,000 pupils would transfer to state schools as a consequence, generating revenue of approximately £1.5 billion per year to fund 6,500 new state school teachers.<Cite nums={1} /> Early data suggests the actual transfer was somewhat lower — around 35,000 by May 2025 — partly because larger, more financially resilient schools absorbed much of the VAT cost internally through fee restructuring, bursary adjustments, and cost efficiency, passing through an average of 6.5% to parents rather than the full 20%.<Cite nums={[2, 3]} />
             </p>
             <p>
-              The distributional effects have been uneven. Smaller prep schools — many of which operated on thin margins serving middle-income families with annual household incomes of £60,000–£100,000 — have faced the sharpest squeeze. Nine schools closed or merged in the first year of VAT. London's most elite schools, with termly fees exceeding £10,000, have been least affected in relative terms: their clientele has the least price sensitivity and the schools have the largest endowment buffers. The policy has effectively been regressive within the independent sector, falling hardest on the schools serving the borderline family that could just about afford private education.
+              The distributional effects have been uneven. Smaller prep schools — many of which operated on thin margins serving middle-income families with annual household incomes of £60,000–£100,000 — have faced the sharpest squeeze. Nine schools closed or merged in the first year of VAT.<Cite nums={3} /> London's most elite schools, with termly fees exceeding £10,000, have been least affected in relative terms: their clientele has the least price sensitivity and the schools have the largest endowment buffers. The policy has effectively been regressive within the independent sector, falling hardest on the schools serving the borderline family that could just about afford private education.
             </p>
           </div>
         </section>
@@ -219,6 +227,10 @@ export default function PrivateSchoolVatPage() {
             source="Source: DfE — VAT on private schools: impact assessment 2025; HM Treasury — VAT education receipts Q1 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

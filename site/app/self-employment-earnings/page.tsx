@@ -8,6 +8,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Labour Force Survey — Self-Employment Income', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours', date: '2025', note: 'Median self-employed earnings £16,300; 45% below equivalent employed workers; gap widened since 2010' },
+  { num: 2, name: 'HMRC', dataset: 'Self Assessment Tax Returns', url: 'https://www.gov.uk/government/statistics/personal-tax-credits-finalised-award-statistics', date: '2024', note: '65% of self-employed without pension savings; excluded from auto-enrolment' },
+  { num: 3, name: 'HMRC', dataset: 'Self-Employment Income Support Scheme Final Report', date: '2022', note: '2.9 million self-employed received SEISS grants totalling £28.7bn' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -194,6 +202,10 @@ export default function TopicPage() {
             source="Source: HMRC — Self-Employment Income Support Scheme final report, 2022."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

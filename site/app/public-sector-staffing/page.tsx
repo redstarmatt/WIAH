@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Cabinet Office', dataset: 'Civil Service Statistics', url: 'https://www.gov.uk/government/statistics/civil-service-statistics', date: '2024', note: 'Civil service contracted from 492,000 in 2010 to 384,000 by 2016; recovered to 514,000 by 2024' },
+  { num: 2, name: 'DLUHC / ONS', dataset: 'Local Government Employment Statistics', date: '2024', note: 'Local government workforce fell from 2.98M in 2010 to 2.44M by 2016; at 2.62M in 2024, still 12% below pre-austerity' },
+  { num: 3, name: 'NHS Digital', dataset: 'NHS Workforce Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/nhs-workforce-statistics', date: '2024', note: 'NHS grew from 1.16M in 2015 to 1.48M in 2024; 27% increase' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -139,10 +147,10 @@ export default function PublicSectorStaffingPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The UK public sector workforce tells three distinct stories that the aggregate headline number obscures. The civil service contracted sharply from 492,000 in 2010 to 384,000 by 2016 under the coalition's austerity programme, shedding around 110,000 posts — a 22% reduction. It has since recovered to 514,000, driven largely by pandemic response machinery, post-Brexit border functions, and the growth of arm's-length bodies, but remains structurally different: younger, more London-concentrated, and with less institutional memory than the service it replaced.
+              The UK public sector workforce tells three distinct stories that the aggregate headline number obscures. The civil service contracted sharply from 492,000 in 2010 to 384,000 by 2016 under the coalition's austerity programme, shedding around 110,000 posts — a 22% reduction.<Cite nums={1} /> It has since recovered to 514,000, driven largely by pandemic response machinery, post-Brexit border functions, and the growth of arm's-length bodies, but remains structurally different: younger, more London-concentrated, and with less institutional memory than the service it replaced.
             </p>
             <p>
-              Local government bore the heaviest cuts proportionally. From 2.98 million workers in 2010, the local government workforce fell to 2.44 million by 2016 as councils absorbed an average 40% real-terms reduction in central government grant. Adult social care, libraries, planning teams, and environmental health departments all contracted. Unlike the civil service, local government has not recovered: at 2.62 million in 2024, it remains 12% below its pre-austerity level. Meanwhile the NHS grew continuously, from 1.16 million in 2015 to 1.48 million in 2024, as demand outpaced the departures that vacancy crisis headlines describe.
+              Local government bore the heaviest cuts proportionally. From 2.98 million workers in 2010, the local government workforce fell to 2.44 million by 2016 as councils absorbed an average 40% real-terms reduction in central government grant. Adult social care, libraries, planning teams, and environmental health departments all contracted. Unlike the civil service, local government has not recovered: at 2.62 million in 2024, it remains 12% below its pre-austerity level.<Cite nums={2} /> Meanwhile the NHS grew continuously, from 1.16 million in 2015 to 1.48 million in 2024, as demand outpaced the departures that vacancy crisis headlines describe.<Cite nums={3} />
             </p>
           </div>
         </section>
@@ -237,6 +245,10 @@ export default function PublicSectorStaffingPage() {
             source="Source: NHS England Long Term Workforce Plan 2023 · Cabinet Office Civil Service Statistics 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

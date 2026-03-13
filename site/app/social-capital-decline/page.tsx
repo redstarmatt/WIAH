@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Community Wellbeing Survey', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing', date: '2025' },
+  { num: 2, name: 'DCMS', dataset: 'Community Life Survey', url: 'https://www.gov.uk/government/collections/community-life-survey--2', date: '2024-25' },
+  { num: 3, name: 'Ipsos / King\'s College London', dataset: 'Trust in Government Tracker', date: '2025' },
+  { num: 4, name: 'Jo Cox Foundation', dataset: 'Loneliness Annual Report', url: 'https://www.jocoxfoundation.org/', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -178,8 +187,8 @@ export default function SocialCapitalDeclinePage() {
             <p>
               Social capital — the networks, norms and trust that enable communities to function — has been
               declining across England for over a decade. The proportion of adults who say they could rely on
-              neighbours in a crisis has fallen from 47% to 34% since 2015. Neighbourhood belonging, once
-              reported by a majority, is now a minority experience at 43%. These are not small movements in
+              neighbours in a crisis has fallen from 47% to 34% since 2015.<Cite nums={1} /> Neighbourhood belonging, once
+              reported by a majority, is now a minority experience at 43%.<Cite nums={1} /> These are not small movements in
               survey data. They represent a measurable erosion of the connective tissue between people.
             </p>
             <p>
@@ -193,9 +202,9 @@ export default function SocialCapitalDeclinePage() {
             <p>
               Loneliness — the subjective experience of social capital decline — has become a public health
               concern. Chronic loneliness rose from 5.4% to 7.7% of adults between 2015 and 2025, spiking
-              during the pandemic and only partially recovering. A quarter of English adults now report feeling
+              during the pandemic and only partially recovering.<Cite nums={[2, 4]} /> A quarter of English adults now report feeling
               lonely at least some of the time. The consequences are not abstract: loneliness is associated
-              with a 26% increase in premature mortality risk, equivalent to smoking 15 cigarettes a day. The
+              with a 26% increase in premature mortality risk, equivalent to smoking 15 cigarettes a day.<Cite nums={4} /> The
               2018 loneliness strategy and subsequent ministerial appointment produced some useful frameworks
               but have not reversed the trend.
             </p>

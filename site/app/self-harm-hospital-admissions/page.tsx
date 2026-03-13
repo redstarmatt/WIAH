@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Hospital Episode Statistics — Self-harm admissions', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/hospital-admitted-patient-care-activity', date: '2024/25', note: 'Total admissions rose from 41,000 (2012) to 53,000 (2024); young women 15-19 peak of 662 per 100,000 in 2023' },
+  { num: 2, name: 'OHID', dataset: 'Public Health Profiles — Self-harm emergency admissions', url: 'https://fingertips.phe.org.uk/profile/public-health-outcomes-framework', date: '2024/25', note: 'Girls 10-14 rate doubled from 152 to 325 per 100,000; 15-19 rate now 620, down from 662 peak' },
+  { num: 3, name: 'Nature Mental Health', dataset: 'Meta-analysis of social media and self-harm', date: '2023', note: 'Consistent association between heavy social media use and self-harm in adolescent girls; CAMHS referrals doubled 2019-2023' },
+  { num: 4, name: 'NHS England', dataset: 'Mental Health Support Teams data', date: '2025', note: 'MHSTs in 8,700+ schools covering 44% of pupils; 15% reduction in CAMHS referrals in covered schools' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -164,13 +173,13 @@ export default function SelfHarmHospitalAdmissionsPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Self-harm hospital admissions in England have followed a deeply troubling trajectory for over a decade. Total admissions rose from around 41,000 in 2012 to more than 53,000 in 2024 — an increase of 27% across all age groups. But the national figure conceals the group most acutely affected: young women aged 15 to 19, whose admission rate has climbed from 418 per 100,000 in 2012 to a peak of 662 per 100,000 in 2023. Among girls aged 10 to 14, the rate has more than doubled over the same period, from 152 to 325 per 100,000 at its worst. Hospital admissions capture only the most severe presentations — the Royal College of Psychiatrists estimates that emergency departments see roughly ten times more self-harm cases than are formally admitted, and community prevalence is higher still.
+              Self-harm hospital admissions in England have followed a deeply troubling trajectory for over a decade. Total admissions rose from around 41,000 in 2012 to more than 53,000 in 2024 — an increase of 27% across all age groups.<Cite nums={1} /> But the national figure conceals the group most acutely affected: young women aged 15 to 19, whose admission rate has climbed from 418 per 100,000 in 2012 to a peak of 662 per 100,000 in 2023. Among girls aged 10 to 14, the rate has more than doubled over the same period, from 152 to 325 per 100,000 at its worst.<Cite nums={2} /> Hospital admissions capture only the most severe presentations — the Royal College of Psychiatrists estimates that emergency departments see roughly ten times more self-harm cases than are formally admitted, and community prevalence is higher still.
             </p>
             <p>
-              The causes are layered and interconnected. Adolescent mental health deteriorated sharply from the mid-2010s, with longitudinal studies identifying rising rates of anxiety, depression, and emotional difficulties — particularly among girls. The relationship with social media use is debated but increasingly supported by evidence: a 2023 meta-analysis in <em>Nature Mental Health</em> found a consistent association between heavy social media use and self-harm in adolescent girls, though causality remains contested. At the same time, access to mental health support has failed to keep pace with demand. CAMHS referrals doubled between 2019 and 2023, while the workforce grew by less than 15%. The result is a system where young people in acute distress wait months for an initial assessment, and those who fall below clinical thresholds receive no structured support at all. School-based counselling provision varies wildly by local authority, and the voluntary sector — which absorbs much of the unmet demand — operates on annual funding cycles that make sustained service planning almost impossible.
+              The causes are layered and interconnected. Adolescent mental health deteriorated sharply from the mid-2010s, with longitudinal studies identifying rising rates of anxiety, depression, and emotional difficulties — particularly among girls. The relationship with social media use is debated but increasingly supported by evidence: a 2023 meta-analysis in <em>Nature Mental Health</em> found a consistent association between heavy social media use and self-harm in adolescent girls, though causality remains contested.<Cite nums={3} /> At the same time, access to mental health support has failed to keep pace with demand. CAMHS referrals doubled between 2019 and 2023, while the workforce grew by less than 15%. The result is a system where young people in acute distress wait months for an initial assessment, and those who fall below clinical thresholds receive no structured support at all. School-based counselling provision varies wildly by local authority, and the voluntary sector — which absorbs much of the unmet demand — operates on annual funding cycles that make sustained service planning almost impossible.
             </p>
             <p>
-              The most recent data offers cautious grounds for hope. Admissions among young women aged 15 to 19 fell from 15,400 in 2023 to 14,200 in 2025 — an 8% decline over two years. The rate per 100,000 for 15-to-19-year-olds has fallen from its 2023 peak of 662 to 620. This coincides with the expansion of Mental Health Support Teams in schools (now covering 44% of pupils in England), increased investment in crisis text and chat services, and tighter platform regulation following the Online Safety Act 2023. It is too early to call this a turning point. But it is the first sustained decline in the age group most affected, and it is happening alongside, not instead of, continued investment in early intervention.
+              The most recent data offers cautious grounds for hope. Admissions among young women aged 15 to 19 fell from 15,400 in 2023 to 14,200 in 2025 — an 8% decline over two years. The rate per 100,000 for 15-to-19-year-olds has fallen from its 2023 peak of 662 to 620.<Cite nums={2} /> This coincides with the expansion of Mental Health Support Teams in schools (now covering 44% of pupils in England), increased investment in crisis text and chat services, and tighter platform regulation following the Online Safety Act 2023.<Cite nums={4} /> It is too early to call this a turning point. But it is the first sustained decline in the age group most affected, and it is happening alongside, not instead of, continued investment in early intervention.
             </p>
           </div>
         </section>
@@ -341,6 +350,10 @@ export default function SelfHarmHospitalAdmissionsPage() {
             source="Source: NHS England — Mental Health Support Teams data, 2025. NIHR evaluation of MHSTs, 2024. NHS England — Hospital Episode Statistics, 2024/25."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources & Methodology */}
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

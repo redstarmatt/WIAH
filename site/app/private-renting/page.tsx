@@ -9,6 +9,16 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Index of Private Housing Rental Prices', url: 'https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/indexofprivatehousingrentalprices/latest', date: '2023' },
+  { num: 2, name: 'MHCLG', dataset: 'English Housing Survey 2022/23', url: 'https://www.gov.uk/government/collections/english-housing-survey', date: '2023' },
+  { num: 3, name: 'Rightmove', dataset: 'Rental Market Tracker', date: '2023' },
+  { num: 4, name: 'MoJ', dataset: 'Mortgage and Landlord Possession Statistics', url: 'https://www.gov.uk/government/statistics/mortgage-and-landlord-possession-statistics', date: '2023' },
+  { num: 5, name: 'HMRC', dataset: 'Section 24 Mortgage Interest Relief Changes', date: '2020' },
+];
 
 // ── Types ──────────────────────────────────────────────────────────────────────
 
@@ -122,10 +132,10 @@ export default function PrivateRentingPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Average private rent in England reached £1,279 per month in 2023 — up 10% in a single year, the fastest annual increase since ONS records began. Some 4.6 million households now rent privately, 19% of all households, up from 11% in 2001. Owner-occupation has fallen from 71% in 2003 to 63% in 2023. In London, average rent hit £2,121 per month; some central London postcodes exceed £3,500. Supply has collapsed: Rightmove data show the number of properties listed for rent fell 35% in two years as small landlords sold up. The Section 24 tax change, phased in between 2017 and 2020, ended mortgage interest relief for higher-rate landlords. A 3% stamp duty surcharge on buy-to-let purchases compounds the exodus. Landlords are leaving the market faster than they are entering it, while new tenancy demand surges as young adults priced out of home ownership remain in renting for longer.
+              Average private rent in England reached £1,279 per month in 2023 — up 10% in a single year, the fastest annual increase since ONS records began.<Cite nums={1} /> Some 4.6 million households now rent privately, 19% of all households, up from 11% in 2001.<Cite nums={2} /> Owner-occupation has fallen from 71% in 2003 to 63% in 2023. In London, average rent hit £2,121 per month; some central London postcodes exceed £3,500.<Cite nums={1} /> Supply has collapsed: Rightmove data show the number of properties listed for rent fell 35% in two years as small landlords sold up.<Cite nums={3} /> The Section 24 tax change, phased in between 2017 and 2020, ended mortgage interest relief for higher-rate landlords.<Cite nums={5} /> A 3% stamp duty surcharge on buy-to-let purchases compounds the exodus. Landlords are leaving the market faster than they are entering it, while new tenancy demand surges as young adults priced out of home ownership remain in renting for longer.
             </p>
             <p>
-              The median private renter now spends 34% of gross income on rent, up from 28% in 2011. In London the median is 38%. According to MHCLG, 2.2 million households are in housing cost overburden — spending more than 30% of income on rent. Security of tenure is minimal: Section 21 &lsquo;no-fault&rsquo; eviction notices reached 9,578 in Q1 2023, up 24% year-on-year, and accounted for 25% of households owed a homelessness duty in England in 2022/23. UK private tenants have shorter legal security than in most EU countries — the average tenancy lasts 2.5 years, against 8 years in Germany where tenancies are open-ended by default. Meanwhile, 55% of private rented properties are rated EPC D or below; the government proposed a minimum EPC C standard for new tenancies by 2025, then dropped the requirement entirely.
+              The median private renter now spends 34% of gross income on rent, up from 28% in 2011. In London the median is 38%.<Cite nums={2} /> According to MHCLG, 2.2 million households are in housing cost overburden — spending more than 30% of income on rent.<Cite nums={2} /> Security of tenure is minimal: Section 21 &lsquo;no-fault&rsquo; eviction notices reached 9,578 in Q1 2023, up 24% year-on-year, and accounted for 25% of households owed a homelessness duty in England in 2022/23.<Cite nums={4} /> UK private tenants have shorter legal security than in most EU countries — the average tenancy lasts 2.5 years, against 8 years in Germany where tenancies are open-ended by default. Meanwhile, 55% of private rented properties are rated EPC D or below; the government proposed a minimum EPC C standard for new tenancies by 2025, then dropped the requirement entirely.<Cite nums={2} />
             </p>
             </div>
         </section>
@@ -291,6 +301,10 @@ export default function PrivateRentingPage() {
           source="Source: ONS — Index of Private Housing Rental Prices 2023; MHCLG — English Housing Survey 2022/23."
         />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="border-t border-wiah-border pt-8 mt-12">

@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DLUHC', dataset: 'English Housing Survey 2022–23', url: 'https://www.gov.uk/government/collections/english-housing-survey', date: '2023' },
+  { num: 2, name: 'DLUHC', dataset: 'Housing Health and Safety Rating System Guidance', url: 'https://www.gov.uk/government/publications/housing-health-and-safety-rating-system-guidance-for-landlords-and-property-related-professionals', date: '2023' },
+  { num: 3, name: 'DLUHC', dataset: 'Awaab\'s Law — Damp and Mould Consultation', date: '2023' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -61,8 +69,8 @@ export default function PrivateRentedConditionsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>In 2023, 21% of private rented homes — approximately 1.1 million properties — failed to meet the Decent Homes Standard, a reduction from 24.2% in 2015, though the absolute number of people in non-decent accommodation has not fallen proportionately as the sector has grown to 4.5 million households. Around 14% of private rented homes contain at least one HHSRS category 1 hazard — serious risks including excess cold, damp and mould, and electrical hazards. Damp and mould attracted particular attention after the 2020 death of two-year-old Awaab Ishak from a respiratory condition caused by chronic mould exposure; &ldquo;Awaab&rsquo;s Law&rdquo; passed in 2023 applies to social landlords, but not yet to private landlords.</p>
-            <p>The power imbalance between tenant and landlord shapes the enforcement gap. Tenants in insecure short-hold tenancies have historically faced retaliatory eviction if they complain formally about conditions, and the practical remedy — contesting eviction in court — requires time, legal knowledge, and resources most tenants in poor-quality accommodation do not have. Local housing authorities carry out inspections on a fraction of the known hazardous stock, and civil penalty revenues rarely cover enforcement costs. The Renters&rsquo; Rights Act's abolition of no-fault Section 21 evictions should improve the balance, but implementation will take time to change tenant behaviour.</p>
+            <p>In 2023, 21% of private rented homes — approximately 1.1 million properties — failed to meet the Decent Homes Standard, a reduction from 24.2% in 2015, though the absolute number of people in non-decent accommodation has not fallen proportionately as the sector has grown to 4.5 million households.<Cite nums={1} /> Around 14% of private rented homes contain at least one HHSRS category 1 hazard — serious risks including excess cold, damp and mould, and electrical hazards.<Cite nums={2} /> Damp and mould attracted particular attention after the 2020 death of two-year-old Awaab Ishak from a respiratory condition caused by chronic mould exposure; &ldquo;Awaab&rsquo;s Law&rdquo; passed in 2023 applies to social landlords, but not yet to private landlords.<Cite nums={3} /></p>
+            <p>The power imbalance between tenant and landlord shapes the enforcement gap. Tenants in insecure short-hold tenancies have historically faced retaliatory eviction if they complain formally about conditions, and the practical remedy — contesting eviction in court — requires time, legal knowledge, and resources most tenants in poor-quality accommodation do not have.<Cite nums={1} /> Local housing authorities carry out inspections on a fraction of the known hazardous stock, and civil penalty revenues rarely cover enforcement costs. The Renters&rsquo; Rights Act's abolition of no-fault Section 21 evictions should improve the balance, but implementation will take time to change tenant behaviour.</p>
           </div>
         </section>
 
@@ -122,6 +130,10 @@ export default function PrivateRentedConditionsPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

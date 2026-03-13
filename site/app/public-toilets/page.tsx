@@ -7,6 +7,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'British Toilet Association / BBC FOI', dataset: 'Public Toilet Provision Surveys', url: 'https://www.britishtoilet.org.uk', date: '2024', note: 'England had ~5,600 council-maintained toilets in 2000; fell by over 50% to ~2,700 by 2024' },
+  { num: 2, name: 'RSPH', dataset: 'Taking the P*** Report', url: 'https://www.rsph.org.uk', date: '2019', note: '4 in 10 people restrict time outside home due to inadequate toilet access; 36% of over-65s limit outings' },
+  { num: 3, name: 'NAO / IFS', dataset: 'Local Government Funding Analysis', date: '2020', note: 'Total central government funding to councils fell 49% in real terms between 2010/11 and 2019/20' },
+];
 
 export default function PublicToiletsPage() {
   // Public toilet provision per 10,000 population 2010–2024
@@ -58,8 +66,8 @@ export default function PublicToiletsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England had approximately 5,600 council-maintained public toilets in 2000. By 2024, that number had fallen by over 50% to around 2,700. Public toilet provision is a discretionary service — councils may provide it but are not legally required to. When budgets contract, discretionary services are the first to go. Total central government funding to councils fell 49% in real terms between 2010/11 and 2019/20.</p>
-            <p>The impact falls hardest on those who need public facilities most: older people, disabled people, pregnant women, and those with bowel or bladder conditions. The Royal Society for Public Health estimated that 4 in 10 people restrict their time outside the home because of inadequate access to public toilets. Around 36% of over-65s report limiting outings specifically due to concern about toilet access.</p>
+            <p>England had approximately 5,600 council-maintained public toilets in 2000. By 2024, that number had fallen by over 50% to around 2,700.<Cite nums={1} /> Public toilet provision is a discretionary service — councils may provide it but are not legally required to. When budgets contract, discretionary services are the first to go. Total central government funding to councils fell 49% in real terms between 2010/11 and 2019/20.<Cite nums={3} /></p>
+            <p>The impact falls hardest on those who need public facilities most: older people, disabled people, pregnant women, and those with bowel or bladder conditions. The Royal Society for Public Health estimated that 4 in 10 people restrict their time outside the home because of inadequate access to public toilets. Around 36% of over-65s report limiting outings specifically due to concern about toilet access.<Cite nums={2} /></p>
             <p>Rural areas have lost a higher proportion of facilities than urban centres: only 40% of rural public toilets from 2010 remain. Community Toilet Schemes — paying local businesses to allow public access — have partially filled the gap in some areas, but coverage is patchy, restricted to business trading hours, and dependent on individual goodwill.</p>
           </div>
         </section>
@@ -137,6 +145,10 @@ export default function PublicToiletsPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

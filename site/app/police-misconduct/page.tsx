@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'IOPC', dataset: 'Police Complaints Statistics — Annual Report', url: 'https://www.policeconduct.gov.uk/research-and-learning/statistics', date: '2023', note: '34,000 complaints in 2023; up from 27,300 in 2015; 12.5% of appeals upheld' },
+  { num: 2, name: 'Baroness Casey', dataset: 'Final Report — An Independent Review into the Standards of Behaviour and Internal Culture of the Metropolitan Police Service', date: '2023', note: 'Found institutional racism, misogyny and homophobia in Met Police culture' },
+  { num: 3, name: 'Home Office', dataset: 'Police Powers and Procedures: Stop and Search', url: 'https://www.gov.uk/government/statistics/police-powers-and-procedures-stop-and-search-and-arrests-england-and-wales-year-ending-31-march-2023', date: '2022/23', note: 'Black people 4.1x more likely to be stopped and searched than white people' },
+  { num: 4, name: 'Home Office', dataset: 'Police Reform — National Barred Register', date: '2023', note: 'National barred list established in 2023 to prevent re-employment of dismissed officers' },
+];
 
 export default function PoliceMisconductPage() {
 
@@ -143,12 +152,16 @@ export default function PoliceMisconductPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on police misconduct</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Misconduct complaints against police in England and Wales reached 34,000 in 2023, up from 27,300 in 2015, with a sharp acceleration following the Sarah Everard case and Baroness Casey's 2023 review finding institutional racism, misogyny, and homophobia embedded in the Metropolitan Police's culture. Fewer than 4% of complaints result in formal disciplinary proceedings — a rate critics argue is incompatible with a functional accountability system.</p>
-              <p>The IOPC upholds around 12.5% of appeals — meaning complainants who persist through a lengthy and challenging process succeed less than 1 in 8 times. The IOPC had over 2,000 outstanding investigations at the end of 2023, with average resolution times exceeding three years. High-profile failures — David Carrick, a serving Metropolitan Police officer who committed offences over more than a decade during which 17 allegations against him were recorded — illustrate what systemic failures in vetting, supervision, and complaint-handling allow to persist.</p>
-              <p>Stop and search disproportionality remains stark: in 2022/23 a Black person was 4.1 times more likely to be stopped and searched than a white person. Reform proposals — stronger IOPC compulsion powers, independent disciplinary panels, mandatory vetting standards — face resistance from forces that guard operational independence. Implementation of the Casey Review's 49 recommendations across 43 operationally independent forces represents the core accountability challenge.</p>
+              <p>Misconduct complaints against police in England and Wales reached 34,000 in 2023, up from 27,300 in 2015, with a sharp acceleration following the Sarah Everard case and Baroness Casey's 2023 review finding institutional racism, misogyny, and homophobia embedded in the Metropolitan Police's culture.<Cite nums={[1, 2]} /> Fewer than 4% of complaints result in formal disciplinary proceedings — a rate critics argue is incompatible with a functional accountability system.<Cite nums={1} /></p>
+              <p>The IOPC upholds around 12.5% of appeals — meaning complainants who persist through a lengthy and challenging process succeed less than 1 in 8 times.<Cite nums={1} /> The IOPC had over 2,000 outstanding investigations at the end of 2023, with average resolution times exceeding three years. High-profile failures — David Carrick, a serving Metropolitan Police officer who committed offences over more than a decade during which 17 allegations against him were recorded — illustrate what systemic failures in vetting, supervision, and complaint-handling allow to persist.</p>
+              <p>Stop and search disproportionality remains stark: in 2022/23 a Black person was 4.1 times more likely to be stopped and searched than a white person.<Cite nums={3} /> Reform proposals — stronger IOPC compulsion powers, independent disciplinary panels, mandatory vetting standards — face resistance from forces that guard operational independence. Implementation of the Casey Review's 49 recommendations across 43 operationally independent forces represents the core accountability challenge.<Cite nums={2} /></p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

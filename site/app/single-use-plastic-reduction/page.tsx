@@ -5,6 +5,13 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DEFRA', dataset: 'Single-use carrier bags charge: data in England', url: 'https://www.gov.uk/government/publications/carrier-bag-charge-summary-of-data-in-england', date: 'Nov 2023' },
+  { num: 2, name: 'DEFRA', dataset: 'Environmental Improvement Plan — single-use plastics ban', url: 'https://www.gov.uk/government/publications/environmental-improvement-plan', date: '2023' },
+];
 export default function SingleUsePlasticReductionPage() {
 
   const sparkData = [7.6,6,4,2.8,2.3,2,1.7];
@@ -108,11 +115,15 @@ export default function SingleUsePlasticReductionPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on Single-Use Plastic Reduction</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Single-Use Plastic Reduction in the United Kingdom: the numbers show a complex picture. Single-use carrier bag sales fell from 7.6 billion in 2014 to 1.7 billion following the introduction of the carrier bag charge. Nine types of single-use plastic items were banned in England from October 2023. The headline figure — 1.7 for single-use carrier bags sold (england, billions) — down from 7.6B in 2014 · 5p/10p charge transformative.</p>
-              <p>The secondary metric tells an equally important story: single-use plastic items in scope of ban (england) stands at 9 types, where plates, cutlery, polystyrene cups banned Oct 2023. Policy responses have been mixed, and the structural drivers of these trends require sustained attention beyond short-term interventions.</p>
+              <p>Single-Use Plastic Reduction in the United Kingdom: the numbers show a complex picture. Single-use carrier bag sales fell from 7.6 billion in 2014 to 1.7 billion following the introduction of the carrier bag charge.<Cite nums={1} /> Nine types of single-use plastic items were banned in England from October 2023.<Cite nums={2} /> The headline figure — 1.7 for single-use carrier bags sold (england, billions) — down from 7.6B in 2014 · 5p/10p charge transformative.</p>
+              <p>The secondary metric tells an equally important story: single-use plastic items in scope of ban (england) stands at 9 types, where plates, cutlery, polystyrene cups banned Oct 2023.<Cite nums={2} /> Policy responses have been mixed, and the structural drivers of these trends require sustained attention beyond short-term interventions.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
