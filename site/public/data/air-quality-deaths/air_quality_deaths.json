@@ -1,0 +1,59 @@
+{
+  "prematureDeaths": [
+    {"year": 2010, "deaths": 52000},
+    {"year": 2011, "deaths": 50800},
+    {"year": 2012, "deaths": 49500},
+    {"year": 2013, "deaths": 48700},
+    {"year": 2014, "deaths": 47900},
+    {"year": 2015, "deaths": 47200},
+    {"year": 2016, "deaths": 46400},
+    {"year": 2017, "deaths": 45800},
+    {"year": 2018, "deaths": 45100},
+    {"year": 2019, "deaths": 44600},
+    {"year": 2020, "deaths": 43200},
+    {"year": 2021, "deaths": 43800},
+    {"year": 2022, "deaths": 43500},
+    {"year": 2023, "deaths": 43200},
+    {"year": 2024, "deaths": 43000}
+  ],
+  "no2Breaches": [
+    {"year": 2017, "pctBreaching": 61},
+    {"year": 2018, "pctBreaching": 58},
+    {"year": 2019, "pctBreaching": 55},
+    {"year": 2020, "pctBreaching": 48},
+    {"year": 2021, "pctBreaching": 52},
+    {"year": 2022, "pctBreaching": 49},
+    {"year": 2023, "pctBreaching": 46},
+    {"year": 2024, "pctBreaching": 43}
+  ],
+  "pm25Concentration": [
+    {"year": 2010, "ugm3": 13.2},
+    {"year": 2011, "ugm3": 12.8},
+    {"year": 2012, "ugm3": 12.1},
+    {"year": 2013, "ugm3": 11.9},
+    {"year": 2014, "ugm3": 11.4},
+    {"year": 2015, "ugm3": 10.8},
+    {"year": 2016, "ugm3": 10.5},
+    {"year": 2017, "ugm3": 10.2},
+    {"year": 2018, "ugm3": 10.0},
+    {"year": 2019, "ugm3": 9.8},
+    {"year": 2020, "ugm3": 8.9},
+    {"year": 2021, "ugm3": 9.4},
+    {"year": 2022, "ugm3": 9.6},
+    {"year": 2023, "ugm3": 9.5},
+    {"year": 2024, "ugm3": 9.3}
+  ],
+  "byRegion": [
+    {"region": "London", "ugm3": 12.1, "deathsPer100k": 28.4},
+    {"region": "South East", "ugm3": 10.3, "deathsPer100k": 23.1},
+    {"region": "West Midlands", "ugm3": 10.1, "deathsPer100k": 22.7},
+    {"region": "North West", "ugm3": 9.8, "deathsPer100k": 21.9},
+    {"region": "East of England", "ugm3": 9.6, "deathsPer100k": 20.8},
+    {"region": "Yorkshire & Humber", "ugm3": 9.4, "deathsPer100k": 20.2},
+    {"region": "East Midlands", "ugm3": 9.1, "deathsPer100k": 19.5},
+    {"region": "South West", "ugm3": 8.2, "deathsPer100k": 16.8},
+    {"region": "North East", "ugm3": 8.0, "deathsPer100k": 16.1},
+    {"region": "Wales", "ugm3": 7.6, "deathsPer100k": 14.9},
+    {"region": "Scotland", "ugm3": 7.2, "deathsPer100k": 13.8}
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "topic": "phonics-outcomes",
+  "lastUpdated": "2025-10-17",
+  "passRate": [
+    { "year": 2012, "percent": 58 },
+    { "year": 2013, "percent": 69 },
+    { "year": 2014, "percent": 74 },
+    { "year": 2015, "percent": 77 },
+    { "year": 2016, "percent": 81 },
+    { "year": 2017, "percent": 81 },
+    { "year": 2018, "percent": 82 },
+    { "year": 2019, "percent": 82 },
+    { "year": 2022, "percent": 75 },
+    { "year": 2023, "percent": 79 },
+    { "year": 2024, "percent": 80 },
+    { "year": 2025, "percent": 81 }
+  ],
+  "disadvantagedGap": [
+    { "year": 2012, "gapPP": 21 },
+    { "year": 2013, "gapPP": 18 },
+    { "year": 2014, "gapPP": 16 },
+    { "year": 2015, "gapPP": 15 },
+    { "year": 2016, "gapPP": 14 },
+    { "year": 2017, "gapPP": 13 },
+    { "year": 2018, "gapPP": 13 },
+    { "year": 2019, "gapPP": 13 },
+    { "year": 2022, "gapPP": 17 },
+    { "year": 2023, "gapPP": 15 },
+    { "year": 2024, "gapPP": 14 },
+    { "year": 2025, "gapPP": 14 }
+  ],
+  "byEndOfKS1": [
+    { "year": 2012, "percent": 69 },
+    { "year": 2013, "percent": 79 },
+    { "year": 2014, "percent": 85 },
+    { "year": 2015, "percent": 87 },
+    { "year": 2016, "percent": 91 },
+    { "year": 2017, "percent": 91 },
+    { "year": 2018, "percent": 92 },
+    { "year": 2019, "percent": 92 },
+    { "year": 2022, "percent": 87 },
+    { "year": 2023, "percent": 89 },
+    { "year": 2024, "percent": 90 },
+    { "year": 2025, "percent": 91 }
+  ],
+  "internationalRanking": [
+    { "year": 2006, "rank": 15, "assessment": "PIRLS" },
+    { "year": 2011, "rank": 11, "assessment": "PIRLS" },
+    { "year": 2016, "rank": 8, "assessment": "PIRLS" },
+    { "year": 2021, "rank": 4, "assessment": "PIRLS" }
+  ],
+  "byRegion": [
+    { "region": "Inner London", "passRate": 84 },
+    { "region": "Outer London", "passRate": 83 },
+    { "region": "South East", "passRate": 82 },
+    { "region": "East of England", "passRate": 81 },
+    { "region": "South West", "passRate": 81 },
+    { "region": "West Midlands", "passRate": 80 },
+    { "region": "East Midlands", "passRate": 79 },
+    { "region": "North West", "passRate": 78 },
+    { "region": "Yorkshire and the Humber", "passRate": 77 },
+    { "region": "North East", "passRate": 76 }
+  ],
+  "metadata": {
+    "sources": [
+      {
+        "name": "Department for Education",
+        "dataset": "Phonics screening check and key stage 1 assessments: England",
+        "url": "https://explore-education-statistics.service.gov.uk/find-statistics/phonics-screening-check-and-key-stage-1-assessments",
+        "retrieved": "2025-10-17",
+        "frequency": "annual"
+      },
+      {
+        "name": "IEA",
+        "dataset": "Progress in International Reading Literacy Study (PIRLS)",
+        "url": "https://pirls2021.org/results/",
+        "retrieved": "2025-10-17",
+        "frequency": "five-yearly"
+      }
+    ],
+    "methodology": "Year 1 phonics screening check pass rates represent the proportion of pupils meeting the expected standard (threshold score of 32 out of 40). No data for 2020 or 2021 due to Covid-19 cancellations. Disadvantaged gap is the difference in percentage points between pupils eligible for free school meals and all other pupils. PIRLS ranking is for England only within the UK. Regional data is for 2024/25.",
+    "knownIssues": [
+      "No data for 2020 or 2021 due to Covid-19 cancellations of the phonics check",
+      "The 2022 cohort was disproportionately affected by pandemic disruption to early years teaching",
+      "Disadvantaged gap widened post-pandemic and has not fully recovered to pre-pandemic levels"
+    ]
+  }
+}
