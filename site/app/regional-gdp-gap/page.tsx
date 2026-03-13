@@ -72,8 +72,8 @@ export default function RegionalGdpGapPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK has the most geographically unequal economy of any comparable high-income country. GDP per head in London stood at £67,500 in 2022, while the North East registered £22,100 — a ratio of 3.1 to 1, compared with 1.9 in Germany and 1.7 in France. The Levelling Up agenda, backed by £8 billion in fund expenditure over 2020–25, produced measurable improvements on some missions but failed to narrow the core gaps: wages and life expectancy continued diverging, and the cancellation of HS2's northern leg in October 2023 removed much of the connectivity rationale for rebalancing. The current government's growth mission relies on metro-mayor devolution rather than place-based grants, with combined authority deals covering skills, transport, and business support. Treasury analysis has found London received approximately £4,000 more per head in public investment than comparable regions between 2000 and 2019.</p>
-            <p>The burden falls hardest on post-industrial communities, coastal towns, and areas with older populations that never recovered from the deindustrialisation of the 1980s. Per-capita transport spending in London was £902 in 2022/23, versus £337 in the North East and £296 in Yorkshire — a structural imbalance that compounds the underlying productivity gap. Agglomeration effects continue to concentrate high-value financial and professional services in London, and economists broadly agree that reversing this dynamic requires sustained investment over decades, not years.</p>
+            <p>The UK has the most geographically unequal economy of any comparable high-income country.<Cite nums={3} /> GDP per head in London stood at £67,500 in 2022, while the North East registered £22,100 — a ratio of 3.1 to 1, compared with 1.9 in Germany and 1.7 in France.<Cite nums={[1, 3]} /> The Levelling Up agenda, backed by £8 billion in fund expenditure over 2020–25, produced measurable improvements on some missions but failed to narrow the core gaps: wages and life expectancy continued diverging, and the cancellation of HS2's northern leg in October 2023 removed much of the connectivity rationale for rebalancing. The current government's growth mission relies on metro-mayor devolution rather than place-based grants, with combined authority deals covering skills, transport, and business support. Treasury analysis has found London received approximately £4,000 more per head in public investment than comparable regions between 2000 and 2019.<Cite nums={2} /></p>
+            <p>The burden falls hardest on post-industrial communities, coastal towns, and areas with older populations that never recovered from the deindustrialisation of the 1980s. Per-capita transport spending in London was £902 in 2022/23, versus £337 in the North East and £296 in Yorkshire — a structural imbalance that compounds the underlying productivity gap.<Cite nums={2} /> Agglomeration effects continue to concentrate high-value financial and professional services in London, and economists broadly agree that reversing this dynamic requires sustained investment over decades, not years.<Cite nums={1} /></p>
           </div>
         </section>
 
@@ -133,6 +133,10 @@ export default function RegionalGdpGapPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

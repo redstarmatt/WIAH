@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Personal Health Budget Dashboard', url: 'https://www.england.nhs.uk/personalised-care/personal-health-budgets/', date: 'Jan 2026', note: '65,800 holders; 67% short of 200,000 target' },
+  { num: 2, name: 'NHS England', dataset: 'Long Term Plan (2019)', url: 'https://www.england.nhs.uk/long-term-plan/', date: '2019', note: '200,000 PHB target commitment' },
+  { num: 3, name: 'NHS England', dataset: 'PHB National Evaluation — Independent Report', date: '2023', note: '77% of holders report improved quality of life' },
+];
 
 export default function PersonalHealthBudgetsPage() {
   // PHB holders (thousands) 2014-2024
@@ -156,12 +164,16 @@ export default function PersonalHealthBudgetsPage() {
           <section id="sec-context" className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data in context</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>A personal health budget gives individuals with long-term health conditions control over a sum of NHS money to spend on care and support that meets their needs. People can use budgets to fund home adaptations, equipment, community-based support, or alternative therapies not available on standard NHS pathways. The concept has strong evidence behind it: evaluations consistently show that PHBs improve wellbeing, increase independence, and often do so at comparable or lower cost than standard care. Yet uptake remains at just 65,000 — a third of the 200,000 target set in the 2019 Long Term Plan.</p>
-              <p>The equity dimension is troubling. Data on PHB uptake by area deprivation shows that people in the least deprived quintile are 2.6 times more likely to hold a budget than those in the most deprived areas. This matters because it is people in the most deprived communities who often have the greatest unmet need for flexible, personalised support. The structural reasons for this gap include lower digital literacy, less confidence navigating NHS bureaucracy, fewer community advocates and navigators, and lower awareness of the right to a PHB among both patients and some clinical staff.</p>
-              <p>NHS England has set equity of access as a central goal of its personalised care agenda, but progress is slow. Achieving the 200,000 target would require not just expanding provision in areas where PHBs are already well-established, but actively reaching communities and population groups currently underserved. That requires investment in outreach, navigation support, and administrative simplification — alongside a clearer mandate to ICBs, whose variable enthusiasm for PHBs remains one of the most significant barriers to scale.</p>
+              <p>A personal health budget gives individuals with long-term health conditions control over a sum of NHS money to spend on care and support that meets their needs. People can use budgets to fund home adaptations, equipment, community-based support, or alternative therapies not available on standard NHS pathways. The concept has strong evidence behind it: evaluations consistently show that PHBs improve wellbeing, increase independence, and often do so at comparable or lower cost than standard care.<Cite nums={3} /> Yet uptake remains at just 65,000 — a third of the 200,000 target set in the 2019 Long Term Plan.<Cite nums={[1, 2]} /></p>
+              <p>The equity dimension is troubling. Data on PHB uptake by area deprivation shows that people in the least deprived quintile are 2.6 times more likely to hold a budget than those in the most deprived areas.<Cite nums={1} /> This matters because it is people in the most deprived communities who often have the greatest unmet need for flexible, personalised support. The structural reasons for this gap include lower digital literacy, less confidence navigating NHS bureaucracy, fewer community advocates and navigators, and lower awareness of the right to a PHB among both patients and some clinical staff.</p>
+              <p>NHS England has set equity of access as a central goal of its personalised care agenda, but progress is slow. Achieving the 200,000 target would require not just expanding provision in areas where PHBs are already well-established, but actively reaching communities and population groups currently underserved.<Cite nums={2} /> That requires investment in outreach, navigation support, and administrative simplification — alongside a clearer mandate to ICBs, whose variable enthusiasm for PHBs remains one of the most significant barriers to scale.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

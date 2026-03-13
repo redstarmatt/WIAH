@@ -82,8 +82,8 @@ export default function ProfitShiftingPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK corporate tax gap — the difference between what businesses should pay and what HMRC actually collects — stood at £6.5 billion in 2023, up from £4.8 billion in 2016. Profit shifting by multinationals — booking profits in low-tax jurisdictions while economic activity occurs in the UK — is consistently identified as the largest single contributor. A multinational may hold intellectual property in Ireland, Luxembourg, or the Netherlands, with the UK subsidiary paying royalties that reduce its UK taxable profit. HMRC has significantly expanded large business compliance activity since 2016, growing the yield from enquiries from £8.9 billion to £13.4 billion, and the UK was an early adopter of country-by-country reporting. The OECD&rsquo;s Pillar Two global minimum tax, implemented by the UK from 2024, establishes a 15% minimum effective rate for large multinationals.</p>
-            <p>When profitable multinationals pay effective tax rates far below the headline corporate rate, the burden falls more heavily on domestic businesses that cannot shift profits internationally — small and medium-sized enterprises that pay the full rate because all their activity is in the UK. This creates a structural competitive disadvantage for domestic firms and erodes confidence that the tax system is fair. An estimated £24 billion in profits are shifted offshore annually, representing a significant ongoing subsidy to corporate structures that would not exist without British markets, workers, and public infrastructure.</p>
+            <p>The UK corporate tax gap — the difference between what businesses should pay and what HMRC actually collects — stood at £6.5 billion in 2023, up from £4.8 billion in 2016.<Cite nums={1} /> Profit shifting by multinationals — booking profits in low-tax jurisdictions while economic activity occurs in the UK — is consistently identified as the largest single contributor. A multinational may hold intellectual property in Ireland, Luxembourg, or the Netherlands, with the UK subsidiary paying royalties that reduce its UK taxable profit. HMRC has significantly expanded large business compliance activity since 2016, growing the yield from enquiries from £8.9 billion to £13.4 billion, and the UK was an early adopter of country-by-country reporting.<Cite nums={2} /> The OECD&rsquo;s Pillar Two global minimum tax, implemented by the UK from 2024, establishes a 15% minimum effective rate for large multinationals.<Cite nums={3} /></p>
+            <p>When profitable multinationals pay effective tax rates far below the headline corporate rate, the burden falls more heavily on domestic businesses that cannot shift profits internationally — small and medium-sized enterprises that pay the full rate because all their activity is in the UK. This creates a structural competitive disadvantage for domestic firms and erodes confidence that the tax system is fair. An estimated £24 billion in profits are shifted offshore annually, representing a significant ongoing subsidy to corporate structures that would not exist without British markets, workers, and public infrastructure.<Cite nums={1} /></p>
           </div>
         </section>
 
@@ -143,6 +143,10 @@ export default function ProfitShiftingPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

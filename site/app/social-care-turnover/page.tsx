@@ -141,7 +141,7 @@ export default function SocialCareTurnoverPage() {
               Adult social care employs approximately 1.52 million people in England — more than the NHS — yet it operates with annual staff turnover of 28.3%.<Cite nums={1} /> In practical terms, this means the sector has to replace one in three of its workers every year. The cost of this churn is staggering: Skills for Care estimates recruitment and induction costs of approximately £3,000 per worker, putting the annual recruitment cost burden at around £1 billion.<Cite nums={1} /> The toll on care quality is harder to quantify but no less real: continuity of care is the most important determinant of wellbeing for older people with dementia and complex needs.
             </p>
             <p>
-              The fundamental driver is pay. At £10.89 per hour in 2024 — barely above the National Living Wage of £11.44 — care worker pay fails to reflect the skill, physical and emotional demands of the role. A supermarket retail assistant or a warehouse picker can earn similar wages with far less relational and clinical complexity. NHS pay rises have compounded the problem by creating a persistent wage gap between NHS healthcare support workers (who do comparable work) and care sector workers, accelerating movement from care into the NHS. International recruitment — driven by a post-Brexit visa regime that admitted 70,000 overseas care workers in 2023 — has partially plugged the gap but raised its own concerns about exploitation and sustainability.
+              The fundamental driver is pay. At £10.89 per hour in 2024 — barely above the National Living Wage of £11.44 — care worker pay fails to reflect the skill, physical and emotional demands of the role.<Cite nums={1} /> A supermarket retail assistant or a warehouse picker can earn similar wages with far less relational and clinical complexity. NHS pay rises have compounded the problem by creating a persistent wage gap between NHS healthcare support workers (who do comparable work) and care sector workers, accelerating movement from care into the NHS. International recruitment — driven by a post-Brexit visa regime that admitted 70,000 overseas care workers in 2023 — has partially plugged the gap but raised its own concerns about exploitation and sustainability.<Cite nums={2} />
             </p>
           </div>
         </section>
@@ -223,6 +223,10 @@ export default function SocialCareTurnoverPage() {
             source="Source: Skills for Care — State of the adult social care sector 2024; DHSC — People at the Heart of Care workforce strategy."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

@@ -226,10 +226,10 @@ export default function PovertyPage() {
             <p>
               At the sharpest end, 3.8 million people experienced destitution in 2022 —
               unable to afford two or more essentials including food, heating, and shelter —
-              more than double the 2017 figure. One million of them were children. Food bank
+              more than double the 2017 figure.<Cite nums={3} /> One million of them were children. Food bank
               use has risen ninefold in a decade: the Trussell Trust distributed over
               3 million parcels in the last year, and its network covers only part of the
-              total. Benefit delays, sanctions, and periods of zero income remain the most
+              total.<Cite nums={4} /> Benefit delays, sanctions, and periods of zero income remain the most
               common triggers.
             </p>
             </div>
@@ -577,6 +577,10 @@ export default function PovertyPage() {
             </a>
           </p>
         </div>{/* end sec-wealth-by-age */}
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="border-t border-wiah-border pt-8">

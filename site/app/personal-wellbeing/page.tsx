@@ -8,6 +8,13 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Annual Population Survey — Personal Well-being Estimates', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing', date: '2024-25', note: 'Life satisfaction fell from 7.7/10 in 2019 to 7.4/10' },
+  { num: 2, name: 'ONS', dataset: 'Well-being Inequalities by Local Authority', date: '2024', note: 'Deprivation gap in life satisfaction scores' },
+];
 
 interface DataPoint {
   year: number;
@@ -92,7 +99,7 @@ export default function PersonalWellbeingPage() {
         <section className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Average life satisfaction fell from 7.7/10 in 2019 to 7.4/10 in 2024-25; anxiety scores have risen across all age groups. Young adults and those in deprived areas report the worst outcomes. The data below draws on official sources to show how this has changed over the past decade and where the pressures are most acute.
+              Average life satisfaction fell from 7.7/10 in 2019 to 7.4/10 in 2024-25; anxiety scores have risen across all age groups.<Cite nums={1} /> Young adults and those in deprived areas report the worst outcomes.<Cite nums={2} /> The data below draws on official sources to show how this has changed over the past decade and where the pressures are most acute.
             </p>
             <p>
               The figures reflect a structural pattern rather than a short-term fluctuation. Understanding the scale of the issue is the first step toward holding policymakers to account for the decisions that shape these outcomes.
@@ -170,6 +177,10 @@ export default function PersonalWellbeingPage() {
             source="Source: NHS England \u2014 Social prescribing network annual census, 2025. NICE evidence review NG222."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

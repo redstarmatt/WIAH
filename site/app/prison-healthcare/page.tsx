@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'HM Inspectorate of Prisons', dataset: 'Annual Report — Healthcare Ratings', url: 'https://www.justiceinspectorates.gov.uk/hmiprisons/inspections/', date: 'Nov 2024', note: 'A third of prisons rated poor/inadequate for healthcare; proportion nearly doubled over past decade' },
+  { num: 2, name: 'Ministry of Justice', dataset: 'Safety in Custody Statistics — Self-harm', url: 'https://www.gov.uk/government/statistics/safety-in-custody-quarterly-update-to-june-2024', date: 'Q2 2024', note: 'Self-harm rose from 298 to 641 per 1,000 prisoners (2015-2024); 115% increase' },
+  { num: 3, name: 'HMIP / NHS England', dataset: 'Mental Health Prevalence Estimates; Health & Justice Workforce Data', url: 'https://www.justiceinspectorates.gov.uk/hmiprisons/our-work/annual-report/', date: 'Nov 2024', note: '70% of prisoners have diagnosable mental illness; primary care vacancy rate 37%' },
+  { num: 4, name: 'NHS England', dataset: 'Liaison and Diversion Programme', url: 'https://www.england.nhs.uk/commissioning/health-just/', date: '2023', note: '100% national coverage achieved in 2023; screens ~130,000 people per year' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -159,7 +168,7 @@ export default function PrisonHealthcarePage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Prison healthcare in England operates under a structural contradiction. Since 2006, the NHS has been responsible for commissioning health services inside prisons, yet the prison environment itself undermines almost every principle of effective healthcare delivery. Overcrowding means GPs see patients in converted cells. Lockdown regimes restrict movement to healthcare wings. Staff vacancies — now at 37% for primary care roles — leave prisons relying on expensive agency locums who lack continuity with patients. The result is a system where a third of prisons are rated poor or not sufficiently good for healthcare by inspectors, and that proportion has nearly doubled over the past decade.
+              Prison healthcare in England operates under a structural contradiction. Since 2006, the NHS has been responsible for commissioning health services inside prisons, yet the prison environment itself undermines almost every principle of effective healthcare delivery. Overcrowding means GPs see patients in converted cells. Lockdown regimes restrict movement to healthcare wings. Staff vacancies — now at 37% for primary care roles — leave prisons relying on expensive agency locums who lack continuity with patients.<Cite nums={3} /> The result is a system where a third of prisons are rated poor or not sufficiently good for healthcare by inspectors, and that proportion has nearly doubled over the past decade.<Cite nums={1} />
             </p>
             <p>
               The mental health crisis inside prisons is the sharpest failure. An estimated 70% of prisoners have at least one diagnosable mental health condition — including depression, anxiety, personality disorders, and psychosis — compared with roughly 8% of the general adult population. Yet access to talking therapies in prison is severely limited, and waiting times for specialist mental health assessment can exceed twelve weeks. Self-harm has become endemic: incidents rose from 298 per 1,000 prisoners in 2015 to 641 per 1,000 in 2024, a 115% increase. Much of this is concentrated among women prisoners, young adults, and those on remand — the populations least well served by the current system.

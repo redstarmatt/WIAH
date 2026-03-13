@@ -141,8 +141,8 @@ export default function SepsisOutcomesPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>Sepsis occurs when the body's response to infection damages its own organs. It remains the leading cause of preventable death in NHS hospitals, killing more people each year than bowel, breast, and prostate cancer combined.<Cite nums={1} /> But outcomes are improving. The national Sepsis-6 care bundle — a checklist of six interventions to be delivered within the first hour — has been adopted across 95% of acute NHS trusts, and compliance has risen from 42% in 2016 to 72% in 2025. Median time from presentation to intravenous antibiotics has halved, from 92 minutes to 44 minutes over the same period.<Cite nums={3} /></p>
-            <p>The improvements are real but unevenly distributed. Survival rates in the South West now exceed 84%, while the North East sits at 77% — a gap that maps closely onto broader health inequalities, staffing ratios, and emergency department crowding. The 2020 pandemic disrupted progress: compliance fell, delayed presentations increased, and deaths spiked to nearly 55,000. Recovery since then has been steady. The UK Sepsis Trust estimates that achieving 90% bundle compliance nationally could prevent an additional 5,000 deaths per year. The data shows a health system that has learned to recognise sepsis far faster than it once did — but has not yet closed the gap between its best and worst performers.</p>
-            <p>There is also a quiet structural success story. The introduction of NEWS2 (National Early Warning Score) across all acute trusts means that deteriorating patients are now flagged automatically, triggering sepsis screening pathways before clinical suspicion alone would have caught them. This systematic approach — treating sepsis as a process failure rather than a diagnostic failure — is the single most important change in the last decade.</p>
+            <p>The improvements are real but unevenly distributed. Survival rates in the South West now exceed 84%, while the North East sits at 77% — a gap that maps closely onto broader health inequalities, staffing ratios, and emergency department crowding.<Cite nums={2} /> The 2020 pandemic disrupted progress: compliance fell, delayed presentations increased, and deaths spiked to nearly 55,000. Recovery since then has been steady. The UK Sepsis Trust estimates that achieving 90% bundle compliance nationally could prevent an additional 5,000 deaths per year. The data shows a health system that has learned to recognise sepsis far faster than it once did — but has not yet closed the gap between its best and worst performers.</p>
+            <p>There is also a quiet structural success story. The introduction of NEWS2 (National Early Warning Score) across all acute trusts means that deteriorating patients are now flagged automatically, triggering sepsis screening pathways before clinical suspicion alone would have caught them.<Cite nums={4} /> This systematic approach — treating sepsis as a process failure rather than a diagnostic failure — is the single most important change in the last decade.</p>
           </div>
         </section>
 
@@ -297,6 +297,10 @@ export default function SepsisOutcomesPage() {
             source="Source: NHS England — CQUIN Sepsis Indicators, 2025. ICNARC Case Mix Programme. UK Sepsis Trust."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

@@ -8,6 +8,8 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 interface DataPoint {
   year: number;
@@ -27,6 +29,11 @@ interface TopicData {
     knownIssues: string[];
   };
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Regional Gross Value Added (balanced) per head', url: 'https://www.ons.gov.uk/economy/grossvalueaddedgva/bulletins/regionaleconomicactivitybygrossvalueaddedukbalanced/1998to2022', date: '2024' },
+  { num: 2, name: 'DLUHC', dataset: 'Levelling Up White Paper', date: '2022' },
+];
 
 export default function RegionalGdpPage() {
   const [data, setData] = useState<TopicData | null>(null);
@@ -92,10 +99,10 @@ export default function RegionalGdpPage() {
         <section className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              London's GVA per head is 2.7× the UK average and 2.7× that of the North East — a gap that has widened steadily since 1998 despite decades of levelling-up commitments. The data below draws on official sources to show how this has changed over the past decade and where the pressures are most acute.
+              London's GVA per head is 2.7× the UK average and 2.7× that of the North East — a gap that has widened steadily since 1998 despite decades of levelling-up commitments.<Cite nums={1} /> The data below draws on official sources to show how this has changed over the past decade and where the pressures are most acute.
             </p>
             <p>
-              The figures reflect a structural pattern rather than a short-term fluctuation. Understanding the scale of the issue is the first step toward holding policymakers to account for the decisions that shape these outcomes.
+              The figures reflect a structural pattern rather than a short-term fluctuation.<Cite nums={[1, 2]} /> Understanding the scale of the issue is the first step toward holding policymakers to account for the decisions that shape these outcomes.
             </p>
           </div>
         </section>
@@ -170,6 +177,10 @@ export default function RegionalGdpPage() {
             source="Source: DLUHC \u2014 Investment Zones progress report, 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

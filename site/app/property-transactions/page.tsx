@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'HMRC', dataset: 'UK Property Transaction Statistics', url: 'https://www.gov.uk/government/statistics/uk-property-transactions-statistics', date: '2024' },
+  { num: 2, name: 'Bank of England', dataset: 'Mortgage Lending Statistics', url: 'https://www.bankofengland.co.uk/statistics/mortgage-lenders-and-administrators', date: '2024' },
+  { num: 3, name: 'UK Finance', dataset: 'First-Time Buyer Data', url: 'https://www.ukfinance.org.uk/data-and-research/data', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -75,8 +83,8 @@ export default function PropertyTransactionsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>UK residential property transactions reached a decade low of 1.02 million in 2023, down from a pandemic-era peak of 1.49 million in 2021. The Bank of England raised its base rate from 0.1% to 5.25% between December 2021 and August 2023 — the fastest tightening cycle in four decades — causing average two-year fixed mortgage rates to rise from approximately 2% to over 6%. For a household with a £300,000 mortgage, monthly payments rose by over £900. First-time buyer completions fell approximately 18% over two years; government schemes including Help to Buy had been wound down, and their successors offered partial mitigation at a fraction of the previous scale. A partial recovery in 2024 reached 1.10 million transactions as Bank of England rate cuts unlocked pent-up demand.</p>
-            <p>The freeze was not evenly distributed. Cash buyers, representing approximately a third of transactions, were largely insulated. The cohort most affected was the mid-market: households needing to remortgage at higher rates to fund a move, who effectively sat out the market. The longer-term consequences extend beyond housing: labour market mobility depends partly on people being able to move for work, and a frozen transaction market locks people into locations. Rental markets tighten further as potential first-time buyers remain renting for longer, while private landlords facing higher mortgage costs have been exiting the market, reducing supply precisely when demand rises.</p>
+            <p>UK residential property transactions reached a decade low of 1.02 million in 2023, down from a pandemic-era peak of 1.49 million in 2021.<Cite nums={1} /> The Bank of England raised its base rate from 0.1% to 5.25% between December 2021 and August 2023 — the fastest tightening cycle in four decades — causing average two-year fixed mortgage rates to rise from approximately 2% to over 6%.<Cite nums={2} /> For a household with a £300,000 mortgage, monthly payments rose by over £900. First-time buyer completions fell approximately 18% over two years; government schemes including Help to Buy had been wound down, and their successors offered partial mitigation at a fraction of the previous scale.<Cite nums={3} /> A partial recovery in 2024 reached 1.10 million transactions as Bank of England rate cuts unlocked pent-up demand.<Cite nums={1} /></p>
+            <p>The freeze was not evenly distributed. Cash buyers, representing approximately a third of transactions, were largely insulated.<Cite nums={1} /> The cohort most affected was the mid-market: households needing to remortgage at higher rates to fund a move, who effectively sat out the market. The longer-term consequences extend beyond housing: labour market mobility depends partly on people being able to move for work, and a frozen transaction market locks people into locations. Rental markets tighten further as potential first-time buyers remain renting for longer, while private landlords facing higher mortgage costs have been exiting the market, reducing supply precisely when demand rises.</p>
           </div>
         </section>
 
@@ -136,6 +144,10 @@ export default function PropertyTransactionsPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

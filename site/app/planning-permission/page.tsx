@@ -94,7 +94,7 @@ export default function PlanningPermissionPage() {
               The planning system is at the centre of Britain's housing crisis — but not in the way that is usually assumed. The conventional narrative blames planning refusals for blocking new homes, but the data tells a more complicated story: England grants far more planning permissions than homes are built. In 2023, local authorities approved 474,000 planning applications for residential development, but only 234,000 homes were completed — a conversion rate of under 50%.<Cite nums={[1, 3]} /> The planning system is not primarily blocking permissions; it is struggling to convert permissions into homes, for reasons that span developer behaviour, infrastructure constraints, and the systematic underfunding of planning departments that has left them too understaffed to process applications efficiently or enforce conditions effectively.
             </p>
             <p>
-              Planning departments have been among the hardest-hit casualties of local government austerity. Between 2010 and 2023, the Planning Advisory Service estimates that English local planning authorities lost approximately 40% of their planning department staff — roughly 12,000 full-time equivalent posts. The cuts happened precisely as the planning caseload grew more complex: major infrastructure schemes, nutrient neutrality requirements, biodiversity net gain conditions, and the transition to digital planning portals all added administrative burden without additional resources. The result is a system stretched to breaking point: 500,000 planning applications were awaiting a decision in England at the end of 2023, and the proportion of major residential applications decided within the statutory 13-week period fell below 50% for the first time in 2022.
+              Planning departments have been among the hardest-hit casualties of local government austerity. Between 2010 and 2023, the Planning Advisory Service estimates that English local planning authorities lost approximately 40% of their planning department staff — roughly 12,000 full-time equivalent posts.<Cite nums={2} /> The cuts happened precisely as the planning caseload grew more complex: major infrastructure schemes, nutrient neutrality requirements, biodiversity net gain conditions, and the transition to digital planning portals all added administrative burden without additional resources. The result is a system stretched to breaking point: 500,000 planning applications were awaiting a decision in England at the end of 2023, and the proportion of major residential applications decided within the statutory 13-week period fell below 50% for the first time in 2022.<Cite nums={1} />
             </p>
             </div>
         </section>
@@ -190,6 +190,10 @@ export default function PlanningPermissionPage() {
             source="Ministry of Housing, Communities &amp; Local Government · Planning and Infrastructure Bill 2025"
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="border-t border-wiah-border pt-8 mt-12">
           <h2 className="text-lg font-bold text-wiah-black mb-4">Sources &amp; methodology</h2>

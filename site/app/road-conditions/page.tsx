@@ -8,6 +8,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ADEPT / AIA', dataset: 'Annual Local Authority Road Maintenance Survey (ALARM)', url: 'https://www.asphaltuk.org/alarm-survey/', date: '2025', note: 'Maintenance backlog totals £16.3bn' },
+  { num: 2, name: 'DfT', dataset: 'Local Road Maintenance Statistics', url: 'https://www.gov.uk/government/statistics/road-conditions-in-england', date: '2025' },
+  { num: 3, name: 'DfT', dataset: 'Pothole Fund and Highways Maintenance Block Grant', url: 'https://www.gov.uk/government/publications', date: '2025', note: '£500m dedicated pothole funding 2025-26' },
+];
 
 interface DataPoint {
   year: number;
@@ -92,7 +100,7 @@ export default function RoadConditionsPage() {
         <section className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The local road maintenance backlog across England totals £16.3 billion; at current funding levels it would take 14 years to clear. 13 councils received the worst possible rating in 2025-26. The data below draws on official sources to show how this has changed over the past decade and where the pressures are most acute.
+              The local road maintenance backlog across England totals £16.3 billion; at current funding levels it would take 14 years to clear.<Cite nums={1} /> 13 councils received the worst possible rating in 2025-26.<Cite nums={2} /> The data below draws on official sources to show how this has changed over the past decade and where the pressures are most acute.
             </p>
             <p>
               The figures reflect a structural pattern rather than a short-term fluctuation. Understanding the scale of the issue is the first step toward holding policymakers to account for the decisions that shape these outcomes.
@@ -170,6 +178,10 @@ export default function RoadConditionsPage() {
             source="Source: DfT \u2014 Local road maintenance statistics, 2025. ADEPT \u2014 State of the nation road survey, 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

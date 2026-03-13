@@ -9,6 +9,13 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DfT', dataset: 'Reported Road Casualties in Great Britain — Annual Report', url: 'https://www.gov.uk/government/statistics/reported-road-casualties-in-great-britain-annual-report', date: '2023' },
+  { num: 2, name: 'Welsh Government', dataset: '20mph Default Speed Limit — Implementation Report', url: 'https://www.gov.wales/20mph', date: '2023', note: '20mph zones reduce pedestrian casualties by ~20%' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -102,8 +109,8 @@ export default function RoadSafetyPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The fall in British road deaths from 7,763 in 1972 to 1,695 in 2023 is one of the most significant public health achievements of the past half-century — a 78% reduction achieved through a combination of vehicle engineering (seat belts made compulsory in 1983, airbags and crumple zones standard in the 1990s), road design, drink-drive enforcement, and improved emergency care. Deaths fell every decade from the 1970s to the 2000s. Then progress stalled. In 2010 there were 1,857 road fatalities; by 2023 there were 1,695. Thirteen years of minimal movement suggests the interventions that produced the long decline — basic engineering and obvious regulation — have been largely exhausted. What remains is considerably harder.</p>
-            <p>The risk is not evenly spread. Pedestrians and cyclists account for 31% of road deaths but travel a small fraction of total miles. A pedestrian is around 14 times more likely to die per mile travelled than a car occupant. Cyclist serious injuries have risen 31% since 2010 as cycling volumes have grown without commensurate infrastructure investment. The evidence on speed in urban areas is clear: 20mph zones reduce pedestrian casualties by around 20%. Wales became the first part of the UK to introduce a 20mph default speed limit in residential areas in September 2023. England has no equivalent national policy, and the Department for Transport has resisted calls for mandatory 20mph zones, leaving implementation to individual local authorities with inconsistent results.</p>
+            <p>The fall in British road deaths from 7,763 in 1972 to 1,695 in 2023 is one of the most significant public health achievements of the past half-century — a 78% reduction achieved through a combination of vehicle engineering (seat belts made compulsory in 1983, airbags and crumple zones standard in the 1990s), road design, drink-drive enforcement, and improved emergency care.<Cite nums={1} /> Deaths fell every decade from the 1970s to the 2000s. Then progress stalled. In 2010 there were 1,857 road fatalities; by 2023 there were 1,695. Thirteen years of minimal movement suggests the interventions that produced the long decline — basic engineering and obvious regulation — have been largely exhausted. What remains is considerably harder.</p>
+            <p>The risk is not evenly spread. Pedestrians and cyclists account for 31% of road deaths but travel a small fraction of total miles. A pedestrian is around 14 times more likely to die per mile travelled than a car occupant.<Cite nums={1} /> Cyclist serious injuries have risen 31% since 2010 as cycling volumes have grown without commensurate infrastructure investment. The evidence on speed in urban areas is clear: 20mph zones reduce pedestrian casualties by around 20%.<Cite nums={2} /> Wales became the first part of the UK to introduce a 20mph default speed limit in residential areas in September 2023. England has no equivalent national policy, and the Department for Transport has resisted calls for mandatory 20mph zones, leaving implementation to individual local authorities with inconsistent results.</p>
             </div>
         </section>
 

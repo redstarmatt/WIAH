@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ORR', dataset: 'National Rail Trends', url: 'https://dataportal.orr.gov.uk/statistics/usage/passenger-rail-usage/', date: '2024', note: '1.74 billion passenger journeys in 2019; COVID cut to 390 million; recovered to 1.61 billion (93%) by 2024' },
+  { num: 2, name: 'ORR', dataset: 'Punctuality Statistics', url: 'https://dataportal.orr.gov.uk/statistics/performance/passenger-rail-performance/', date: '2024', note: 'On-Time metric fell to 71.7% in 2023 — worst since statistic introduced; cancellations rose to 4.4% in 2022' },
+  { num: 3, name: 'DfT', dataset: 'Emergency Recovery Measures Agreements', date: '2022', note: 'Government absorbed all revenue risk during COVID costing over £10 billion between 2020 and 2022' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -149,10 +157,10 @@ export default function RailPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Britain's railways carried 1.74 billion passenger journeys in 2019 — the highest since the 1920s. COVID-19 cut that by 77%, to 390 million in 2020, and the government absorbed all revenue risk through Emergency Recovery Measures Agreements costing over £10 billion between 2020 and 2022. Demand has since recovered to 1.61 billion journeys in 2024, or 93% of the pre-pandemic peak, but the pattern has reshaped permanently: Monday and Friday off-peak volumes now run below Tuesday–Wednesday levels as hybrid working stabilises. Season ticket sales remain roughly 30% below 2019, while anytime and flexible fares have grown — a structural shift that undermines the old franchise revenue model.
+              Britain's railways carried 1.74 billion passenger journeys in 2019 — the highest since the 1920s.<Cite nums={1} /> COVID-19 cut that by 77%, to 390 million in 2020, and the government absorbed all revenue risk through Emergency Recovery Measures Agreements costing over £10 billion between 2020 and 2022.<Cite nums={3} /> Demand has since recovered to 1.61 billion journeys in 2024, or 93% of the pre-pandemic peak, but the pattern has reshaped permanently: Monday and Friday off-peak volumes now run below Tuesday–Wednesday levels as hybrid working stabilises. Season ticket sales remain roughly 30% below 2019, while anytime and flexible fares have grown — a structural shift that undermines the old franchise revenue model.
             </p>
             <p>
-              Service quality has worsened on almost every measure. The On-Time metric — arrival within 59 seconds for commuter trains, 3 minutes for long-distance — fell to 71.7% in 2023, the worst since the statistic was introduced in the late 1990s. Cancellations rose from 1.8% in 2014 to 4.4% in 2022, partially recovering to 3.1% in 2024. The May 2018 timetable collapse, when GTR/Thameslink and Northern launched new schedules simultaneously, was catastrophic for northern commuters and wiped out six years of punctuality gains. The Williams-Shapps Plan for Rail aims to consolidate 14 fragmented Train Operating Companies into a single public body, Great British Railways; Labour has committed to the reform, but legislation remains pending.
+              Service quality has worsened on almost every measure. The On-Time metric — arrival within 59 seconds for commuter trains, 3 minutes for long-distance — fell to 71.7% in 2023, the worst since the statistic was introduced in the late 1990s.<Cite nums={2} /> Cancellations rose from 1.8% in 2014 to 4.4% in 2022, partially recovering to 3.1% in 2024. The May 2018 timetable collapse, when GTR/Thameslink and Northern launched new schedules simultaneously, was catastrophic for northern commuters and wiped out six years of punctuality gains. The Williams-Shapps Plan for Rail aims to consolidate 14 fragmented Train Operating Companies into a single public body, Great British Railways; Labour has committed to the reform, but legislation remains pending.
             </p>
             </div>
         </section>
@@ -245,6 +253,10 @@ export default function RailPage() {
           source="Source: ORR — National rail trends Q4 2023/24."
         />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

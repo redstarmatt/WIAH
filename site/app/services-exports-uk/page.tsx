@@ -5,6 +5,14 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'UK Trade Statistics — Balance of Payments', url: 'https://www.ons.gov.uk/economy/nationalaccounts/balanceofpayments/bulletins/uktrade/latestrelease', date: 'Jan 2024', note: 'Services exports reached record £398bn in 2023; £136bn services trade surplus offsets goods deficit' },
+  { num: 2, name: 'ONS', dataset: 'International Trade in Services', url: 'https://www.ons.gov.uk/businessindustryandtrade/internationaltrade', date: 'Jan 2024', note: 'Financial, professional and creative services are UK\'s most globally competitive sectors' },
+];
+
 export default function ServicesExportsUkPage() {
 
   const sparkData = [280,295,300,275,330,370,398];
@@ -107,11 +115,15 @@ export default function ServicesExportsUkPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on Services Exports</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Services Exports in the United Kingdom: the numbers show a complex picture. UK services exports reached a record £398 billion in 2023. The £136 billion services trade surplus partially offsets the large goods trade deficit. Financial, professional and creative services are the UK's most globally competitive sectors. The headline figure — 398 for uk services exports (£ billions, annual) — record high · financial services largest component.</p>
-              <p>The secondary metric tells an equally important story: services trade surplus (£ billions) stands at 136, where up from £94B in 2016 · offset goods trade deficit. Policy responses have been mixed, and the structural drivers of these trends require sustained attention beyond short-term interventions.</p>
+              <p>Services Exports in the United Kingdom: the numbers show a complex picture. UK services exports reached a record £398 billion in 2023.<Cite nums={1} /> The £136 billion services trade surplus partially offsets the large goods trade deficit. Financial, professional and creative services are the UK's most globally competitive sectors.<Cite nums={2} /> The headline figure — 398 for uk services exports (£ billions, annual) — record high · financial services largest component.</p>
+              <p>The secondary metric tells an equally important story: services trade surplus (£ billions) stands at 136, where up from £94B in 2016 · offset goods trade deficit.<Cite nums={1} /> Policy responses have been mixed, and the structural drivers of these trends require sustained attention beyond short-term interventions.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

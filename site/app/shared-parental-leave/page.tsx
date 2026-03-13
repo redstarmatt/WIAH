@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'HMRC', dataset: 'Shared Parental Leave and Pay Statistics', url: 'https://www.gov.uk/government/collections/hmrc-shared-parental-leave-and-pay-statistics', date: '2023', note: '3.6% of eligible fathers take SPL; up from 1% in 2015' },
+  { num: 2, name: 'DWP', dataset: 'Statutory Payment Rates', url: 'https://www.gov.uk/maternity-pay-leave/pay', date: '2024', note: 'Statutory shared parental pay £184.03/week; 75% pay cut for median male earner' },
+  { num: 3, name: 'TUC', dataset: 'Parental Leave Survey', url: 'https://www.tuc.org.uk/research-analysis/reports/', date: '2023', note: '78% of fathers take no leave beyond 2-week statutory paternity entitlement' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -65,8 +73,8 @@ export default function SharedParentalLeavePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Shared parental leave was introduced in April 2015 with the ambition of transforming the gender dynamics of childcare. Nearly a decade later, just 3.6% of eligible fathers take it — up from 1% in the first year, but far below the rates seen in Sweden, Norway, and Iceland. The fundamental barrier is financial: statutory shared parental pay is £184.03 per week, meaning a father earning the median male wage of around £700 per week accepts a 75% pay cut to take leave. Enhanced pay exists at some employers but is concentrated in larger, higher-paying organisations. Cultural barriers compound the financial ones — informal discouragement, career risk perceptions, and peer norms make leave-taking socially costly for men in manual occupations and small businesses in ways that surveys alone cannot capture. Countries with the highest take-up — Sweden, Norway, Iceland — use non-transferable &ldquo;daddy months&rdquo; at 80–90% pay replacement: the UK system has neither.</p>
-            <p>The gender pay gap widens sharply at the point of childbirth and does not recover, because mothers take almost all the leave and fathers do not. Women with children earn substantially less than women without, and the gap grows through their careers. Low paternal involvement in early childcare also has documented consequences for child development: early paternal engagement is associated with better cognitive and emotional outcomes, particularly for boys. The consequence of a policy that is financially prohibitive for most fathers is that these benefits remain unavailable to the majority, and the structural drivers of the gender pay gap remain in place.</p>
+            <p>Shared parental leave was introduced in April 2015 with the ambition of transforming the gender dynamics of childcare. Nearly a decade later, just 3.6% of eligible fathers take it — up from 1% in the first year, but far below the rates seen in Sweden, Norway, and Iceland.<Cite nums={1} /> The fundamental barrier is financial: statutory shared parental pay is £184.03 per week, meaning a father earning the median male wage of around £700 per week accepts a 75% pay cut to take leave.<Cite nums={2} /> Enhanced pay exists at some employers but is concentrated in larger, higher-paying organisations. Cultural barriers compound the financial ones — informal discouragement, career risk perceptions, and peer norms make leave-taking socially costly for men in manual occupations and small businesses in ways that surveys alone cannot capture. Countries with the highest take-up — Sweden, Norway, Iceland — use non-transferable &ldquo;daddy months&rdquo; at 80–90% pay replacement: the UK system has neither.</p>
+            <p>The gender pay gap widens sharply at the point of childbirth and does not recover, because mothers take almost all the leave and fathers do not.<Cite nums={3} /> Women with children earn substantially less than women without, and the gap grows through their careers. Low paternal involvement in early childcare also has documented consequences for child development: early paternal engagement is associated with better cognitive and emotional outcomes, particularly for boys. The consequence of a policy that is financially prohibitive for most fathers is that these benefits remain unavailable to the majority, and the structural drivers of the gender pay gap remain in place.</p>
           </div>
         </section>
 
@@ -126,6 +134,10 @@ export default function SharedParentalLeavePage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

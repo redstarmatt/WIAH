@@ -107,8 +107,8 @@ export default function PersonalDebtPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>UK households owe £1.9 trillion in total — 130% of annual household income and the highest debt-to-income ratio in the G7. Mortgage debt accounts for £1.54 trillion of this; consumer credit — credit cards, personal loans, and buy-now-pay-later arrangements — adds a further £220 billion. The burden is not evenly shared: 8.9 million people, one in seven adults, are in &ldquo;problem debt&rdquo; according to StepChange, meaning they are consistently struggling to meet bills and credit commitments. Personal insolvencies in England and Wales reached 110,000 in 2023, the highest since 2010, with Debt Relief Orders — the insolvency route for people with few assets — rising 30% as energy costs pushed lower-income households beyond their limits.</p>
-            <p>The cost-of-living crisis of 2021–23 converted manageable indebtedness into acute distress for millions of households. Energy bills roughly doubling between 2021 and 2023 created £3.1 billion in energy arrears by the end of that period. Council tax arrears rose to £6 billion as households prioritised food and heating over statutory obligations. The buy-now-pay-later sector — valued at £7 billion and operating largely outside Financial Conduct Authority regulation until its 2022 review — extended credit to 10 million users, many without a conventional credit history. Simultaneously, the Bank of England raised the base rate from 0.1% in December 2021 to 5.25% by August 2023, the fastest tightening cycle in forty years, adding approximately £270 per month to a typical variable-rate mortgage and forcing millions of fixed-rate borrowers into painful refinancing.</p>
+            <p>UK households owe £1.9 trillion in total — 130% of annual household income and the highest debt-to-income ratio in the G7.<Cite nums={1} /> Mortgage debt accounts for £1.54 trillion of this; consumer credit — credit cards, personal loans, and buy-now-pay-later arrangements — adds a further £220 billion. The burden is not evenly shared: 8.9 million people, one in seven adults, are in &ldquo;problem debt&rdquo; according to StepChange, meaning they are consistently struggling to meet bills and credit commitments.<Cite nums={2} /> Personal insolvencies in England and Wales reached 110,000 in 2023, the highest since 2010, with Debt Relief Orders — the insolvency route for people with few assets — rising 30% as energy costs pushed lower-income households beyond their limits.<Cite nums={3} /></p>
+            <p>The cost-of-living crisis of 2021–23 converted manageable indebtedness into acute distress for millions of households. Energy bills roughly doubling between 2021 and 2023 created £3.1 billion in energy arrears by the end of that period. Council tax arrears rose to £6 billion as households prioritised food and heating over statutory obligations. The buy-now-pay-later sector — valued at £7 billion and operating largely outside Financial Conduct Authority regulation until its 2022 review — extended credit to 10 million users, many without a conventional credit history. Simultaneously, the Bank of England raised the base rate from 0.1% in December 2021 to 5.25% by August 2023, the fastest tightening cycle in forty years, adding approximately £270 per month to a typical variable-rate mortgage and forcing millions of fixed-rate borrowers into painful refinancing.<Cite nums={1} /></p>
             </div>
         </section>
 
@@ -216,6 +216,10 @@ export default function PersonalDebtPage() {
             source="Source: Bank of England — Money and Credit Statistics 2023; Insolvency Service — Insolvency Statistics 2023."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

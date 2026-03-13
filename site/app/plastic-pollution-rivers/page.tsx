@@ -8,6 +8,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Environment Agency', dataset: 'Water Quality Data Archive — River Classification', url: 'https://environment.data.gov.uk/water-quality/view/landing', date: '2024' },
+  { num: 2, name: 'Eunomia / WWF', dataset: 'Plastic Pollution in UK Rivers', date: '2023' },
+  { num: 3, name: 'Defra', dataset: 'Storm Overflow Discharge Reduction Plan', url: 'https://www.gov.uk/government/publications/storm-overflows-discharge-reduction-plan', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -194,6 +202,10 @@ export default function TopicPage() {
             source="Source: DEFRA — Storm overflow discharge reduction plan, 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

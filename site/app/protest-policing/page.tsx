@@ -8,6 +8,15 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Home Office', dataset: 'Police Powers and Procedures, England and Wales', url: 'https://www.gov.uk/government/collections/police-powers-and-procedures-england-and-wales', date: '2023' },
+  { num: 2, name: 'Home Office', dataset: 'Public Order Act 2023 — Explanatory Notes', date: '2023' },
+  { num: 3, name: 'Liberty', dataset: 'Protest Policing Research', url: 'https://www.libertyhumanrights.org.uk/issue/protest/', date: '2024' },
+  { num: 4, name: 'Amnesty International UK', dataset: 'Right to Protest', url: 'https://www.amnesty.org.uk/right-to-protest', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -67,8 +76,8 @@ export default function ProtestPolicingPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Public Order Act 2023 and the Police, Crime, Sentencing and Courts Act 2022 together represent the most significant expansion of police powers over protest in England and Wales in a generation. New offences include &ldquo;locking on,&rdquo; tunnelling near infrastructure, and &ldquo;causing serious disruption&rdquo; — a concept so broad its application has been contested in the courts. Protest-related arrests rose from around 2,870 in 2019 to a peak of 4,278 in 2023, driven by the emergence of Extinction Rebellion and Just Stop Oil, the creation of new offences that criminalise previously lawful activity, and changes in how police respond to planned protests. Serious Disruption Prevention Orders (SDPOs), introduced in the 2023 Act, can ban individuals from attending protests based on past conduct; four had been issued by 2024.</p>
-            <p>The chilling effect on lawful protest activity typically precedes legal challenge. The European Court of Human Rights has found the UK in breach of Article 11 in several protest-related cases; domestic courts have quashed some protest convictions and found parts of police protest guidance unlawful. A significant proportion of arrests do not result in charge — arrest is sometimes used as a tool to disrupt protest rather than as a precursor to prosecution. Civil liberties organisations including Liberty and Amnesty International have argued that the new powers fundamentally threaten the right to protest as a mechanism of political expression.</p>
+            <p>The Public Order Act 2023 and the Police, Crime, Sentencing and Courts Act 2022 together represent the most significant expansion of police powers over protest in England and Wales in a generation.<Cite nums={2} /> New offences include &ldquo;locking on,&rdquo; tunnelling near infrastructure, and &ldquo;causing serious disruption&rdquo; — a concept so broad its application has been contested in the courts. Protest-related arrests rose from around 2,870 in 2019 to a peak of 4,278 in 2023, driven by the emergence of Extinction Rebellion and Just Stop Oil, the creation of new offences that criminalise previously lawful activity, and changes in how police respond to planned protests.<Cite nums={1} /> Serious Disruption Prevention Orders (SDPOs), introduced in the 2023 Act, can ban individuals from attending protests based on past conduct; four had been issued by 2024.<Cite nums={2} /></p>
+            <p>The chilling effect on lawful protest activity typically precedes legal challenge. The European Court of Human Rights has found the UK in breach of Article 11 in several protest-related cases; domestic courts have quashed some protest convictions and found parts of police protest guidance unlawful. A significant proportion of arrests do not result in charge — arrest is sometimes used as a tool to disrupt protest rather than as a precursor to prosecution.<Cite nums={1} /> Civil liberties organisations including Liberty and Amnesty International have argued that the new powers fundamentally threaten the right to protest as a mechanism of political expression.<Cite nums={[3, 4]} /></p>
           </div>
         </section>
 
@@ -128,6 +137,10 @@ export default function ProtestPolicingPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

@@ -189,6 +189,10 @@ export default function RiverBathingPage() {
           </div>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         {/* Sources */}
         <ScrollReveal>
           <div className="border-t border-wiah-border pt-8 mt-8">
