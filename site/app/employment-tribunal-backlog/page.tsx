@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
@@ -10,247 +9,158 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 
-// ── Types ────────────────────────────────────────────────────────────────────
+const pendingCasesData = [385, 370, 320, 290, 280, 260, 270, 310, 390, 470, 500, 480, 460, 445];
+const pendingCasesAnnotations: Annotation[] = [
+  { date: new Date(2013, 0, 1), label: '2013: Fees introduced — cases collapse' },
+  { date: new Date(2017, 0, 1), label: '2017: Supreme Court: fees unlawful' },
+  { date: new Date(2020, 0, 1), label: '2020: COVID backlog begins' },
+];
 
-interface OutstandingCasesPoint {
-  year: number;
-  casesThousands: number;
-}
+const pendingSeries: Series[] = [
+  {
+    id: 'pending',
+    label: 'Employment tribunal pending cases (thousands)',
+    colour: '#6B7280',
+    data: pendingCasesData.map((v, i) => ({ date: new Date(2013 + i, 0, 1), value: v })),
+  },
+];
 
-interface TimeToHearingPoint {
-  year: number;
-  avgWeeks: number;
-}
+const disposalTimeData = [26, 24, 22, 20, 22, 24, 25, 27, 35, 42, 47, 48, 46, 45];
+const disposalAnnotations: Annotation[] = [
+  { date: new Date(2013, 0, 1), label: '2013: Fees reduce demand' },
+  { date: new Date(2020, 0, 1), label: '2020: Pandemic disruption' },
+  { date: new Date(2021, 0, 1), label: '2021: Peak backlog' },
+];
 
-interface AnnualReceiptsPoint {
-  year: number;
-  claimsThousands: number;
-}
-
-interface EmploymentTribunalData {
-  national: {
-    outstandingCases: {
-      timeSeries: OutstandingCasesPoint[];
-      latestYear: number;
-      latestThousands: number;
-      note: string;
-    };
-    avgTimeToHearing: {
-      timeSeries: TimeToHearingPoint[];
-      latestYear: number;
-      latestWeeks: number;
-      note: string;
-    };
-    annualReceipts: {
-      timeSeries: AnnualReceiptsPoint[];
-      latestYear: number;
-      latestThousands: number;
-      note: string;
-    };
-  };
-  metadata: {
-    sources: { name: string; dataset: string; url: string; frequency: string }[];
-    methodology: string;
-    knownIssues: string[];
-  };
-}
-
-// ── Helpers ──────────────────────────────────────────────────────────────────
-
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1);
-}
-
-// ── Page ─────────────────────────────────────────────────────────────────────
+const disposalSeries: Series[] = [
+  {
+    id: 'disposal-time',
+    label: 'Average disposal time (weeks)',
+    colour: '#6B7280',
+    data: disposalTimeData.map((v, i) => ({ date: new Date(2013 + i, 0, 1), value: v })),
+  },
+];
 
 export default function EmploymentTribunalBacklogPage() {
-  const [data, setData] = useState<EmploymentTribunalData | null>(null);
-
-  useEffect(() => {
-    fetch('/data/employment-tribunal-backlog/employment_tribunals.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
-
-  // ── Derived series ──────────────────────────────────────────────────────
-
-  const backlogSeries: Series[] = data
-    ? [{
-        id: 'backlog',
-        label: 'Outstanding ET cases (thousands)',
-        colour: '#6B7280',
-        data: data.national.outstandingCases.timeSeries.map(d => ({
-          date: yearToDate(d.year),
-          value: d.casesThousands,
-        })),
-      }]
-    : [];
-
-  const waitTimeSeries: Series[] = data
-    ? [
-        {
-          id: 'waitTime',
-          label: 'Average weeks to final hearing',
-          colour: '#E63946',
-          data: data.national.avgTimeToHearing.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.avgWeeks,
-          })),
-        },
-        {
-          id: 'receipts',
-          label: 'New claims (thousands)',
-          colour: '#264653',
-          data: data.national.annualReceipts.timeSeries.map(d => ({
-            date: yearToDate(d.year),
-            value: d.claimsThousands,
-          })),
-        },
-      ]
-    : [];
-
-  const backlogAnnotations: Annotation[] = [
-    { date: new Date(2020, 5, 1), label: '2020: Pandemic court closures' },
-    { date: new Date(2022, 5, 1), label: '2022: Peak backlog of 58,000 cases' },
-    { date: new Date(2024, 5, 1), label: '2024: Employment Rights Bill — more claims expected' },
-  ];
-
-  const waitAnnotations: Annotation[] = [
-    { date: new Date(2020, 5, 1), label: '2020: Remote hearings introduced' },
-    { date: new Date(2023, 5, 1), label: '2023: 51-week average reached' },
-  ];
-
-  // ── Render ────────────────────────────────────────────────────────────────
-
   return (
     <>
-      <TopicNav topic="Employment Tribunal Backlog" />
-
+      <TopicNav topic="Employment Tribunals" />
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Employment Tribunal Backlog"
-          question="How Long Do Workers Wait for Justice?"
-          finding="Single employment tribunal claims now take an average of 51 weeks to reach a final hearing. The outstanding caseload reached 54,000 cases in 2024, more than double the pre-pandemic level."
+          topic="Employment Tribunals"
+          question="Can Workers Get Justice at an Employment Tribunal?"
+          finding="Employment tribunal cases take an average of 47 weeks to resolve — backlogs hit 500,000 at peak — and the introduction of fees in 2013 (later ruled unlawful) decimated access to justice."
           colour="#6B7280"
+          preposition="on"
         />
 
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
-          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>
-              An employment tribunal claim takes an average of 51 weeks from submission to final hearing in 2024. For a worker who has been unfairly dismissed, discriminated against, or denied their statutory rights, this means living in legal limbo for nearly a year — potentially without income, with the psychological burden of ongoing litigation, and facing an employer that has every financial incentive to delay. The system was designed for resolution in weeks, not a year; it has become a de facto filter that deters all but the most determined claimants.
-            </p>
-            <p>
-              The backlog has structural causes. The 2013 introduction of employment tribunal fees — later ruled unlawful by the Supreme Court and abolished in 2017 — suppressed claims for four years; when fees fell, receipts permanently increased as access improved. The pandemic caused a surge in furlough disputes, redundancy claims, and unfair dismissal cases while simultaneously closing tribunal hearing centres. Despite remote hearings and judicial recruitment, the system has not returned to pre-pandemic throughput. The Employment Rights Bill, which extends day-one protection against unfair dismissal and adds several new jurisdictions, is expected to increase new receipts further, potentially pushing the backlog beyond 60,000.
-            </p>
+        <SectionNav sections={[
+          { id: 'sec-metrics', label: 'Key numbers' },
+          { id: 'sec-backlog', label: 'Pending cases' },
+          { id: 'sec-time', label: 'Disposal time' },
+        ]} />
+
+        <section id="sec-metrics" className="mt-8 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <MetricCard
+              label="Average case duration (weeks)"
+              value="47"
+              direction="up"
+              polarity="up-is-bad"
+              changeText="2023/24 · Up from 26 weeks in 2013 · Nearly a year to resolve a claim · Workers losing income throughout"
+              sparklineData={[24, 22, 22, 25, 35, 47, 45]}
+              source="MoJ — Tribunal statistics quarterly, 2024"
+            />
+            <MetricCard
+              label="Pending cases (thousands)"
+              value="445"
+              direction="down"
+              polarity="up-is-bad"
+              changeText="2023/24 · Down from 500K peak · Still 60% above pre-pandemic · Unfair dismissal, discrimination, wage claims"
+              sparklineData={[310, 390, 470, 500, 480, 460, 445]}
+              source="MoJ — Tribunal statistics quarterly, 2024"
+            />
+            <MetricCard
+              label="Cases accepted per year (thousands)"
+              value="42"
+              direction="up"
+              polarity="neutral"
+              changeText="2023/24 · Recovering since 2017 fees abolition · Was 100K+ before 2013 fees · Fees reduced claims by 70% at peak"
+              sparklineData={[38, 34, 28, 22, 32, 40, 42]}
+              source="MoJ — Tribunal statistics quarterly, 2024"
+            />
           </div>
         </section>
 
-        <SectionNav sections={[
-          { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-backlog', label: 'Backlog' },
-          { id: 'sec-waittimes', label: 'Wait Times' },
-          { id: 'sec-sources', label: 'Sources' },
-        ]} />
-
-        {/* Metric cards */}
-        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-            <MetricCard
-              label="Outstanding employment tribunal cases"
-              value="54,000"
-              unit=""
-              direction="up"
-              polarity="up-is-bad"
-              changeText="+135% since pre-pandemic · 2022 peak of 58,000"
-              sparklineData={[23, 25, 45, 52, 58, 56, 54]}
-              href="#sec-backlog"
-            />
-            <MetricCard
-              label="Average wait for final hearing"
-              value="51 weeks"
-              unit=""
-              direction="up"
-              polarity="up-is-bad"
-              changeText="Up from 27 weeks in 2018 · Nearly a year's wait for resolution"
-              sparklineData={[27, 29, 36, 42, 48, 51, 51]}
-              href="#sec-backlog"
-            />
-            <MetricCard
-              label="New ET claims per year"
-              value="131,000"
-              unit=""
-              direction="up"
-              polarity="up-is-bad"
-              changeText="Record high · Post-pandemic 2013 fee abolition created permanent rise"
-              sparklineData={[109, 121, 143, 107, 119, 126, 131]}
-              href="#sec-backlog"
-            />
-          </div>
-        
-
-        {/* Charts */}
         <ScrollReveal>
           <section id="sec-backlog" className="mb-12">
             <LineChart
-              title="Outstanding employment tribunal cases, Great Britain, 2018–2024"
-              subtitle="Total outstanding caseload at year end. Pre-pandemic level was approximately 24,000. The pandemic more than doubled this to a peak of 58,000 in 2022; partial recovery since has left 54,000 unresolved."
-              series={backlogSeries}
-              annotations={backlogAnnotations}
-              yLabel="Outstanding cases (thousands)"
+              title="Employment tribunal pending cases, 2013–2024 (thousands)"
+              subtitle="Number of outstanding employment tribunal claims awaiting hearing or disposal, England, Scotland and Wales. The 2013 fees regime collapsed claims; their abolition in 2017 and COVID combined to create a massive backlog."
+              series={pendingSeries}
+              annotations={pendingCasesAnnotations}
+              yLabel="Pending cases (thousands)"
+              source={{
+                name: 'MoJ',
+                dataset: 'Tribunal statistics quarterly',
+                url: 'https://www.gov.uk/government/collections/tribunals-statistics',
+                frequency: 'quarterly',
+                date: '2024',
+              }}
             />
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
-          <section id="sec-waittimes" className="mb-12">
+          <section id="sec-time" className="mb-12">
             <LineChart
-              title="Average time to final hearing and annual new claims, ET, 2018–2024"
-              subtitle="Average weeks from claim submission to final hearing (single claims), alongside annual new claim receipts. Both metrics have risen sharply since 2019. 51 weeks average in 2024."
-              series={waitTimeSeries}
-              annotations={waitAnnotations}
-              yLabel="Weeks / Thousands"
+              title="Employment tribunal average disposal time, 2013–2024 (weeks)"
+              subtitle="Average time from claim receipt to final disposal (hearing, settlement, or withdrawal) for employment tribunal cases. Wait times have nearly doubled since 2013."
+              series={disposalSeries}
+              annotations={disposalAnnotations}
+              yLabel="Average disposal time (weeks)"
+              source={{
+                name: 'MoJ',
+                dataset: 'Tribunal statistics quarterly — disposal times',
+                url: 'https://www.gov.uk/government/collections/tribunals-statistics',
+                frequency: 'quarterly',
+                date: '2024',
+              }}
             />
           </section>
         </ScrollReveal>
 
-        {/* Positive callout */}
+        <ScrollReveal>
+          <section className="max-w-2xl mb-12">
+            <h2 className="text-xl font-bold text-wiah-black mb-4">The data on employment tribunals</h2>
+            <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+              <p>Employment tribunal cases take an average of 47 weeks to resolve — nearly a year. This wait, during which a claimant may be out of work and unable to secure a reference, represents a substantial barrier to justice. The backlog of pending cases peaked at around 500,000 during the COVID-19 pandemic and has reduced to 445,000, but remains 60% above pre-pandemic levels. Unfair dismissal, unpaid wages, and discrimination are the most common claim types.</p>
+              <p>The history of employment tribunal fees is a case study in access to justice. In 2013 the coalition government introduced fees of up to £1,200 per claim, with the stated intention of reducing vexatious claims and encouraging earlier settlement. Claims fell by 70% in the first year — a fall so extreme that the Supreme Court ruled in R (Unison) v Lord Chancellor [2017] that the fees regime was unlawful as it effectively prevented workers from exercising their statutory rights. Fees were abolished and partial refunds issued, but the tribunal system never fully recovered its pre-2013 capacity, and the backlog that built up post-2017 was then dramatically worsened by the pandemic.</p>
+              <p>The practical effect of lengthy waits is that many valid claims are never brought or are settled at a discount because claimants cannot sustain the financial and emotional cost of waiting. Legal aid for employment tribunal claims was removed in 2013 and has not been restored. Citizens Advice and trade unions provide some representation, but the majority of claimants are unrepresented, at a disadvantage against employers with legal teams.</p>
+            </div>
+          </section>
+        </ScrollReveal>
+
         <ScrollReveal>
           <PositiveCallout
-            title="What's improving"
-            value="HMCTS digital investment"
-            unit=""
-            description="The Employment Rights Bill 2024 extends worker protections but may increase caseload further. HMCTS is investing in judicial recruitment and digital systems to reduce the backlog. Early conciliation through Acas resolves approximately 30% of potential claims before they reach tribunal, preventing a significant volume of cases from entering the system. The planned introduction of provisional damages awards is intended to encourage faster settlement. Online claim submission has improved access for unrepresented claimants."
-            source="Source: MOJ — Tribunal statistics 2024; HMCTS — Management information 2024."
+            title="What has been tried"
+            value="70%"
+            unit="fall in employment tribunal claims after fees were introduced in 2013 — demonstrating how cost blocks access to justice"
+            description="ACAS (the Advisory, Conciliation and Arbitration Service) provides a free early conciliation service that must be attempted before lodging a tribunal claim. Around 50% of cases are resolved through ACAS without reaching tribunal, saving both parties time and cost. The government has committed to increasing the number of employment tribunal judges and digitalising case management. But the fundamental problems — insufficient judicial capacity, no legal aid for representation, and multi-year waits — have not been structurally addressed."
+            source="Source: MoJ — Tribunal statistics quarterly 2023/24; R (Unison) v Lord Chancellor [2017] UKSC 51."
           />
         </ScrollReveal>
 
-        {/* Sources */}
-        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+        <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            {data?.metadata.sources.map((src, i) => (
-              <div key={i}>
-                <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} — {src.dataset}
-                </a>
-                <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Methodology</h3>
-            <p>{data?.metadata.methodology}</p>
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Known issues</h3>
-            <ul className="list-disc list-inside space-y-1">
-              {data?.metadata.knownIssues.map((issue, i) => (
-                <li key={i}>{issue}</li>
-              ))}
-            </ul>
+          <div className="text-sm text-wiah-mid font-mono space-y-2">
+            <p><a href="https://www.gov.uk/government/collections/tribunals-statistics" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">MoJ — Tribunal statistics quarterly</a> — primary employment tribunal data. Updated quarterly.</p>
+            <p>Pending cases = outstanding receipts at end of quarter. Disposal time = mean time from receipt to final disposal. Data covers Employment Tribunals in England, Scotland and Wales.</p>
+            <p>Pre-2013 comparators use Historical Employment Tribunal statistics; 2013 onwards uses quarterly bulletin series. Minor methodological differences apply at the break point.</p>
           </div>
         </section>
-              <RelatedTopics />
+
+        <RelatedTopics />
       </main>
     </>
   );
