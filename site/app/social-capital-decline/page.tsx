@@ -338,6 +338,10 @@ export default function SocialCapitalDeclinePage() {
           />
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         {/* Sources & Methodology */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

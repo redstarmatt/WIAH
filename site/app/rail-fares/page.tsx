@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ORR', dataset: 'National Rail Trends — Fares Index', url: 'https://dataportal.orr.gov.uk/statistics/finance/rail-fares/', date: 'January 2025', note: 'Regulated fares increased 22% in real terms since 2010; annual formula tied to RPI' },
+  { num: 2, name: 'ORR / RAC Foundation', dataset: 'Comparative Transport Costs per Mile', url: 'https://dataportal.orr.gov.uk/statistics/finance/rail-fares/', date: 'January 2025', note: 'Rail costs 33p per mile vs 17p by car; gap widening as fuel duty frozen 14 years' },
+  { num: 3, name: 'ORR', dataset: 'Season Ticket Fares Index', url: 'https://dataportal.orr.gov.uk/statistics/finance/rail-fares/', date: 'January 2025', note: 'Season ticket holders saw 39% real-terms increase since 2010' },
+  { num: 4, name: 'ORR', dataset: 'Passenger Rail Usage', url: 'https://dataportal.orr.gov.uk/statistics/usage/passenger-rail-usage/', date: 'January 2025', note: 'Passenger journeys at ~92% of pre-pandemic levels; hybrid working permanently changed patterns' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 

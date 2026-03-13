@@ -139,10 +139,14 @@ export default function SendCrisisPage() {
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
               <p>The number of children in England with Education, Health and Care Plans has more than doubled since the 2014 Children and Families Act introduced the current framework. Demand for EHCPs rose from 60,000 requests in 2015 to 167,000 in 2024 — a 178% increase — while local authority capacity has not kept pace.<Cite nums={1} /></p>
               <p>The statutory 20-week deadline for completing an EHCP assessment is being missed for nearly two thirds of children. Only 37% of EHCPs are now issued within the legal limit, down from 60% in 2016.<Cite nums={1} /> Families who challenge delays through the Special Educational Needs Tribunal win their cases in over 96% of contested hearings — suggesting decisions are often wrong, not just slow.<Cite nums={2} /></p>
-              <p>The total cost of SEND provision to local councils exceeds £10 billion per year, with a growing share absorbed by legal challenges and expensive independent school placements when mainstream settings cannot meet need. Despite this spending, inspection evidence consistently finds poor outcomes for children with SEND compared to their peers.</p>
+              <p>The total cost of SEND provision to local councils exceeds £10 billion per year, with a growing share absorbed by legal challenges and expensive independent school placements when mainstream settings cannot meet need.<Cite nums={3} /> Despite this spending, inspection evidence consistently finds poor outcomes for children with SEND compared to their peers.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

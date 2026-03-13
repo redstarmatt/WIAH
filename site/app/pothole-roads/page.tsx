@@ -66,9 +66,9 @@ export default function PotholeRoadsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England's local road network stretches approximately 188,000 miles — around 97% of all roads — and is maintained by 153 local highway authorities. The Annual Local Authority Road Maintenance (ALARM) survey estimated the one-time cost to bring all local roads up to a reasonable standard at £16.3 billion in 2024, up from £10 billion in 2015. The survey found that the average road surface is resurfaced only once every 77 years, against a recommended lifecycle of 10–20 years.</p>
-            <p>Local authority highway maintenance spending in England fell 22% in real terms between 2010/11 and 2022/23, from £4.7 billion to £3.7 billion. During the same period, vehicle-miles on local roads increased 8%, and extreme weather events — particularly freeze-thaw cycles — have become more frequent. The winter of 2023/24 was the sixth-wettest on record, accelerating road surface failure across England.</p>
-            <p>The cost to motorists is direct: the RAC reported 29,377 breakdowns caused by pothole damage in 2023 — the highest since tracking began in 2006 — with an average repair cost to motorists of £290 per incident. Councils report 54% of spending goes on reactive emergency repairs rather than planned resurfacing, perpetuating the cycle of failure.</p>
+            <p>England's local road network stretches approximately 188,000 miles — around 97% of all roads — and is maintained by 153 local highway authorities. The Annual Local Authority Road Maintenance (ALARM) survey estimated the one-time cost to bring all local roads up to a reasonable standard at £16.3 billion in 2024, up from £10 billion in 2015.<Cite nums={1} /> The survey found that the average road surface is resurfaced only once every 77 years, against a recommended lifecycle of 10–20 years.<Cite nums={1} /></p>
+            <p>Local authority highway maintenance spending in England fell 22% in real terms between 2010/11 and 2022/23, from £4.7 billion to £3.7 billion.<Cite nums={2} /> During the same period, vehicle-miles on local roads increased 8%, and extreme weather events — particularly freeze-thaw cycles — have become more frequent. The winter of 2023/24 was the sixth-wettest on record, accelerating road surface failure across England.</p>
+            <p>The cost to motorists is direct: the RAC reported 29,377 breakdowns caused by pothole damage in 2023 — the highest since tracking began in 2006 — with an average repair cost to motorists of £290 per incident.<Cite nums={3} /> Councils report 54% of spending goes on reactive emergency repairs rather than planned resurfacing, perpetuating the cycle of failure.<Cite nums={1} /></p>
           </div>
         </section>
 
@@ -147,6 +147,10 @@ export default function PotholeRoadsPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

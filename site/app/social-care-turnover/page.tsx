@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Skills for Care', dataset: 'State of the adult social care sector and workforce in England', url: 'https://www.skillsforcare.org.uk/adult-social-care-workforce-data/Workforce-intelligence/publications/national-information/The-state-of-the-adult-social-care-sector-and-workforce-in-England.aspx', date: '2024' },
+  { num: 2, name: 'Home Office', dataset: 'Health and Care Worker visa statistics', url: 'https://www.gov.uk/government/collections/immigration-statistics-quarterly-release', date: '2023' },
+  { num: 3, name: 'DHSC', dataset: 'People at the Heart of Care — workforce strategy', url: 'https://www.gov.uk/government/publications/people-at-the-heart-of-care-adult-social-care-reform-white-paper', date: '2021' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -130,7 +138,7 @@ export default function SocialCareTurnoverPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Adult social care employs approximately 1.52 million people in England — more than the NHS — yet it operates with annual staff turnover of 28.3%. In practical terms, this means the sector has to replace one in three of its workers every year. The cost of this churn is staggering: Skills for Care estimates recruitment and induction costs of approximately £3,000 per worker, putting the annual recruitment cost burden at around £1 billion. The toll on care quality is harder to quantify but no less real: continuity of care is the most important determinant of wellbeing for older people with dementia and complex needs.
+              Adult social care employs approximately 1.52 million people in England — more than the NHS — yet it operates with annual staff turnover of 28.3%.<Cite nums={1} /> In practical terms, this means the sector has to replace one in three of its workers every year. The cost of this churn is staggering: Skills for Care estimates recruitment and induction costs of approximately £3,000 per worker, putting the annual recruitment cost burden at around £1 billion.<Cite nums={1} /> The toll on care quality is harder to quantify but no less real: continuity of care is the most important determinant of wellbeing for older people with dementia and complex needs.
             </p>
             <p>
               The fundamental driver is pay. At £10.89 per hour in 2024 — barely above the National Living Wage of £11.44 — care worker pay fails to reflect the skill, physical and emotional demands of the role. A supermarket retail assistant or a warehouse picker can earn similar wages with far less relational and clinical complexity. NHS pay rises have compounded the problem by creating a persistent wage gap between NHS healthcare support workers (who do comparable work) and care sector workers, accelerating movement from care into the NHS. International recruitment — driven by a post-Brexit visa regime that admitted 70,000 overseas care workers in 2023 — has partially plugged the gap but raised its own concerns about exploitation and sustainability.

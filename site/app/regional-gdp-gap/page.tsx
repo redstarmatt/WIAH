@@ -8,6 +8,8 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 interface RegionalGdpGapData {
   topic: string
@@ -22,6 +24,12 @@ interface RegionalGdpGapData {
 function yearToDate(y: number): Date {
   return new Date(y, 0, 1)
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Regional Economic Activity by Gross Value Added (Balanced)', url: 'https://www.ons.gov.uk/economy/grossdomesticproductgdp/datasets/regionalgrossdomesticproductlocalauthorities', date: '2024' },
+  { num: 2, name: 'HM Treasury', dataset: 'Public Expenditure Statistical Analyses (PESA)', date: '2023' },
+  { num: 3, name: 'OECD', dataset: 'TL2 Regional Statistics', date: '2022', note: 'International regional inequality comparison' },
+];
 
 export default function RegionalGdpGapPage() {
   const [data, setData] = useState<RegionalGdpGapData | null>(null)
