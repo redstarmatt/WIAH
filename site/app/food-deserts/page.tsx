@@ -43,6 +43,12 @@ const densityAnnotations: Annotation[] = [
   { date: new Date(2016, 5, 1), label: '2016: Discount retailer expansion begins' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Consumer Data Research Centre', dataset: 'Food access analysis', url: 'https://cdrc.ac.uk', date: '2024' },
+  { num: 2, name: 'Which?', dataset: 'Consumer research on convenience store pricing', url: 'https://www.which.co.uk', date: '2024' },
+  { num: 3, name: 'ONS / Consumer Data Research Centre', dataset: 'Retail food access data', url: 'https://cdrc.ac.uk', date: '2024' },
+];
+
 export default function FoodDesertsPage() {
   return (
     <>
@@ -57,7 +63,7 @@ export default function FoodDesertsPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Around 8 million people in the UK live more than a mile from a supermarket without access to a car — a figure that maps almost exactly onto deprivation. Deprived areas have roughly five times fewer supermarkets per head than affluent ones, and the gap is widening. Major retailers have quietly closed stores in lower-income neighbourhoods over the past decade while opening larger formats in more prosperous suburbs. Aldi and Lidl have grown fast, but their new stores have largely followed car-owning customers into retail parks rather than high streets in high-poverty areas. Convenience stores charge a 10–20% premium on equivalent goods, with fresh produce running 39% more expensive than in supermarkets. When food inflation peaked at 19% in 2022–23, this structural penalty fell hardest on those already stretched.</p>
+            <p>Around 8 million people in the UK live more than a mile from a supermarket without access to a car — a figure that maps almost exactly onto deprivation<Cite nums={1} />. Deprived areas have roughly five times fewer supermarkets per head than affluent ones<Cite nums={3} />, and the gap is widening. Major retailers have quietly closed stores in lower-income neighbourhoods over the past decade while opening larger formats in more prosperous suburbs. Aldi and Lidl have grown fast, but their new stores have largely followed car-owning customers into retail parks rather than high streets in high-poverty areas. Convenience stores charge a 10–20% premium on equivalent goods, with fresh produce running 39% more expensive than in supermarkets. When food inflation peaked at 19% in 2022–23, this structural penalty fell hardest on those already stretched.</p>
             <p>Government policy has not kept pace with the scale of the problem. The National Food Strategy, published in 2021, set out a detailed case for reform including a sugar and salt reformulation tax, but the government declined to implement its central recommendations. The Healthy Start voucher scheme remains underused, covering only a narrow slice of those affected. Scotland's Good Food Nation Act 2022 creates a statutory framework for food inequality that has no equivalent in England. Community food hubs, FareShare, and food sharing apps like OLIO and Too Good To Go are expanding, but remain patchwork — dependent on charitable funding and local authority capacity rather than structural reform.</p>
           </div>
         </section>

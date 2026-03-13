@@ -64,7 +64,7 @@ export default function ExercisePrescriptionPage() {
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>Physical inactivity is among the most significant modifiable risk factors for chronic disease in the UK. Around 38% of adults do not meet the Chief Medical Officers' guidelines of 150 minutes of moderate activity per week<Cite nums={1} />, contributing to high rates of type 2 diabetes, cardiovascular disease, depression, and musculoskeletal conditions. Public Health England estimated the economic cost of physical inactivity at £7.4 billion per year in direct NHS costs and productivity losses<Cite nums={3} /> — a figure that has risen annually since. Despite this, exercise prescription — the formal referral of patients to structured physical activity programmes — remains inconsistently delivered, underfunded, and poorly integrated with primary care.</p>
-            <p>Social prescribing — the referral of patients with non-clinical needs (including inactivity, loneliness, and mild mental health problems) to community-based programmes rather than medical interventions — has grown rapidly since the NHS Long Term Plan committed to 1,000 social prescribing link workers by 2020. By 2024, over 340,000 referrals were made annually, with evidence suggesting a 20% reduction in GP appointment demand among recipients. Exercise referral schemes — where GPs refer patients to supervised activity programmes — operate in most areas but vary enormously in capacity, evidence base, and follow-up. The National Institute for Health and Care Excellence (NICE) recommends exercise on prescription for depression, type 2 diabetes management, and cardiovascular risk reduction, but uptake in primary care remains below guideline levels.</p>
+            <p>Social prescribing — the referral of patients with non-clinical needs (including inactivity, loneliness, and mild mental health problems) to community-based programmes rather than medical interventions — has grown rapidly since the NHS Long Term Plan committed to 1,000 social prescribing link workers by 2020. By 2024, over 340,000 referrals were made annually<Cite nums={2} />, with evidence suggesting a 20% reduction in GP appointment demand among recipients. Exercise referral schemes — where GPs refer patients to supervised activity programmes — operate in most areas but vary enormously in capacity, evidence base, and follow-up. The National Institute for Health and Care Excellence (NICE) recommends exercise on prescription for depression, type 2 diabetes management, and cardiovascular risk reduction<Cite nums={4} />, but uptake in primary care remains below guideline levels.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -142,6 +142,10 @@ export default function ExercisePrescriptionPage() {
             source="Source: NICE — Physical activity: exercise referral schemes (PH54) 2014. Public Health England — Everybody Active, Every Day 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

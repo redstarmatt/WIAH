@@ -187,7 +187,7 @@ export default function HomicideRatePage() {
               But the method of killing has changed markedly. Knife and sharp instrument homicides rose from 186 in 2014 to a peak of 264 in 2017, settling at 231 in 2024.<Cite nums={2} /> This shift reflects the growth of county lines drug networks, which expanded rapidly from 2014 onward and brought systematic violence to new areas. Firearms homicides, by contrast, have fallen consistently — from 41 in 2010 to 22 in 2024 — a success largely attributable to the post-Dunblane firearms legislation and sustained police intelligence operations.<Cite nums={2} /> The typical homicide victim is male, aged 25-34, and disproportionately from a deprived area. Roughly half of all homicide victims knew their killer. Domestic homicide accounts for around a third of cases, a proportion that has remained stubbornly consistent for decades.<Cite nums={1} />
             </p>
             <p>
-              The 2016 and 2017 totals require careful reading. The 2016 figure includes 96 Hillsborough disaster victims reclassified as unlawful killings following the inquest conclusion, and the 2017 figure includes 31 victims of the Manchester Arena and London Bridge terror attacks. Stripping these out, the underlying trend from 2015 to 2019 shows a modest rise of around 15%, followed by the COVID dip in 2020 and a subsequent stabilisation. The latest data suggests the homicide rate is now gently declining again, though one-year movements in relatively small numbers should be interpreted with caution.
+              The 2016 and 2017 totals require careful reading. The 2016 figure includes 96 Hillsborough disaster victims reclassified as unlawful killings following the inquest conclusion, and the 2017 figure includes 31 victims of the Manchester Arena and London Bridge terror attacks.<Cite nums={1} /> Stripping these out, the underlying trend from 2015 to 2019 shows a modest rise of around 15%, followed by the COVID dip in 2020 and a subsequent stabilisation. The latest data suggests the homicide rate is now gently declining again, though one-year movements in relatively small numbers should be interpreted with caution.
             </p>
           </div>
         </section>
@@ -362,6 +362,10 @@ export default function HomicideRatePage() {
             source="Source: Home Office — Homicide Index, Nov 2025. ONS — Homicide in England and Wales."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* ── Sources & Methodology ──────────────────────────────────────── */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
