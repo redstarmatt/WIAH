@@ -9,6 +9,16 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ofcom', dataset: 'Connected Nations Report 2025', url: 'https://www.ofcom.org.uk/research-and-data/telecoms-research/connected-nations', date: '2025' },
+  { num: 2, name: 'DSIT', dataset: 'Project Gigabit Progress Report', url: 'https://www.gov.uk/government/publications/project-gigabit-progress', date: '2025', note: '680,000 rural premises contracted for gigabit broadband' },
+  { num: 3, name: 'DfT', dataset: 'Bus Statistics Table BUS0110', url: 'https://www.gov.uk/government/statistical-data-sets/bus-statistics-data-tables', date: '2024' },
+  { num: 4, name: 'Campaign for Better Transport', dataset: 'The Future of Rural Bus Services', url: 'https://bettertransport.org.uk/', date: '2024', note: '3,780 routes cut; 49% reduction since 2010' },
+  { num: 5, name: 'Community Transport Association', dataset: 'Annual Report', url: 'https://ctauk.org/', date: '2024', note: '12 million passenger trips annually' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
