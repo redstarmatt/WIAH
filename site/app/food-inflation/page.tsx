@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Food CPI annual % change, monthly 2018–2025 (selected monthly points, annual values for simplicity)
 const foodInflation = [1.8, 2.0, 2.5, 2.8, 1.8, 2.2, 4.2, 8.5, 14.6, 19.2, 12.0, 4.0, 2.5, 1.8, 1.6, 1.5];

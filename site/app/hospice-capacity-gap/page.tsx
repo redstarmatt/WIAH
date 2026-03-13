@@ -28,6 +28,12 @@ function yearToDate(y: number): Date {
   return new Date(y, 0, 1)
 }
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Hospice UK', dataset: 'Annual Monitoring Data', url: 'https://www.hospiceuk.org/information-and-resources/facts-and-figures', date: '2024' },
+  { num: 2, name: 'NHS England', dataset: 'Palliative and End of Life Care Statistics', url: 'https://www.england.nhs.uk/eolc/', date: '2024' },
+  { num: 3, name: 'Public Health England', dataset: 'National End of Life Care Intelligence Network (NELIC)', url: 'https://www.gov.uk/guidance/national-end-of-life-care-intelligence-network', date: '2024' },
+];
+
 // -- Page -------------------------------------------------------------------
 
 export default function HospiceCapacityGapPage() {
