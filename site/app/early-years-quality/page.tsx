@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ofsted', dataset: 'Early Years Annual Report / Management Information', url: 'https://www.gov.uk/government/collections/ofsted-annual-report', date: '2023' },
+  { num: 2, name: 'Coram Family and Childcare', dataset: 'Childcare Survey', url: 'https://www.coramfcc.org.uk/research-publications/uk-childcare-survey', date: '2023' },
+  { num: 3, name: 'Ofsted', dataset: 'Management Information: early years providers', url: 'https://www.gov.uk/government/statistical-data-sets/', date: '2023' },
+];
 
 // Good/Outstanding % 2015–2023 — Ofsted
 const goodOutstandingValues = [82, 86, 89, 91, 92, 93, 94, 95, 96];
@@ -48,8 +56,8 @@ export default function EarlyYearsQualityPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The quality of early years provision in England has improved substantially over the past decade. In 2015, 82% of nurseries and childminders were rated Good or Outstanding by Ofsted; by 2023, that figure had risen to 96%, driven by the Early Years Foundation Stage framework, improved workforce qualifications, and rigorous inspection. The proportion rated Inadequate has fallen from around 1% to just 0.3%. But quality and access are different problems: an estimated 1.3 million children under 5 live in childcare deserts — areas with fewer than a third of the places needed — concentrated in rural, coastal, and deprived urban communities where providers cannot sustain operations on government funding rates.</p>
-            <p>More than 40% of nurseries reported operating at a loss on funded places in 2023, and over 4,000 childcare providers closed between 2021 and 2023. The early years workforce compounds this: childcare workers earn around £11–12 per hour on average, turnover is high, and the sector has an estimated 40,000 vacancies. Without adequate funding rates and improved workforce conditions, sustained quality improvement cannot reach the children who stand to benefit most — those in areas of greatest disadvantage.</p>
+            <p>The quality of early years provision in England has improved substantially over the past decade. In 2015, 82% of nurseries and childminders were rated Good or Outstanding by Ofsted; by 2023, that figure had risen to 96%, driven by the Early Years Foundation Stage framework, improved workforce qualifications, and rigorous inspection.<Cite nums={[1]} /> The proportion rated Inadequate has fallen from around 1% to just 0.3%.<Cite nums={[3]} /> But quality and access are different problems: an estimated 1.3 million children under 5 live in childcare deserts — areas with fewer than a third of the places needed — concentrated in rural, coastal, and deprived urban communities where providers cannot sustain operations on government funding rates.<Cite nums={[2]} /></p>
+            <p>More than 40% of nurseries reported operating at a loss on funded places in 2023, and over 4,000 childcare providers closed between 2021 and 2023.<Cite nums={[2]} /> The early years workforce compounds this: childcare workers earn around £11–12 per hour on average, turnover is high, and the sector has an estimated 40,000 vacancies.<Cite nums={[2]} /> Without adequate funding rates and improved workforce conditions, sustained quality improvement cannot reach the children who stand to benefit most — those in areas of greatest disadvantage.</p>
           </div>
         </section>
         <SectionNav sections={[

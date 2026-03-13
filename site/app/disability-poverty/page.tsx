@@ -8,6 +8,8 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -32,6 +34,14 @@ interface DisabilityPovertyData {
   extraCosts: ExtraCostItem[];
   shareOfPoverty: ShareOfPovertyPoint[];
 }
+
+// ── References ────────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DWP', dataset: 'Households Below Average Income (HBAI)', url: 'https://www.gov.uk/government/collections/households-below-average-income-hbai--2', date: '2022' },
+  { num: 2, name: 'Scope', dataset: 'Extra Costs Commission', url: 'https://www.scope.org.uk/campaigns/extra-costs', date: '2023' },
+  { num: 3, name: 'Joseph Rowntree Foundation', dataset: 'UK Poverty Report', url: 'https://www.jrf.org.uk', date: '2022' },
+];
 
 // ── Page ──────────────────────────────────────────────────────────────────────
 

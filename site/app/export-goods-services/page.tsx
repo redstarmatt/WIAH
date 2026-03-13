@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // UK goods exports (£bn), 2015–2024 — ONS
 const goodsExportValues = [230, 235, 240, 248, 252, 248, 224, 290, 310, 285];
