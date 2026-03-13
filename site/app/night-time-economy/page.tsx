@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'British Beer and Pub Association', dataset: 'Statistical Handbook', url: 'https://beerandpub.com/statistics/', date: '2024' },
+  { num: 2, name: 'Night Time Industries Association', dataset: 'State of the Industry Report', url: 'https://www.ntia.co.uk/', date: '2024' },
+  { num: 3, name: 'ONS', dataset: 'Night-time economy employment estimates', url: 'https://www.ons.gov.uk/', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -139,10 +147,10 @@ export default function NightTimeEconomyPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The UK pub estate has been contracting for decades, accelerating through austerity, the smoking ban's long-run impact on footfall, changing drinking habits among younger generations, and the pandemic. Between 2016 and 2024, 7,000 pubs closed on a net basis — approximately six to seven per day every day for eight years. The closures are not evenly distributed: rural pubs and those in deprived urban areas have closed at the highest rates, taking with them community functions — post office services, community notice boards, local employment — that were never captured in GDP calculations.
+              The UK pub estate has been contracting for decades, accelerating through austerity, the smoking ban's long-run impact on footfall, changing drinking habits among younger generations, and the pandemic. Between 2016 and 2024, 7,000 pubs closed on a net basis — approximately six to seven per day every day for eight years.<Cite nums={1} /> The closures are not evenly distributed: rural pubs and those in deprived urban areas have closed at the highest rates, taking with them community functions — post office services, community notice boards, local employment — that were never captured in GDP calculations.
             </p>
             <p>
-              The nightclub sector has experienced a more dramatic structural decline. From over 3,000 venues in 2005, the number fell below 1,000 before the pandemic and has continued declining since, reaching 872 in 2024 — a 72% decline in two decades. Rising operating costs (energy, security, licensing compliance), changing consumer preferences toward late-licensed bars and experiential venues, and the competition from streaming services and at-home socialising have all contributed. Unlike pub closures, which receive political attention through community asset designation and business rates relief, nightclub decline is largely invisible to policy. The employment picture is more resilient: the 8 million people employed in night-time economy sectors recovered from the pandemic trough and broadly match pre-pandemic levels, but structural decline in the venue base means future employment is fragile.
+              The nightclub sector has experienced a more dramatic structural decline. From over 3,000 venues in 2005, the number fell below 1,000 before the pandemic and has continued declining since, reaching 872 in 2024 — a 72% decline in two decades.<Cite nums={2} /> Rising operating costs (energy, security, licensing compliance), changing consumer preferences toward late-licensed bars and experiential venues, and the competition from streaming services and at-home socialising have all contributed. Unlike pub closures, which receive political attention through community asset designation and business rates relief, nightclub decline is largely invisible to policy. The employment picture is more resilient: the 8 million people employed in night-time economy sectors recovered from the pandemic trough and broadly match pre-pandemic levels, but structural decline in the venue base means future employment is fragile.<Cite nums={3} />
             </p>
           </div>
         </section>
@@ -240,6 +248,10 @@ export default function NightTimeEconomyPage() {
             source="Source: BBPA Statistical Handbook 2024 · Night Time Industries Association State of the Industry 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

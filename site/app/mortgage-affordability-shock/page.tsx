@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'UK Finance', dataset: 'Mortgage Market Data', url: 'https://www.ukfinance.org.uk/data-and-research/data/mortgages', date: '2024' },
+  { num: 2, name: 'Bank of England', dataset: 'Mortgage Approvals for House Purchase', url: 'https://www.bankofengland.co.uk/statistics/mortgage-lenders-and-administrators', date: '2024' },
+  { num: 3, name: 'FCA', dataset: 'Financial Lives Survey', url: 'https://www.fca.org.uk/publications/research/financial-lives', date: '2023' },
+  { num: 4, name: 'ONS', dataset: 'UK House Price Index', url: 'https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/housepriceindex/previousReleases', date: '2024' },
+];
 
 export default function MortgageAffordabilityShockPage() {
   // Chart 1: Average monthly mortgage repayment for new buyers 2015-2024 (£)
@@ -147,12 +156,16 @@ export default function MortgageAffordabilityShockPage() {
           <section id="sec-context" className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on mortgage affordability</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Between early 2021 and late 2023, the average monthly mortgage repayment for a new buyer rose by approximately 60% — from around £820 to £1,310. This was the direct consequence of the Bank of England&rsquo;s rapid interest rate cycle, which took the base rate from 0.1% to 5.25% in less than two years. For existing borrowers on variable rates, the shock was immediate. For those on fixed-rate deals — the majority of the UK mortgage market — the shock is staggered as fixed terms expire and borrowers remortgage at much higher rates.</p>
-              <p>UK Finance estimated that around 1.6 million households were due to remortgage in 2024, facing rates 2-4 percentage points above their previous deal. For a mortgage of £200,000 over 25 years, a 3-percentage-point rate rise adds roughly £340 per month to repayments. The FCA&rsquo;s Financial Lives survey found that by mid-2023, 900,000 mortgage holders reported already being in financial difficulty. Repossessions have risen but remain well below 2008-09 crisis levels, partly due to lender forbearance and full employment.</p>
-              <p>First-time buyers have been hardest hit in relative terms: mortgage affordability for this group — measured as monthly repayment as a share of take-home pay — reached its worst level since the early 1990s. In London and the South East, a 90% LTV mortgage on a median-priced first-time buyer property requires monthly repayments equivalent to over 60% of median net earnings. Many potential buyers have deferred purchase decisions or increased deposit targets, suppressing transaction volumes and sustaining rental demand.</p>
+              <p>Between early 2021 and late 2023, the average monthly mortgage repayment for a new buyer rose by approximately 60% — from around £820 to £1,310.<Cite nums={1} /> This was the direct consequence of the Bank of England&rsquo;s rapid interest rate cycle, which took the base rate from 0.1% to 5.25% in less than two years.<Cite nums={2} /> For existing borrowers on variable rates, the shock was immediate. For those on fixed-rate deals — the majority of the UK mortgage market — the shock is staggered as fixed terms expire and borrowers remortgage at much higher rates.</p>
+              <p>UK Finance estimated that around 1.6 million households were due to remortgage in 2024, facing rates 2-4 percentage points above their previous deal.<Cite nums={1} /> For a mortgage of £200,000 over 25 years, a 3-percentage-point rate rise adds roughly £340 per month to repayments. The FCA&rsquo;s Financial Lives survey found that by mid-2023, 900,000 mortgage holders reported already being in financial difficulty.<Cite nums={3} /> Repossessions have risen but remain well below 2008-09 crisis levels, partly due to lender forbearance and full employment.</p>
+              <p>First-time buyers have been hardest hit in relative terms: mortgage affordability for this group — measured as monthly repayment as a share of take-home pay — reached its worst level since the early 1990s.<Cite nums={4} /> In London and the South East, a 90% LTV mortgage on a median-priced first-time buyer property requires monthly repayments equivalent to over 60% of median net earnings.<Cite nums={4} /> Many potential buyers have deferred purchase decisions or increased deposit targets, suppressing transaction volumes and sustaining rental demand.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

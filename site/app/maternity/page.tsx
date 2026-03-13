@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'MBRRACE-UK', dataset: 'Saving Lives Improving Mothers Care Report', url: 'https://www.npeu.ox.ac.uk/mbrrace-uk', date: '2022' },
+  { num: 2, name: 'CQC', dataset: 'State of Care — maternity services ratings', date: '2023' },
+  { num: 3, name: 'Ockenden Review', dataset: 'Independent review of maternity services at Shrewsbury and Telford NHS Trust', date: 'Mar 2022' },
+  { num: 4, name: 'East Kent Maternity Inquiry', dataset: 'Reading the Signals — maternity and neonatal services in East Kent', date: 'Mar 2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -99,8 +108,8 @@ export default function MaternityPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Britain's maternal mortality rate stands at 9.7 per 100,000 maternities as of 2022, up from 8.2 in 2014 and roughly double Norway's rate of 4.2. The figure places the UK above the EU average for a metric that should, in a well-resourced health system, be falling. Sixty per cent of NHS maternity units are rated 'requires improvement' or 'inadequate' by the Care Quality Commission. The disparities within those numbers are stark: MBRRACE-UK data show Black women are 3.7 times more likely to die in childbirth than white women, and Asian women 1.8 times more likely — a gap that has persisted for two decades with minimal improvement despite repeated national commitments to close it.</p>
-            <p>Two landmark investigations exposed the scale of institutional failure. The Ockenden Report (March 2022) examined Shrewsbury and Telford NHS Trust and found 1,223 cases of harm over 20 years, including 201 baby deaths and 9 maternal deaths deemed potentially avoidable. Poor staffing, normalisation of bad outcomes and weak governance ran through every finding. A year later the East Kent maternity inquiry (March 2023) identified 45 babies who died unnecessarily, with a further 40 deaths that may have been avoidable — the same pattern of understaffing, poor CTG interpretation and a culture of blame rather than learning. These were not isolated trusts; they were systems operating under the same national pressures.</p>
+            <p>Britain's maternal mortality rate stands at 9.7 per 100,000 maternities as of 2022, up from 8.2 in 2014 and roughly double Norway's rate of 4.2.<Cite nums={1} /> The figure places the UK above the EU average for a metric that should, in a well-resourced health system, be falling. Sixty per cent of NHS maternity units are rated 'requires improvement' or 'inadequate' by the Care Quality Commission.<Cite nums={2} /> The disparities within those numbers are stark: MBRRACE-UK data show Black women are 3.7 times more likely to die in childbirth than white women, and Asian women 1.8 times more likely — a gap that has persisted for two decades with minimal improvement despite repeated national commitments to close it.</p>
+            <p>Two landmark investigations exposed the scale of institutional failure. The Ockenden Report (March 2022) examined Shrewsbury and Telford NHS Trust and found 1,223 cases of harm over 20 years, including 201 baby deaths and 9 maternal deaths deemed potentially avoidable.<Cite nums={3} /> Poor staffing, normalisation of bad outcomes and weak governance ran through every finding. A year later the East Kent maternity inquiry (March 2023) identified 45 babies who died unnecessarily, with a further 40 deaths that may have been avoidable<Cite nums={4} /> — the same pattern of understaffing, poor CTG interpretation and a culture of blame rather than learning. These were not isolated trusts; they were systems operating under the same national pressures.</p>
             </div>
         </section>
 
@@ -208,6 +217,10 @@ export default function MaternityPage() {
             source="Source: MBRRACE-UK — Saving Lives Improving Mothers Care 2023; NHS England — Three-Year Delivery Plan for Maternity Services 2023."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

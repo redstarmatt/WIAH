@@ -7,7 +7,15 @@ import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import SectionNav from '@/components/SectionNav';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Social Mobility Commission', dataset: 'State of the Nation Report', url: 'https://www.gov.uk/government/organisations/social-mobility-commission', date: '2025' },
+  { num: 2, name: 'OECD', dataset: 'A Broken Social Elevator? How to Promote Social Mobility', url: 'https://www.oecd.org/social/broken-elevator-how-to-promote-social-mobility-9789264301085-en.htm', date: '2018' },
+  { num: 3, name: 'Institute for Fiscal Studies', dataset: 'Intergenerational Mobility in the UK', url: 'https://ifs.org.uk/', date: '2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -194,6 +202,10 @@ export default function TopicPage() {
             source="Source: Social Mobility Commission — State of the Nation, 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

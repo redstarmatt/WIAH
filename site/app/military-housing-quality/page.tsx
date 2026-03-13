@@ -9,6 +9,17 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'MOD', dataset: 'Annual Report and Accounts 2023/24', url: 'https://www.gov.uk/government/publications/ministry-of-defence-annual-report-and-accounts-2023-to-2024', date: '2024' },
+  { num: 2, name: 'National Audit Office', dataset: 'Accommodation for the Armed Forces', url: 'https://www.nao.org.uk/reports/accommodation-for-the-armed-forces/', date: '2018' },
+  { num: 3, name: 'Public Accounts Committee', dataset: 'MOD Service Family Accommodation inquiry', url: 'https://committees.parliament.uk/work/7167/ministry-of-defence-service-family-accommodation/', date: '2023' },
+  { num: 4, name: 'MOD', dataset: 'Service Family Accommodation Condition Survey', url: 'https://www.gov.uk/government/statistics/mod-service-family-accommodation', date: '2024' },
+  { num: 5, name: 'Armed Forces Continuous Attitude Survey', dataset: 'AFCAS Results 2023', url: 'https://www.gov.uk/government/statistics/armed-forces-continuous-attitude-survey-2023', date: '2023' },
+  { num: 6, name: 'Defence Infrastructure Organisation', dataset: 'Future Accommodation Model prospectus', url: 'https://www.gov.uk/government/publications/future-accommodation-model-fam', date: '2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -149,10 +160,10 @@ export default function MilitaryHousingPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The MOD owns approximately 49,000 homes for service families in England, Wales and Germany. In 1996, the then-Conservative government sold 57,000 of these homes to Annington Homes for £1.67 billion, leasing them back. Under the Annington contract, the MOD paid rising ground rents while Annington took the proceeds of homes sold on the open market. The National Audit Office estimated in 2018 that the deal had cost taxpayers £4.2 billion more than retaining the homes would have. In 2023, the government exercised its enfranchisement right and began buying back the homes at market value — estimated to cost over £6 billion.
+              The MOD owns approximately 49,000 homes for service families in England, Wales and Germany.<Cite nums={1} /> In 1996, the then-Conservative government sold 57,000 of these homes to Annington Homes for £1.67 billion, leasing them back. Under the Annington contract, the MOD paid rising ground rents while Annington took the proceeds of homes sold on the open market. The National Audit Office estimated in 2018 that the deal had cost taxpayers £4.2 billion more than retaining the homes would have.<Cite nums={2} /> In 2023, the government exercised its enfranchisement right and began buying back the homes at market value — estimated to cost over £6 billion.<Cite nums={3} />
             </p>
             <p>
-              The consequences of the Annington deal for housing quality have been severe. Maintenance budgets were squeezed because rental income went to Annington. Condition surveys now show 40% of service family accommodation does not meet the MOD Standard for Condition, with mould, damp, heating failures and structural defects all reported. Annual complaints from service families have risen to 11,000 — a record high. Survey data shows housing quality is among the top three reasons cited by service personnel considering leaving the military, alongside pay and deployment tempo. The MOD's Future Accommodation Model seeks to diversify provision away from tied housing, but the capital required to bring existing stock up to standard remains largely uncommitted.
+              The consequences of the Annington deal for housing quality have been severe. Maintenance budgets were squeezed because rental income went to Annington. Condition surveys now show 40% of service family accommodation does not meet the MOD Standard for Condition, with mould, damp, heating failures and structural defects all reported.<Cite nums={4} /> Annual complaints from service families have risen to 11,000 — a record high.<Cite nums={3} /> Survey data shows housing quality is among the top three reasons cited by service personnel considering leaving the military, alongside pay and deployment tempo.<Cite nums={5} /> The MOD's Future Accommodation Model seeks to diversify provision away from tied housing, but the capital required to bring existing stock up to standard remains largely uncommitted.<Cite nums={6} />
             </p>
           </div>
         </section>
@@ -235,6 +246,10 @@ export default function MilitaryHousingPage() {
             source="Source: MOD — Annual Report and Accounts 2023/24. Defence Infrastructure Organisation — Future Accommodation Model prospectus."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

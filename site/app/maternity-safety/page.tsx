@@ -9,6 +9,15 @@ import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'MBRRACE-UK', dataset: 'Perinatal Mortality Surveillance Report', url: 'https://www.npeu.ox.ac.uk/mbrrace-uk', date: '2022' },
+  { num: 2, name: 'NHS England', dataset: 'Saving Babies\u2019 Lives Care Bundle', url: 'https://www.england.nhs.uk/mat-transformation/saving-babies', date: '2016' },
+  { num: 3, name: 'Ockenden Review', dataset: 'Independent review of maternity services at Shrewsbury and Telford NHS Trust', date: 'Mar 2022' },
+  { num: 4, name: 'MBRRACE-UK', dataset: 'Saving Lives, Improving Mothers\u2019 Care — maternal mortality by ethnicity', url: 'https://www.npeu.ox.ac.uk/mbrrace-uk', date: '2019\u201321' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -60,8 +69,8 @@ export default function MaternitySafetyPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The stillbirth rate in England has fallen from 5.1 per 1,000 births in 2010 to 3.53 in 2022 — a 31% reduction driven by the Saving Babies&rsquo; Lives Care Bundle, introduced in 2016, which standardised foetal movement monitoring, growth surveillance, smoking cessation support, and term induction policies. The picture on maternal mortality is far more troubling: the UK rate of 9.7 deaths per 100,000 maternities has barely moved in a decade, and the Ockenden Review (2022) found that hundreds of babies and multiple mothers died or were seriously harmed over 20 years at Shrewsbury and Telford NHS Trust due to understaffing, failure to escalate, and systemic reluctance to listen to women. NHS England's 2025 ambition — to halve stillbirth, neonatal death, maternal death, and brain injury rates from a 2010 baseline — has been partially met only for stillbirths.</p>
-            <p>The starkest failure is the persistent racial disparity in maternal mortality: Black women in the UK are 3.7 times more likely to die during or shortly after pregnancy than white women, Asian women 1.8 times more likely — gaps documented in MBRRACE-UK reports for over 20 years without meaningful narrowing. Unconscious bias in clinical decision-making, higher rates of underlying conditions linked to socioeconomic deprivation, and barriers to antenatal education compound one another. Around 1 in 5 women experience birth as traumatic, with an estimated 30,000 developing PTSD annually — a burden concentrated among those who already faced the greatest clinical risk.</p>
+            <p>The stillbirth rate in England has fallen from 5.1 per 1,000 births in 2010 to 3.53 in 2022 — a 31% reduction<Cite nums={1} /> driven by the Saving Babies&rsquo; Lives Care Bundle, introduced in 2016<Cite nums={2} />, which standardised foetal movement monitoring, growth surveillance, smoking cessation support, and term induction policies. The picture on maternal mortality is far more troubling: the UK rate of 9.7 deaths per 100,000 maternities has barely moved in a decade, and the Ockenden Review (2022) found that hundreds of babies and multiple mothers died or were seriously harmed over 20 years at Shrewsbury and Telford NHS Trust<Cite nums={3} /> due to understaffing, failure to escalate, and systemic reluctance to listen to women. NHS England's 2025 ambition — to halve stillbirth, neonatal death, maternal death, and brain injury rates from a 2010 baseline — has been partially met only for stillbirths.</p>
+            <p>The starkest failure is the persistent racial disparity in maternal mortality: Black women in the UK are 3.7 times more likely to die during or shortly after pregnancy than white women, Asian women 1.8 times more likely — gaps documented in MBRRACE-UK reports for over 20 years without meaningful narrowing.<Cite nums={4} /> Unconscious bias in clinical decision-making, higher rates of underlying conditions linked to socioeconomic deprivation, and barriers to antenatal education compound one another. Around 1 in 5 women experience birth as traumatic, with an estimated 30,000 developing PTSD annually — a burden concentrated among those who already faced the greatest clinical risk.</p>
           </div>
         </section>
 
@@ -159,6 +168,10 @@ export default function MaternitySafetyPage() {
             <p className="font-mono text-xs text-wiah-mid mt-4">Source: MBRRACE-UK — Saving Lives, Improving Mothers&rsquo; Care, 2021</p>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

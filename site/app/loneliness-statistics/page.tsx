@@ -8,6 +8,15 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+// ── References ───────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Opinions and Lifestyle Survey — loneliness prevalence', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing', date: '2024' },
+  { num: 2, name: 'ONS / DCMS', dataset: 'Community Life Survey — loneliness by age group', url: 'https://www.gov.uk/government/collections/community-life-survey--2', date: '2024' },
+];
 
 interface DataPoint {
   year: number;
@@ -93,7 +102,7 @@ export default function LonelinessStatisticsPage() {
         <section className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              3.83 million adults in England are chronically lonely — 7.1% of the population. Young adults (16-24) now report the highest rates, overtaking the elderly as the loneliest age group. The data below draws on official sources to show how this has changed over the past decade and where the pressures are most acute.
+              3.83 million adults in England are chronically lonely — 7.1% of the population.<Cite nums={1} /> Young adults (16-24) now report the highest rates, overtaking the elderly as the loneliest age group.<Cite nums={2} /> The data below draws on official sources to show how this has changed over the past decade and where the pressures are most acute.
             </p>
             <p>
               The figures reflect a structural pattern rather than a short-term fluctuation. Understanding the scale of the issue is the first step toward holding policymakers to account for the decisions that shape these outcomes.

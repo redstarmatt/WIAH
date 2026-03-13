@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS Digital', dataset: 'Health Survey for England — adult obesity prevalence', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england', date: '2023' },
+  { num: 2, name: 'NHS Digital', dataset: 'National Child Measurement Programme', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/national-child-measurement-programme', date: '2022/23' },
+  { num: 3, name: 'HM Treasury / DHSC', dataset: 'NHS obesity cost estimates', url: 'https://www.gov.uk/government/publications/health-matters-obesity-and-the-food-environment', date: '2023' },
+  { num: 4, name: 'HMRC', dataset: 'Soft Drinks Industry Levy — impact assessment', url: 'https://www.gov.uk/government/publications/soft-drinks-industry-levy', date: '2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -99,8 +108,8 @@ export default function ObesityPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>In 1993, 15% of adults in England were classified as obese. By 2022 that had reached 28%, with a further 38% overweight — two in three adults above a healthy weight, a transformation achieved within a single generation. Obesity costs the NHS £6.1 billion per year in diabetes, cardiovascular disease, and cancers, forecast to reach £9.7 billion by 2050. The UK has the highest obesity rate in Western Europe. The National Child Measurement Programme shows nearly 23% of Year 6 children are now obese, surging to 25.5% during COVID lockdowns. The Soft Drinks Industry Levy (2018) reduced sugar content in affected drinks by 40% without reducing sales volumes, and GLP-1 receptor agonists (Wegovy, Mounjaro) have produced 15–20% body weight reductions in trials — the most significant therapeutic development in decades, though NHS access remains severely rationed. Pre-watershed junk food advertising restrictions were introduced in 2023 and extended online in 2024.</p>
-            <p>The deprivation gradient is stark and consistent. Adults in the most deprived quintile have an obesity rate of 35.1% against 19.8% in the least deprived, a 15 percentage point gap that has widened over time. The same pattern is visible at age four and five: children in the most deprived decile already show higher obesity rates at reception than those in affluent areas, and by Year 6 the most deprived are twice as likely to be obese. This reflects differential exposure to cheap calorie-dense food, less green space, more sedentary work, and higher chronic stress — not a failure of individual willpower concentrated in poorer communities.</p>
+            <p>In 1993, 15% of adults in England were classified as obese. By 2022 that had reached 28%, with a further 38% overweight — two in three adults above a healthy weight, a transformation achieved within a single generation.<Cite nums={1} /> Obesity costs the NHS £6.1 billion per year in diabetes, cardiovascular disease, and cancers, forecast to reach £9.7 billion by 2050.<Cite nums={3} /> The UK has the highest obesity rate in Western Europe. The National Child Measurement Programme shows nearly 23% of Year 6 children are now obese, surging to 25.5% during COVID lockdowns.<Cite nums={2} /> The Soft Drinks Industry Levy (2018) reduced sugar content in affected drinks by 40% without reducing sales volumes, and GLP-1 receptor agonists (Wegovy, Mounjaro) have produced 15–20% body weight reductions in trials — the most significant therapeutic development in decades, though NHS access remains severely rationed.<Cite nums={4} /> Pre-watershed junk food advertising restrictions were introduced in 2023 and extended online in 2024.</p>
+            <p>The deprivation gradient is stark and consistent. Adults in the most deprived quintile have an obesity rate of 35.1% against 19.8% in the least deprived, a 15 percentage point gap that has widened over time.<Cite nums={1} /> The same pattern is visible at age four and five: children in the most deprived decile already show higher obesity rates at reception than those in affluent areas, and by Year 6 the most deprived are twice as likely to be obese.<Cite nums={2} /> This reflects differential exposure to cheap calorie-dense food, less green space, more sedentary work, and higher chronic stress — not a failure of individual willpower concentrated in poorer communities.</p>
           </div>
         </section>
 
@@ -205,6 +214,10 @@ export default function ObesityPage() {
             source="Source: NHS Digital — Health Survey for England 2023; NHS Digital — National Child Measurement Programme 2022/23."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

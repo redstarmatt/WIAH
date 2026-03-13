@@ -7,7 +7,15 @@ import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import SectionNav from '@/components/SectionNav';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Defra / Environment Agency', dataset: 'Energy from Waste Statistics', url: 'https://www.gov.uk/government/statistics/energy-from-waste-plants-in-england', date: '2024' },
+  { num: 2, name: 'DESNZ', dataset: 'UK Emissions Trading Scheme — EfW Inclusion', url: 'https://www.gov.uk/government/consultations/uk-emissions-trading-scheme-efw-inclusion', date: '2024' },
+  { num: 3, name: 'NAEI', dataset: 'National Atmospheric Emissions Inventory — EfW CO2', url: 'https://naei.beis.gov.uk/', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -194,6 +202,10 @@ export default function TopicPage() {
             source="Source: Defra and DESNZ — EfW ETS implementation, 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

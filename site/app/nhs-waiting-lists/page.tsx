@@ -5,6 +5,14 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Referral to Treatment (RTT) Waiting Times Statistics', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/rtt-waiting-times/', date: '2024' },
+  { num: 2, name: 'NHS England', dataset: 'Elective Recovery Plan', url: 'https://www.england.nhs.uk/coronavirus/publication/delivery-plan-for-tackling-the-covid-19-backlog-of-elective-care/', date: '2022' },
+  { num: 3, name: 'NHS Confederation', dataset: 'Hidden waiting list analysis', url: 'https://www.nhsconfed.org/', date: '2023' },
+];
 
 export default function NhsWaitingListsPage() {
   // NHS elective waiting list (millions) 2015–2024
@@ -130,12 +138,16 @@ export default function NhsWaitingListsPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">How the backlog built up</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>The NHS elective waiting list was growing before COVID-19 — rising from 2.9 million in 2015 to 4.4 million in early 2020 as demand outpaced capacity. Then the pandemic suspended most elective care for extended periods, and the list surged to a peak of 7.8 million. By 2024 it had edged down slightly to 7.6 million, but remains at a record level relative to population.</p>
-              <p>The statutory target — that 92% of patients should wait no more than 18 weeks from referral to treatment — has not been met nationally since 2016. Waits of over a year, which had been virtually eliminated, are now routine: 330,000 people have been waiting more than 52 weeks. The longest waits are concentrated in orthopaedics, ophthalmology, and gastroenterology.</p>
-              <p>The NHS Elective Recovery Plan has targeted the longest waits and used independent sector capacity to boost throughput. Progress has been made on the extreme tail — waits of more than two years have been largely eliminated — but the overall list size has proved stubbornly resistant to reduction as new referrals continue to outpace completions.</p>
+              <p>The NHS elective waiting list was growing before COVID-19 — rising from 2.9 million in 2015 to 4.4 million in early 2020 as demand outpaced capacity.<Cite nums={1} /> Then the pandemic suspended most elective care for extended periods, and the list surged to a peak of 7.8 million. By 2024 it had edged down slightly to 7.6 million, but remains at a record level relative to population.<Cite nums={1} /></p>
+              <p>The statutory target — that 92% of patients should wait no more than 18 weeks from referral to treatment — has not been met nationally since 2016.<Cite nums={1} /> Waits of over a year, which had been virtually eliminated, are now routine: 330,000 people have been waiting more than 52 weeks.<Cite nums={1} /> The longest waits are concentrated in orthopaedics, ophthalmology, and gastroenterology.</p>
+              <p>The NHS Elective Recovery Plan has targeted the longest waits and used independent sector capacity to boost throughput.<Cite nums={2} /> Progress has been made on the extreme tail — waits of more than two years have been largely eliminated — but the overall list size has proved stubbornly resistant to reduction as new referrals continue to outpace completions.<Cite nums={[1, 3]} /></p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

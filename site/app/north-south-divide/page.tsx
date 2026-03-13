@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Regional Gross Value Added (Balanced)', url: 'https://www.ons.gov.uk/economy/grossvalueaddedgva', date: '2022' },
+  { num: 2, name: 'IPPR North', dataset: 'State of the North Report', url: 'https://www.ippr.org/research/publications/state-of-the-north', date: '2023' },
+  { num: 3, name: 'HM Treasury', dataset: 'Public expenditure statistical analyses — infrastructure spending per head', url: 'https://www.gov.uk/government/collections/public-expenditure-statistical-analyses-pesa', date: '2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -89,8 +97,8 @@ export default function NorthSouthDividePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>London generates £56,378 of economic output per person each year; the North East generates £22,843 — 74% of the UK average and 40% of London&rsquo;s figure. By the standard measure of regional inequality, the Gini coefficient of GVA per head, the UK is the most unequal major economy in Europe. The divergence accelerated after the 1980s as manufacturing collapsed in the North and Midlands while financial and professional services concentrated in London and the South East. By 1997 London&rsquo;s GVA per head was 151% of the UK average; by 2022 it had reached 181%, while the North East slipped from 86% to 74%. The gap has grown in every economic cycle: in booms, London expands faster; in recessions, public sector cuts hit regions most dependent on government employment the hardest. The Levelling Up agenda announced in 2019 has not visibly narrowed it, and the cancellation of HS2&rsquo;s northern leg removes the only plausibly transformative infrastructure intervention of the past decade.</p>
-            <p>Transport connectivity is both symptom and cause. Leeds to Manchester — 43 miles — takes up to 55 minutes by rail; a comparable London journey takes 20. Poor intra-northern connectivity suppresses the agglomeration effects that drive urban productivity, constraining labour markets and limiting scale. Manchester and Leeds together have roughly the same population as Greater London but generate less than a third of the economic output. Infrastructure investment per head in London remains substantially higher than in any northern region. By international comparison, Germany&rsquo;s federal structures and infrastructure investment have sustained productive regions across its territory; France has Paris but its regions are not as dramatically left behind; the US&rsquo;s state-level gap is substantially smaller than the UK equivalent.</p>
+            <p>London generates £56,378 of economic output per person each year; the North East generates £22,843 — 74% of the UK average and 40% of London&rsquo;s figure.<Cite nums={1} /> By the standard measure of regional inequality, the Gini coefficient of GVA per head, the UK is the most unequal major economy in Europe. The divergence accelerated after the 1980s as manufacturing collapsed in the North and Midlands while financial and professional services concentrated in London and the South East. By 1997 London&rsquo;s GVA per head was 151% of the UK average; by 2022 it had reached 181%, while the North East slipped from 86% to 74%.<Cite nums={1} /> The gap has grown in every economic cycle: in booms, London expands faster; in recessions, public sector cuts hit regions most dependent on government employment the hardest. The Levelling Up agenda announced in 2019 has not visibly narrowed it, and the cancellation of HS2&rsquo;s northern leg removes the only plausibly transformative infrastructure intervention of the past decade.<Cite nums={2} /></p>
+            <p>Transport connectivity is both symptom and cause. Leeds to Manchester — 43 miles — takes up to 55 minutes by rail; a comparable London journey takes 20. Poor intra-northern connectivity suppresses the agglomeration effects that drive urban productivity, constraining labour markets and limiting scale. Manchester and Leeds together have roughly the same population as Greater London but generate less than a third of the economic output.<Cite nums={1} /> Infrastructure investment per head in London remains substantially higher than in any northern region.<Cite nums={3} /> By international comparison, Germany&rsquo;s federal structures and infrastructure investment have sustained productive regions across its territory; France has Paris but its regions are not as dramatically left behind; the US&rsquo;s state-level gap is substantially smaller than the UK equivalent.</p>
           </div>
         </section>
 
@@ -186,6 +194,10 @@ export default function NorthSouthDividePage() {
             </div>
           </div>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <ScrollReveal>

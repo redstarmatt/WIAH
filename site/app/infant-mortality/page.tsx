@@ -8,7 +8,15 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Child Mortality in England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/childhoodinfantandperinatalmortalityinenglandandwales', date: '2023' },
+  { num: 2, name: 'OECD', dataset: 'Health Statistics — Infant Mortality', url: 'https://www.oecd.org/health/health-data.htm', date: '2023' },
+  { num: 3, name: 'MBRRACE-UK', dataset: 'Perinatal Mortality Surveillance Report', url: 'https://www.npeu.ox.ac.uk/mbrrace-uk', date: '2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -111,8 +119,8 @@ export default function InfantMortalityPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England and Wales recorded an infant mortality rate of 3.6 deaths per 1,000 live births in 2022 — a figure that has barely shifted since 2014. Before that, the rate had fallen steadily for decades. The stall matters because comparable nations have kept improving: Germany now sits at 3.0, France at 3.2, the Netherlands at 3.4, and Sweden at 2.3. More than 3,000 stillbirths occur in England and Wales each year. Neonatal deaths — those in the first 28 days — account for the majority of all infant mortality, and preterm birth is the single leading cause, affecting around 1 in 13 pregnancies.</p>
-            <p>The death rate is not distributed evenly. In the most deprived areas, 5.4 babies per 1,000 live births die before their first birthday; in the least deprived, the figure is 2.2 — a gap of more than 2.5 times. Race compounds this: MBRRACE-UK's annual perinatal mortality reports have consistently found that babies born to Black and South Asian mothers face significantly elevated risks of stillbirth and neonatal death, driven by a combination of underlying health conditions, access to antenatal care, and institutional failings in maternity services. Regional variation mirrors the deprivation gradient, with infant mortality rates in parts of the North and Midlands persistently above the national average.</p>
+            <p>England and Wales recorded an infant mortality rate of 3.6 deaths per 1,000 live births in 2022 — a figure that has barely shifted since 2014.<Cite nums={1} /> Before that, the rate had fallen steadily for decades. The stall matters because comparable nations have kept improving: Germany now sits at 3.0, France at 3.2, the Netherlands at 3.4, and Sweden at 2.3.<Cite nums={2} /> More than 3,000 stillbirths occur in England and Wales each year. Neonatal deaths — those in the first 28 days — account for the majority of all infant mortality, and preterm birth is the single leading cause, affecting around 1 in 13 pregnancies.</p>
+            <p>The death rate is not distributed evenly. In the most deprived areas, 5.4 babies per 1,000 live births die before their first birthday; in the least deprived, the figure is 2.2 — a gap of more than 2.5 times.<Cite nums={1} /> Race compounds this: MBRRACE-UK's annual perinatal mortality reports have consistently found that babies born to Black and South Asian mothers face significantly elevated risks of stillbirth and neonatal death, driven by a combination of underlying health conditions, access to antenatal care, and institutional failings in maternity services.<Cite nums={3} /> Regional variation mirrors the deprivation gradient, with infant mortality rates in parts of the North and Midlands persistently above the national average.</p>
             </div>
         </section>
 
@@ -220,6 +228,10 @@ export default function InfantMortalityPage() {
             source="Source: ONS — Child Mortality Statistics 2022; MBRRACE-UK — Perinatal Mortality Surveillance 2023."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

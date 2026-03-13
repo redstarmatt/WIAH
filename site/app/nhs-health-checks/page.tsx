@@ -7,6 +7,8 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
@@ -24,6 +26,12 @@ interface NhsHealthChecksData {
   timeSeries: HealthCheckDataPoint[]
   deprivationGap: number
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'NHS Health Check Programme Data', url: 'https://www.england.nhs.uk/ourwork/prevention/heartdisease/nhs-health-check/', date: '2023', note: 'Only 48% uptake in 2023, down from 58% in 2015; 624,000 checks completed vs 980,000 pre-pandemic' },
+  { num: 2, name: 'NHS England', dataset: 'NHS Health Check Modelling — Cardiovascular Prevention', date: '2023', note: '1,600 cases of Type 2 diabetes and 20,500 high cardiovascular risk detected annually; 66% target would prevent 4,000+ heart attacks and strokes' },
+  { num: 3, name: 'Public Health England', dataset: 'NHS Health Check Inequalities Analysis (IMD quintiles)', date: '2023', note: '18pp deprivation gap: 57% uptake in wealthiest vs 39% in most deprived quintile' },
+];
 
 function yearToDate(y: number): Date {
   return new Date(y, 0, 1)
@@ -64,8 +72,8 @@ export default function NhsHealthChecksPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The NHS Health Check programme offers free cardiovascular risk assessments to adults aged 40–74 every five years. Launched in 2009, it is estimated to detect 1,600 cases of Type 2 diabetes and 20,500 people at high cardiovascular risk each year, with NHS England modelling suggesting that reaching the 66% uptake target would prevent over 4,000 heart attacks and strokes annually. Yet only 48% of those offered a check completed one in 2023 — down from 58% in 2015. COVID-19 collapsed the programme in 2020 to just 310,000 checks, and recovery to 624,000 by 2023 still leaves it 36% below pre-pandemic levels, with a cohort of people who have aged through the eligible window without being assessed.</p>
-            <p>The deprivation gap is the most consequential feature of the data: uptake is 57% in the wealthiest quintile but only 39% in the most deprived — an 18 percentage point gap that runs exactly the wrong way, since deprived communities carry higher cardiovascular risk, higher smoking rates, and higher obesity prevalence. GP practices in deprived areas, with larger list sizes and higher acute demand, struggle to resource proactive outreach; appointment times conflict with working patterns; digital booking creates a barrier for many. Some ICBs have achieved gains through community venue delivery and outreach workers, but without national adoption the inverse care law persists.</p>
+            <p>The NHS Health Check programme offers free cardiovascular risk assessments to adults aged 40–74 every five years. Launched in 2009, it is estimated to detect 1,600 cases of Type 2 diabetes and 20,500 people at high cardiovascular risk each year, with NHS England modelling suggesting that reaching the 66% uptake target would prevent over 4,000 heart attacks and strokes annually.<Cite nums={2} /> Yet only 48% of those offered a check completed one in 2023 — down from 58% in 2015.<Cite nums={1} /> COVID-19 collapsed the programme in 2020 to just 310,000 checks, and recovery to 624,000 by 2023 still leaves it 36% below pre-pandemic levels, with a cohort of people who have aged through the eligible window without being assessed.</p>
+            <p>The deprivation gap is the most consequential feature of the data: uptake is 57% in the wealthiest quintile but only 39% in the most deprived — an 18 percentage point gap that runs exactly the wrong way, since deprived communities carry higher cardiovascular risk, higher smoking rates, and higher obesity prevalence.<Cite nums={3} /> GP practices in deprived areas, with larger list sizes and higher acute demand, struggle to resource proactive outreach; appointment times conflict with working patterns; digital booking creates a barrier for many. Some ICBs have achieved gains through community venue delivery and outreach workers, but without national adoption the inverse care law persists.</p>
           </div>
         </section>
 
@@ -126,6 +134,9 @@ export default function NhsHealthChecksPage() {
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">

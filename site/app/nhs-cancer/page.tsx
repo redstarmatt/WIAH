@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Cancer Research UK', dataset: 'Cancer Incidence and Mortality Statistics', url: 'https://www.cancerresearchuk.org/health-professional/cancer-statistics', date: '2024' },
+  { num: 2, name: 'NHS England', dataset: 'Cancer Waiting Times Statistics', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/cancer-waiting-times/', date: '2023' },
+  { num: 3, name: 'NHS England', dataset: 'NHS Long-Term Plan — cancer early diagnosis', url: 'https://www.longtermplan.nhs.uk/', date: '2019' },
+  { num: 4, name: 'OECD / Lancet Oncology', dataset: 'CONCORD-3 survival comparisons', url: 'https://www.thelancet.com/journals/lanonc/article/PIIS1470-2045(17)30909-9/fulltext', date: '2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 

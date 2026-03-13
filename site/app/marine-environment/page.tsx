@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'JNCC', dataset: 'MPA condition assessment', date: '2023', note: 'Joint Nature Conservation Committee assessment of Marine Protected Area features' },
+  { num: 2, name: 'Oceana', dataset: 'Bottom trawling in UK offshore MPAs analysis', date: '2023' },
+  { num: 3, name: 'ICES', dataset: 'Stock assessment — UK waters', date: '2024', note: 'International Council for the Exploration of the Sea' },
+];
 
 interface MarineData {
   national: {
@@ -62,8 +70,8 @@ export default function MarineEnvironmentPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The United Kingdom manages one of the world's largest marine estates, covering approximately 900,000 square kilometres — roughly 3.5 times its land area. Some 38% of UK waters are designated as Marine Protected Areas under a patchwork of national and international frameworks, including Marine Conservation Zones (MCZs), Special Areas of Conservation (SACs), and Sites of Special Scientific Interest (SSSIs). On paper, this exceeds the global 30&times;30 target agreed at COP15 in Montreal. In practice, the picture is far less reassuring. A 2023 assessment by the Joint Nature Conservation Committee (JNCC) found that only 36% of MPA features were in favourable condition. Bottom trawling — the most destructive fishing method — continues in 90% of offshore MPAs, according to analysis by Oceana.</p>
-            <p>UK fish stocks present a mixed picture. ICES (the International Council for the Exploration of the Sea) assessed 57 stocks in UK waters in 2024 and found that 49% were being harvested at or below the maximum sustainable yield — down from a peak of 57% in 2016. Cod in the Celtic Sea is in particularly poor condition, with spawning stock biomass well below safe biological limits. North Sea herring has recovered significantly since its near-collapse in the 1970s but faces renewed pressure from rising sea temperatures. Post-Brexit, the UK sets its own Total Allowable Catches independently from the EU, but negotiations remain politically fraught and quota-setting has sometimes exceeded scientific advice.</p>
+            <p>The United Kingdom manages one of the world's largest marine estates, covering approximately 900,000 square kilometres — roughly 3.5 times its land area. Some 38% of UK waters are designated as Marine Protected Areas under a patchwork of national and international frameworks, including Marine Conservation Zones (MCZs), Special Areas of Conservation (SACs), and Sites of Special Scientific Interest (SSSIs). On paper, this exceeds the global 30&times;30 target agreed at COP15 in Montreal. In practice, the picture is far less reassuring. A 2023 assessment by the Joint Nature Conservation Committee (JNCC) found that only 36% of MPA features were in favourable condition.<Cite nums={1} /> Bottom trawling — the most destructive fishing method — continues in 90% of offshore MPAs, according to analysis by Oceana.<Cite nums={2} /></p>
+            <p>UK fish stocks present a mixed picture. ICES (the International Council for the Exploration of the Sea) assessed 57 stocks in UK waters in 2024 and found that 49% were being harvested at or below the maximum sustainable yield — down from a peak of 57% in 2016.<Cite nums={3} /> Cod in the Celtic Sea is in particularly poor condition, with spawning stock biomass well below safe biological limits. North Sea herring has recovered significantly since its near-collapse in the 1970s but faces renewed pressure from rising sea temperatures. Post-Brexit, the UK sets its own Total Allowable Catches independently from the EU, but negotiations remain politically fraught and quota-setting has sometimes exceeded scientific advice.</p>
             </div>
         </section>
 
@@ -132,6 +140,10 @@ export default function MarineEnvironmentPage() {
             />
           </section>
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
               <RelatedTopics />
       </main>
     </>

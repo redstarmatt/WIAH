@@ -9,6 +9,16 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import PositiveCallout from '@/components/PositiveCallout';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NATO', dataset: 'Defence Expenditure of NATO Countries', url: 'https://www.nato.int/cps/en/natohq/news_197050.htm', date: '2024' },
+  { num: 2, name: 'HM Government', dataset: 'Integrated Review Refresh 2023', url: 'https://www.gov.uk/government/publications/integrated-review-refresh-2023', date: '2023' },
+  { num: 3, name: 'MOD', dataset: 'UK Armed Forces Personnel Statistics', url: 'https://www.gov.uk/government/statistics/uk-armed-forces-personnel-numbers', date: '2024' },
+  { num: 4, name: 'MOD', dataset: 'Army Recruiting Review 2023', url: 'https://www.gov.uk/government/publications/army-recruiting-review', date: '2023' },
+  { num: 5, name: 'Strategic Defence Review', dataset: 'SDR Report 2025', url: 'https://www.gov.uk/government/publications/strategic-defence-review-2025', date: '2025' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -85,10 +95,10 @@ export default function MilitarySpendingPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The UK has met NATO's 2% of GDP defence spending target continuously since 2014, when the target was formally adopted at the Wales Summit. The current figure of 2.3% represents approximately £55 billion annually. The Integrated Review Refresh 2023 committed to spending 2.5% of GDP on defence &ldquo;in the longer term,&rdquo; following the strategic shock of Russia's full-scale invasion of Ukraine in 2022 which exposed the inadequacy of European defence preparedness. The 2024 Strategic Defence Review, commissioned by the new Labour government and published in 2025, set out a pathway to 2.5% by the early 2030s. The headline percentage figures, however, mask serious questions about what the money is buying, how it is spent, and whether the UK's actual military capability matches its global commitments and stated ambitions.
+              The UK has met NATO's 2% of GDP defence spending target continuously since 2014, when the target was formally adopted at the Wales Summit. The current figure of 2.3% represents approximately £55 billion annually.<Cite nums={1} /> The Integrated Review Refresh 2023 committed to spending 2.5% of GDP on defence &ldquo;in the longer term,&rdquo; following the strategic shock of Russia's full-scale invasion of Ukraine in 2022 which exposed the inadequacy of European defence preparedness.<Cite nums={2} /> The 2024 Strategic Defence Review, commissioned by the new Labour government and published in 2025, set out a pathway to 2.5% by the early 2030s.<Cite nums={5} /> The headline percentage figures, however, mask serious questions about what the money is buying, how it is spent, and whether the UK's actual military capability matches its global commitments and stated ambitions.
             </p>
             <p>
-              The British Army is smaller now than at any time since the defeat of Napoleon at Waterloo in 1815. The 2010 Strategic Defence and Security Review cut army regular strength to a target of 82,000, which was further reduced in the 2021 Integrated Review to 72,500 — the lowest on record. By 2023, actual strength had fallen to approximately 73,000 — a force that would be challenged to sustain a single major warfighting division in the field. The army's 2023 recruiting shortfall was the largest on record: it recruited 6,600 soldiers against a target of 9,000, a success rate of around 73%. Recruitment has been hampered by physical fitness requirements, pay that is uncompetitive with civilian employers, housing quality concerns, and reputational damage from high-profile misconduct cases. The Army Recruiting Review 2023 acknowledged that the service model — designed for a Cold War mass conscript force — had not been adequately reformed for a professional volunteer army.
+              The British Army is smaller now than at any time since the defeat of Napoleon at Waterloo in 1815. The 2010 Strategic Defence and Security Review cut army regular strength to a target of 82,000, which was further reduced in the 2021 Integrated Review to 72,500 — the lowest on record.<Cite nums={3} /> By 2023, actual strength had fallen to approximately 73,000 — a force that would be challenged to sustain a single major warfighting division in the field.<Cite nums={3} /> The army's 2023 recruiting shortfall was the largest on record: it recruited 6,600 soldiers against a target of 9,000, a success rate of around 73%.<Cite nums={4} /> Recruitment has been hampered by physical fitness requirements, pay that is uncompetitive with civilian employers, housing quality concerns, and reputational damage from high-profile misconduct cases. The Army Recruiting Review 2023 acknowledged that the service model — designed for a Cold War mass conscript force — had not been adequately reformed for a professional volunteer army.<Cite nums={4} />
             </p>
             </div>
         </section>
@@ -186,6 +196,10 @@ export default function MilitarySpendingPage() {
             )}
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="border-t border-wiah-border pt-8 mt-12">
           <h2 className="text-lg font-bold text-wiah-black mb-4">Sources &amp; methodology</h2>

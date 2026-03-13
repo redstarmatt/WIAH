@@ -8,6 +8,16 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+// -- References -------------------------------------------------------------
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Press Gazette', dataset: 'Local News Index — newspaper closures audit', url: 'https://pressgazette.co.uk/local-news-index', date: '2024' },
+  { num: 2, name: 'Reuters Institute', dataset: 'UK Local News — news deserts and coverage gaps', url: 'https://reutersinstitute.politics.ox.ac.uk/', date: '2024' },
+  { num: 3, name: 'BBC', dataset: 'Local Radio Restructure announcement', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -78,7 +88,7 @@ export default function LocalPressClosuresPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Britain&rsquo;s local newspaper industry has contracted sharply since the late 2000s: from a peak of around 1,100 local papers in 2008, the count had fallen to approximately 760 by 2024 — a loss of more than 340 titles. Print advertising revenue collapsed as classifieds migrated to Gumtree and Facebook Marketplace, while digital advertising consolidated in Google and Meta, leaving local titles starved of income. By 2024, more than 210 areas of the UK had no meaningful local print or digital news coverage at all. The BBC&rsquo;s 2024 restructuring of local radio — merging 38 local stations into regional hubs — removed a further layer of accountability journalism that had partly compensated for newspaper closures.</p>
+            <p>Britain&rsquo;s local newspaper industry has contracted sharply since the late 2000s: from a peak of around 1,100 local papers in 2008, the count had fallen to approximately 760 by 2024 — a loss of more than 340 titles.<Cite nums={1} /> Print advertising revenue collapsed as classifieds migrated to Gumtree and Facebook Marketplace, while digital advertising consolidated in Google and Meta, leaving local titles starved of income. By 2024, more than 210 areas of the UK had no meaningful local print or digital news coverage at all.<Cite nums={2} /> The BBC&rsquo;s 2024 restructuring of local radio — merging 38 local stations into regional hubs — removed a further layer of accountability journalism that had partly compensated for newspaper closures.<Cite nums={3} /></p>
             <p>The democratic consequences are measurable. Academic research has found correlations between local newspaper closure and lower voter turnout, less competitive local elections, higher levels of uncontested council seats, and reduced public awareness of local government decisions. Local newspapers performed functions no other institution replicates at scale — attending council meetings, scrutinising planning applications, reporting court proceedings — and no systemic replacement has emerged. Public interest media startups and community newsletters cover some gaps, but rarely the civic functions that hold local power to account.</p>
           </div>
         </section>
@@ -139,6 +149,10 @@ export default function LocalPressClosuresPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics'
+import Cite from '@/components/Cite'
+import References, { Reference } from '@/components/References'
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS Digital', dataset: 'Data on Written Complaints in the NHS 2023/24', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/data-on-written-complaints-in-the-nhs', date: '2024' },
+  { num: 2, name: 'CQC', dataset: 'Complainant Survey 2023/24', url: 'https://www.cqc.org.uk/publications/surveys', date: '2024' },
+  { num: 3, name: 'PHSO', dataset: 'Annual Report and Accounts 2023/24', url: 'https://www.ombudsman.org.uk/publications', date: '2024' },
+  { num: 4, name: 'NHS England', dataset: 'Patient Safety Incident Response Framework (PSIRF)', url: 'https://www.england.nhs.uk/patient-safety/incident-response-framework/', date: '2023' },
+]
 
 // -- Types ------------------------------------------------------------------
 

@@ -8,7 +8,15 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Discharge Delays (Acute) Statistics', date: '2023', note: '13,500 patients/day medically fit for discharge but unable to leave; up from 5,200 in 2015' },
+  { num: 2, name: 'NHS England', dataset: 'Discharge Delays — Cost Analysis', date: '2023', note: 'Estimated £1 billion per year in occupied bed days' },
+  { num: 3, name: 'Skills for Care', dataset: 'Adult Social Care Workforce Data', date: '2023', note: '152,000 vacancies in social care' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -100,8 +108,8 @@ export default function NHSDischargePagePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>On any given day in 2023, an average of 13,500 patients in English hospitals were medically fit for discharge but unable to leave — occupying beds that cost the NHS an estimated £1 billion per year. That figure has more than doubled since 2015, when the daily average stood at 5,200. Social care delays account for 42% of all delayed discharges, the largest single cause; awaiting care assessment adds a further 18%. Together, discharge-delayed patients occupy roughly one in eight of all acute hospital beds in England — a structural blockage embedded in the system long before the pandemic.</p>
-            <p>The causes run upstream into social care, where 152,000 vacancies make it impossible to arrange home care packages quickly enough. Care home placements can take weeks to confirm. The two systems operate under different financial incentives: NHS trusts are penalised for keeping patients beyond their expected length of stay, but local authorities — responsible for commissioning social care packages — face no equivalent sanction for delays in arranging provision. The COVID-19 pandemic compounded pre-existing pressures: the 2021–22 surge created a post-acute wave of patients with complex needs, and a workforce already thinned by illness and burnout struggled to absorb them. In 2022, delayed discharge figures reached record levels unseen since collection began.</p>
+            <p>On any given day in 2023, an average of 13,500 patients in English hospitals were medically fit for discharge but unable to leave — occupying beds that cost the NHS an estimated £1 billion per year.<Cite nums={[1, 2]} /> That figure has more than doubled since 2015, when the daily average stood at 5,200. Social care delays account for 42% of all delayed discharges, the largest single cause; awaiting care assessment adds a further 18%. Together, discharge-delayed patients occupy roughly one in eight of all acute hospital beds in England — a structural blockage embedded in the system long before the pandemic.</p>
+            <p>The causes run upstream into social care, where 152,000 vacancies make it impossible to arrange home care packages quickly enough.<Cite nums={3} /> Care home placements can take weeks to confirm. The two systems operate under different financial incentives: NHS trusts are penalised for keeping patients beyond their expected length of stay, but local authorities — responsible for commissioning social care packages — face no equivalent sanction for delays in arranging provision. The COVID-19 pandemic compounded pre-existing pressures: the 2021–22 surge created a post-acute wave of patients with complex needs, and a workforce already thinned by illness and burnout struggled to absorb them. In 2022, delayed discharge figures reached record levels unseen since collection began.<Cite nums={1} /></p>
             </div>
         </section>
 
@@ -210,6 +218,9 @@ export default function NHSDischargePagePage() {
           />
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">

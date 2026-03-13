@@ -8,6 +8,15 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Environment Agency', dataset: 'Water Framework Directive Classification Reports', url: 'https://environment.data.gov.uk/catchment-planning/', date: '2023' },
+  { num: 2, name: 'Defra', dataset: 'Nitrate Vulnerable Zone Designation Review', url: 'https://www.gov.uk/government/collections/nitrate-vulnerable-zones', date: '2022' },
+  { num: 3, name: 'Defra', dataset: 'Fertiliser Usage Survey', url: 'https://www.gov.uk/government/collections/fertiliser-usage', date: '2023' },
+  { num: 4, name: 'Environment Agency', dataset: 'Farm inspection and enforcement data', url: 'https://www.gov.uk/government/organisations/environment-agency', date: '2023' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -61,8 +70,8 @@ export default function NitrogenWaterPollutionPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Eighty-three percent of English rivers fail nitrate water quality standards — a figure stubbornly static for years despite Nitrate Vulnerable Zone designations covering 60% of England&rsquo;s agricultural land. Agriculture accounts for approximately 70% of nitrate pollution in UK rivers, primarily synthetic fertiliser runoff after rainfall. Excess nitrogen fuels algal blooms that deplete oxygen and create dead zones, driving eutrophication that has collapsed fish and invertebrate populations. The Environment Agency estimates no English river currently achieves good ecological status across all Water Framework Directive measures. Post-Brexit Environmental Land Management schemes — particularly Sustainable Farming Incentive — aim to redirect subsidies toward reduced fertiliser use, but uptake has been slower than hoped and the scheme has undergone multiple revisions amid farming sector protests.</p>
-            <p>The costs fall on the public, not the polluters. Water companies remove nitrates from abstracted water in the most affected catchments — east England and the East Midlands — at tens of millions of pounds per year, costs passed on through bills. Nitrates in drinking water above safe thresholds cause infant methaemoglobinaemia and are linked to colorectal cancer at sustained elevated exposures. Enforcement of NVZ rules is under-resourced: the Environment Agency completes far fewer farm inspections than target, a direct consequence of the sustained budget cuts that reduced its staff and capacity through the 2010s. The incentive to pollute has historically been stronger than the incentive to comply.</p>
+            <p>Eighty-three percent of English rivers fail nitrate water quality standards — a figure stubbornly static for years despite Nitrate Vulnerable Zone designations covering 60% of England&rsquo;s agricultural land.<Cite nums={[1, 2]} /> Agriculture accounts for approximately 70% of nitrate pollution in UK rivers, primarily synthetic fertiliser runoff after rainfall.<Cite nums={3} /> Excess nitrogen fuels algal blooms that deplete oxygen and create dead zones, driving eutrophication that has collapsed fish and invertebrate populations. The Environment Agency estimates no English river currently achieves good ecological status across all Water Framework Directive measures.<Cite nums={1} /> Post-Brexit Environmental Land Management schemes — particularly Sustainable Farming Incentive — aim to redirect subsidies toward reduced fertiliser use, but uptake has been slower than hoped and the scheme has undergone multiple revisions amid farming sector protests.</p>
+            <p>The costs fall on the public, not the polluters. Water companies remove nitrates from abstracted water in the most affected catchments — east England and the East Midlands — at tens of millions of pounds per year, costs passed on through bills. Nitrates in drinking water above safe thresholds cause infant methaemoglobinaemia and are linked to colorectal cancer at sustained elevated exposures. Enforcement of NVZ rules is under-resourced: the Environment Agency completes far fewer farm inspections than target, a direct consequence of the sustained budget cuts that reduced its staff and capacity through the 2010s.<Cite nums={4} /> The incentive to pollute has historically been stronger than the incentive to comply.</p>
           </div>
         </section>
 
@@ -122,6 +131,10 @@ export default function NitrogenWaterPollutionPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

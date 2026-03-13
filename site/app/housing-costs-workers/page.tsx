@@ -7,7 +7,15 @@ import MetricCard from '@/components/MetricCard';
 import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Annual Survey of Hours and Earnings (ASHE)', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/annualsurveyofhoursandearnings/2023', date: '2023', note: 'Median monthly take-home pay by region' },
+  { num: 2, name: 'Rightmove', dataset: 'Rental Market Tracker', url: 'https://www.rightmove.co.uk/news/rental-market-tracker/', date: '2023', note: 'Median monthly rent £2,100 in London' },
+  { num: 3, name: 'Savills', dataset: 'Residential Research — Rental Affordability', date: '2023', note: 'Long-run rental affordability analysis; London ratio rose from 32% in 2000' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -75,7 +83,7 @@ export default function HousingCostsWorkersPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>In 2023, median monthly rent in London was approximately £2,100 against median monthly take-home pay of around £2,960 — meaning 71% of median take-home pay is consumed by rent, more than double the 30% internationally recognised affordability threshold. The problem has spread beyond London: Oxford sits at 57%, Bristol at 55%, Cambridge at 54%, Manchester at 48%. Every major English city now exceeds the affordability threshold by a substantial margin. London&rsquo;s ratio has risen from 32% in 2000, effectively doubling in a generation, driven by structural under-building in growing cities amplified by rising mortgage rates that have pushed more households into the private rental market as home ownership becomes less accessible.</p>
+            <p>In 2023, median monthly rent in London was approximately £2,100 against median monthly take-home pay of around £2,960 — meaning 71% of median take-home pay is consumed by rent, more than double the 30% internationally recognised affordability threshold.<Cite nums={[1,2]} /> The problem has spread beyond London: Oxford sits at 57%, Bristol at 55%, Cambridge at 54%, Manchester at 48%. Every major English city now exceeds the affordability threshold by a substantial margin. London&rsquo;s ratio has risen from 32% in 2000, effectively doubling in a generation<Cite nums={3} />, driven by structural under-building in growing cities amplified by rising mortgage rates that have pushed more households into the private rental market as home ownership becomes less accessible.</p>
             <p>The generational and geographic consequences are severe. Workers who bought property before 2010 are largely insulated; the majority of those under 45 who did not face a rental market that suppresses savings, delays family formation, and drives skilled workers away from the cities that most need them. Key worker housing — once an anachronism — is now being seriously discussed in several London boroughs for the first time since the 1940s, a measure of how dramatically conditions have deteriorated. The burden falls hardest on those whose public sector salaries are set nationally but who must rent in local markets: a nurse or teacher on a median NHS or DfE salary in London or Bristol has no realistic path to affordability in the private market without either significant subsidy or extreme housing insecurity.</p>
           </div>
         </section>
@@ -174,6 +182,10 @@ export default function HousingCostsWorkersPage() {
             </div>
           </div>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <ScrollReveal>

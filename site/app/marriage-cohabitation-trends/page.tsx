@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Marriages in England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/marriagecohabitationandcivilpartnerships', date: '2022' },
+  { num: 2, name: 'ONS', dataset: 'Families and Households', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/families', date: '2022' },
+  { num: 3, name: 'Law Commission', dataset: 'Cohabitation: The Financial Consequences of Relationship Breakdown (Report No. 307)', date: '2007' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -76,8 +84,8 @@ export default function MarriageCohabitationTrendsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Marriages in England and Wales have fallen from 480,000 a year in the early 1970s to 236,000 in 2022 — a 50-year low, with a crude marriage rate of 7.7 per 1,000 population against 14.5 in 1972. The counterpart is the rise of cohabitation: approximately 4.2 million cohabiting couples now live together, more than double the figure two decades ago, making cohabitation the fastest-growing family type. Around 40% of cohabiting couples have dependent children, and average relationship duration has lengthened, challenging the assumption that cohabitation is merely a precursor to marriage. Civil ceremonies now dominate as Church of England weddings have fallen to under 10% of all weddings. Marriage rates remain significantly higher among graduates and homeowners than among those in rented accommodation or precarious employment, meaning marriage has become increasingly associated with affluence as its overall prevalence has fallen.</p>
-            <p>The most significant gap is legal. Unlike Scotland and most of Europe, cohabiting couples in England and Wales have no automatic rights to inherit, claim pension benefits, or access financial remedies on separation, regardless of how long they have lived together. The &ldquo;common law marriage&rdquo; myth — the widely held but entirely false belief that cohabitation confers legal protections — leaves millions of people, disproportionately women with caring responsibilities and lower individual incomes, financially exposed on relationship breakdown or bereavement. The Law Commission recommended reform in 2007. No legislation has followed in nearly two decades.</p>
+            <p>Marriages in England and Wales have fallen from 480,000 a year in the early 1970s to 236,000 in 2022 — a 50-year low, with a crude marriage rate of 7.7 per 1,000 population against 14.5 in 1972.<Cite nums={1} /> The counterpart is the rise of cohabitation: approximately 4.2 million cohabiting couples now live together, more than double the figure two decades ago, making cohabitation the fastest-growing family type.<Cite nums={2} /> Around 40% of cohabiting couples have dependent children, and average relationship duration has lengthened, challenging the assumption that cohabitation is merely a precursor to marriage. Civil ceremonies now dominate as Church of England weddings have fallen to under 10% of all weddings. Marriage rates remain significantly higher among graduates and homeowners than among those in rented accommodation or precarious employment, meaning marriage has become increasingly associated with affluence as its overall prevalence has fallen.</p>
+            <p>The most significant gap is legal. Unlike Scotland and most of Europe, cohabiting couples in England and Wales have no automatic rights to inherit, claim pension benefits, or access financial remedies on separation, regardless of how long they have lived together. The &ldquo;common law marriage&rdquo; myth — the widely held but entirely false belief that cohabitation confers legal protections — leaves millions of people, disproportionately women with caring responsibilities and lower individual incomes, financially exposed on relationship breakdown or bereavement. The Law Commission recommended reform in 2007.<Cite nums={3} /> No legislation has followed in nearly two decades.</p>
           </div>
         </section>
 
@@ -137,6 +145,10 @@ export default function MarriageCohabitationTrendsPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

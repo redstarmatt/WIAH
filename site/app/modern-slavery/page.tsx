@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Home Office', dataset: 'Modern Slavery: NRM Statistics Q4 2023', url: 'https://www.gov.uk/government/collections/national-referral-mechanism-statistics', date: '2024' },
+  { num: 2, name: 'Global Slavery Index', dataset: 'Walk Free Foundation — UK Country Study', url: 'https://www.walkfree.org/global-slavery-index/', date: '2023' },
+  { num: 3, name: 'CPS', dataset: 'Modern Slavery and Trafficking Prosecutions Report', url: 'https://www.cps.gov.uk/publication/modern-slavery-and-human-trafficking', date: '2023' },
+  { num: 4, name: 'Home Office', dataset: 'Independent Review of the Modern Slavery Act 2015', url: 'https://www.gov.uk/government/publications/independent-review-of-the-modern-slavery-act', date: '2019' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -106,8 +115,8 @@ export default function ModernSlaveryPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The National Referral Mechanism received 17,004 referrals of potential modern slavery victims in 2023 — a 33% increase on the previous year and ten times the 1,745 recorded in 2014. The Global Slavery Index estimates between 100,000 and 136,000 people are held in conditions of modern slavery across the United Kingdom at any given time, making the NRM figures a fraction of the true scale. Children now account for 5,509 referrals, nearly a third of the total, driven overwhelmingly by county lines drug networks that recruit boys as young as 12 to transport narcotics between urban hubs and provincial towns. Albanian nationals comprise 15% of all referrals, followed by UK nationals at 14% and Vietnamese nationals at 8%.</p>
-            <p>Labour exploitation accounts for 47% of identified cases, ranging from car washes and construction sites to nail bars and agriculture. Sexual exploitation makes up 30%, criminal exploitation 15% — predominantly county lines — and domestic servitude 8%. These categories frequently overlap: victims coerced into cannabis cultivation, for instance, may face both criminal and labour exploitation simultaneously. The Section 45 statutory defence, introduced by the Modern Slavery Act 2015, recognises that trafficking victims are often compelled to commit offences, yet courts apply it inconsistently. Many victims also enter the asylum system, creating a complex intersection where trafficking claims and immigration cases run in parallel, with average NRM conclusive-grounds decisions now taking 543 days.</p>
+            <p>The National Referral Mechanism received 17,004 referrals of potential modern slavery victims in 2023 — a 33% increase on the previous year and ten times the 1,745 recorded in 2014.<Cite nums={1} /> The Global Slavery Index estimates between 100,000 and 136,000 people are held in conditions of modern slavery across the United Kingdom at any given time, making the NRM figures a fraction of the true scale.<Cite nums={2} /> Children now account for 5,509 referrals, nearly a third of the total, driven overwhelmingly by county lines drug networks that recruit boys as young as 12 to transport narcotics between urban hubs and provincial towns.<Cite nums={1} /> Albanian nationals comprise 15% of all referrals, followed by UK nationals at 14% and Vietnamese nationals at 8%.<Cite nums={1} /></p>
+            <p>Labour exploitation accounts for 47% of identified cases, ranging from car washes and construction sites to nail bars and agriculture. Sexual exploitation makes up 30%, criminal exploitation 15% — predominantly county lines — and domestic servitude 8%.<Cite nums={1} /> These categories frequently overlap: victims coerced into cannabis cultivation, for instance, may face both criminal and labour exploitation simultaneously. The Section 45 statutory defence, introduced by the Modern Slavery Act 2015, recognises that trafficking victims are often compelled to commit offences, yet courts apply it inconsistently.<Cite nums={3} /> Many victims also enter the asylum system, creating a complex intersection where trafficking claims and immigration cases run in parallel, with average NRM conclusive-grounds decisions now taking 543 days.<Cite nums={4} /></p>
             </div>
         </section>
 
@@ -248,6 +257,11 @@ export default function ModernSlaveryPage() {
           source="Source: Home Office — Modern Slavery NRM Statistics Q4 2023; CPS — Modern Slavery and Trafficking Report 2023."
         />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
               <RelatedTopics />
       </main>
     </>

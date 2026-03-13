@@ -8,6 +8,15 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Kinship', dataset: 'State of the Nation Survey 2023', url: 'https://kinship.org.uk/state-of-the-nation', date: '2023' },
+  { num: 2, name: 'DfE', dataset: 'Children Looked After in England 2023', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions', date: '2023' },
+  { num: 3, name: 'Independent Review of Children\'s Social Care', dataset: 'Final Report 2022', url: 'https://childrenssocialcare.independent-review.uk/', date: '2022' },
+  { num: 4, name: 'Children and Families Act 2014', dataset: 'Legislation.gov.uk', url: 'https://www.legislation.gov.uk/ukpga/2014/6/contents/enacted', date: '2014' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -78,10 +87,10 @@ export default function KinshipCarePage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Kinship care is the most common alternative to parental care in the UK, yet it sits in a policy blind spot. Around 162,000 children are being raised by relatives — typically grandparents — either through formal legal arrangements such as Special Guardianship Orders (SGOs) or informal family agreements. The charity Kinship estimates the true figure may be closer to 200,000 once unregistered informal arrangements are included. These families prevent children from entering the care system: without kinship carers, the looked-after children population would be roughly double its current size, at enormous cost to the state.
+              Kinship care is the most common alternative to parental care in the UK, yet it sits in a policy blind spot. Around 162,000 children are being raised by relatives — typically grandparents — either through formal legal arrangements such as Special Guardianship Orders (SGOs) or informal family agreements.<Cite nums={2} /> The charity Kinship estimates the true figure may be closer to 200,000 once unregistered informal arrangements are included.<Cite nums={1} /> These families prevent children from entering the care system: without kinship carers, the looked-after children population would be roughly double its current size, at enormous cost to the state.
             </p>
             <p>
-              The trajectory is sharply upward. SGO applications rose 48% between 2018 and 2023, reflecting both increased demand from children's services seeking alternatives to foster care and a growing preference among courts for placing children within their extended family. The Children and Families Act 2014 introduced a duty on local authorities to consider kinship placement before foster care, but this legal priority has not been matched by financial support. The Independent Review of Children's Social Care (2022) recommended a comprehensive financial allowance for kinship carers equivalent to the foster care rate — the government accepted the principle but has not yet implemented it. A pilot programme in 2024 covers just 12 local authorities.
+              The trajectory is sharply upward. SGO applications rose 48% between 2018 and 2023, reflecting both increased demand from children's services seeking alternatives to foster care and a growing preference among courts for placing children within their extended family.<Cite nums={2} /> The Children and Families Act 2014 introduced a duty on local authorities to consider kinship placement before foster care, but this legal priority has not been matched by financial support.<Cite nums={4} /> The Independent Review of Children's Social Care (2022) recommended a comprehensive financial allowance for kinship carers equivalent to the foster care rate — the government accepted the principle but has not yet implemented it.<Cite nums={3} /> A pilot programme in 2024 covers just 12 local authorities.
             </p>
             </div>
         </section>
@@ -169,6 +178,10 @@ export default function KinshipCarePage() {
             )}
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="border-t border-wiah-border pt-8 mt-12">

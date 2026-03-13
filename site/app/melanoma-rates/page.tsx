@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Cancer Research UK / ONS', dataset: 'Cancer incidence statistics — melanoma', url: 'https://www.cancerresearchuk.org/health-professional/cancer-statistics/statistics-by-cancer-type/melanoma-skin-cancer/incidence', date: '2023' },
+  { num: 2, name: 'Cancer Research UK / ONS', dataset: 'Cancer survival statistics — melanoma', url: 'https://www.cancerresearchuk.org/health-professional/cancer-statistics/statistics-by-cancer-type/melanoma-skin-cancer/survival', date: '2023' },
+  { num: 3, name: 'NHS England / NCRAS', dataset: 'Cancer staging data', url: 'https://www.cancerdata.nhs.uk/', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -157,9 +165,9 @@ export default function MelanomaRatesPage() {
         {/* Editorial context */}
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Melanoma is the UK"s fifth most common cancer, and it is getting more common. Around 17,700 people were diagnosed in 2023, up from 15,400 in 2015 and roughly 7,000 in the early 1990s. The age-standardised rate has more than doubled since 2000, reaching 22.4 per 100,000 people. The drivers are well-understood: cumulative UV exposure from decades of cheap package holidays, the commercial sunbed boom of the 1990s and 2000s, and an ageing population carrying the skin damage of earlier decades. Melanoma incidence in the over-65s is three times the population average. The pandemic year of 2020 saw a sharp dip in recorded diagnoses as screening paused and people avoided GPs, but the underlying trend resumed immediately afterward, with many of those delayed diagnoses presenting at later stages.</p>
-            <p>The good news is substantial and worth stating plainly. Five-year survival has risen from 76% in 2000 to 93% today, driven by earlier detection through public awareness campaigns and by the revolution in immunotherapy treatment that began around 2012. Checkpoint inhibitors such as pembrolizumab and nivolumab have transformed the outlook for Stage III and Stage IV melanoma from near-certain death to meaningful long-term survival for a growing proportion of patients. NICE approved these treatments for NHS use, and the UK"s ten-year cancer plan identifies melanoma screening as a priority area. The proportion of melanomas caught at Stage I at diagnosis has risen from 44% to 53% over the past decade.</p>
-            <p>But the picture is far from uniformly positive. Stage IV melanoma still kills roughly 80% of patients within five years. There are stark geographic inequalities: the South West has an incidence rate of 28.1 per 100,000, nearly double London"s 15.6. This reflects demographic differences (older, less ethnically diverse populations in coastal and rural areas), but also patterns of outdoor recreation and historical sunbed use. Dermatology waiting times have lengthened considerably since 2019, meaning the gap between a person noticing a suspicious mole and having it assessed is growing at exactly the wrong moment. The overall trajectory is one of rising cases, improving survival, and a system under pressure to keep pace with both.</p>
+            <p>Melanoma is the UK"s fifth most common cancer, and it is getting more common. Around 17,700 people were diagnosed in 2023, up from 15,400 in 2015 and roughly 7,000 in the early 1990s. The age-standardised rate has more than doubled since 2000, reaching 22.4 per 100,000 people.<Cite nums={1} /> The drivers are well-understood: cumulative UV exposure from decades of cheap package holidays, the commercial sunbed boom of the 1990s and 2000s, and an ageing population carrying the skin damage of earlier decades. Melanoma incidence in the over-65s is three times the population average. The pandemic year of 2020 saw a sharp dip in recorded diagnoses as screening paused and people avoided GPs, but the underlying trend resumed immediately afterward, with many of those delayed diagnoses presenting at later stages.</p>
+            <p>The good news is substantial and worth stating plainly. Five-year survival has risen from 76% in 2000 to 93% today<Cite nums={2} />, driven by earlier detection through public awareness campaigns and by the revolution in immunotherapy treatment that began around 2012. Checkpoint inhibitors such as pembrolizumab and nivolumab have transformed the outlook for Stage III and Stage IV melanoma from near-certain death to meaningful long-term survival for a growing proportion of patients. NICE approved these treatments for NHS use, and the UK"s ten-year cancer plan identifies melanoma screening as a priority area. The proportion of melanomas caught at Stage I at diagnosis has risen from 44% to 53% over the past decade.<Cite nums={3} /></p>
+            <p>But the picture is far from uniformly positive. Stage IV melanoma still kills roughly 80% of patients within five years. There are stark geographic inequalities: the South West has an incidence rate of 28.1 per 100,000, nearly double London"s 15.6.<Cite nums={1} /> This reflects demographic differences (older, less ethnically diverse populations in coastal and rural areas), but also patterns of outdoor recreation and historical sunbed use. Dermatology waiting times have lengthened considerably since 2019, meaning the gap between a person noticing a suspicious mole and having it assessed is growing at exactly the wrong moment. The overall trajectory is one of rising cases, improving survival, and a system under pressure to keep pace with both.</p>
           </div>
         </section>
 
@@ -321,6 +329,10 @@ export default function MelanomaRatesPage() {
             source="Source: Cancer Research UK / NICE — melanoma treatment guidance, 2024. ONS cancer survival statistics."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources and methodology */}
         <ScrollReveal>

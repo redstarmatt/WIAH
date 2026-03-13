@@ -7,7 +7,15 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DWP', dataset: 'Households Below Average Income', url: 'https://www.gov.uk/government/collections/households-below-average-income-hbai--2', date: '2024' },
+  { num: 2, name: 'Joseph Rowntree Foundation', dataset: 'UK Poverty 2024', url: 'https://www.jrf.org.uk/uk-poverty-2024-the-essential-guide-to-understanding-poverty-in-the-uk', date: '2024' },
+  { num: 3, name: 'Resolution Foundation', dataset: 'Low Pay and Living Standards Analysis', url: 'https://www.resolutionfoundation.org', date: '2024' },
+];
 
 export default function InWorkPovertyPage() {
   const inWorkPovertyRate = [14.2, 14.5, 14.8, 15.1, 15.4, 15.8, 16.2, 16.5, 16.8, 17.0, 17.3, 17.5, 17.8, 18.0];
@@ -143,12 +151,16 @@ export default function InWorkPovertyPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on in-work poverty</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>For decades, full-time employment was treated as the primary route out of poverty. That assumption no longer holds. Today, more than 60% of people living in poverty in the UK are in working households — a structural shift driven by the growth of low-paid, insecure, and part-time work alongside soaring housing costs that absorb an ever-larger share of wages.</p>
-              <p>The in-work poverty rate has risen from around 14% in 2010 to 18% by 2024. The National Living Wage, introduced in 2015 and raised annually since, has helped — the share of workers below the Real Living Wage has fallen from a peak of around 21% to 17%. But wage floors have not kept pace with housing costs. In high-cost cities, workers on the legal minimum can spend more than 40% of their income on rent alone.</p>
-              <p>Low-paid work is not evenly distributed. Women, ethnic minorities, and workers in hospitality, retail, and social care are disproportionately represented. Part-time and zero-hours arrangements concentrate in the same sectors, meaning workers face both low hourly rates and unpredictable income — a combination that makes budgeting for essentials nearly impossible. Until housing costs are addressed alongside pay, work alone will not end poverty.</p>
+              <p>For decades, full-time employment was treated as the primary route out of poverty. That assumption no longer holds. Today, more than 60% of people living in poverty in the UK are in working households — a structural shift driven by the growth of low-paid, insecure, and part-time work alongside soaring housing costs that absorb an ever-larger share of wages.<Cite nums={2} /></p>
+              <p>The in-work poverty rate has risen from around 14% in 2010 to 18% by 2024.<Cite nums={1} /> The National Living Wage, introduced in 2015 and raised annually since, has helped — the share of workers below the Real Living Wage has fallen from a peak of around 21% to 17%.<Cite nums={3} /> But wage floors have not kept pace with housing costs. In high-cost cities, workers on the legal minimum can spend more than 40% of their income on rent alone.</p>
+              <p>Low-paid work is not evenly distributed. Women, ethnic minorities, and workers in hospitality, retail, and social care are disproportionately represented.<Cite nums={3} /> Part-time and zero-hours arrangements concentrate in the same sectors, meaning workers face both low hourly rates and unpredictable income — a combination that makes budgeting for essentials nearly impossible. Until housing costs are addressed alongside pay, work alone will not end poverty.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

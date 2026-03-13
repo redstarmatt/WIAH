@@ -6,7 +6,16 @@ import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS Business Services Authority', dataset: 'NHS Dental Statistics for England', url: 'https://www.nhsbsa.nhs.uk/statistical-collections/dental-statistics', date: '2024', note: '30.1m courses in 2019/20; 25.4m in 2023/24' },
+  { num: 2, name: 'NHS England', dataset: 'Dental Access and Patient Survey Data', date: '2024', note: '7.5 million adults without NHS dentist access' },
+  { num: 3, name: 'NHS Digital', dataset: 'NHS Dental Statistics — Adult Access Rates', url: 'https://www.nhsbsa.nhs.uk/statistical-collections/dental-statistics', date: '2023', note: '46.1% of adults seen within two years in 2022/23 vs 54.9% pre-pandemic' },
+  { num: 4, name: 'NHS England', dataset: 'NHS Dentistry Recovery Plan 2023', url: 'https://www.england.nhs.uk/long-read/nhs-dentistry-recovery-plan/', date: '2023' },
+];
 
 export default function NhsDentistryAccessPage() {
   // NHS dental activity 2015–2024 (million courses of treatment)
@@ -58,9 +67,9 @@ export default function NhsDentistryAccessPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>NHS dental treatment completions fell from 30.1 million courses in 2019/20 to 25.4 million in 2023/24 — a shortfall of 4.7 million treatments per year that has not recovered despite four years since the Covid-19 pandemic. Around 7.5 million people in England cannot access an NHS dentist when they need one; in some areas no NHS surgery accepts new adult patients at all.</p>
-            <p>The structural cause is the Unit of Dental Activity (UDA) contract introduced in 2006, which pays the same flat rate whether a dentist provides a check-up or complex multi-appointment treatment. This creates a strong financial incentive to see simpler cases privately and withdraw from NHS work entirely. The share of adults seen within the previous two years stood at 46.1% in 2022/23, against 54.9% pre-pandemic.</p>
-            <p>Unmet need translates directly into harm. Hospital admissions for conditions treatable in primary dental care have risen. Children miss school due to dental pain, and the private market that fills the gap is unaffordable for large parts of the population. Rural and coastal communities — parts of Cornwall, North Yorkshire, and Lincolnshire — report dental deserts where patients travel 50 or more miles for NHS care. The 2023 NHS Dentistry Recovery Plan introduced a "golden hello" for dentists in underserved areas, but critics argue full UDA contract reform is the only lasting solution.</p>
+            <p>NHS dental treatment completions fell from 30.1 million courses in 2019/20 to 25.4 million in 2023/24 — a shortfall of 4.7 million treatments per year that has not recovered despite four years since the Covid-19 pandemic.<Cite nums={1} /> Around 7.5 million people in England cannot access an NHS dentist when they need one; in some areas no NHS surgery accepts new adult patients at all.<Cite nums={2} /></p>
+            <p>The structural cause is the Unit of Dental Activity (UDA) contract introduced in 2006, which pays the same flat rate whether a dentist provides a check-up or complex multi-appointment treatment. This creates a strong financial incentive to see simpler cases privately and withdraw from NHS work entirely. The share of adults seen within the previous two years stood at 46.1% in 2022/23, against 54.9% pre-pandemic.<Cite nums={3} /></p>
+            <p>Unmet need translates directly into harm. Hospital admissions for conditions treatable in primary dental care have risen. Children miss school due to dental pain, and the private market that fills the gap is unaffordable for large parts of the population. Rural and coastal communities — parts of Cornwall, North Yorkshire, and Lincolnshire — report dental deserts where patients travel 50 or more miles for NHS care. The 2023 NHS Dentistry Recovery Plan introduced a "golden hello" for dentists in underserved areas, but critics argue full UDA contract reform is the only lasting solution.<Cite nums={4} /></p>
           </div>
         </section>
 
@@ -142,6 +151,9 @@ export default function NhsDentistryAccessPage() {
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">

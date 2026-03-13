@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Kinship', dataset: 'State of the Nation Survey 2024', url: 'https://kinship.org.uk/state-of-the-nation', date: '2024' },
+  { num: 2, name: 'DfE', dataset: 'Children Looked After in England 2023', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions', date: '2023' },
+  { num: 3, name: 'DfE', dataset: 'Kinship Care Strategy 2023', url: 'https://www.gov.uk/government/publications/kinship-care-strategy', date: '2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -127,10 +135,10 @@ export default function KinshipCareSupportPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Kinship care is the invisible backbone of the children's social care system. When a child cannot safely live with their parents, the first choice should be family — grandparents, aunts, uncles, older siblings, family friends. Around 180,000 children in England are raised this way, three times as many as are in foster care, yet kinship carers receive almost no financial or practical support compared with foster carers, who receive allowances averaging £450–£700 per week.
+              Kinship care is the invisible backbone of the children's social care system. When a child cannot safely live with their parents, the first choice should be family — grandparents, aunts, uncles, older siblings, family friends. Around 180,000 children in England are raised this way, three times as many as are in foster care,<Cite nums={2} /> yet kinship carers receive almost no financial or practical support compared with foster carers, who receive allowances averaging £450–£700 per week.<Cite nums={1} />
             </p>
             <p>
-              The poverty consequences are severe. Kinship carers are typically older — often grandparents who have already retired — and their income is disrupted by taking on an unplanned caring role. Forty-four per cent live in poverty. They often take on children who have experienced neglect, abuse or parental addiction, yet receive none of the training, supervision or therapeutic support that foster carers are entitled to. The result is hidden hardship behind closed doors, absorbing a family crisis with no safety net.
+              The poverty consequences are severe. Kinship carers are typically older — often grandparents who have already retired — and their income is disrupted by taking on an unplanned caring role. Forty-four per cent live in poverty.<Cite nums={1} /> They often take on children who have experienced neglect, abuse or parental addiction, yet receive none of the training, supervision or therapeutic support that foster carers are entitled to. The result is hidden hardship behind closed doors, absorbing a family crisis with no safety net.
             </p>
           </div>
         </section>
@@ -211,6 +219,10 @@ export default function KinshipCareSupportPage() {
             source="Source: DfE — Kinship Care Strategy, 2023. Kinship charity — State of Kinship Care, 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

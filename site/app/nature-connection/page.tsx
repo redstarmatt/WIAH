@@ -8,6 +8,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Natural England', dataset: 'People and Nature Survey', url: 'https://www.gov.uk/government/collections/people-and-nature-survey-for-england', date: '2025' },
+  { num: 2, name: 'Natural England', dataset: 'Monitor of Engagement with the Natural Environment (MENE)', url: 'https://www.gov.uk/government/collections/monitor-of-engagement-with-the-natural-environment-survey-purpose-and-results', date: '2019' },
+  { num: 3, name: 'DLUHC', dataset: 'Green Infrastructure Standards', url: 'https://www.gov.uk/government/publications/green-infrastructure-standards', date: '2025' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -195,6 +203,10 @@ export default function TopicPage() {
             source="Source: Natural England — People and Nature Survey, 2025. DLUHC — Green infrastructure standards, 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

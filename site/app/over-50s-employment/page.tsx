@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Labour Force Survey — Employment by age group', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Labour Force Survey — Economic inactivity by reason and age', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/economicinactivity', date: '2024' },
+  { num: 3, name: 'DWP', dataset: 'WorkWell programme evaluation', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -137,11 +145,15 @@ export default function Over50sEmploymentPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The pandemic triggered a wave of early exits from the labour market among those aged 50 and over — particularly those who had been planning to retire within the decade. Many chose to bring those plans forward when workplaces closed, caring responsibilities intensified, or redundancy packages became available. The so-called Great Unretirement — the partial reversal of this trend since 2022 as inflation eroded pension incomes — has recovered some ground, but the 50–64 employment rate in 2024 of 67.8% remains below its 2019 pre-pandemic peak of 69.8%.
+              The pandemic triggered a wave of early exits from the labour market among those aged 50 and over — particularly those who had been planning to retire within the decade. Many chose to bring those plans forward when workplaces closed, caring responsibilities intensified, or redundancy packages became available. The so-called Great Unretirement — the partial reversal of this trend since 2022 as inflation eroded pension incomes — has recovered some ground, but the 50–64 employment rate in 2024 of 67.8% remains below its 2019 pre-pandemic peak of 69.8%.<Cite nums={1} />
             </p>
             <p>
-              More structurally concerning is the rise in long-term illness as a driver of inactivity among this age group. NHS waiting list backlogs meant that conditions treatable in 2018 were not being treated until 2023 or 2024, if at all. Long-COVID added a new layer of chronic, debilitating illness disproportionately affecting working-age adults. The number of 50–64 year olds economically inactive due to long-term sickness rose from 680,000 in 2019 to a peak of 980,000 in 2023 before easing slightly to 950,000 in 2024. This is not simply &lsquo;people retiring early&rsquo;: it is people being pushed out of work by health conditions they cannot manage while working.
+              More structurally concerning is the rise in long-term illness as a driver of inactivity among this age group. NHS waiting list backlogs meant that conditions treatable in 2018 were not being treated until 2023 or 2024, if at all. Long-COVID added a new layer of chronic, debilitating illness disproportionately affecting working-age adults. The number of 50–64 year olds economically inactive due to long-term sickness rose from 680,000 in 2019 to a peak of 980,000 in 2023 before easing slightly to 950,000 in 2024.<Cite nums={2} /> This is not simply &lsquo;people retiring early&rsquo;: it is people being pushed out of work by health conditions they cannot manage while working.
             </p>
+          </div>
+
+          <div className="mt-6">
+            <References items={editorialRefs} />
           </div>
         </section>
 

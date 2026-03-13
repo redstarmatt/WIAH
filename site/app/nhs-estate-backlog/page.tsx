@@ -7,7 +7,15 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Estates Returns Information Collection (ERIC)', url: 'https://www.england.nhs.uk/estates/eric/', date: 'Jan 2026', note: '£11.6bn total backlog in 2024, up from £3.4bn in 2014' },
+  { num: 2, name: 'NHS England', dataset: 'ERIC — Risk Category Breakdown', url: 'https://www.england.nhs.uk/estates/eric/', date: 'Jan 2026', note: '£5.1bn high/significant risk; £350m critical risk' },
+  { num: 3, name: 'DHSC', dataset: 'New Hospital Programme — Progress Update', url: 'https://www.england.nhs.uk/estates/new-hospital-programme/', date: '2025', note: '40 hospitals committed to rebuild or major refurbishment' },
+];
 
 export default function NhsEstateBacklogPage() {
   // Total backlog £bn, 2014-2024
@@ -172,13 +180,16 @@ export default function NhsEstateBacklogPage() {
           <section id="sec-context" className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data in context</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>The NHS estate maintenance backlog is the accumulated cost of work needed to restore NHS buildings and infrastructure to an acceptable standard. It has grown from £3.4 billion in 2014 to £11.6 billion in 2024 — a 3.4-fold increase driven by chronic underinvestment in capital maintenance. The most alarming component is the £5.1 billion classified as posing high or significant risk: work that, if not done, creates a real and immediate risk to the quality and safety of patient care. The £350 million critical risk backlog represents infrastructure failures where patients or staff could be harmed today.</p>
+              <p>The NHS estate maintenance backlog is the accumulated cost of work needed to restore NHS buildings and infrastructure to an acceptable standard. It has grown from £3.4 billion in 2014 to £11.6 billion in 2024 — a 3.4-fold increase driven by chronic underinvestment in capital maintenance.<Cite nums={1} /> The most alarming component is the £5.1 billion classified as posing high or significant risk: work that, if not done, creates a real and immediate risk to the quality and safety of patient care. The £350 million critical risk backlog represents infrastructure failures where patients or staff could be harmed today.<Cite nums={2} /></p>
               <p>RAAC — reinforced autoclaved aerated concrete — became a focal issue in 2023 when safety concerns forced emergency partial closures of hospitals built with the lightweight concrete used widely in NHS construction between the 1950s and 1990s. The RAAC problem illustrates a broader truth: the NHS is treating patients in buildings that are decades past their intended lifespan. Roof leaks, failing ventilation systems, outdated electrical infrastructure, and crumbling Victorian-era wards are not abstract statistics — they directly affect infection control, patient dignity, and staff safety.</p>
-              <p>The long-term cause is straightforward: capital funding has consistently been raided to cover operational pressures. NHS trusts are legally required to balance their revenue accounts, and when faced with a choice between maintaining a building and treating a patient, the patient wins in the short term. Over decades, this rational short-termism has produced an irrational outcome: an estate so degraded that it is now itself a constraint on the system's ability to treat patients efficiently. Catching up would require sustained capital investment of a scale not seen since the PFI-funded hospital programme of the 2000s.</p>
+              <p>The long-term cause is straightforward: capital funding has consistently been raided to cover operational pressures. NHS trusts are legally required to balance their revenue accounts, and when faced with a choice between maintaining a building and treating a patient, the patient wins in the short term. Over decades, this rational short-termism has produced an irrational outcome: an estate so degraded that it is now itself a constraint on the system's ability to treat patients efficiently. Catching up would require sustained capital investment of a scale not seen since the PFI-funded hospital programme of the 2000s.<Cite nums={3} /></p>
             </div>
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">

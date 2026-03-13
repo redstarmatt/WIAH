@@ -9,6 +9,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import PositiveCallout from '@/components/PositiveCallout';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DLUHC', dataset: 'House building: new build dwellings (live tables)', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-house-building', date: '2024' },
+  { num: 2, name: 'Lichfields', dataset: 'From Permission to Completion 2023', url: 'https://lichfields.uk/content/insights/from-permission-to-completion', date: '2023' },
+  { num: 3, name: 'Barratt, Taylor Wimpey, Persimmon, Berkeley', dataset: 'Annual Reports 2023', date: '2023', note: 'Operating margin targets and land bank disclosures' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -89,10 +97,10 @@ export default function LandBankingPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              England granted 474,000 planning permissions in 2023 but started only 158,000 new homes — a conversion rate of just 33%. The gap between permissions and completions has been widening for over a decade, and it sits at the centre of one of the most contested debates in British politics: are developers deliberately holding back supply to keep prices high, or are viability, infrastructure, and market conditions the real constraint? The major housebuilders argue the latter; campaigners, councils, and an increasing number of economists argue the former is at least part of the story.
+              England granted 474,000 planning permissions in 2023 but started only 158,000 new homes — a conversion rate of just 33%.<Cite nums={1} /> The gap between permissions and completions has been widening for over a decade, and it sits at the centre of one of the most contested debates in British politics: are developers deliberately holding back supply to keep prices high, or are viability, infrastructure, and market conditions the real constraint? The major housebuilders argue the latter; campaigners, councils, and an increasing number of economists argue the former is at least part of the story.
             </p>
             <p>
-              The mechanics of land banking are structural rather than conspiratorial. Housebuilders typically acquire sites with outline planning permission, then apply for detailed permission before commencing construction. Each stage can be legitimately delayed while developers &ldquo;absorb&rdquo; completed units into the local market at the price point that maximises revenue rather than maximising volume. The business model of the major listed housebuilders — Barratt, Taylor Wimpey, Persimmon, Berkeley — is explicitly designed around margin rather than output. Annual reports consistently show that these companies target operating margins of 18–26% and slow construction during market downturns to protect margins rather than sustain completions. Between 2021 and 2023, as mortgage rates rose and buyer demand fell, all four reduced starts significantly while their land banks grew.
+              The mechanics of land banking are structural rather than conspiratorial. Housebuilders typically acquire sites with outline planning permission, then apply for detailed permission before commencing construction. Each stage can be legitimately delayed while developers &ldquo;absorb&rdquo; completed units into the local market at the price point that maximises revenue rather than maximising volume.<Cite nums={2} /> The business model of the major listed housebuilders — Barratt, Taylor Wimpey, Persimmon, Berkeley — is explicitly designed around margin rather than output. Annual reports consistently show that these companies target operating margins of 18–26% and slow construction during market downturns to protect margins rather than sustain completions.<Cite nums={3} /> Between 2021 and 2023, as mortgage rates rose and buyer demand fell, all four reduced starts significantly while their land banks grew.
             </p>
             </div>
         </section>
@@ -189,6 +197,10 @@ export default function LandBankingPage() {
             source="Ministry of Housing, Communities &amp; Local Government · Planning and Infrastructure Bill 2025"
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="border-t border-wiah-border pt-8 mt-12">
           <h2 className="text-lg font-bold text-wiah-black mb-4">Sources &amp; methodology</h2>

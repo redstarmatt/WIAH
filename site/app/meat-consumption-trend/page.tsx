@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DEFRA', dataset: 'Family Food Statistics / Food Statistics Pocketbook', url: 'https://www.gov.uk/government/statistics/family-food-statistics', date: '2025' },
+  { num: 2, name: 'WHO / IARC', dataset: 'Monographs on the Evaluation of Carcinogenic Risks — processed meat classified as Group 1 carcinogen', date: '2015' },
+  { num: 3, name: 'Kantar / IGD', dataset: 'UK Plant-Based Market Report', date: '2025' },
+  { num: 4, name: 'DEFRA', dataset: 'Agriculture in the United Kingdom — Supply Balance Sheets', url: 'https://www.gov.uk/government/statistics/agriculture-in-the-united-kingdom', date: '2025' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -176,9 +185,9 @@ export default function MeatConsumptionTrendPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Britain is eating less meat than at any point in modern records. The decline has been gradual but persistent: roughly 0.7kg per person per year, every year, for nearly two decades. The causes are layered. Health messaging around red and processed meat — particularly following the WHO's 2015 classification of processed meat as a Group 1 carcinogen — shifted consumer attitudes. The rise of flexitarianism, where people reduce rather than eliminate meat, has proved far more influential than outright veganism. And price has played its part: beef and lamb prices rose sharply between 2010 and 2023, driven by feed costs, post-Brexit trade friction, and global supply disruptions, making chicken the default protein for cost-conscious households.</p>
-            <p>The composition of Britain's meat diet has transformed. In 2007, poultry accounted for 36% of total meat consumption; by 2025 it represents 47%. Beef has fallen from 23% to 18%, pork from 22% to 18%, and lamb from 9% to under 8%. This shift has environmental implications — poultry production generates roughly a third of the greenhouse gas emissions per kilogram compared to beef — but the welfare implications of intensive broiler farming are significant and often overlooked. The horsemeat scandal of 2013 caused a sharp short-term drop in beef consumption and permanently damaged consumer trust in processed meat supply chains.</p>
-            <p>The plant-based sector tells a story of boom and plateau. UK retail sales of plant-based products tripled from £440 million in 2018 to £1.41 billion by 2024, driven by innovation, celebrity endorsement, and substantial venture capital. But growth stalled in 2023-2025: repeat purchase rates declined, several high-profile brands struggled financially, and consumers complained about taste, texture, and ultra-processed ingredient lists. The market has not collapsed — it has matured. What began as a movement is now a stable category, but the revolution its advocates promised has not materialised. The most significant dietary shift in Britain is not from meat to plants, but from beef and pork to chicken.</p>
+            <p>Britain is eating less meat than at any point in modern records. The decline has been gradual but persistent: roughly 0.7kg per person per year, every year, for nearly two decades.<Cite nums={1} /> The causes are layered. Health messaging around red and processed meat — particularly following the WHO's 2015 classification of processed meat as a Group 1 carcinogen<Cite nums={2} /> — shifted consumer attitudes. The rise of flexitarianism, where people reduce rather than eliminate meat, has proved far more influential than outright veganism. And price has played its part: beef and lamb prices rose sharply between 2010 and 2023, driven by feed costs, post-Brexit trade friction, and global supply disruptions, making chicken the default protein for cost-conscious households.</p>
+            <p>The composition of Britain's meat diet has transformed. In 2007, poultry accounted for 36% of total meat consumption; by 2025 it represents 47%. Beef has fallen from 23% to 18%, pork from 22% to 18%, and lamb from 9% to under 8%.<Cite nums={4} /> This shift has environmental implications — poultry production generates roughly a third of the greenhouse gas emissions per kilogram compared to beef — but the welfare implications of intensive broiler farming are significant and often overlooked. The horsemeat scandal of 2013 caused a sharp short-term drop in beef consumption and permanently damaged consumer trust in processed meat supply chains.</p>
+            <p>The plant-based sector tells a story of boom and plateau. UK retail sales of plant-based products tripled from £440 million in 2018 to £1.41 billion by 2024<Cite nums={3} />, driven by innovation, celebrity endorsement, and substantial venture capital. But growth stalled in 2023-2025: repeat purchase rates declined, several high-profile brands struggled financially, and consumers complained about taste, texture, and ultra-processed ingredient lists. The market has not collapsed — it has matured. What began as a movement is now a stable category, but the revolution its advocates promised has not materialised. The most significant dietary shift in Britain is not from meat to plants, but from beef and pork to chicken.</p>
           </div>
         </section>
 
@@ -301,6 +310,10 @@ export default function MeatConsumptionTrendPage() {
             source="Source: DEFRA — Agriculture in the United Kingdom, 2025. IPCC emissions factors for livestock."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <RelatedTopics />
       </main>

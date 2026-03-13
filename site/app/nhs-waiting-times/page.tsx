@@ -9,6 +9,16 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Referral to Treatment (RTT) Waiting Times Statistics', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/rtt-waiting-times/', date: 'January 2024' },
+  { num: 2, name: 'NHS Confederation', dataset: 'Missing patients analysis', url: 'https://www.nhsconfed.org/', date: '2023' },
+  { num: 3, name: 'NHS England', dataset: 'Elective Recovery Plan', url: 'https://www.england.nhs.uk/coronavirus/publication/delivery-plan-for-tackling-the-covid-19-backlog-of-elective-care/', date: '2022' },
+  { num: 4, name: 'CQC', dataset: 'State of Care Report', url: 'https://www.cqc.org.uk/publications/major-reports/state-care', date: '2023' },
+  { num: 5, name: 'NHS Digital', dataset: 'NHS Vacancy Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/nhs-vacancies-survey', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -236,9 +246,9 @@ export default function NhsWaitingTimesPage() {
           <section className="mb-12 bg-wiah-light p-6 rounded">
             <h2 className="text-lg font-bold text-wiah-black mb-4">What's happening</h2>
             <div className="space-y-4 text-base leading-relaxed text-wiah-black">
-              <p>The NHS elective waiting list stands at 7.54 million patients as of January 2024 — the highest figure ever recorded and a 71% increase from the 4.4 million waiting in February 2020. Those 7.54 million entries represent an estimated 7.2 million separate conditions, since some patients are on multiple pathways simultaneously. Of these, 302,000 have been waiting over 52 weeks and 124,000 over 78 weeks; two-year waits have been eliminated. But the visible list understates the true scale of unmet demand. Analysts at the NHS Confederation estimate that between 7 million and 13 million additional people — the so-called &ldquo;missing patients&rdquo; who delayed seeking help during the pandemic — have yet to be formally referred. The NHS spends £35 billion a year on elective care; managing the backlog alone costs an estimated £1 billion in additional administration.</p>
-              <p>The 18-week referral-to-treatment standard is a legal right enshrined in the NHS Constitution since 2012: 92% of patients should begin treatment within 18 weeks of referral. That target was last met across all specialties in 2016, when compliance stood at 93%. By January 2024 only 58% of patients started treatment within the deadline — the lowest rate ever recorded outside the acute COVID disruption period. The 34-percentage-point gap between the 92% target and the 58% reality means roughly 1.8 million patients are waiting longer than they are legally entitled to. Orthopaedics carries the heaviest burden at 830,000 patients waiting, followed by ophthalmology at 620,000 and general surgery at 510,000. Orthopaedic waits are particularly damaging: patients awaiting joint replacements deteriorate while on the list, requiring more complex procedures and longer recovery times.</p>
-              <p>The NHS Elective Recovery Plan, published in 2022, set a phased approach: eliminate two-year waits first (achieved), then 18-month waits (largely achieved), then restore the 18-week standard. The government's target of 92% compliance by March 2025 is regarded as unachievable on current trajectory by both the CQC and NHS England. Structural reforms are under way — more than 160 designated surgical hubs now run single-specialty lists at high volume, delivering 20–30% productivity gains over general hospitals. The NHS used private hospital capacity worth £2 billion in 2022/23, with some trusts outsourcing over 20% of elective work. Yet the binding constraint remains workforce: the NHS carries 112,000 vacancies, and the number of consultants able to perform elective procedures has not kept pace with list growth.</p>
+              <p>The NHS elective waiting list stands at 7.54 million patients as of January 2024 — the highest figure ever recorded and a 71% increase from the 4.4 million waiting in February 2020.<Cite nums={1} /> Those 7.54 million entries represent an estimated 7.2 million separate conditions, since some patients are on multiple pathways simultaneously. Of these, 302,000 have been waiting over 52 weeks and 124,000 over 78 weeks; two-year waits have been eliminated.<Cite nums={1} /> But the visible list understates the true scale of unmet demand. Analysts at the NHS Confederation estimate that between 7 million and 13 million additional people — the so-called &ldquo;missing patients&rdquo; who delayed seeking help during the pandemic — have yet to be formally referred.<Cite nums={2} /> The NHS spends £35 billion a year on elective care; managing the backlog alone costs an estimated £1 billion in additional administration.</p>
+              <p>The 18-week referral-to-treatment standard is a legal right enshrined in the NHS Constitution since 2012: 92% of patients should begin treatment within 18 weeks of referral. That target was last met across all specialties in 2016, when compliance stood at 93%. By January 2024 only 58% of patients started treatment within the deadline — the lowest rate ever recorded outside the acute COVID disruption period.<Cite nums={1} /> The 34-percentage-point gap between the 92% target and the 58% reality means roughly 1.8 million patients are waiting longer than they are legally entitled to. Orthopaedics carries the heaviest burden at 830,000 patients waiting, followed by ophthalmology at 620,000 and general surgery at 510,000.<Cite nums={1} /> Orthopaedic waits are particularly damaging: patients awaiting joint replacements deteriorate while on the list, requiring more complex procedures and longer recovery times.</p>
+              <p>The NHS Elective Recovery Plan, published in 2022, set a phased approach: eliminate two-year waits first (achieved), then 18-month waits (largely achieved), then restore the 18-week standard.<Cite nums={3} /> The government's target of 92% compliance by March 2025 is regarded as unachievable on current trajectory by both the CQC and NHS England.<Cite nums={4} /> Structural reforms are under way — more than 160 designated surgical hubs now run single-specialty lists at high volume, delivering 20–30% productivity gains over general hospitals. The NHS used private hospital capacity worth £2 billion in 2022/23, with some trusts outsourcing over 20% of elective work. Yet the binding constraint remains workforce: the NHS carries 112,000 vacancies, and the number of consultants able to perform elective procedures has not kept pace with list growth.<Cite nums={5} /></p>
             </div>
           </section>
 
@@ -252,6 +262,10 @@ export default function NhsWaitingTimesPage() {
             source="Source: NHS England — Referral to Treatment Waiting Times Statistics, January 2024."
           />
           </ScrollReveal>
+
+          <div className="mt-6">
+            <References items={editorialRefs} />
+          </div>
 
           {/* Sources */}
           <section className="border-t border-wiah-border pt-8">

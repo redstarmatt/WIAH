@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics'
+import Cite from '@/components/Cite'
+import References, { Reference } from '@/components/References'
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NCA', dataset: 'UK Missing Persons Unit Data Report', url: 'https://missingpersons.police.uk/en-gb/resources/downloads/missing-persons-statistical-bulletins', date: '2024' },
+  { num: 2, name: 'Department for Education', dataset: 'Children Looked After in England', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions', date: '2024' },
+  { num: 3, name: 'Missing People', dataset: 'Key Information on Missing People', url: 'https://www.missingpeople.org.uk/about-us/about-the-issue', date: '2024' },
+  { num: 4, name: 'HMICFRS', dataset: 'Missing children: who cares?', url: 'https://www.justiceinspectorates.gov.uk/hmicfrs/publications/missing-children-who-cares/', date: '2023' },
+]
 
 // -- Types ------------------------------------------------------------------
 
@@ -133,8 +142,8 @@ export default function MissingPersonsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Every year, more than 170,000 missing person reports are filed with police forces across England and Wales. Behind each report is a family in crisis, a vulnerable individual at risk, or a child being exploited. Three quarters of all missing reports are repeat cases &mdash; the same individuals going missing again and again, often driven by mental health crises, domestic abuse, or exploitation. Children in local authority care are six times more likely to go missing than children in the general population, a pattern that has worsened as county lines drug networks increasingly target residential care homes for recruitment. Police forces spend an estimated &pound;700 million per year on missing persons investigations, making it one of the largest single demands on policing resources. The NCA Missing Persons Unit coordinates national intelligence, but the operational burden falls on 43 separate police forces with inconsistent recording practices and varying levels of specialist resource.</p>
-            <p>The outcomes picture is mixed. Most missing people are found within 48 hours &mdash; but the proportion resolved quickly has been declining slowly, from 85% in 2014 to around 82% now. Roughly 2,000 cases remain open long-term, a figure that has been gradually rising. Mental health is flagged as a contributing factor in more than 40% of adult missing episodes, yet the availability of crisis mental health support varies dramatically by area. Dementia-related missing episodes have doubled over the past decade as the condition becomes more prevalent, placing new demands on police and care services alike. Exploitation &mdash; through county lines networks and trafficking &mdash; is an increasingly significant driver of child missing episodes, with many children going missing repeatedly as they are moved between locations by criminal networks. The structural factors driving the numbers upward &mdash; inadequate mental health provision, underfunded care placements, and an ageing population &mdash; show no sign of reversing.</p>
+            <p>Every year, more than 170,000 missing person reports are filed with police forces across England and Wales.<Cite nums={1} /> Behind each report is a family in crisis, a vulnerable individual at risk, or a child being exploited. Three quarters of all missing reports are repeat cases &mdash; the same individuals going missing again and again, often driven by mental health crises, domestic abuse, or exploitation.<Cite nums={1} /> Children in local authority care are six times more likely to go missing than children in the general population, a pattern that has worsened as county lines drug networks increasingly target residential care homes for recruitment.<Cite nums={2} /> Police forces spend an estimated &pound;700 million per year on missing persons investigations, making it one of the largest single demands on policing resources.<Cite nums={3} /> The NCA Missing Persons Unit coordinates national intelligence, but the operational burden falls on 43 separate police forces with inconsistent recording practices and varying levels of specialist resource.</p>
+            <p>The outcomes picture is mixed. Most missing people are found within 48 hours &mdash; but the proportion resolved quickly has been declining slowly, from 85% in 2014 to around 82% now.<Cite nums={1} /> Roughly 2,000 cases remain open long-term, a figure that has been gradually rising.<Cite nums={1} /> Mental health is flagged as a contributing factor in more than 40% of adult missing episodes, yet the availability of crisis mental health support varies dramatically by area.<Cite nums={3} /> Dementia-related missing episodes have doubled over the past decade as the condition becomes more prevalent, placing new demands on police and care services alike. Exploitation &mdash; through county lines networks and trafficking &mdash; is an increasingly significant driver of child missing episodes, with many children going missing repeatedly as they are moved between locations by criminal networks.<Cite nums={4} /> The structural factors driving the numbers upward &mdash; inadequate mental health provision, underfunded care placements, and an ageing population &mdash; show no sign of reversing.</p>
           </div>
         </section>
 
@@ -246,6 +255,10 @@ export default function MissingPersonsPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

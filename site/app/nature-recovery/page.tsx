@@ -9,6 +9,16 @@ import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DEFRA', dataset: 'Biodiversity Net Gain implementation guidance', url: 'https://www.gov.uk/government/collections/biodiversity-net-gain', date: '2024' },
+  { num: 2, name: 'DEFRA', dataset: 'Local Nature Recovery Strategies programme', url: 'https://www.gov.uk/government/collections/local-nature-recovery-strategies', date: '2024' },
+  { num: 3, name: 'Natural History Museum', dataset: 'Biodiversity Intactness Index', url: 'https://www.nhm.ac.uk/our-science/data/biodiversity-indicators.html', date: '2023' },
+  { num: 4, name: 'State of Nature Partnership', dataset: 'State of Nature 2023', url: 'https://stateofnature.org.uk/', date: '2023' },
+  { num: 5, name: 'Natural England', dataset: 'SSSI Condition Assessments', url: 'https://designatedsites.naturalengland.org.uk/', date: '2024' },
+];
 
 interface NatureRecoveryData {
   lnrsProgress: Array<{ year: number; published: number; total: number }>
@@ -62,8 +72,8 @@ export default function NatureRecoveryPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Environment Act 2021 established the most ambitious statutory framework for nature recovery England has ever had. Mandatory Biodiversity Net Gain entered force in February 2024, requiring all new development to leave biodiversity at least 10% better than before — the first such legal requirement in the world. 46 of England's 48 Local Nature Recovery Strategies were published or in final consultation by 2024, creating the first legally mandated, spatially explicit framework for deciding where nature recovery should happen. England's protected land stands at approximately 28.8% of land area, close to the 30&times;30 target committed to at Kunming-Montreal in December 2022. Conservation covenants — legally binding, permanent land management agreements following the land rather than the owner — registered 280 by 2024, a new and growing mechanism for locking in private biodiversity investment.</p>
-            <p>The legislative framework has been built against a dire baseline. The UK ranks 189th out of 218 nations on biodiversity intactness, and State of Nature 2023 found 41% of UK species in decline. Reaching 30&times;30 in name is achievable; reaching it in substance is not. Currently 38% of SSSIs in England are in unfavourable condition, meaning formal protection without adequate management funding is providing only nominal coverage. Enforcing BNG across thousands of individual planning applications, translating LNRS priorities into on-the-ground land management through willing private landowners, and ensuring the 30&times;30 designation reflects genuine ecological quality rather than administrative boundary drawing remain the defining tests of whether the policy shift translates into actual nature recovery.</p>
+            <p>The Environment Act 2021 established the most ambitious statutory framework for nature recovery England has ever had. Mandatory Biodiversity Net Gain entered force in February 2024, requiring all new development to leave biodiversity at least 10% better than before — the first such legal requirement in the world.<Cite nums={1} /> 46 of England's 48 Local Nature Recovery Strategies were published or in final consultation by 2024, creating the first legally mandated, spatially explicit framework for deciding where nature recovery should happen.<Cite nums={2} /> England's protected land stands at approximately 28.8% of land area, close to the 30&times;30 target committed to at Kunming-Montreal in December 2022. Conservation covenants — legally binding, permanent land management agreements following the land rather than the owner — registered 280 by 2024, a new and growing mechanism for locking in private biodiversity investment.</p>
+            <p>The legislative framework has been built against a dire baseline. The UK ranks 189th out of 218 nations on biodiversity intactness<Cite nums={3} />, and State of Nature 2023 found 41% of UK species in decline.<Cite nums={4} /> Reaching 30&times;30 in name is achievable; reaching it in substance is not. Currently 38% of SSSIs in England are in unfavourable condition<Cite nums={5} />, meaning formal protection without adequate management funding is providing only nominal coverage. Enforcing BNG across thousands of individual planning applications, translating LNRS priorities into on-the-ground land management through willing private landowners, and ensuring the 30&times;30 designation reflects genuine ecological quality rather than administrative boundary drawing remain the defining tests of whether the policy shift translates into actual nature recovery.</p>
           </div>
         </section>
 
@@ -134,6 +144,10 @@ export default function NatureRecoveryPage() {
             source="Source: Environment Act 2021, DEFRA Biodiversity Net Gain implementation guidance 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

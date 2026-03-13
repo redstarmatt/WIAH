@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Workforce Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/nhs-vacancies-survey', date: '2023' },
+  { num: 2, name: 'Nursing and Midwifery Council', dataset: 'Annual Registration Report', url: 'https://www.nmc.org.uk/about-us/reports-and-accounts/registration-statistics/', date: '2023' },
+  { num: 3, name: 'NHS England', dataset: 'NHS Staff Survey', url: 'https://www.nhsstaffsurveys.com/', date: '2023' },
+  { num: 4, name: 'NHS England', dataset: 'Long Term Workforce Plan', url: 'https://www.england.nhs.uk/publication/nhs-long-term-workforce-plan/', date: '2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -201,8 +210,8 @@ export default function NHSWorkforcePage() {
       {/* Context section */}
       <section id="sec-context" className="max-w-2xl mx-auto px-6 py-16">
         <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-          <p>The NHS in England carried more than 112,000 vacancies in 2023 — an 8.4% vacancy rate, up from around 64,000 unfilled posts in 2015. Nursing accounts for the largest single shortfall: 47,500 vacancies, meaning roughly one in nine nursing posts is empty. The departure of EU workers after Brexit removed a ready source of trained staff, and the NHS now recruits heavily from India, Nigeria, and the Philippines. Around one in three new nursing registrants trained abroad — a dependency that raises ethical questions about drawing healthcare workers from countries with their own acute shortages.</p>
-          <p>The vacancy problem is as much about retention as recruitment. Around 65,000 NHS staff leave every year; the NHS Staff Survey consistently identifies burnout, weak line management, and pay as the primary reasons. Nurse pay fell roughly 12% in real terms between 2010 and 2023. Junior doctors took industrial action in 2022–23 — the first such strikes in NHS history — citing pay erosion of over 26% since 2008. The disputes were settled with rises of 5–8%, restoring some ground but leaving total remuneration well below the levels that attracted staff a decade ago.</p>
+          <p>The NHS in England carried more than 112,000 vacancies in 2023 — an 8.4% vacancy rate, up from around 64,000 unfilled posts in 2015.<Cite nums={1} /> Nursing accounts for the largest single shortfall: 47,500 vacancies, meaning roughly one in nine nursing posts is empty.<Cite nums={1} /> The departure of EU workers after Brexit removed a ready source of trained staff, and the NHS now recruits heavily from India, Nigeria, and the Philippines. Around one in three new nursing registrants trained abroad — a dependency that raises ethical questions about drawing healthcare workers from countries with their own acute shortages.<Cite nums={2} /></p>
+          <p>The vacancy problem is as much about retention as recruitment. Around 65,000 NHS staff leave every year; the NHS Staff Survey consistently identifies burnout, weak line management, and pay as the primary reasons.<Cite nums={3} /> Nurse pay fell roughly 12% in real terms between 2010 and 2023. Junior doctors took industrial action in 2022–23 — the first such strikes in NHS history — citing pay erosion of over 26% since 2008. The disputes were settled with rises of 5–8%, restoring some ground but leaving total remuneration well below the levels that attracted staff a decade ago.<Cite nums={4} /></p>
             </div>
       </section>
 
@@ -218,6 +227,12 @@ export default function NHSWorkforcePage() {
           />
         </section>
       </ScrollReveal>
+
+      <div className="mt-6">
+        <section className="max-w-2xl mx-auto px-6">
+          <References items={editorialRefs} />
+        </section>
+      </div>
 
       {/* Section nav */}
       <SectionNav sections={[

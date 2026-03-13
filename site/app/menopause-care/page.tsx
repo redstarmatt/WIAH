@@ -9,6 +9,15 @@ import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Menopause Charity', dataset: 'Patient experience survey', date: '2023' },
+  { num: 2, name: 'NHS BSA', dataset: 'Prescription Cost Analysis — HRT items dispensed', date: '2023' },
+  { num: 3, name: 'NICE', dataset: 'Menopause: Diagnosis and Management (NG23)', date: '2015' },
+  { num: 4, name: 'British Menopause Society', dataset: 'GP Survey on Menopause Confidence', date: '2021' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -98,8 +107,8 @@ export default function MenopaureCarePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Menopause affects every woman and typically occurs between the ages of 45 and 55, with approximately 13 million women currently in perimenopause or post-menopause in the UK. The most common treatment for menopausal symptoms is hormone replacement therapy (HRT), which NICE guidance identifies as highly effective for hot flushes, night sweats, mood disturbance, joint pain, and reduced libido — symptoms that, in severe cases, significantly affect a woman's ability to work, maintain relationships, and function in daily life. A 2023 survey by the Menopause Charity found that 84% of women reported their menopause symptoms had a negative impact on their quality of life, and 45% described the impact as severe. Despite this, England dispensed approximately 7.8 million HRT prescriptions in 2023 — a record high but one that, spread across an estimated 13 million menopausal women, represents fewer than one in seven receiving treatment. The gap between clinical need and access remains substantial.</p>
-            <p>For decades, HRT was underprescribed because of concerns following the 2002 Women's Health Initiative study, which reported increased risks of breast cancer, stroke, and blood clots in women taking combined HRT. Subsequent analysis showed these risks were substantially overstated for most formulations and age groups, and by 2015 the dominant medical consensus had shifted: modern HRT, particularly transdermal preparations (patches, gels), carries a low risk profile for most women under 60 and provides significant quality-of-life benefits. NICE updated its menopause guidelines in 2015 to reflect this evidence. Yet prescribing remained sluggish because of entrenched clinical caution: a 2021 survey by the British Menopause Society found that only 49% of GPs felt confident managing menopause, and many women reported being refused HRT, offered antidepressants instead, or told their symptoms were &ldquo;normal&rdquo;. By 2023, 42% of women seeking HRT had to visit their GP three or more times before obtaining a prescription. Training in menopause management was not a mandatory part of GP training until 2024.</p>
+            <p>Menopause affects every woman and typically occurs between the ages of 45 and 55, with approximately 13 million women currently in perimenopause or post-menopause in the UK. The most common treatment for menopausal symptoms is hormone replacement therapy (HRT), which NICE guidance identifies as highly effective for hot flushes, night sweats, mood disturbance, joint pain, and reduced libido — symptoms that, in severe cases, significantly affect a woman's ability to work, maintain relationships, and function in daily life. A 2023 survey by the Menopause Charity found that 84% of women reported their menopause symptoms had a negative impact on their quality of life, and 45% described the impact as severe.<Cite nums={1} /> Despite this, England dispensed approximately 7.8 million HRT prescriptions in 2023<Cite nums={2} /> — a record high but one that, spread across an estimated 13 million menopausal women, represents fewer than one in seven receiving treatment. The gap between clinical need and access remains substantial.</p>
+            <p>For decades, HRT was underprescribed because of concerns following the 2002 Women's Health Initiative study, which reported increased risks of breast cancer, stroke, and blood clots in women taking combined HRT. Subsequent analysis showed these risks were substantially overstated for most formulations and age groups, and by 2015 the dominant medical consensus had shifted: modern HRT, particularly transdermal preparations (patches, gels), carries a low risk profile for most women under 60 and provides significant quality-of-life benefits. NICE updated its menopause guidelines in 2015 to reflect this evidence.<Cite nums={3} /> Yet prescribing remained sluggish because of entrenched clinical caution: a 2021 survey by the British Menopause Society found that only 49% of GPs felt confident managing menopause<Cite nums={4} />, and many women reported being refused HRT, offered antidepressants instead, or told their symptoms were &ldquo;normal&rdquo;. By 2023, 42% of women seeking HRT had to visit their GP three or more times before obtaining a prescription. Training in menopause management was not a mandatory part of GP training until 2024.</p>
             </div>
         </section>
 
@@ -183,6 +192,10 @@ export default function MenopaureCarePage() {
             source="Source: NHS BSDA Prescription Cost Analysis 2023; NICE Menopause Guideline NG23."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

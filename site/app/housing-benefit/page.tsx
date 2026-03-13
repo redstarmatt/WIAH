@@ -7,7 +7,16 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Shelter / Resolution Foundation', dataset: 'LHA Affordability Analysis', date: '2024', note: 'Only 5% of privately rented homes affordable at LHA rates' },
+  { num: 2, name: 'Valuation Office Agency', dataset: 'Local Housing Allowance Rates', url: 'https://www.gov.uk/guidance/local-housing-allowance', date: '2024', note: 'LHA reduced to 30th percentile in 2011; frozen 2016-2020 and 2020-2024' },
+  { num: 3, name: 'DWP', dataset: 'Housing Benefit and UC Housing Cost Statistics', url: 'https://www.gov.uk/government/collections/dwp-statistics-publications', date: '2024', note: '1.8 million households facing LHA shortfall; average gap £345/month' },
+  { num: 4, name: 'DLUHC', dataset: 'Statutory Homelessness Statistics', date: '2024', note: 'Section 21 evictions: 24% of homelessness applications; £25,000/yr temporary accommodation cost' },
+];
 
 export default function HousingBenefitPage() {
   const colour = '#F4A261';
@@ -155,12 +164,16 @@ export default function HousingBenefitPage() {
           <section className="max-w-2xl mb-12 mt-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">What the data shows</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Local Housing Allowance is the mechanism through which the state helps low-income private renters pay their rent. It was originally set at the median rent in each Broad Rental Market Area — covering 50% of available properties — and then reduced to the 30th percentile in 2011. It was then frozen in cash terms from 2016 to 2020, and again from 2020 to 2024, while private rents rose continuously. The consequence is that LHA now covers fewer than 5% of privately rented homes in most areas of England, compared to the 30% it was designed to cover.</p>
-              <p>The practical effect on 1.8 million renting households is a monthly gap between what LHA pays and what their landlord charges. In 2024, the average shortfall across England was £345 per month — in London, it frequently exceeds £800 per month. This gap must be made up from other income, including earnings, other benefits, or savings. For households already at subsistence level — many of them single parents, disabled people, or those with mental health conditions — there is nothing to make it up from. The result is rent arrears, eviction, and homelessness.</p>
-              <p>The homelessness link is direct and measurable. Section 21 (no-fault) evictions from private rented accommodation are the single largest cause of statutory homelessness applications in England, accounting for around 24% of applications in 2023/24. A significant proportion of these involve households in receipt of housing benefit whose landlord has decided the LHA shortfall makes tenancy commercially unworkable. Local authorities are legally required to house these households — at an average cost of £25,000 per year for temporary accommodation — creating a perverse situation in which freezing LHA saves central government money while costing local government far more.</p>
+              <p>Local Housing Allowance is the mechanism through which the state helps low-income private renters pay their rent. It was originally set at the median rent in each Broad Rental Market Area — covering 50% of available properties — and then reduced to the 30th percentile in 2011. It was then frozen in cash terms from 2016 to 2020, and again from 2020 to 2024, while private rents rose continuously. The consequence is that LHA now covers fewer than 5% of privately rented homes in most areas of England, compared to the 30% it was designed to cover.<Cite nums={[1,2]} /></p>
+              <p>The practical effect on 1.8 million renting households is a monthly gap between what LHA pays and what their landlord charges. In 2024, the average shortfall across England was £345 per month — in London, it frequently exceeds £800 per month.<Cite nums={3} /> This gap must be made up from other income, including earnings, other benefits, or savings. For households already at subsistence level — many of them single parents, disabled people, or those with mental health conditions — there is nothing to make it up from. The result is rent arrears, eviction, and homelessness.</p>
+              <p>The homelessness link is direct and measurable. Section 21 (no-fault) evictions from private rented accommodation are the single largest cause of statutory homelessness applications in England, accounting for around 24% of applications in 2023/24.<Cite nums={4} /> A significant proportion of these involve households in receipt of housing benefit whose landlord has decided the LHA shortfall makes tenancy commercially unworkable. Local authorities are legally required to house these households — at an average cost of £25,000 per year for temporary accommodation<Cite nums={4} /> — creating a perverse situation in which freezing LHA saves central government money while costing local government far more.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

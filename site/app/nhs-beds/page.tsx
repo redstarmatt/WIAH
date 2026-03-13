@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Bed Availability and Occupancy Data', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/bed-availability-and-occupancy/', date: '2023' },
+  { num: 2, name: 'The King\'s Fund', dataset: 'NHS Bed Numbers Analysis', url: 'https://www.kingsfund.org.uk/insight-and-analysis/long-reads/nhs-hospital-bed-numbers', date: '2023' },
+  { num: 3, name: 'OECD', dataset: 'Health Statistics — hospital beds per 1,000 population', url: 'https://www.oecd.org/health/health-data.htm', date: '2023' },
+  { num: 4, name: 'Skills for Care', dataset: 'Adult social care workforce vacancy data', url: 'https://www.skillsforcare.org.uk/', date: '2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 

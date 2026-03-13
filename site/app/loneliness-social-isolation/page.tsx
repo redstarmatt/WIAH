@@ -9,6 +9,20 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+// ── References ───────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Holt-Lunstad et al.', dataset: 'Meta-analysis — loneliness equivalent to smoking 15 cigarettes/day', url: 'https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1000316', date: '2015' },
+  { num: 2, name: 'Jo Cox Commission on Loneliness', dataset: 'Combatting loneliness one conversation at a time', url: 'https://www.jocoxfoundation.org/', date: '2017' },
+  { num: 3, name: 'DCMS', dataset: 'A Connected Society — government loneliness strategy', date: '2018' },
+  { num: 4, name: 'ONS', dataset: 'Opinions and Lifestyle Survey — loneliness by age group', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing', date: '2024' },
+  { num: 5, name: 'CIPFA / BBPA / YMCA', dataset: 'Public library statistics, pub closure data, youth service audits', date: '2024' },
+  { num: 6, name: 'NHS England', dataset: 'Social prescribing referrals 2023/24', url: 'https://www.england.nhs.uk/personalisedcare/social-prescribing/', date: '2024' },
+  { num: 7, name: 'UK Men\'s Sheds Association', dataset: 'Sheds network data', url: 'https://menssheds.org.uk/', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -188,13 +202,13 @@ export default function LonelinessSocialIsolationPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Loneliness is now recognised as a public health crisis on a scale comparable to smoking or obesity. Research consistently finds that chronic loneliness carries health risks equivalent to smoking 15 cigarettes a day, increasing the likelihood of heart disease by 29%, stroke by 32%, and dementia by 50%. The UK became the first country in the world to appoint a Minister for Loneliness in 2018, following the work of the Jo Cox Commission on Loneliness — itself a legacy of the murdered MP who argued that loneliness was "the sad reality of modern life" and that "young or old, loneliness doesn't discriminate." The Commission's 2017 report revealed that over nine million people in the UK often or always feel lonely, and its recommendations led directly to the government's first loneliness strategy, <em>A Connected Society</em>, published in October 2018.
+              Loneliness is now recognised as a public health crisis on a scale comparable to smoking or obesity. Research consistently finds that chronic loneliness carries health risks equivalent to smoking 15 cigarettes a day, increasing the likelihood of heart disease by 29%, stroke by 32%, and dementia by 50%.<Cite nums={1} /> The UK became the first country in the world to appoint a Minister for Loneliness in 2018, following the work of the Jo Cox Commission on Loneliness — itself a legacy of the murdered MP who argued that loneliness was "the sad reality of modern life" and that "young or old, loneliness doesn't discriminate." The Commission's 2017 report revealed that over nine million people in the UK often or always feel lonely, and its recommendations led directly to the government's first loneliness strategy, <em>A Connected Society</em>, published in October 2018.<Cite nums={[2, 3]} />
             </p>
             <p>
-              The age profile of loneliness confounds expectations. While public concern tends to focus on isolated elderly people — and their experience is real and serious — ONS data consistently shows that young adults aged 16–24 report the highest rates of chronic loneliness. In 2024, 10% of this age group said they felt lonely "often" or "always," nearly double the rate among those aged 55–69. The COVID-19 pandemic supercharged these trends. Lockdowns severed the weak social ties — the casual pub conversation, the library reading group, the neighbour met at the school gate — that form the connective tissue of community life. For many young people, the pandemic hit during critical years for building social confidence and forming adult friendships. ONS data shows that loneliness rates among 16–24-year-olds nearly doubled from 7.4% in 2019 to 12.6% in 2021, and while they have since fallen, they remain well above pre-pandemic levels.
+              The age profile of loneliness confounds expectations. While public concern tends to focus on isolated elderly people — and their experience is real and serious — ONS data consistently shows that young adults aged 16–24 report the highest rates of chronic loneliness. In 2024, 10% of this age group said they felt lonely "often" or "always," nearly double the rate among those aged 55–69.<Cite nums={4} /> The COVID-19 pandemic supercharged these trends. Lockdowns severed the weak social ties — the casual pub conversation, the library reading group, the neighbour met at the school gate — that form the connective tissue of community life. For many young people, the pandemic hit during critical years for building social confidence and forming adult friendships. ONS data shows that loneliness rates among 16–24-year-olds nearly doubled from 7.4% in 2019 to 12.6% in 2021, and while they have since fallen, they remain well above pre-pandemic levels.<Cite nums={4} />
             </p>
             <p>
-              Beneath the individual experience lies a structural story. The UK has lost over 13,500 pubs since 2010, more than 1,300 public libraries, and over 60% of its youth centres. Community centres have declined by more than a quarter. These are not just buildings — they are the infrastructure of social connection, the places where people who would otherwise never meet form the loose bonds that protect against isolation. The closure of these spaces disproportionately affects deprived areas, where commercial alternatives are fewer and public transport makes travelling to remaining facilities harder. Social prescribing — GPs directing patients to community groups, walking clubs, and volunteering — has expanded rapidly, with over a million referrals in 2023/24, but prescribing connection is harder when the places to connect are themselves disappearing. The Jo Cox Foundation continues to drive the agenda through its Great Get Together events, which have brought together over 15 million people since 2017, and initiatives such as the Men's Sheds movement — now with over 1,000 sheds across the UK — demonstrate that when community infrastructure is rebuilt, people come.
+              Beneath the individual experience lies a structural story. The UK has lost over 13,500 pubs since 2010, more than 1,300 public libraries, and over 60% of its youth centres. Community centres have declined by more than a quarter.<Cite nums={5} /> These are not just buildings — they are the infrastructure of social connection, the places where people who would otherwise never meet form the loose bonds that protect against isolation. The closure of these spaces disproportionately affects deprived areas, where commercial alternatives are fewer and public transport makes travelling to remaining facilities harder. Social prescribing — GPs directing patients to community groups, walking clubs, and volunteering — has expanded rapidly, with over a million referrals in 2023/24, but prescribing connection is harder when the places to connect are themselves disappearing.<Cite nums={6} /> The Jo Cox Foundation continues to drive the agenda through its Great Get Together events, which have brought together over 15 million people since 2017, and initiatives such as the Men's Sheds movement — now with over 1,000 sheds across the UK — demonstrate that when community infrastructure is rebuilt, people come.<Cite nums={7} />
             </p>
           </div>
         </section>
@@ -307,6 +321,10 @@ export default function LonelinessSocialIsolationPage() {
             source="Source: NHS England — Social Prescribing referrals, 2023/24. UK Men's Sheds Association, 2024. Jo Cox Foundation, 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <RelatedTopics />
       </main>
     </>

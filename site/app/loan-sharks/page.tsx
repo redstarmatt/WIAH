@@ -9,6 +9,16 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+// ── References ───────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'England Illegal Money Lending Team', dataset: 'Annual Report — victim estimates and prosecution data', url: 'https://www.gov.uk/government/publications/illegal-money-lending-team-annual-report', date: 'Dec 2025' },
+  { num: 2, name: 'Centre for Social Justice', dataset: 'Swimming with Sharks — illegal lending analysis', url: 'https://www.centreforsocialjustice.org.uk/library/swimming-with-sharks', date: '2025' },
+  { num: 3, name: 'FCA', dataset: 'Financial Lives Survey — financial exclusion data', url: 'https://www.fca.org.uk/publications/research/financial-lives', date: '2025' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -143,9 +153,9 @@ export default function LoanSharksPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Illegal money lending is one of the least visible forms of financial exploitation in the UK, and the data paints a stark picture of a problem that has grown sharply over the past decade. The England Illegal Money Lending Team estimates that 1.14 million people are currently borrowing from unlicensed lenders, a figure that has roughly tripled since 2015. This surge is driven by a confluence of pressures: the tightening of mainstream credit following post-2008 regulatory reforms, the erosion of community-based financial support, and since 2022, the acute cost of living crisis that has pushed hundreds of thousands of households towards desperation borrowing. Many victims do not initially recognise their lender as illegal -- loan sharks often present themselves as helpful neighbours, friends, or community figures before the coercion begins.</p>
-            <p>The enforcement response is strikingly disproportionate to the scale of the problem. The England Illegal Money Lending Team, which operates nationally, brought 79 prosecutions last year across the entire country. While each case can dismantle a significant lending operation, the ratio of around one prosecution per 14,000 estimated victims reveals the depth of the enforcement gap. COVID-19 compounded matters: court backlogs suppressed prosecution numbers in 2020 and 2021, while lockdowns simultaneously drove more desperate borrowers towards illegal lenders operating outside institutional reach. The average debt owed to a loan shark has climbed to approximately 4,800, up from 1,800 in 2015, with effective annual interest rates routinely exceeding 1,000%.</p>
-            <p>Regional patterns are closely tied to deprivation. The North West, West Midlands, and Yorkshire have the highest estimated rates of illegal lending per head of population, mirroring the geography of financial exclusion. These are areas where bank branch closures, credit union capacity constraints, and the legacy of welfare reforms have left the most acute gaps in affordable credit. The FCA Financial Lives Survey consistently finds that people in these regions are more likely to have been refused mainstream credit and more likely to have borrowed from an unregulated source. There is some cause for cautious optimism: the IMLT has expanded its community outreach, and referrals from local authorities and housing associations have increased, suggesting that awareness is growing. But the structural drivers -- poverty, financial exclusion, and the contraction of the social safety net -- remain firmly in place.</p>
+            <p>Illegal money lending is one of the least visible forms of financial exploitation in the UK, and the data paints a stark picture of a problem that has grown sharply over the past decade. The England Illegal Money Lending Team estimates that 1.14 million people are currently borrowing from unlicensed lenders, a figure that has roughly tripled since 2015.<Cite nums={1} /> This surge is driven by a confluence of pressures: the tightening of mainstream credit following post-2008 regulatory reforms, the erosion of community-based financial support, and since 2022, the acute cost of living crisis that has pushed hundreds of thousands of households towards desperation borrowing. Many victims do not initially recognise their lender as illegal -- loan sharks often present themselves as helpful neighbours, friends, or community figures before the coercion begins.</p>
+            <p>The enforcement response is strikingly disproportionate to the scale of the problem. The England Illegal Money Lending Team, which operates nationally, brought 79 prosecutions last year across the entire country.<Cite nums={1} /> While each case can dismantle a significant lending operation, the ratio of around one prosecution per 14,000 estimated victims reveals the depth of the enforcement gap. COVID-19 compounded matters: court backlogs suppressed prosecution numbers in 2020 and 2021, while lockdowns simultaneously drove more desperate borrowers towards illegal lenders operating outside institutional reach. The average debt owed to a loan shark has climbed to approximately 4,800, up from 1,800 in 2015, with effective annual interest rates routinely exceeding 1,000%.<Cite nums={[1, 2]} /></p>
+            <p>Regional patterns are closely tied to deprivation. The North West, West Midlands, and Yorkshire have the highest estimated rates of illegal lending per head of population, mirroring the geography of financial exclusion.<Cite nums={1} /> These are areas where bank branch closures, credit union capacity constraints, and the legacy of welfare reforms have left the most acute gaps in affordable credit. The FCA Financial Lives Survey consistently finds that people in these regions are more likely to have been refused mainstream credit and more likely to have borrowed from an unregulated source.<Cite nums={3} /> There is some cause for cautious optimism: the IMLT has expanded its community outreach, and referrals from local authorities and housing associations have increased, suggesting that awareness is growing. But the structural drivers -- poverty, financial exclusion, and the contraction of the social safety net -- remain firmly in place.</p>
           </div>
         </section>
 
@@ -303,6 +313,10 @@ export default function LoanSharksPage() {
             source="Source: England Illegal Money Lending Team — Annual Report 2025. Stop Loan Sharks community programme evaluation."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources & Methodology */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

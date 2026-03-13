@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS Digital', dataset: 'NHS App Dashboard — registered users and transactions', url: 'https://digital.nhs.uk/services/nhs-app/nhs-app-dashboard', date: '2025' },
+  { num: 2, name: 'NHS Digital', dataset: 'Digital exclusion analysis by deprivation', url: 'https://digital.nhs.uk/', date: '2023' },
+  { num: 3, name: 'NHSX', dataset: 'Digital inclusion: wider determinants of health and the role of digital', url: 'https://www.nhsx.nhs.uk/', date: '2021' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -150,10 +158,10 @@ export default function NHSAppPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The NHS App has grown from 3.2 million users in 2020 to 35.1 million by 2025 — a tenfold increase driven initially by the COVID Pass and subsequently by NHS England's mandate for GP practices to offer online appointment booking, prescription ordering, and access to health records. By 2025, 54% of GP appointments are booked digitally, with the NHS targeting 75% by 2027. The app now also supports patient-initiated follow-up appointments, hospital referral tracking, and health screening invitations.
+              The NHS App has grown from 3.2 million users in 2020 to 35.1 million by 2025 — a tenfold increase driven initially by the COVID Pass and subsequently by NHS England's mandate for GP practices to offer online appointment booking, prescription ordering, and access to health records.<Cite nums={1} /> By 2025, 54% of GP appointments are booked digitally, with the NHS targeting 75% by 2027.<Cite nums={1} /> The app now also supports patient-initiated follow-up appointments, hospital referral tracking, and health screening invitations.
             </p>
             <p>
-              The 14% of people unable to access online health services — around 8.5 million adults — represents a persistent structural challenge. Digital exclusion correlates strongly with age (those over 75), disability, low income, and limited English proficiency. NHS Digital's 2023 analysis found that practices in the most deprived decile have the lowest rates of digital booking, meaning those with the highest health needs are least likely to benefit from digital convenience. Forcing digital access for appointment booking without adequate telephone capacity effectively creates a two-tier system. NHSX's digital inclusion strategy acknowledges these risks but implementation has been patchy, with variation between ICBs in how actively digital inclusion is funded and supported.
+              The 14% of people unable to access online health services — around 8.5 million adults — represents a persistent structural challenge.<Cite nums={3} /> Digital exclusion correlates strongly with age (those over 75), disability, low income, and limited English proficiency. NHS Digital's 2023 analysis found that practices in the most deprived decile have the lowest rates of digital booking, meaning those with the highest health needs are least likely to benefit from digital convenience.<Cite nums={2} /> Forcing digital access for appointment booking without adequate telephone capacity effectively creates a two-tier system. NHSX's digital inclusion strategy acknowledges these risks but implementation has been patchy, with variation between ICBs in how actively digital inclusion is funded and supported.<Cite nums={3} />
             </p>
           </div>
         </section>
@@ -238,6 +246,10 @@ export default function NHSAppPage() {
         </ScrollReveal>
 
         {/* Sources */}
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">

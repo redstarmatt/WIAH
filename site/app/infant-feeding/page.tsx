@@ -8,7 +8,16 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'OHID', dataset: 'Infant Feeding Statistics — Breastfeeding at 6-8 Weeks', url: 'https://www.gov.uk/government/collections/breastfeeding-statistics', date: '2024' },
+  { num: 2, name: 'UNICEF UK', dataset: 'Baby Friendly Initiative — UK Breastfeeding Rates', url: 'https://www.unicef.org.uk/babyfriendly/', date: '2024' },
+  { num: 3, name: 'First Steps Nutrition Trust', dataset: 'Costs of Infant Milks and Formula', url: 'https://www.firststepsnutrition.org/', date: '2024' },
+  { num: 4, name: 'NHS England', dataset: 'Healthy Start Scheme Statistics', url: 'https://www.healthystart.nhs.uk/', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -150,10 +159,10 @@ export default function InfantFeedingPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The UK has one of the lowest breastfeeding continuation rates in the world. While 81% of mothers initiate breastfeeding, by six weeks only 47% are still feeding, and by six months the rate has fallen to 26% — against an OECD average of 46%. WHO recommendations advise exclusive breastfeeding for the first six months, yet these rates place the UK last among high-income nations. The causes are structural: insufficient post-birth support, early discharge from maternity wards before feeding is established, inadequate peer support networks, and workplace policies that make breastfeeding difficult to sustain on return to work.
+              The UK has one of the lowest breastfeeding continuation rates in the world. While 81% of mothers initiate breastfeeding, by six weeks only 47% are still feeding, and by six months the rate has fallen to 26% — against an OECD average of 46%.<Cite nums={[1, 2]} /> WHO recommendations advise exclusive breastfeeding for the first six months, yet these rates place the UK last among high-income nations. The causes are structural: insufficient post-birth support, early discharge from maternity wards before feeding is established, inadequate peer support networks, and workplace policies that make breastfeeding difficult to sustain on return to work.
             </p>
             <p>
-              Deprivation predicts breastfeeding rates with striking consistency. Women in the most deprived decile are half as likely to breastfeed at six weeks as women in the least deprived decile. Black and South Asian women have higher initiation rates than white women but face greater barriers to continuation. The result is that those who would benefit most from the well-documented health advantages of breastfeeding — reduced rates of infection, obesity, SIDS, and improved cognitive outcomes — are least likely to receive them. Meanwhile, formula costs have risen 32% since 2020, reaching an average of £50 per month for standard first-stage formula. Reports of formula dilution, food bank formula stocking, and families rationing feeds have emerged from multiple sources including health visitors and charities.
+              Deprivation predicts breastfeeding rates with striking consistency. Women in the most deprived decile are half as likely to breastfeed at six weeks as women in the least deprived decile.<Cite nums={1} /> Black and South Asian women have higher initiation rates than white women but face greater barriers to continuation. The result is that those who would benefit most from the well-documented health advantages of breastfeeding — reduced rates of infection, obesity, SIDS, and improved cognitive outcomes — are least likely to receive them. Meanwhile, formula costs have risen 32% since 2020, reaching an average of £50 per month for standard first-stage formula.<Cite nums={3} /> Reports of formula dilution, food bank formula stocking, and families rationing feeds have emerged from multiple sources including health visitors and charities.
             </p>
           </div>
         </section>
@@ -236,6 +245,10 @@ export default function InfantFeedingPage() {
             source="Source: UNICEF UK Baby Friendly Initiative — accreditation data 2024. NHS England — Healthy Start scheme statistics."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

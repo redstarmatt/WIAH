@@ -8,6 +8,16 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+// ── References ───────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Electoral Commission', dataset: 'Political party donations and loans — quarterly returns', url: 'https://www.electoralcommission.org.uk/who-we-are-and-what-we-do/financial-reporting/donations-and-loans', date: '2025' },
+  { num: 2, name: 'Office of the Registrar of Consultant Lobbyists', dataset: 'Register of Consultant Lobbyists', url: 'https://registrarofconsultantlobbyists.org.uk/', date: '2025' },
+  { num: 3, name: 'Transparency International UK', dataset: 'Lobbying in the UK — estimated contacts', url: 'https://www.transparency.org.uk/', date: '2025' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -194,6 +204,10 @@ export default function TopicPage() {
             source="Source: Cabinet Office — Ministerial meetings data, 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

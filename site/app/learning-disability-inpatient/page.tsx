@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Assuring Transformation — Learning Disability', url: 'https://www.england.nhs.uk/learning-disabilities/care/progress/assuring-transformation/', date: '2024' },
+  { num: 2, name: 'CQC', dataset: 'Mental health restraint and seclusion data', url: 'https://www.cqc.org.uk/', date: '2024' },
+  { num: 3, name: 'BBC Panorama', dataset: 'Whorlton Hall investigation', date: '2019', note: 'Documented abuse and systematic restraint in private units' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -66,7 +74,7 @@ export default function LearningDisabilityInpatientPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>More than 2,000 people with learning disabilities and autism are detained in inpatient psychiatric facilities in England, often hundreds of miles from their families. The NHS committed, following the Winterbourne View scandal in 2012 and the Transforming Care programme, to move the majority into community-based support by 2019; that deadline was missed by a significant margin. The average length of stay is 5.4 years, and BBC Panorama's 2019 investigation into Whorlton Hall, alongside numerous CQC inspection reports, documented abuse, systematic restraint, and deprivation across private units operating under NHS contract. Over 51,000 restraint incidents — physical, mechanical, and chemical — are recorded per year. NHS England's Assuring Transformation programme has reduced numbers from over 3,200 in 2015, but the remaining cohort is disproportionately those with the most complex needs where community alternatives are fewest.</p>
+            <p>More than 2,000 people with learning disabilities and autism are detained in inpatient psychiatric facilities in England, often hundreds of miles from their families.<Cite nums={1} /> The NHS committed, following the Winterbourne View scandal in 2012 and the Transforming Care programme, to move the majority into community-based support by 2019; that deadline was missed by a significant margin. The average length of stay is 5.4 years, and BBC Panorama's 2019 investigation into Whorlton Hall, alongside numerous CQC inspection reports, documented abuse, systematic restraint, and deprivation across private units operating under NHS contract.<Cite nums={3} /> Over 51,000 restraint incidents — physical, mechanical, and chemical — are recorded per year.<Cite nums={2} /> NHS England's Assuring Transformation programme has reduced numbers from over 3,200 in 2015, but the remaining cohort is disproportionately those with the most complex needs where community alternatives are fewest.<Cite nums={1} /></p>
             <p>The barriers to discharge are structural: community providers willing to take people with complex autism presentations are in short supply, and local authority funding incentives favour deferring discharge to NHS-funded inpatient settings. Families frequently report being excluded from discharge planning. The right of disabled people to live in the community, enshrined in the UN Convention on the Rights of Persons with Disabilities, is being systematically denied — advocates argue that continued institutional reliance reflects not a lack of community alternatives but a lack of political will to fund the transformation promised over a decade ago.</p>
           </div>
         </section>
@@ -127,6 +135,10 @@ export default function LearningDisabilityInpatientPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

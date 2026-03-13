@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DESNZ', dataset: 'Renewable electricity capacity and generation statistics', url: 'https://www.gov.uk/government/statistics/energy-trends', date: '2024' },
+  { num: 2, name: 'Aurora Energy Research', dataset: 'Cost of the onshore wind ban — household bill impact analysis', date: '2023' },
+  { num: 3, name: 'DESNZ', dataset: 'Renewable energy planning database', url: 'https://www.gov.uk/government/publications/renewable-energy-planning-database-monthly-extract', date: '2024' },
+  { num: 4, name: 'DESNZ', dataset: 'Contracts for Difference — Allocation Round results', date: '2024' },
+];
 
 interface OnshoreWindData {
   national: {
@@ -81,8 +90,12 @@ export default function OnshoreWindPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Onshore wind is the UK's cheapest form of electricity generation at under £50 per megawatt-hour — cheaper than new gas, nuclear, and offshore wind. Yet between 2015 and 2023, England effectively banned it. A Written Ministerial Statement in June 2015 changed the planning rules so that local communities could veto any onshore wind proposal, and planning inspectors interpreted this as an outright ban. In the eight years that followed, barely a single new turbine was consented in England. The consequences were measurable: Aurora Energy Research estimated in 2023 that UK households paid £13bn more for energy over those eight years than they would have if the cheapest available technology had been permitted to build at the same rate as before the ban. Scotland and Wales, where planning devolution meant different rules applied, continued building throughout — Scotland now accounts for around 8.5 GW of the UK's 15.9 GW total onshore wind capacity, nearly 55% of the total from a nation with 8% of the UK's population. The disparity is stark: parts of northern Scotland have more wind capacity per head than Denmark.</p>
-            <p>The ban was formally lifted in September 2023, when the government revised the National Planning Policy Framework to allow onshore wind proposals on the same basis as other infrastructure. Planning consents in England jumped from a handful per year to 38 in 2023, and the early signs from 2024 are that the pipeline is beginning to recover. The government set a target of 35 GW of onshore wind by 2030, up from under 16 GW in 2024, requiring roughly 3 GW of new capacity per year — roughly double the current deployment rate. The Contracts for Difference mechanism has been reopened to onshore wind in England, with the first CfD-supported English projects beginning construction in 2024. However, the time from planning consent to grid connection averages three to four years for onshore wind, meaning projects consented in 2023 and 2024 will not generate electricity until 2026 at the earliest. National Grid's grid connection queue bottleneck affects onshore wind as it does solar.</p>
+            <p>Onshore wind is the UK's cheapest form of electricity generation at under £50 per megawatt-hour — cheaper than new gas, nuclear, and offshore wind.<Cite nums={2} /> Yet between 2015 and 2023, England effectively banned it. A Written Ministerial Statement in June 2015 changed the planning rules so that local communities could veto any onshore wind proposal, and planning inspectors interpreted this as an outright ban. In the eight years that followed, barely a single new turbine was consented in England. The consequences were measurable: Aurora Energy Research estimated in 2023 that UK households paid £13bn more for energy over those eight years than they would have if the cheapest available technology had been permitted to build at the same rate as before the ban.<Cite nums={2} /> Scotland and Wales, where planning devolution meant different rules applied, continued building throughout — Scotland now accounts for around 8.5 GW of the UK's 15.9 GW total onshore wind capacity, nearly 55% of the total from a nation with 8% of the UK's population.<Cite nums={1} /> The disparity is stark: parts of northern Scotland have more wind capacity per head than Denmark.</p>
+            <p>The ban was formally lifted in September 2023, when the government revised the National Planning Policy Framework to allow onshore wind proposals on the same basis as other infrastructure. Planning consents in England jumped from a handful per year to 38 in 2023<Cite nums={3} />, and the early signs from 2024 are that the pipeline is beginning to recover. The government set a target of 35 GW of onshore wind by 2030, up from under 16 GW in 2024, requiring roughly 3 GW of new capacity per year — roughly double the current deployment rate. The Contracts for Difference mechanism has been reopened to onshore wind in England, with the first CfD-supported English projects beginning construction in 2024.<Cite nums={4} /> However, the time from planning consent to grid connection averages three to four years for onshore wind, meaning projects consented in 2023 and 2024 will not generate electricity until 2026 at the earliest. National Grid's grid connection queue bottleneck affects onshore wind as it does solar.</p>
+            </div>
+
+            <div className="mt-6">
+              <References items={editorialRefs} />
             </div>
         </section>
 

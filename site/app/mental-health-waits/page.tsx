@@ -5,6 +5,14 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Talking Therapies (formerly IAPT) monthly statistics', url: 'https://www.england.nhs.uk/mental-health/resources/talking-therapies/', date: '2024' },
+  { num: 2, name: 'NHS England', dataset: 'Mental health services monthly statistics', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/mental-health-monthly-statistics/', date: '2024' },
+  { num: 3, name: 'Mental Health Foundation', dataset: 'Untreated mental health need estimates', date: '2024' },
+];
 
 export default function MentalHealthWaitsPage() {
   // Average wait for IAPT/talking therapy (weeks) 2016–2024
@@ -135,12 +143,16 @@ export default function MentalHealthWaitsPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">A system at capacity</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Around 1 in 4 adults experiences a mental health problem in any given year, and demand for NHS talking therapies has grown sharply since the COVID-19 pandemic. The NHS Long Term Plan committed to expanding access, and referral volumes have risen — but the workforce has not expanded fast enough to match demand, and average waiting times have lengthened significantly.</p>
-              <p>NICE guidelines recommend that people with common mental health conditions — anxiety, depression, OCD — receive their first treatment appointment within six weeks. The national average now exceeds 18 weeks in many trusts. For more severe conditions requiring specialist secondary care, waits are longer still and data less complete.</p>
-              <p>The Mental Health Foundation estimates that around 8 million people with mental health needs receive no treatment at all — often because they never reach the referral threshold, cannot navigate the system, or have given up after previous unsuccessful attempts to access care. Children and young people face some of the longest waits, with CAMHS referral-to-treatment times averaging over 18 weeks in most areas.</p>
+              <p>Around 1 in 4 adults experiences a mental health problem in any given year, and demand for NHS talking therapies has grown sharply since the COVID-19 pandemic.<Cite nums={1} /> The NHS Long Term Plan committed to expanding access, and referral volumes have risen — but the workforce has not expanded fast enough to match demand, and average waiting times have lengthened significantly.</p>
+              <p>NICE guidelines recommend that people with common mental health conditions — anxiety, depression, OCD — receive their first treatment appointment within six weeks. The national average now exceeds 18 weeks in many trusts.<Cite nums={[1,2]} /> For more severe conditions requiring specialist secondary care, waits are longer still and data less complete.</p>
+              <p>The Mental Health Foundation estimates that around 8 million people with mental health needs receive no treatment at all<Cite nums={3} /> — often because they never reach the referral threshold, cannot navigate the system, or have given up after previous unsuccessful attempts to access care. Children and young people face some of the longest waits, with CAMHS referral-to-treatment times averaging over 18 weeks in most areas.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

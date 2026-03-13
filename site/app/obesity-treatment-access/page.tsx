@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NICE', dataset: 'Technology Appraisal TA876 — Semaglutide (Wegovy) for weight management', url: 'https://www.nice.org.uk/guidance/ta876', date: '2023' },
+  { num: 2, name: 'NHS England', dataset: 'Specialist Weight Management Service data', url: 'https://www.england.nhs.uk/', date: '2025' },
+  { num: 3, name: 'NHS Digital', dataset: 'Health Survey for England — obesity prevalence', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england', date: '2023' },
+  { num: 4, name: 'NHS England', dataset: 'Referral to Treatment Statistics — bariatric surgery', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/rtt-waiting-times/', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -147,10 +156,10 @@ export default function ObesityTreatmentPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              GLP-1 receptor agonists — semaglutide (Wegovy, Ozempic) and tirzepatide (Mounjaro) — represent the most significant advance in obesity treatment in a generation. Clinical trials show average weight losses of 15–22%, comparable to bariatric surgery. NICE approved Wegovy for NHS use in 2023, estimating 860,000 people eligible under the criteria. By the end of 2025, approximately 35,000 had received a prescription — around 4% of those eligible. The NHS has implemented a strict tier system requiring patients to access specialist weight management services first, a bottleneck that has limited uptake to a fraction of potential beneficiaries.
+              GLP-1 receptor agonists — semaglutide (Wegovy, Ozempic) and tirzepatide (Mounjaro) — represent the most significant advance in obesity treatment in a generation. Clinical trials show average weight losses of 15–22%, comparable to bariatric surgery.<Cite nums={1} /> NICE approved Wegovy for NHS use in 2023, estimating 860,000 people eligible under the criteria. By the end of 2025, approximately 35,000 had received a prescription — around 4% of those eligible.<Cite nums={2} /> The NHS has implemented a strict tier system requiring patients to access specialist weight management services first, a bottleneck that has limited uptake to a fraction of potential beneficiaries.
             </p>
             <p>
-              While GLP-1 drugs have begun reducing demand for bariatric surgery — referrals fell 18% in 2024 — those already waiting have faced dramatically longer delays. The average wait for bariatric surgery reached 30 months in 2024, up from 8 months in 2018. COVID-19 theatre closures created an initial backlog, but the structural underfunding of tier 3 and tier 4 obesity services has meant recovery has been slow. Adult obesity prevalence stands at 29.5%, the highest recorded. England has the third highest obesity rate in Europe. The economic cost to the NHS is estimated at £6.5 billion annually, rising to £9.7 billion by 2050 without intervention.
+              While GLP-1 drugs have begun reducing demand for bariatric surgery — referrals fell 18% in 2024 — those already waiting have faced dramatically longer delays. The average wait for bariatric surgery reached 30 months in 2024, up from 8 months in 2018.<Cite nums={4} /> COVID-19 theatre closures created an initial backlog, but the structural underfunding of tier 3 and tier 4 obesity services has meant recovery has been slow. Adult obesity prevalence stands at 29.5%, the highest recorded.<Cite nums={3} /> England has the third highest obesity rate in Europe. The economic cost to the NHS is estimated at £6.5 billion annually, rising to £9.7 billion by 2050 without intervention.
             </p>
           </div>
         </section>
@@ -233,6 +242,10 @@ export default function ObesityTreatmentPage() {
             source="Source: NHS England Long Term Plan 2019, updated 2024 — Obesity chapter. NICE TA876 (semaglutide), TA1026 (tirzepatide)."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'NEET Statistics Quarterly Brief, Q4 2024', url: 'https://www.gov.uk/government/collections/statistics-neet', date: '2024' },
+  { num: 2, name: 'DWP', dataset: 'Labour Market Statistics — long-term NEET', url: 'https://www.gov.uk/government/collections/dwp-statistical-summaries', date: '2024' },
+  { num: 3, name: 'ONS', dataset: 'Outcomes for young people in education, employment and training', url: 'https://www.ons.gov.uk/', date: '2024', note: '40% disability/health condition figure' },
+  { num: 4, name: 'Social Mobility Commission', dataset: 'Lifetime fiscal cost of long-term NEET', url: 'https://www.gov.uk/government/organisations/social-mobility-commission', date: '2023' },
+];
 
 export default function NeetYoungPeoplePage() {
   // Chart 1: NEET rate for 16-24 year olds 2010-2024 (%)
@@ -150,12 +159,16 @@ export default function NeetYoungPeoplePage() {
           <section id="sec-context" className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on NEET young people</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Around 849,000 young people aged 16-24 in the UK are NEET — not in education, employment or training. The rate has fallen substantially from a peak of 17% in 2011, partly through compulsory participation age rises that moved 16 and 17 year olds into education, and partly through employment growth in the preceding decade. But 12.6% remains a significant proportion of young people outside any pathway, and the fall has stalled. Among 21-24 year olds — no longer covered by the participation age requirement — the rate is closer to 15%.</p>
-              <p>The geography of NEET is deeply uneven. Coastal communities, former mining areas, and post-industrial towns in the North East, South Wales, and parts of the Midlands have NEET rates two to three times the rates in London and the South East. These are not random distributional effects: they reflect the long legacy of deindustrialisation, the concentration of low-skill employment, and the relative absence of further education and employment support infrastructure. Young people in these areas face structural barriers that individual motivation or resilience cannot overcome.</p>
-              <p>Around 40% of long-term NEETs have a disability or health condition — a proportion that has grown as mental health conditions have become a more significant driver of economic inactivity across all age groups. For these young people, the barrier to participation is not a lack of jobs or places on courses but the absence of appropriate support to access them. Inadequate SEND support, long CAMHS waits, and gaps in supported employment provision all contribute. The cost to the public finances of long-term NEET is substantial: the Social Mobility Commission estimates a lifetime fiscal cost of £56,000 per young person who remains NEET beyond 12 months.</p>
+              <p>Around 849,000 young people aged 16-24 in the UK are NEET — not in education, employment or training.<Cite nums={1} /> The rate has fallen substantially from a peak of 17% in 2011, partly through compulsory participation age rises that moved 16 and 17 year olds into education, and partly through employment growth in the preceding decade. But 12.6% remains a significant proportion of young people outside any pathway, and the fall has stalled. Among 21-24 year olds — no longer covered by the participation age requirement — the rate is closer to 15%.<Cite nums={1} /></p>
+              <p>The geography of NEET is deeply uneven. Coastal communities, former mining areas, and post-industrial towns in the North East, South Wales, and parts of the Midlands have NEET rates two to three times the rates in London and the South East.<Cite nums={1} /> These are not random distributional effects: they reflect the long legacy of deindustrialisation, the concentration of low-skill employment, and the relative absence of further education and employment support infrastructure. Young people in these areas face structural barriers that individual motivation or resilience cannot overcome.</p>
+              <p>Around 40% of long-term NEETs have a disability or health condition<Cite nums={3} /> — a proportion that has grown as mental health conditions have become a more significant driver of economic inactivity across all age groups. For these young people, the barrier to participation is not a lack of jobs or places on courses but the absence of appropriate support to access them. Inadequate SEND support, long CAMHS waits, and gaps in supported employment provision all contribute. The cost to the public finances of long-term NEET is substantial: the Social Mobility Commission estimates a lifetime fiscal cost of £56,000 per young person who remains NEET beyond 12 months.<Cite nums={4} /></p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

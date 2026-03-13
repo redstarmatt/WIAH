@@ -8,6 +8,15 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS Digital', dataset: 'ERIC (Estates Returns Information Collection)', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/estates-returns-information-collection', date: '2024' },
+  { num: 2, name: 'DHSC', dataset: 'RAAC in NHS estate survey', url: 'https://www.gov.uk/government/publications/reinforced-autoclaved-aerated-concrete-raac-in-nhs-estates', date: '2024' },
+  { num: 3, name: 'NAO', dataset: 'NHS capital expenditure and financial sustainability', url: 'https://www.nao.org.uk/', date: '2024' },
+  { num: 4, name: 'Lord Darzi', dataset: 'Independent Investigation of the NHS in England', url: 'https://www.gov.uk/government/publications/independent-investigation-of-the-nhs-in-england', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 

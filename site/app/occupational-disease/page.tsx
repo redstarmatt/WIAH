@@ -9,6 +9,16 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'HSE', dataset: 'Labour Force Survey — Self-reported work-related ill health', url: 'https://www.hse.gov.uk/statistics/lfs/index.htm', date: '2022/23' },
+  { num: 2, name: 'HSE', dataset: 'Costs to Great Britain of workplace injuries and new cases of work-related ill health', url: 'https://www.hse.gov.uk/statistics/cost.htm', date: '2021/22' },
+  { num: 3, name: 'HSE', dataset: 'RIDDOR fatal injuries statistics', url: 'https://www.hse.gov.uk/statistics/fatals.htm', date: '2022/23' },
+  { num: 4, name: 'HSE', dataset: 'Health and Safety Executive budget and staffing data', url: 'https://www.hse.gov.uk/aboutus/reports/', date: '2023' },
+  { num: 5, name: 'Stevenson / Farmer', dataset: 'Thriving at Work — independent review of mental health and employers', url: 'https://www.gov.uk/government/publications/thriving-at-work-a-review-of-mental-health-and-employers', date: '2017' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 

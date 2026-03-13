@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DLUHC', dataset: 'Housing Supply: Net Additional Dwellings, England', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-housing-supply', date: '2023' },
+  { num: 2, name: 'Shelter', dataset: 'Cumulative housing shortfall estimates', url: 'https://england.shelter.org.uk/', date: '2023' },
+  { num: 3, name: 'HM Government', dataset: 'Planning and Infrastructure Bill 2024', url: 'https://www.gov.uk/government/publications/planning-and-infrastructure-bill', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -86,7 +94,7 @@ export default function NetHousingSupplyPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England's 300,000 annual housebuilding target, set by the 2017 Housing White Paper, has never been met. The best year was 2019/20 with 243,770 net additions; 2022/23 delivered 234,400. The gap of 65,600 homes in a single year compounds annually: the estimated cumulative shortfall since 2010 exceeded 2 million homes by 2023. The planning system in England requires most new homes to pass through a discretionary permissions process in which only around 60% of local authorities have an up-to-date plan, community opposition consistently delays or reduces proposals, and local politicians face stronger incentives to oppose than to permit. Skills shortages in construction — bricklayers, plasterers, plumbers — compound the delivery problem, worsened by the loss of EU-born labour since Brexit. Labour's 2024 Planning and Infrastructure Bill reintroduces mandatory local housing targets, allows development on degraded &ldquo;grey belt&rdquo; land, and simplifies plan-making — the most ambitious planning reform in a generation, targeting 1.5 million homes over five years.</p>
+            <p>England's 300,000 annual housebuilding target, set by the 2017 Housing White Paper, has never been met. The best year was 2019/20 with 243,770 net additions; 2022/23 delivered 234,400.<Cite nums={1} /> The gap of 65,600 homes in a single year compounds annually: the estimated cumulative shortfall since 2010 exceeded 2 million homes by 2023.<Cite nums={2} /> The planning system in England requires most new homes to pass through a discretionary permissions process in which only around 60% of local authorities have an up-to-date plan, community opposition consistently delays or reduces proposals, and local politicians face stronger incentives to oppose than to permit. Skills shortages in construction — bricklayers, plasterers, plumbers — compound the delivery problem, worsened by the loss of EU-born labour since Brexit. Labour's 2024 Planning and Infrastructure Bill reintroduces mandatory local housing targets, allows development on degraded &ldquo;grey belt&rdquo; land, and simplifies plan-making — the most ambitious planning reform in a generation, targeting 1.5 million homes over five years.<Cite nums={3} /></p>
             <p>The shortfall does not fall equally. The gap between planning permissions granted and homes started consistently shows large volumes of consented development that never gets built, reflecting the market incentives of volume housebuilders to pace output rather than maximise it. The affordable and social rented homes most needed by those locked out of the market are the component most often challenged as unviable and removed from schemes. Those bearing the cost of the shortage — renters paying 36% or more of earnings on housing, young people unable to save deposits, households on social housing waiting lists — have no mechanism to compel the delivery of homes they need but could not finance.</p>
           </div>
         </section>
@@ -163,6 +171,10 @@ export default function NetHousingSupplyPage() {
           </p>
         </section>
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
               <RelatedTopics />
       </main>
     </>
