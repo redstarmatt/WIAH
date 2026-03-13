@@ -131,7 +131,7 @@ export default function RoughSleepingPage() {
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
               <p>The official rough sleeping count is a single night snapshot taken each autumn. Local authorities count or estimate the number of people sleeping rough in their area.<Cite nums={1} /> The true scale is much larger — people cycle in and out of rough sleeping, and many sleep in cars, tents, or other non-street locations that are excluded from the count.</p>
               <p>Rough sleeping rose steadily through the 2010s as local authority homelessness prevention budgets were cut by around 50% in real terms.<Cite nums={3} /> The 2020 "Everyone In" emergency programme — which housed almost all rough sleepers at the start of the COVID pandemic — demonstrated that rapid action can work when political will exists. Numbers fell sharply. But the structural causes were never addressed, and rough sleeping has since climbed back toward pre-pandemic peaks.<Cite nums={1} /></p>
-              <p>Households in temporary accommodation tell a different story of a system under sustained pressure: 112,600 households — including 145,000 children — are currently placed in temporary accommodation by their council, at an annual cost to the public purse exceeding £2 billion.</p>
+              <p>Households in temporary accommodation tell a different story of a system under sustained pressure: 112,600 households — including 145,000 children — are currently placed in temporary accommodation by their council, at an annual cost to the public purse exceeding £2 billion.<Cite nums={2} /></p>
             </div>
           </section>
         </ScrollReveal>
