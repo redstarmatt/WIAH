@@ -79,7 +79,7 @@ export default function PetWelfarePage() {
 
   return (
     <>
-      <TopicNav topic="Animal Welfare" parentTopic="Health" />
+      <TopicNav topic="Animal Welfare" />
 
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Lora, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import dynamic from 'next/dynamic';
 import Script from 'next/script';
@@ -9,18 +8,6 @@ import CanonicalTag from '@/components/CanonicalTag';
 import JsonLdBreadcrumb from '@/components/JsonLdBreadcrumb';
 
 const NextTopicBar = dynamic(() => import('@/components/NextTopicBar'), { ssr: false });
-
-const lora = Lora({
-  subsets: ['latin'],
-  variable: '--font-editorial',
-  display: 'swap',
-});
-
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  variable: '--font-sans',
-  display: 'swap',
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://whatisactuallyhappening.uk'),
@@ -107,7 +94,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${lora.variable} ${jakarta.variable}`}>
+    <html lang="en">
       <head>
         <script
           type="application/ld+json"
