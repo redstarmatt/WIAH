@@ -140,7 +140,7 @@ export default function LightPollutionPage() {
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>Light pollution is one of the fastest-growing forms of environmental degradation in the UK, yet it receives a fraction of the policy attention given to air or water quality. Satellite measurements show that artificial sky brightness over England has increased by roughly 51% since 2011,<Cite nums={1} /> driven by the proliferation of LED lighting, commercial signage, domestic security lights, and the expansion of warehouse and logistics parks along motorway corridors. The shift to LED street lighting -- now covering 89% of council-maintained roads -- was intended to reduce energy consumption, and it has. But many early conversions used high colour temperature (4000K+) blue-white LEDs that scatter more light into the upper atmosphere than the sodium lamps they replaced, paradoxically worsening sky glow even as energy bills fell.</p>
             <p>The consequences extend far beyond stargazing. Artificial light at night disrupts the circadian biology of humans and wildlife alike. Studies from the University of Exeter have linked increased sky glow to declines in moth populations -- down 33% since 2000 in light-polluted areas -- and disrupted migration patterns for birds.<Cite nums={3} /> In humans, chronic exposure to artificial light at night is associated with sleep disruption, increased cortisol, and elevated risks of metabolic disorder. The economic case for darker skies is also strong: dark sky tourism generated an estimated GBP 25 million annually in Northumberland alone.</p>
-            <p>CPRE's mapping shows that only 19.7% of England's land area now qualifies as genuinely dark -- down from 31% in 2011. Six areas hold International Dark Sky status, but these are concentrated in sparsely populated uplands. For the 85% of the population living in urban areas, the Milky Way is invisible. The good news is that the problem is technically simple to fix: shielded, warm-colour, dimmed, and curfewed lighting can reduce sky glow by 50-70% with no loss of safety. Several councils -- including Shropshire, Devon, and Cumbria -- have demonstrated this at scale.</p>
+            <p>CPRE's mapping shows that only 19.7% of England's land area now qualifies as genuinely dark -- down from 31% in 2011.<Cite nums={2} /> Six areas hold International Dark Sky status, but these are concentrated in sparsely populated uplands. For the 85% of the population living in urban areas, the Milky Way is invisible. The good news is that the problem is technically simple to fix: shielded, warm-colour, dimmed, and curfewed lighting can reduce sky glow by 50-70% with no loss of safety. Several councils -- including Shropshire, Devon, and Cumbria -- have demonstrated this at scale.<Cite nums={4} /></p>
           </div>
         </section>
 
@@ -289,6 +289,10 @@ export default function LightPollutionPage() {
             source="Source: CPRE Night Blight report, 2023. IDA UK Dark Sky Places programme, 2025. Shropshire Council lighting report, 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
