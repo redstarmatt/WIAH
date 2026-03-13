@@ -87,7 +87,7 @@ export default function SickLeaveCostsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>British workers lost an estimated 185 million working days to sickness absence in 2023 — a 35% increase on 2015 and the highest level in a decade — at an economic cost of £32 billion annually. Mental health conditions (anxiety and depression) now account for approximately 17% of all days lost, up from 11% in 2015, with pandemic-related trauma persisting well beyond the acute crisis. Musculoskeletal conditions remain the largest single category at around 22%. The most economically significant trend is the growth of long-term sickness inactivity: working-age people classified as economically inactive due to long-term sickness rose from 1.9 million in 2015 to 2.8 million in 2023 — a 47% increase — as an estimated 200,000–400,000 people are substantially limited by long COVID. People who leave the labour market entirely represent a permanent reduction in labour supply, with compounded fiscal impacts as they cease paying tax and National Insurance while drawing benefits.</p>
+            <p>British workers lost an estimated 185 million working days to sickness absence in 2023 — a 35% increase on 2015 and the highest level in a decade — at an economic cost of £32 billion annually.<Cite nums={[1, 3]} /> Mental health conditions (anxiety and depression) now account for approximately 17% of all days lost, up from 11% in 2015, with pandemic-related trauma persisting well beyond the acute crisis.<Cite nums={1} /> Musculoskeletal conditions remain the largest single category at around 22%. The most economically significant trend is the growth of long-term sickness inactivity: working-age people classified as economically inactive due to long-term sickness rose from 1.9 million in 2015 to 2.8 million in 2023 — a 47% increase — as an estimated 200,000–400,000 people are substantially limited by long COVID.<Cite nums={2} /> People who leave the labour market entirely represent a permanent reduction in labour supply, with compounded fiscal impacts as they cease paying tax and National Insurance while drawing benefits.</p>
             <p>Occupational health access is deeply unequal: large employers in white-collar sectors are far more likely to offer structured return-to-work support than SMEs or manual sector employers. Workers in low-paid, physically demanding jobs are most likely to develop health conditions and least likely to have access to the occupational health, flexible working arrangements, or statutory sick pay levels that would enable recovery and return. The government's proposed reforms to statutory sick pay aim to address some of these gaps, but the distance between policy intent and workforce outcomes remains large.</p>
           </div>
         </section>
@@ -148,6 +148,10 @@ export default function SickLeaveCostsPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

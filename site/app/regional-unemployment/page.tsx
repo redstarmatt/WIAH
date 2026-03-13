@@ -41,7 +41,7 @@ export default function RegionalUnemploymentPage() {
       <TopicHeader topic="Economy & Work" question="Where in Britain Is Unemployment Worst?" finding="Unemployment in parts of the North East reaches 7.8% \u2014 nearly double the national rate of 4.2%; youth unemployment (18-24) exceeds 20% in several northern cities." colour="#6B7280" />
       <section className="max-w-2xl mt-4 mb-12"><div className="text-base text-wiah-black leading-[1.7] space-y-4">
         <p>Unemployment in parts of the North East reaches 7.8% — nearly double the national rate of 4.2%; youth unemployment (18-24) exceeds 20% in several northern cities.<Cite nums={1} /> The data below draws on official sources to track change over the past decade.</p>
-        <p>These figures reflect a structural pattern. Understanding the scale is the first step toward accountability.</p>
+        <p>These figures reflect a structural pattern.<Cite nums={1} /> Understanding the scale is the first step toward accountability.</p>
       </div></section>
       <SectionNav sections={[{id:'sec-overview',label:'Overview'},{id:'sec-chart1',label:"North East unemploym"},{id:'sec-chart2',label:"Youth unemployment \u2014"}]} />
       <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
@@ -52,6 +52,10 @@ export default function RegionalUnemploymentPage() {
       <ScrollReveal><section id="sec-chart1" className="mb-12"><LineChart title="Unemployment rates by region, UK, 2015\u20132025" subtitle="Quarterly Labour Force Survey unemployment rates by region. The North-South gap in unemployment has persisted despite multiple levelling-up programmes." series={s1} annotations={a1} /></section></ScrollReveal>
       <ScrollReveal><section id="sec-chart2" className="mb-12"><LineChart title="Youth unemployment (18-24) by region, UK, 2015\u20132025" subtitle="Unemployment rate for 18-24 year olds. Youth unemployment is significantly higher than the headline rate and more volatile." series={s2} annotations={a2} /></section></ScrollReveal>
       <ScrollReveal><PositiveCallout title="Investment Zones targeting high-unemployment areas" value="12" unit="Investment Zones in high-unemployment regions" description="The government targeted all 12 Investment Zones at areas with above-average unemployment, including South Yorkshire, West Yorkshire, the North East and Tees Valley. Each zone offers 5-year tax incentives and planning flexibilities. Early data shows 18,000 new jobs created across the zones in their first year, with higher-than-expected concentration in the manufacturing and digital sectors." source="Source: DLUHC \u2014 Investment Zones progress report, 2025. ONS \u2014 Regional labour market statistics Q4 2025." /></ScrollReveal>
+      <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
       <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
         <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
         <div className="text-sm text-wiah-mid space-y-3 font-mono">{data?.metadata.sources.map((src,i)=>(<div key={i}><a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">{src.name} — {src.dataset}</a><div className="text-xs text-wiah-mid">Updated {src.frequency}</div></div>))}</div>
