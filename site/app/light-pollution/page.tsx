@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NOAA Earth Observation Group', dataset: 'VIIRS Day/Night Band Nighttime Lights', url: 'https://eogdata.mines.edu/products/vnl/', date: '2025' },
+  { num: 2, name: 'CPRE', dataset: 'Night Blight: Mapping England\'s Light Pollution', url: 'https://www.cpre.org.uk/light-pollution-dark-skies-map/', date: '2023' },
+  { num: 3, name: 'University of Exeter', dataset: 'Moth population decline and artificial light', date: '2023', note: 'Studies linking sky glow to 33% moth population decline in light-polluted areas' },
+  { num: 4, name: 'Shropshire Council', dataset: 'Street Lighting LED Conversion Report', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 

@@ -100,10 +100,10 @@ export default function OnlineFraudGrowthPage() {
         <section className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Fraud now accounts for 40% of all crime in England and Wales with 3.7 million incidents in 2024; only 5% of reported fraud cases result in a prosecution. The data below draws on official sources to show how this has changed over the past decade and where the pressures are most acute.
+              Fraud now accounts for 40% of all crime in England and Wales with 3.7 million incidents in 2024; only 5% of reported fraud cases result in a prosecution.<Cite nums={1} /> The data below draws on official sources to show how this has changed over the past decade and where the pressures are most acute.
             </p>
             <p>
-              The figures reflect a structural pattern rather than a short-term fluctuation. Understanding the scale of the issue is the first step toward holding policymakers to account for the decisions that shape these outcomes.
+              The figures reflect a structural pattern rather than a short-term fluctuation.<Cite nums={[1, 2]} /> Understanding the scale of the issue is the first step toward holding policymakers to account for the decisions that shape these outcomes.
             </p>
           </div>
         </section>
@@ -178,6 +178,10 @@ export default function OnlineFraudGrowthPage() {
             source="Source: PSR \u2014 Authorised push payment fraud statistics, 2024. Action Fraud \u2014 Annual report 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
