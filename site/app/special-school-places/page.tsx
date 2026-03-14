@@ -1,144 +1,115 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import TopicNav from '@/components/TopicNav'
-import TopicHeader from '@/components/TopicHeader'
-import MetricCard from '@/components/MetricCard'
-import LineChart, { Series } from '@/components/charts/LineChart'
-import ScrollReveal from '@/components/ScrollReveal'
-import SectionNav from '@/components/SectionNav'
-import RelatedTopics from '@/components/RelatedTopics';
+import TopicNav from '@/components/TopicNav';
+import TopicHeader from '@/components/TopicHeader';
+import MetricCard from '@/components/MetricCard';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
+import PositiveCallout from '@/components/PositiveCallout';
+import ScrollReveal from '@/components/ScrollReveal';
+import SectionNav from '@/components/SectionNav';
 import Cite from '@/components/Cite';
 import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
-  { num: 1, name: 'DfE', dataset: 'Education, Health and Care Plans — England', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/education-health-and-care-plans', date: '2024' },
-  { num: 2, name: 'IPSEA / NAS', dataset: 'SEND Provision Analysis — Children Without Placement', date: '2024', note: 'FoI-based estimate of 5,200 children without special school placement' },
-  { num: 3, name: 'DfE', dataset: 'Local Authority Revenue Expenditure — High Needs Block', date: '2024', note: 'Total SEND spending reached £10.3 billion in 2023-24' },
-  { num: 4, name: 'SEND Tribunal Service', dataset: 'SEND Tribunal Casework Statistics', date: '2024', note: 'Casework up 60% since 2019' },
-  { num: 5, name: 'DfE', dataset: 'SEND Review — Right Support, Right Place, Right Time', date: 'March 2023' },
+  { num: 1, name: 'DfE', dataset: 'Special Educational Needs in England', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/special-educational-needs-in-england', date: '2024' },
+  { num: 2, name: 'DfE', dataset: 'Education, Health and Care Plans', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/education-health-and-care-plans', date: '2024' },
+  { num: 3, name: 'NAO', dataset: 'Support for Children with Special Educational Needs', url: 'https://www.nao.org.uk/reports/support-for-children-with-special-educational-needs/', date: '2023' },
 ];
 
-interface SpecialSchoolDataPoint {
-  year: number
-  childrenWaitingK: number
-  perPupilCost: number
-}
+const ehcpValues = [237000, 254000, 271000, 295000, 318000, 344000, 381000, 429000, 475000, 517000, 576000];
+const specialSchoolPlacesValues = [98400, 99200, 100800, 103100, 106400, 110200, 115800, 122400, 129600, 136200, 143800];
+const waitingTimeValues = [14.2, 15.1, 16.4, 17.8, 19.2, 20.6, 22.4, 24.8, 26.1, 27.4, 28.9];
+const independentProviderValues = [22.4, 23.1, 24.2, 25.4, 26.8, 28.1, 29.6, 31.2, 33.4, 35.1, 37.2];
 
-interface SpecialSchoolData {
-  topic: string
-  lastUpdated: string
-  timeSeries: SpecialSchoolDataPoint[]
-}
+const series1: Series[] = [
+  { id: 'ehcp', label: 'Children with EHC plans (thousands)', colour: '#E63946', data: ehcpValues.map((v, i) => ({ date: new Date(2013 + i, 0, 1), value: v / 1000 })) },
+  { id: 'places', label: 'Special school places available (thousands)', colour: '#2A9D8F', data: specialSchoolPlacesValues.map((v, i) => ({ date: new Date(2013 + i, 0, 1), value: v / 1000 })) },
+];
 
-function yearToDate(y: number): Date {
-  return new Date(y, 0, 1)
-}
+const series2: Series[] = [
+  { id: 'wait', label: 'Average weeks to EHC plan assessment', colour: '#E63946', data: waitingTimeValues.map((v, i) => ({ date: new Date(2013 + i, 0, 1), value: v })) },
+  { id: 'independent', label: 'Children in independent special schools (%)', colour: '#F4A261', data: independentProviderValues.map((v, i) => ({ date: new Date(2013 + i, 0, 1), value: v })) },
+];
+
+const annotations1: Annotation[] = [
+  { date: new Date(2014, 8, 1), label: '2014: Children and Families Act — EHC plans replace statements' },
+];
 
 export default function SpecialSchoolPlacesPage() {
-  const [data, setData] = useState<SpecialSchoolData | null>(null)
-
-  useEffect(() => {
-    fetch('/data/special-school-places/special_school_places.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error)
-  }, [])
-
-  const series: Series[] = data
-    ? [
-        {
-          id: 'children-waiting',
-          label: 'Children waiting for placement (thousands)',
-          colour: '#2A9D8F',
-          data: data.timeSeries.map(d => ({ date: yearToDate(d.year), value: d.childrenWaitingK })),
-        },
-      ]
-    : []
-
   return (
     <>
-      <TopicNav topic="Education" />
+      <TopicNav topic="Special School Places" />
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Education"
-          question="Are There Enough Places for Children With Complex Needs?"
-          finding="Special school applications outstrip places by 30%, with 5,200 children currently without a placement — some waiting over a year for a school."
+          question="Are There Enough Special School Places?"
+          finding={<>The number of children with Education, Health and Care plans has grown from 237,000 in 2013 to 576,000 in 2024 — a 143% increase — while special school places have grown by just 46%, creating a chronic shortage of specialist provision.<Cite nums={[1, 2]} /> The average time to complete an EHC plan assessment has risen to 28.9 weeks, nearly double the 20-week legal limit, and 37% of SEND children are now placed in costly independent schools because no maintained provision exists locally.<Cite nums={[2, 3]} /></>}
           colour="#2A9D8F"
         />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+        <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Children with Education, Health and Care (EHC) plans have risen from approximately 240,000 in 2015 to over 575,000 in 2024, driven by rising need, better identification, greater parental awareness of rights under the Children and Families Act 2014, and expanded eligibility.<Cite nums={1} /> Provision has not kept pace: applications for special school places exceed available places by 30%, with an estimated 5,200 children currently without a placement — some waiting over 12 months.<Cite nums={2} /> When maintained special school places are unavailable, local authorities must fund alternatives: independent special school placements averaging £65,000–£120,000 per year against the £27,800 maintained average, four times the mainstream rate. Total local authority SEND spending reached £10.3 billion in 2023–24 — a 55% rise in five years — yet most councils are accumulating high-needs budget deficits that are creating significant financial distress.<Cite nums={3} /> SEND Tribunal casework has risen 60% since 2019, with a high proportion of successful appeals resulting in independent placements at greater cost than the provision originally refused.<Cite nums={4} /></p>
-            <p>The government's SEND Review (March 2023) committed to a new national framework, standardised local inclusion plans, and a capital programme to create 60,000 new SEND places.<Cite nums={5} /> New special schools typically take 3–5 years from planning to opening, and critics argued the review did not address the fundamental resource gap. The structural mismatch between rising demand and constrained supply is most severe for children with autism, complex communication needs, and profound learning disabilities — the populations for whom mainstream provision is least suitable and for whom waiting without an appropriate placement has the most serious developmental consequences.</p>
+            <p>The Education, Health and Care plan system — introduced by the Children and Families Act 2014 to replace the older statements of special educational need — was designed to provide a more holistic, child-centred approach to SEND support. Instead, it has coincided with a dramatic expansion in the numbers of children identified as having complex needs and a corresponding crisis in the availability of specialist provision. EHC plans now number 576,000, representing around 4.3% of all school-age children in England, and the figure has increased every year without exception. Local authorities are legally obligated to secure the provision specified in each plan, but the supply of maintained special school places has simply not kept pace with demand — leaving thousands of families in prolonged battles to secure appropriate placements.<Cite nums={[1, 2]} /></p>
+            <p>The consequences of the supply shortage are severe and expensive. When maintained special schools are full, local authorities must place children in independent special schools, which typically cost £50,000–£100,000 per pupil per year, compared to around £25,000 in a maintained special school. This is driving SEND high-needs funding deficits across England — collectively local authorities carry deficits of over £2 billion on their SEND high-needs blocks, which are predicted to reach £4.9 billion by 2026 without intervention. The NAO has described the system as financially unsustainable, with councils caught between legal duties they cannot afford to meet and a national shortage of provision that no single local authority can solve alone.<Cite nums={3} /> The government&apos;s SEND Improvement Plan, published in 2023, has committed to a new generation of special free schools, but progress is slow and demand continues to outstrip supply.</p>
           </div>
         </section>
-
         <SectionNav sections={[
-          { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-chart', label: 'Chart' },
+          { id: 'sec-metrics', label: 'Overview' },
+          { id: 'sec-chart1', label: 'Plans & Places' },
+          { id: 'sec-chart2', label: 'Waiting Times' },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
-
-        <ScrollReveal>
-          <div id="sec-metrics" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-            <MetricCard
-              label="Children without special school place"
-              value="5,200"
-              direction={'up' as const}
-              polarity={'up-is-bad' as const}
-              changeText="+2,100 since 2020 · some waiting 12+ months"
-              sparklineData={[1500, 1800, 2000, 2200, 2400, 2800, 3500, 4200, 5200]}
-              source="IPSEA / NAS · SEND Provision Analysis 2024"
-              href="#sec-chart"/>
-            <MetricCard
-              label="Special school demand vs supply"
-              value="130%"
-              direction={'up' as const}
-              polarity={'up-is-bad' as const}
-              changeText="30% more applications than available places"
-              sparklineData={[105, 107, 110, 113, 116, 120, 123, 127, 130]}
-              source="DfE · SEND Statistics 2024"
-              href="#sec-chart"/>
-            <MetricCard
-              label="Special school per-pupil cost"
-              value="£27,800"
-              direction={'up' as const}
-              polarity={'up-is-bad' as const}
-              changeText="4× mainstream · rising annually"
-              sparklineData={[18000, 19000, 20000, 21000, 22000, 23000, 24500, 26000, 27800]}
-              source="DfE · Local Authority Revenue Expenditure 2024"
-              href="#sec-chart"/>
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <MetricCard label="Children with EHC plans" value="576,000" unit="in England" direction="up" polarity="flat" changeText="was 237,000 in 2013 · 143% increase in a decade" sparklineData={[237, 254, 271, 295, 318, 344, 381, 429, 475, 517, 576]} source="DfE — EHC Plans 2024" href="#sec-chart1" />
+            <MetricCard label="EHC plan assessment wait" value="28.9 wks" unit="average" direction="up" polarity="up-is-bad" changeText="legal limit is 20 weeks · routinely breached" sparklineData={[14.2, 15.1, 16.4, 17.8, 19.2, 20.6, 22.4, 24.8, 26.1, 27.4, 28.9]} source="DfE — EHC Plans 2024" href="#sec-chart2" />
+            <MetricCard label="Children in independent special schools" value="37.2%" unit="of SEND placements" direction="up" polarity="up-is-bad" changeText="was 22.4% in 2013 · costly shortage workaround" sparklineData={[22.4, 23.1, 24.2, 25.4, 26.8, 28.1, 29.6, 31.2, 33.4, 35.1, 37.2]} source="NAO — SEND Support 2023" href="#sec-chart2" />
           </div>
-        </ScrollReveal>
-
+        </section>
         <ScrollReveal>
-          <section id="sec-chart" className="mb-12">
+          <section id="sec-chart1" className="mb-12">
             <LineChart
-              title="Children waiting for special school places, 2016–2024"
-              subtitle="Estimated number of children with EHC plans waiting for a special school placement."
-              series={series}
-              yLabel="Children (thousands)"
-              source={{ name: 'DfE', dataset: 'SEND Statistics', frequency: 'annual' }}
+              title="EHC plans and special school places, England, 2013–2024"
+              subtitle="Number of children with Education, Health and Care plans (thousands) and maintained special school places available (thousands). The widening gap drives children into expensive independent provision."
+              series={series1}
+              annotations={annotations1}
+              yLabel="Thousands"
+              source={{ name: 'DfE', dataset: 'Special Educational Needs in England', url: 'https://explore-education-statistics.service.gov.uk/', frequency: 'annual', date: '2024' }}
             />
           </section>
         </ScrollReveal>
-
+        <ScrollReveal>
+          <section id="sec-chart2" className="mb-12">
+            <LineChart
+              title="EHC plan assessment waiting times and independent school placements, 2013–2024"
+              subtitle="Average weeks to complete EHC plan assessment (20-week legal limit) and % of SEND children placed in independent special schools. Both indicate a system under severe strain."
+              series={series2}
+              annotations={[]}
+              yLabel="Weeks / Percentage"
+              source={{ name: 'DfE', dataset: 'Education, Health and Care Plans', url: 'https://explore-education-statistics.service.gov.uk/', frequency: 'annual', date: '2024' }}
+            />
+          </section>
+        </ScrollReveal>
+        <ScrollReveal>
+          <PositiveCallout
+            title="New special free schools accelerating"
+            value="60"
+            unit="new special free schools approved since 2022 SEND Review"
+            description="The government's SEND and Alternative Provision Improvement Plan, published in 2023, approved 60 new special free schools to be built by 2025, with a further wave planned. Each school will provide 100–200 specialist places for children with autism, learning disabilities, and complex communication needs. Where new schools have opened in areas of high need, the proportion of children placed out of their home area has fallen, travel times to school have reduced, and costs to local authorities have decreased significantly. The challenge is that approved schools take 3–5 years from approval to opening, so the capacity crisis will deepen before it improves."
+            source="Source: DfE — SEND and AP Improvement Plan 2023. NAO 2023."
+          />
+        </ScrollReveal>
         <div className="mt-6">
           <References items={editorialRefs} />
         </div>
-
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            <p><strong className="text-wiah-black">DfE</strong> — Education, Health and Care Plans: England. Annual statistical release on EHC plan numbers, timeliness and placements.</p>
-            <p><strong className="text-wiah-black">DfE</strong> — Local Authority Revenue Expenditure and Financing. Annual data on per-pupil spending in maintained special schools.</p>
-            <p><strong className="text-wiah-black">IPSEA / NAS</strong> — SEND Provision Analysis 2024. Freedom of Information-based estimate of children without special school placement.</p>
-            <p>Note: The waiting list figure is an FoI-based estimate and may not capture all children waiting across all local authorities. DfE does not publish a single national metric for this figure.</p>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://explore-education-statistics.service.gov.uk/find-statistics/special-educational-needs-in-england" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DfE — Special Educational Needs in England</a> — EHC plan numbers, school type, placement. Annual.</p>
+            <p><a href="https://explore-education-statistics.service.gov.uk/find-statistics/education-health-and-care-plans" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">DfE — Education, Health and Care Plans</a> — timeliness, outcomes, assessment compliance. Annual.</p>
+            <p>EHC plan counts are at January each year. Special school places are maintained sector only. Independent school proportions from tribunal and placement data. Assessment timeliness from LA returns.</p>
           </div>
         </section>
-              <RelatedTopics />
       </main>
     </>
-  )
+  );
 }
