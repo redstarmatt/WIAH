@@ -15,7 +15,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'Ministry of Justice', dataset: 'Criminal Court Statistics', url: 'https://www.gov.uk/government/collections/criminal-court-statistics', date: 'Jan 2024' },
   { num: 2, name: 'Ministry of Justice', dataset: 'Criminal Justice Journey Statistics', url: 'https://www.gov.uk/government/statistics/criminal-justice-statistics-quarterly', date: 'Jan 2024' },
   { num: 3, name: 'Ministry of Justice', dataset: 'Prison Population Statistics', url: 'https://www.gov.uk/government/collections/prison-population-statistics', date: '2024' },
-  { num: 4, name: 'Law Society', dataset: 'Criminal Legal Aid Statistics', date: '2024' },
+  { num: 4, name: 'Law Society', dataset: 'Criminal Legal Aid Statistics', url: 'https://www.lawsociety.org.uk/topics/research/', date: '2024' },
 ];
 
 export default function CourtBacklogPage() {

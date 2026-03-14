@@ -16,7 +16,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Sickness absence in the labour market', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/labourproductivity/articles/sicknessabsenceinthelabourmarket/latest', date: '2025' },
   { num: 2, name: 'CIPD', dataset: 'Health and wellbeing at work survey', url: 'https://www.cipd.org/uk/knowledge/reports/health-well-being-work/', date: '2025' },
   { num: 3, name: 'Health Foundation', dataset: 'Economic cost of sickness absence analysis', url: 'https://www.health.org.uk/', date: '2024' },
-  { num: 4, name: 'ONS', dataset: 'Labour Force Survey — sickness absence by industry', date: '2024/25' },
+  { num: 4, name: 'ONS', dataset: 'Labour Force Survey — sickness absence by industry', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/labourproductivity/articles/sicknessabsenceinthelabourmarket/latest', date: '2024/25' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────
