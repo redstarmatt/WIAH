@@ -204,6 +204,7 @@ export default function YouthJusticePage() {
             </p>
           </div>
         </section>
+        <References items={editorialRefs} />
               <RelatedTopics />
       </main>
     </>
