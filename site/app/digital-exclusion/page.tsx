@@ -34,9 +34,9 @@ function yearToDate(y: number): Date {
 // ── Component ────────────────────────────────────────────────────────────────
 
 const editorialRefs: Reference[] = [
-  { num: 1, name: 'Lloyds Bank', dataset: 'UK Consumer Digital Index', date: '2024' },
+  { num: 1, name: 'Lloyds Bank', dataset: 'UK Consumer Digital Index', url: 'https://www.lloydsbank.com/banking-with-us/whats-happening/consumer-digital-index.html', date: '2024' },
   { num: 2, name: 'ONS', dataset: 'Internet Users Survey', url: 'https://www.ons.gov.uk/businessindustryandtrade/itandinternetindustry/bulletins/internetusers', date: '2024' },
-  { num: 3, name: 'Ofcom', dataset: 'Adults\' Media Literacy Tracker', date: '2024' },
+  { num: 3, name: 'Ofcom', dataset: 'Adults\' Media Literacy Tracker', url: 'https://www.ofcom.org.uk/research-and-data/media-literacy-research/adults', date: '2024' },
 ];
 
 export default function DigitalExclusionPage() {

@@ -39,10 +39,10 @@ interface DigitalInclusionData {
 // ── Component ────────────────────────────────────────────────────────────────
 
 const editorialRefs: Reference[] = [
-  { num: 1, name: 'Lloyds Bank / Good Things Foundation', dataset: 'Essential Digital Skills Framework', date: '2023' },
-  { num: 2, name: 'ONS', dataset: 'Internet Access Survey', date: '2023' },
-  { num: 3, name: 'Ofcom', dataset: 'Connected Nations Report', date: '2023' },
-  { num: 4, name: 'Good Things Foundation', dataset: 'Digital Poverty Premium Research', date: '2023' },
+  { num: 1, name: 'Lloyds Bank / Good Things Foundation', dataset: 'Essential Digital Skills Framework', url: 'https://www.lloydsbank.com/banking-with-us/whats-happening/consumer-digital-index.html', date: '2023' },
+  { num: 2, name: 'ONS', dataset: 'Internet Access Survey', url: 'https://www.ons.gov.uk/businessindustryandtrade/itandinternetindustry/bulletins/internetusers', date: '2023' },
+  { num: 3, name: 'Ofcom', dataset: 'Connected Nations Report', url: 'https://www.ofcom.org.uk/research-and-data/telecoms-research/connected-nations', date: '2023' },
+  { num: 4, name: 'Good Things Foundation', dataset: 'Digital Poverty Premium Research', url: 'https://www.goodthingsfoundation.org/research-publications/', date: '2023' },
 ];
 
 export default function DigitalInclusionPage() {

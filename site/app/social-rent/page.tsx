@@ -13,7 +13,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DLUHC', dataset: 'Housing Supply Statistics — Social Rented Completions', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-affordable-housing-supply', date: '2022' },
-  { num: 2, name: 'DLUHC / VOA', dataset: 'Rent Statistics — Average Weekly Rents by Tenure', date: '2023' },
+  { num: 2, name: 'DLUHC / VOA', dataset: 'Rent Statistics — Average Weekly Rents by Tenure', url: 'https://www.gov.uk/government/organisations/ministry-of-housing-communities-and-local-government', date: '2023' },
   { num: 3, name: 'DLUHC', dataset: 'Live Tables on Rents, Lettings and Tenancies — Waiting Lists', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-rents-lettings-and-tenancies', date: '2022' },
   { num: 4, name: 'National Housing Federation', dataset: 'Capital Requirements for Social Housing', date: '2023', note: 'Estimated £10-15 billion per year needed for 90,000-100,000 homes' },
 ];

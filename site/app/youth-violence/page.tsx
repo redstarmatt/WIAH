@@ -34,7 +34,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'Home Office', dataset: 'Police Recorded Crime — Serious youth violence offences', url: 'https://www.gov.uk/government/statistics/police-recorded-crime-open-data-tables', date: '2024' },
   { num: 2, name: 'NHS Digital', dataset: 'Hospital Episode Statistics — Assault admissions (under-25s)', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/hospital-admitted-patient-care-activity', date: '2024' },
   { num: 3, name: 'YMCA', dataset: 'Youth Services Spending Tracker', url: 'https://www.ymca.org.uk/research/youth-services-spending', date: '2023', note: '73% real-terms cut since 2010; 750+ youth centres closed since 2012' },
-  { num: 4, name: 'DfE', dataset: 'Permanent and fixed-period exclusions in England', date: '2019', note: 'Exclusions increased 50% between 2012 and 2019' },
+  { num: 4, name: 'DfE', dataset: 'Permanent and fixed-period exclusions in England', url: 'https://explore-education-statistics.service.gov.uk/', date: '2019', note: 'Exclusions increased 50% between 2012 and 2019' },
 ];
 
 // ── Helpers ──────────────────────────────────────────────────────────────────

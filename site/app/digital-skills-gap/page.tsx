@@ -13,9 +13,9 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Lloyds Bank / Good Things Foundation', dataset: 'UK Consumer Digital Index', url: 'https://www.lloydsbank.com/banking-with-us/whats-happening/consumer-digital-index.html', date: '2024' },
-  { num: 2, name: 'ONS', dataset: 'Internet Access Survey', date: '2024' },
-  { num: 3, name: 'Good Things Foundation', dataset: 'Cost of Digital Exclusion Estimate', date: '2024' },
-  { num: 4, name: 'DCMS', dataset: 'Digital Skills Bootcamps Evaluation', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Internet Access Survey', url: 'https://www.ons.gov.uk/businessindustryandtrade/itandinternetindustry/bulletins/internetusers', date: '2024' },
+  { num: 3, name: 'Good Things Foundation', dataset: 'Cost of Digital Exclusion Estimate', url: 'https://www.goodthingsfoundation.org/research-publications/', date: '2024' },
+  { num: 4, name: 'DCMS', dataset: 'Digital Skills Bootcamps Evaluation', url: 'https://www.gov.uk/government/organisations/department-for-culture-media-sport/about/statistics', date: '2024' },
 ];
 
 export default function DigitalSkillsGapPage() {

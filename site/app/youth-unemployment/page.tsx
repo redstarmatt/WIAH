@@ -37,7 +37,7 @@ interface YouthUnemploymentData {
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Labour Force Survey — Young people not in education, employment or training (NEET)', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/neet', date: '2023' },
-  { num: 2, name: 'ONS', dataset: 'Labour Force Survey — Economic inactivity by reason (16-24)', date: '2023', note: 'Long-term sickness near-doubled from 120,000 to 230,000 between 2019 and 2023' },
+  { num: 2, name: 'ONS', dataset: 'Labour Force Survey — Economic inactivity by reason (16-24)', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/neet', date: '2023', note: 'Long-term sickness near-doubled from 120,000 to 230,000 between 2019 and 2023' },
 ];
 
 // ── Helpers ──────────────────────────────────────────────────────────────────

@@ -46,9 +46,9 @@ function yearToDate(y: number): Date {
 // ── Page ─────────────────────────────────────────────────────────────────────
 
 const editorialRefs: Reference[] = [
-  { num: 1, name: 'ONS', dataset: 'Labour Force Survey — Disability and Employment', date: '2023' },
-  { num: 2, name: 'DWP', dataset: 'PIP Statistics', date: '2023' },
-  { num: 3, name: 'ONS', dataset: 'Economic Inactivity by Reason', date: '2023' },
+  { num: 1, name: 'ONS', dataset: 'Labour Force Survey — Disability and Employment', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/datasets/labourmarketstatusofdisabledpeoplea08', date: '2023' },
+  { num: 2, name: 'DWP', dataset: 'PIP Statistics', url: 'https://www.gov.uk/government/collections/personal-independence-payment-statistics', date: '2023' },
+  { num: 3, name: 'ONS', dataset: 'Economic Inactivity by Reason', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/economicinactivity', date: '2023' },
 ];
 
 export default function DisabilityEmploymentPage() {

@@ -33,7 +33,7 @@ function yearToDate(y: number): Date {
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS Resolution', dataset: 'Annual Report and Accounts 2023/24', url: 'https://resolution.nhs.uk/resources/nhsr-annual-report-and-accounts/', date: '2024' },
-  { num: 2, name: 'NHS Resolution', dataset: 'Maternity Claims Data', date: '2024' },
+  { num: 2, name: 'NHS Resolution', dataset: 'Maternity Claims Data', url: 'https://resolution.nhs.uk/resources/nhsr-annual-report-and-accounts/', date: '2024' },
   { num: 3, name: 'Donna Ockenden', dataset: 'Independent Review of Maternity Services at Shrewsbury and Telford NHS Trust', date: '2022' },
   { num: 4, name: 'UK Parliament', dataset: 'Health and Social Care Act 2022 — Duty of Candour', date: '2022' },
 ];
