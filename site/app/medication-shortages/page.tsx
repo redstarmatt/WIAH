@@ -13,8 +13,8 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DHSC', dataset: 'Medicine Supply Notifications', url: 'https://www.gov.uk/government/publications/medicine-supply-tool', date: '2024' },
-  { num: 2, name: 'DHSC / Menopause charities', dataset: 'HRT shortage duration data', date: '2023' },
-  { num: 3, name: 'ADHD UK / DHSC', dataset: 'ADHD medication supply gap data', date: '2024' },
+  { num: 2, name: 'DHSC / Menopause charities', dataset: 'HRT shortage duration data', date: '2023', url: 'https://www.gov.uk/government/organisations/department-of-health-and-social-care/about/statistics' },
+  { num: 3, name: 'ADHD UK / DHSC', dataset: 'ADHD medication supply gap data', date: '2024', url: 'https://www.gov.uk/government/organisations/department-of-health-and-social-care/about/statistics' },
 ];
 
 export default function MedicationShortagesPage() {

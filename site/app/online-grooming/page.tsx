@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Home Office / ONS', dataset: 'Police Recorded Crime, England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/datasets/crimeinenglandandwalesappendixtables', date: 'Mar 2025' },
-  { num: 2, name: 'National Crime Agency', dataset: 'National Strategic Assessment — Online Child Sexual Exploitation', date: '2024' },
+  { num: 2, name: 'National Crime Agency', dataset: 'National Strategic Assessment — Online Child Sexual Exploitation', date: '2024', url: 'https://nationalcrimeagency.gov.uk/who-we-are/publications/' },
   { num: 3, name: 'NSPCC', dataset: 'Online grooming age profile analysis', url: 'https://www.nspcc.org.uk/about-us/news-opinion/online-grooming-crimes-rise/', date: 'Jan 2025' },
   { num: 4, name: 'Internet Watch Foundation', dataset: 'Annual Report — Encryption and grooming detection', url: 'https://www.iwf.org.uk/annual-report/', date: '2024' },
   { num: 5, name: 'Home Office', dataset: 'Crime Outcomes in England and Wales', url: 'https://www.gov.uk/government/statistics/crime-outcomes-in-england-and-wales', date: 'Mar 2025' },

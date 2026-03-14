@@ -15,7 +15,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DLUHC', dataset: 'Council Taxbase statistics — Table CTSOP4.0', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-council-tax', date: '2024' },
   { num: 2, name: 'Action on Empty Homes', dataset: 'Empty Homes in England', url: 'https://www.actiononemptyhomes.org/research', date: '2024' },
-  { num: 3, name: 'DLUHC', dataset: 'Levelling Up and Regeneration Act 2023' },
+  { num: 3, name: 'DLUHC', dataset: 'Levelling Up and Regeneration Act 2023' , url: 'https://www.gov.uk/government/organisations/ministry-of-housing-communities-and-local-government/about/statistics' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

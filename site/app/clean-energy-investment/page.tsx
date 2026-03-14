@@ -36,7 +36,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'BloombergNEF', dataset: 'Energy Transition Investment Trends', url: 'https://about.bnef.com/energy-transition-investment/', date: '2024' },
   { num: 2, name: 'DESNZ', dataset: 'Energy Trends', url: 'https://www.gov.uk/government/collections/energy-trends', date: '2024' },
   { num: 3, name: 'US Government', dataset: 'Inflation Reduction Act', url: 'https://www.whitehouse.gov/cleanenergy/inflation-reduction-act-guidebook/', date: '2022' },
-  { num: 4, name: 'HM Government', dataset: 'Great British Energy Policy', date: '2024' },
+  { num: 4, name: 'HM Government', dataset: 'Great British Energy Policy', date: '2024', url: 'https://www.gov.uk/government/statistics' },
 ];
 
 // -- Page -------------------------------------------------------------------

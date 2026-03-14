@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS England', dataset: 'KH03 Bed Availability and Occupancy', url: 'https://www.england.nhs.uk/statistics/', date: '2024/25' },
-  { num: 2, name: 'Royal College of Psychiatrists', dataset: 'Bed occupancy safe limit guidance (85%)', date: '2024' },
+  { num: 2, name: 'Royal College of Psychiatrists', dataset: 'Bed occupancy safe limit guidance (85%)', date: '2024', url: 'https://www.rcpsych.ac.uk/mental-health/data' },
   { num: 3, name: 'NHS Digital', dataset: 'Mental Health Act Statistics — annual detentions', url: 'https://digital.nhs.uk/data-and-information/publications/statistical', date: '2024/25' },
   { num: 4, name: 'NHS England', dataset: 'Out of Area Placements in Mental Health Services', url: 'https://www.england.nhs.uk/statistics/', date: '2025' },
 ];

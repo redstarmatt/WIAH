@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Household Income Inequality — Gini Coefficient', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth', date: '2025', note: 'Gini coefficient 0.33; higher than Germany (0.29), France (0.31)' },
   { num: 2, name: 'ONS', dataset: 'Effects of Taxes and Benefits on Household Income', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/bulletins/theeffectsoftaxesandbenefitsonhouseholdincome', date: '2025', note: 'Top 10% earn 9x bottom 10%' },
-  { num: 3, name: 'BEIS', dataset: 'National Living Wage Uprating', date: '2025', note: 'NLW rose from £7.20 in 2016 to £12.21 in 2025' },
+  { num: 3, name: 'BEIS', dataset: 'National Living Wage Uprating', date: '2025', note: 'NLW rose from £7.20 in 2016 to £12.21 in 2025', url: 'https://www.gov.uk/government/organisations/department-for-business-energy-and-industrial-strategy/about/statistics' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

@@ -15,9 +15,9 @@ import References, { Reference } from '@/components/References';
 // ── References ──────────────────────────────────────────────────────────────
 
 const editorialRefs: Reference[] = [
-  { num: 1, name: 'NHS Protect / NHSBSA', dataset: 'Reported Physical Assaults on NHS Staff', date: '2024', note: 'Annual; covers all NHS trusts in England' },
+  { num: 1, name: 'NHS Protect / NHSBSA', dataset: 'Reported Physical Assaults on NHS Staff', date: '2024', note: 'Annual; covers all NHS trusts in England', url: 'https://www.nhsbsa.nhs.uk/' },
   { num: 2, name: 'NHS England', dataset: 'NHS Staff Survey', url: 'https://www.nhsstaffsurveys.com/', date: '2024', note: 'Under-reporting estimated at 40-60%' },
-  { num: 3, name: 'NHS Protect / NHSBSA', dataset: 'Reported Physical Assaults by Trust Type', date: '2024' },
+  { num: 3, name: 'NHS Protect / NHSBSA', dataset: 'Reported Physical Assaults by Trust Type', date: '2024', url: 'https://www.nhsbsa.nhs.uk/' },
   { num: 4, name: 'NHS England', dataset: 'Violence Prevention and Reduction Programme evaluation', url: 'https://www.england.nhs.uk/statistics/', date: '2025' },
 ];
 

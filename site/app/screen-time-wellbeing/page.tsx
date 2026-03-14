@@ -15,7 +15,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'Ofcom', dataset: 'Children and Parents: Media Use and Attitudes Report', url: 'https://www.ofcom.org.uk/research-and-data/telecoms-research/data-dashboards', date: '2024', note: 'Teens spending 5+ hrs/day on social media rose from 18% (2015) to 45% (2024)' },
   { num: 2, name: 'NHS Digital', dataset: 'Mental Health of Children and Young People in England', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-of-children-and-young-people-in-england', date: '2024', note: 'Teens reporting poor mental wellbeing rose from 22% to 37%; SDQ clinical threshold' },
   { num: 3, name: 'Ofcom', dataset: 'Online Nation', url: 'https://www.ofcom.org.uk/research-and-data/internet-and-on-demand-research/online-nation', date: '2024', note: 'Average daily screen time 6.2 hrs (age 16-19); down from peak 7.1 hrs in 2020; diary-based self-report' },
-  { num: 4, name: 'Nature Mental Health', dataset: 'Meta-analysis of social media and self-harm in adolescent girls', date: '2023', note: 'Consistent association between heavy social media use and self-harm; passive consumption most strongly linked' },
+  { num: 4, name: 'Nature Mental Health', dataset: 'Meta-analysis of social media and self-harm in adolescent girls', date: '2023', note: 'Consistent association between heavy social media use and self-harm; passive consumption most strongly linked', url: 'https://www.nature.com/nmentalhealth/' },
 ];
 
 export default function ScreenTimeWellbeingPage() {

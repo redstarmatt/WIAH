@@ -16,7 +16,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS England', dataset: 'NHS Staff Survey', url: 'https://www.england.nhs.uk/statistics/', date: '2023', note: '34% of staff report burnout (up from 28% in 2019); 57% would recommend NHS as workplace (down from 67%)' },
   { num: 2, name: 'NHS Digital', dataset: 'NHS Vacancy Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/nhs-vacancies-survey', date: '2024', note: '~112,000 unfilled posts (8% vacancy rate); peaked at 133,000 (9.7%) in 2022' },
   { num: 3, name: 'NHS England', dataset: 'Financial Accounts — Agency Spending', url: 'https://www.england.nhs.uk/statistics/', date: '2024', note: '£3bn spent on agency staff in 2023/24' },
-  { num: 4, name: 'NHS England', dataset: 'NHS Long Term Workforce Plan', date: '2023', note: 'Commits to doubling medical school places and 50% increase in GP training places' },
+  { num: 4, name: 'NHS England', dataset: 'NHS Long Term Workforce Plan', url: 'https://www.england.nhs.uk/publication/nhs-long-term-workforce-plan/', date: '2023', note: 'Commits to doubling medical school places and 50% increase in GP training places' },
 ];
 
 // ── Types ──────────────────────────────────────────────────────────────────────

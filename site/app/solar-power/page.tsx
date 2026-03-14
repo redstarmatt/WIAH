@@ -15,8 +15,8 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DESNZ', dataset: 'Solar Photovoltaics Deployment Statistics', url: 'https://www.gov.uk/government/statistics/solar-photovoltaics-deployment', date: '2024' },
   { num: 2, name: 'DESNZ', dataset: 'Energy Trends — Renewable Electricity Generation', url: 'https://www.gov.uk/government/statistics/energy-trends', date: '2024' },
-  { num: 3, name: 'National Grid ESO', dataset: 'Historic Generation Mix and Grid Connection Queue', date: '2024', note: 'Over 700 GW of projects awaiting grid connection' },
-  { num: 4, name: 'Solar Trade Association', dataset: 'Land Requirements for 70 GW Solar Target', date: '2023', note: '250-400 km2 needed, approximately 0.1% of UK land area' },
+  { num: 3, name: 'National Grid ESO', dataset: 'Historic Generation Mix and Grid Connection Queue', date: '2024', note: 'Over 700 GW of projects awaiting grid connection', url: 'https://www.nationalgrideso.com/' },
+  { num: 4, name: 'Solar Trade Association', dataset: 'Land Requirements for 70 GW Solar Target', date: '2023', note: '250-400 km2 needed, approximately 0.1% of UK land area', url: 'https://www.solar-trade.org.uk/' },
 ];
 
 interface SolarData {

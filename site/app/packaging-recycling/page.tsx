@@ -13,7 +13,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DEFRA / Environment Agency', dataset: 'Packaging Recycling Statistics', url: 'https://www.gov.uk/government/statistical-data-sets/env23-uk-waste-data-and-management', date: '2024' },
-  { num: 2, name: 'WRAP', dataset: 'UK Plastics Pact Annual Report', date: '2025' },
+  { num: 2, name: 'WRAP', dataset: 'UK Plastics Pact Annual Report', date: '2025', url: 'https://www.wrap.nii.org.uk/' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

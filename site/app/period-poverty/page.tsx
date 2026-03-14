@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Plan International UK', dataset: 'Making the Grade: Period poverty and menstrual health survey', url: 'https://www.plan-international.org.uk/publications/making-grade-period-poverty-and-menstrual-health-survey', date: '2023', note: '1 in 5 girls aged 14-21 struggled to afford period products' },
   { num: 2, name: 'DLUHC', dataset: 'Menstrual Products Access Scheme', url: 'https://www.gov.uk/government/collections/period-products', date: '2023', note: '63% of eligible institutions participating in England' },
-  { num: 3, name: 'Scottish Government', dataset: 'Period Products (Free Provision) Act 2021', date: '2021', note: 'First legal right to free period products worldwide' },
+  { num: 3, name: 'Scottish Government', dataset: 'Period Products (Free Provision) Act 2021', date: '2021', note: 'First legal right to free period products worldwide', url: 'https://www.gov.scot/publications/' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

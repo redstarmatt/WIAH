@@ -13,7 +13,7 @@ import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
 
 const editorialRefs: Reference[] = [
-  { num: 1, name: 'NHS England / Oral Health Foundation', dataset: 'Adult Dental Health Survey and Access Data', date: '2023', note: '42% of adults unable to access NHS dentist, up from 25% in 2019' },
+  { num: 1, name: 'NHS England / Oral Health Foundation', dataset: 'Adult Dental Health Survey and Access Data', date: '2023', note: '42% of adults unable to access NHS dentist, up from 25% in 2019', url: 'https://www.dentalhealth.org/research' },
   { num: 2, name: 'NHS Digital', dataset: 'Hospital Episode Statistics — Tooth Extractions', url: 'https://digital.nhs.uk/data-and-information/publications/statistical', date: '2023', note: '35,000 children had teeth removed under general anaesthetic in 2022/23' },
   { num: 3, name: 'NHS England', dataset: 'NHS Dental Activity Statistics', url: 'https://www.england.nhs.uk/statistics/', date: '2023', note: '1,100 dentists stopped providing NHS services between 2019 and 2023' },
 ];

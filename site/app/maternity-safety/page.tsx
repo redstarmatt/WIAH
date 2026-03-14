@@ -15,7 +15,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'MBRRACE-UK', dataset: 'Perinatal Mortality Surveillance Report', url: 'https://www.npeu.ox.ac.uk/mbrrace-uk', date: '2022' },
   { num: 2, name: 'NHS England', dataset: 'Saving Babies\u2019 Lives Care Bundle', url: 'https://www.england.nhs.uk/mat-transformation/saving-babies', date: '2016' },
-  { num: 3, name: 'Ockenden Review', dataset: 'Independent review of maternity services at Shrewsbury and Telford NHS Trust', date: 'Mar 2022' },
+  { num: 3, name: 'Ockenden Review', dataset: 'Independent review of maternity services at Shrewsbury and Telford NHS Trust', date: 'Mar 2022', url: 'https://www.gov.uk/government/publications/final-report-of-the-ockenden-review' },
   { num: 4, name: 'MBRRACE-UK', dataset: 'Saving Lives, Improving Mothers\u2019 Care — maternal mortality by ethnicity', url: 'https://www.npeu.ox.ac.uk/mbrrace-uk', date: '2019\u201321' },
 ];
 

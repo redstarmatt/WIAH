@@ -16,7 +16,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Press Gazette', dataset: 'Local News Index — newspaper closures audit', url: 'https://pressgazette.co.uk/local-news-index', date: '2024' },
   { num: 2, name: 'Reuters Institute', dataset: 'UK Local News — news deserts and coverage gaps', url: 'https://reutersinstitute.politics.ox.ac.uk/', date: '2024' },
-  { num: 3, name: 'BBC', dataset: 'Local Radio Restructure announcement', date: '2024' },
+  { num: 3, name: 'BBC', dataset: 'Local Radio Restructure announcement', date: '2024', url: 'https://www.bbc.co.uk/' },
 ];
 
 // -- Types ------------------------------------------------------------------

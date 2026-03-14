@@ -15,8 +15,8 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'BSIA', dataset: 'British Security Industry Association CCTV Survey', url: 'https://www.bsia.co.uk/publications', date: '2023' },
   { num: 2, name: 'Home Office', dataset: 'Police Powers and Procedures: Stop and Search', url: 'https://www.gov.uk/government/statistics/police-powers-and-procedures-stop-and-search-and-arrests-england-and-wales', date: '2023' },
-  { num: 3, name: 'CIVICUS', dataset: 'State of Civil Society Report', date: '2024' },
-  { num: 4, name: 'Joint Committee on Human Rights', dataset: 'Legislative scrutiny of PCSC and Public Order Acts', date: '2023' },
+  { num: 3, name: 'CIVICUS', dataset: 'State of Civil Society Report', date: '2024', url: 'https://monitor.civicus.org/' },
+  { num: 4, name: 'Joint Committee on Human Rights', dataset: 'Legislative scrutiny of PCSC and Public Order Acts', date: '2023', url: 'https://committees.parliament.uk/committee/93/human-rights-committee/' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

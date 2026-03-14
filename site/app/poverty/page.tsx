@@ -15,7 +15,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DWP', dataset: 'Households Below Average Income (HBAI)', url: 'https://www.gov.uk/government/statistics/households-below-average-income-for-financial-years-ending-1995-to-2023', date: '2024', note: '68% of people in poverty live in a working family; up from 46% in 2005' },
   { num: 2, name: 'DWP', dataset: 'HBAI — Child Poverty Statistics', url: 'https://www.gov.uk/government/statistics/households-below-average-income-for-financial-years-ending-1995-to-2023', date: '2024', note: '3.4 million children in poverty; highest level in 25 years' },
-  { num: 3, name: 'JRF / Trussell Trust', dataset: 'Destitution in the UK', date: '2022', note: '3.8 million people experienced destitution in 2022; more than double the 2017 figure; 1 million children' },
+  { num: 3, name: 'JRF / Trussell Trust', dataset: 'Destitution in the UK', date: '2022', note: '3.8 million people experienced destitution in 2022; more than double the 2017 figure; 1 million children', url: 'https://www.jrf.org.uk/' },
   { num: 4, name: 'Trussell Trust', dataset: 'End-of-Year Food Bank Statistics', url: 'https://www.trusselltrust.org/news-and-blog/latest-stats/end-year-stats/', date: '2024', note: 'Over 3 million parcels distributed; ninefold rise in a decade' },
 ];
 

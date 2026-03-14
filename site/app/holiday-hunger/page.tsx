@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Department for Education', dataset: 'School Census — Free School Meal Eligibility', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/school-pupils-and-their-characteristics', date: '2024' },
   { num: 2, name: 'Trussell Trust', dataset: 'End of Year Statistics — Monthly Distribution Analysis', url: 'https://www.trusselltrust.org/news-and-blog/latest-stats/', date: '2024' },
-  { num: 3, name: 'Food Foundation / CPAG', dataset: 'Child Food Insecurity Tracker', date: '2024' },
+  { num: 3, name: 'Food Foundation / CPAG', dataset: 'Child Food Insecurity Tracker', date: '2024', url: 'https://foodfoundation.org.uk/' },
   { num: 4, name: 'DfE', dataset: 'Holiday Activities and Food Programme Monitoring', url: 'https://www.gov.uk/government/publications/holiday-activities-and-food-programme', date: '2024' },
 ];
 

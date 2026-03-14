@@ -47,7 +47,7 @@ const annotations: Annotation[] = [
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Department for Transport', dataset: 'Reported Road Casualties Great Britain', url: 'https://www.gov.uk/government/collections/road-accidents-and-safety-statistics', date: '2023' },
-  { num: 2, name: 'Transport Research Laboratory', dataset: 'Drink drive limit research', date: '2023' },
+  { num: 2, name: 'Transport Research Laboratory', dataset: 'Drink drive limit research', date: '2023', url: 'https://www.trl.co.uk/' },
   { num: 3, name: 'Ministry of Justice', dataset: 'Criminal Justice Statistics', url: 'https://www.gov.uk/government/collections/criminal-justice-statistics', date: '2023' },
 ];
 

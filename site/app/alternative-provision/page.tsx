@@ -56,10 +56,10 @@ const annotations: Annotation[] = [
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Department for Education', dataset: 'Schools, Pupils and their Characteristics', url: 'https://www.gov.uk/government/collections/statistics-school-and-pupil-numbers', date: '2024' },
   { num: 2, name: 'Department for Education', dataset: 'Permanent Exclusions and Suspensions in England', url: 'https://www.gov.uk/government/collections/statistics-exclusions', date: '2024' },
-  { num: 3, name: 'Timpson Review', dataset: 'Review of School Exclusion', date: '2019' },
+  { num: 3, name: 'Timpson Review', dataset: 'Review of School Exclusion', date: '2019', url: 'https://www.gov.uk/government/publications/timpson-review-of-school-exclusion' },
   { num: 4, name: 'Department for Education', dataset: 'Key Stage 4 Performance', url: 'https://explore-education-statistics.service.gov.uk/', date: '2024' },
   { num: 5, name: 'Ministry of Justice', dataset: 'Prisoner education background data', url: 'https://www.gov.uk/government/organisations/ministry-of-justice/about/statistics', date: '2024' },
-  { num: 6, name: 'ISOS Partnership', dataset: 'SAFE Programme Evaluation', date: '2025' },
+  { num: 6, name: 'ISOS Partnership', dataset: 'SAFE Programme Evaluation', date: '2025', url: 'https://www.isosgroup.co.uk/' },
 ];
 
 export default function AlternativeProvisionPage() {

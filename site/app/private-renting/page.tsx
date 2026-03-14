@@ -15,7 +15,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Index of Private Housing Rental Prices', url: 'https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/indexofprivatehousingrentalprices/latest', date: '2023' },
   { num: 2, name: 'MHCLG', dataset: 'English Housing Survey 2022/23', url: 'https://www.gov.uk/government/collections/english-housing-survey', date: '2023' },
-  { num: 3, name: 'Rightmove', dataset: 'Rental Market Tracker', date: '2023' },
+  { num: 3, name: 'Rightmove', dataset: 'Rental Market Tracker', date: '2023', url: 'https://www.rightmove.co.uk/news/house-price-index/' },
   { num: 4, name: 'MoJ', dataset: 'Mortgage and Landlord Possession Statistics', url: 'https://www.gov.uk/government/statistics/mortgage-and-landlord-possession-statistics', date: '2023' },
   { num: 5, name: 'HMRC', dataset: 'Section 24 Mortgage Interest Relief Changes', url: 'https://www.gov.uk/government/collections/hmrc-statistics', date: '2020' },
 ];

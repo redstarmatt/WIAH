@@ -27,7 +27,7 @@ function yearToDate(y: number): Date {
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS / Inside Airbnb', dataset: 'Short-Term Let Listings in England', url: 'https://www.ons.gov.uk/', date: '2022' },
-  { num: 2, name: 'Affordable Housing Commission', dataset: 'Short-Term Lets as Percentage of Housing Stock', date: '2022' },
+  { num: 2, name: 'Affordable Housing Commission', dataset: 'Short-Term Lets as Percentage of Housing Stock', date: '2022', url: 'https://www.affordablehousingcommission.org/' },
   { num: 3, name: 'ONS', dataset: 'House Price Statistics — Affordability Ratios', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/housing/bulletins/housingaffordabilityinenglandandwales/previousReleases', date: '2022' },
   { num: 4, name: 'UK Parliament', dataset: 'Levelling Up and Regeneration Act 2023 — Short-Term Lets Provisions', url: 'https://www.legislation.gov.uk/ukpga/2023/55', date: '2023' },
 ];

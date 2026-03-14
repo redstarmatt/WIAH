@@ -56,7 +56,7 @@ const enforcementAnnotations: Annotation[] = [
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DEFRA', dataset: 'Fly-tipping incidents and actions taken in England', url: 'https://www.gov.uk/government/statistics/fly-tipping-in-england', date: 'Oct 2024' },
-  { num: 2, name: 'Oldham Council', dataset: 'Bulky waste collection pilot evaluation', date: '2020' },
+  { num: 2, name: 'Oldham Council', dataset: 'Bulky waste collection pilot evaluation', date: '2020', url: 'https://www.oldham.gov.uk/' },
 ];
 
 export default function FlyTippingEnglandPage() {

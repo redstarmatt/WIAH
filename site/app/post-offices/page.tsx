@@ -12,9 +12,9 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Post Office Ltd', dataset: 'Annual Network Report', url: 'https://corporate.postoffice.co.uk/our-media/insights-and-research/', date: '2024', note: '19,800 branches in 2000; approximately 11,500 by 2024; 42% reduction' },
-  { num: 2, name: 'CPRE', dataset: 'Rural Services Report', date: '2024', note: '48% of rural post offices lost since 2000' },
-  { num: 3, name: 'House of Commons Library', dataset: 'Post Office Network Change Programme', date: '2008', note: '2,500 branches closed in 2007-08 consolidation round' },
-  { num: 4, name: 'Post Office Horizon Compensation Scheme', dataset: 'Quarterly Reports', date: '2024', note: 'Over 900 sub-postmasters wrongly prosecuted 1999-2015; fewer than 1,000 of 700+ convicted received full compensation' },
+  { num: 2, name: 'CPRE', dataset: 'Rural Services Report', date: '2024', note: '48% of rural post offices lost since 2000', url: 'https://www.cpre.org.uk/resources/' },
+  { num: 3, name: 'House of Commons Library', dataset: 'Post Office Network Change Programme', date: '2008', note: '2,500 branches closed in 2007-08 consolidation round', url: 'https://commonslibrary.parliament.uk/' },
+  { num: 4, name: 'Post Office Horizon Compensation Scheme', dataset: 'Quarterly Reports', date: '2024', note: 'Over 900 sub-postmasters wrongly prosecuted 1999-2015; fewer than 1,000 of 700+ convicted received full compensation', url: 'https://www.gov.uk/guidance/horizon-convictions-redress-scheme' },
 ];
 
 export default function PostOfficesPage() {

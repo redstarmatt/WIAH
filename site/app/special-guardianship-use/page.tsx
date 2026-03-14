@@ -15,7 +15,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DfE', dataset: 'Children Looked After in England including Adoptions', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions', date: '2023' },
   { num: 2, name: 'Kinship (formerly Grandparents Plus)', dataset: 'State of Kinship Care Survey', url: 'https://kinship.org.uk/policy-and-research/', date: '2023', note: '44% of kinship carers receive no financial or practical support' },
-  { num: 3, name: 'Kinship Care Act 2023', dataset: 'National Strategy and Support Framework', date: '2023', note: 'Framework commitments rather than funded entitlements' },
+  { num: 3, name: 'Kinship Care Act 2023', dataset: 'National Strategy and Support Framework', date: '2023', note: 'Framework commitments rather than funded entitlements', url: 'https://www.legislation.gov.uk/ukpga/2023/27/contents' },
 ];
 
 // -- Types ------------------------------------------------------------------

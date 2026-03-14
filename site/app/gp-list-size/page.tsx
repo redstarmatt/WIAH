@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS Digital', dataset: 'General Practice Workforce Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/general-and-personal-medical-services', date: '2024' },
   { num: 2, name: 'NHS Digital', dataset: 'Patients Registered at a GP Practice — deprivation analysis', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/patients-registered-at-a-gp-practice', date: '2024' },
-  { num: 3, name: 'BMA', dataset: 'GP Workload Survey / General Practitioners Committee guidance', date: '2024' },
+  { num: 3, name: 'BMA', dataset: 'GP Workload Survey / General Practitioners Committee guidance', date: '2024', url: 'https://www.bma.org.uk/advice-and-support/nhs-delivery-and-workforce/pressures/statistics' },
 ];
 
 export default function GpListSizePage() {

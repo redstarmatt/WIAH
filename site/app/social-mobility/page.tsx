@@ -9,7 +9,7 @@ import Cite from '@/components/Cite';
 import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
-  { num: 1, name: 'OECD / LSE Centre for Economic Performance', dataset: 'Intergenerational Income Elasticity Research', date: '2024', note: 'UK elasticity ~0.47, among highest in OECD' },
+  { num: 1, name: 'OECD / LSE Centre for Economic Performance', dataset: 'Intergenerational Income Elasticity Research', date: '2024', note: 'UK elasticity ~0.47, among highest in OECD', url: 'https://www.oecd.org/statistics/' },
   { num: 2, name: 'Social Mobility Commission', dataset: 'State of the Nation — Social Mobility in Great Britain', url: 'https://www.gov.uk/government/collections/state-of-the-nation', date: '2024' },
   { num: 3, name: 'Social Mobility Commission', dataset: 'Elitist Britain', url: 'https://www.gov.uk/government/publications/elitist-britain-2019', date: '2024', note: '7% of pupils attend private schools but hold 65% of elite posts' },
   { num: 4, name: 'University of Oxford / University of Cambridge', dataset: 'Undergraduate Admissions Statistics', url: 'https://www.ox.ac.uk/about/facts-and-figures/admissions-statistics', date: '2024' },

@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Adult Smoking Habits in Great Britain', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandlifeexpectancies/bulletins/adultsmokinghabitsingreatbritain/2023', date: '2023' },
   { num: 2, name: 'NHS England / DHSC', dataset: 'Health Survey for England — smoking by deprivation', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england', date: '2023' },
-  { num: 3, name: 'Public Health England', dataset: 'Evidence review of e-cigarettes and heated tobacco products', date: '2022' },
+  { num: 3, name: 'Public Health England', dataset: 'Evidence review of e-cigarettes and heated tobacco products', date: '2022', url: 'https://www.gov.uk/government/organisations/uk-health-security-agency/about/statistics' },
   { num: 4, name: 'HM Government', dataset: 'Tobacco and Vapes Bill', url: 'https://www.gov.uk/government/publications/tobacco-and-vapes-bill', date: '2023' },
 ];
 

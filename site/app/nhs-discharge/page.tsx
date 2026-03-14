@@ -15,7 +15,7 @@ import RelatedTopics from '@/components/RelatedTopics';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS England', dataset: 'Discharge Delays (Acute) Statistics', url: 'https://www.england.nhs.uk/statistics/', date: '2023', note: '13,500 patients/day medically fit for discharge but unable to leave; up from 5,200 in 2015' },
   { num: 2, name: 'NHS England', dataset: 'Discharge Delays — Cost Analysis', url: 'https://www.england.nhs.uk/statistics/', date: '2023', note: 'Estimated £1 billion per year in occupied bed days' },
-  { num: 3, name: 'Skills for Care', dataset: 'Adult Social Care Workforce Data', date: '2023', note: '152,000 vacancies in social care' },
+  { num: 3, name: 'Skills for Care', dataset: 'Adult Social Care Workforce Data', date: '2023', note: '152,000 vacancies in social care', url: 'https://www.skillsforcare.org.uk/adult-social-care-workforce-data/' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

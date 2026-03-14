@@ -13,7 +13,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'HMRC', dataset: 'UK Trade Info — Plastic Waste Exports', url: 'https://www.uktradeinfo.com/', date: '2023' },
-  { num: 2, name: 'Greenpeace', dataset: 'Trashed: How the UK Is Still Dumping Plastic Waste on the Rest of the World', date: '2021' },
+  { num: 2, name: 'Greenpeace', dataset: 'Trashed: How the UK Is Still Dumping Plastic Waste on the Rest of the World', date: '2021', url: 'https://www.greenpeace.org.uk/' },
   { num: 3, name: 'Defra', dataset: 'Extended Producer Responsibility for Packaging', url: 'https://www.gov.uk/government/consultations/packaging-and-packaging-waste-introducing-extended-producer-responsibility', date: '2024' },
 ];
 

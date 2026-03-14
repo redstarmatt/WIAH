@@ -15,7 +15,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS England', dataset: 'Adult Social Care Activity and Finance Report', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/adult-social-care-activity-and-finance-report', date: '2022/23' },
   { num: 2, name: 'Skills for Care', dataset: 'State of the Adult Social Care Sector and Workforce', url: 'https://www.skillsforcare.org.uk/', date: '2023' },
-  { num: 3, name: 'Dilnot Commission / DHSC', dataset: 'Care cap and means test reform', date: '2022' },
+  { num: 3, name: 'Dilnot Commission / DHSC', dataset: 'Care cap and means test reform', date: '2022', url: 'https://www.gov.uk/government/publications/fairer-care-funding-analysis-and-evidence-supporting-the-recommendations-of-the-dilnot-commission' },
   { num: 4, name: 'Home Office', dataset: 'Health and Care Worker visa statistics', url: 'https://www.gov.uk/government/collections/immigration-statistics-quarterly-release', date: '2023' },
 ];
 

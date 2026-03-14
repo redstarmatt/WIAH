@@ -37,7 +37,7 @@ function yearToDate(y: number): Date {
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Gross Domestic Expenditure on Research and Development (GERD)', url: 'https://www.ons.gov.uk/economy/governmentpublicsectorandtaxes/researchanddevelopmentexpenditure/bulletins/ukgrossdomesticexpenditureonresearchanddevelopment/2021', date: '2021' },
   { num: 2, name: 'OECD', dataset: 'Main Science and Technology Indicators', url: 'https://www.oecd.org/sti/msti.htm', date: '2021' },
-  { num: 3, name: 'European Commission', dataset: 'Horizon Europe Programme', date: '2024', note: 'UK readmitted January 2024' },
+  { num: 3, name: 'European Commission', dataset: 'Horizon Europe Programme', date: '2024', note: 'UK readmitted January 2024', url: 'https://ec.europa.eu/eurostat/' },
 ];
 
 // ── Page ─────────────────────────────────────────────────────────────────────

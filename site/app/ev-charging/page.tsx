@@ -51,7 +51,7 @@ const chargeAnnotations: Annotation[] = [
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DESNZ', dataset: 'EV charging infrastructure statistics', url: 'https://www.gov.uk/government/collections/electric-vehicle-charging-infrastructure-statistics', date: '2024' },
   { num: 2, name: 'DVLA', dataset: 'Vehicle licensing statistics', url: 'https://www.gov.uk/government/statistical-data-sets/vehicle-licensing-statistics', date: '2024' },
-  { num: 3, name: 'Which?', dataset: 'EV charging mystery shopping survey', date: '2024' },
+  { num: 3, name: 'Which?', dataset: 'EV charging mystery shopping survey', date: '2024', url: 'https://www.which.co.uk/' },
 ];
 
 export default function EvChargingPage() {

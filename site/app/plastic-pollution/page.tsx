@@ -14,8 +14,8 @@ import RelatedTopics from '@/components/RelatedTopics';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Defra', dataset: 'UK Statistics on Waste', url: 'https://www.gov.uk/government/statistics/uk-waste-data', date: '2024' },
   { num: 2, name: 'Defra', dataset: 'Packaging Waste Statistics', url: 'https://www.gov.uk/government/statistics/packaging-waste-statistics', date: '2023' },
-  { num: 3, name: 'Eunomia / WWF', dataset: 'Plastic Waste Flows — UK Assessment', date: '2023' },
-  { num: 4, name: 'Greenpeace', dataset: 'UK Plastic Waste Exports Investigation', date: '2023' },
+  { num: 3, name: 'Eunomia / WWF', dataset: 'Plastic Waste Flows — UK Assessment', date: '2023', url: 'https://www.eunomia.co.uk/reports-tools/' },
+  { num: 4, name: 'Greenpeace', dataset: 'UK Plastic Waste Exports Investigation', date: '2023', url: 'https://www.greenpeace.org.uk/' },
   { num: 5, name: 'Defra', dataset: 'Extended Producer Responsibility for Packaging', url: 'https://www.gov.uk/government/consultations/packaging-and-packaging-waste-introducing-extended-producer-responsibility', date: '2024' },
 ];
 

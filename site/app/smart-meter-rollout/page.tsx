@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DESNZ', dataset: 'Smart Meters Statistical Release', url: 'https://www.gov.uk/government/collections/smart-meters-statistics', date: '2024' },
   { num: 2, name: 'DESNZ', dataset: 'Smart Meter Impact Assessment', url: 'https://www.gov.uk/government/publications/smart-metering-implementation-programme-cost-benefit-analysis', date: '2024' },
-  { num: 3, name: 'DCC', dataset: 'Data Communications Company — SMETS1 enrolment progress', date: '2024' },
+  { num: 3, name: 'DCC', dataset: 'Data Communications Company — SMETS1 enrolment progress', date: '2024', url: 'https://www.smartdcc.co.uk/' },
 ];
 
 interface SmartMeterRolloutData {

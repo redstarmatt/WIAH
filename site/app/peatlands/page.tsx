@@ -15,7 +15,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'IUCN UK Peatland Programme', dataset: 'UK Peatland Assessment', url: 'https://www.iucn-uk-peatlandprogramme.org/', date: '2024', note: '3.2 billion tonnes of carbon stored; 80% degraded' },
   { num: 2, name: 'DESNZ', dataset: 'UK Greenhouse Gas Inventory (LULUCF)', url: 'https://www.gov.uk/government/organisations/department-for-energy-security-and-net-zero/about/statistics', date: '2024', note: '23 MtCO2e per year from degraded peatland' },
-  { num: 3, name: 'NatureScot', dataset: 'Peatland ACTION Programme Annual Report', date: '2024' },
+  { num: 3, name: 'NatureScot', dataset: 'Peatland ACTION Programme Annual Report', date: '2024', url: 'https://www.nature.scot/professional-advice/' },
 ];
 
 interface PeatlandsData {

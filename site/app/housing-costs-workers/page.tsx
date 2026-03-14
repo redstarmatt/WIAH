@@ -14,7 +14,7 @@ import RelatedTopics from '@/components/RelatedTopics';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Annual Survey of Hours and Earnings (ASHE)', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/annualsurveyofhoursandearnings/2023', date: '2023', note: 'Median monthly take-home pay by region' },
   { num: 2, name: 'Rightmove', dataset: 'Rental Market Tracker', url: 'https://www.rightmove.co.uk/news/rental-market-tracker/', date: '2023', note: 'Median monthly rent £2,100 in London' },
-  { num: 3, name: 'Savills', dataset: 'Residential Research — Rental Affordability', date: '2023', note: 'Long-run rental affordability analysis; London ratio rose from 32% in 2000' },
+  { num: 3, name: 'Savills', dataset: 'Residential Research — Rental Affordability', date: '2023', note: 'Long-run rental affordability analysis; London ratio rose from 32% in 2000', url: 'https://www.savills.co.uk/research/' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

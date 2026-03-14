@@ -53,7 +53,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Deaths related to drug poisoning in England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/deathsrelatedtodrugpoisoninginenglandandwales/latest', date: '2024' },
   { num: 2, name: 'OHID', dataset: 'National Drug Treatment Monitoring System (NDTMS)', url: 'https://www.gov.uk/government/collections/statistics-from-the-national-drug-treatment-monitoring-system-ndtms', date: '2024' },
   { num: 3, name: 'OHID', dataset: 'Public health grant expenditure', url: 'https://www.gov.uk/government/organisations/office-for-health-improvement-and-disparities/about/statistics', date: '2024' },
-  { num: 4, name: 'Dame Carol Black', dataset: 'Independent Review of Drugs', date: '2021' },
+  { num: 4, name: 'Dame Carol Black', dataset: 'Independent Review of Drugs', date: '2021', url: 'https://www.gov.uk/government/publications/review-of-drugs-phase-two-report' },
 ];
 
 export default function AddictionServicesPage() {

@@ -16,7 +16,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'The Lancet', dataset: 'Effect of HPV vaccination on cervical cancer in England', url: 'https://www.thelancet.com/', date: 'November 2021', note: 'Cervical cancer rates 87% lower in women vaccinated at age 12-13' },
   { num: 2, name: 'UKHSA', dataset: 'HPV Vaccination Coverage in Adolescents in England', url: 'https://www.gov.uk/government/publications/hpv-vaccine-coverage-in-england', date: '2024', note: 'Girls uptake 84.1%; boys 76.8%; London below 80% for girls' },
   { num: 3, name: 'Cancer Research UK / ONS', dataset: 'Cervical Cancer Incidence Statistics', url: 'https://www.cancerresearchuk.org/health-professional/cancer-statistics/statistics-by-cancer-type/cervical-cancer/incidence', date: '2024', note: 'Cervical cancer incidence fell 53% since 2010' },
-  { num: 4, name: 'WHO', dataset: 'Global Strategy to Accelerate the Elimination of Cervical Cancer', date: '2020', note: 'Target: 90% HPV vaccination coverage by 2030' },
+  { num: 4, name: 'WHO', dataset: 'Global Strategy to Accelerate the Elimination of Cervical Cancer', date: '2020', note: 'Target: 90% HPV vaccination coverage by 2030', url: 'https://www.who.int/data' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

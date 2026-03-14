@@ -11,7 +11,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS England', dataset: 'Talking Therapies (formerly IAPT) monthly statistics', url: 'https://www.england.nhs.uk/mental-health/resources/talking-therapies/', date: '2024' },
   { num: 2, name: 'NHS England', dataset: 'Mental health services monthly statistics', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/mental-health-monthly-statistics/', date: '2024' },
-  { num: 3, name: 'Mental Health Foundation', dataset: 'Untreated mental health need estimates', date: '2024' },
+  { num: 3, name: 'Mental Health Foundation', dataset: 'Untreated mental health need estimates', date: '2024', url: 'https://www.mentalhealth.org.uk/our-work/research/' },
 ];
 
 export default function MentalHealthWaitsPage() {

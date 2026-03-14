@@ -56,7 +56,7 @@ const editorialRefs: Reference[] = [
   { num: 2, name: 'ONS', dataset: 'Labour Force Survey — Reason for economic inactivity (16-24)', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/neet', date: '2024' },
   { num: 3, name: 'DfE', dataset: 'NEET and participation statistics', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/neet-statistics-annual-brief', date: '2024' },
   { num: 4, name: 'DfE', dataset: 'Children looked after in England including adoptions — care leaver outcomes', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions', date: '2024' },
-  { num: 5, name: 'Public Health England', dataset: 'Longitudinal evidence on NEET scarring effects and lifetime costs', date: '2023', note: 'Estimated fiscal cost exceeds £10bn per year' },
+  { num: 5, name: 'Public Health England', dataset: 'Longitudinal evidence on NEET scarring effects and lifetime costs', date: '2023', note: 'Estimated fiscal cost exceeds £10bn per year', url: 'https://www.gov.uk/government/organisations/uk-health-security-agency/about/statistics' },
 ];
 
 // ── Helpers ──────────────────────────────────────────────────────────────────

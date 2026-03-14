@@ -30,7 +30,7 @@ interface NhsProductivityData {
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Public Service Productivity: Healthcare', url: 'https://www.ons.gov.uk/', date: '2024', note: 'Productivity index at 96.8 (2014=100); output per worker at 90.3' },
   { num: 2, name: 'NHS Digital', dataset: 'NHS Workforce Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/nhs-workforce-statistics', date: '2024', note: '1.3m FTE staff in 2024, up 17% from 1.1m in 2019' },
-  { num: 3, name: 'Lord Darzi', dataset: 'Independent Investigation of the NHS in England', date: '2024', note: 'Closing the productivity gap equivalent to treating 1.5m additional patients annually' },
+  { num: 3, name: 'Lord Darzi', dataset: 'Independent Investigation of the NHS in England', date: '2024', note: 'Closing the productivity gap equivalent to treating 1.5m additional patients annually', url: 'https://www.gov.uk/government/publications/independent-investigation-of-the-nhs-in-england' },
 ];
 
 function yearToDate(y: number): Date {

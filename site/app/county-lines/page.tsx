@@ -47,7 +47,7 @@ const annotations2: Annotation[] = [
 const editorialRefs: Reference[] = [
   { num: 1, name: 'NCA', dataset: 'County Lines Strategic Assessment', url: 'https://www.nationalcrimeagency.gov.uk/what-we-do/crime-threats/drug-trafficking/county-lines', date: '2024' },
   { num: 2, name: 'Home Office', dataset: 'National Referral Mechanism Statistics', url: 'https://www.gov.uk/government/collections/national-referral-mechanism-statistics', date: '2024' },
-  { num: 3, name: 'Contextual Safeguarding Network', dataset: 'National Evaluation of Contextual Safeguarding Pilots', date: '2024' },
+  { num: 3, name: 'Contextual Safeguarding Network', dataset: 'National Evaluation of Contextual Safeguarding Pilots', date: '2024', url: 'https://www.contextualsafeguarding.org.uk/' },
 ];
 
 export default function CountyLinesPage() {

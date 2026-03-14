@@ -15,7 +15,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Labour Force Survey — Self-Employment', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes', date: '2024', note: 'Self-employment peaked at 4.93M (2019), fell to 4.29M (2024); 700K left during COVID; most not returned' },
   { num: 2, name: 'HMRC', dataset: 'Self-Employment Income Support Scheme', url: 'https://www.gov.uk/government/collections/hmrc-statistics', date: '2022', note: '2.7M received SEISS grants; 1.4M excluded (newly self-employed, >£50K profits, no 2018/19 return)' },
-  { num: 3, name: 'IPSE', dataset: 'Freelancer Confidence Index', date: 'Q4 2024', note: '45% of freelancers experienced 50%+ month-to-month income swings in 2023; median weekly earnings £310' },
+  { num: 3, name: 'IPSE', dataset: 'Freelancer Confidence Index', date: 'Q4 2024', note: '45% of freelancers experienced 50%+ month-to-month income swings in 2023; median weekly earnings £310', url: 'https://www.ipse.co.uk/ipse-research.html' },
   { num: 4, name: 'Resolution Foundation', dataset: 'Self-Employment Incomes Analysis', url: 'https://www.resolutionfoundation.org', date: '2024', note: '40% of Self Assessment returns below personal allowance; 16% pension participation vs 79% for employees' },
 ];
 
