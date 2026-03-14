@@ -36,7 +36,7 @@ function yearToDate(y: number): Date {
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Annual Survey of Hours and Earnings (ASHE)', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/annualsurveyofhoursandearnings/2023', date: '2023' },
-  { num: 2, name: 'ONS', dataset: 'ASHE Historical Series — Median full-time gross annual pay by region', date: '1997–2023' },
+  { num: 2, name: 'ONS', dataset: 'ASHE Historical Series — Median full-time gross annual pay by region', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/annualsurveyofhoursandearnings/2023', date: '1997–2023' },
 ];
 
 // ── Page ─────────────────────────────────────────────────────────────────────

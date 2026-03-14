@@ -13,7 +13,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Ministry of Justice', dataset: 'Proven Reoffending Statistics Quarterly Bulletin', url: 'https://www.gov.uk/government/statistics/proven-reoffending-statistics-quarterly-bulletin-england-and-wales', date: '2024' },
-  { num: 2, name: 'HM Treasury / MoJ', dataset: 'Cost of Reoffending Analysis', date: '2023' },
+  { num: 2, name: 'HM Treasury / MoJ', dataset: 'Cost of Reoffending Analysis', url: 'https://www.gov.uk/government/organisations/hm-treasury/about/statistics', date: '2023' },
   { num: 3, name: 'Howard League for Penal Reform', dataset: 'Reoffending Data Analysis', url: 'https://howardleague.org/', date: '2024' },
   { num: 4, name: 'Institute for Fiscal Studies', dataset: 'Short Custodial Sentences and Reoffending', date: '2023' },
   { num: 5, name: 'Ministry of Justice', dataset: 'What Works to Reduce Reoffending', date: '2024' },

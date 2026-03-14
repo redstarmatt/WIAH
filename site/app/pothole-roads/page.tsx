@@ -12,7 +12,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Asphalt Industry Alliance', dataset: 'ALARM Survey (Annual Local Authority Road Maintenance)', url: 'https://www.asphaltuk.org/alarm-survey-page/', date: '2024', note: '£16.3bn maintenance backlog; up from £10bn in 2015; average road resurfaced every 77 years' },
-  { num: 2, name: 'DfT', dataset: 'Local Authority Highway Maintenance Expenditure', date: '2023', note: 'Spending fell 22% in real terms 2010/11 to 2022/23; from £4.7bn to £3.7bn' },
+  { num: 2, name: 'DfT', dataset: 'Local Authority Highway Maintenance Expenditure', url: 'https://www.gov.uk/government/organisations/department-for-transport/about/statistics', date: '2023', note: 'Spending fell 22% in real terms 2010/11 to 2022/23; from £4.7bn to £3.7bn' },
   { num: 3, name: 'RAC', dataset: 'Pothole Index', url: 'https://www.rac.co.uk/breakdown-cover/rac-report-on-motoring/pothole-index', date: '2024', note: '29,377 breakdowns from pothole damage in 2023; average repair cost £290' },
 ];
 

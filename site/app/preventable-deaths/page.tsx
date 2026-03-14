@@ -14,8 +14,8 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Avoidable Mortality in the UK', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/causesofdeath/bulletins/avoidablemortalityinenglandandwales', date: '2021', note: 'Avoidable mortality fell 27% since 2010 from 293 to 218 per 100,000' },
-  { num: 2, name: 'ONS', dataset: 'Avoidable Mortality — Regional Breakdown', date: '2021', note: 'North East (276/100k) is 66% higher than London (166/100k)' },
-  { num: 3, name: 'ONS', dataset: 'Deaths Related to Drug Poisoning', date: '2023', note: 'Drug misuse deaths more than doubled since 2012; smoking kills 74,600/yr' },
+  { num: 2, name: 'ONS', dataset: 'Avoidable Mortality — Regional Breakdown', url: 'https://www.ons.gov.uk/', date: '2021', note: 'North East (276/100k) is 66% higher than London (166/100k)' },
+  { num: 3, name: 'ONS', dataset: 'Deaths Related to Drug Poisoning', url: 'https://www.ons.gov.uk/', date: '2023', note: 'Drug misuse deaths more than doubled since 2012; smoking kills 74,600/yr' },
 ];
 
 // -- Types ------------------------------------------------------------------

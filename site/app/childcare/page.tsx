@@ -16,7 +16,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'Coram Family and Childcare', dataset: 'Childcare Survey', url: 'https://www.coram.org.uk/resource/childcare-survey-2024', date: '2024' },
   { num: 2, name: 'OECD', dataset: 'Family Database — childcare costs', url: 'https://www.oecd.org/els/family/database.htm', date: '2024' },
   { num: 3, name: 'DfE', dataset: 'Education provision: children under 5', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/education-provision-children-under-5', date: '2023' },
-  { num: 4, name: 'NDNA', dataset: 'Nursery funding gap analysis', date: '2024' },
+  { num: 4, name: 'NDNA', dataset: 'Nursery funding gap analysis', url: 'https://www.ndna.org.uk/resources/', date: '2024' },
 ];
 
 interface NurseryCostYear {

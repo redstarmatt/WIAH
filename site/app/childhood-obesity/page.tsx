@@ -13,7 +13,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS Digital', dataset: 'National Child Measurement Programme', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/national-child-measurement-programme', date: '2023/24' },
-  { num: 2, name: 'NHS England', dataset: 'NHS Long Term Plan — obesity cost estimates', date: '2024' },
+  { num: 2, name: 'NHS England', dataset: 'NHS Long Term Plan — obesity cost estimates', url: 'https://www.england.nhs.uk/statistics/', date: '2024' },
 ];
 
 // -- Types ------------------------------------------------------------------

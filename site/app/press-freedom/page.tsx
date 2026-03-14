@@ -13,7 +13,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Reporters Without Borders', dataset: 'World Press Freedom Index', url: 'https://rsf.org/en/index', date: '2024', note: 'UK ranked 23rd of 180 countries; improved from 40th in 2017; methodology changed in 2022' },
-  { num: 2, name: 'Ofcom', dataset: 'Media Nations Report', date: '2023', note: 'Three companies control ~90% of national newspaper circulation' },
+  { num: 2, name: 'Ofcom', dataset: 'Media Nations Report', url: 'https://www.ofcom.org.uk/research-and-data', date: '2023', note: 'Three companies control ~90% of national newspaper circulation' },
   { num: 3, name: 'Press Gazette', dataset: 'Local News Tracker', date: '2023', note: '320 local newspapers closed since 2009; 58% of local authority areas have no dedicated reporter' },
   { num: 4, name: 'Cairncross Review', dataset: 'A Sustainable Future for Journalism', date: '2019', note: 'Recommended public funding for local journalism; government committed only £2m to Future News Fund' },
 ];
