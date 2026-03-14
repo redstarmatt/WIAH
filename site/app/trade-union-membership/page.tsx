@@ -126,6 +126,13 @@ export default function TopicPage() {
           colour="#6B7280"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Trade union membership in the UK has fallen from a peak of 53% of workers in 1979 to 22.3% in 2024, a decline driven by deindustrialisation, the growth of the service economy and successive legislative restrictions on union activity.<Cite nums={1} /> But the aggregate figure conceals a sharp divide. Public sector membership remains at 50%, underpinning the collective bargaining that determines pay for millions of NHS staff, teachers and civil servants. In the private sector, membership stands at just 12.8%, and in sectors like hospitality, retail and logistics it is lower still. For most private sector workers, union representation is effectively absent from their working lives.</p>
+            <p>The 2022-23 strike wave briefly reversed the narrative of terminal decline. Working days lost surged to 2.7 million in 2023, the highest since 1989, as unions demonstrated they could still mobilise at scale when real wages collapsed.<Cite nums={2} /> Membership among 18-24 year olds has risen three percentage points since 2019, and new organising campaigns in Amazon warehouses, fast food chains and the gig economy suggest pockets of growth. The 2024 Employment Rights Bill, which strengthens rights to organise and simplifies recognition processes, may accelerate this trend. But reversing four decades of structural decline requires more than legislative change; it requires unions to reach workers in fragmented, precarious employment where traditional organising models struggle.</p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

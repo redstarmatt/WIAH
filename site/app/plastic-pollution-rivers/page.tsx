@@ -127,6 +127,13 @@ export default function TopicPage() {
           colour="#2A9D8F"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>An estimated 70,000 tonnes of plastic enters Britain's rivers each year, from sources ranging from storm overflow discharges and road runoff to agricultural film and litter. Microplastics, fragments smaller than 5mm shed from tyres, synthetic clothing and degraded packaging, have been found in every English river tested. The ecological consequences are measurable: only 14% of English rivers achieve good ecological status under the Water Framework Directive, a target that was supposed to reach 75% by 2027 and has already been acknowledged as unachievable. Plastic pollution is one of several pressures, alongside agricultural diffuse pollution and sewage discharges, but its persistence in the environment means it accumulates over time rather than being flushed through the system.<Cite nums={1} /></p>
+            <p>The regulatory response has been slow to match the scale of the problem. The Environment Act 2021 imposed a statutory duty on water companies to progressively reduce storm overflow discharges, and the Storm Overflow Discharge Reduction Plan requires elimination of overflows causing serious ecological harm by 2035. But water companies have spent decades underinvesting in sewage infrastructure while paying out billions in dividends, and the cost of upgrading the combined sewer system, which mixes rainwater with foul sewage, is estimated at over £50 billion. Upstream interventions, including tyre microplastic filters, washing machine fibre traps and extended producer responsibility for packaging, could reduce the volume of plastic reaching rivers, but none are yet operating at the scale needed to reverse the trend.<Cite nums={2} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },
