@@ -18,7 +18,7 @@ const editorialRefs: Reference[] = [
 
 const diabetesPrevalenceValues = [5.8, 6.0, 6.2, 6.4, 6.6, 6.8, 7.0, 7.2, 7.5, 7.8, 8.0];
 const hba1cControlValues = [67.3, 67.9, 68.4, 69.1, 70.2, 69.8, 71.3, 72.1, 73.4, 74.2, 75.0];
-const amputation Values = [8600, 8800, 9100, 9200, 9400, 8900, 9600, 9800, 10100, 10300, 10500];
+const amputationValues = [8600, 8800, 9100, 9200, 9400, 8900, 9600, 9800, 10100, 10300, 10500];
 const preventionReferralValues = [0, 0, 12000, 32000, 65000, 72000, 105000, 180000, 218000, 240000, 255000];
 
 const series1: Series[] = [
@@ -27,7 +27,7 @@ const series1: Series[] = [
 ];
 
 const series2: Series[] = [
-  { id: 'amputation', label: 'Diabetes-related amputations per year', colour: '#E63946', data: amputation Values.map((v, i) => ({ date: new Date(2013 + i, 5, 1), value: v })) },
+  { id: 'amputation', label: 'Diabetes-related amputations per year', colour: '#E63946', data: amputationValues.map((v, i) => ({ date: new Date(2013 + i, 5, 1), value: v })) },
   { id: 'prevention', label: 'NHS DPP referrals per year', colour: '#264653', data: preventionReferralValues.map((v, i) => ({ date: new Date(2013 + i, 5, 1), value: v })) },
 ];
 

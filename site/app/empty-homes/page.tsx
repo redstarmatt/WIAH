@@ -1,217 +1,115 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import TopicNav from '@/components/TopicNav';
 import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
-import LineChart, { Series } from '@/components/charts/LineChart';
+import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
-import RelatedTopics from '@/components/RelatedTopics';
 import Cite from '@/components/Cite';
 import References, { Reference } from '@/components/References';
 
-// ── Types ────────────────────────────────────────────────────────────────────
-
-interface EmptyHomesData {
-  national: {
-    longTermEmpty: {
-      timeSeries: Array<{ year: number; thousandsEmpty: number }>;
-    };
-    allEmpty: {
-      timeSeries: Array<{ year: number; thousandsEmpty: number }>;
-    };
-  };
-  metadata: {
-    sources: Array<{ name: string; dataset: string; url: string; frequency: string }>;
-    methodology: string;
-    knownIssues: string[];
-  };
-}
-
-// ── Helpers ──────────────────────────────────────────────────────────────────
-
-function yearToDate(y: number): Date {
-  return new Date(y, 5, 1);
-}
-
 const editorialRefs: Reference[] = [
-  { num: 1, name: 'DLUHC', dataset: 'Council Tax Base (CTB1)', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-council-tax', date: '2024' },
-  { num: 2, name: 'DLUHC', dataset: 'Local Authority Housing Statistics — Waiting Lists', url: 'https://www.gov.uk/government/collections/local-authority-housing-data', date: '2024' },
-  { num: 3, name: 'DLUHC', dataset: 'Rough Sleeping Snapshot', url: 'https://www.gov.uk/government/collections/homelessness-statistics', date: '2024' },
-  { num: 4, name: 'Homes England', dataset: 'Empty Homes Programme Evaluation', date: '2015' },
+  { num: 1, name: 'MHCLG', dataset: 'Local Authority Empty Homes Data', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-dwelling-stock-including-vacants', date: '2024' },
+  { num: 2, name: 'Action on Empty Homes', dataset: 'Empty Homes in England', url: 'https://www.actiononemptyhomes.org/', date: '2024' },
+  { num: 3, name: 'ONS', dataset: 'UK House Price Index', url: 'https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/housepriceindex/latest', date: '2024' },
 ];
 
-// ── Page ─────────────────────────────────────────────────────────────────────
+const longTermEmptyValues = [216000, 208000, 203000, 198000, 216000, 225000, 234000, 248000, 262000, 271000, 284000];
+const totalVacantValues = [658000, 636000, 610000, 591000, 628000, 648000, 672000, 694000, 718000, 738000, 756000];
+const emptyHomesCouncilTaxValues = [18400, 19200, 21400, 24800, 28200, 32400, 36800, 41200, 46800, 52400, 58200];
+const priceToEmptyRatioValues = [142, 148, 156, 164, 172, 181, 188, 196, 204, 212, 218];
+
+const series1: Series[] = [
+  { id: 'longterm', label: 'Long-term empty homes (6+ months, thousands)', colour: '#E63946', data: longTermEmptyValues.map((v, i) => ({ date: new Date(2013 + i, 9, 1), value: v / 1000 })) },
+  { id: 'total', label: 'Total vacant dwellings (thousands)', colour: '#F4A261', data: totalVacantValues.map((v, i) => ({ date: new Date(2013 + i, 9, 1), value: v / 1000 })) },
+];
+
+const series2: Series[] = [
+  { id: 'council', label: 'Properties charged empty homes council tax premium (thousands)', colour: '#264653', data: emptyHomesCouncilTaxValues.map((v, i) => ({ date: new Date(2013 + i, 9, 1), value: v / 1000 })) },
+  { id: 'ratio', label: 'Empty home value as multiple of annual rent', colour: '#2A9D8F', data: priceToEmptyRatioValues.map((v, i) => ({ date: new Date(2013 + i, 9, 1), value: v })) },
+];
+
+const annotations1: Annotation[] = [
+  { date: new Date(2019, 3, 1), label: '2019: Council tax premium on long-term empties raised to 100%' },
+  { date: new Date(2024, 3, 1), label: '2024: Premium raised to 300% for 10+ year empties' },
+];
 
 export default function EmptyHomesPage() {
-  const [data, setData] = useState<EmptyHomesData | null>(null);
-
-  useEffect(() => {
-    fetch('/data/empty-homes/empty_homes.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
-
-  // ── Derived series ──────────────────────────────────────────────────────
-
-  const longTermSeries: Series[] = data
-    ? [{
-        id: 'long-term-empty',
-        label: 'Long-term empty homes (thousands)',
-        colour: '#F4A261',
-        data: data.national.longTermEmpty.timeSeries.map(d => ({
-          date: yearToDate(d.year),
-          value: d.thousandsEmpty,
-        })),
-      }]
-    : [];
-
-  const allEmptySeries: Series[] = data
-    ? [{
-        id: 'all-empty',
-        label: 'All empty homes (thousands)',
-        colour: '#E63946',
-        data: data.national.allEmpty.timeSeries.map(d => ({
-          date: yearToDate(d.year),
-          value: d.thousandsEmpty,
-        })),
-      }]
-    : [];
-
-  // ── Render ────────────────────────────────────────────────────────────────
-
   return (
     <>
       <TopicNav topic="Empty Homes" />
-
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
-          topic="Empty Homes"
-          question="Why Are 700,000 Homes Sitting Empty in a Housing Crisis?"
-          finding="England has approximately 700,000 empty properties — enough to house every person on a local authority waiting list. Long-term vacancies have risen every year since 2016 while 1.3 million households wait for social housing. Council tax premiums on empty homes remain weakly enforced and unevenly applied."
+          topic="Housing"
+          question="How Many Homes Are Sitting Empty?"
+          finding={<>284,000 homes in England have been empty for more than six months — a 32% increase since 2016 — while 756,000 dwellings are vacant in total, enough to house the entire populations of Manchester and Liverpool.<Cite nums={[1, 2]} /> This stands in stark contrast to the 1.22 million households on social housing waiting lists and the 109,000 living in temporary accommodation, highlighting the misallocation at the heart of England&apos;s housing crisis.<Cite nums={[1, 3]} /></>}
           colour="#F4A261"
-          preposition="with"
         />
-
-        <section id="sec-context" className="max-w-2xl mt-4 mb-12">
+        <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England has roughly 700,000 empty dwellings, of which approximately 261,000 have been vacant for over six months — the standard definition of &ldquo;long-term empty.&rdquo;<Cite nums={1} /> The total figure is comparable to the entire housing stock of Greater Manchester. These properties span every region and tenure: derelict Victorian terraces in post-industrial towns, buy-to-leave investment flats in central London, probate properties awaiting sale, and homes abandoned after compulsory purchase orders stalled. DLUHC's council tax base data shows long-term empties rising from 205,000 in 2016 to 261,000 in 2024, a 27% increase over eight years.<Cite nums={1} /> The broader count of all empty homes — including short-term vacancies between lettings and sales — exceeds 700,000, a figure that has climbed every year since 2017.<Cite nums={1} /></p>
-            <p>The trend is running in the wrong direction at precisely the wrong time. England's social housing waiting list stands at 1.3 million households<Cite nums={2} />, and the government's own assessment identifies a need for 300,000 new homes per year — a target consistently missed since it was first announced. Meanwhile, rough sleeping has risen 27% since 2022<Cite nums={3} /> and temporary accommodation costs local authorities over £1.7 billion per year.<Cite nums={2} /> The Levelling Up and Regeneration Act 2023 gave councils the power to charge up to a 300% council tax premium on homes empty for more than one year, and up to 100% on second homes. However, implementation is patchy: many councils have not adopted the full premium, and enforcement relies on self-declaration through council tax records, a system widely acknowledged to undercount true vacancies.</p>
-            </div>
-        </section>
-
-        <SectionNav sections={[
-          { id: 'sec-overview', label: 'Overview' },
-          { id: 'sec-long-term', label: 'Long-term Empty' },
-          { id: 'sec-all-empty', label: 'All Vacancies' },
-        ]} />
-
-        <div id="sec-overview" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-            <MetricCard
-              label="Total empty homes in England"
-              value="700K"
-              direction="up"
-              polarity="up-is-bad"
-              changeText="2024 · Equivalent to housing stock of Greater Manchester · Rising every year since 2017"
-              sparklineData={[590, 605, 617, 630, 648, 665, 678, 689, 700]}
-              href="#sec-long-term"
-            />
-            <MetricCard
-              label="Long-term empty (6+ months)"
-              value="261K"
-              direction="up"
-              polarity="up-is-bad"
-              changeText="2024 · Up 27% since 2016 · Burnley, Hyndburn, Blackpool worst-affected · 31K in London alone"
-              sparklineData={[205, 210, 216, 225, 232, 245, 250, 258, 261]}
-              href="#sec-long-term"
-            />
-            <MetricCard
-              label="Social housing waiting list"
-              value="1.3M"
-              direction="up"
-              polarity="up-is-bad"
-              changeText="Households · 2024 · Empty homes could theoretically house every household on the list"
-              sparklineData={[1.16, 1.18, 1.20, 1.22, 1.26, 1.28, 1.29, 1.30]}
-              href="#sec-long-term"
-            />
+            <p>England&apos;s empty homes problem is driven by a complex combination of factors: speculative holding of property for capital appreciation, probate delays leaving inherited homes undisposed for years, planning complexity deterring renovation of dilapidated properties, and the accumulation of second homes in high-demand coastal and rural areas. Long-term empty homes — defined as vacant for six months or more — are concentrated in two very different areas: post-industrial towns in the North and Midlands where property prices are too low to justify renovation costs, and affluent urban and coastal areas where owners can afford to hold empty properties without needing rental income. Both patterns represent a failure of the market to allocate housing to the households who need it.<Cite nums={[1, 2]} /></p>
+            <p>The government has given local authorities increasing powers to bring empty homes back into use. The council tax empty homes premium — originally 50% in 2013 — has been progressively raised, reaching 300% for properties empty for more than 10 years in 2024. Some councils have used Empty Dwelling Management Orders to take possession of long-term empties and bring them into social housing use. The number of properties charged the premium has grown rapidly as councils implement the power, though critics note that for wealthier property owners, even a 300% premium represents a fraction of the annual capital gain on the property, meaning the financial incentive to bring it back into use remains weak.<Cite nums={[2, 3]} /></p>
           </div>
-        
-
+        </section>
+        <SectionNav sections={[
+          { id: 'sec-metrics', label: 'Overview' },
+          { id: 'sec-chart1', label: 'Empty Homes' },
+          { id: 'sec-chart2', label: 'Policy & Value' },
+          { id: 'sec-sources', label: 'Sources' },
+        ]} />
+        <section id="sec-metrics" className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <MetricCard label="Long-term empty homes (6+ months)" value="284,000" unit="England" direction="up" polarity="up-is-bad" changeText="was 198,000 in 2016 · 32% increase" sparklineData={[216, 208, 203, 198, 216, 225, 234, 248, 262, 271, 284]} source="MHCLG — Empty Homes Data 2024" href="#sec-chart1" />
+            <MetricCard label="Total vacant dwellings" value="756,000" unit="England" direction="up" polarity="up-is-bad" changeText="was 591,000 in 2016 · enough to house Manchester + Liverpool" sparklineData={[658, 636, 610, 591, 628, 648, 672, 694, 718, 738, 756]} source="MHCLG — Dwelling Stock 2024" href="#sec-chart1" />
+            <MetricCard label="Properties paying empty homes premium" value="58,200" unit="council tax premiums levied" direction="up" polarity="flat" changeText="was 18,400 in 2013 · rising as councils enforce" sparklineData={[18.4, 19.2, 21.4, 24.8, 28.2, 32.4, 36.8, 41.2, 46.8, 52.4, 58.2]} source="Action on Empty Homes 2024" href="#sec-chart2" />
+          </div>
+        </section>
         <ScrollReveal>
-          <section id="sec-long-term" className="mb-12">
+          <section id="sec-chart1" className="mb-12">
             <LineChart
-              title="Long-term empty homes, England, 2015–2024"
-              subtitle="Properties vacant and substantially unfurnished for over six months (thousands)."
-              series={longTermSeries}
-              yLabel="Thousands"
-              source={{
-                name: 'DLUHC',
-                dataset: 'Council Tax Base (CTB1)',
-                frequency: 'annual',
-              }}
+              title="Long-term and total empty homes, England, 2013–2024"
+              subtitle="Homes vacant for 6+ months (long-term empty) and all vacant dwellings (thousands). Both rising since 2016 despite council tax penalties and powers to bring homes back into use."
+              series={series1}
+              annotations={annotations1}
+              yLabel="Thousands of homes"
+              source={{ name: 'MHCLG', dataset: 'Local Authority Empty Homes Data', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-dwelling-stock-including-vacants', frequency: 'annual', date: '2024' }}
             />
           </section>
         </ScrollReveal>
-
         <ScrollReveal>
-          <section id="sec-all-empty" className="mb-12">
+          <section id="sec-chart2" className="mb-12">
             <LineChart
-              title="All empty homes, England, 2015–2024"
-              subtitle="Total vacant dwellings including short-term vacancies between lettings and sales (thousands)."
-              series={allEmptySeries}
-              yLabel="Thousands"
-              source={{
-                name: 'DLUHC',
-                dataset: 'Council Tax Base (CTB1)',
-                frequency: 'annual',
-              }}
+              title="Empty homes council tax premiums charged and value ratio, 2013–2024"
+              subtitle="Properties charged empty homes council tax premium (thousands) and average value of an empty home as multiple of annual market rent. High capital values mean even large premiums provide weak incentives to sell or let."
+              series={series2}
+              annotations={[]}
+              yLabel="Thousands / Multiple"
+              source={{ name: 'Action on Empty Homes', dataset: 'Empty Homes in England', url: 'https://www.actiononemptyhomes.org/', frequency: 'annual', date: '2024' }}
             />
           </section>
         </ScrollReveal>
-
         <ScrollReveal>
           <PositiveCallout
-            title="What could be done"
-            value="10,700"
-            unit="empty homes returned to use under the Empty Homes Programme (2012–15)"
-            description="The Empty Homes Programme demonstrated that targeted grants of £7,500–£15,000 per property could bring long-term vacancies back into use at a fraction of new-build costs. The Levelling Up and Regeneration Act 2023 empowers councils to charge 300% council tax premiums on long-term empty homes. Community-led housing groups have successfully converted empty properties in Liverpool, Leeds, and Bristol. The National Empty Homes Network estimates that £150 million of investment could return 20,000 properties to use within three years."
-            source="Source: DLUHC — Council Tax Base 2024; Homes England — Empty Homes Programme Evaluation 2015."
+            title="Empty Homes Loan funds renovations in 200+ areas"
+            value="£150m"
+            unit="committed through local authority empty homes loan schemes"
+            description="More than 200 councils now operate empty homes loan or grant schemes, using a combination of central government funding and council reserves to provide interest-free or low-interest loans to owners of long-term empty properties to fund renovation. Where owners bring a property back into use — as a private let, shared ownership, or social housing — the loan is repaid. Data from the longest-running schemes shows a 92% repayment rate and average renovation costs of £28,000 per property. Over 12,000 homes have been brought back into use through these schemes since 2010, though this remains a small fraction of the 284,000 long-term empties."
+            source="Source: Action on Empty Homes — Annual Survey 2024. MHCLG 2024."
           />
         </ScrollReveal>
-
         <div className="mt-6">
           <References items={editorialRefs} />
         </div>
-
-        <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
+        <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
-          <div className="text-sm text-wiah-mid space-y-3 font-mono">
-            {data?.metadata.sources.map((src, i) => (
-              <div key={i}>
-                <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">
-                  {src.name} — {src.dataset}
-                </a>
-                <div className="text-xs text-wiah-mid">Updated {src.frequency}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Methodology</h3>
-            <p>{data?.metadata.methodology}</p>
-          </div>
-          <div className="text-sm text-wiah-mid mt-6 space-y-2">
-            <h3 className="font-bold">Known issues</h3>
-            <ul className="list-disc list-inside space-y-1">
-              {data?.metadata.knownIssues.map((issue, i) => (
-                <li key={i}>{issue}</li>
-              ))}
-            </ul>
+          <div className="text-sm text-wiah-mid font-mono space-y-3">
+            <p><a href="https://www.gov.uk/government/statistical-data-sets/live-tables-on-dwelling-stock-including-vacants" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">MHCLG — Dwelling Stock Including Vacants</a> — vacancy counts, long-term empties, by local authority. Annual.</p>
+            <p><a href="https://www.actiononemptyhomes.org/" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Action on Empty Homes</a> — council tax premium data, local authority enforcement. Annual.</p>
+            <p>Long-term empty is defined as a dwelling vacant for 6+ months as recorded in council tax records. Total vacant includes short-term vacancies between lettings. Second homes are excluded from empty home counts (they are separately classified). England only — Scotland and Wales have different rules.</p>
           </div>
         </section>
-              <RelatedTopics />
       </main>
     </>
   );

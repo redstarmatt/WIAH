@@ -19,11 +19,11 @@ const editorialRefs: Reference[] = [
 const investmentGdpValues = [9.4, 9.6, 9.8, 9.9, 9.7, 9.5, 8.8, 9.0, 9.1, 9.2, 9.3];
 const rdSpendingValues = [18.2, 18.5, 19.0, 19.4, 19.8, 20.1, 21.4, 22.0, 22.4, 22.8, 23.2];
 const machineryInvestValues = [58.2, 59.4, 61.8, 63.2, 62.4, 57.8, 60.1, 62.3, 63.8, 65.1, 66.4];
-const oecd Average = [12.8, 12.9, 13.1, 13.2, 13.0, 11.8, 12.5, 12.8, 13.0, 13.2, 13.4];
+const oecdAverage = [12.8, 12.9, 13.1, 13.2, 13.0, 11.8, 12.5, 12.8, 13.0, 13.2, 13.4];
 
 const series1: Series[] = [
   { id: 'uk', label: 'UK business investment (% of GDP)', colour: '#E63946', data: investmentGdpValues.map((v, i) => ({ date: new Date(2013 + i, 5, 1), value: v })) },
-  { id: 'oecd', label: 'OECD average business investment (% of GDP)', colour: '#6B7280', data: oecd Average.map((v, i) => ({ date: new Date(2013 + i, 5, 1), value: v })) },
+  { id: 'oecd', label: 'OECD average business investment (% of GDP)', colour: '#6B7280', data: oecdAverage.map((v, i) => ({ date: new Date(2013 + i, 5, 1), value: v })) },
 ];
 
 const series2: Series[] = [

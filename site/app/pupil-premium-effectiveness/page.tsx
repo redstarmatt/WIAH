@@ -40,7 +40,7 @@ export default function PupilPremiumEffectivenessPage() {
   return (
     <>
       <TopicNav topic="Pupil Premium Effectiveness" />
-      <main className="max-w-5xl mx-auto px<br />-6 py-12">
+      <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Education"
           question="Is the Pupil Premium Closing the Attainment Gap?"
