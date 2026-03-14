@@ -127,6 +127,13 @@ export default function TopicPage() {
           colour="#6B7280"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>The UK's fatal workplace injury rate has fallen to 0.42 per 100,000 workers, among the lowest in Europe and a significant improvement from the 1970s when over 600 workers died at work each year. But 138 people were still killed on the job in 2024/25, and the sectoral concentration is stark: construction accounts for 32% of all fatalities despite employing just 5% of the workforce, while agriculture has a fatality rate roughly 18 times the all-industry average.<Cite nums={1} /> Falls from height, being struck by moving vehicles and contact with moving machinery account for the majority of deaths, patterns that have persisted for decades and reflect the irreducible physical dangers of these industries.</p>
+            <p>Non-fatal injuries present a more ambiguous picture. The Labour Force Survey records around 561,000 self-reported workplace injuries per year, but only 60,000 appear in the formal RIDDOR reporting system, suggesting substantial under-reporting by employers.<Cite nums={2} /> The total economic cost of workplace injuries and work-related ill health reached £20.7 billion in 2024/25, driven by lost output, healthcare costs and the growing burden of occupational mental health conditions, which now account for over half of all work-related illness.<Cite nums={3} /> The Health and Safety Executive's inspection capacity has been cut by a third since 2010, raising questions about whether the regulatory framework that drove decades of improvement can sustain further progress.</p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

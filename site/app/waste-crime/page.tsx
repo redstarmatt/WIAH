@@ -130,6 +130,13 @@ export default function TopicPage() {
           colour="#2A9D8F"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Waste crime costs the English economy an estimated £924 million per year, encompassing illegal dumping, unlicensed waste sites and the systematic misdescription of waste streams to avoid landfill tax.<Cite nums={1} /> The problem has grown steadily since 2015, driven by a simple economic logic: disposing of waste legally is expensive, enforcement is weak, and penalties when caught are modest relative to the profits involved. An estimated 1,000 illegal waste sites are active at any time, many operating under the cover of legitimate permits while diverting material to unauthorised locations. Fly-tipping alone accounts for over one million incidents per year, costing local authorities £58 million in clearance.</p>
+            <p>The enforcement response has moved in the opposite direction to the problem. Environment Agency prosecutions for waste crime fell from 372 in 2015 to 214 in 2024, a decline driven by cumulative budget cuts that have reduced the Agency's regulatory workforce by roughly a third over the same period.<Cite nums={2} /> The Joint Unit for Waste Crime, established in 2018 with the National Crime Agency, has targeted the most serious organised waste fraud, but the everyday illegality of small-scale dumping and permit breaches increasingly goes unchallenged. The mandatory digital waste tracking system launching in 2025 represents the most significant structural reform in decades, potentially making it far harder to divert waste without detection.</p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },
