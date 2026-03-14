@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Versus Arthritis / NICE', dataset: 'Chronic pain prevalence estimates', date: '2024' },
   { num: 2, name: 'Faculty of Pain Medicine', dataset: 'National pain audit and workforce survey', date: '2024' },
-  { num: 3, name: 'Health and Safety Executive', dataset: 'Working days lost statistics', date: '2024' },
+  { num: 3, name: 'Health and Safety Executive', dataset: 'Working days lost statistics', url: 'https://www.hse.gov.uk/statistics/', date: '2024' },
 ];
 
 // -- Types ------------------------------------------------------------------

@@ -15,7 +15,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'Sport England', dataset: 'Active Lives Adult Survey', url: 'https://www.sportengland.org/research-and-data/data/active-lives', date: '2024' },
   { num: 2, name: 'Swim England', dataset: 'National Pool and Leisure Facility Audit', url: 'https://www.swimming.org/swimengland/pool-and-facility-reports/', date: '2024' },
   { num: 3, name: 'Sport England', dataset: 'Active Places Power Database', url: 'https://www.activeplacespower.com/', date: '2024' },
-  { num: 4, name: 'DCMS', dataset: 'Multi-Sport Grassroots Facilities Programme', date: '2024' },
+  { num: 4, name: 'DCMS', dataset: 'Multi-Sport Grassroots Facilities Programme', url: 'https://www.gov.uk/government/organisations/department-for-culture-media-sport/about/statistics', date: '2024' },
 ];
 
 export default function CommunitySportFacilitiesPage() {

@@ -11,7 +11,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Department for Education', dataset: 'Special Educational Needs in England', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/special-educational-needs-in-england', date: '2024', note: 'EHCP requests rose from 60,000 (2015) to 167,000 (2024) — 178% increase; only 37% issued within 20-week statutory limit' },
   { num: 2, name: 'HMCTS', dataset: 'SEND Tribunal Statistics', url: 'https://www.gov.uk/government/collections/tribunals-statistics', date: '2024', note: '9,800 tribunal appeals per year (+292% since 2015); families win 96% of contested hearings' },
-  { num: 3, name: 'National Audit Office', dataset: 'Support for Pupils with SEND', date: '2024', note: 'Total SEND provision costs exceed £10bn/year; DSG deficit growing; poor outcomes despite high spending' },
+  { num: 3, name: 'National Audit Office', dataset: 'Support for Pupils with SEND', url: 'https://www.nao.org.uk/', date: '2024', note: 'Total SEND provision costs exceed £10bn/year; DSG deficit growing; poor outcomes despite high spending' },
 ];
 
 export default function SendCrisisPage() {

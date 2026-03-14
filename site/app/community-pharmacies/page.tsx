@@ -54,7 +54,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS Business Services Authority', dataset: 'Community Pharmacy Network', url: 'https://www.nhsbsa.nhs.uk/statistical-collections/community-pharmacy-dispensing-cost-analysis-report', date: '2023' },
   { num: 2, name: 'NHS Business Services Authority', dataset: 'Prescription Volume Report', url: 'https://www.nhsbsa.nhs.uk/statistical-collections/prescription-cost-analysis', date: '2023' },
   { num: 3, name: 'Company Chemists\' Association', dataset: 'Annual Survey — Pharmacy Financial Viability', url: 'https://www.thecompanychemists.com/', date: '2023' },
-  { num: 4, name: 'NHS England', dataset: 'Pharmacy First Service Specification', date: '2024' },
+  { num: 4, name: 'NHS England', dataset: 'Pharmacy First Service Specification', url: 'https://www.england.nhs.uk/statistics/', date: '2024' },
 ];
 
 export default function CommunityPharmaciesPage() {

@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Ministry of Justice', dataset: 'Legal aid statistics', url: 'https://www.gov.uk/government/collections/legal-aid-statistics', date: '2024' },
   { num: 2, name: 'Law Society', dataset: 'Legal aid deserts report and provider mapping', url: 'https://www.lawsociety.org.uk', date: '2024' },
-  { num: 3, name: 'HMCTS', dataset: 'Family court statistics — litigants in person', date: '2023' },
+  { num: 3, name: 'HMCTS', dataset: 'Family court statistics — litigants in person', url: 'https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service/about/statistics', date: '2023' },
   { num: 4, name: 'Access to Justice Foundation', dataset: 'Civil legal need research', url: 'https://atjf.org.uk', date: '2024' },
 ];
 
