@@ -123,7 +123,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Economy & Work"
           question="Are the Self-Employed Getting Left Behind?"
-          finding="Median self-employed earnings are £16,300 — 45% below equivalent employed workers. The gap has widened since 2010 and the pandemic significantly accelerated it."
+          finding={<>Median self-employed earnings are £16,300 — 45% below equivalent employed workers.<Cite nums={1} /> The gap has widened since 2010 and the pandemic significantly accelerated it.</>}
           colour="#6B7280"
         />
 
@@ -141,7 +141,7 @@ export default function TopicPage() {
             unit=""
             direction="flat"
             polarity="up-is-bad"
-            changeText="45% below equivalent employed workers"
+            changeText={<>45% below equivalent employed workers<Cite nums={1} /></>}
             sparklineData={[14200, 14400, 14600, 14800, 15100, 14500, 15200, 15800, 16000, 16200, 16300]}
             href="#sec-coverage"
           />
@@ -151,7 +151,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Widened from 35% in 2015 · pandemic accelerated divergence"
+            changeText={<>Widened from 35% in 2015 · pandemic accelerated divergence<Cite nums={1} /></>}
             sparklineData={[35, 36, 37, 38, 39, 43, 44, 44, 45, 45, 45]}
             href="#sec-coverage"
           />
@@ -161,7 +161,7 @@ export default function TopicPage() {
             unit=""
             direction="flat"
             polarity="up-is-bad"
-            changeText="Excluded from auto-enrolment · significant retirement risk"
+            changeText={<>Excluded from auto-enrolment · significant retirement risk<Cite nums={2} /></>}
             sparklineData={[68, 68, 67, 66, 66, 65, 65, 65, 65, 65, 65]}
             href="#sec-coverage"
           />
@@ -198,7 +198,7 @@ export default function TopicPage() {
             title="SEISS filled a gap in 2020"
             value="2.9m"
             unit="self-employed received SEISS grants"
-            description="The Self-Employment Income Support Scheme paid out £28.7bn to 2.9 million self-employed workers during the pandemic, covering 80% of average trading profits. The government is considering extending pension auto-enrolment to the self-employed through HMRC's digital tax returns."
+            description={<>The Self-Employment Income Support Scheme paid out £28.7bn to 2.9 million self-employed workers during the pandemic, covering 80% of average trading profits.<Cite nums={3} /> The government is considering extending pension auto-enrolment to the self-employed through HMRC's digital tax returns.<Cite nums={2} /></>}
             source="Source: HMRC — Self-Employment Income Support Scheme final report, 2022."
           />
         </ScrollReveal>
