@@ -150,7 +150,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Above inflation · RPI-linked formula since 1994"
+            changeText={<>Above inflation · RPI-linked formula since 1994<Cite nums={1} /></>}
             sparklineData={[2.6, 2.2, 3.4, 3.1, 2.8, 2.6, 2.6, 3.8, 5.9, 4.9, 4.9]}
             href="#sec-coverage"
           />

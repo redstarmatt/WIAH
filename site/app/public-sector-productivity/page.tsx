@@ -160,7 +160,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Recovering faster than NHS · pupil absence still high"
+            changeText={<>Recovering faster than NHS · pupil absence still high<Cite nums={1} /></>}
             sparklineData={[0, 0, 0, 0, 0, -18, -8, -5, -4, -3, -3]}
             href="#sec-coverage"
           />

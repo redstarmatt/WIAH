@@ -124,7 +124,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Wellbeing & Society"
           question="Are People Losing Touch with Nature?"
-          finding="Only 57% of people in England visit green and blue spaces regularly, and nature connection scores are declining among urban children. Access to nature is deeply unequal: people in the most deprived areas are twice as likely to lack access to quality green space."
+          finding={<>Only 57% of people in England visit green and blue spaces regularly, and nature connection scores are declining among urban children.<Cite nums={1} /> Access to nature is deeply unequal: people in the most deprived areas are twice as likely to lack access to quality green space.<Cite nums={3} /></>}
           colour="#2A9D8F"
         />
 
@@ -142,7 +142,7 @@ export default function TopicPage() {
             unit=""
             direction="down"
             polarity="up-is-good"
-            changeText="Down from 63% in 2019 pre-COVID · Urban-rural gap persists"
+            changeText={<>Down from 63% in 2019 pre-COVID · Urban-rural gap persists<Cite nums={1} /></>}
             sparklineData={[58, 59, 60, 62, 63, 61, 60, 58, 57, 57, 57]}
             href="#sec-coverage"
           />
@@ -152,7 +152,7 @@ export default function TopicPage() {
             unit="/5"
             direction="down"
             polarity="up-is-good"
-            changeText="Down from 3.6 in 2019 · Screen time displacement"
+            changeText={<>Down from 3.6 in 2019 · Screen time displacement<Cite nums={1} /></>}
             sparklineData={[3.4, 3.5, 3.5, 3.6, 3.6, 3.4, 3.3, 3.2, 3.1, 3.1, 3.1]}
             href="#sec-coverage"
           />
@@ -162,7 +162,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-good"
-            changeText="Up from 41% · But still well below 72% in affluent areas"
+            changeText={<>Up from 41% · But still well below 72% in affluent areas<Cite nums={3} /></>}
             sparklineData={[41, 42, 42, 43, 44, 44, 45, 46, 47, 48, 48]}
             href="#sec-coverage"
           />
@@ -199,7 +199,7 @@ export default function TopicPage() {
             title="What's improving"
             value="Green Social Prescribing"
             unit="NHS-backed programme"
-            description="Green Social Prescribing pilots across 20 areas are connecting people to nature-based activities through GP referral, with strong mental health outcomes. Natural England's Green Infrastructure Standards require local authorities to plan for accessible green space. The ELMS scheme is paying farmers to create public access paths across 500,000+ hectares."
+            description={<>Green Social Prescribing pilots across 20 areas are connecting people to nature-based activities through GP referral, with strong mental health outcomes.<Cite nums={1} /> Natural England&apos;s Green Infrastructure Standards require local authorities to plan for accessible green space.<Cite nums={3} /> The ELMS scheme is paying farmers to create public access paths across 500,000+ hectares.<Cite nums={1} /></>}
             source="Source: Natural England — People and Nature Survey, 2025. DLUHC — Green infrastructure standards, 2025."
           />
         </ScrollReveal>

@@ -123,7 +123,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Environment & Climate"
           question="Is Britain's Recycling Being Rejected?"
-          finding="82% of UK residents put non-recyclable materials in recycling bins. Contamination causes 525,000 tonnes of recycling to be rejected annually and sent to landfill or incineration."
+          finding={<>82% of UK residents put non-recyclable materials in recycling bins.<Cite nums={1} /> Contamination causes 525,000 tonnes of recycling to be rejected annually and sent to landfill or incineration.<Cite nums={3} /></>}
           colour="#2A9D8F"
         />
 
@@ -141,7 +141,7 @@ export default function TopicPage() {
             unit=""
             direction="flat"
             polarity="up-is-bad"
-            changeText="Broadly unchanged for 5 years · confusion about rules"
+            changeText={<>Broadly unchanged for 5 years · confusion about rules<Cite nums={1} /></>}
             sparklineData={[82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82]}
             href="#sec-coverage"
           />
@@ -161,7 +161,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Paid by councils · rising as collection volumes grow"
+            changeText={<>Paid by councils · rising as collection volumes grow<Cite nums={3} /></>}
             sparklineData={[35, 37, 39, 41, 43, 45, 47, 49, 50, 51, 52]}
             href="#sec-coverage"
           />
@@ -198,7 +198,7 @@ export default function TopicPage() {
             title="Consistent collections will clarify rules from 2026"
             value="2026"
             unit="Simpler Recycling roll-out England"
-            description="The Simpler Recycling reforms, requiring all English councils to collect the same set of dry recyclates and food waste from 2026, are expected to reduce contamination rates by 10-15 percentage points. Consistent national labelling on packaging, under the On-Pack Recycling Label scheme, now covers 80% of packaging products."
+            description={<>The Simpler Recycling reforms, requiring all English councils to collect the same set of dry recyclates and food waste from 2026, are expected to reduce contamination rates by 10-15 percentage points.<Cite nums={2} /> Consistent national labelling on packaging, under the On-Pack Recycling Label scheme, now covers 80% of packaging products.<Cite nums={1} /></>}
             source="Source: Defra — Simpler Recycling Implementation Plan, 2024."
           />
         </ScrollReveal>
