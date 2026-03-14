@@ -129,6 +129,13 @@ export default function TopicPage() {
           colour="#6B7280"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Political donations in the UK are legal, disclosed, and heavily concentrated. In the final quarter of 2024, parties declared £20.3 million in donations — the highest Q4 figure in a decade, inflated by a general election year. The top ten donors routinely account for over a third of total declared funding, with property, finance, and hedge fund interests disproportionately represented. The Electoral Commission publishes these figures quarterly, and the data is clear: access to senior politicians correlates with the size of donations. Dinners, receptions, and advisory boards create proximity that smaller donors and ordinary constituents cannot match.<Cite nums={1} /></p>
+            <p>The lobbying picture is harder to read, by design. The statutory Register of Consultant Lobbyists covers fewer than 1,000 individuals — exclusively third-party consultants hired to lobby on behalf of clients. In-house lobbyists employed directly by corporations, trade associations, and campaign groups are entirely excluded, despite accounting for the vast majority of lobbying activity. Transparency International estimates over 6,000 lobbying contacts with government ministers and senior officials occur each year, most of which fall outside the register&apos;s scope. The Greensill scandal in 2021 prompted calls for reform, but the register&apos;s narrow legal definition remains unchanged, leaving a substantial gap between what is disclosed and what actually happens.<Cite nums={2} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

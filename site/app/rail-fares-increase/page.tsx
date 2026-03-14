@@ -126,6 +126,13 @@ export default function TopicPage() {
           colour="#264653"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>UK rail fares have risen 94% in real terms since privatisation in 1995, while real wages increased by just 50% over the same period. The mechanism is straightforward: regulated fares — which cover season tickets and most commuter routes — are pegged to the previous July's Retail Prices Index, a measure of inflation that consistently runs 1-2 percentage points higher than CPI. This formula was chosen in the 1990s to allow train operators to recover investment costs, but it has compounded year after year to produce fares that now consume a significantly larger share of household income than they did a generation ago. The UK is among the most expensive countries in Europe for rail travel per kilometre as a proportion of average earnings.<Cite nums={1} /></p>
+            <p>The fare structure itself compounds the problem. Britain's ticketing system is labyrinthine — over 55 million distinct fare combinations exist — and the price difference between a walk-up fare and an advance ticket on the same route can be fivefold. This complexity penalises infrequent or spontaneous travellers and those without the digital literacy to navigate booking systems. The Williams-Shapps Plan for Rail, published in 2022, promised simplification through Great British Railways, a unified public body. But implementation has been repeatedly delayed, and the 2023 fare increase of 5.9% — the highest in three decades — underscored how little has changed. For commuters in London and the South East, rail costs now rival mortgage payments as a household budget line.<Cite nums={2} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

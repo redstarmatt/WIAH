@@ -175,6 +175,13 @@ export default function StrikesPage() {
         finding="The UK experienced the largest wave of industrial action since the 1970s in 2022–23, with 3.75 million working days lost — the highest since 1989 — but the strike wave has largely resolved as public sector pay deals were reached."
       />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Britain lost 3.75 million working days to strikes in 2023, the highest annual total since 1989 and a near-tenfold increase from pre-pandemic norms of around 300,000 days.<Cite nums={1} /> The trigger was straightforward: CPI inflation hit 11.1% in October 2022 while public sector pay offers remained well below, leaving real wages down 4% in a single year.<Cite nums={2} /> More than a million workers walked out across rail, the NHS, education and the civil service, making it the broadest wave of industrial action since the 1970s. This was not militancy for its own sake; it was the predictable consequence of a decade of pay restraint colliding with the sharpest cost-of-living shock in forty years.</p>
+            <p>The wave has now largely subsided. Working days lost fell to 784,000 in 2024, an 80% drop from the peak, as multi-year pay settlements averaging 5-6% were reached across most public sector workforces.<Cite nums={1} /> The NHS accounted for over 614,000 of the lost days at the peak, with BMA junior doctors staging 11 separate stoppages. But the price of resolution was high: an estimated four to six billion pounds in additional public sector pay commitments, and a Minimum Service Levels Act that unions continue to challenge in the courts. Whether fiscal pressure forces another round of restraint remains the unresolved question.</p>
+          </div>
+        </section>
+
       {/* Finding */}
       <section className="max-w-3xl mx-auto px-6 py-12">
         <p className="text-lg leading-relaxed text-wiah-black">

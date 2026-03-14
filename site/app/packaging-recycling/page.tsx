@@ -126,6 +126,13 @@ export default function TopicPage() {
           colour="#2A9D8F"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Britain recycles most of its paper and glass packaging effectively, but plastic remains stubbornly difficult. At 51%, the plastic packaging recycling rate is well below the government target of 70% by 2030 and far behind countries like Germany, which achieves over 60%. The core problem is material complexity: plastic packaging comes in dozens of polymer types, many of which cannot be processed together. Flexible films, pouches and multi-layer laminates, which make up a growing share of the market, are technically recyclable in theory but rarely collected or sorted in practice. Meanwhile, total plastic packaging consumption has barely fallen despite high-profile bans on straws, stirrers and cotton buds, because the volume removed by these measures is offset by growth in online retail packaging and food-service containers.<Cite nums={1} /></p>
+            <p>The UK Plastics Pact, signed by over 150 businesses, has increased the share of plastic packaging that is technically reusable or recyclable to 66%, but this does not mean it is actually recycled. The gap between recyclability and actual recycling reflects the fractured nature of the UK collection system: each local authority operates its own rules about what goes in the recycling bin, creating confusion that contaminates streams and reduces the quality of recovered material. Extended Producer Responsibility, launching in 2025, is intended to transform this by making packaging producers fund the full cost of end-of-life management, creating a financial incentive to design for recyclability. Whether it will be implemented rigorously enough to shift industry behaviour remains to be seen.<Cite nums={2} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },
