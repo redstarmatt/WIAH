@@ -127,6 +127,13 @@ export default function TopicPage() {
           colour="#2A9D8F"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>England now burns more waste than it buries. Energy-from-waste capacity has doubled since 2014, reaching 15.4 million tonnes per year across 54 operational plants, with a further 20 facilities planned or under construction. The expansion was driven by the EU Landfill Directive and rising landfill tax, which made incineration the cheapest compliant disposal route. But as capacity has grown, so have concerns: EfW plants now produce 11.6 million tonnes of CO2 equivalent per year — roughly 2% of UK total emissions — and long-term contracts lock councils into supplying minimum waste volumes, creating a perverse disincentive to reduce or recycle.<Cite nums={1} /></p>
+            <p>The inclusion of EfW in the UK Emissions Trading Scheme from 2028 will fundamentally alter the sector&apos;s economics. Carbon pricing is expected to add £30-50 per tonne to gate fees, narrowing the cost advantage over recycling and composting. Environmental groups argue that overcapacity is already evident: several new plants have struggled to secure planning permission as communities resist hosting facilities that emit particulates and heavy metals. The central tension is structural — incineration was the policy answer to landfill, but it may now be impeding the transition to a genuinely circular economy.<Cite nums={2} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

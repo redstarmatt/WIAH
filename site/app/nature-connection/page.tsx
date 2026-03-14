@@ -128,6 +128,13 @@ export default function TopicPage() {
           colour="#2A9D8F"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Access to nature is one of the clearest markers of inequality in England. People in the most deprived communities are twice as likely to lack a quality green space within walking distance as those in the least deprived, and the gap has narrowed only marginally over the past decade. Local authority parks budgets were cut by an estimated 30% between 2010 and 2020, leaving urban green spaces in many areas poorly maintained and perceived as unsafe. The COVID-19 pandemic briefly demonstrated what equitable access might look like: during lockdowns, visits to local green spaces surged across all income groups, and mental health research consistently showed that proximity to nature was one of the strongest protective factors against pandemic-related anxiety and depression.<Cite nums={1} /></p>
+            <p>Among children, nature connection scores have been declining since 2019, driven primarily by screen time displacement and the loss of unstructured outdoor play. Urban children spend significantly less time outdoors than rural peers, and schools in deprived areas are less likely to have access to outdoor learning environments. The government has responded with Green Social Prescribing pilots, in which GPs refer patients to nature-based activities, and Natural England has published Green Infrastructure Standards requiring local authorities to plan for accessible green space in new developments. These are meaningful interventions, but they operate against a backdrop of decades of underinvestment in urban parks and a planning system that has historically treated green space as expendable when housing targets need to be met.<Cite nums={2} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

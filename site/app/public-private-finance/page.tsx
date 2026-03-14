@@ -127,6 +127,13 @@ export default function TopicPage() {
           colour="#6B7280"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>The Private Finance Initiative was designed to bring private capital into public infrastructure without adding to government borrowing figures. In practice, it created long-term payment obligations that far exceeded the value of the assets built. Across more than 700 PFI contracts signed between 1992 and 2018, the public sector committed to £42 billion in total repayments for projects with an original capital value of £13 billion — a multiplier of 3.2 times. The premium covered financing costs, maintenance fees, and private-sector profit margins that were locked in for 25 to 30 years regardless of whether the underlying services remained fit for purpose.<Cite nums={1} /></p>
+            <p>The consequences are still felt across the NHS and education system. Some 118 NHS trusts remain tied to PFI contracts, with annual charges consuming a significant share of their capital budgets — money that cannot be redirected to new equipment or building repairs. During the pandemic, PFI inflexibility hampered hospital reconfigurations because altering contracted buildings required renegotiation with private operators. The Treasury formally ended the PFI programme in 2018, acknowledging that the model had failed to deliver value for money. But the existing contracts will continue running into the 2040s. Some trusts have bought out deals early at discounts, though this requires upfront capital that financially distressed organisations rarely have.<Cite nums={2} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },
