@@ -126,6 +126,13 @@ export default function TopicPage() {
           colour="#6B7280"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Public sector productivity remains 6% below its pre-pandemic level, and the gap matters enormously because it translates directly into longer waits, larger backlogs and higher costs. The NHS is the largest single drag: its productivity sits 10% below 2019, meaning the health service is employing substantially more staff and spending substantially more money while delivering fewer procedures per worker than it did five years ago. The causes are structural rather than simply pandemic hangover — long-term sickness absence among NHS staff has doubled since 2019, infection control measures reduced theatre throughput, and a surge in expensive agency staffing in 2022 pushed costs up without proportionate gains in output.<Cite nums={1} /></p>
+            <p>Measuring public sector productivity is genuinely difficult, and the ONS methodology has known limitations. Output is measured by counting activities — appointments delivered, pupils taught, cases processed — rather than outcomes like health improvement or educational attainment. This means that a shorter but more effective consultation counts the same as a longer, less useful one. Nonetheless, the trend is clear: costs have risen faster than activity across health, education and public order since 2020. The NHS recovered 5 percentage points of productivity in 2023-24, partly through the Elective Recovery Fund and outpatient transformation, but the gap to the long-run trend line remains around 12 percentage points and closing it will require sustained capital investment in digital systems and estate modernisation.<Cite nums={2} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

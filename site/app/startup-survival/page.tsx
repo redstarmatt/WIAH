@@ -126,6 +126,13 @@ export default function TopicPage() {
           colour="#6B7280"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>The three-year survival rate for UK businesses born in 2020 fell to 58%, down from 63% for the 2017 cohort, and five-year survival has dropped in parallel across every major sector.<Cite nums={1} /> The decline is not simply a pandemic artefact. Energy costs, which rose 60% for small businesses between 2021 and 2023, combined with a tight labour market and the end of emergency support schemes to create a brutal environment for young firms. Hospitality has been hit hardest: just 32% of businesses in food and accommodation survive to five years, squeezed between rising input costs and consumers cutting discretionary spending.</p>
+            <p>The picture is more nuanced than a simple story of decline. Online retail businesses survive at 58% to five years, compared with 40% for physical retail, reflecting a structural shift in where viable business models now sit.<Cite nums={2} /> The UK continues to produce high-growth startups at scale, with 150 active unicorn companies, but the gap between digitally enabled firms and those dependent on physical premises and low-margin trade is widening. For the majority of new businesses in traditional sectors, the operating environment has become materially harder since 2019.</p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },
