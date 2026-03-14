@@ -84,7 +84,7 @@ function yearToDate(y: number): Date {
 const editorialRefs: Reference[] = [
   { num: 1, name: 'MHCLG', dataset: 'Statutory Homelessness in England', url: 'https://www.gov.uk/government/statistics/statutory-homelessness-in-england', date: '2023/24' },
   { num: 2, name: 'MHCLG', dataset: 'Rough Sleeping Statistics — Autumn Snapshot', url: 'https://www.gov.uk/government/statistics/rough-sleeping-snapshot-in-england', date: '2024' },
-  { num: 3, name: 'MHCLG', dataset: 'Local Authority Housing Statistics — Temporary Accommodation', date: '2024' },
+  { num: 3, name: 'MHCLG', dataset: 'Local Authority Housing Statistics — Temporary Accommodation', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-homelessness', date: '2024' },
 ];
 
 export default function HomelessnessPage() {

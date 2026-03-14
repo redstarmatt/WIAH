@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+# .githooks/pre-commit
+#
+# Runs the citation audit on staged page.tsx files only.
+# Blocks the commit if any staged file introduces a new missing-ref-url ERROR.
+#
+# Install: git config core.hooksPath .githooks
+
+set -euo pipefail
+
+# Collect staged page.tsx files
+STAGED=$(git diff --cached --name-only --diff-filter=ACM | grep 'app/.*/page\.tsx$' || true)
+
+if [[ -z "$STAGED" ]]; then
+  exit 0
+fi
+
+SCRIPT="$(git rev-parse --show-toplevel)/scripts/audit-citations.mjs"
+
+if [[ ! -f "$SCRIPT" ]]; then
+  echo "⚠  audit-citations.mjs not found — skipping citation check" >&2
+  exit 0
+fi
+
+echo "🔍  Checking citations in staged page files..."
+
+ERRORS=0
+for FILE in $STAGED; do
+  # Run the audit in JSON mode and filter for this specific file
+  RESULT=$(node "$SCRIPT" --json 2>/dev/null | \
+    node -e "
+      const d = require('fs').readFileSync('/dev/stdin','utf8');
+      const { errors } = JSON.parse(d);
+      const relevant = errors.filter(e => e.file.endsWith('$FILE'));
+      if (relevant.length) {
+        relevant.forEach(e => console.error('  ✗ [' + e.file + ':L' + e.line + '] ' + e.rule + ': ' + e.message));
+        process.exit(1);
+      }
+    " 2>&1 || true)
+
+  if [[ $? -ne 0 ]]; then
+    echo "$RESULT" >&2
+    ERRORS=$((ERRORS + 1))
+  fi
+done
+
+if [[ $ERRORS -gt 0 ]]; then
+  echo ""
+  echo "❌  Citation audit failed for $ERRORS staged file(s)."
+  echo "   Fix the errors above, then re-stage and commit."
+  echo "   Run 'npm run audit:citations' from site/ for the full report."
+  echo ""
+  exit 1
+fi
+
+echo "✓  Citation checks passed"

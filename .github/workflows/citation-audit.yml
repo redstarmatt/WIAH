@@ -1,0 +1,41 @@
+name: Citation audit
+
+on:
+  pull_request:
+    paths:
+      - 'site/app/**/page.tsx'
+      - 'site/components/References.tsx'
+      - 'scripts/audit-citations.mjs'
+  push:
+    branches:
+      - main
+    paths:
+      - 'site/app/**/page.tsx'
+      - 'scripts/audit-citations.mjs'
+
+jobs:
+  audit:
+    name: Check citations in page files
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run citation audit
+        # Errors (missing ref URLs) block the PR.
+        # Warnings are reported but do not block.
+        run: node scripts/audit-citations.mjs
+
+      - name: Upload audit report (JSON)
+        if: always()
+        run: node scripts/audit-citations.mjs --json > citation-audit-report.json || true
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: citation-audit-report
+          path: citation-audit-report.json
+          retention-days: 30

@@ -15,7 +15,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Police Recorded Crime', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice', date: '2024', note: '68,400 rape offences recorded in 2024 — double the figure from a decade earlier' },
   { num: 2, name: 'CPS', dataset: 'Violence Against Women and Girls Annual Report', url: 'https://www.cps.gov.uk/publication/violence-against-women-and-girls-report', date: '2024', note: 'Charge rate collapsed from 7.5% in 2015 to 1.4% in 2019; partial recovery to 5.3% in 2024' },
   { num: 3, name: 'Home Office', dataset: 'Rape Review Action Plan', url: 'https://www.gov.uk/government/publications/rape-review-action-plan', date: '2024', note: 'Operation Soteria rolled out to 28 police forces; committed to restoring charge volumes to 2016 levels' },
-  { num: 4, name: 'CSEW', dataset: 'Crime Survey for England and Wales', date: '2024', note: 'Estimated 128,000 rapes and attempted rapes per year; fewer than 55% reported to police' },
+  { num: 4, name: 'CSEW', dataset: 'Crime Survey for England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/datasets/crimeinenglandandwalesappendixtables', date: '2024', note: 'Estimated 128,000 rapes and attempted rapes per year; fewer than 55% reported to police' },
 ];
 
 export default function RapeProsecutionPage() {
@@ -69,7 +69,7 @@ export default function RapeProsecutionPage() {
         <TopicHeader
           topic="Rape Prosecution"
           question="What Happens When Rape is Reported?"
-          finding="Only 1.7% of reported rapes lead to a charge — the lowest rate on record — with police recording improvements paradoxically exposing the scale of the justice gap."
+          finding="In 2024, 5.3% of recorded rapes resulted in a charge — recovering from a historic low of 1.4% in 2019, but still far below the 7.5% rate in 2015. For most of the 68,400 reported rape offences, the justice system delivered no outcome."
           colour={colour}
           preposition="in"
         />

@@ -13,7 +13,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Department for Transport', dataset: 'Bus Statistics Table BUS0103', url: 'https://www.gov.uk/government/statistical-data-sets/bus01-local-bus-passenger-journeys', date: '2024' },
   { num: 2, name: 'Campaign for Better Transport', dataset: 'Annual Bus Report — route cut analysis', url: 'https://bettertransport.org.uk', date: '2024' },
-  { num: 3, name: 'CPRE / Campaign for Better Transport', dataset: 'Rural bus service coverage analysis', date: '2024' },
+  { num: 3, name: 'CPRE / Campaign for Better Transport', dataset: 'Rural bus service coverage analysis', url: 'https://bettertransport.org.uk/research/buses/', date: '2024' },
 ];
 
 export default function BusServiceCutsPage() {
