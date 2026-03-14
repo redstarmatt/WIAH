@@ -229,6 +229,7 @@ export default function TopicPage() {
             </ul>
           </div>
         </section>
+        <References items={editorialRefs} />
       </main>
     </>
   );
