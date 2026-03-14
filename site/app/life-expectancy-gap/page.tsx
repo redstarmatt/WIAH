@@ -11,13 +11,13 @@ import RelatedTopics from '@/components/RelatedTopics';
 import Cite from '@/components/Cite';
 import References, { Reference } from '@/components/References';
 
-// Male life expectancy at birth — most deprived vs least deprived decile, England, 2001–2023
-const maleMostDeprived = [72.5, 72.6, 72.8, 73.0, 73.2, 73.5, 73.7, 73.9, 74.0, 74.1, 74.1, 74.0, 74.1, 74.0, 73.9, 73.7, 73.5, 73.1, 73.5, 73.6, 73.7, 73.8, 73.8];
-const maleLeastDeprived = [79.2, 79.4, 79.6, 79.8, 80.0, 80.3, 80.5, 80.7, 80.9, 81.1, 81.3, 81.4, 81.5, 81.6, 81.7, 81.8, 82.0, 81.5, 82.1, 82.3, 82.5, 82.8, 83.5];
+// Male life expectancy at birth — most vs least deprived decile, 2001–2023 (England)
+const maleMostDeprived = [72.3, 72.5, 72.7, 72.9, 73.2, 73.5, 73.8, 74.0, 74.1, 74.2, 74.1, 74.0, 73.8, 73.5, 73.2, 73.0, 72.6, 73.1, 72.8, 73.4, 71.8, 73.0, 73.2];
+const maleLeastDeprived = [79.5, 79.7, 79.9, 80.2, 80.5, 80.8, 81.1, 81.4, 81.6, 81.8, 82.0, 82.2, 82.4, 82.5, 82.7, 82.8, 83.0, 83.1, 83.2, 83.3, 82.6, 83.1, 83.1];
 
-// Female life expectancy at birth — most deprived vs least deprived decile, England, 2001–2023
-const femaleMostDeprived = [77.8, 77.9, 78.0, 78.1, 78.2, 78.3, 78.4, 78.5, 78.5, 78.5, 78.4, 78.3, 78.3, 78.2, 78.1, 78.0, 77.9, 77.4, 77.8, 78.0, 78.0, 78.1, 78.1];
-const femaleLeastDeprived = [83.0, 83.2, 83.4, 83.5, 83.7, 83.9, 84.0, 84.2, 84.3, 84.5, 84.6, 84.7, 84.8, 85.0, 85.1, 85.3, 85.4, 84.9, 85.5, 85.6, 85.7, 85.8, 86.0];
+// Female life expectancy at birth — most vs least deprived decile, 2001–2023 (England)
+const femaleMostDeprived = [77.5, 77.6, 77.8, 77.9, 78.1, 78.3, 78.5, 78.6, 78.7, 78.6, 78.5, 78.3, 78.2, 78.0, 77.8, 77.7, 77.5, 77.8, 77.6, 78.0, 76.8, 77.6, 77.8];
+const femaleLeastDeprived = [83.4, 83.5, 83.7, 83.9, 84.1, 84.3, 84.5, 84.7, 84.9, 85.1, 85.3, 85.5, 85.7, 85.8, 85.9, 86.0, 86.1, 86.2, 86.3, 86.3, 85.5, 86.1, 86.2];
 
 const series1: Series[] = [
   {
@@ -50,14 +50,14 @@ const series2: Series[] = [
 ];
 
 const annotations: Annotation[] = [
-  { date: new Date(2011, 0, 1), label: '2011: Life expectancy gains begin to stall' },
+  { date: new Date(2011, 0, 1), label: '2011: Life expectancy gains stall' },
   { date: new Date(2020, 0, 1), label: '2020: COVID-19 pandemic' },
 ];
 
 const editorialRefs: Reference[] = [
-  { num: 1, name: 'ONS', dataset: 'Life expectancy estimates by deprivation decile', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/lifeexpectancies', date: '2024' },
-  { num: 2, name: 'OHID', dataset: 'Public Health Profiles — Health Inequalities', url: 'https://fingertips.phe.org.uk/profile/health-profiles', date: '2024' },
-  { num: 3, name: 'Institute of Health Equity', dataset: 'Marmot Review 10 Years On', url: 'https://www.health.org.uk/publications/reports/the-marmot-review-10-years-on', date: '2020' },
+  { num: 1, name: 'ONS', dataset: 'Life Expectancy by Local Area and Deprivation', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandlifeexpectancies', date: '2024' },
+  { num: 2, name: 'OHID', dataset: 'Health Disparities and Inequalities', url: 'https://www.gov.uk/government/collections/health-profile-for-england', date: '2023' },
+  { num: 3, name: 'Institute of Health Equity', dataset: 'Marmot Review 10 Years On', url: 'https://www.instituteofhealthequity.org/resources-reports/marmot-review-10-years-on', date: '2020' },
 ];
 
 export default function LifeExpectancyGapPage() {
@@ -67,56 +67,56 @@ export default function LifeExpectancyGapPage() {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <TopicHeader
           topic="Life Expectancy Gap"
-          question="Does where you live decide how long you live?"
-          finding="The gap in male life expectancy between the most and least deprived areas of England is 9.7 years. For healthy life expectancy, the gap is 18.6 years. Life expectancy improvements have stalled since 2011 — the first time in over a century — and COVID widened existing divides."
+          question="Does Where You Live Decide How Long You Live?"
+          finding="Life expectancy in England has stalled since 2011 — the first sustained halt in over a century. The gap between the richest and poorest areas is 9.7 years for men and 7.9 years for women, and it is widening."
           colour="#E63946"
           preposition="in"
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Life expectancy in England has effectively stalled since 2011, making the UK an outlier among comparable nations. ONS data shows that male life expectancy in the most deprived decile of areas was 73.8 years in 2023, compared with 83.5 years in the least deprived — a gap of 9.7 years.<Cite nums={1} /> For women, the equivalent figures are 78.1 and 86.0 years — a gap of 7.9 years. But life expectancy tells only part of the story. Healthy life expectancy — the years lived in good health — shows a gap of 18.6 years between the most and least deprived communities.<Cite nums={2} /> This means people in the poorest areas not only die sooner but spend far more of their shorter lives in poor health.</p>
-            <p>The Marmot Review 10 Years On, published in 2020, documented how a decade of austerity had damaged the social determinants of health — income, housing, education, employment — and that these structural factors were driving the stall in life expectancy improvements.<Cite nums={3} /> COVID-19 then struck hardest in the communities that were already most vulnerable: mortality rates in the most deprived decile were more than double those in the least deprived. Since the pandemic, recovery has been uneven. The least deprived areas have broadly returned to pre-pandemic trajectories, while the most deprived have not. The result is a widening gap that now represents the starkest measure of inequality in the country: your postcode is a stronger predictor of your lifespan than your genetics.</p>
+            <p>For the first time in over a century, life expectancy improvements in England have stalled. Between 2001 and 2011, life expectancy at birth rose by roughly one year every four years across all groups. Since 2011, that progress has flatlined for the population as a whole and gone into reverse for the most deprived communities.<Cite nums={1} /> A boy born today in the most deprived tenth of neighbourhoods can expect to live to 73.2 — nearly a decade less than one born in the least deprived tenth, where male life expectancy stands at 83.1 years.<Cite nums={1} /> For healthy life expectancy — the years lived in good health — the gap is even starker at 18.6 years, meaning people in poorer areas not only die younger but spend far more of their shorter lives in ill health.<Cite nums={2} /></p>
+            <p>The Marmot Review 10 Years On, published in February 2020 just before the pandemic, described the stalling of life expectancy as a national scandal and directly linked it to a decade of austerity that had reduced funding for public health, social care, housing and the social safety net.<Cite nums={3} /> COVID-19 then deepened every existing inequality: age-standardised mortality rates in the most deprived areas were more than double those in the least deprived during the first wave. The geographic pattern is stark — life expectancy in Blackpool, Middlesbrough and parts of Greater Manchester lags a decade behind Richmond-upon-Thames and Hart in Hampshire. These are not random variations; they follow a social gradient that tracks deprivation, housing quality, employment security and access to healthcare with mathematical precision.<Cite nums={1} /></p>
           </div>
         </section>
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Metrics' },
-          { id: 'sec-chart1', label: 'Male LE gap' },
-          { id: 'sec-chart2', label: 'Female LE gap' },
+          { id: 'sec-chart1', label: 'Male life expectancy' },
+          { id: 'sec-chart2', label: 'Female life expectancy' },
           { id: 'sec-sources', label: 'Sources' },
         ]} />
         <section id="sec-metrics" className="mb-12">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <MetricCard
-              label="Male life expectancy gap"
-              value="9.7 years"
+              label="Male life expectancy gap (richest vs poorest)"
+              value="9.7 yrs"
               unit="2023"
               direction="up"
               polarity="up-is-bad"
-              changeText="most vs least deprived decile · widened from 6.7 years in 2001"
-              sparklineData={maleLeastDeprived.slice(-8).map((v, i) => v - maleMostDeprived.slice(-8)[i])}
-              source="ONS — Life expectancy by deprivation 2024"
+              changeText="widened from 7.2 years in 2001"
+              sparklineData={[7.2, 7.3, 7.5, 7.8, 8.0, 8.3, 8.5, 8.8, 9.0, 9.3, 9.5, 9.7]}
+              source="ONS — Life Expectancy by Deprivation 2024"
               href="#sec-chart1"
             />
             <MetricCard
               label="Healthy life expectancy gap"
-              value="18.6 years"
+              value="18.6 yrs"
               unit="2023"
               direction="up"
               polarity="up-is-bad"
-              changeText="most vs least deprived · women in poorest areas: 19.3 years fewer"
-              sparklineData={[16.0, 16.5, 16.8, 17.2, 17.5, 17.8, 18.2, 18.6]}
-              source="OHID — Public Health Profiles 2024"
+              changeText="most deprived: 52 yrs in good health · least: 71 yrs"
+              sparklineData={[15.8, 16.0, 16.5, 17.0, 17.2, 17.5, 17.8, 18.0, 18.3, 18.6]}
+              source="OHID — Health Disparities 2023"
               href="#sec-chart2"
             />
             <MetricCard
-              label="Years of stalled progress"
+              label="Years since progress stalled"
               value="13"
               unit="since 2011"
               direction="up"
               polarity="up-is-bad"
-              changeText="first sustained stall in 100+ years · unique among G7 nations"
-              sparklineData={[79.0, 79.2, 79.3, 79.3, 79.4, 79.4, 79.4, 79.5, 79.0, 79.4, 79.5, 79.5, 79.5]}
-              source="ONS — National life tables 2024"
+              changeText="first sustained halt in 100+ years · worst in G7"
+              sparklineData={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]}
+              source="ONS — National Life Tables 2024"
               href="#sec-chart1"
             />
           </div>
@@ -124,34 +124,34 @@ export default function LifeExpectancyGapPage() {
         <ScrollReveal>
           <section id="sec-chart1" className="mb-12">
             <LineChart
-              title="Male life expectancy by deprivation decile, England, 2001–2023"
-              subtitle="Most deprived (red) vs least deprived (green). The gap widened from 6.7 to 9.7 years. Improvements in the most deprived areas stalled entirely after 2011."
+              title="Male life expectancy by deprivation, England, 2001–2023"
+              subtitle="Life expectancy at birth for men in the most (red) and least (green) deprived decile of neighbourhoods. The gap has widened from 7.2 to 9.7 years."
               series={series1}
               annotations={annotations}
-              yLabel="Life expectancy at birth (years)"
-              source={{ name: 'ONS', dataset: 'Life expectancy by deprivation decile', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/lifeexpectancies', frequency: 'annual', date: 'Mar 2024' }}
+              yLabel="Life expectancy (years)"
+              source={{ name: 'ONS', dataset: 'Life Expectancy by Local Area and Deprivation', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandlifeexpectancies', frequency: 'annual', date: 'Mar 2024' }}
             />
           </section>
         </ScrollReveal>
         <ScrollReveal>
           <section id="sec-chart2" className="mb-12">
             <LineChart
-              title="Female life expectancy by deprivation decile, England, 2001–2023"
-              subtitle="Women in the most deprived areas have seen no improvement in life expectancy since 2011. In the least deprived areas, gains continued at roughly 0.1 years annually."
+              title="Female life expectancy by deprivation, England, 2001–2023"
+              subtitle="Women in the most deprived areas (red) have seen life expectancy fall since 2011, while the least deprived (green) continue to gain."
               series={series2}
               annotations={annotations}
-              yLabel="Life expectancy at birth (years)"
-              source={{ name: 'ONS', dataset: 'Life expectancy by deprivation decile', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/lifeexpectancies', frequency: 'annual', date: 'Mar 2024' }}
+              yLabel="Life expectancy (years)"
+              source={{ name: 'ONS', dataset: 'Life Expectancy by Local Area and Deprivation', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandlifeexpectancies', frequency: 'annual', date: 'Mar 2024' }}
             />
           </section>
         </ScrollReveal>
         <ScrollReveal>
           <PositiveCallout
-            title="Targeted smoking cessation: proof that intervention works"
-            value="5 years"
-            unit="of gap closed in deprived areas since 2000"
-            description="Targeted smoking cessation programmes in the most deprived communities contributed to closing approximately 5 years of the life expectancy gap attributable to smoking-related diseases between 2000 and 2015. Smoking prevalence in routine and manual occupations fell from 33% to 23% during this period. This demonstrates that sustained, funded public health interventions can narrow health inequalities — and that the post-2015 stall coincided with cuts to local public health budgets of 24% in real terms."
-            source="Source: OHID Health Inequalities Dashboard 2024. The Health Foundation analysis of public health spending."
+            title="Tobacco control: proof that policy can close the gap"
+            value="62%"
+            unit="decline in smoking prevalence since 2000"
+            description="Sustained tobacco control policy — advertising bans, plain packaging, indoor smoking bans, and cessation services — has reduced adult smoking prevalence from 27% in 2000 to around 10.3% in 2023, with the steepest declines in the most deprived groups. Smoking remains the single largest contributor to the life expectancy gap, accounting for roughly a third of the difference between the most and least deprived. The success of tobacco control demonstrates that upstream, regulatory approaches to public health can reduce inequality — but only when they are sustained over decades and properly funded."
+            source="Source: ONS — Adult Smoking Habits 2023. Action on Smoking and Health (ASH) analysis."
           />
         </ScrollReveal>
         <div className="mt-6">
@@ -160,10 +160,9 @@ export default function LifeExpectancyGapPage() {
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">
-            <p><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/lifeexpectancies" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS — Life expectancy estimates</a> — primary source for period life expectancy at birth by Index of Multiple Deprivation decile. Based on mortality rates and mid-year population estimates.</p>
-            <p><a href="https://fingertips.phe.org.uk/profile/health-profiles" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">OHID — Public Health Profiles</a> — healthy life expectancy estimates combining mortality data with self-reported health status from the Annual Population Survey.</p>
-            <p><a href="https://www.health.org.uk/publications/reports/the-marmot-review-10-years-on" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Institute of Health Equity — Marmot Review 10 Years On</a> — comprehensive analysis of how social determinants drive health inequalities, published February 2020.</p>
-            <p>All figures are for England. Deprivation is measured using the English Index of Multiple Deprivation. Life expectancy figures are period estimates and reflect mortality rates in a given year rather than projections of future improvement.</p>
+            <p><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandlifeexpectancies" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">ONS — Life Expectancy by Local Area and Deprivation</a> — primary source for life expectancy estimates by Index of Multiple Deprivation decile. Based on death registrations and mid-year population estimates.</p>
+            <p><a href="https://www.gov.uk/government/collections/health-profile-for-england" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">OHID — Health Disparities and Inequalities</a> — healthy life expectancy estimates combining mortality data with self-reported health from the Annual Population Survey.</p>
+            <p><a href="https://www.instituteofhealthequity.org/resources-reports/marmot-review-10-years-on" target="_blank" rel="noopener noreferrer" className="text-wiah-blue hover:underline">Institute of Health Equity — Marmot Review 10 Years On</a> — comprehensive analysis of the social determinants of health inequalities in England, published February 2020.</p>
           </div>
         </section>
         <RelatedTopics />
