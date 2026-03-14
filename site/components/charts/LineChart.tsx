@@ -23,7 +23,7 @@ export interface TargetLine {
 interface LineChartProps {
   title: string;
   showTitle?: boolean;
-  subtitle?: string;
+  subtitle?: React.ReactNode;
   series: Series[];
   annotations?: Annotation[];
   targetLine?: TargetLine;

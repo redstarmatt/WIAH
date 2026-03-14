@@ -167,7 +167,7 @@ export default function StalkingPage() {
           </section>
         </ScrollReveal>
               <RelatedTopics />
-        <References refs={editorialRefs} />
+        <References items={editorialRefs} />
       </main>
     </>
   );

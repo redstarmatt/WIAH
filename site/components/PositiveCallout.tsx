@@ -4,7 +4,7 @@ interface PositiveCalloutProps {
   title: string;
   value: string;
   unit?: string;
-  description: string;
+  description: React.ReactNode;
   source: string;
 }
 

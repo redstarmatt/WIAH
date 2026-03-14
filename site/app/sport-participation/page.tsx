@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Sport England', dataset: 'Active Lives Adult Survey, November 2023/24', url: 'https://www.sportengland.org/research-and-data/data/active-lives', date: '2024' },
   { num: 2, name: 'DCMS', dataset: 'Get Active: A Strategy for the Future of Sport and Physical Activity', url: 'https://www.gov.uk/government/publications/get-active-a-strategy-for-the-future-of-sport-and-physical-activity', date: '2023' },
-  { num: 3, name: 'Swim England', dataset: 'Facilities Report — State of the Nation's Swimming Pool Stock', url: 'https://www.swimming.org/swimengland/facilities-report/', date: '2023' },
+  { num: 3, name: 'Swim England', dataset: "Facilities Report — State of the Nation's Swimming Pool Stock", url: 'https://www.swimming.org/swimengland/facilities-report/', date: '2023' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

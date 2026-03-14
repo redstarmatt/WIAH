@@ -12,7 +12,7 @@ interface MetricCardProps {
   unit?: string;
   direction: Direction;
   polarity: Polarity;
-  changeText?: string;
+  changeText?: React.ReactNode;
   baseline?: string;
   sparklineData?: number[];
   source?: string;
@@ -61,7 +61,7 @@ function ExpandedModal({
   onClose,
 }: {
   title: string;
-  subtitle?: string;
+  subtitle?: React.ReactNode;
   series: Series[];
   annotations?: Annotation[];
   targetLine?: TargetLine;

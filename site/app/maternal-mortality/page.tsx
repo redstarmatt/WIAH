@@ -104,7 +104,7 @@ export default function MaternalMortalityPage() {
               label="Black maternal death disparity"
               value="3.7x"
               unit="vs white women (2023)"
-              direction="stable"
+              direction="flat"
               polarity="up-is-bad"
               changeText="persistent for over a decade · unchanged despite repeated reports"
               sparklineData={[4.0, 3.9, 3.7, 4.0, 4.1, 3.8, 3.7]}
