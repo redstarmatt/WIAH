@@ -8,6 +8,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'HSE', dataset: 'Statistics on fatal injuries in the workplace 2024/25', url: 'https://www.hse.gov.uk/statistics/fatals.htm', date: '2025' },
+  { num: 2, name: 'HSE', dataset: 'Non-fatal injuries — Labour Force Survey and RIDDOR', url: 'https://www.hse.gov.uk/statistics/causinj/', date: '2025' },
+  { num: 3, name: 'HSE', dataset: 'Costs to Britain of workplace injuries and ill health', url: 'https://www.hse.gov.uk/statistics/cost.htm', date: '2025', note: '£20.7 billion annual cost' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 

@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ofwat', dataset: 'Water Company Performance Reports', url: 'https://www.ofwat.gov.uk/regulated-companies/company-obligations/annual-performance-reports', date: '2024', note: 'Average annual bill £528; 26% increase approved for 2025-2030' },
+  { num: 2, name: 'Consumer Council for Water', dataset: 'Affordability and Debt Research', url: 'https://www.ccwater.org.uk/research', date: '2024', note: '25% of households in water poverty; 8% social tariff uptake' },
+  { num: 3, name: 'Ofwat', dataset: 'Social Tariff Monitoring', url: 'https://www.ofwat.gov.uk/households/customer-and-affordability-information/social-tariffs', date: '2023' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -78,8 +86,8 @@ export default function WaterAffordabilityPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Water bills in England and Wales have risen sharply since privatisation, with the average annual bill reaching £528 in 2024 — a 37% nominal increase since 2015. Ofwat&rsquo;s 2024 price review allowed a further 26% average increase over 2025–2030, partly to fund infrastructure investment, partly to service the large debt loads that companies accumulated during years of dividend extraction. Water poverty — defined as spending more than 3% of household income on water — affected an estimated 25% of households in 2024, up from 18% in 2015. Unlike energy bills during the 2022–23 crisis, water bills received no government subsidy, and social tariffs intended for low-income households are claimed by only around 8% of those eligible despite the scheme existing for over a decade.</p>
-            <p>The affordability burden falls hardest on those with the least flexibility. A flat annual charge is inherently regressive, consuming a far higher share of a low-income household&rsquo;s budget than a high-income one. Metered households with larger families or medical conditions requiring high water use face bills that do not reflect their ability to pay. Social tariffs — the principal protective mechanism — remain inaccessible to most eligible households because of low awareness, complex applications, and inconsistent promotion by companies. Bill increases approved to fund infrastructure investment in failing networks are thus falling disproportionately on those least able to bear them.</p>
+            <p>Water bills in England and Wales have risen sharply since privatisation, with the average annual bill reaching £528 in 2024 — a 37% nominal increase since 2015.<Cite nums={1} /> Ofwat&rsquo;s 2024 price review allowed a further 26% average increase over 2025–2030, partly to fund infrastructure investment, partly to service the large debt loads that companies accumulated during years of dividend extraction.<Cite nums={1} /> Water poverty — defined as spending more than 3% of household income on water — affected an estimated 25% of households in 2024, up from 18% in 2015.<Cite nums={2} /> Unlike energy bills during the 2022–23 crisis, water bills received no government subsidy, and social tariffs intended for low-income households are claimed by only around 8% of those eligible despite the scheme existing for over a decade.<Cite nums={3} /></p>
+            <p>The affordability burden falls hardest on those with the least flexibility. A flat annual charge is inherently regressive, consuming a far higher share of a low-income household&rsquo;s budget than a high-income one. Metered households with larger families or medical conditions requiring high water use face bills that do not reflect their ability to pay. Social tariffs — the principal protective mechanism — remain inaccessible to most eligible households because of low awareness, complex applications, and inconsistent promotion by companies.<Cite nums={[2, 3]} /> Bill increases approved to fund infrastructure investment in failing networks are thus falling disproportionately on those least able to bear them.</p>
           </div>
         </section>
 

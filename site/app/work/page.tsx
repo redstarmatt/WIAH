@@ -231,7 +231,7 @@ export default function WorkPage() {
               Unemployment at 4.4% looks reassuring, but the headline masks a composition
               problem. The share of working-age adults economically inactive due to long-term
               sickness reached 8.4% in 2024, up from 6.0% in 2019 — roughly 2.8 million
-              people no longer in or seeking work. Mental health conditions, musculoskeletal
+              people no longer in or seeking work.<Cite nums={3} /> Mental health conditions, musculoskeletal
               disorders, and the lingering effects of long COVID all contribute, but the
               proximate cause is the NHS backlog: people who cannot get treated cannot return
               to work. Britain's health crisis and its labour-market crisis are, in
@@ -362,6 +362,10 @@ export default function WorkPage() {
               </p>
             </section>
           )}
+        </div>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
         </div>
 
         {/* Sources */}

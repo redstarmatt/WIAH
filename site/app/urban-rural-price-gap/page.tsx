@@ -83,8 +83,8 @@ export default function UrbanRuralPriceGapPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Between 2019 and 2021, pandemic-driven remote working pushed rural house prices up approximately 19% in real terms — against 11% in urban areas. The rural affordability ratio peaked at 11.1 in 2021 before partially easing; it stood at 9.9 in 2024, still above the urban equivalent of 8.6, and 38% of rural local authorities now have price-to-earnings ratios above 10. The urban–rural affordability gap, just 0.3 in 2015, had grown to over 1.3 by 2024. The squeeze is compounded by lower rural wages: workers in rural areas earn approximately 14% less than their urban counterparts, meaning rural households face higher price-to-earnings ratios on lower absolute incomes.</p>
-            <p>The consequences are reshaping rural communities. Village schools are closing as family households are displaced; local businesses face labour shortages because workers cannot afford to live nearby. In coastal and rural communities, second homes and Airbnb properties have removed stock from the primary market. Planning constraints — National Parks, Areas of Outstanding Natural Beauty, Green Belts — restrict new development in the most affected areas, while council tax premiums on second homes and empty-property surcharges are marginal interventions relative to the scale of displacement.</p>
+            <p>Between 2019 and 2021, pandemic-driven remote working pushed rural house prices up approximately 19% in real terms — against 11% in urban areas. The rural affordability ratio peaked at 11.1 in 2021 before partially easing; it stood at 9.9 in 2024, still above the urban equivalent of 8.6, and 38% of rural local authorities now have price-to-earnings ratios above 10.<Cite nums={1} /> The urban–rural affordability gap, just 0.3 in 2015, had grown to over 1.3 by 2024. The squeeze is compounded by lower rural wages: workers in rural areas earn approximately 14% less than their urban counterparts, meaning rural households face higher price-to-earnings ratios on lower absolute incomes.<Cite nums={2} /></p>
+            <p>The consequences are reshaping rural communities. Village schools are closing as family households are displaced; local businesses face labour shortages because workers cannot afford to live nearby. In coastal and rural communities, second homes and Airbnb properties have removed stock from the primary market. Planning constraints — National Parks, Areas of Outstanding Natural Beauty, Green Belts — restrict new development in the most affected areas, while council tax premiums on second homes and empty-property surcharges are marginal interventions relative to the scale of displacement.<Cite nums={3} /></p>
           </div>
         </section>
 
@@ -144,6 +144,10 @@ export default function UrbanRuralPriceGapPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

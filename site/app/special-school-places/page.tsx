@@ -8,6 +8,16 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DfE', dataset: 'Education, Health and Care Plans — England', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/education-health-and-care-plans', date: '2024' },
+  { num: 2, name: 'IPSEA / NAS', dataset: 'SEND Provision Analysis — Children Without Placement', date: '2024', note: 'FoI-based estimate of 5,200 children without special school placement' },
+  { num: 3, name: 'DfE', dataset: 'Local Authority Revenue Expenditure — High Needs Block', date: '2024', note: 'Total SEND spending reached £10.3 billion in 2023-24' },
+  { num: 4, name: 'SEND Tribunal Service', dataset: 'SEND Tribunal Casework Statistics', date: '2024', note: 'Casework up 60% since 2019' },
+  { num: 5, name: 'DfE', dataset: 'SEND Review — Right Support, Right Place, Right Time', date: 'March 2023' },
+];
 
 interface SpecialSchoolDataPoint {
   year: number
@@ -59,8 +69,8 @@ export default function SpecialSchoolPlacesPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Children with Education, Health and Care (EHC) plans have risen from approximately 240,000 in 2015 to over 575,000 in 2024, driven by rising need, better identification, greater parental awareness of rights under the Children and Families Act 2014, and expanded eligibility. Provision has not kept pace: applications for special school places exceed available places by 30%, with an estimated 5,200 children currently without a placement — some waiting over 12 months. When maintained special school places are unavailable, local authorities must fund alternatives: independent special school placements averaging £65,000–£120,000 per year against the £27,800 maintained average, four times the mainstream rate. Total local authority SEND spending reached £10.3 billion in 2023–24 — a 55% rise in five years — yet most councils are accumulating high-needs budget deficits that are creating significant financial distress. SEND Tribunal casework has risen 60% since 2019, with a high proportion of successful appeals resulting in independent placements at greater cost than the provision originally refused.</p>
-            <p>The government's SEND Review (March 2023) committed to a new national framework, standardised local inclusion plans, and a capital programme to create 60,000 new SEND places. New special schools typically take 3–5 years from planning to opening, and critics argued the review did not address the fundamental resource gap. The structural mismatch between rising demand and constrained supply is most severe for children with autism, complex communication needs, and profound learning disabilities — the populations for whom mainstream provision is least suitable and for whom waiting without an appropriate placement has the most serious developmental consequences.</p>
+            <p>Children with Education, Health and Care (EHC) plans have risen from approximately 240,000 in 2015 to over 575,000 in 2024, driven by rising need, better identification, greater parental awareness of rights under the Children and Families Act 2014, and expanded eligibility.<Cite nums={1} /> Provision has not kept pace: applications for special school places exceed available places by 30%, with an estimated 5,200 children currently without a placement — some waiting over 12 months.<Cite nums={2} /> When maintained special school places are unavailable, local authorities must fund alternatives: independent special school placements averaging £65,000–£120,000 per year against the £27,800 maintained average, four times the mainstream rate. Total local authority SEND spending reached £10.3 billion in 2023–24 — a 55% rise in five years — yet most councils are accumulating high-needs budget deficits that are creating significant financial distress.<Cite nums={3} /> SEND Tribunal casework has risen 60% since 2019, with a high proportion of successful appeals resulting in independent placements at greater cost than the provision originally refused.<Cite nums={4} /></p>
+            <p>The government's SEND Review (March 2023) committed to a new national framework, standardised local inclusion plans, and a capital programme to create 60,000 new SEND places.<Cite nums={5} /> New special schools typically take 3–5 years from planning to opening, and critics argued the review did not address the fundamental resource gap. The structural mismatch between rising demand and constrained supply is most severe for children with autism, complex communication needs, and profound learning disabilities — the populations for whom mainstream provision is least suitable and for whom waiting without an appropriate placement has the most serious developmental consequences.</p>
           </div>
         </section>
 
@@ -113,6 +123,10 @@ export default function SpecialSchoolPlacesPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

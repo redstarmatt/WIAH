@@ -8,6 +8,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DEFRA', dataset: 'Local authority collected waste statistics (WasteDataFlow)', url: 'https://www.gov.uk/government/statistics/local-authority-collected-waste-management-annual-results', date: '2023', note: 'Recycling rate 43.8%, landfill 5.5%, incineration capacity 17.3Mt/year' },
+  { num: 2, name: 'DEFRA / Environment Agency', dataset: 'UK statistics on waste — National Packaging Waste Database', url: 'https://www.gov.uk/government/statistics/uk-waste-data', date: '2023', note: 'Packaging recycling rates by material' },
+  { num: 3, name: 'WRAP / DEFRA', dataset: 'Plastic waste export data and contamination rates', url: 'https://www.gov.uk/government/statistics/uk-waste-data', date: '2023', note: 'UK second-largest plastic waste exporter; 82% contamination rate; 525,000 tonnes rejected' },
+];
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -143,23 +151,23 @@ export default function WastePage() {
             <p>
               England's recycling rate stands at 43.8% — virtually unchanged since it
               stalled at roughly 44% in 2011. The government target is 65% by 2035, a gap of
-              more than 20 percentage points with no credible trajectory to close it. What has
+              more than 20 percentage points with no credible trajectory to close it.<Cite nums={1} /> What has
               changed, dramatically, is where the rest goes. Landfill collapsed from 81% of
               household waste in 2000 to just 5.5% today, but recycling did not fill the void.
               Incineration did. Energy-from-waste capacity more than doubled since 2014 to
               17.3 million tonnes a year, and EfW plants now handle nearly half of all collected
-              household waste. Councils have swapped one end-of-pipe solution for another —
+              household waste.<Cite nums={1} /> Councils have swapped one end-of-pipe solution for another —
               cleaner than landfill, but neither circular nor cheap to unwind once 25-year
               burn contracts are signed.
             </p>
             <p>
               The recycling rate masks sharp material-by-material variation. Paper and card recover
               at 86%, glass and metal at around 80%, but plastic manages just 51% — and much of
-              that is downcycled rather than remade. The UK is the world's second-largest
+              that is downcycled rather than remade.<Cite nums={2} /> The UK is the world's second-largest
               exporter of plastic waste; after China banned imports in 2018, shipments shifted to
-              Turkey, Malaysia and Vietnam, where oversight is weaker. At home, contamination
+              Turkey, Malaysia and Vietnam, where oversight is weaker.<Cite nums={3} /> At home, contamination
               undermines what collection achieves: 82% of households put wrong items in recycling
-              bins, and 525,000 tonnes are rejected at sorting facilities each year. Public
+              bins, and 525,000 tonnes are rejected at sorting facilities each year.<Cite nums={3} /> Public
               willingness is not the bottleneck — infrastructure and end-markets are.
             </p>
             </div>
@@ -321,6 +329,8 @@ export default function WastePage() {
             source="Source: DEFRA Extended Producer Responsibility guidance, 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6"><References items={editorialRefs} /></div>
 
         {/* Sources */}
         <section className="border-t border-wiah-border pt-8">

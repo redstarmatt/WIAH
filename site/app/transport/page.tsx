@@ -300,23 +300,23 @@ export default function TransportPage() {
               Rail and bus share the same underlying problem: decades of underinvestment
               compounded by short-term shocks. Rail punctuality has been falling since
               2014, with the botched 2018 timetable change across Northern and Thameslink
-              services exposing how little margin the network had. COVID-19 then collapsed
+              services exposing how little margin the network had.<Cite nums={1} /> COVID-19 then collapsed
               demand, and while passenger numbers recovered to roughly 95% of pre-pandemic
               levels, performance did not follow — ageing signalling, capacity
               bottlenecks, and the 2022 RMT/ASLEF strikes all took their toll. Buses tell
               a parallel story outside London: local authority funding for supported routes
               has fallen over 40% in real terms since 2010, services have been withdrawn,
-              and ridership has never fully recovered from the pandemic. The £2 fare
+              and ridership has never fully recovered from the pandemic.<Cite nums={2} /> The £2 fare
               cap sustained demand but could not replace the routes that had already gone.
               Greater Manchester's Bee Network re-regulation is the first serious
               attempt to reverse this model.
             </p>
             <p>
               Road safety is one of British public policy&rsquo;s genuine long-run successes:
-              fatalities fell 73% between 1979 and 2023, from 6,352 killed to 1,695. But
+              fatalities fell 73% between 1979 and 2023, from 6,352 killed to 1,695.<Cite nums={3} /> But
               progress has stalled since 2010, with deaths plateaued at around 1,700 a year.
               Battery electric vehicles now account for nearly 1 in 5 new car sales, with over
-              1.4 million EVs on UK roads — a tenfold increase since 2019.
+              1.4 million EVs on UK roads — a tenfold increase since 2019.<Cite nums={4} />
             </p>
             </div>
         </section>
@@ -655,6 +655,8 @@ export default function TransportPage() {
             <div className="h-64 bg-wiah-light rounded animate-pulse mb-16" />
           )}
         </div>{/* end sec-ev */}
+
+        <div className="mt-6"><References items={editorialRefs} /></div>
 
         {/* Sources */}
         <section className="border-t border-wiah-border pt-8">

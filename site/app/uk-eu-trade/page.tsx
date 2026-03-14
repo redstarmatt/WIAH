@@ -9,6 +9,14 @@ import type { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'UK Trade Statistics — goods trade with EU', url: 'https://www.ons.gov.uk/economy/nationalaccounts/balanceofpayments/bulletins/uktrade', date: '2024' },
+  { num: 2, name: 'Centre for European Reform', dataset: 'The hit to UK trade from Brexit', url: 'https://www.cer.eu/publications', date: '2023' },
+  { num: 3, name: 'HMRC', dataset: 'Customs declaration data and British Chambers of Commerce survey', url: 'https://www.uktradeinfo.com', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -70,8 +78,8 @@ export default function UkEuTradePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK's departure from the EU single market on 1 January 2021 introduced customs formalities and regulatory checks between Great Britain and its largest trading partner for the first time since 1993. Academic studies consistently find UK goods exports to the EU were 15–25% lower by 2023 than they would have been under continued single market membership, with the negative effect concentrated in food and agricultural products, SME exporters, and just-in-time supply chains. UK goods exports were £167 billion in 2024 — below the pre-Brexit trend — while goods imports from the EU reached £241 billion, producing a £74 billion bilateral deficit. The UK introduced approximately 1.8 million new customs declarations per month from January 2021, with compliance costs estimated at £7 billion per year by industry groups; many smaller businesses have withdrawn from EU markets entirely.</p>
-            <p>The impact of Brexit trade barriers falls asymmetrically. Goods exporters face customs declarations, rules of origin requirements, and sector-specific compliance costs that are absent for service exporters — meaning London's financial services sector has been relatively insulated while food processing, automotive, and agricultural exporters in Leave-voting regions have borne the highest costs. The TCA's rules of origin requirements have driven supply chain restructuring in automotive and aerospace. Services trade has been more resilient, though the loss of financial services passporting resulted in significant relocation of EU-facing business to Dublin, Amsterdam, Frankfurt, and Paris.</p>
+            <p>The UK's departure from the EU single market on 1 January 2021 introduced customs formalities and regulatory checks between Great Britain and its largest trading partner for the first time since 1993. Academic studies consistently find UK goods exports to the EU were 15–25% lower by 2023 than they would have been under continued single market membership, with the negative effect concentrated in food and agricultural products, SME exporters, and just-in-time supply chains. UK goods exports were £167 billion in 2024 — below the pre-Brexit trend — while goods imports from the EU reached £241 billion, producing a £74 billion bilateral deficit. The UK introduced approximately 1.8 million new customs declarations per month from January 2021, with compliance costs estimated at £7 billion per year by industry groups; many smaller businesses have withdrawn from EU markets entirely.<Cite nums={[1,2,3]} /></p>
+            <p>The impact of Brexit trade barriers falls asymmetrically. Goods exporters face customs declarations, rules of origin requirements, and sector-specific compliance costs that are absent for service exporters — meaning London's financial services sector has been relatively insulated while food processing, automotive, and agricultural exporters in Leave-voting regions have borne the highest costs. The TCA's rules of origin requirements have driven supply chain restructuring in automotive and aerospace. Services trade has been more resilient, though the loss of financial services passporting resulted in significant relocation of EU-facing business to Dublin, Amsterdam, Frankfurt, and Paris.<Cite nums={2} /></p>
           </div>
         </section>
 
@@ -135,6 +143,10 @@ export default function UkEuTradePage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

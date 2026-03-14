@@ -8,6 +8,15 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+// ── References ──────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Home Office', dataset: 'Immigration statistics — visa processing times', url: 'https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables', date: '2025', note: 'Quarterly' },
+  { num: 2, name: 'Home Office', dataset: 'UK Visas and Immigration transparency data', url: 'https://www.gov.uk/government/publications/immigration-and-protection-data', date: '2025' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -194,6 +203,8 @@ export default function TopicPage() {
             source="Source: Home Office — Immigration statistics, 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6 max-w-2xl"><References items={editorialRefs} /></div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

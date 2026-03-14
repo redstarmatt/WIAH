@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'BEIS', dataset: 'Trade Union Statistics 2023', url: 'https://www.gov.uk/government/statistics/trade-union-statistics-2023', date: '2023' },
+  { num: 2, name: 'ONS', dataset: 'Labour Disputes — Working days lost', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/workplacedisputesandworkingconditions', date: '2024', note: '4 million days lost in 2023 — highest since 1989' },
+  { num: 3, name: 'HM Government', dataset: 'Strikes (Minimum Service Levels) Act 2023', url: 'https://www.legislation.gov.uk/ukpga/2023/39/contents/enacted', date: '2023' },
+];
 
 export default function TradeUnionsPage() {
   // Trade union membership 1979–2023 (millions) — selected years
@@ -68,9 +76,9 @@ export default function TradeUnionsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Trade union membership peaked in the UK at around 13 million in 1979 — the year Margaret Thatcher came to power — and fell steeply through the 1980s and 1990s as deindustrialisation wiped out the union heartlands of mining, steel, shipbuilding and manufacturing, and successive Employment Acts restricted unions' legal powers. By 2023, membership had stabilised at around 6.4 million, representing 22.3% of all employees — a figure that has been remarkably stable since around 2000, suggesting the structural decline may have bottomed out.</p>
-            <p>The composition of union membership has shifted profoundly. The public sector is now the heartland: around 49% of public sector workers are union members, compared to just 12% in the private sector. Unions are strongest in education (52% density), public administration (51%), and health (43%). The fastest-growing sector — gig economy platform work — has almost no union presence, raising fundamental questions about whether the 20th-century union model can adapt to 21st-century employment.</p>
-            <p>The 2022–23 wave of strikes — involving Royal Mail, rail workers, nurses, teachers, junior doctors, and civil servants — produced 4 million working days lost in 2023, the highest since 1989. The strikes were driven by real-terms pay cuts from a combination of multi-year pay freezes and high inflation. The government's response included the Strikes (Minimum Service Levels) Act 2023, which allows employers to require a minimum level of service during strikes in certain sectors — condemned by unions as an attack on the right to strike.</p>
+            <p>Trade union membership peaked in the UK at around 13 million in 1979 — the year Margaret Thatcher came to power — and fell steeply through the 1980s and 1990s as deindustrialisation wiped out the union heartlands of mining, steel, shipbuilding and manufacturing, and successive Employment Acts restricted unions' legal powers. By 2023, membership had stabilised at around 6.4 million, representing 22.3% of all employees — a figure that has been remarkably stable since around 2000, suggesting the structural decline may have bottomed out.<Cite nums={1} /></p>
+            <p>The composition of union membership has shifted profoundly. The public sector is now the heartland: around 49% of public sector workers are union members, compared to just 12% in the private sector.<Cite nums={1} /> Unions are strongest in education (52% density), public administration (51%), and health (43%). The fastest-growing sector — gig economy platform work — has almost no union presence, raising fundamental questions about whether the 20th-century union model can adapt to 21st-century employment.</p>
+            <p>The 2022–23 wave of strikes — involving Royal Mail, rail workers, nurses, teachers, junior doctors, and civil servants — produced 4 million working days lost in 2023, the highest since 1989.<Cite nums={2} /> The strikes were driven by real-terms pay cuts from a combination of multi-year pay freezes and high inflation. The government's response included the Strikes (Minimum Service Levels) Act 2023, which allows employers to require a minimum level of service during strikes in certain sectors — condemned by unions as an attack on the right to strike.<Cite nums={3} /></p>
           </div>
         </section>
 
@@ -155,6 +163,10 @@ export default function TradeUnionsPage() {
             source="Source: BEIS — Trade Union Statistics 2023; TUC — Unions in 2023 report."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

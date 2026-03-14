@@ -9,6 +9,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -33,6 +35,14 @@ interface ZeroHoursData {
     knownIssues: string[];
   };
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Labour Force Survey — EMP17 (Zero-hours contracts)', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/datasets/emp17peopleinemploymentonzerohourscontracts', date: '2024', note: 'Approximately 1.1 million workers on zero-hours contracts, nearly trebled from 400,000 in 2013' },
+  { num: 2, name: 'Resolution Foundation', dataset: 'Low Pay Britain — Zero-hours contracts earnings gap', url: 'https://www.resolutionfoundation.org/publications/', date: '2024', note: 'Zero-hours workers earn on average £6,200 less per year than comparable standard-contract employees' },
+  { num: 3, name: 'UK Parliament', dataset: 'Small Business, Enterprise and Employment Act 2015', url: 'https://www.legislation.gov.uk/ukpga/2015/26', date: '2015', note: 'Banned exclusivity clauses in zero-hours contracts' },
+  { num: 4, name: 'BEIS', dataset: 'Good Work: The Taylor Review of Modern Working Practices', url: 'https://www.gov.uk/government/publications/good-work-the-taylor-review-of-modern-working-practices', date: '2017', note: 'Recommended "dependent contractor" category; never implemented' },
+  { num: 5, name: 'BEIS', dataset: 'Good Work Plan — Government response to Taylor Review', url: 'https://www.gov.uk/government/publications/good-work-plan', date: '2018', note: 'Introduced right to request predictable contract after 26 weeks' },
+];
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 

@@ -8,6 +8,17 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+// -- References -------------------------------------------------------------
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Department for Education', dataset: 'Longitudinal Education Outcomes (LEO)', url: 'https://explore-education-statistics.service.gov.uk/', date: '2023', note: 'Tracks earnings via HMRC data' },
+  { num: 2, name: 'Department for Education', dataset: '16-18 Qualifications Achieved', url: 'https://explore-education-statistics.service.gov.uk/', date: '2023' },
+  { num: 3, name: 'CBI', dataset: 'Education and Skills Survey', url: 'https://www.cbi.org.uk/', date: '2023' },
+  { num: 4, name: 'Department for Education', dataset: 'Apprenticeships and traineeships statistics', url: 'https://explore-education-statistics.service.gov.uk/', date: '2023' },
+];
 
 // -- Types ------------------------------------------------------------------
 

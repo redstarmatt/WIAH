@@ -9,6 +9,15 @@ import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'RCVS', dataset: 'Survey of the Veterinary Profession', url: 'https://www.rcvs.org.uk/news-and-views/publications/', date: '2024' },
+  { num: 2, name: 'CMA', dataset: 'Veterinary Services Market Investigation', url: 'https://www.gov.uk/cma-cases/veterinary-services-market-investigation', date: '2024' },
+  { num: 3, name: 'BVA', dataset: 'Voice of the Veterinary Profession Survey', url: 'https://www.bva.co.uk/', date: '2024' },
+  { num: 4, name: 'PDSA', dataset: 'Animal Wellbeing (PAW) Report', url: 'https://www.pdsa.org.uk/what-we-do/pdsa-animal-wellbeing-report', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -113,8 +122,8 @@ export default function VetDesertsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK's relationship with its pets has never been more intense, nor the system that cares for them more strained. The pet population surged roughly 20% during the pandemic, from an estimated 13 million dogs and cats to over 16 million, as lockdown isolation drove a wave of impulse purchasing and adoption. That wave has not receded. But the veterinary infrastructure those animals depend on has been moving in the opposite direction. The number of vet practices per capita has fallen by approximately 25% over the past decade, driven primarily by corporate consolidation: six major chains — including CVS Group, IVC Evidensia, and Medivet — now own more than 60% of UK practices, up from around 28% in 2014. The Competition and Markets Authority launched a formal market investigation into veterinary pricing in 2024, responding to widespread concern that consolidation is reducing choice and driving up costs. Emergency out-of-hours care has been particularly affected. Average bills for emergency consultations have tripled over the decade, reaching between £600 and £800, with some complex cases running into thousands. Rural areas are increasingly underserved — parts of Wales, the Scottish Highlands, and rural England now qualify as genuine "vet deserts" where no practice exists within 30 miles.</p>
-            <p>The workforce crisis behind these numbers is severe and worsening. The Royal College of Veterinary Surgeons reports that 40% of vets are considering leaving the profession, citing burnout, unsustainable workloads, and a rise in client aggression that accelerated during the pandemic. The suicide rate among veterinary professionals is three times that of the general population — a statistic that has prompted the RCVS Mind Matters initiative but has not yet shifted. The British Veterinary Association's annual survey found that 95% of practices report recruitment difficulties, with rural and mixed-animal practices hit hardest. New graduates carry average debt of £50,000 and are increasingly drawn to urban small-animal work or corporate roles with structured hours, leaving farm and rural practice dangerously understaffed. The consequences fall hardest on those least able to absorb them: the PDSA estimates that 5 million pets across the UK are not receiving veterinary treatment they need, concentrated in low-income households where pet insurance — itself up 30% in two years — is unaffordable. The gap between the nation's emotional investment in its animals and its capacity to actually care for them has never been wider.</p>
+            <p>The UK's relationship with its pets has never been more intense, nor the system that cares for them more strained. The pet population surged roughly 20% during the pandemic, from an estimated 13 million dogs and cats to over 16 million, as lockdown isolation drove a wave of impulse purchasing and adoption.<Cite nums={4} /> That wave has not receded. But the veterinary infrastructure those animals depend on has been moving in the opposite direction. The number of vet practices per capita has fallen by approximately 25% over the past decade, driven primarily by corporate consolidation: six major chains — including CVS Group, IVC Evidensia, and Medivet — now own more than 60% of UK practices, up from around 28% in 2014.<Cite nums={2} /> The Competition and Markets Authority launched a formal market investigation into veterinary pricing in 2024, responding to widespread concern that consolidation is reducing choice and driving up costs. Emergency out-of-hours care has been particularly affected. Average bills for emergency consultations have tripled over the decade, reaching between £600 and £800, with some complex cases running into thousands.<Cite nums={3} /> Rural areas are increasingly underserved — parts of Wales, the Scottish Highlands, and rural England now qualify as genuine "vet deserts" where no practice exists within 30 miles.</p>
+            <p>The workforce crisis behind these numbers is severe and worsening. The Royal College of Veterinary Surgeons reports that 40% of vets are considering leaving the profession, citing burnout, unsustainable workloads, and a rise in client aggression that accelerated during the pandemic.<Cite nums={1} /> The suicide rate among veterinary professionals is three times that of the general population — a statistic that has prompted the RCVS Mind Matters initiative but has not yet shifted. The British Veterinary Association's annual survey found that 95% of practices report recruitment difficulties, with rural and mixed-animal practices hit hardest.<Cite nums={3} /> New graduates carry average debt of £50,000 and are increasingly drawn to urban small-animal work or corporate roles with structured hours, leaving farm and rural practice dangerously understaffed. The consequences fall hardest on those least able to absorb them: the PDSA estimates that 5 million pets across the UK are not receiving veterinary treatment they need, concentrated in low-income households where pet insurance — itself up 30% in two years — is unaffordable.<Cite nums={4} /> The gap between the nation's emotional investment in its animals and its capacity to actually care for them has never been wider.</p>
           </div>
         </section>
 
@@ -215,6 +224,10 @@ export default function VetDesertsPage() {
             source="Source: RCVS — Annual Report 2024; Mind Matters Initiative Progress Report."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

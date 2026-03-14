@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'TUC / YouGov', dataset: 'Worker surveillance survey 2024', url: 'https://www.tuc.org.uk/research-analysis/reports/worker-surveillance', date: '2024', note: '72% of employers using monitoring; 380% growth 2019–2020' },
+  { num: 2, name: 'ICO', dataset: 'Employment Practices Code', url: 'https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/employment/', date: '2023' },
+  { num: 3, name: 'ICO', dataset: 'Monitoring investigation statistics', url: 'https://ico.org.uk/', date: '2024', note: 'Investigations rose from 8 in 2019 to 35 in 2024' },
+  { num: 4, name: 'TUC / YouGov', dataset: 'Wellbeing impact of workplace monitoring', url: 'https://www.tuc.org.uk/research-analysis/reports/worker-surveillance', date: '2024', note: '45% of monitored workers report harm' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -126,10 +135,10 @@ export default function WorkerMonitoringPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              When workforces moved home in 2020, a significant proportion of employers responded by deploying digital monitoring software. Keystroke logging, screen capture at timed intervals, website tracking, email scanning, GPS tracking of delivery workers — the market for employee surveillance technology grew by an estimated 380% between 2019 and 2020 alone. By 2024, seven in ten UK employers were using at least one form of productivity monitoring, a level that has not declined as workers returned to offices.
+              When workforces moved home in 2020, a significant proportion of employers responded by deploying digital monitoring software. Keystroke logging, screen capture at timed intervals, website tracking, email scanning, GPS tracking of delivery workers — the market for employee surveillance technology grew by an estimated 380% between 2019 and 2020 alone. By 2024, seven in ten UK employers were using at least one form of productivity monitoring, a level that has not declined as workers returned to offices.<Cite nums={1} />
             </p>
             <p>
-              The legal framework is clear but widely flouted. The ICO's Employment Practices Code requires that monitoring be necessary, proportionate, transparent, and lawful under GDPR and the Data Protection Act 2018. Covert monitoring — of which workers are unaware — is unlawful except in very limited circumstances. Yet ICO investigations into unlawful monitoring have risen from 8 in 2019 to 35 in 2024, suggesting a significant and growing compliance deficit. The psychological consequences are also measurable: 45% of workers in surveyed companies with monitoring programmes report that it damages their wellbeing, trust, or ability to concentrate, according to TUC/YouGov data.
+              The legal framework is clear but widely flouted. The ICO's Employment Practices Code requires that monitoring be necessary, proportionate, transparent, and lawful under GDPR and the Data Protection Act 2018.<Cite nums={2} /> Covert monitoring — of which workers are unaware — is unlawful except in very limited circumstances. Yet ICO investigations into unlawful monitoring have risen from 8 in 2019 to 35 in 2024, suggesting a significant and growing compliance deficit.<Cite nums={3} /> The psychological consequences are also measurable: 45% of workers in surveyed companies with monitoring programmes report that it damages their wellbeing, trust, or ability to concentrate, according to TUC/YouGov data.<Cite nums={4} />
             </p>
           </div>
         </section>
@@ -211,6 +220,10 @@ export default function WorkerMonitoringPage() {
             source="Source: ICO — Employment Practices Code 2023; TUC — Worker surveillance: your rights 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

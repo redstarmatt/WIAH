@@ -167,13 +167,13 @@ export default function TaxBurdenPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The overall tax burden has risen steadily since 2019, accelerating sharply after the pandemic. The single largest driver is fiscal drag: the decision to freeze income tax thresholds at 2021 levels while earnings have risen by over 20%. This has pulled an estimated 3.8 million additional people into the higher rate of income tax by 2026-27 without any formal rate change. In practice, it functions as a stealth tax rise &mdash; no headline announcement, no parliamentary vote, but a growing share of ordinary pay packets taken by the Treasury.
+              The overall tax burden has risen steadily since 2019, accelerating sharply after the pandemic. The single largest driver is fiscal drag: the decision to freeze income tax thresholds at 2021 levels while earnings have risen by over 20%. This has pulled an estimated 3.8 million additional people into the higher rate of income tax by 2026-27 without any formal rate change.<Cite nums={2} /> In practice, it functions as a stealth tax rise &mdash; no headline announcement, no parliamentary vote, but a growing share of ordinary pay packets taken by the Treasury.
             </p>
             <p>
-              Council tax has compounded the squeeze at the local level. Average Band D bills have risen from &pound;1,187 in 2010 to &pound;1,874 in 2025 &mdash; a 58% increase. Since 2022, councils have been permitted 5% annual rises (3% general plus 2% adult social care precept) to offset central government funding cuts. The burden falls hardest on those in lower-value properties, where council tax represents a far larger share of household income than for wealthier homeowners.
+              Council tax has compounded the squeeze at the local level. Average Band D bills have risen from &pound;1,187 in 2010 to &pound;1,874 in 2025 &mdash; a 58% increase.<Cite nums={3} /> Since 2022, councils have been permitted 5% annual rises (3% general plus 2% adult social care precept) to offset central government funding cuts. The burden falls hardest on those in lower-value properties, where council tax represents a far larger share of household income than for wealthier homeowners.
             </p>
             <p>
-              Total HMRC receipts crossed &pound;282 billion in 2024-25, up from &pound;149 billion in 2010. These figures reflect a structural shift in how the state is funded &mdash; through threshold manipulation rather than overt rate changes. Understanding the scale is the first step toward accountability.
+              Total HMRC receipts crossed &pound;282 billion in 2024-25, up from &pound;149 billion in 2010.<Cite nums={1} /> These figures reflect a structural shift in how the state is funded &mdash; through threshold manipulation rather than overt rate changes. Understanding the scale is the first step toward accountability.
             </p>
           </div>
         </section>
@@ -337,6 +337,10 @@ export default function TaxBurdenPage() {
             source="Source: HM Treasury — Autumn Budget 2024. OBR — Economic and Fiscal Outlook, March 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources & Methodology */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

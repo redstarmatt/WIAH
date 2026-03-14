@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'UK Trade in Goods and Services', url: 'https://www.ons.gov.uk/economy/nationalaccounts/balanceofpayments/bulletins/uktrade/latest', date: '2024' },
+  { num: 2, name: 'OBR', dataset: 'Brexit trade impact assessment', url: 'https://obr.uk/forecasts-in-depth/the-economy-forecast/brexit-analysis/', date: '2024', note: 'OBR estimates Brexit reduced UK trade intensity by 15%' },
+  { num: 3, name: 'ONS', dataset: 'UK Trade in Services', url: 'https://www.ons.gov.uk/businessindustryandtrade/internationaltrade', date: '2024', note: '£145bn services surplus in 2023' },
+];
 
 interface TradeBalancePoint {
   year: number;
@@ -132,10 +140,10 @@ export default function TradePage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The Trade and Cooperation Agreement took effect in January 2021, and the friction showed immediately. UK goods exports to the EU fell to a volume index of 93 by 2023 — 7% below the pre-Brexit trend with the 2016 baseline at 100. Food and drink were hit hardest: new veterinary checks and certification requirements drove a 33% volume collapse in 2021, and by 2023 exports remained 22% below 2019 levels. The OBR estimates Brexit has reduced overall UK trade intensity by 15% relative to continued membership, with non-tariff barriers adding 1–4% to the cost of each goods transaction.
+              The Trade and Cooperation Agreement took effect in January 2021, and the friction showed immediately. UK goods exports to the EU fell to a volume index of 93 by 2023 — 7% below the pre-Brexit trend with the 2016 baseline at 100.<Cite nums={1} /> Food and drink were hit hardest: new veterinary checks and certification requirements drove a 33% volume collapse in 2021, and by 2023 exports remained 22% below 2019 levels. The OBR estimates Brexit has reduced overall UK trade intensity by 15% relative to continued membership, with non-tariff barriers adding 1–4% to the cost of each goods transaction.<Cite nums={2} />
             </p>
             <p>
-              Britain's services sector has partially compensated. The UK ran a £145 billion services surplus in 2023, up from £121 billion in 2019, driven by financial services, consulting, and higher education. The EU's share of UK exports edged down from 43% to 41% over the same period as trade redirected towards new partners — the UK has signed agreements with 71 countries covering roughly 66% of trade, and joined CPTPP, the 11-country Pacific bloc. Yet the EU remains by far the largest single market for British goods, and no new deal replaces its scale.
+              Britain's services sector has partially compensated. The UK ran a £145 billion services surplus in 2023, up from £121 billion in 2019, driven by financial services, consulting, and higher education.<Cite nums={3} /> The EU's share of UK exports edged down from 43% to 41% over the same period as trade redirected towards new partners — the UK has signed agreements with 71 countries covering roughly 66% of trade, and joined CPTPP, the 11-country Pacific bloc.<Cite nums={1} /> Yet the EU remains by far the largest single market for British goods, and no new deal replaces its scale.
             </p>
             </div>
         </section>
