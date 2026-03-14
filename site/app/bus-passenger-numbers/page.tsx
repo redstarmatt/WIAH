@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 import References, { Reference } from '@/components/References';
+import Cite from '@/components/Cite';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DfT', dataset: 'Bus Statistics', url: 'https://www.gov.uk/government/collections/bus-statistics', date: '2024' },
@@ -25,6 +26,13 @@ export default function BusPassengerNumbersPage() {
           colour="#F4A261"
           preposition="in"
         />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>The collapse of bus ridership outside London is one of the starkest indicators of how public transport policy has failed provincial England. Since 2004, passenger numbers have fallen by 45% — from 2.9 billion journeys to 1.6 billion — a decline that predates the pandemic and has only been partially reversed since. The mechanism is self-reinforcing: local authorities, facing sustained austerity-era budget cuts, reduced subsidies for commercially marginal routes; operators responded by cutting 28% of total route mileage since 2010, eliminating evening, weekend, and rural services first; passengers who could drive switched to cars, further eroding the revenue base. Outside London, where Transport for London controls routes, fares, and frequencies through a regulated franchise model, no comparable authority exists. The result is a deregulated market that works tolerably in dense urban corridors and fails almost everywhere else.<Cite nums={1} /></p>
+            <p>The government&apos;s response has combined short-term fare interventions — the &pound;2 bus fare cap, introduced in January 2023 — with longer-term ambitions around Bus Service Improvement Plans. Early evidence suggests the fare cap has stabilised, and in some areas modestly increased, passenger numbers, but without accompanying frequency improvements it cannot reverse the structural decline. Meanwhile, the fleet is undergoing a quiet transformation: zero-emission buses now account for 7.2% of the national fleet, up from 0.5% in 2019, driven by the ZEBRA funding scheme. But green buses on shrinking networks solve an emissions problem without addressing the mobility crisis. For the millions of people who depend on buses — disproportionately the young, the elderly, and those on low incomes — the question is not what fuel the bus uses but whether one turns up at all.<Cite nums={2} /></p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Key metrics' },

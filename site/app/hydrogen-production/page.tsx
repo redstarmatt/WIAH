@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 import References, { Reference } from '@/components/References';
+import Cite from '@/components/Cite';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DESNZ', dataset: 'Net Zero Hydrogen Fund', url: 'https://www.gov.uk/government/publications/net-zero-hydrogen-fund', date: '2024' },
@@ -25,6 +26,13 @@ export default function HydrogenProductionPage() {
           colour="#264653"
           preposition="in UK"
         />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>The UK government set a target of 10 GW of low-carbon hydrogen production capacity by 2030, positioning hydrogen as central to decarbonising heavy industry, long-haul transport, and gas grid heating. Five years on, installed capacity stands at just 0.7 GW. Only 14 electrolytic hydrogen projects have received consent under the first Hydrogen Allocation Round, and the pipeline of projects awaiting final investment decisions stretches into the late 2020s.<Cite nums={1} /> The gap between ambition and delivery is not principally technological. Green hydrogen costs have halved since 2020, falling from roughly 12 pounds per kilogram to around 6.50 pounds, driven by cheaper electrolysers and falling renewable electricity prices. But at four times the cost of grey hydrogen produced from natural gas, green hydrogen remains uncompetitive without sustained subsidy or a meaningful carbon price.</p>
+            <p>The deeper problem is policy certainty. Developers report that the business model for hydrogen production remains unclear: the Hydrogen Production Business Model, designed to provide revenue support akin to Contracts for Difference in renewables, has been slow to operationalise, and offtake agreements with industrial users are difficult to secure when neither producer nor consumer knows what hydrogen will cost in five years.<Cite nums={2} /> Countries including Germany, the Netherlands, and Australia are moving faster, with larger subsidy commitments and clearer regulatory frameworks. If the UK is serious about a hydrogen economy, it needs to close the gap between target-setting and project delivery, because the 2030 target is now functionally unachievable at current build rates.</p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Key metrics' },

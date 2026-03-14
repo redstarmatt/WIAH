@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 import References, { Reference } from '@/components/References';
+import Cite from '@/components/Cite';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'RHS', dataset: 'Campaign for School Gardening', url: 'https://schoolgardening.rhs.org.uk/', date: '2024' },
@@ -25,6 +26,13 @@ export default function CommunityGardensPage() {
           colour="#2A9D8F"
           preposition="in"
         />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Community growing in the UK has undergone a quiet transformation. What was once a niche activity associated with wartime allotments and eccentric gardeners has become a significant civic movement. The number of registered community gardens has risen 45% since 2015, to over 5,400 across the country, and the RHS Campaign for School Gardening now supports 11,200 school food-growing programmes, reaching an estimated 3.5 million children.<Cite nums={1} /> The acceleration began during the pandemic, when waiting lists for allotment plots in some boroughs exceeded ten years and community groups began converting neglected public land, church grounds, and housing estate margins into productive growing spaces. But the movement has not receded with lockdowns. Participation has continued to climb, reaching 660,000 regular growers, because the motivations run deeper than pandemic restlessness.</p>
+            <p>The evidence base for community growing now spans food security, mental health, social cohesion, and urban ecology. Sustain's research shows that community gardens in food desert areas measurably increase fresh vegetable consumption among participants, particularly in low-income households where diet quality is poorest.<Cite nums={2} /> Social prescribing schemes now refer patients to community gardens for anxiety, depression, and loneliness, with growing evidence of clinical effectiveness comparable to group therapy. The challenge is sustainability. Most community gardens operate on insecure land tenure, with fewer than a third holding leases longer than five years. Volunteer burnout is endemic, and funding remains fragmented across small grants rather than embedded in local authority budgets. The movement has proven its value. What it lacks is the institutional recognition to match.</p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Key metrics' },

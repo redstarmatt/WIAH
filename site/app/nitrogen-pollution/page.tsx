@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 import References, { Reference } from '@/components/References';
+import Cite from '@/components/Cite';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'EA', dataset: 'Water Framework Directive Assessment', url: 'https://www.gov.uk/government/collections/water-framework-directive', date: '2023' },
@@ -25,6 +26,13 @@ export default function NitrogenPollutionPage() {
           colour="#E63946"
           preposition="from"
         />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Nitrogen is essential to agriculture but devastating in excess. British farms now apply significantly more nitrogen fertiliser than crops can absorb, creating a surplus of roughly 68 kilograms per hectare that washes into rivers, leaches into groundwater, and volatilises into the atmosphere as ammonia and nitrous oxide. The Environment Agency's most recent Water Framework Directive assessment found that 59% of English rivers are failing their chemical or ecological status targets, with diffuse agricultural pollution — overwhelmingly nitrogen and phosphorus — identified as the single largest cause.<Cite nums={1} /> The trajectory is worsening: the proportion of rivers failing has risen steadily from 48% in 2010, despite successive government strategies promising improvement.</p>
+            <p>The economic costs are substantial but largely invisible. Researchers at Cambridge estimate that nitrogen pollution costs the UK economy approximately 10 billion pounds annually through impacts on human health (air pollution from ammonia), water treatment costs, biodiversity loss, and climate damage from nitrous oxide, which is nearly 300 times more potent than CO2 as a greenhouse gas.<Cite nums={2} /> The policy tools to address this exist — precision agriculture, cover cropping, buffer strips, and limits on fertiliser application rates — but enforcement has been weak, partly because Defra has historically been reluctant to impose costs on the farming sector. The post-Brexit replacement for the Common Agricultural Policy, the Environmental Land Management scheme, was supposed to shift subsidies toward environmental outcomes. Progress has been slow. Until agricultural runoff is treated with the same regulatory seriousness as industrial point-source pollution, English rivers will continue to deteriorate.</p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Key metrics' },

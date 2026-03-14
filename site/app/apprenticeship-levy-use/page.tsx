@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 import References, { Reference } from '@/components/References';
+import Cite from '@/components/Cite';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DfE', dataset: 'Apprenticeships and Traineeships', url: 'https://www.gov.uk/government/collections/statistics-apprenticeships', date: '2024' },
@@ -25,6 +26,13 @@ export default function ApprenticeshipLevyUsePage() {
           colour="#264653"
           preposition="with the"
         />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>The apprenticeship levy was introduced in 2017 with a clear purpose: large employers would pay 0.5% of their payroll into a ring-fenced fund, then draw it down to train apprentices. The idea was to reverse a long decline in employer investment in training. Instead, the levy has become one of the most striking examples of policy design failing to match policy intent. Of the 4.3 billion pounds collected annually, approximately 3.3 billion goes unspent, returned to the Treasury by default when employers fail to use their allocation within 24 months.<Cite nums={1} /> Total apprenticeship starts have recovered from their post-levy collapse, but the composition has shifted dramatically: large employers increasingly use the levy to fund management degrees and MBA-equivalent programmes for existing senior staff, rather than the Level 2 and Level 3 vocational training the policy was designed to support.</p>
+            <p>The impact on small and medium-sized enterprises has been particularly damaging. Before the levy, SMEs accounted for 47% of all apprenticeship starts. That share has fallen to 29%, because the co-funding model that replaced direct grants is more complex to navigate and less generous.<Cite nums={2} /> A hairdresser in Bradford or a plumber in Barnsley trying to take on an apprentice now faces more bureaucracy and less financial support than before the levy existed. Meanwhile, the skills shortages that the levy was supposed to address, in construction, engineering, social care, and digital, have worsened. The government has announced a review and signalled a shift toward a broader Growth and Skills Levy, but the fundamental tension remains: a system designed to fund training that employers would not otherwise provide has been captured by employers who use it to subsidise training they would have paid for anyway.</p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Key metrics' },

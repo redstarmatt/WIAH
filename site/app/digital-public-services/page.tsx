@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 import References, { Reference } from '@/components/References';
+import Cite from '@/components/Cite';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'GDS', dataset: 'Government Digital Performance', url: 'https://www.gov.uk/performance', date: '2024' },
@@ -25,6 +26,13 @@ export default function DigitalPublicServicesPage() {
           colour="#264653"
           preposition="in"
         />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>The digitisation of government services is one of the quieter success stories of the past decade. Since the Government Digital Service was established in 2011, hundreds of transactions — from filing tax returns to renewing passports — have been moved online, and user satisfaction has climbed steadily to 74%, with completion rates now approaching 80%.<Cite nums={1} /> The savings have been substantial: digital transactions cost roughly 50 times less than face-to-face ones. For the majority of the population, interacting with the state is now faster, simpler, and more reliable than it has ever been. The design standards pioneered by GDS have been adopted by governments worldwide.</p>
+            <p>But the efficiency gains come with a sharp equity problem. An estimated 8.5 million adults in the UK still lack the basic digital skills or internet access needed to use online services — down from 12.6 million in 2018, but still a substantial minority concentrated among the elderly, the disabled, those on low incomes, and people whose first language is not English.<Cite nums={2} /> As digital channels become the default, non-digital alternatives are being quietly withdrawn: fewer phone lines, shorter counter opening hours, closed local offices. The result is that those least equipped to navigate online systems are increasingly shut out of benefits claims, healthcare bookings, and housing applications. The challenge now is not whether digital services work — they do, for most people — but whether the drive toward efficiency has created a two-tier state in which the most vulnerable are the hardest to reach.</p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Key metrics' },

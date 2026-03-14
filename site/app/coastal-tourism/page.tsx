@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 import References, { Reference } from '@/components/References';
+import Cite from '@/components/Cite';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'VisitEngland', dataset: 'Great British Tourism Survey', url: 'https://www.visitbritain.org/', date: '2024' },
@@ -25,6 +26,13 @@ export default function CoastalTourismPage() {
           colour="#264653"
           preposition="in"
         />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>The British seaside is experiencing a paradox: more popular than ever, yet increasingly undermined by the very infrastructure failures that should have been resolved decades ago. Domestic coastal trips have surged to 76 million per year — 12% above pre-pandemic levels — as the staycation boom, driven initially by Covid travel restrictions, has become a lasting shift in holiday behaviour. Coastal towns from Whitby to Tenby report record footfall. But beneath the surface, literally, the picture is far less rosy. Sewage discharges into coastal waters have become a defining environmental scandal, and the consequences are now showing up in the data: the proportion of bathing waters rated Good or Excellent has fallen from 75% to 69% since 2019, reversing years of gradual improvement.<Cite nums={1} /></p>
+            <p>The economic toll is mounting on both sides of the equation. Some 3,200 seaside accommodation businesses have closed since 2019, squeezed between rising energy costs, seasonal staffing shortages exacerbated by post-Brexit labour market changes, and the reputational damage that follows publicised sewage spills. For communities where tourism accounts for 20-30% of local employment, this is not an abstract environmental concern — it is an existential economic threat. The Environment Agency&apos;s own monitoring shows that storm overflow discharges at coastal outfalls have increased in both frequency and duration, yet water company investment in coastal infrastructure remains a fraction of what is spent on inland sewerage. The seaside economy is being asked to absorb the costs of decades of underinvestment in water treatment.<Cite nums={2} /></p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Key metrics' },

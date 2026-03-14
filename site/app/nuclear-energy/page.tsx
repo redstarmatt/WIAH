@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 import References, { Reference } from '@/components/References';
+import Cite from '@/components/Cite';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DESNZ', dataset: 'Energy Trends', url: 'https://www.gov.uk/government/collections/energy-trends', date: '2024' },
@@ -26,6 +27,13 @@ export default function NuclearEnergyPage() {
           colour="#264653"
           preposition="in"
         />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Britain built its nuclear fleet in the expectation that it would last, and for decades it delivered. At its peak in the late 1990s, nuclear power supplied more than a quarter of the country's electricity from a fleet of advanced gas-cooled reactors that were, at the time, engineering marvels. That era is now ending. Reactor closures have halved installed capacity from 12 GW to 5.6 GW, and the remaining stations — most built in the 1980s — are operating on borrowed time through costly life extensions.<Cite nums={1} /> The result is a strategic gap: nuclear's share of generation has fallen to 13.4%, and without new capacity coming online, it will fall further still. No other low-carbon baseload technology can fill the void at this scale.</p>
+            <p>The sole new-build project meant to arrest this decline, Hinkley Point C in Somerset, has become a case study in megaproject dysfunction. Its estimated cost has doubled from £18 billion to £35 billion, and its completion date has slipped from 2025 to 2031 at the earliest.<Cite nums={2} /> The National Audit Office has questioned whether the contract's strike price — guaranteed at £92.50 per MWh in 2012 prices — still represents value for money given how far the cost of renewables has fallen since.<Cite nums={3} /> Meanwhile, the government's ambitions for further reactors at Sizewell C and for small modular reactors remain largely aspirational. The UK faces a paradox familiar to students of infrastructure decay: the country needs nuclear power more than ever for grid stability and net zero, but has spent two decades demonstrating that it can no longer build it affordably or on time.</p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Key metrics' },

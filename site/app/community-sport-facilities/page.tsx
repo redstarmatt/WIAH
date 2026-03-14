@@ -94,6 +94,13 @@ export default function CommunitySportFacilitiesPage() {
           preposition="in"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Public leisure centres are the unglamorous backbone of community health in England. They are where children learn to swim, where pensioners do aqua aerobics, where teenagers play five-a-side, and where adults on low incomes access physical activity they cannot afford through commercial gyms. Since 2010, over 400 have closed permanently, with the losses concentrated in exactly the areas where physical inactivity and its health consequences are most severe.<Cite nums={3} /> The Swim England audit found that the number of publicly accessible swimming pools fell by 26% over the same period, with the oldest and most energy-inefficient pools — often the only ones in deprived communities — the first to go.<Cite nums={2} /> The 2022 energy crisis accelerated closures sharply, as leisure trusts already operating on razor-thin margins faced energy bills that doubled or tripled overnight.</p>
+            <p>The consequence is visible in the participation data. Sport England's Active Lives Survey shows that 63.1% of adults in England now meet the Chief Medical Officers' guideline of 150 minutes of moderate activity per week, broadly flat since 2022 and well short of the government's 70% target for 2030.<Cite nums={1} /> More troubling is the widening gap between rich and poor: adults in the most affluent areas are 24 percentage points more likely to be sufficiently active than those in the most deprived, up from 18 points in 2015. The government's 570 million pound Multi-Sport Grassroots Facilities Programme, targeting pitches and courts in deprived areas, is a significant commitment. But without addressing the underlying financial fragility of the leisure trust model and the local authority funding crisis that drives it, new facilities risk being built on foundations that cannot sustain them.<Cite nums={[1, 4]} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Key metrics' },
           { id: 'sec-chart1', label: 'Facility closures' },

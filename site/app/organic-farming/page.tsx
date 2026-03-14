@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 import References, { Reference } from '@/components/References';
+import Cite from '@/components/Cite';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Soil Association', dataset: 'Organic Market Report', url: 'https://www.soilassociation.org/organic-living/market-report/', date: '2024' },
@@ -25,6 +26,13 @@ export default function OrganicFarmingPage() {
           colour="#2A9D8F"
           preposition="in"
         />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Britain's organic sector presents a striking paradox: consumer demand has never been higher, yet domestic production remains stubbornly low. The organic market hit a record £3.4 billion in 2024, with double-digit growth in dairy, fresh produce, and home delivery boxes.<Cite nums={1} /> But only 3.1% of UK farmland is certified organic, compared to 9.6% across the EU, 26% in Austria, and 20% in Estonia. The gap is widening, not closing. While the EU's Farm to Fork strategy targets 25% organic land by 2030, the UK has no equivalent national target. The result is rising import dependency: roughly half of all organic food sold in British supermarkets is now sourced from abroad, undermining both the environmental rationale and the food security case for organic production.</p>
+            <p>The barriers to conversion are well understood but poorly addressed. Transitioning a conventional farm to organic certification takes two to three years, during which yields typically fall 20-30% while the farmer cannot yet command organic premiums.<Cite nums={2} /> Under the old Common Agricultural Policy, conversion subsidies partially bridged this gap. Post-Brexit, England's Environmental Land Management schemes offer payments for organic management, but at rates that farmers' unions argue are insufficient to offset the income risk. Scotland and Wales have maintained more generous support, and their organic land shares are correspondingly higher. The 6,200 certified organic producers in the UK represent a 12% increase over three years — genuine growth, but from a base so low that it will take decades at this pace to match European peers. Without a step-change in policy ambition, Britain's organic sector will remain a premium consumer niche rather than the agricultural transformation its advocates envision.</p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Key metrics' },

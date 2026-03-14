@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 import References, { Reference } from '@/components/References';
+import Cite from '@/components/Cite';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Electoral Commission', dataset: 'UK Parliamentary General Election Results', url: 'https://www.electoralcommission.org.uk/', date: '2024' },
@@ -25,6 +26,13 @@ export default function CivicEngagementPage() {
           colour="#6B7280"
           preposition="in"
         />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>The 2024 general election delivered a landslide result on historically low engagement. Just 59.7% of registered voters cast a ballot — the lowest turnout since 2001 and well below the post-war average of 74%.<Cite nums={1} /> The geographic and demographic patterns are revealing. Turnout exceeded 70% in affluent constituencies like Twickenham and Winchester, while falling below 45% in seats across Hull, Stoke-on-Trent, and parts of inner-city Birmingham. Age remains the sharpest dividing line: estimated turnout among 18-to-24-year-olds was 42%, compared with 77% among over-65s, a gap that has widened in every election since 2005. The introduction of mandatory voter photo ID in 2023 added a new barrier, with the Electoral Commission estimating that 14,000 people were turned away at polling stations and did not return — disproportionately from younger and ethnic minority groups. These are not the hallmarks of a healthy representative democracy.</p>
+            <p>Yet the picture is more complex than simple disengagement. Twenty-eight parliamentary petitions reached the 100,000-signature threshold for debate in 2024, up from just three in 2016. The proportion of adults who contacted their MP at least once rose to 11%, a steady increase from 7% a decade ago.<Cite nums={2} /> Civic engagement has not vanished — it has migrated. People are more willing to sign petitions, attend protests, engage in online campaigns, and contact representatives directly than to queue at a polling station every few years. The Hansard Society's Audit of Political Engagement found that 54% of adults feel the system of governing needs significant improvement, but this dissatisfaction has not translated into apathy so much as into frustration with the specific mechanics of electoral democracy. The challenge for democratic institutions is whether they can adapt to meet citizens where they actually are, or whether the growing gap between formal electoral participation and informal civic activity will continue to widen until the mandate of elected representatives becomes genuinely questionable.</p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Key metrics' },

@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 import References, { Reference } from '@/components/References';
+import Cite from '@/components/Cite';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Swim England', dataset: 'State of the Nation Report', url: 'https://www.swimming.org/swimengland/', date: '2024' },
@@ -25,6 +26,13 @@ export default function SwimmingPoolClosuresPage() {
           colour="#264653"
           preposition="with"
         />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Public swimming pools are among the most expensive leisure facilities a council can operate — heated to 28 degrees, open from early morning to late evening, and requiring constant maintenance of complex mechanical systems. When local authority budgets were cut after 2010, pools were among the first casualties. England has lost roughly 520 public pools since then, a 14% decline, and Swim England estimates that a further 1,500 are now at risk of closure as energy costs remain elevated.<Cite nums={1} /> The crisis is not evenly distributed: deprived areas, which rely most heavily on public provision, have seen the steepest losses. Private gym pools and lido revivals have partly offset closures in affluent areas, but they do nothing for the families who depended on their local council pool.</p>
+            <p>The consequences are showing up in the water. Nearly half of children leaving primary school — 46%, up from 39% in 2019 — cannot swim 25 metres, the national curriculum standard.<Cite nums={1} /> Drowning remains the third leading cause of accidental death among children in the UK. The government's own strategy for an active nation identified swimming as a foundational life skill and a gateway to lifelong physical activity, yet the infrastructure required to teach it is being dismantled by fiscal pressure.<Cite nums={2} /> Without targeted capital investment in energy-efficient pool facilities, particularly in areas of high deprivation, the gap between children who can swim and those who cannot will continue to widen along familiar lines of income and geography.</p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Key metrics' },

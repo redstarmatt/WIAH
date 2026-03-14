@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 import References, { Reference } from '@/components/References';
+import Cite from '@/components/Cite';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'RHS', dataset: 'Campaign for School Gardening', url: 'https://schoolgardening.rhs.org.uk/', date: '2024' },
@@ -25,6 +26,13 @@ export default function UrbanFarmingPage() {
           colour="#2A9D8F"
           preposition="in"
         />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Something remarkable is happening in the margins of British cities. Since 2015, the number of urban farming enterprises in the UK has grown 240% to roughly 1,450, spanning community allotments, rooftop gardens, hydroponic shipping containers, and high-tech vertical farms. Cumulative investment in vertical farming alone has reached £380 million, with major facilities in Gloucestershire, Kent, and Aberdeenshire growing leafy greens and herbs year-round under LED lighting.<Cite nums={1} /> The drivers are practical rather than ideological. The UK imports roughly 84% of its fresh fruit and 46% of its vegetables, supply chains that proved fragile during Covid lockdowns and were further strained by post-Brexit border checks and the energy price spike of 2022. Urban farming cannot replace broadacre agriculture, but it can shorten supply chains for perishable crops: a vertical farm in east London can deliver salad leaves to a supermarket distribution centre within hours of harvest, eliminating the five-to-seven-day cold chain from southern Spain.</p>
+            <p>The sector's growth is unevenly distributed and not without setbacks. Several high-profile vertical farm ventures have entered administration, unable to reconcile energy-intensive growing systems with volatile electricity prices. The economics remain challenging: producing a kilogram of vertically farmed lettuce costs roughly three times what a conventional grower spends, a gap that narrows only at scale or with renewable energy contracts.<Cite nums={2} /> Community-level urban farming tells a different story. There are now over 11,200 school growing programmes in England, up 18% since 2019, and waiting lists for council allotments have lengthened to an average of three years in major cities. These grassroots operations produce relatively little food in aggregate, but they build skills, improve mental health, and reconnect urban populations with food production in ways that have measurable social value. The question is whether urban farming can move beyond its current status as a patchwork of well-intentioned projects and venture-backed experiments to become a meaningful component of UK food security.</p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Key metrics' },

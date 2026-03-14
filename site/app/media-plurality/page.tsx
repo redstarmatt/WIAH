@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 import References, { Reference } from '@/components/References';
+import Cite from '@/components/Cite';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Ofcom', dataset: 'Media Nations Report', url: 'https://www.ofcom.org.uk/research-and-data/tv-radio-and-on-demand/media-nations-reports', date: '2024' },
@@ -25,6 +26,13 @@ export default function MediaPluralityPage() {
           colour="#6B7280"
           preposition="in"
         />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Britain's national press is controlled by a remarkably small number of hands. Three groups — News UK (Murdoch), DMG Media (Rothermere), and Reach plc — between them account for 71% of national newspaper circulation, a concentration ratio that has crept upward as mid-market titles have folded or been absorbed.<Cite nums={1} /> Online, the picture is more fragmented but no less concerning: the same legacy owners dominate digital news reach, while new entrants struggle to build sustainable business models. Ofcom's plurality framework, designed to prevent any single voice from exerting undue influence over public opinion, has not been substantively updated since 2003. The result is a media landscape in which editorial diversity is shrinking even as the platforms for distributing news have multiplied.</p>
+            <p>The damage is most visible at the local level. More than 320 local newspapers have closed since 2008, leaving 255 communities — predominantly in post-industrial towns and rural areas — without any regular news coverage at all.<Cite nums={2} /> These "news deserts" are not merely a cultural loss. Research consistently links the absence of local journalism to lower voter turnout, reduced scrutiny of council decisions, and higher levels of corruption in public procurement. The BBC's Local Democracy Reporting Service and a handful of philanthropically funded outlets have attempted to fill the gap, but their combined output is a fraction of what was lost. What remains is a structural asymmetry: national narratives are shaped by a few proprietors, while the granular, place-based reporting that holds local power to account has been hollowed out by the collapse of advertising revenue and a failure to treat local journalism as the civic infrastructure it is.</p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Key metrics' },

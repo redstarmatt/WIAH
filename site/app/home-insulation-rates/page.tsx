@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 import References, { Reference } from '@/components/References';
+import Cite from '@/components/Cite';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DESNZ', dataset: 'Energy Company Obligation Statistics', url: 'https://www.gov.uk/government/collections/energy-company-obligation', date: '2024' },
@@ -25,6 +26,13 @@ export default function HomeInsulationRatesPage() {
           colour="#2A9D8F"
           preposition="with"
         />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Britain&apos;s housing stock is among the oldest and least thermally efficient in Europe, and the pace of improvement is nowhere near fast enough. Government-backed insulation schemes are currently upgrading around 220,000 homes per year — a figure that sounds substantial until you set it against the target: to meet the legally binding commitment of all homes reaching EPC Band C by 2035, roughly 2.3 million homes per year need to be treated. The current rate is less than a tenth of what is required. The gap is not merely one of ambition; it reflects a decade of policy instability that has devastated the insulation industry. The Green Deal collapsed in 2015 with negligible take-up. The Green Homes Grant voucher scheme, launched in September 2020, was scrapped six months later amid administrative chaos, taking thousands of installer businesses with it.<Cite nums={1} /></p>
+            <p>The consequences of this failure are measured in both carbon and household budgets. Poorly insulated homes account for a disproportionate share of the UK&apos;s domestic energy consumption — a home rated EPC F or G uses roughly three times the energy of one rated B, and 47% of English homes still sit below the Band C threshold. During the energy price crisis of 2022-23, these households bore the heaviest costs, with average bills peaking at &pound;2,500 per year. The current ECO4 scheme, which targets fuel-poor households, is delivering around 110,000 installations annually, but even this focused programme faces challenges: a shortage of qualified retrofit assessors, long wait times for heat pump installations, and the inherent difficulty of upgrading solid-walled Victorian terraces and inter-war semis that make up much of the housing stock most in need of improvement.<Cite nums={2} /></p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Key metrics' },

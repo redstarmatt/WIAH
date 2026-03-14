@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 import References, { Reference } from '@/components/References';
+import Cite from '@/components/Cite';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'RTPI', dataset: 'State of the Profession', url: 'https://www.rtpi.org.uk/research/', date: '2024' },
@@ -25,6 +26,13 @@ export default function CouncilPlanningCapacityPage() {
           colour="#F4A261"
           preposition="in"
         />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>England needs to build at least 300,000 homes a year to address its housing shortage, but the planning system through which every development must pass has been systematically depleted. The Royal Town Planning Institute estimates that 8,200 planning officer posts are vacant across local authorities, a 60% increase in five years, and just 18% of planning departments report operating at full capacity.<Cite nums={1} /> The consequences are measurable: only 44% of major planning applications are now decided within the statutory 13-week target, down from 64% a decade ago. For smaller applications, the picture is marginally better, but cumulative delays and backlogs mean that even straightforward proposals can take months longer than the system intends.</p>
+            <p>The root cause is a familiar one: austerity-era budget cuts hollowed out planning teams, and the profession has struggled to recruit replacements. Planning officer salaries in local government average around 35,000 pounds, roughly half what equivalent professionals earn in the private sector, and university planning courses have seen enrolment fall by a third since 2010.<Cite nums={2} /> The government has acknowledged the problem, proposing increased planning fees and a new Planning Skills Delivery Fund, but these measures address symptoms rather than the structural underinvestment. Every housing target, every net-zero commitment, and every infrastructure project depends on planners to assess, negotiate, and approve it. A system running at less than a fifth of its intended capacity is not a bottleneck. It is a blockage.</p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Key metrics' },

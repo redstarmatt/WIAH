@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 import References, { Reference } from '@/components/References';
+import Cite from '@/components/Cite';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Arts Council England', dataset: 'Annual Report', url: 'https://www.artscouncil.org.uk/', date: '2024' },
@@ -25,6 +26,13 @@ export default function ArtsCouncilFundingPage() {
           colour="#264653"
           preposition="from"
         />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Arts Council England is the principal public funder of the arts outside the national institutions, distributing a combination of government grant-in-aid and National Lottery proceeds to theatres, galleries, dance companies, literature organisations, and community arts projects across the country. Its budget has fallen from approximately 970 million pounds in real terms in 2010 to 677 million in 2024, a 30% reduction that has forced increasingly difficult choices about who receives funding and who does not.<Cite nums={1} /> The 2023 National Portfolio Organisation investment round was the most disruptive in the organisation's history: 225 organisations lost their NPO status, including several long-established London institutions, as Arts Council England sought to redirect funding toward regions outside London and toward organisations serving communities with the least cultural provision. The rebalancing was overdue. But the manner of its execution, with some organisations given less than a year's notice of the end of their core funding, caused closures, redundancies, and lasting damage to organisational capacity.</p>
+            <p>The deeper problem is the overall quantum. Nearly half of all arts organisations now report operating in deficit, up from 28% in 2019, squeezed between rising costs — energy, wages, materials — and flat or falling income from both public subsidy and box office.<Cite nums={2} /> The creative industries contribute over 100 billion pounds to the UK economy annually and employ 2.4 million people, yet public investment in the pipeline of talent, experimentation, and community engagement that sustains the sector has been treated as discretionary spending, cut more deeply than health, education, or policing. The risk is not that British arts will disappear, but that they will become accessible only to those who can pay commercial prices in major cities, while the regional theatres, community galleries, and grassroots organisations that serve everyone else continue to close.</p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Key metrics' },

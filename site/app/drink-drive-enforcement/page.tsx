@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 import References, { Reference } from '@/components/References';
+import Cite from '@/components/Cite';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DfT', dataset: 'Road Safety Statistics', url: 'https://www.gov.uk/government/collections/road-accidents-and-safety-statistics', date: '2023' },
@@ -25,6 +26,13 @@ export default function DrinkDriveEnforcementPage() {
           colour="#E63946"
           preposition="with"
         />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Drink driving was once the most successful road safety campaign in British history. Deaths fell from over 1,600 a year in 1979 to 250 by the early 2010s, driven by a combination of social stigma, enforcement, and the 1967 breathalyser law. But that progress has stalled completely. Around 250 people have died annually in drink-drive collisions for over a decade, a plateau that coincides with a sharp decline in enforcement.<Cite nums={1} /> Police conducted approximately 800,000 roadside breath tests per year in the late 2000s; by 2024, that figure had fallen to around 450,000, a reduction of more than 40%. The decline reflects the broader erosion of roads policing capacity: dedicated traffic officers in England and Wales have been cut by over 40% since 2010, and drink-drive enforcement has been deprioritised relative to other demands on shrinking police resources.</p>
+            <p>The rising fail rate among those who are tested suggests that the deterrent effect is weakening. When fewer tests are conducted, they are increasingly targeted at drivers already suspected of impairment, which pushes the fail rate up. But it also means that the random, visible deterrence that characterised the campaign's most effective years has largely disappeared.<Cite nums={2} /> The UK's drink-drive limit remains at 80mg of alcohol per 100ml of blood, the joint highest in Europe alongside Malta. Scotland lowered its limit to 50mg in 2014, aligning with most European countries. The evidence from Scotland and from international comparisons suggests that a lower limit, combined with restored enforcement capacity, could reduce deaths further. But neither measure has been adopted in England and Wales, leaving the country reliant on a social norm that, while still powerful, is no longer being actively reinforced by the state.</p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Key metrics' },

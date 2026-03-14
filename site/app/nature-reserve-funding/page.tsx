@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 import References, { Reference } from '@/components/References';
+import Cite from '@/components/Cite';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Natural England', dataset: 'SSSI Condition Monitoring', url: 'https://www.gov.uk/government/collections/sssi-condition-monitoring', date: '2024' },
@@ -25,6 +26,13 @@ export default function NatureReserveFundingPage() {
           colour="#2A9D8F"
           preposition="for"
         />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>England's National Nature Reserves were established to protect the country's most important habitats — ancient woodlands, chalk grasslands, coastal marshes, and upland peatlands that harbour species found nowhere else. Their stewardship falls primarily to Natural England, whose budget has been cut by 56% in real terms since 2010, one of the deepest reductions imposed on any public body. The consequences are measurable: just 68% of NNR land is currently assessed as being in favourable or recovering condition, well below the government's own 75% target.<Cite nums={1} /> Staff numbers have been halved, specialist ecological expertise has been lost, and routine management tasks — scrub clearance, grazing regimes, invasive species control — have been deferred or abandoned on sites that took decades to restore.</p>
+            <p>The Wildlife Trusts and other voluntary conservation organisations have stepped in where they can, now managing over 118,000 hectares of land across the UK, a 22% increase since 2015.<Cite nums={2} /> But charitable effort, however dedicated, cannot substitute for the systematic, statutory-backed conservation that NNRs are supposed to provide. The government's commitment to protect 30% of land for nature by 2030 — the so-called "30 by 30" target — sits uneasily alongside a funding settlement that leaves the existing protected estate in decline. Designating new sites means little if the ones already designated are deteriorating for want of a few thousand pounds of annual management. The gap between ambition and resource is the defining feature of English nature conservation, and it is widening.</p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Key metrics' },

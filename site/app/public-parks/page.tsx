@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 import References, { Reference } from '@/components/References';
+import Cite from '@/components/Cite';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Heritage Lottery Fund', dataset: 'State of UK Public Parks', url: 'https://www.heritagefund.org.uk/', date: '2024' },
@@ -25,6 +26,13 @@ export default function PublicParksPage() {
           colour="#2A9D8F"
           preposition="in"
         />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Public parks are one of the few remaining truly universal services in Britain. They are free at the point of use, open to everyone, and visited by nearly 60% of adults on a weekly basis. They are also, unlike most public assets, not protected by any statutory duty of maintenance. That combination — high use, no legal protection — has made them uniquely vulnerable to austerity. Since 2010, local authority spending on parks and open spaces has fallen by 68% in real terms, a deeper cut than almost any other area of council provision.<Cite nums={1} /> The Heritage Lottery Fund, which spent over a billion pounds restoring parks from 1996 to 2017, has largely moved on. The result is a slow, visible decline: broken benches, overgrown borders, shuttered park buildings, and the gradual loss of skilled horticultural staff who cannot be easily replaced.</p>
+            <p>The paradox is that parks have never been more valued. The pandemic confirmed what public health researchers had long argued: access to green space is a measurable determinant of physical and mental health, and its benefits fall disproportionately on those with the fewest alternatives.<Cite nums={2} /> Yet the people who most need parks — residents of dense urban areas, those without private gardens, communities with higher rates of obesity and mental illness — are often those whose parks are in the worst condition. Over a third of UK parks now rate as fair or poor. Some councils have begun exploring commercial income, trust models, and community ownership to fill the gap, but these are sticking-plaster solutions to what is fundamentally a failure to treat public green space as essential infrastructure.</p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Key metrics' },

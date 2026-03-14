@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 import References, { Reference } from '@/components/References';
+import Cite from '@/components/Cite';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Campaign for Better Transport', dataset: 'Bus Report', url: 'https://bettertransport.org.uk/', date: '2024' },
@@ -25,6 +26,13 @@ export default function RuralTransportPage() {
           colour="#F4A261"
           preposition="with"
         />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Rural Britain is quietly being severed from the transport network. Since 2010, the proportion of rural areas in England with no regular bus service has risen from 29% to 38%, a steady erosion that has accelerated since the pandemic as operators withdrew commercially unviable routes and local authority subsidies were cut. The consequences fall hardest on the 19% of rural households — around 1.9 million people — who do not have access to a car. For these residents, the loss of a bus route is not an inconvenience; it is a barrier to employment, healthcare, education, and social participation. Campaign for Better Transport analysis shows that over 4,000 bus routes have been reduced or eliminated across England since 2010, with the deepest cuts in counties like Devon, Lincolnshire, and North Yorkshire.<Cite nums={1} /></p>
+            <p>Community transport was supposed to fill the gap, but the sector is itself in retreat. Total mileage delivered by community transport operators in England has fallen 25% since 2019, driven by volunteer shortages, rising fuel and insurance costs, and the loss of local authority contracts. Demand-responsive transport and ride-sharing apps have emerged in some areas, but coverage remains thin and the digital literacy required to use them excludes many of the elderly and disabled passengers who most need the service. The fundamental problem is structural: rural bus services cannot operate profitably at the frequencies needed to be useful, yet public subsidy per rural passenger journey has been falling in real terms for over a decade. Without a step change in funding models, rural transport poverty will continue to deepen.<Cite nums={2} /></p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Key metrics' },

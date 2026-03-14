@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 import References, { Reference } from '@/components/References';
+import Cite from '@/components/Cite';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Cefas', dataset: 'Stock Assessment Reports', url: 'https://www.cefas.co.uk/data-and-publications/fish-stock-assessments/', date: '2023' },
@@ -25,6 +26,13 @@ export default function FishingStocksPage() {
           colour="#264653"
           preposition="in"
         />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>The ecological story of UK fish stocks is genuinely encouraging. In 2010, only 40% of assessed stocks were being fished at or below sustainable levels; by 2023 that figure had risen to 59%, the result of two decades of quota discipline, improved stock science, and the gradual recovery of species like North Sea cod and herring.<Cite nums={1} /> Marine Protected Areas now cover 38% of UK waters, at least on paper. But the political and economic picture is far more turbulent. Brexit was sold partly on the promise of taking back control of British fishing grounds. In practice, the Trade and Cooperation Agreement preserved most EU vessels' access rights, while UK exporters lost frictionless access to their largest market. Shellfish producers in particular were devastated: a ban on live bivalve exports to the EU remains in place, and the administrative burden of health certificates and customs declarations has driven some small operators out of business entirely.</p>
+            <p>The commercial consequences are stark. UK catch volumes fell 18% between 2019 and 2023, a decline driven not by conservation measures but by trade friction, crew shortages, and rising fuel costs.<Cite nums={2} /> The fishing fleet has contracted to around 4,300 vessels, down from over 6,000 in 2010, with the sharpest losses among the small inshore boats that form the backbone of coastal communities in Cornwall, the Scottish Highlands, and East Anglia. Meanwhile, the UK imports roughly 70% of the fish it consumes — primarily warm-water species like tuna and prawns that cannot be caught in British waters — while exporting much of what it does catch, particularly mackerel and langoustine. This structural mismatch means that the health of UK fish stocks, while genuinely improving, tells only part of the story of a fishing industry navigating profound structural change.</p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Key metrics' },

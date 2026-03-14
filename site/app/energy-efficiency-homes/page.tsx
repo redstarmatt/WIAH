@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 import References, { Reference } from '@/components/References';
+import Cite from '@/components/Cite';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DESNZ', dataset: 'EPC Database', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-energy-performance-of-buildings-certificates', date: '2024' },
@@ -25,6 +26,13 @@ export default function EnergyEfficiencyHomesPage() {
           colour="#2A9D8F"
           preposition="in"
         />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>The energy efficiency of British homes has become one of the clearest fault lines in the country&apos;s net zero strategy. Only 5.8% of homes in England hold an EPC rating of A or B — the standard that new-build properties are expected to meet. The figure has improved from a near-negligible 0.8% in 2012, but progress is overwhelmingly concentrated in the new-build sector rather than the existing stock, where the real challenge lies. Britain builds around 200,000 new homes per year; it has 28 million existing ones. The arithmetic is unforgiving: even at current new-build rates, it would take over a century for the housing stock to turn over naturally. Retrofitting at scale is not optional — it is the only route to a decarbonised housing sector.<Cite nums={1} /></p>
+            <p>The energy price crisis of 2022-23 gave this abstract policy challenge a concrete human dimension. Average household energy bills surged to &pound;2,500 per year at the October 2022 price cap, then gradually declined to around &pound;1,680 as wholesale gas prices fell. But the underlying vulnerability remains: 47% of homes still rate below EPC Band C, meaning they are structurally expensive to heat regardless of what happens to energy prices. A home rated D pays an estimated &pound;500 more per year in energy costs than one rated B — a penalty that falls disproportionately on lower-income households, who are more likely to live in older, poorly insulated private rented or social housing. The government&apos;s target of all homes reaching Band C by 2035 implies an upgrade rate roughly ten times the current pace. Without a dramatic acceleration in retrofit funding, workforce training, and supply chain capacity, nearly half of British homes will remain energy sieves well into the 2040s.<Cite nums={2} /></p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Key metrics' },

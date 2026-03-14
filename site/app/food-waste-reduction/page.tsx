@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 import References, { Reference } from '@/components/References';
+import Cite from '@/components/Cite';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'WRAP', dataset: 'Household Food Waste Report', url: 'https://www.wrap.ngo/taking-action/food-drink/topics/food-waste/household-food-waste', date: '2021' },
@@ -25,6 +26,13 @@ export default function FoodWasteReductionPage() {
           colour="#F4A261"
           preposition="with"
         />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>The UK throws away 6.4 million tonnes of household food each year — roughly one-third of all food purchased. That figure is actually an improvement: WRAP estimates a 20% reduction since 2007, driven by public awareness campaigns like Love Food Hate Waste and improvements in date labelling.<Cite nums={1} /> But progress has stalled. The easy gains — better portion guidance on rice and pasta packets, clearer use-by versus best-before distinctions — have been captured. What remains is harder: the bread that goes stale because single-person households cannot eat a whole loaf before it moulds, the vegetables that wilt at the back of fridges, the leftovers that never get eaten. Food price inflation has sharpened the financial sting. At £730 per household per year, food waste now represents a larger share of family budgets than at any point in the past decade, yet the cost-of-living crisis has not produced the reduction in waste that economists might expect — suggesting that waste is driven as much by habit, infrastructure, and retail practices as by price sensitivity.</p>
+            <p>The supply chain picture is equally troubling. UK supermarkets generate an estimated 1.1 million tonnes of food surplus annually, of which only 250,000 tonnes — less than a quarter — is redistributed through food banks and charities.<Cite nums={2} /> The remainder is sent to anaerobic digestion, composting, or landfill. Redistribution networks like FareShare and the Trussell Trust have scaled rapidly, but they face a structural mismatch: surplus is concentrated in distribution centres in the Midlands and South East, while food poverty is most acute in post-industrial towns and rural areas with poor transport links. The government's target of halving food waste by 2030, aligned with the UN Sustainable Development Goal, would require annual reductions of roughly 7% — more than double the current trajectory. Mandatory food waste reporting for large businesses, introduced in 2024, may accelerate progress, but the deeper challenge is systemic: a food system optimised for abundance and choice inherently generates waste, and no amount of consumer nudging will change that without structural reform to retail practices, supply chain logistics, and packaging design.</p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Key metrics' },

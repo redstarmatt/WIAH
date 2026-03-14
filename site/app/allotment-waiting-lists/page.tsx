@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 import References, { Reference } from '@/components/References';
+import Cite from '@/components/Cite';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'NAS', dataset: 'National Allotment Survey', url: 'https://www.nsalg.org.uk/', date: '2024' },
@@ -25,6 +26,13 @@ export default function AllotmentWaitingListsPage() {
           colour="#2A9D8F"
           preposition="with"
         />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>The allotment is one of Britain's oldest pieces of social infrastructure. Under the Allotments Act of 1908, local authorities have a statutory duty to provide plots where residents express demand. That duty has been almost entirely ignored. More than 150,000 people are now on waiting lists in England, up from roughly 90,000 in 2019, driven by the pandemic-era surge in interest in growing food.<Cite nums={1} /> In cities like London, Bristol, and Manchester, the average wait has stretched to 5.4 years, with some boroughs reporting queues of a decade or more. The supply of new plots has fallen far short of demand: just 8,200 were created between 2020 and 2024, a fraction of what would be needed to clear the backlog.</p>
+            <p>The legal position is peculiar. Councils are required to provide allotments when they identify unmet demand, yet there is no enforcement mechanism, no regulator, and no penalty for inaction.<Cite nums={2} /> Planning guidance technically protects allotment land from development, but in practice sites are regularly lost to housing and commercial schemes, with councils choosing to sell assets rather than maintain them. The irony is that allotments deliver measurable public health, community, and environmental benefits at negligible cost — a well-managed site typically costs a council less than £20,000 a year to run. What is missing is not money but political will: the recognition that a 150,000-person waiting list for a service councils are legally obliged to provide represents a quiet failure of local governance.</p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Key metrics' },

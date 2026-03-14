@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 import References, { Reference } from '@/components/References';
+import Cite from '@/components/Cite';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'CPRE', dataset: 'Night Blight Report', url: 'https://www.cpre.org.uk/resources/night-blight/', date: '2024' },
@@ -25,6 +26,13 @@ export default function DarkSkyAreasPage() {
           colour="#0D1117"
           preposition="in"
         />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>The night sky over Britain is disappearing at a measurable rate. Satellite data and ground-level monitoring show that artificial sky brightness is increasing by roughly 6% per decade across the UK, driven by the proliferation of LED lighting — which, despite being more energy-efficient per unit, has been deployed so liberally that total light output has actually risen. CPRE&apos;s Night Blight mapping reveals that only 22% of England now experiences truly dark skies, down from around 30% two decades ago. The shift to LEDs with higher blue-spectrum content has compounded the problem: blue light scatters more efficiently in the atmosphere, amplifying skyglow well beyond the boundaries of built-up areas.<Cite nums={1} /></p>
+            <p>The ecological consequences are increasingly well documented. An estimated 30% of vertebrate species and over 60% of invertebrate species are nocturnal, and artificial light at night disrupts breeding, migration, and predator-prey dynamics across these populations. Moth numbers in Britain have declined by a third since the 1960s, and light pollution is identified as a significant contributing factor alongside habitat loss and pesticide use. Against this backdrop, the expansion of formally designated dark sky areas — from 5 in 2010 to 22 today — represents a genuine conservation success, with sites like Northumberland International Dark Sky Park and the Brecon Beacons attracting astro-tourism that delivers real economic value to rural communities. But designation protects pockets; the underlying trend remains one of steady, measurable loss.<Cite nums={2} /></p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Key metrics' },

@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 import References, { Reference } from '@/components/References';
+import Cite from '@/components/Cite';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Ofwat', dataset: 'Water Company Performance', url: 'https://www.ofwat.gov.uk/', date: '2024' },
@@ -25,6 +26,13 @@ export default function WaterMeterAdoptionPage() {
           colour="#264653"
           preposition="with"
         />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Water metering is the simplest, most proven tool for reducing household water consumption, and the evidence is unambiguous. Metered households use on average 12% less water than unmetered ones, a reduction that has remained consistent across regions and income groups for over a decade.<Cite nums={1} /> England and Wales have steadily increased metering coverage from 30% in 2000 to 59% today, but the rollout has been uneven. Southern Water and Anglian Water, operating in formally designated water-stress areas, have pushed metering rates above 80%. Yet four water company areas classified as seriously water-stressed still have metering rates below 60%, leaving millions of households with no financial signal to conserve a resource that is becoming genuinely scarce in parts of south-east England.</p>
+            <p>The barriers to universal metering are partly practical and partly political. Older housing stock, particularly Victorian terraces with shared supply pipes, makes individual metering expensive. Some water companies have been reluctant to invest in smart meters, which provide real-time usage data and leak detection, despite the long-term savings. And there remains a political sensitivity around metering in areas where bills are already high: the concern that metering penalises large families or those in older, less water-efficient homes.<Cite nums={2} /> But with climate projections showing water deficits of up to 4 billion litres per day by the 2050s in England, and per capita consumption still well above the 110 litres-per-day target, universal metering is no longer optional. It is the prerequisite for any credible demand management strategy.</p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Key metrics' },

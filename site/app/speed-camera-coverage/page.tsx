@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 import References, { Reference } from '@/components/References';
+import Cite from '@/components/Cite';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DfT', dataset: 'Road Safety Data', url: 'https://www.gov.uk/government/collections/road-accidents-and-safety-statistics', date: '2024' },
@@ -25,6 +26,13 @@ export default function SpeedCameraCoveragePage() {
           colour="#6B7280"
           preposition="in"
         />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Britain's approach to speed enforcement is undergoing a structural shift that has received remarkably little public scrutiny. The number of fixed speed cameras — the yellow Gatso boxes that became a defining feature of British roads from the late 1990s — has more than halved, from over 4,500 at their 2007 peak to approximately 1,850 today.<Cite nums={1} /> The decline began when the coalition government cut ring-fenced funding for camera partnerships in 2010, leaving local authorities to fund maintenance and replacement from their own budgets. Many simply switched cameras off or removed them. Yet the total number of speeding penalties has risen sharply, reaching 4.3 million in 2024, up 22% since 2019, driven overwhelmingly by the expansion of average-speed camera systems on motorways and major A-roads and by mobile camera vans that can be deployed flexibly.</p>
+            <p>The most significant change in speed policy is happening at street level. The proportion of roads subject to 20mph limits has risen from 8% in 2015 to 38% in 2024, accelerated by Wales making 20mph the national default on restricted roads in September 2023.<Cite nums={2} /> The evidence from cities that have adopted widespread 20mph zones — notably Edinburgh, Bristol, and the whole of Wales — shows measurable reductions in pedestrian casualties and serious injuries, though the Welsh rollout has faced public backlash over perceived blanket application to roads where higher speeds are appropriate. Enforcement of 20mph limits remains minimal in most areas, relying on compliance rather than cameras. The question is whether a speed management system increasingly dependent on voluntary adherence can sustain the casualty reductions that decades of camera enforcement helped deliver.</p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Key metrics' },

@@ -7,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
 import References, { Reference } from '@/components/References';
+import Cite from '@/components/Cite';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'National Travel Survey', url: 'https://www.gov.uk/government/collections/national-travel-survey-statistics', date: '2024' },
@@ -25,6 +26,13 @@ export default function CycleToWorkPage() {
           colour="#2A9D8F"
           preposition="with"
         />
+
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>The UK&apos;s cycling commute share tells a story of glacial progress against a backdrop of international embarrassment. At 3.4%, the proportion of workers cycling to their job has inched up from 2.8% in 2011 — an improvement, certainly, but one that leaves Britain at roughly one-eighth of the Dutch rate of 27% and well behind Denmark at 19%. The gap is not explained by weather or topography; it is fundamentally an infrastructure question. The Netherlands invested consistently in separated cycle networks from the 1970s onward. Britain has oscillated between ambition and abandonment, with cycling infrastructure budgets repeatedly cut or redirected. The result is a patchwork of disconnected lanes, shared pavements, and painted gutters that deter all but the most confident riders.<Cite nums={1} /></p>
+            <p>Two developments offer cautious grounds for optimism. E-bike sales have tripled since 2019, reaching 180,000 units per year, and are fundamentally changing who cycles: older riders, those with longer commutes, and people in hillier areas are all entering the cycling population for the first time. Meanwhile, the Cycle to Work salary sacrifice scheme now has 1.6 million cumulative participants, up 60% since 2019, making bike ownership more affordable. But the scheme overwhelmingly benefits higher earners in white-collar jobs — those least likely to face transport poverty. Until protected cycling infrastructure reaches beyond city centres into suburbs and smaller towns, the UK&apos;s cycling numbers will continue to reflect policy aspiration rather than lived reality.<Cite nums={2} /></p>
+          </div>
+        </section>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Key metrics' },
