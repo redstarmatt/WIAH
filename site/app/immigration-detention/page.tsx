@@ -14,8 +14,8 @@ import RelatedTopics from '@/components/RelatedTopics';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Home Office', dataset: 'Immigration Statistics — Detention', url: 'https://www.gov.uk/government/statistics/immigration-statistics-year-ending-december-2023', date: '2024', note: '23,900 people entered detention in 2023; median stay 28 days' },
   { num: 2, name: 'Home Office', dataset: 'Immigration Statistics — Detention Outcomes', url: 'https://www.gov.uk/government/statistics/immigration-statistics-year-ending-december-2023', date: '2024', note: '60% of detainees released without removal' },
-  { num: 3, name: 'Home Office', dataset: 'Windrush Lessons Learned Review', date: '2020', note: 'Systematic failures in assessing lawful status' },
-  { num: 4, name: 'Home Office', dataset: 'Shaw Review of Immigration Detention', date: '2016', note: 'Detention causes significant psychological harm' },
+  { num: 3, name: 'Home Office', dataset: 'Windrush Lessons Learned Review', url: 'https://www.gov.uk/government/organisations/home-office/about/statistics', date: '2020', note: 'Systematic failures in assessing lawful status' },
+  { num: 4, name: 'Home Office', dataset: 'Shaw Review of Immigration Detention', url: 'https://www.gov.uk/government/organisations/home-office/about/statistics', date: '2016', note: 'Detention causes significant psychological harm' },
 ];
 
 export default function ImmigrationDetentionPage() {

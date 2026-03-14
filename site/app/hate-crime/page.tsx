@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Home Office', dataset: 'Hate Crime Statistics, England and Wales', url: 'https://www.gov.uk/government/statistics/hate-crime-england-and-wales', date: '2023' },
-  { num: 2, name: 'CPS', dataset: 'Hate Crime Report', date: '2022/23' },
+  { num: 2, name: 'CPS', dataset: 'Hate Crime Report', date: '2022/23', url: 'https://www.cps.gov.uk/' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

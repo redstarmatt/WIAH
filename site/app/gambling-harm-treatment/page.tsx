@@ -15,7 +15,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS England', dataset: 'Gambling Disorder Treatment Services', url: 'https://www.england.nhs.uk/mental-health/gambling/', date: '2024' },
   { num: 2, name: 'Gambling Commission', dataset: 'Problem gambling prevalence data', url: 'https://www.gamblingcommission.gov.uk/statistics-and-research', date: '2024' },
   { num: 3, name: 'DCMS', dataset: 'Gambling Reform White Paper', url: 'https://www.gov.uk/government/publications/high-stakes-gambling-reform-for-the-digital-age', date: '2023' },
-  { num: 4, name: 'GamCare', dataset: 'Annual helpline statistics', date: '2023' },
+  { num: 4, name: 'GamCare', dataset: 'Annual helpline statistics', url: 'https://www.gamcare.org.uk/about-us/annual-report/', date: '2023' },
 ];
 
 // NHS gambling clinics in England, 2019–2024

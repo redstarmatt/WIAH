@@ -12,8 +12,8 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Home Office', dataset: 'Hate Crime in England and Wales', url: 'https://www.gov.uk/government/statistics/hate-crime-england-and-wales', date: '2024' },
-  { num: 2, name: 'ONS', dataset: 'Crime Survey for England and Wales', date: '2024' },
-  { num: 3, name: 'Home Office', dataset: 'Crime Outcomes in England and Wales', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Crime Survey for England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice', date: '2024' },
+  { num: 3, name: 'Home Office', dataset: 'Crime Outcomes in England and Wales', url: 'https://www.gov.uk/government/statistics/crime-outcomes-in-england-and-wales-statistics', date: '2024' },
 ];
 
 export default function DisabilityHateCrimePage() {

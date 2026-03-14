@@ -19,7 +19,7 @@ interface TopicData { national: { timeSeries: DataPoint[] }; metadata: { sources
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Regional labour market statistics', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/regionallabourmarket/latest', date: '2025' },
-  { num: 2, name: 'DLUHC', dataset: 'Investment Zones progress report', date: '2025' },
+  { num: 2, name: 'DLUHC', dataset: 'Investment Zones progress report', url: 'https://www.gov.uk/government/organisations/ministry-of-housing-communities-and-local-government', date: '2025' },
 ];
 
 export default function RegionalUnemploymentPage() {

@@ -14,8 +14,8 @@ import RelatedTopics from '@/components/RelatedTopics';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'MBRRACE-UK', dataset: "Saving Lives, Improving Mothers' Care", url: 'https://www.npeu.ox.ac.uk/mbrrace-uk/reports', date: '2023', note: 'Black women 3.4x more likely to die in pregnancy/childbirth than white women; down from 4.3x peak' },
   { num: 2, name: 'NHS England', dataset: 'Workforce Race Equality Standard (WRES) Report', url: 'https://www.england.nhs.uk/about/equality/equality-hub/workforce-race-equality-standard/', date: '2023', note: '24.8% ethnic minority staff but only 10.5% in senior roles' },
-  { num: 3, name: 'NHS England', dataset: 'NHS Staff Survey — Bullying and Harassment by Ethnicity', date: '2023', note: '31% of ethnic minority staff report bullying/harassment vs 24% for white staff' },
-  { num: 4, name: 'NHS Race and Health Observatory', dataset: 'Ethnic Inequalities in Healthcare Review', date: '2022', note: 'COVID-19 mortality 1.5–2x higher among Black, Pakistani and Bangladeshi groups after adjustment' },
+  { num: 3, name: 'NHS England', dataset: 'NHS Staff Survey — Bullying and Harassment by Ethnicity', url: 'https://www.england.nhs.uk/statistics/', date: '2023', note: '31% of ethnic minority staff report bullying/harassment vs 24% for white staff' },
+  { num: 4, name: 'NHS Race and Health Observatory', dataset: 'Ethnic Inequalities in Healthcare Review', date: '2022', note: 'COVID-19 mortality 1.5–2x higher among Black, Pakistani and Bangladeshi groups after adjustment', url: 'https://www.nhsrho.org/research/' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

@@ -40,8 +40,8 @@ function yearToDate(y: number): Date {
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'HM Treasury', dataset: 'Public Expenditure Statistical Analyses (PESA)', url: 'https://www.gov.uk/government/collections/public-expenditure-statistical-analyses-pesa', date: '2024/25' },
-  { num: 2, name: 'DLUHC', dataset: 'Investment Zones and Freeports Progress Report', date: '2025' },
-  { num: 3, name: 'IFS', dataset: 'Regional public spending analysis', date: '2024' },
+  { num: 2, name: 'DLUHC', dataset: 'Investment Zones and Freeports Progress Report', url: 'https://www.gov.uk/government/organisations/ministry-of-housing-communities-and-local-government', date: '2025' },
+  { num: 3, name: 'IFS', dataset: 'Regional public spending analysis', url: 'https://ifs.org.uk/publications', date: '2024' },
 ];
 
 // ── Page ─────────────────────────────────────────────────────────────────────

@@ -1,5 +1,32 @@
 # What is *actually* happening
 
+## Pending Work
+
+### Add inline `<Cite>` markers to all flagged text props (2,850 warnings)
+
+The citation audit (`node scripts/audit-citations.mjs`) currently reports **2,850 advisory warnings** — all non-blocking. These are string props containing numbers but no inline `<Cite nums={N}/>` tag:
+
+| Rule | Count | Where |
+|------|------:|-------|
+| `uncited-changetext` | 1,735 | `MetricCard changeText="..."` |
+| `uncited-finding` | 646 | `TopicHeader finding="..."` |
+| `uncited-callout-description` | 468 | `PositiveCallout description="..."` |
+| `possible-contradiction` | 1 | `stop-and-search/page.tsx` — two cards showing 52 vs 8 (likely intentional: different populations) |
+
+**Fix pattern** — convert string prop to JSX form and embed a `<Cite>`:
+```tsx
+// Before (flagged)
+changeText="+7pp since last year · up from 0% in 2019"
+
+// After (clean)
+changeText={<>+7pp since last year · up from 0% in 2019 <Cite nums={2}/></>}
+```
+
+~2,849 individual edits across ~250 pages. Consider batching by topic or building a codemod.
+Run `npm run audit:citations:strict` (from `site/`) to see all warnings.
+
+---
+
 ## Project Overview
 
 A curated national data platform that makes the real state of the UK visible, understandable, and shareable. Each topic answers the question "What is actually happening in [domain]?" with 2–3 carefully chosen, data-driven visual stories.

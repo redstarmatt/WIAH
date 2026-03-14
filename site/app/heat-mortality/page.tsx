@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'UKHSA', dataset: 'Heat Mortality Monitoring', url: 'https://www.gov.uk/government/publications/heat-mortality-monitoring-england-report', date: '2022' },
   { num: 2, name: 'Met Office', dataset: 'UK climate extremes', url: 'https://www.metoffice.gov.uk/research/climate/maps-and-data/uk-climate-extremes', date: '2022' },
-  { num: 3, name: 'UKHSA', dataset: 'Health Effects of Climate Change — heat mortality projections', date: '2023' },
+  { num: 3, name: 'UKHSA', dataset: 'Health Effects of Climate Change — heat mortality projections', url: 'https://www.gov.uk/government/organisations/uk-health-security-agency/about/statistics', date: '2023' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

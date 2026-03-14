@@ -15,7 +15,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Community Wellbeing Survey', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing', date: '2025' },
   { num: 2, name: 'DCMS', dataset: 'Community Life Survey', url: 'https://www.gov.uk/government/collections/community-life-survey--2', date: '2024-25' },
-  { num: 3, name: 'Ipsos / King\'s College London', dataset: 'Trust in Government Tracker', date: '2025' },
+  { num: 3, name: 'Ipsos / King\'s College London', dataset: 'Trust in Government Tracker', date: '2025', url: 'https://www.ipsos.com/en-uk/' },
   { num: 4, name: 'Jo Cox Foundation', dataset: 'Loneliness Annual Report', url: 'https://www.jocoxfoundation.org/', date: '2024' },
 ];
 

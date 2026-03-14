@@ -13,8 +13,8 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DLUHC', dataset: 'Local Authority Revenue Outturn Statistics', url: 'https://www.gov.uk/government/collections/local-authority-revenue-expenditure-and-financing', date: '2024' },
-  { num: 2, name: 'StepChange / Citizens Advice', dataset: 'Council Tax Debt Statistics', date: '2024' },
-  { num: 3, name: 'CDER Network / Citizens Advice', dataset: 'Enforcement Statistics', date: '2024' },
+  { num: 2, name: 'StepChange / Citizens Advice', dataset: 'Council Tax Debt Statistics', date: '2024', url: 'https://www.stepchange.org/policy-and-research/statistics.aspx' },
+  { num: 3, name: 'CDER Network / Citizens Advice', dataset: 'Enforcement Statistics', date: '2024', url: 'https://www.citizensadvice.org.uk/debt-and-money/' },
   { num: 4, name: 'IFS', dataset: 'Council Tax Reform Analysis', url: 'https://ifs.org.uk', date: '2023' },
 ];
 

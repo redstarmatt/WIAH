@@ -54,14 +54,14 @@ export default function DrugDeathsPage() {
         <TopicHeader
           topic="Health"
           question="Why Is Britain's Drug Death Toll Rising?"
-          finding="Drug poisoning deaths in England and Wales reached 4,907 in 2022 — a record. Scotland's rate is the highest in Europe at 22.4 deaths per 100,000. Drug treatment funding was cut 30% in real terms between 2013 and 2020."
+          finding="Drug poisoning deaths in England and Wales reached 4,907 in 2022 — a record. Scotland's rate is the highest in Europe at 22.4 deaths per 100,000. Drug treatment funding fell by around 30% in real terms between 2013 and 2020."
           colour="#E63946"
           preposition="in"
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>Drug poisoning deaths in England and Wales rose from 2,652 in 2012 to a record 4,907 in 2022, climbing in nearly every intervening year.<Cite nums={1} /> Opioids account for 48% of fatalities; cocaine for 18%; benzodiazepines — increasingly mixed into street heroin — for 12%.<Cite nums={1} /> These are not deaths concentrated among young recreational users: the typical profile is a man in his 40s or 50s with a long history of opioid dependency, tracking back to the heroin epidemic that flooded post-industrial towns in the 1980s and 1990s. Scotland&apos;s rate of 22.4 deaths per 100,000 is the highest in Europe — three times England&apos;s — driven by concentrated poverty in post-industrial cities like Glasgow and Dundee.<Cite nums={2} /> From 2023, nitazenes and other synthetic opioids were detected in the UK supply with increasing frequency, raising the risk of mass casualty events seen in North America.</p>
-            <p>Drug treatment funding fell by around 35% in real terms from 2013 to 2020, hollowing out the infrastructure needed to reach people at highest risk. The 2021 Ten-Year Drugs Plan committed £780 million over three years to rebuilding the treatment system. By 2022/23, 275,896 adults were in structured treatment, with 45% completing free from dependence.<Cite nums={3} /> Community naloxone distribution reached 110,000 doses in 2022; in high-coverage areas it has been shown to reduce overdose deaths by 30%.<Cite nums={3} /> The fundamental challenge remains: demand for treatment outstrips supply in many areas, and the cohort of long-term opioid users is ageing with compounding health needs.</p>
+            <p>Drug treatment funding fell by around 30% in real terms from 2013 to 2020, hollowing out the infrastructure needed to reach people at highest risk. The 2021 Ten-Year Drugs Plan committed £780 million over three years to rebuilding the treatment system. By 2022/23, 275,896 adults were in structured treatment, with 45% completing free from dependence.<Cite nums={3} /> Community naloxone distribution reached 110,000 doses in 2022; in high-coverage areas it has been shown to reduce overdose deaths by 30%.<Cite nums={3} /> The fundamental challenge remains: demand for treatment outstrips supply in many areas, and the cohort of long-term opioid users is ageing with compounding health needs.</p>
           </div>
         </section>
         <SectionNav sections={[

@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Regional Gross Value Added (balanced) per head', url: 'https://www.ons.gov.uk/economy/grossvalueaddedgva/bulletins/regionaleconomicactivitybygrossvalueaddedukbalanced/1998to2022', date: '2023' },
   { num: 2, name: 'ONS', dataset: 'Sub-regional productivity — GVA per hour worked', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/labourproductivity/articles/regionalandsubregionalproductivityintheuk/bulletin', date: '2023' },
-  { num: 3, name: 'IFS', dataset: 'Levelling Up Funding Allocations Analysis', date: '2024', note: 'Institute for Fiscal Studies analysis of targeting against deprivation' },
+  { num: 3, name: 'IFS', dataset: 'Levelling Up Funding Allocations Analysis', url: 'https://ifs.org.uk/publications', date: '2024', note: 'Institute for Fiscal Studies analysis of targeting against deprivation' },
 ];
 
 export default function RegionalInequalityPage() {

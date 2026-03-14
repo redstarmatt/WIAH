@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Defra', dataset: 'Agriculture in the United Kingdom', url: 'https://www.gov.uk/government/statistics/agriculture-in-the-united-kingdom', date: '2024' },
   { num: 2, name: 'Defra', dataset: 'Horticulture Statistics', url: 'https://www.gov.uk/government/collections/defra-statistical-releases', date: '2024' },
-  { num: 3, name: 'Natural England', dataset: 'ELMS monitoring report', date: '2025' },
+  { num: 3, name: 'Natural England', dataset: 'ELMS monitoring report', url: 'https://www.gov.uk/government/organisations/natural-england', date: '2025' },
 ];
 
 // UK food self-sufficiency (%), 2015–2024

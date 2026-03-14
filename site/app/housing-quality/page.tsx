@@ -14,9 +14,9 @@ import RelatedTopics from '@/components/RelatedTopics';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DLUHC', dataset: 'English Housing Survey 2022/23', url: 'https://www.gov.uk/government/collections/english-housing-survey', date: '2023', note: '4.3 million homes (17%) fail Decent Homes Standard; 24% of private rented non-decent' },
-  { num: 2, name: 'BRE', dataset: 'The Cost of Poor Housing in England', date: '2023', note: 'Cold and damp housing costs NHS £1.4 billion per year; children in damp homes 3x more likely to develop asthma' },
-  { num: 3, name: 'Social Housing (Regulation) Act 2023', dataset: "Awaab's Law provisions", date: '2023', note: 'Requires social landlords to investigate damp within 14 days' },
-  { num: 4, name: 'DLUHC', dataset: 'Building Safety Programme Statistics', date: '2026', note: '11,000 buildings not yet completed cladding remediation assessment' },
+  { num: 2, name: 'BRE', dataset: 'The Cost of Poor Housing in England', date: '2023', note: 'Cold and damp housing costs NHS £1.4 billion per year; children in damp homes 3x more likely to develop asthma', url: 'https://bregroup.com/' },
+  { num: 3, name: 'Social Housing (Regulation) Act 2023', dataset: "Awaab's Law provisions", date: '2023', note: 'Requires social landlords to investigate damp within 14 days', url: 'https://www.legislation.gov.uk/ukpga/2023/36/contents' },
+  { num: 4, name: 'DLUHC', dataset: 'Building Safety Programme Statistics', url: 'https://www.gov.uk/government/organisations/ministry-of-housing-communities-and-local-government/about/statistics', date: '2026', note: '11,000 buildings not yet completed cladding remediation assessment' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

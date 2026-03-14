@@ -12,7 +12,7 @@ import RelatedTopics from '@/components/RelatedTopics';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS Business Services Authority', dataset: 'NHS Dental Statistics for England', url: 'https://www.nhsbsa.nhs.uk/statistical-collections/dental-statistics', date: '2024', note: '30.1m courses in 2019/20; 25.4m in 2023/24' },
-  { num: 2, name: 'NHS England', dataset: 'Dental Access and Patient Survey Data', date: '2024', note: '7.5 million adults without NHS dentist access' },
+  { num: 2, name: 'NHS England', dataset: 'Dental Access and Patient Survey Data', url: 'https://www.england.nhs.uk/statistics/', date: '2024', note: '7.5 million adults without NHS dentist access' },
   { num: 3, name: 'NHS Digital', dataset: 'NHS Dental Statistics — Adult Access Rates', url: 'https://www.nhsbsa.nhs.uk/statistical-collections/dental-statistics', date: '2023', note: '46.1% of adults seen within two years in 2022/23 vs 54.9% pre-pandemic' },
   { num: 4, name: 'NHS England', dataset: 'NHS Dentistry Recovery Plan 2023', url: 'https://www.england.nhs.uk/long-read/nhs-dentistry-recovery-plan/', date: '2023' },
 ];

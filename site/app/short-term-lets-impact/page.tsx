@@ -12,8 +12,8 @@ import Cite from '@/components/Cite';
 import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
-  { num: 1, name: 'AirDNA / STAA', dataset: 'UK Short-Term Rental Market Report', date: '2024', note: '280,000 STL properties listed across UK in 2024; up 65% since 2019; 2-4x income vs long-term tenancy' },
-  { num: 2, name: 'DLUHC', dataset: 'Short-Term Lets Registration Scheme', date: '2024', note: 'London 90-day limit inconsistently enforced; Scotland mandatory licensing from 2023; England registration scheme launched 2024' },
+  { num: 1, name: 'AirDNA / STAA', dataset: 'UK Short-Term Rental Market Report', date: '2024', note: '280,000 STL properties listed across UK in 2024; up 65% since 2019; 2-4x income vs long-term tenancy', url: 'https://www.airdna.co/' },
+  { num: 2, name: 'DLUHC', dataset: 'Short-Term Lets Registration Scheme', url: 'https://www.gov.uk/government/organisations/ministry-of-housing-communities-and-local-government', date: '2024', note: 'London 90-day limit inconsistently enforced; Scotland mandatory licensing from 2023; England registration scheme launched 2024' },
   { num: 3, name: 'Resolution Foundation', dataset: 'Rental Market Analysis', url: 'https://www.resolutionfoundation.org', date: '2024', note: 'Rents 15% higher in high-STL areas; 20-40% of stock on platforms in tourist destinations' },
 ];
 

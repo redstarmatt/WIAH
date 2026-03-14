@@ -58,7 +58,7 @@ const editorialRefs: Reference[] = [
   { num: 2, name: 'NHS England', dataset: 'Hospital Episode Statistics — Admitted Patient Care', url: 'https://digital.nhs.uk/data-and-information/data-tools-and-services/data-services/hospital-episode-statistics', date: '2024' },
   { num: 3, name: 'British Dental Association', dataset: 'NHS Vacancies Survey', url: 'https://www.bda.org', date: '2024' },
   { num: 4, name: 'Healthwatch England', dataset: 'Dental Access Survey', url: 'https://www.healthwatch.co.uk', date: '2024' },
-  { num: 5, name: 'Which?', dataset: 'NHS Dentist Availability Survey', date: '2024' },
+  { num: 5, name: 'Which?', dataset: 'NHS Dentist Availability Survey', url: 'https://www.which.co.uk/reviews/dentists/', date: '2024' },
 ];
 
 export default function DentalAccessCrisisPage() {

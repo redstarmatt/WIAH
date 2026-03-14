@@ -14,8 +14,8 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Home Office', dataset: 'Police Recorded Crime Statistics', url: 'https://www.gov.uk/government/statistics/police-recorded-crime-open-data-tables', date: '2023/24', note: '469,000 recorded shoplifting offences (YE March 2024); 30% annual increase; highest since records began' },
-  { num: 2, name: 'British Retail Consortium', dataset: 'Retail Crime Survey', date: '2024', note: 'Organised crime accounts for ~30% of total retail theft value; £1.8bn annual cost; concentrated in electronics, alcohol, cosmetics' },
-  { num: 3, name: 'Home Office', dataset: 'Criminal Justice Bill 2024 — Shoplifting Provisions', date: '2024', note: '£200 de facto threshold formally abolished; charge rate fallen from 18% (2015) to 12% (2024)' },
+  { num: 2, name: 'British Retail Consortium', dataset: 'Retail Crime Survey', date: '2024', note: 'Organised crime accounts for ~30% of total retail theft value; £1.8bn annual cost; concentrated in electronics, alcohol, cosmetics', url: 'https://brc.org.uk/' },
+  { num: 3, name: 'Home Office', dataset: 'Criminal Justice Bill 2024 — Shoplifting Provisions', url: 'https://www.gov.uk/government/organisations/home-office', date: '2024', note: '£200 de facto threshold formally abolished; charge rate fallen from 18% (2015) to 12% (2024)' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

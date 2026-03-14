@@ -52,7 +52,7 @@ const annotations: Annotation[] = [
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS England', dataset: 'A&E Attendances and Emergency Admissions', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/', date: '2024' },
-  { num: 2, name: 'Royal College of Emergency Medicine', dataset: 'Corridor Care Position Statement', date: '2024' },
+  { num: 2, name: 'Royal College of Emergency Medicine', dataset: 'Corridor Care Position Statement', url: 'https://rcem.ac.uk/workforce-data/', date: '2024' },
 ];
 
 export default function AEWaitingTimesCrisisPage() {

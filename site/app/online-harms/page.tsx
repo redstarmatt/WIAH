@@ -13,7 +13,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Ofcom', dataset: 'Children and Parents Media Use and Attitudes report', url: 'https://www.ofcom.org.uk/research-and-data/telecoms-research/adults-media-use-and-attitudes/children-and-parents-media-use-and-attitudes', date: '2024' },
-  { num: 2, name: "Children's Commissioner", dataset: 'Growing Up Digital — Online harms report', date: '2022' },
+  { num: 2, name: "Children's Commissioner", dataset: 'Growing Up Digital — Online harms report', date: '2022', url: 'https://www.gov.uk/government/organisations/ofsted/about/statistics' },
   { num: 3, name: 'Internet Watch Foundation', dataset: 'Annual Report — CSAM reports actioned', url: 'https://www.iwf.org.uk/annual-report/', date: '2024' },
   { num: 4, name: 'Ofcom', dataset: 'Online Safety Act implementation', url: 'https://www.ofcom.org.uk/online-safety', date: '2024' },
 ];

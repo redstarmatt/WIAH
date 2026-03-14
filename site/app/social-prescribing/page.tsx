@@ -15,7 +15,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS England', dataset: 'Social Prescribing Link Worker Programme', url: 'https://www.england.nhs.uk/personalisedcare/social-prescribing/', date: '2024' },
-  { num: 2, name: 'NHS England', dataset: 'Social Prescribing Evaluation — GP Demand Reduction', date: '2024', note: '23% of referred patients reduce GP visits' },
+  { num: 2, name: 'NHS England', dataset: 'Social Prescribing Evaluation — GP Demand Reduction', url: 'https://www.england.nhs.uk/personalisedcare/social-prescribing/', date: '2024', note: '23% of referred patients reduce GP visits' },
   { num: 3, name: 'NASP', dataset: 'Annual Workforce Survey — Social Prescribing Link Workers', url: 'https://socialprescribingacademy.org.uk/resources/evidence/', date: '2024' },
 ];
 

@@ -50,7 +50,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'DESNZ', dataset: 'UK Greenhouse Gas Inventory', url: 'https://www.gov.uk/government/statistics/provisional-uk-greenhouse-gas-emissions-national-statistics', date: '2023' },
   { num: 2, name: 'Environment Agency', dataset: 'Water Framework Directive classification', url: 'https://environment.data.gov.uk/catchment-planning/', date: '2022' },
   { num: 3, name: 'JNCC', dataset: 'UK Biodiversity Indicators', url: 'https://jncc.gov.uk/our-work/ukbi/', date: '2022' },
-  { num: 4, name: 'Climate Change Committee', dataset: 'Progress Report to Parliament', date: '2024' },
+  { num: 4, name: 'Climate Change Committee', dataset: 'Progress Report to Parliament', url: 'https://www.theccc.org.uk/publication/progress-in-reducing-emissions-2024-report-to-parliament/', date: '2024' },
 ];
 
 export default function EnvironmentPage() {

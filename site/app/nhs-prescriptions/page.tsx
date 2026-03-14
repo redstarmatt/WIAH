@@ -14,8 +14,8 @@ import RelatedTopics from '@/components/RelatedTopics';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS Business Services Authority', dataset: 'Prescription Cost Analysis', url: 'https://www.nhsbsa.nhs.uk/statistical-collections/prescription-cost-analysis-england', date: '2023', note: '1.1bn items dispensed; £10.8bn total net ingredient cost; 90% free of charge' },
-  { num: 2, name: 'DHSC', dataset: 'Prescription Charges Statistics', date: '2024', note: '£9.90 per item (April 2024); up 60% in real terms since 2000; exemption list last updated 1968' },
-  { num: 3, name: 'Health Foundation', dataset: 'Prescription Charge Non-Adherence Research', date: '2022', note: 'Estimated 750,000 people skip medication annually due to cost' },
+  { num: 2, name: 'DHSC', dataset: 'Prescription Charges Statistics', url: 'https://www.gov.uk/government/organisations/department-of-health-and-social-care/about/statistics', date: '2024', note: '£9.90 per item (April 2024); up 60% in real terms since 2000; exemption list last updated 1968' },
+  { num: 3, name: 'Health Foundation', dataset: 'Prescription Charge Non-Adherence Research', url: 'https://www.health.org.uk/publications', date: '2022', note: 'Estimated 750,000 people skip medication annually due to cost' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

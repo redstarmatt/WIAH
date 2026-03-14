@@ -55,8 +55,8 @@ const povertyAnnotations: Annotation[] = [
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Ofgem', dataset: 'Energy price cap quarterly update', url: 'https://www.ofgem.gov.uk/check-if-energy-price-cap-affects-you', date: '2025' },
   { num: 2, name: 'DESNZ', dataset: 'Annual Fuel Poverty Statistics', url: 'https://www.gov.uk/government/collections/fuel-poverty-statistics', date: '2024' },
-  { num: 3, name: 'Ofgem', dataset: 'Standing charge data', date: '2024' },
-  { num: 4, name: 'DESNZ', dataset: 'Warm Homes Plan', date: '2024' },
+  { num: 3, name: 'Ofgem', dataset: 'Standing charge data', url: 'https://www.ofgem.gov.uk/check-if-energy-price-cap-affects-you', date: '2024' },
+  { num: 4, name: 'DESNZ', dataset: 'Warm Homes Plan', url: 'https://www.gov.uk/government/publications/warm-homes-plan', date: '2024' },
 ];
 
 export default function EnergyBillsPage() {

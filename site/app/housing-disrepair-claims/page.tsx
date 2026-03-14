@@ -13,7 +13,7 @@ import RelatedTopics from '@/components/RelatedTopics';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Ministry of Justice', dataset: 'Civil Justice Statistics Quarterly', url: 'https://www.gov.uk/government/collections/civil-justice-statistics-quarterly', date: '2024', note: 'Housing disrepair claims rose from 25,000 in 2018 to 100,000 in 2024' },
   { num: 2, name: 'DLUHC', dataset: 'English Housing Survey', url: 'https://www.gov.uk/government/collections/english-housing-survey', date: '2024', note: '5 million social homes with category 1 hazard' },
-  { num: 3, name: 'Social Housing (Regulation) Act 2023', dataset: "Awaab's Law provisions", date: '2023', note: 'Requires investigation of damp/mould within 14 days and emergency repair within 24 hours' },
+  { num: 3, name: 'Social Housing (Regulation) Act 2023', dataset: "Awaab's Law provisions", date: '2023', note: 'Requires investigation of damp/mould within 14 days and emergency repair within 24 hours', url: 'https://www.legislation.gov.uk/ukpga/2023/36/contents' },
 ];
 
 export default function HousingDisrepairClaimsPage() {

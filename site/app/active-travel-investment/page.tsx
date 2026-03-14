@@ -54,7 +54,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'Department for Transport', dataset: 'Walking and Cycling Statistics', url: 'https://www.gov.uk/government/collections/walking-and-cycling-statistics', date: '2024' },
   { num: 2, name: 'Department for Transport', dataset: 'Reported Road Casualties Great Britain (STATS19)', url: 'https://www.gov.uk/government/collections/road-accidents-and-safety-statistics', date: '2024' },
   { num: 3, name: 'Department for Transport', dataset: 'National Travel Survey', url: 'https://www.gov.uk/government/collections/national-travel-survey-statistics', date: '2024' },
-  { num: 4, name: 'Active Travel England', dataset: 'Annual Report 2023/24', date: '2024' },
+  { num: 4, name: 'Active Travel England', dataset: 'Annual Report 2023/24', url: 'https://www.gov.uk/government/organisations/active-travel-england', date: '2024' },
 ];
 
 export default function ActiveTravelInvestmentPage() {

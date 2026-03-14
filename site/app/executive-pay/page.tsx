@@ -46,7 +46,7 @@ const payAnnotations: Annotation[] = [
 const editorialRefs: Reference[] = [
   { num: 1, name: 'High Pay Centre', dataset: 'FTSE 100 CEO pay analysis', url: 'https://highpaycentre.org/ftse-100-ceo-pay-analysis/', date: '2023' },
   { num: 2, name: 'High Pay Centre / CIPD', dataset: 'Executive pay and the workforce', url: 'https://highpaycentre.org/', date: '2023' },
-  { num: 3, name: 'Investment Association', dataset: 'Shareholder voting analysis', date: '2023' },
+  { num: 3, name: 'Investment Association', dataset: 'Shareholder voting analysis', url: 'https://www.theia.org/activity/research', date: '2023' },
 ];
 
 export default function ExecutivePayPage() {

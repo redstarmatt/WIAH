@@ -64,7 +64,7 @@ const editorialRefs: Reference[] = [
   { num: 2, name: 'NHS Digital', dataset: 'Mental Health Services Dataset (MHSDS)', url: 'https://digital.nhs.uk/data-and-information/data-collections-and-data-sets/data-sets/mental-health-services-data-set', date: '2024' },
   { num: 3, name: 'NICE', dataset: 'Autism spectrum disorder in adults: diagnosis and management (CG142)', url: 'https://www.nice.org.uk/guidance/cg142', date: '2021' },
   { num: 4, name: 'NAO', dataset: 'Support for autistic people', url: 'https://www.nao.org.uk/reports/support-for-autistic-people/', date: '2023' },
-  { num: 5, name: 'ONS', dataset: 'Labour Force Survey — Disability and Employment', date: '2023' },
+  { num: 5, name: 'ONS', dataset: 'Labour Force Survey — Disability and Employment', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/datasets/labourforcesurvey', date: '2023' },
 ];
 
 export default function AutismAdultDiagnosisPage() {
@@ -110,7 +110,7 @@ export default function AutismAdultDiagnosisPage() {
               unit="2024"
               direction="up"
               polarity="up-is-bad"
-              changeText="+442% since 2016 · up from 21,000"
+              changeText="+452% since 2016 · up from 21,000"
               sparklineData={waitingListValues}
               source="NHS Digital — Autism Statistics 2024"
               href="#sec-chart1"

@@ -63,7 +63,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'DfE', dataset: 'Children in Need Census', url: 'https://www.gov.uk/government/collections/statistics-children-in-need', date: '2024' },
   { num: 2, name: 'DfE', dataset: 'Looked After Children Statistics', url: 'https://www.gov.uk/government/collections/statistics-looked-after-children', date: '2024' },
   { num: 3, name: 'DfE', dataset: "Children's Social Care Workforce Survey", url: 'https://www.gov.uk/government/collections/statistics-childrens-social-care-workforce', date: '2024' },
-  { num: 4, name: 'Independent Review of Children\'s Social Care', dataset: 'MacAlister Review Final Report', date: '2022' },
+  { num: 4, name: 'Independent Review of Children\'s Social Care', dataset: 'MacAlister Review Final Report', date: '2022', url: 'https://www.gov.uk/government/publications/independent-review-of-childrens-social-care-final-report' },
 ];
 
 export default function ChildProtectionPage() {

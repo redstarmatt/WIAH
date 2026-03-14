@@ -13,9 +13,9 @@ import Cite from '@/components/Cite';
 import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
-  { num: 1, name: 'UKHSA', dataset: 'Confirmed cases of measles in England', date: '2024' },
-  { num: 2, name: 'NHS Digital', dataset: 'Childhood Vaccination Coverage Statistics (COVER)', date: '2024' },
-  { num: 3, name: 'The Lancet', dataset: 'Retraction — Ileal-lymphoid-nodular hyperplasia (Wakefield et al.)', date: '2010' },
+  { num: 1, name: 'UKHSA', dataset: 'Confirmed cases of measles in England', url: 'https://www.gov.uk/government/organisations/uk-health-security-agency/about/statistics', date: '2024' },
+  { num: 2, name: 'NHS Digital', dataset: 'Childhood Vaccination Coverage Statistics (COVER)', url: 'https://digital.nhs.uk/data-and-information/publications/statistical', date: '2024' },
+  { num: 3, name: 'The Lancet', dataset: 'Retraction — Ileal-lymphoid-nodular hyperplasia (Wakefield et al.)', url: 'https://www.thelancet.com/', date: '2010' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

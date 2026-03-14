@@ -52,7 +52,7 @@ const annotations: Annotation[] = [
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Woodland Trust', dataset: 'Planning Threats Register', url: 'https://www.woodlandtrust.org.uk/protecting-trees-and-woods/campaign-with-us/ancient-woodland-protection/', date: '2024' },
-  { num: 2, name: 'Natural England', dataset: 'Ancient Woodland Inventory', date: '2024' },
+  { num: 2, name: 'Natural England', dataset: 'Ancient Woodland Inventory', url: 'https://www.gov.uk/government/organisations/natural-england/about/statistics', date: '2024' },
   { num: 3, name: 'Forestry Commission', dataset: 'Forestry Statistics — Woodland Area and Planting', url: 'https://www.forestresearch.gov.uk/tools-and-resources/statistics/forestry-statistics/', date: '2024' },
 ];
 

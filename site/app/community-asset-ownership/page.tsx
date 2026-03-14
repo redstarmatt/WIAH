@@ -53,7 +53,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'Locality', dataset: 'Community Ownership and Management of Assets Census', url: 'https://locality.org.uk/policy-campaigns/community-ownership/', date: '2025' },
   { num: 2, name: 'DLUHC', dataset: 'Assets of Community Value Registrations', url: 'https://www.gov.uk/government/publications/community-right-to-bid-assess-whether-land-or-buildings-are-of-community-value', date: '2025' },
   { num: 3, name: 'Plunkett Foundation', dataset: 'Community Business Market Report', url: 'https://plunkett.co.uk/community-business-market/', date: '2025' },
-  { num: 4, name: 'DLUHC', dataset: 'Community Ownership Fund Evaluation', date: '2024' },
+  { num: 4, name: 'DLUHC', dataset: 'Community Ownership Fund Evaluation', url: 'https://www.gov.uk/government/organisations/ministry-of-housing-communities-and-local-government/about/statistics', date: '2024' },
 ];
 
 export default function CommunityAssetOwnershipPage() {

@@ -15,7 +15,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'Ministry of Justice', dataset: 'Legal Aid Statistics — Quarterly 2024', url: 'https://www.gov.uk/government/collections/legal-aid-statistics', date: '2024' },
   { num: 2, name: 'Law Society', dataset: 'Legal aid deserts report 2024', url: 'https://www.lawsociety.org.uk/campaigns/legal-aid', date: '2024' },
   { num: 3, name: 'Ministry of Justice', dataset: 'LASPO Post-Implementation Review 2019', url: 'https://www.gov.uk/government/publications/post-implementation-review-of-part-1-of-laspo', date: '2019' },
-  { num: 4, name: 'Public Accounts Committee', dataset: 'Reports on legal aid sustainability, 2015–2023', date: '2023' },
+  { num: 4, name: 'Public Accounts Committee', dataset: 'Reports on legal aid sustainability, 2015–2023', date: '2023', url: 'https://committees.parliament.uk/committee/127/public-accounts-committee/' },
 ];
 
 export default function LegalAidPage() {

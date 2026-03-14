@@ -15,7 +15,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS Digital', dataset: 'Mental Health of Children and Young People in England', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-of-children-and-young-people-in-england', date: '2023' },
   { num: 2, name: 'Ditch the Label', dataset: 'Annual Bullying Survey 2023', url: 'https://www.ditchthelabel.org/research-papers/the-annual-bullying-survey-2023/', date: '2023' },
-  { num: 3, name: 'University College London', dataset: 'Cyberbullying and Self-Harm Study', date: '2022', note: 'Tracked 10,000 adolescents; cyberbullying victims 2.5x more likely to report self-harm' },
+  { num: 3, name: 'University College London', dataset: 'Cyberbullying and Self-Harm Study', date: '2022', note: 'Tracked 10,000 adolescents; cyberbullying victims 2.5x more likely to report self-harm', url: 'https://www.ucl.ac.uk/research/' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'SSNAP', dataset: 'Sentinel Stroke National Audit Programme', url: 'https://www.strokeaudit.org/', date: '2023', note: 'Thrombolysis rate 11%, unchanged for 5 years; thrombectomy 3.8%; stroke unit admission declined to 78%' },
-  { num: 2, name: 'ONS', dataset: 'Death Registrations — Cerebrovascular Diseases', date: '2023', note: 'Age-standardised mortality 40.2 per 100K, down from 47 in 2012; improvement flattening' },
+  { num: 2, name: 'ONS', dataset: 'Death Registrations — Cerebrovascular Diseases', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths', date: '2023', note: 'Age-standardised mortality 40.2 per 100K, down from 47 in 2012; improvement flattening' },
   { num: 3, name: 'Stroke Association', dataset: 'State of the Nation Report', url: 'https://www.stroke.org.uk/', date: '2023', note: '~100K strokes/year; 35K deaths; £8.9bn annual economic cost; 24 thrombectomy centres' },
 ];
 

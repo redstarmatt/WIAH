@@ -14,9 +14,9 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DESNZ', dataset: 'Renewable electricity capacity and generation statistics', url: 'https://www.gov.uk/government/statistics/energy-trends', date: '2024' },
-  { num: 2, name: 'Aurora Energy Research', dataset: 'Cost of the onshore wind ban — household bill impact analysis', date: '2023' },
+  { num: 2, name: 'Aurora Energy Research', dataset: 'Cost of the onshore wind ban — household bill impact analysis', date: '2023', url: 'https://www.auroraer.com/' },
   { num: 3, name: 'DESNZ', dataset: 'Renewable energy planning database', url: 'https://www.gov.uk/government/publications/renewable-energy-planning-database-monthly-extract', date: '2024' },
-  { num: 4, name: 'DESNZ', dataset: 'Contracts for Difference — Allocation Round results', date: '2024' },
+  { num: 4, name: 'DESNZ', dataset: 'Contracts for Difference — Allocation Round results', url: 'https://www.gov.uk/government/organisations/department-for-energy-security-and-net-zero/about/statistics', date: '2024' },
 ];
 
 interface OnshoreWindData {

@@ -13,10 +13,10 @@ import Cite from '@/components/Cite';
 import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
-  { num: 1, name: 'UK Sepsis Trust / NHS England', dataset: 'Sepsis-related Mortality Estimates', date: '2025', note: 'Approx 48,000 deaths/year; peaked at 54,800 in 2020; down 12% from peak' },
-  { num: 2, name: 'ICNARC', dataset: 'Case Mix Programme — Sepsis Admissions', date: '2025', note: 'Survival rate risen from 73% (2014) to 81% (2025); South West 84% vs North East 77%' },
-  { num: 3, name: 'NHS England', dataset: 'CQUIN Sepsis Indicators', date: '2025', note: 'Sepsis-6 bundle compliance 72% (up from 42% in 2016); median time to IV antibiotics halved to 44 minutes' },
-  { num: 4, name: 'NHS England', dataset: 'NEWS2 National Early Warning Score Implementation', date: '2025', note: 'NEWS2 adopted across 95% of acute trusts; automatic deterioration flagging triggers sepsis screening' },
+  { num: 1, name: 'UK Sepsis Trust / NHS England', dataset: 'Sepsis-related Mortality Estimates', date: '2025', note: 'Approx 48,000 deaths/year; peaked at 54,800 in 2020; down 12% from peak', url: 'https://sepsistrust.org/about/what-is-sepsis/sepsis-data/' },
+  { num: 2, name: 'ICNARC', dataset: 'Case Mix Programme — Sepsis Admissions', date: '2025', note: 'Survival rate risen from 73% (2014) to 81% (2025); South West 84% vs North East 77%', url: 'https://www.icnarc.org/our-audit-and-research/case-mix-programme/' },
+  { num: 3, name: 'NHS England', dataset: 'CQUIN Sepsis Indicators', url: 'https://www.england.nhs.uk/statistics/', date: '2025', note: 'Sepsis-6 bundle compliance 72% (up from 42% in 2016); median time to IV antibiotics halved to 44 minutes' },
+  { num: 4, name: 'NHS England', dataset: 'NEWS2 National Early Warning Score Implementation', url: 'https://www.england.nhs.uk/statistics/', date: '2025', note: 'NEWS2 adopted across 95% of acute trusts; automatic deterioration flagging triggers sepsis screening' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

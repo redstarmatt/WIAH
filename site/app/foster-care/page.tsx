@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Ofsted', dataset: 'Fostering in England', url: 'https://www.gov.uk/government/statistics/fostering-in-england', date: '2023' },
   { num: 2, name: 'DfE', dataset: 'Children Looked After in England', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions', date: '2023' },
-  { num: 3, name: 'Rees Centre, University of Oxford', dataset: 'Placement stability and educational outcomes research' },
+  { num: 3, name: 'Rees Centre, University of Oxford', dataset: 'Placement stability and educational outcomes research' , url: 'https://reescentre.education.ox.ac.uk/' },
 ];
 
 // Approved foster carer households (thousands), 2015–2023

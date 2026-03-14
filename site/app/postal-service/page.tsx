@@ -15,8 +15,8 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Ofcom', dataset: 'Annual Monitoring Report on the Postal Market', url: 'https://www.ofcom.org.uk/research-and-data/post-research', date: '2025', note: 'Letter volumes fell from 15.1bn in 2010 to 5.9bn; first-class next-day delivery rate around 84-85%' },
   { num: 2, name: 'Ofcom', dataset: 'Quality of Service Report', url: 'https://www.ofcom.org.uk/research-and-data/post-research', date: '2025', note: '93% first-class target missed every quarter since 2022; £5.6m fine in 2023' },
-  { num: 3, name: 'Royal Mail', dataset: 'Annual Report and Financial Statements', date: '2024', note: 'Workforce shrunk from 160,000 to ~115,000; delivery offices from 1,200 to ~1,008' },
-  { num: 4, name: 'Ofcom', dataset: 'Review of Postal Regulation — Universal Service Consultation', date: '2024', note: 'Six-day letter delivery obligation under review; proposals to reduce to five or three days' },
+  { num: 3, name: 'Royal Mail', dataset: 'Annual Report and Financial Statements', date: '2024', note: 'Workforce shrunk from 160,000 to ~115,000; delivery offices from 1,200 to ~1,008', url: 'https://www.royalmailgroup.com/en/responsibility/our-reporting/' },
+  { num: 4, name: 'Ofcom', dataset: 'Review of Postal Regulation — Universal Service Consultation', url: 'https://www.ofcom.org.uk/research-and-data', date: '2024', note: 'Six-day letter delivery obligation under review; proposals to reduce to five or three days' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

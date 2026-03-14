@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Ministry of Justice', dataset: 'Prison Population Statistics', url: 'https://www.gov.uk/government/collections/prison-population-statistics', date: '2024' },
   { num: 2, name: 'HM Inspectorate of Prisons', dataset: 'Annual Report 2023/24', url: 'https://www.justiceinspectorates.gov.uk/hmiprisons/', date: '2024' },
-  { num: 3, name: 'Prison Officers\' Association', dataset: 'Safe Operating Capacity Guidance', date: '2023' },
+  { num: 3, name: 'Prison Officers\' Association', dataset: 'Safe Operating Capacity Guidance', date: '2023', url: 'https://www.poauk.org.uk/' },
   { num: 4, name: 'Ministry of Justice', dataset: 'End of Custody Supervised Licence Statistics', url: 'https://www.gov.uk/government/collections/prison-population-statistics', date: '2024' },
   { num: 5, name: 'Ministry of Justice', dataset: 'Proven Reoffending Statistics', url: 'https://www.gov.uk/government/statistics/proven-reoffending-statistics-quarterly-bulletin-england-and-wales', date: '2024' },
 ];

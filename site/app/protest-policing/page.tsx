@@ -13,7 +13,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Home Office', dataset: 'Police Powers and Procedures, England and Wales', url: 'https://www.gov.uk/government/collections/police-powers-and-procedures-england-and-wales', date: '2023' },
-  { num: 2, name: 'Home Office', dataset: 'Public Order Act 2023 — Explanatory Notes', date: '2023' },
+  { num: 2, name: 'Home Office', dataset: 'Public Order Act 2023 — Explanatory Notes', url: 'https://www.gov.uk/government/organisations/home-office', date: '2023' },
   { num: 3, name: 'Liberty', dataset: 'Protest Policing Research', url: 'https://www.libertyhumanrights.org.uk/issue/protest/', date: '2024' },
   { num: 4, name: 'Amnesty International UK', dataset: 'Right to Protest', url: 'https://www.amnesty.org.uk/right-to-protest', date: '2024' },
 ];

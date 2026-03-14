@@ -62,8 +62,8 @@ const annotations2: Annotation[] = [
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Trussell Trust', dataset: 'End of year food bank statistics', url: 'https://www.trusselltrust.org/news-and-blog/latest-stats/', date: '2025' },
-  { num: 2, name: 'Independent Food Aid Network', dataset: 'Independent food bank estimate', date: '2024' },
-  { num: 3, name: 'DWP / ONS', dataset: 'Households below average income and child poverty statistics', date: '2024' },
+  { num: 2, name: 'Independent Food Aid Network', dataset: 'Independent food bank estimate', url: 'https://www.ifan.org.uk/research/', date: '2024' },
+  { num: 3, name: 'DWP / ONS', dataset: 'Households below average income and child poverty statistics', url: 'https://www.gov.uk/government/collections/households-below-average-income-hbai--2', date: '2024' },
 ];
 
 export default function FoodBankGrowthPage() {

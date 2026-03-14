@@ -13,9 +13,9 @@ import Cite from '@/components/Cite';
 import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
-  { num: 1, name: 'Bank of England', dataset: 'Money and Credit Statistics', date: '2023', note: 'UK households owe £1.9 trillion; 130% of household income' },
-  { num: 2, name: 'StepChange', dataset: 'Annual Statistics Yearbook', date: '2023', note: '8.9 million people in problem debt' },
-  { num: 3, name: 'Insolvency Service', dataset: 'Insolvency Statistics England and Wales', date: '2023', note: '110,000 personal insolvencies — highest since 2010' },
+  { num: 1, name: 'Bank of England', dataset: 'Money and Credit Statistics', date: '2023', note: 'UK households owe £1.9 trillion; 130% of household income', url: 'https://www.bankofengland.co.uk/statistics' },
+  { num: 2, name: 'StepChange', dataset: 'Annual Statistics Yearbook', date: '2023', note: '8.9 million people in problem debt', url: 'https://www.stepchange.org/policy-and-research/statistics.aspx' },
+  { num: 3, name: 'Insolvency Service', dataset: 'Insolvency Statistics England and Wales', url: 'https://www.gov.uk/government/organisations/insolvency-service/about/statistics', date: '2023', note: '110,000 personal insolvencies — highest since 2010' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

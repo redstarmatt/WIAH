@@ -61,7 +61,7 @@ const annotations2: Annotation[] = [
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Environment Agency', dataset: 'National Flood Risk Assessment', url: 'https://www.gov.uk/government/organisations/environment-agency', date: '2024' },
-  { num: 2, name: 'Environment Agency', dataset: 'Asset management report', date: '2024' },
+  { num: 2, name: 'Environment Agency', dataset: 'Asset management report', url: 'https://www.gov.uk/government/organisations/environment-agency', date: '2024' },
   { num: 3, name: 'Environment Agency', dataset: 'Flood and coastal erosion risk management report', url: 'https://www.gov.uk/government/statistics/flood-and-coastal-risk-management-in-england-report', date: '2025' },
 ];
 

@@ -13,7 +13,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Department for Education', dataset: 'Children looked after in England', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions', date: '2024' },
-  { num: 2, name: 'Fostering Network', dataset: 'Foster Care Statistics 2024' },
+  { num: 2, name: 'Fostering Network', dataset: 'Foster Care Statistics 2024', url: 'https://www.thefosteringnetwork.org.uk/policy-practice/facts-and-figures' },
   { num: 3, name: 'CMA', dataset: "Children's social care market study", url: 'https://www.gov.uk/cma-cases/childrens-social-care-market-study', date: '2022' },
 ];
 

@@ -54,7 +54,7 @@ const annotations: Annotation[] = [
 const editorialRefs: Reference[] = [
   { num: 1, name: 'COMEAP', dataset: 'Long-term exposure mortality estimates', url: 'https://www.gov.uk/government/groups/committee-on-the-medical-effects-of-air-pollutants-comeap', date: '2024' },
   { num: 2, name: 'DEFRA', dataset: 'Air quality statistics — PM2.5 annual mean', url: 'https://www.gov.uk/government/collections/air-quality-statistics', date: '2024' },
-  { num: 3, name: 'PHE', dataset: 'Estimation of costs to the NHS and social care due to air pollution', date: '2024' },
+  { num: 3, name: 'PHE', dataset: 'Estimation of costs to the NHS and social care due to air pollution', url: 'https://www.gov.uk/government/organisations/uk-health-security-agency/about/statistics', date: '2024' },
 ];
 
 export default function AirPollutionHealthBurdenPage() {

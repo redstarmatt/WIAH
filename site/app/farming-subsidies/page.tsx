@@ -52,7 +52,7 @@ const subsidyAnnotations: Annotation[] = [
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Defra', dataset: 'Environmental Land Management statistics', url: 'https://www.gov.uk/government/collections/environmental-land-management-statistics', date: '2024' },
   { num: 2, name: 'Defra', dataset: 'Farm Business Survey', url: 'https://www.gov.uk/government/statistics/farm-business-survey', date: '2024' },
-  { num: 3, name: 'NFU', dataset: 'Farm Business Survey', date: '2024' },
+  { num: 3, name: 'NFU', dataset: 'Farm Business Survey', url: 'https://www.nfuonline.com/updates-and-information/research/', date: '2024' },
 ];
 
 export default function FarmingSubsidiesPage() {

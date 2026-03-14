@@ -13,7 +13,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS England', dataset: 'Patient Safety Incident Management System (PSIMS)', url: 'https://www.england.nhs.uk/patient-safety/patient-safety-incident-management-system/', date: '2024' },
   { num: 2, name: 'NHS Resolution', dataset: 'Annual Report and Accounts', url: 'https://resolution.nhs.uk/resources/annual-report-and-accounts/', date: '2023/24' },
-  { num: 3, name: 'Donna Ockenden', dataset: 'Independent Review of Maternity Services at Shrewsbury and Telford NHS Trust', date: 'March 2022' },
+  { num: 3, name: 'Donna Ockenden', dataset: 'Independent Review of Maternity Services at Shrewsbury and Telford NHS Trust', date: 'March 2022', url: 'https://www.gov.uk/government/publications/final-report-of-the-ockenden-review' },
 ];
 
 export default function PatientSafetyIncidentsPage() {

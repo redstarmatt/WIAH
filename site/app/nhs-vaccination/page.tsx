@@ -13,10 +13,10 @@ import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
 
 const editorialRefs: Reference[] = [
-  { num: 1, name: 'NHS Digital', dataset: 'Childhood Vaccination Coverage Statistics', date: '2023', note: 'MMR uptake at 89.3% for 2-year-olds in 2022/23; below 95% herd immunity threshold' },
-  { num: 2, name: 'UKHSA', dataset: 'Measles Notifications and Outbreak Reports', date: '2024', note: '2,978 measles cases in year to October 2024; Birmingham outbreak infected 300+ children' },
-  { num: 3, name: 'NHS Digital', dataset: 'Childhood Vaccination Coverage — DTaP and Regional Data', date: '2023', note: 'DTaP coverage fell from 95.2% (2016/17) to 91.7%; London MMR at 84.1%' },
-  { num: 4, name: 'UKHSA', dataset: 'Pertussis (Whooping Cough) Surveillance', date: '2024', note: '15,000+ confirmed pertussis cases in 2024 with at least 10 infant deaths' },
+  { num: 1, name: 'NHS Digital', dataset: 'Childhood Vaccination Coverage Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical', date: '2023', note: 'MMR uptake at 89.3% for 2-year-olds in 2022/23; below 95% herd immunity threshold' },
+  { num: 2, name: 'UKHSA', dataset: 'Measles Notifications and Outbreak Reports', url: 'https://www.gov.uk/government/organisations/uk-health-security-agency/about/statistics', date: '2024', note: '2,978 measles cases in year to October 2024; Birmingham outbreak infected 300+ children' },
+  { num: 3, name: 'NHS Digital', dataset: 'Childhood Vaccination Coverage — DTaP and Regional Data', url: 'https://digital.nhs.uk/data-and-information/publications/statistical', date: '2023', note: 'DTaP coverage fell from 95.2% (2016/17) to 91.7%; London MMR at 84.1%' },
+  { num: 4, name: 'UKHSA', dataset: 'Pertussis (Whooping Cough) Surveillance', url: 'https://www.gov.uk/government/organisations/uk-health-security-agency/about/statistics', date: '2024', note: '15,000+ confirmed pertussis cases in 2024 with at least 10 infant deaths' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

@@ -14,8 +14,8 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DEFRA', dataset: 'Family Food Statistics / Food Statistics Pocketbook', url: 'https://www.gov.uk/government/statistics/family-food-statistics', date: '2025' },
-  { num: 2, name: 'WHO / IARC', dataset: 'Monographs on the Evaluation of Carcinogenic Risks — processed meat classified as Group 1 carcinogen', date: '2015' },
-  { num: 3, name: 'Kantar / IGD', dataset: 'UK Plant-Based Market Report', date: '2025' },
+  { num: 2, name: 'WHO / IARC', dataset: 'Monographs on the Evaluation of Carcinogenic Risks — processed meat classified as Group 1 carcinogen', date: '2015', url: 'https://www.who.int/data' },
+  { num: 3, name: 'Kantar / IGD', dataset: 'UK Plant-Based Market Report', date: '2025', url: 'https://www.kantar.com/inspiration/fmcg/' },
   { num: 4, name: 'DEFRA', dataset: 'Agriculture in the United Kingdom — Supply Balance Sheets', url: 'https://www.gov.uk/government/statistics/agriculture-in-the-united-kingdom', date: '2025' },
 ];
 

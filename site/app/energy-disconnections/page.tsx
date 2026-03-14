@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Ofgem', dataset: 'Prepayment meter installation data — supplier compliance reporting', url: 'https://www.ofgem.gov.uk/check-if-energy-price-cap-affects-you', date: '2024' },
   { num: 2, name: 'Ofgem', dataset: 'Consumer Vulnerability Report', url: 'https://www.ofgem.gov.uk/publications/consumer-vulnerability-strategy', date: '2024' },
-  { num: 3, name: 'Citizens Advice', dataset: 'Energy statistics and case evidence', date: '2024' },
+  { num: 3, name: 'Citizens Advice', dataset: 'Energy statistics and case evidence', url: 'https://www.citizensadvice.org.uk/about-us/our-work/policy-research/policy-research-topics/energy-policy-research-and-consultation-responses/', date: '2024' },
 ];
 
 export default function EnergyDisconnectionsPage() {

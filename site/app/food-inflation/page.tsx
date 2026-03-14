@@ -62,7 +62,7 @@ const insecurityAnnotations: Annotation[] = [
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Consumer Price Index — food & non-alcoholic beverages', url: 'https://www.ons.gov.uk/economy/inflationandpriceindices', date: '2025' },
-  { num: 2, name: 'Resolution Foundation', dataset: 'Cost of Living Impact', date: '2024' },
+  { num: 2, name: 'Resolution Foundation', dataset: 'Cost of Living Impact', url: 'https://www.resolutionfoundation.org/publications/', date: '2024' },
   { num: 3, name: 'Food Foundation', dataset: 'Food Insecurity Tracker', url: 'https://foodfoundation.org.uk', date: '2024' },
 ];
 

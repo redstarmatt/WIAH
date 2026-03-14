@@ -15,7 +15,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'Natural England', dataset: 'SSSI Condition Monitoring', url: 'https://www.gov.uk/government/organisations/natural-england', date: '2023' },
   { num: 2, name: 'Woodland Trust', dataset: 'National Inventory of Woodland and Trees', url: 'https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/habitats/ancient-woodland/', date: '2023' },
   { num: 3, name: 'DEFRA', dataset: 'Countryside Survey / Agricultural Land Use', url: 'https://www.gov.uk/government/statistical-data-sets/agricultural-land-use-in-england', date: '2024' },
-  { num: 4, name: 'DEFRA', dataset: 'ELM scheme statistics', date: '2024' },
+  { num: 4, name: 'DEFRA', dataset: 'ELM scheme statistics', url: 'https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs/about/statistics', date: '2024' },
 ];
 
 // SSSIs in favourable or recovering condition (%), 2003–2023

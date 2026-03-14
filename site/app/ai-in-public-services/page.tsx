@@ -53,7 +53,7 @@ const annotations: Annotation[] = [
 const editorialRefs: Reference[] = [
   { num: 1, name: 'CDDO', dataset: 'Algorithmic Transparency Recording Standard', url: 'https://www.gov.uk/government/collections/algorithmic-transparency-recording-standard-hub', date: '2025' },
   { num: 2, name: 'Ada Lovelace Institute', dataset: 'Public Attitudes to Data and AI Survey', url: 'https://www.adalovelaceinstitute.org', date: '2025' },
-  { num: 3, name: 'NHS England', dataset: 'AI Lab programme evaluations', date: '2024' },
+  { num: 3, name: 'NHS England', dataset: 'AI Lab programme evaluations', url: 'https://www.england.nhs.uk/statistics/', date: '2024' },
 ];
 
 export default function AIInPublicServicesPage() {

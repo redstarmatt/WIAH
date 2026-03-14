@@ -53,7 +53,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'CIPD', dataset: 'Working lives survey', url: 'https://www.cipd.org/uk/knowledge/reports/flexible-working/', date: '2024' },
   { num: 2, name: 'ONS', dataset: 'Homeworking in the UK', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/articles/homeworkingintheuk/latest', date: '2024' },
   { num: 3, name: 'CIPD', dataset: 'Flexible working survey', url: 'https://www.cipd.org/uk/knowledge/reports/flexible-working/', date: '2024' },
-  { num: 4, name: 'TUC', dataset: 'Flexible working and equality analysis', date: '2024' },
+  { num: 4, name: 'TUC', dataset: 'Flexible working and equality analysis', url: 'https://www.tuc.org.uk/research-analysis', date: '2024' },
 ];
 
 export default function FlexibleWorkingAccessPage() {

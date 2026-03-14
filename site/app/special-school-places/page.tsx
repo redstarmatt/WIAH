@@ -13,10 +13,10 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DfE', dataset: 'Education, Health and Care Plans — England', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/education-health-and-care-plans', date: '2024' },
-  { num: 2, name: 'IPSEA / NAS', dataset: 'SEND Provision Analysis — Children Without Placement', date: '2024', note: 'FoI-based estimate of 5,200 children without special school placement' },
-  { num: 3, name: 'DfE', dataset: 'Local Authority Revenue Expenditure — High Needs Block', date: '2024', note: 'Total SEND spending reached £10.3 billion in 2023-24' },
-  { num: 4, name: 'SEND Tribunal Service', dataset: 'SEND Tribunal Casework Statistics', date: '2024', note: 'Casework up 60% since 2019' },
-  { num: 5, name: 'DfE', dataset: 'SEND Review — Right Support, Right Place, Right Time', date: 'March 2023' },
+  { num: 2, name: 'IPSEA / NAS', dataset: 'SEND Provision Analysis — Children Without Placement', date: '2024', note: 'FoI-based estimate of 5,200 children without special school placement', url: 'https://www.ipse.co.uk/ipse-research.html' },
+  { num: 3, name: 'DfE', dataset: 'Local Authority Revenue Expenditure — High Needs Block', url: 'https://explore-education-statistics.service.gov.uk/', date: '2024', note: 'Total SEND spending reached £10.3 billion in 2023-24' },
+  { num: 4, name: 'SEND Tribunal Service', dataset: 'SEND Tribunal Casework Statistics', date: '2024', note: 'Casework up 60% since 2019', url: 'https://www.gov.uk/courts-tribunals/first-tier-tribunal-special-educational-needs-and-disability' },
+  { num: 5, name: 'DfE', dataset: 'SEND Review — Right Support, Right Place, Right Time', url: 'https://explore-education-statistics.service.gov.uk/', date: 'March 2023' },
 ];
 
 interface SpecialSchoolDataPoint {

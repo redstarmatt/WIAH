@@ -41,9 +41,9 @@ function yearToDate(y: number): Date {
 // ── Page ─────────────────────────────────────────────────────────────────────
 
 const editorialRefs: Reference[] = [
-  { num: 1, name: 'Lloyds Bank', dataset: 'UK Consumer Digital Index', date: '2024' },
-  { num: 2, name: 'DCMS', dataset: 'UK Digital Strategy', date: '2025' },
-  { num: 3, name: 'DfE', dataset: 'Further Education: outcome-based success measures', date: '2025' },
+  { num: 1, name: 'Lloyds Bank', dataset: 'UK Consumer Digital Index', url: 'https://www.lloydsbank.com/banking-with-us/whats-happening/consumer-digital-index.html', date: '2024' },
+  { num: 2, name: 'DCMS', dataset: 'UK Digital Strategy', url: 'https://www.gov.uk/government/organisations/department-for-culture-media-sport/about/statistics', date: '2025' },
+  { num: 3, name: 'DfE', dataset: 'Further Education: outcome-based success measures', url: 'https://explore-education-statistics.service.gov.uk/', date: '2025' },
 ];
 
 export default function TopicPage() {

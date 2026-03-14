@@ -17,7 +17,7 @@ const editorialRefs: Reference[] = [
   { num: 2, name: 'Gambling Commission', dataset: 'Statistics on Participation and Problem Gambling', url: 'https://www.gamblingcommission.gov.uk/statistics-and-research/publication/statistics-on-participation-and-problem-gambling', date: '2025' },
   { num: 3, name: 'NHS Digital', dataset: 'Health Survey for England — Gambling chapter', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england', date: '2025' },
   { num: 4, name: 'DHSC', dataset: 'Gambling Act White Paper', url: 'https://www.gov.uk/government/white-papers/high-stakes-gambling-reform-for-the-digital-age', date: '2023' },
-  { num: 5, name: 'NHS England', dataset: 'National Gambling Treatment Service', date: '2024/25' },
+  { num: 5, name: 'NHS England', dataset: 'National Gambling Treatment Service', url: 'https://www.england.nhs.uk/statistics/', date: '2024/25' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

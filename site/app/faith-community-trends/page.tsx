@@ -52,7 +52,7 @@ const religionAnnotations: Annotation[] = [
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Religion, England and Wales Census 2021', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/religion/bulletins/religionenglandandwales/census2021', date: '2021' },
   { num: 2, name: 'NatCen', dataset: 'British Social Attitudes Survey', url: 'https://www.bsa.natcen.ac.uk/', date: '2022' },
-  { num: 3, name: 'Church of England', dataset: 'Statistics for Mission', date: '2023' },
+  { num: 3, name: 'Church of England', dataset: 'Statistics for Mission', url: 'https://www.churchofengland.org/research-and-statistics/statistics-for-mission', date: '2023' },
 ];
 
 export default function FaithCommunityTrendsPage() {

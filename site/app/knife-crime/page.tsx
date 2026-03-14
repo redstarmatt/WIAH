@@ -51,7 +51,7 @@ export default function KnifeCrimePage() {
         <TopicHeader
           topic="Knife Crime"
           question="Is Knife Crime Getting Worse?"
-          finding="Knife crime offences reached a record 50,489 in 2023 — up 77% since 2014 — with young men aged 18–24 the most likely victims and perpetrators."
+          finding="Knife crime offences reached a record 50,489 in 2023 — up 76% since 2014 — with young men aged 18–24 the most likely victims and perpetrators."
           colour="#E63946"
           preposition="on"
         />
@@ -63,13 +63,13 @@ export default function KnifeCrimePage() {
               value="50,489"
               direction="up"
               polarity="up-is-bad"
-              changeText="+77% since 2014 · record high in 2023"
+              changeText="+76% since 2014 · record high in 2023"
               sparklineData={knifeCrimeOffences}
               source="Home Office — Crime outcomes in England and Wales, 2024"
             />
             <MetricCard
               label="Change since 2014 (%)"
-              value="+77%"
+              value="+76%"
               direction="up"
               polarity="up-is-bad"
               changeText="from 28,757 in 2014 to 50,489 in 2023"

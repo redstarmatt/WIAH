@@ -15,7 +15,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'HM Land Registry', dataset: 'Annual Report and Accounts 2024', url: 'https://www.gov.uk/government/organisations/land-registry', date: '2024' },
   { num: 2, name: 'Companies House', dataset: 'Register of Overseas Entities Statistics 2025', url: 'https://www.gov.uk/government/statistics/register-of-overseas-entities-statistics', date: '2025' },
-  { num: 3, name: 'Guy Shrubsole', dataset: 'Who Owns England? (2019)', date: '2019', note: 'Analysis of land concentration and registration gaps' },
+  { num: 3, name: 'Guy Shrubsole', dataset: 'Who Owns England? (2019)', date: '2019', note: 'Analysis of land concentration and registration gaps', url: 'https://whoownsengland.org/' },
   { num: 4, name: 'CPRE / CRoW Act 2000', dataset: 'Right to Roam — Countryside and Rights of Way Act 2000', url: 'https://www.legislation.gov.uk/ukpga/2000/37/contents', date: '2000' },
   { num: 5, name: 'Land Reform (Scotland) Act 2003', dataset: 'Legislation.gov.uk', url: 'https://www.legislation.gov.uk/asp/2003/2/contents', date: '2003' },
 ];

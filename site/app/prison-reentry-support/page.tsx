@@ -13,7 +13,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Ministry of Justice', dataset: 'Proven Reoffending Statistics', url: 'https://www.gov.uk/government/collections/proven-reoffending-statistics', date: '2024' },
-  { num: 2, name: 'HMPPS', dataset: 'Prison Discharge Rules — Discharge Grant', date: '2023' },
+  { num: 2, name: 'HMPPS', dataset: 'Prison Discharge Rules — Discharge Grant', url: 'https://www.gov.uk/government/organisations/her-majestys-prison-and-probation-service/about/statistics', date: '2023' },
   { num: 3, name: 'HMPPS', dataset: 'Prison Population Data — Accommodation on Release', url: 'https://www.gov.uk/government/statistics/prison-population-figures-2024', date: '2024' },
   { num: 4, name: 'Prison Reform Trust', dataset: 'Bromley Briefings Prison Factfile', url: 'https://prisonreformtrust.org.uk/publication/bromley-briefings-prison-factfile/', date: '2024' },
 ];

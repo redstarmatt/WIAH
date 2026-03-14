@@ -53,7 +53,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS England', dataset: 'Referral to Treatment Waiting Times — Audiology', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/referral-to-treatment-waiting-times/', date: 'Feb 2025' },
   { num: 2, name: 'RNID', dataset: 'Hearing Matters Report', url: 'https://rnid.org.uk/about-us/research-and-policy/hearing-loss-statistics/', date: '2025' },
   { num: 3, name: 'The Lancet', dataset: 'Commission on Dementia Prevention, Intervention, and Care', url: 'https://www.thelancet.com/commissions/dementia', date: '2020' },
-  { num: 4, name: 'NHS England', dataset: 'Newborn Hearing Screening Programme Annual Report', date: '2024/25' },
+  { num: 4, name: 'NHS England', dataset: 'Newborn Hearing Screening Programme Annual Report', url: 'https://www.england.nhs.uk/statistics/', date: '2024/25' },
 ];
 
 export default function AudiologyWaitsPage() {

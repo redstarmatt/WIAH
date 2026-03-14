@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Wealth and Assets Survey', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/debt/bulletins/wealthingreatbritainwave', date: '2022' },
   { num: 2, name: 'ONS', dataset: 'Regional Gross Value Added', url: 'https://www.ons.gov.uk/economy/grossvalueaddedgva/bulletins/regionalgrossvalueaddedbalanceduk/1998to2022', date: '2023' },
-  { num: 3, name: 'UK2070 Commission', dataset: 'Make No Little Plans', date: '2020' },
+  { num: 3, name: 'UK2070 Commission', dataset: 'Make No Little Plans', date: '2020', url: 'https://uk2070.org.uk/' },
 ];
 
 // South East median household wealth (£k), 2010–2023

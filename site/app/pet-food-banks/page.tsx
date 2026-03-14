@@ -15,7 +15,7 @@ import RelatedTopics from '@/components/RelatedTopics';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'PDSA', dataset: 'Animal Wellbeing (PAW) Report', url: 'https://www.pdsa.org.uk/what-we-do/pdsa-animal-wellbeing-report', date: '2024' },
   { num: 2, name: 'RSPCA', dataset: 'Annual Cruelty Statistics', url: 'https://www.rspca.org.uk/whatwedo/latest/facts', date: '2024' },
-  { num: 3, name: 'Dogs Trust / Cats Protection / Blue Cross', dataset: 'Pet Surrender and Rehoming Statistics', date: '2024' },
+  { num: 3, name: 'Dogs Trust / Cats Protection / Blue Cross', dataset: 'Pet Surrender and Rehoming Statistics', date: '2024', url: 'https://www.dogstrust.org.uk/' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

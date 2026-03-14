@@ -52,7 +52,7 @@ const annotations: Annotation[] = [
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Civil Aviation Authority', dataset: 'Airport Statistics', url: 'https://www.caa.co.uk/data-and-analysis/uk-aviation-market/airports/', date: '2024' },
   { num: 2, name: 'Airports Commission', dataset: 'Final Report — Economic Analysis', url: 'https://www.gov.uk/government/publications/airports-commission-final-report', date: '2015' },
-  { num: 3, name: 'Climate Change Committee', dataset: 'Aviation sector emissions analysis', date: '2023' },
+  { num: 3, name: 'Climate Change Committee', dataset: 'Aviation sector emissions analysis', url: 'https://www.theccc.org.uk/publications/', date: '2023' },
 ];
 
 export default function AirportCapacityUtilisationPage() {

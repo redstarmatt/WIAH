@@ -52,7 +52,7 @@ const deploymentAnnotations: Annotation[] = [
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Big Brother Watch', dataset: 'Police facial recognition tracker', url: 'https://bigbrotherwatch.org.uk/campaigns/face-off/', date: '2024' },
   { num: 2, name: 'Biometrics and Surveillance Camera Commissioner', dataset: 'Annual report on surveillance camera use', url: 'https://www.gov.uk/government/organisations/biometrics-and-surveillance-camera-commissioner', date: '2024' },
-  { num: 3, name: 'Home Office', dataset: 'Surveillance camera regulation', date: '2024' },
+  { num: 3, name: 'Home Office', dataset: 'Surveillance camera regulation', url: 'https://www.gov.uk/government/collections/surveillance-camera-and-biometrics', date: '2024' },
 ];
 
 export default function FacialRecognitionPolicingPage() {

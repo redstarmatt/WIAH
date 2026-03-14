@@ -53,8 +53,8 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'UK trade in services', url: 'https://www.ons.gov.uk/economy/nationalaccounts/balanceofpayments/bulletins/uktrade/latest', date: '2024' },
   { num: 2, name: 'ONS', dataset: 'UK trade in goods', url: 'https://www.ons.gov.uk/economy/nationalaccounts/balanceofpayments/bulletins/uktrade/latest', date: '2024' },
   { num: 3, name: 'ONS', dataset: 'UK national accounts', url: 'https://www.ons.gov.uk/economy/grossdomesticproductgdp', date: '2024' },
-  { num: 4, name: 'Bank of England / Resolution Foundation', dataset: 'Analysis of Brexit impact on UK goods exports', date: '2023' },
-  { num: 5, name: 'DCMS', dataset: 'Creative Industries Sector Vision', date: '2023' },
+  { num: 4, name: 'Bank of England / Resolution Foundation', dataset: 'Analysis of Brexit impact on UK goods exports', url: 'https://www.resolutionfoundation.org/publications/', date: '2023' },
+  { num: 5, name: 'DCMS', dataset: 'Creative Industries Sector Vision', url: 'https://www.gov.uk/government/publications/creative-industries-sector-vision', date: '2023' },
 ];
 
 export default function ExportGoodsServicesPage() {

@@ -54,7 +54,7 @@ const firefighterAnnotations: Annotation[] = [
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Home Office / NFCC', dataset: 'Fire statistics and workforce data', url: 'https://www.gov.uk/government/collections/fire-statistics', date: '2024' },
   { num: 2, name: 'Home Office', dataset: 'Fire statistics: response times', url: 'https://www.gov.uk/government/statistics/fire-statistics-monitor', date: '2024' },
-  { num: 3, name: 'HMICFRS', dataset: 'Fire and rescue service inspections', date: '2024' },
+  { num: 3, name: 'HMICFRS', dataset: 'Fire and rescue service inspections', url: 'https://www.justiceinspectorates.gov.uk/hmicfrs/fire-and-rescue-services/', date: '2024' },
 ];
 
 export default function FireServicePage() {

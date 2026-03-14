@@ -14,9 +14,9 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DLUHC', dataset: 'Council Tax Statistics', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-council-tax', date: '2023', note: '272,000 second homes in England; up from 178,000 in 2010 (+53%)' },
-  { num: 2, name: 'AirDNA', dataset: 'UK Short-Term Rental Market Report', date: '2023', note: '230,000 short-term let properties; market barely existed before 2015' },
+  { num: 2, name: 'AirDNA', dataset: 'UK Short-Term Rental Market Report', date: '2023', note: '230,000 short-term let properties; market barely existed before 2015', url: 'https://www.airdna.co/' },
   { num: 3, name: 'ONS / Land Registry', dataset: 'House Price Index by Local Authority', url: 'https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/housepriceindex/latestrelease', date: '2023', note: 'St Ives median house prices 13x median local earnings; Lake District up to 35% of properties non-primary residence' },
-  { num: 4, name: 'DLUHC / Welsh Government', dataset: 'Levelling-up and Regeneration Act — Council Tax Premiums & STL Licensing', date: '2024', note: '100-300% council tax premiums on second homes; Wales STL licensing showing properties returning to long-term rental' },
+  { num: 4, name: 'DLUHC / Welsh Government', dataset: 'Levelling-up and Regeneration Act — Council Tax Premiums & STL Licensing', date: '2024', note: '100-300% council tax premiums on second homes; Wales STL licensing showing properties returning to long-term rental', url: 'https://www.gov.uk/government/organisations/ministry-of-housing-communities-and-local-government/about/statistics' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

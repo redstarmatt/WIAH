@@ -14,9 +14,9 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'MBRRACE-UK', dataset: 'Saving Lives Improving Mothers Care Report', url: 'https://www.npeu.ox.ac.uk/mbrrace-uk', date: '2022' },
-  { num: 2, name: 'CQC', dataset: 'State of Care — maternity services ratings', date: '2023' },
-  { num: 3, name: 'Ockenden Review', dataset: 'Independent review of maternity services at Shrewsbury and Telford NHS Trust', date: 'Mar 2022' },
-  { num: 4, name: 'East Kent Maternity Inquiry', dataset: 'Reading the Signals — maternity and neonatal services in East Kent', date: 'Mar 2023' },
+  { num: 2, name: 'CQC', dataset: 'State of Care — maternity services ratings', date: '2023', url: 'https://www.cqc.org.uk/guidance-regulation/providers/information' },
+  { num: 3, name: 'Ockenden Review', dataset: 'Independent review of maternity services at Shrewsbury and Telford NHS Trust', date: 'Mar 2022', url: 'https://www.gov.uk/government/publications/final-report-of-the-ockenden-review' },
+  { num: 4, name: 'East Kent Maternity Inquiry', dataset: 'Reading the Signals — maternity and neonatal services in East Kent', date: 'Mar 2023', url: 'https://www.gov.uk/government/publications/east-kent-maternity-review' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

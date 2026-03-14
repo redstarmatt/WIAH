@@ -40,8 +40,8 @@ function yearToDate(y: number): Date {
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'WRAP', dataset: 'Recycling Contamination Research', url: 'https://wrap.org.uk/resources/report/recycling-contamination', date: '2024' },
-  { num: 2, name: 'Defra', dataset: 'Simpler Recycling Implementation Plan', date: '2024' },
-  { num: 3, name: 'LARAC', dataset: 'Local Authority Recycling Advisory Committee Survey', date: '2024' },
+  { num: 2, name: 'Defra', dataset: 'Simpler Recycling Implementation Plan', url: 'https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs', date: '2024' },
+  { num: 3, name: 'LARAC', dataset: 'Local Authority Recycling Advisory Committee Survey', date: '2024', url: 'https://www.larac.org.uk/' },
 ];
 
 // ── Page ─────────────────────────────────────────────────────────────────────

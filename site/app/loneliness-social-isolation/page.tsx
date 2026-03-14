@@ -17,9 +17,9 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Holt-Lunstad et al.', dataset: 'Meta-analysis — loneliness equivalent to smoking 15 cigarettes/day', url: 'https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1000316', date: '2015' },
   { num: 2, name: 'Jo Cox Commission on Loneliness', dataset: 'Combatting loneliness one conversation at a time', url: 'https://www.jocoxfoundation.org/', date: '2017' },
-  { num: 3, name: 'DCMS', dataset: 'A Connected Society — government loneliness strategy', date: '2018' },
+  { num: 3, name: 'DCMS', dataset: 'A Connected Society — government loneliness strategy', url: 'https://www.gov.uk/government/organisations/department-for-culture-media-sport/about/statistics', date: '2018' },
   { num: 4, name: 'ONS', dataset: 'Opinions and Lifestyle Survey — loneliness by age group', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing', date: '2024' },
-  { num: 5, name: 'CIPFA / BBPA / YMCA', dataset: 'Public library statistics, pub closure data, youth service audits', date: '2024' },
+  { num: 5, name: 'CIPFA / BBPA / YMCA', dataset: 'Public library statistics, pub closure data, youth service audits', date: '2024', url: 'https://www.cipfa.org/policy-and-guidance/publications' },
   { num: 6, name: 'NHS England', dataset: 'Social prescribing referrals 2023/24', url: 'https://www.england.nhs.uk/personalisedcare/social-prescribing/', date: '2024' },
   { num: 7, name: 'UK Men\'s Sheds Association', dataset: 'Sheds network data', url: 'https://menssheds.org.uk/', date: '2024' },
 ];

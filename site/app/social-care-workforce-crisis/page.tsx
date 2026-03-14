@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Skills for Care', dataset: 'State of the Adult Social Care Sector and Workforce in England', url: 'https://www.skillsforcare.org.uk/adult-social-care-workforce-data/Workforce-intelligence/publications/national-information/The-state-of-the-adult-social-care-sector-and-workforce-in-England.aspx', date: '2023' },
   { num: 2, name: 'Home Office', dataset: 'Health and Care Worker visa statistics', url: 'https://www.gov.uk/government/collections/immigration-statistics-quarterly-release', date: '2023' },
-  { num: 3, name: 'HM Government', dataset: 'Dependant visa restrictions for care workers', date: '2024' },
+  { num: 3, name: 'HM Government', dataset: 'Dependant visa restrictions for care workers', date: '2024', url: 'https://www.gov.uk/government/statistics' },
 ];
 
 // -- Types ------------------------------------------------------------------

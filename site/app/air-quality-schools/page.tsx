@@ -52,8 +52,8 @@ const annotations: Annotation[] = [
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DEFRA', dataset: 'Automatic Urban and Rural Network (AURN) air quality statistics', url: 'https://www.gov.uk/government/collections/air-quality-statistics', date: '2024' },
   { num: 2, name: 'Clean Air Fund', dataset: 'School Streets Programme Data', url: 'https://www.cleanairfund.org', date: '2024' },
-  { num: 3, name: 'GLA', dataset: 'London Air Quality Network school-adjacent monitors', date: '2024' },
-  { num: 4, name: 'Imperial College London', dataset: 'School Streets and Respiratory Outcomes study', date: '2023' },
+  { num: 3, name: 'GLA', dataset: 'London Air Quality Network school-adjacent monitors', url: 'https://data.london.gov.uk/', date: '2024' },
+  { num: 4, name: 'Imperial College London', dataset: 'School Streets and Respiratory Outcomes study', date: '2023', url: 'https://www.imperial.ac.uk/' },
 ];
 
 export default function AirQualitySchoolsPage() {

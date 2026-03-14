@@ -13,7 +13,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Public Sector Productivity', url: 'https://www.ons.gov.uk/economy/economicoutputandproductivity/publicservicesproductivity', date: '2025', note: 'Public sector productivity 6% below pre-pandemic levels; NHS productivity 10% below 2019' },
-  { num: 2, name: 'NHS England', dataset: 'Operational Productivity Analysis', date: '2025', note: 'NHS productivity improved by 5 percentage points in 2023-24; agency staff costs spiked in 2022' },
+  { num: 2, name: 'NHS England', dataset: 'Operational Productivity Analysis', url: 'https://www.england.nhs.uk/statistics/', date: '2025', note: 'NHS productivity improved by 5 percentage points in 2023-24; agency staff costs spiked in 2022' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

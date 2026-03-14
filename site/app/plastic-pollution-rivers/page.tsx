@@ -13,7 +13,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Environment Agency', dataset: 'Water Quality Data Archive — River Classification', url: 'https://environment.data.gov.uk/water-quality/view/landing', date: '2024' },
-  { num: 2, name: 'Eunomia / WWF', dataset: 'Plastic Pollution in UK Rivers', date: '2023' },
+  { num: 2, name: 'Eunomia / WWF', dataset: 'Plastic Pollution in UK Rivers', date: '2023', url: 'https://www.eunomia.co.uk/reports-tools/' },
   { num: 3, name: 'Defra', dataset: 'Storm Overflow Discharge Reduction Plan', url: 'https://www.gov.uk/government/publications/storm-overflows-discharge-reduction-plan', date: '2024' },
 ];
 

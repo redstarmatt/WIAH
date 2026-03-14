@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS England', dataset: 'Personal Health Budget Dashboard', url: 'https://www.england.nhs.uk/personalised-care/personal-health-budgets/', date: 'Jan 2026', note: '65,800 holders; 67% short of 200,000 target' },
   { num: 2, name: 'NHS England', dataset: 'Long Term Plan (2019)', url: 'https://www.england.nhs.uk/long-term-plan/', date: '2019', note: '200,000 PHB target commitment' },
-  { num: 3, name: 'NHS England', dataset: 'PHB National Evaluation — Independent Report', date: '2023', note: '77% of holders report improved quality of life' },
+  { num: 3, name: 'NHS England', dataset: 'PHB National Evaluation — Independent Report', url: 'https://www.england.nhs.uk/statistics/', date: '2023', note: '77% of holders report improved quality of life' },
 ];
 
 export default function PersonalHealthBudgetsPage() {

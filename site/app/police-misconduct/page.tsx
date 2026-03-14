@@ -13,9 +13,9 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'IOPC', dataset: 'Police Complaints Statistics — Annual Report', url: 'https://www.policeconduct.gov.uk/research-and-learning/statistics', date: '2023', note: '34,000 complaints in 2023; up from 27,300 in 2015; 12.5% of appeals upheld' },
-  { num: 2, name: 'Baroness Casey', dataset: 'Final Report — An Independent Review into the Standards of Behaviour and Internal Culture of the Metropolitan Police Service', date: '2023', note: 'Found institutional racism, misogyny and homophobia in Met Police culture' },
+  { num: 2, name: 'Baroness Casey', dataset: 'Final Report — An Independent Review into the Standards of Behaviour and Internal Culture of the Metropolitan Police Service', date: '2023', note: 'Found institutional racism, misogyny and homophobia in Met Police culture', url: 'https://www.gov.uk/government/publications/baroness-casey-review-final-report' },
   { num: 3, name: 'Home Office', dataset: 'Police Powers and Procedures: Stop and Search', url: 'https://www.gov.uk/government/statistics/police-powers-and-procedures-stop-and-search-and-arrests-england-and-wales-year-ending-31-march-2023', date: '2022/23', note: 'Black people 4.1x more likely to be stopped and searched than white people' },
-  { num: 4, name: 'Home Office', dataset: 'Police Reform — National Barred Register', date: '2023', note: 'National barred list established in 2023 to prevent re-employment of dismissed officers' },
+  { num: 4, name: 'Home Office', dataset: 'Police Reform — National Barred Register', url: 'https://www.gov.uk/government/organisations/home-office/about/statistics', date: '2023', note: 'National barred list established in 2023 to prevent re-employment of dismissed officers' },
 ];
 
 export default function PoliceMisconductPage() {

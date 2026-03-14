@@ -13,10 +13,10 @@ import Cite from '@/components/Cite';
 import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
-  { num: 1, name: 'ONS', dataset: 'Health State Life Expectancies, UK', date: '2024' },
-  { num: 2, name: 'ONS', dataset: 'Health State Life Expectancies by local authority', date: '2024' },
+  { num: 1, name: 'ONS', dataset: 'Health State Life Expectancies, UK', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandlifeexpectancies', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Health State Life Expectancies by local authority', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandlifeexpectancies', date: '2024' },
   { num: 3, name: 'Institute of Health Equity', dataset: 'Marmot Review 10 Years On', url: 'https://www.health.org.uk/publications/reports/the-marmot-review-10-years-on', date: '2020' },
-  { num: 4, name: 'Health Foundation', dataset: 'Healthy Life Expectancy Analysis', date: '2024' },
+  { num: 4, name: 'Health Foundation', dataset: 'Healthy Life Expectancy Analysis', url: 'https://www.health.org.uk/publications', date: '2024' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

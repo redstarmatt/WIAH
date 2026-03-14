@@ -51,8 +51,8 @@ const annotations: Annotation[] = [
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'UKHSA', dataset: 'UK Antimicrobial Resistance Annual Report', url: 'https://www.gov.uk/government/collections/uk-antimicrobial-resistance-amr-annual-report', date: '2024' },
-  { num: 2, name: 'Global Burden of Disease', dataset: 'Global mortality from bacterial AMR', date: '2019' },
-  { num: 3, name: "O'Neill Review", dataset: 'Tackling Drug-Resistant Infections Globally', date: '2016' },
+  { num: 2, name: 'Global Burden of Disease', dataset: 'Global mortality from bacterial AMR', date: '2019', url: 'https://www.healthdata.org/research-analysis/gbd' },
+  { num: 3, name: "O'Neill Review", dataset: 'Tackling Drug-Resistant Infections Globally', url: 'https://amr-review.org/Publications.html', date: '2016' },
   { num: 4, name: 'NHS England', dataset: 'Primary Care Prescribing Analysis', url: 'https://www.england.nhs.uk/publication/primary-care-prescribing-data/', date: '2024' },
 ];
 

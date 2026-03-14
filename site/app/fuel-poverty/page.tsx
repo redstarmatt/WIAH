@@ -10,7 +10,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DESNZ', dataset: 'Fuel poverty statistics, England', url: 'https://www.gov.uk/government/collections/fuel-poverty-statistics', date: '2024' },
-  { num: 2, name: 'Ofgem / Citizens Advice', dataset: 'Energy bill arrears analysis', date: '2024' },
+  { num: 2, name: 'Ofgem / Citizens Advice', dataset: 'Energy bill arrears analysis', url: 'https://www.ofgem.gov.uk/check-if-energy-price-cap-affects-you', date: '2024' },
 ];
 
 export default function FuelPovertyPage() {

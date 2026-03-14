@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'HMPPS / Ministry of Justice', dataset: 'Offender Management Statistics Quarterly', url: 'https://www.gov.uk/government/collections/offender-management-statistics-quarterly', date: '2024' },
   { num: 2, name: 'Ministry of Justice', dataset: 'Prison Population Statistics', url: 'https://www.gov.uk/government/collections/prison-population-statistics', date: '2024' },
-  { num: 3, name: 'Ministry of Justice', dataset: 'IPP Sentence Statistics', date: '2024', note: 'Around 1,700 IPP prisoners remain in custody' },
+  { num: 3, name: 'Ministry of Justice', dataset: 'IPP Sentence Statistics', url: 'https://www.gov.uk/government/organisations/ministry-of-justice/about/statistics', date: '2024', note: 'Around 1,700 IPP prisoners remain in custody' },
 ];
 
 // -- Types ------------------------------------------------------------------

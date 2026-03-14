@@ -13,8 +13,8 @@ import Cite from '@/components/Cite';
 import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
-  { num: 1, name: 'DfE', dataset: 'VAT on Private Schools — Impact Assessment', date: '2025' },
-  { num: 2, name: 'HM Treasury', dataset: 'VAT Education Receipts Q1 2025', date: '2025' },
+  { num: 1, name: 'DfE', dataset: 'VAT on Private Schools — Impact Assessment', url: 'https://www.gov.uk/government/organisations/department-for-education', date: '2025' },
+  { num: 2, name: 'HM Treasury', dataset: 'VAT Education Receipts Q1 2025', url: 'https://www.gov.uk/government/organisations/hm-treasury', date: '2025' },
   { num: 3, name: 'Independent Schools Council', dataset: 'ISC Annual Census 2025', url: 'https://www.isc.co.uk/research/', date: '2025' },
 ];
 

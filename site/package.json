@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "audit:citations": "node ../scripts/audit-citations.mjs",
+    "audit:citations:strict": "node ../scripts/audit-citations.mjs --strict",
+    "audit:citations:json": "node ../scripts/audit-citations.mjs --json"
   },
   "dependencies": {
     "@vercel/og": "^0.10.0",

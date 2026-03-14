@@ -15,7 +15,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'MCS Certification', dataset: 'Heat pump installer statistics', url: 'https://mcscertified.com/mcs-data-insights/', date: '2025' },
   { num: 2, name: 'DESNZ', dataset: 'Green Jobs Taskforce report', url: 'https://www.gov.uk/government/publications/green-jobs-taskforce-report', date: '2025' },
   { num: 3, name: 'DESNZ / EMSI', dataset: 'Green job vacancies analysis', url: 'https://www.gov.uk/government/statistics/uk-low-carbon-economy-indicators', date: '2025' },
-  { num: 4, name: 'OWIC', dataset: 'Offshore Wind Sector Deal progress report', date: '2024' },
+  { num: 4, name: 'OWIC', dataset: 'Offshore Wind Sector Deal progress report', date: '2024', url: 'https://www.owic.org.uk/' },
 ];
 
 // Heat pump installers trained per year (thousands), 2019–2025

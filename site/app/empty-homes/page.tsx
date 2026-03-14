@@ -40,7 +40,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'DLUHC', dataset: 'Council Tax Base (CTB1)', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-council-tax', date: '2024' },
   { num: 2, name: 'DLUHC', dataset: 'Local Authority Housing Statistics — Waiting Lists', url: 'https://www.gov.uk/government/collections/local-authority-housing-data', date: '2024' },
   { num: 3, name: 'DLUHC', dataset: 'Rough Sleeping Snapshot', url: 'https://www.gov.uk/government/collections/homelessness-statistics', date: '2024' },
-  { num: 4, name: 'Homes England', dataset: 'Empty Homes Programme Evaluation', date: '2015' },
+  { num: 4, name: 'Homes England', dataset: 'Empty Homes Programme Evaluation', url: 'https://www.gov.uk/government/organisations/homes-england', date: '2015' },
 ];
 
 // ── Page ─────────────────────────────────────────────────────────────────────

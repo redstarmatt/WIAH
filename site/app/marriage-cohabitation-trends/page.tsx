@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Marriages in England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/marriagecohabitationandcivilpartnerships', date: '2022' },
   { num: 2, name: 'ONS', dataset: 'Families and Households', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/families', date: '2022' },
-  { num: 3, name: 'Law Commission', dataset: 'Cohabitation: The Financial Consequences of Relationship Breakdown (Report No. 307)', date: '2007' },
+  { num: 3, name: 'Law Commission', dataset: 'Cohabitation: The Financial Consequences of Relationship Breakdown (Report No. 307)', date: '2007', url: 'https://lawcom.gov.uk/' },
 ];
 
 // -- Types ------------------------------------------------------------------

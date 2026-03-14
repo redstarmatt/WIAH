@@ -32,7 +32,7 @@ interface TopicData {
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Regional Gross Value Added (balanced) per head', url: 'https://www.ons.gov.uk/economy/grossvalueaddedgva/bulletins/regionaleconomicactivitybygrossvalueaddedukbalanced/1998to2022', date: '2024' },
-  { num: 2, name: 'DLUHC', dataset: 'Levelling Up White Paper', date: '2022' },
+  { num: 2, name: 'DLUHC', dataset: 'Levelling Up White Paper', url: 'https://www.gov.uk/government/organisations/ministry-of-housing-communities-and-local-government', date: '2022' },
 ];
 
 export default function RegionalGdpPage() {

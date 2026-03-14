@@ -37,7 +37,7 @@ function yearToDate(y: number): Date {
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Annual Survey of Hours and Earnings (ASHE)', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/annualsurveyofhoursandearnings/2024', date: '2024' },
   { num: 2, name: 'Resolution Foundation', dataset: 'Earnings Tracker', url: 'https://www.resolutionfoundation.org/data/earnings-tracker/', date: '2024' },
-  { num: 3, name: 'ONS', dataset: 'Consumer Price Inflation', date: '2022', note: 'CPI peaked at 11.1% in October 2022' },
+  { num: 3, name: 'ONS', dataset: 'Consumer Price Inflation', url: 'https://www.ons.gov.uk/economy/inflationandpriceindices', date: '2022', note: 'CPI peaked at 11.1% in October 2022' },
 ];
 
 // ── Page ─────────────────────────────────────────────────────────────────────

@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ORR', dataset: 'Passenger Rail Usage Statistics', url: 'https://dataportal.orr.gov.uk/statistics/usage/passenger-rail-usage/', date: '2025', note: '59.2% on-time arrivals in 2024-25; well below 92% target; 4.0% cancellation rate — highest on record' },
   { num: 2, name: 'ORR', dataset: 'Rail Fares Statistics', url: 'https://dataportal.orr.gov.uk/statistics/finance/rail-fares/', date: '2025', note: 'Fares rose 4.9% in January 2024; 94% real rise since 1995' },
-  { num: 3, name: 'DfT', dataset: 'Railways Act 2025 Impact Assessment', date: '2025', note: 'GBR transition body operational; integrated ticketing could increase demand 6-8%' },
+  { num: 3, name: 'DfT', dataset: 'Railways Act 2025 Impact Assessment', url: 'https://www.gov.uk/government/organisations/department-for-transport', date: '2025', note: 'GBR transition body operational; integrated ticketing could increase demand 6-8%' },
 ];
 
 interface DataPoint {

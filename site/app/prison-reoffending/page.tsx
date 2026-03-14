@@ -13,10 +13,10 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Ministry of Justice', dataset: 'Proven Reoffending Statistics Quarterly Bulletin', url: 'https://www.gov.uk/government/statistics/proven-reoffending-statistics-quarterly-bulletin-england-and-wales', date: '2024' },
-  { num: 2, name: 'HM Treasury / MoJ', dataset: 'Cost of Reoffending Analysis', date: '2023' },
+  { num: 2, name: 'HM Treasury / MoJ', dataset: 'Cost of Reoffending Analysis', url: 'https://www.gov.uk/government/organisations/hm-treasury/about/statistics', date: '2023' },
   { num: 3, name: 'Howard League for Penal Reform', dataset: 'Reoffending Data Analysis', url: 'https://howardleague.org/', date: '2024' },
-  { num: 4, name: 'Institute for Fiscal Studies', dataset: 'Short Custodial Sentences and Reoffending', date: '2023' },
-  { num: 5, name: 'Ministry of Justice', dataset: 'What Works to Reduce Reoffending', date: '2024' },
+  { num: 4, name: 'Institute for Fiscal Studies', dataset: 'Short Custodial Sentences and Reoffending', url: 'https://ifs.org.uk/publications', date: '2023' },
+  { num: 5, name: 'Ministry of Justice', dataset: 'What Works to Reduce Reoffending', url: 'https://www.gov.uk/government/organisations/ministry-of-justice/about/statistics', date: '2024' },
 ];
 
 const reoffendingData = [26.4, 26.0, 25.6, 25.4, 25.6, 25.8, 26.0, 25.9, 25.7, 25.5, 25.3, 25.2, 25.1, 25.2, 25.0];

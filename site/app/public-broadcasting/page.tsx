@@ -32,8 +32,8 @@ function yearToDate(y: string): Date {
 const editorialRefs: Reference[] = [
   { num: 1, name: 'BBC', dataset: 'Charter Review Evidence', url: 'https://www.gov.uk/government/publications/bbc-charter-and-framework-agreement', date: '2023', note: 'Cumulative real-terms gap estimated at over £1 billion across the settlement period' },
   { num: 2, name: 'BBC', dataset: 'Annual Report and Accounts 2024', url: 'https://www.bbc.co.uk/corporate2/insidethebbc/reports/reports', date: '2024', note: '1,000 redundancies in 2023; total reduction since 2020 over 1,500 posts' },
-  { num: 3, name: 'Foreign Affairs Select Committee', dataset: 'BBC Foreign Bureau Closures Report', date: '2023', note: 'Reduced ability to report from countries where UK policy interests are directly engaged' },
-  { num: 4, name: 'TV Licensing', dataset: 'Annual Enforcement Report', date: '2024', note: 'Evasion rate approaching 10%; each 1% = £50m lost revenue' },
+  { num: 3, name: 'Foreign Affairs Select Committee', dataset: 'BBC Foreign Bureau Closures Report', date: '2023', note: 'Reduced ability to report from countries where UK policy interests are directly engaged', url: 'https://committees.parliament.uk/committee/78/foreign-affairs-committee/' },
+  { num: 4, name: 'TV Licensing', dataset: 'Annual Enforcement Report', date: '2024', note: 'Evasion rate approaching 10%; each 1% = £50m lost revenue', url: 'https://www.tvlicensing.co.uk/about/media-centre/facts-and-figures/' },
 ];
 
 // ── Page ─────────────────────────────────────────────────────────────────────

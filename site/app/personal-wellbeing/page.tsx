@@ -13,7 +13,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Annual Population Survey — Personal Well-being Estimates', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing', date: '2024-25', note: 'Life satisfaction fell from 7.7/10 in 2019 to 7.4/10' },
-  { num: 2, name: 'ONS', dataset: 'Well-being Inequalities by Local Authority', date: '2024', note: 'Deprivation gap in life satisfaction scores' },
+  { num: 2, name: 'ONS', dataset: 'Well-being Inequalities by Local Authority', url: 'https://www.ons.gov.uk/', date: '2024', note: 'Deprivation gap in life satisfaction scores' },
 ];
 
 interface DataPoint {

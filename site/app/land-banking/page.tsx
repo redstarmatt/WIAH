@@ -15,7 +15,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DLUHC', dataset: 'House building: new build dwellings (live tables)', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-house-building', date: '2024' },
   { num: 2, name: 'Lichfields', dataset: 'From Permission to Completion 2023', url: 'https://lichfields.uk/content/insights/from-permission-to-completion', date: '2023' },
-  { num: 3, name: 'Barratt, Taylor Wimpey, Persimmon, Berkeley', dataset: 'Annual Reports 2023', date: '2023', note: 'Operating margin targets and land bank disclosures' },
+  { num: 3, name: 'Barratt, Taylor Wimpey, Persimmon, Berkeley', dataset: 'Annual Reports 2023', date: '2023', note: 'Operating margin targets and land bank disclosures', url: 'https://www.barratthomes.co.uk/' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

@@ -14,10 +14,10 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS England', dataset: 'Social Prescribing Summary Data', url: 'https://www.england.nhs.uk/personalisedcare/social-prescribing/', date: '2024' },
-  { num: 2, name: 'UCL', dataset: 'Social Prescribing Systematic Review', date: '2023', note: 'Consistent evidence of reduced GP consultations and improved wellbeing' },
-  { num: 3, name: 'The Lancet', dataset: 'Green Prescribing Outcomes Study', date: '2023', note: 'Measurable reductions in anxiety and depression scores after 12 weeks' },
-  { num: 4, name: 'NHS England', dataset: 'Social Prescribing Impact Modelling — GP Appointments Saved', date: '2024', note: 'Estimated 930,000 GP appointments saved in 2024' },
-  { num: 5, name: 'NHS England', dataset: 'Social Prescribing Demographic Data', date: '2024', note: '42% of referrals from most deprived areas (IMD deciles 1-3)' },
+  { num: 2, name: 'UCL', dataset: 'Social Prescribing Systematic Review', date: '2023', note: 'Consistent evidence of reduced GP consultations and improved wellbeing', url: 'https://www.ucl.ac.uk/research/' },
+  { num: 3, name: 'The Lancet', dataset: 'Green Prescribing Outcomes Study', date: '2023', note: 'Measurable reductions in anxiety and depression scores after 12 weeks', url: 'https://www.thelancet.com/' },
+  { num: 4, name: 'NHS England', dataset: 'Social Prescribing Impact Modelling — GP Appointments Saved', url: 'https://www.england.nhs.uk/personalisedcare/social-prescribing/', date: '2024', note: 'Estimated 930,000 GP appointments saved in 2024' },
+  { num: 5, name: 'NHS England', dataset: 'Social Prescribing Demographic Data', url: 'https://www.england.nhs.uk/personalisedcare/social-prescribing/', date: '2024', note: '42% of referrals from most deprived areas (IMD deciles 1-3)' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

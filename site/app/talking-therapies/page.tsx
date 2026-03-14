@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS England', dataset: 'NHS Talking Therapies Monthly Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-for-anxiety-and-depression', date: '2023', note: '1.2M treated annually; recovery rate 52.3% (target 50%); provider range 40-75%' },
-  { num: 2, name: 'Clark & Layard', dataset: 'IAPT Programme Design and Economic Case', date: '2008', note: 'Programme architects estimated treatment would pay for itself through reduced welfare costs and absenteeism' },
+  { num: 2, name: 'Clark & Layard', dataset: 'IAPT Programme Design and Economic Case', date: '2008', note: 'Programme architects estimated treatment would pay for itself through reduced welfare costs and absenteeism', url: 'https://cep.lse.ac.uk/' },
 ];
 
 // -- Types ------------------------------------------------------------------

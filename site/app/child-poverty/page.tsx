@@ -10,7 +10,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DWP', dataset: 'Households Below Average Income (HBAI)', url: 'https://www.gov.uk/government/collections/households-below-average-income-hbai--2', date: '2024' },
-  { num: 2, name: 'Institute for Fiscal Studies', dataset: 'Two-child limit impact analysis', url: 'https://ifs.org.uk/', date: '2024' },
+  { num: 2, name: 'Institute for Fiscal Studies', dataset: 'Two-child limit impact analysis', url: 'https://ifs.org.uk/publications/two-child-limit-welfare-cap', date: '2024' },
 ];
 
 export default function ChildPovertyPage() {

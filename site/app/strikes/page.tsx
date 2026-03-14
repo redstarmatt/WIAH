@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Labour Disputes — Working Days Lost', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/workplacedisputesandworkingconditions/datasets/labourdisputesinternationalagreementsonworkingdayslostworkersinvolvedanddisputesinprogressuk', date: '2024', note: '3.75M days lost in 2023 — highest since 1989; 784K in 2024' },
   { num: 2, name: 'ONS', dataset: 'Average Weekly Earnings — Public Sector', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/averageweeklyearningsingreatbritain/latest', date: '2024', note: 'CPI hit 11.1% Oct 2022; real wages down 4% in a single year; +3.2% recovery in 2024' },
-  { num: 3, name: 'NHS England / BMA', dataset: 'Industrial Action Impact Data', date: '2024', note: 'NHS accounted for 614K+ lost days; BMA junior doctors 11 separate stoppages; settlements 5-6% average' },
+  { num: 3, name: 'NHS England / BMA', dataset: 'Industrial Action Impact Data', url: 'https://www.england.nhs.uk/statistics/', date: '2024', note: 'NHS accounted for 614K+ lost days; BMA junior doctors 11 separate stoppages; settlements 5-6% average' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

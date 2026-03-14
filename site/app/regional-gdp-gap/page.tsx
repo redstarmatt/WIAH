@@ -27,8 +27,8 @@ function yearToDate(y: number): Date {
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Regional Economic Activity by Gross Value Added (Balanced)', url: 'https://www.ons.gov.uk/economy/grossdomesticproductgdp/datasets/regionalgrossdomesticproductlocalauthorities', date: '2024' },
-  { num: 2, name: 'HM Treasury', dataset: 'Public Expenditure Statistical Analyses (PESA)', date: '2023' },
-  { num: 3, name: 'OECD', dataset: 'TL2 Regional Statistics', date: '2022', note: 'International regional inequality comparison' },
+  { num: 2, name: 'HM Treasury', dataset: 'Public Expenditure Statistical Analyses (PESA)', url: 'https://www.gov.uk/government/collections/public-expenditure-statistical-analyses-pesa', date: '2023' },
+  { num: 3, name: 'OECD', dataset: 'TL2 Regional Statistics', date: '2022', note: 'International regional inequality comparison', url: 'https://www.oecd.org/statistics/' },
 ];
 
 export default function RegionalGdpGapPage() {

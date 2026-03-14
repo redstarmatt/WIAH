@@ -80,7 +80,7 @@ export default function NhsWaitingListsPage() {
               value="330"
               direction="down"
               polarity="up-is-bad"
-              changeText="down from 400k peak · still 100x pre-pandemic level"
+              changeText="down from 400k peak · still ~200× pre-pandemic level"
               sparklineData={[3.2, 3.5, 4.1, 4.8, 5.5, 6.2, 1.6, 310, 400, 330]}
               source="NHS England — Referral to treatment statistics, 2024"
             />

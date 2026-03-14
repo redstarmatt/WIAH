@@ -140,7 +140,7 @@ export default function TopicPage() {
             unit=""
             direction="down"
             polarity="up-is-good"
-            changeText={<>Down from 63% in 2017 · hospitality 42%<Cite nums={1} /></>}
+            changeText={<>Down from 63% in 2017 · hospitality 3-yr: 42%<Cite nums={1} /></>}
             sparklineData={[63, 62, 61, 60, 59, 58, 57, 56, 57, 58, 58]}
             href="#sec-coverage"
           />

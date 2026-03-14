@@ -14,8 +14,8 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Labour Force Survey: economic inactivity', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/economicinactivity', date: '2023' },
   { num: 2, name: 'ONS', dataset: 'Sickness absence in the labour market', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/labourproductivity/articles/sicknessabsenceinthelabourmarket/latest', date: '2022' },
-  { num: 3, name: 'OBR', dataset: 'Economic and Fiscal Outlook', date: '2023' },
-  { num: 4, name: 'Resolution Foundation', dataset: 'Health and economic inactivity analysis', date: '2023' },
+  { num: 3, name: 'OBR', dataset: 'Economic and Fiscal Outlook', url: 'https://obr.uk/efo/economic-and-fiscal-outlook-march-2024/', date: '2023' },
+  { num: 4, name: 'Resolution Foundation', dataset: 'Health and economic inactivity analysis', url: 'https://www.resolutionfoundation.org/publications/', date: '2023' },
 ];
 
 // Total economic inactivity (millions), 2014–2023 — ONS LFS

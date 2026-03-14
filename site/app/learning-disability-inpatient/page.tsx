@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS England', dataset: 'Assuring Transformation — Learning Disability', url: 'https://www.england.nhs.uk/learning-disabilities/care/progress/assuring-transformation/', date: '2024' },
   { num: 2, name: 'CQC', dataset: 'Mental health restraint and seclusion data', url: 'https://www.cqc.org.uk/', date: '2024' },
-  { num: 3, name: 'BBC Panorama', dataset: 'Whorlton Hall investigation', date: '2019', note: 'Documented abuse and systematic restraint in private units' },
+  { num: 3, name: 'BBC Panorama', dataset: 'Whorlton Hall investigation', date: '2019', note: 'Documented abuse and systematic restraint in private units', url: 'https://www.bbc.co.uk/programmes/b006t14n' },
 ];
 
 // -- Types ------------------------------------------------------------------

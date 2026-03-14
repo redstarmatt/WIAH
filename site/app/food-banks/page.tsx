@@ -14,8 +14,8 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Trussell Trust', dataset: 'End of year food bank statistics', url: 'https://www.trusselltrust.org/news-and-blog/latest-stats/', date: 'Apr 2024' },
   { num: 2, name: 'Independent Food Aid Network', dataset: 'State of the Nation report', url: 'https://www.foodaidnetwork.org.uk', date: '2024' },
-  { num: 3, name: 'DWP', dataset: 'Universal Credit uplift impact research', date: '2022' },
-  { num: 4, name: 'Institute for Fiscal Studies', dataset: 'Two-child limit poverty impact analysis', date: '2024' },
+  { num: 3, name: 'DWP', dataset: 'Universal Credit uplift impact research', url: 'https://www.gov.uk/government/publications/universal-credit-research-and-analysis', date: '2022' },
+  { num: 4, name: 'Institute for Fiscal Studies', dataset: 'Two-child limit poverty impact analysis', url: 'https://ifs.org.uk/publications/two-child-limit-welfare-cap', date: '2024' },
 ];
 
 export default function FoodBanksPage() {

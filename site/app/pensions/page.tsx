@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DWP', dataset: 'State Pension Rates and Triple Lock', url: 'https://www.gov.uk/government/publications/state-pension-rates', date: '2025/26', note: '£221.20/week; 127% increase since 2010' },
-  { num: 2, name: 'DWP', dataset: 'Automatic Enrolment Statistics', date: '2023', note: '22.6 million workers enrolled; 88% of eligible' },
+  { num: 2, name: 'DWP', dataset: 'Automatic Enrolment Statistics', url: 'https://www.gov.uk/government/organisations/department-for-work-pensions/about/statistics', date: '2023', note: '22.6 million workers enrolled; 88% of eligible' },
   { num: 3, name: 'DWP', dataset: 'Households Below Average Income (HBAI)', url: 'https://www.gov.uk/government/statistics/households-below-average-income-hbai', date: '2023', note: '2.1 million pensioners in poverty AHC' },
 ];
 

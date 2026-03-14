@@ -15,8 +15,8 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS England', dataset: 'Hospital Episode Statistics — Self-harm admissions', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/hospital-admitted-patient-care-activity', date: '2024/25', note: 'Total admissions rose from 41,000 (2012) to 53,000 (2024); young women 15-19 peak of 662 per 100,000 in 2023' },
   { num: 2, name: 'OHID', dataset: 'Public Health Profiles — Self-harm emergency admissions', url: 'https://fingertips.phe.org.uk/profile/public-health-outcomes-framework', date: '2024/25', note: 'Girls 10-14 rate doubled from 152 to 325 per 100,000; 15-19 rate now 620, down from 662 peak' },
-  { num: 3, name: 'Nature Mental Health', dataset: 'Meta-analysis of social media and self-harm', date: '2023', note: 'Consistent association between heavy social media use and self-harm in adolescent girls; CAMHS referrals doubled 2019-2023' },
-  { num: 4, name: 'NHS England', dataset: 'Mental Health Support Teams data', date: '2025', note: 'MHSTs in 8,700+ schools covering 44% of pupils; 15% reduction in CAMHS referrals in covered schools' },
+  { num: 3, name: 'Nature Mental Health', dataset: 'Meta-analysis of social media and self-harm', date: '2023', note: 'Consistent association between heavy social media use and self-harm in adolescent girls; CAMHS referrals doubled 2019-2023', url: 'https://www.nature.com/nmentalhealth/' },
+  { num: 4, name: 'NHS England', dataset: 'Mental Health Support Teams data', url: 'https://www.england.nhs.uk/mental-health/mental-health-support-teams-for-schools-and-colleges/', date: '2025', note: 'MHSTs in 8,700+ schools covering 44% of pupils; 15% reduction in CAMHS referrals in covered schools' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

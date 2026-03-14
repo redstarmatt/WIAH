@@ -15,7 +15,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Labour Force Survey — Employment by age group', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes', date: '2024' },
   { num: 2, name: 'ONS', dataset: 'Labour Force Survey — Economic inactivity by reason and age', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/economicinactivity', date: '2024' },
-  { num: 3, name: 'DWP', dataset: 'WorkWell programme evaluation', date: '2024' },
+  { num: 3, name: 'DWP', dataset: 'WorkWell programme evaluation', url: 'https://www.gov.uk/government/organisations/department-for-work-pensions/about/statistics', date: '2024' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

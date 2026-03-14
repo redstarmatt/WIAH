@@ -32,7 +32,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Annual Survey of Hours and Earnings (ASHE)', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours', date: '2023' },
   { num: 2, name: 'DLUHC', dataset: 'English Indices of Deprivation', url: 'https://www.gov.uk/government/statistics/english-indices-of-deprivation-2019', date: '2019' },
   { num: 3, name: 'ONS', dataset: 'Internal Migration Statistics', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/migrationwithintheuk', date: '2023' },
-  { num: 4, name: 'DLUHC', dataset: 'Coastal Communities Fund Evaluation', date: '2022' },
+  { num: 4, name: 'DLUHC', dataset: 'Coastal Communities Fund Evaluation', url: 'https://www.gov.uk/government/organisations/ministry-of-housing-communities-and-local-government/about/statistics', date: '2022' },
 ];
 
 // -- Component --

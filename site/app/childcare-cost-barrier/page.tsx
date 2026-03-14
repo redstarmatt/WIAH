@@ -14,8 +14,8 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Coram Family and Childcare', dataset: 'Childcare Survey', url: 'https://www.coram.org.uk/our-work/coram-family-and-childcare/childcare-survey', date: '2024' },
   { num: 2, name: 'OECD', dataset: 'Family Database — net childcare costs', url: 'https://www.oecd.org/els/family/database.htm', date: '2024' },
-  { num: 3, name: 'Pregnant Then Screwed', dataset: 'Cost of Childcare Survey', date: '2024' },
-  { num: 4, name: 'Ofsted', dataset: 'Childcare provider statistics', date: '2024' },
+  { num: 3, name: 'Pregnant Then Screwed', dataset: 'Cost of Childcare Survey', date: '2024', url: 'https://pregnantthenscrewed.com/research/' },
+  { num: 4, name: 'Ofsted', dataset: 'Childcare provider statistics', url: 'https://www.gov.uk/government/organisations/ofsted/about/statistics', date: '2024' },
 ];
 
 export default function ChildcareCostBarrierPage() {

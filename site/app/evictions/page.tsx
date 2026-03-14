@@ -52,7 +52,7 @@ const evictionAnnotations: Annotation[] = [
 const editorialRefs: Reference[] = [
   { num: 1, name: 'MOJ', dataset: 'Mortgage and landlord possession statistics', url: 'https://www.gov.uk/government/collections/mortgage-and-landlord-possession-statistics', date: '2024' },
   { num: 2, name: 'DLUHC', dataset: 'Statutory homelessness in England', url: 'https://www.gov.uk/government/collections/homelessness-statistics', date: '2024' },
-  { num: 3, name: 'LGA', dataset: 'Local government finance analysis', date: '2024' },
+  { num: 3, name: 'LGA', dataset: 'Local government finance analysis', url: 'https://www.local.gov.uk/topics/finance/local-government-finance-and-resources', date: '2024' },
 ];
 
 export default function EvictionsPage() {

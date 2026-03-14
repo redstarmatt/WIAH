@@ -29,7 +29,7 @@ function yearToDate(y: number): Date {
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DLUHC', dataset: 'Building Safety Remediation Data', url: 'https://www.gov.uk/government/collections/building-safety-programme', date: '2024' },
-  { num: 2, name: 'RICS', dataset: 'Remediation Cost Estimates', date: '2023' },
+  { num: 2, name: 'RICS', dataset: 'Remediation Cost Estimates', date: '2023', url: 'https://www.rics.org/profession-standards/rics-standards-and-guidance/sector-standards/built-environment/' },
   { num: 3, name: 'UK Parliament', dataset: 'Building Safety Act 2022', url: 'https://www.legislation.gov.uk/ukpga/2022/30/contents/enacted', date: '2022' },
   { num: 4, name: 'End Our Cladding Scandal', dataset: 'Campaign Data & Leaseholder Impact', url: 'https://endourcladdingscandal.co.uk', date: '2024' },
 ];

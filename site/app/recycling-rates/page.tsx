@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Defra', dataset: 'Local authority collected waste management statistics, England', url: 'https://www.gov.uk/government/statistical-data-sets/env18-local-authority-collected-waste-headline-results', date: '2024' },
   { num: 2, name: 'Eurostat', dataset: 'Municipal waste statistics', url: 'https://ec.europa.eu/eurostat/web/waste/key-waste-stream/municipal-waste', date: '2024' },
-  { num: 3, name: 'Defra', dataset: 'Resources and Waste Strategy / Environment Act 2021', date: '2021' },
+  { num: 3, name: 'Defra', dataset: 'Resources and Waste Strategy / Environment Act 2021', url: 'https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs', date: '2021' },
 ];
 
 export default function RecyclingRatesPage() {

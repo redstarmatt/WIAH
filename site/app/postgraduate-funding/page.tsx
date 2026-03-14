@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'IFS', dataset: 'Graduate Repayment Analysis', url: 'https://ifs.org.uk/publications', date: '2024', note: 'Combined marginal effective tax rate of up to 67-68% for graduates with both Plan 2 UG and PG loans on £40,000' },
   { num: 2, name: 'HESA', dataset: 'Higher Education Student Statistics', url: 'https://www.hesa.ac.uk/data-and-analysis', date: '2024', note: 'Postgraduate enrolments fell approximately 8% in 2023-24; concentrated among home students on taught masters' },
-  { num: 3, name: 'UKRI', dataset: 'Doctoral Stipend Rates', date: '2024', note: 'Doctoral stipends approximately £19,000/yr; not keeping pace with living costs' },
+  { num: 3, name: 'UKRI', dataset: 'Doctoral Stipend Rates', date: '2024', note: 'Doctoral stipends approximately £19,000/yr; not keeping pace with living costs', url: 'https://www.ukri.org/what-we-offer/browse-our-areas-of-investment-and-support/' },
 ];
 
 interface PostgraduateFundingDataPoint {

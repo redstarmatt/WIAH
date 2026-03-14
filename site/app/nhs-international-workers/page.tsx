@@ -29,8 +29,8 @@ interface NhsInternationalWorkersData {
 const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS Digital', dataset: 'NHS Workforce Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/nhs-workforce-statistics', date: '2024', note: '33.4% of nurses and 31.9% of doctors internationally trained — record highs' },
   { num: 2, name: 'WHO', dataset: 'Global Code of Practice on International Recruitment of Health Personnel — Health Workforce Support and Safeguards List', url: 'https://www.who.int/publications/m/item/who-global-code-of-practice-on-the-international-recruitment-of-health-personnel', date: '2024', note: '47 red-list countries; NHS still recruits from 13' },
-  { num: 3, name: 'NHS England', dataset: 'NHS Staff Survey — Bullying and Harassment Data', date: '2023', note: '31% of internationally educated nurses report bullying/harassment' },
-  { num: 4, name: 'NHS England', dataset: 'NHS Long Term Workforce Plan', date: '2023', note: 'Commits to doubling domestic medical school places' },
+  { num: 3, name: 'NHS England', dataset: 'NHS Staff Survey — Bullying and Harassment Data', url: 'https://www.england.nhs.uk/statistics/', date: '2023', note: '31% of internationally educated nurses report bullying/harassment' },
+  { num: 4, name: 'NHS England', dataset: 'NHS Long Term Workforce Plan', url: 'https://www.england.nhs.uk/statistics/', date: '2023', note: 'Commits to doubling domestic medical school places' },
 ];
 
 function yearToDate(y: number): Date {

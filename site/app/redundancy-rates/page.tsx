@@ -13,8 +13,8 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Labour Force Survey', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/uklabourmarket/latest', date: '2024' },
-  { num: 2, name: 'Insolvency Service', dataset: 'HR1 Collective Redundancy Notifications', date: '2024' },
-  { num: 3, name: 'DWP', dataset: 'Rapid Response Service Annual Report', date: '2024' },
+  { num: 2, name: 'Insolvency Service', dataset: 'HR1 Collective Redundancy Notifications', url: 'https://www.gov.uk/government/organisations/insolvency-service', date: '2024' },
+  { num: 3, name: 'DWP', dataset: 'Rapid Response Service Annual Report', url: 'https://www.gov.uk/government/organisations/department-for-work-pensions', date: '2024' },
 ];
 
 export default function RedundancyRatesPage() {

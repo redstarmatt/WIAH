@@ -15,7 +15,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'DESNZ', dataset: 'Weekly road fuel prices', url: 'https://www.gov.uk/government/statistical-data-sets/oil-and-petroleum-products-weekly-statistics', date: '2024' },
   { num: 2, name: 'ONS', dataset: 'Consumer Price Index (CPI)', url: 'https://www.ons.gov.uk/economy/inflationandpriceindices', date: '2024' },
   { num: 3, name: 'ONS', dataset: 'Average Weekly Earnings (EARN01)', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours', date: '2024' },
-  { num: 4, name: 'HM Treasury', dataset: 'Budget documents — fuel duty freeze', date: '2024' },
+  { num: 4, name: 'HM Treasury', dataset: 'Budget documents — fuel duty freeze', url: 'https://www.gov.uk/government/organisations/hm-treasury', date: '2024' },
 ];
 
 // Average UK petrol pump prices (pence/litre), 2010–2024

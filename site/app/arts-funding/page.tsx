@@ -46,7 +46,7 @@ const editorialRefs: Reference[] = [
   { num: 2, name: 'MHCLG', dataset: 'Revenue Outturn (RO) Returns — Culture and Recreation', url: 'https://www.gov.uk/government/collections/local-authority-revenue-expenditure-and-financing', date: '2024' },
   { num: 3, name: 'Arts Council England', dataset: 'National Portfolio 2023–2026', url: 'https://www.artscouncil.org.uk/national-portfolio-2023-26', date: '2023' },
   { num: 4, name: 'DCMS', dataset: 'Creative Industries Economic Estimates', url: 'https://www.gov.uk/government/collections/dcms-sectors-economic-estimates', date: '2024' },
-  { num: 5, name: 'Music Venue Trust', dataset: 'Annual Report on Grassroots Music Venues', date: '2024' },
+  { num: 5, name: 'Music Venue Trust', dataset: 'Annual Report on Grassroots Music Venues', date: '2024', url: 'https://musicvenuetrust.com/' },
 ];
 
 export default function ArtsFundingPage() {

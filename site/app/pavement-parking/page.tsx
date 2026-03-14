@@ -13,9 +13,9 @@ import Cite from '@/components/Cite';
 import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
-  { num: 1, name: 'Living Streets', dataset: 'Pedestrian Pound Report', date: '2024', note: 'Estimated 28 million annual pavement parking incidents in England' },
+  { num: 1, name: 'Living Streets', dataset: 'Pedestrian Pound Report', date: '2024', note: 'Estimated 28 million annual pavement parking incidents in England', url: 'https://www.livingstreets.org.uk/research-and-resources/' },
   { num: 2, name: 'Department for Transport', dataset: 'Pavement Parking Evidence Base', url: 'https://www.gov.uk/government/consultations/managing-pavement-parking', date: '2024' },
-  { num: 3, name: 'Transport (Scotland) Act 2019', dataset: 'National pavement parking ban provisions', date: '2023', note: 'Fixed penalty notices of £100' },
+  { num: 3, name: 'Transport (Scotland) Act 2019', dataset: 'National pavement parking ban provisions', date: '2023', note: 'Fixed penalty notices of £100', url: 'https://www.legislation.gov.uk/asp/2019/17/contents' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

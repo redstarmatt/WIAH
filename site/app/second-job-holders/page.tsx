@@ -14,9 +14,9 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Labour Force Survey — Second Jobs', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes', date: '2025', note: '1.3 million second job holders; up 22% since 2019; near record high' },
-  { num: 2, name: 'CIPD', dataset: 'Good Work Index', date: '2025', note: '55% of second job holders cite financial necessity (up from 44% in 2022); tracks cost of living crisis' },
-  { num: 3, name: 'NHS England', dataset: 'NHS Staff Survey — Secondary Employment', date: '2024', note: '13% of NHS staff hold second jobs (up from 7% in 2019); nurses working agency shifts; fatigue risks' },
-  { num: 4, name: 'ONS / Fair Pay Commission', dataset: 'Public Sector Pay Analysis', date: '2024', note: '6-7% public sector pay awards in 2023-24; largest in two decades; partial real-pay restoration' },
+  { num: 2, name: 'CIPD', dataset: 'Good Work Index', date: '2025', note: '55% of second job holders cite financial necessity (up from 44% in 2022); tracks cost of living crisis', url: 'https://www.cipd.org/uk/knowledge/reports/' },
+  { num: 3, name: 'NHS England', dataset: 'NHS Staff Survey — Secondary Employment', url: 'https://www.nhsstaffsurveys.com/', date: '2024', note: '13% of NHS staff hold second jobs (up from 7% in 2019); nurses working agency shifts; fatigue risks' },
+  { num: 4, name: 'ONS / Fair Pay Commission', dataset: 'Public Sector Pay Analysis', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours', date: '2024', note: '6-7% public sector pay awards in 2023-24; largest in two decades; partial real-pay restoration' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

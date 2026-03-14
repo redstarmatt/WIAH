@@ -60,7 +60,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'DESNZ', dataset: 'Energy Trends: UK electricity', url: 'https://www.gov.uk/government/statistics/electricity-section-5-energy-trends', date: '2024' },
   { num: 2, name: 'DESNZ', dataset: 'Annual Fuel Poverty Statistics', url: 'https://www.gov.uk/government/collections/fuel-poverty-statistics', date: '2024' },
   { num: 3, name: 'ONS', dataset: 'Consumer Price Inflation (MM22)', url: 'https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/consumerpriceinflation', date: '2024' },
-  { num: 4, name: 'Climate Change Committee', dataset: 'Progress Report to Parliament', date: '2024' },
+  { num: 4, name: 'Climate Change Committee', dataset: 'Progress Report to Parliament', url: 'https://www.theccc.org.uk/publication/progress-in-reducing-emissions-2024-report-to-parliament/', date: '2024' },
 ];
 
 export default function EnergyPage() {

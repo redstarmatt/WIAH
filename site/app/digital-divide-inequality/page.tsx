@@ -67,10 +67,10 @@ function sparkFrom(arr: number[], n = 10) {
 // ── Page ─────────────────────────────────────────────────────────────────────
 
 const editorialRefs: Reference[] = [
-  { num: 1, name: 'Ofcom', dataset: 'Adults\' Media Literacy Tracker', date: '2024' },
-  { num: 2, name: 'ONS', dataset: 'Internet Access — Households and Individuals', date: '2024' },
-  { num: 3, name: 'Lloyds Bank', dataset: 'Consumer Digital Index', date: '2024' },
-  { num: 4, name: 'Ofcom', dataset: 'Affordability of Communications Services', date: '2024' },
+  { num: 1, name: 'Ofcom', dataset: 'Adults\' Media Literacy Tracker', url: 'https://www.ofcom.org.uk/research-and-data/media-literacy-research/adults', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Internet Access — Households and Individuals', url: 'https://www.ons.gov.uk/businessindustryandtrade/itandinternetindustry/bulletins/internetusers', date: '2024' },
+  { num: 3, name: 'Lloyds Bank', dataset: 'Consumer Digital Index', url: 'https://www.lloydsbank.com/banking-with-us/whats-happening/consumer-digital-index.html', date: '2024' },
+  { num: 4, name: 'Ofcom', dataset: 'Affordability of Communications Services', url: 'https://www.ofcom.org.uk/research-and-data/telecoms-research/consumer-experience', date: '2024' },
 ];
 
 export default function DigitalDivideInequalityPage() {

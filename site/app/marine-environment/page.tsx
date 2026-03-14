@@ -12,9 +12,9 @@ import Cite from '@/components/Cite';
 import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
-  { num: 1, name: 'JNCC', dataset: 'MPA condition assessment', date: '2023', note: 'Joint Nature Conservation Committee assessment of Marine Protected Area features' },
-  { num: 2, name: 'Oceana', dataset: 'Bottom trawling in UK offshore MPAs analysis', date: '2023' },
-  { num: 3, name: 'ICES', dataset: 'Stock assessment — UK waters', date: '2024', note: 'International Council for the Exploration of the Sea' },
+  { num: 1, name: 'JNCC', dataset: 'MPA condition assessment', url: 'https://jncc.gov.uk/our-work/statistics/', date: '2023', note: 'Joint Nature Conservation Committee assessment of Marine Protected Area features' },
+  { num: 2, name: 'Oceana', dataset: 'Bottom trawling in UK offshore MPAs analysis', date: '2023', url: 'https://oceana.org/' },
+  { num: 3, name: 'ICES', dataset: 'Stock assessment — UK waters', date: '2024', note: 'International Council for the Exploration of the Sea', url: 'https://www.ices.dk/' },
 ];
 
 interface MarineData {

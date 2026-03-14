@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DESNZ', dataset: 'Low Carbon and Renewable Energy Economy Survey', url: 'https://www.gov.uk/government/statistics/uk-low-carbon-economy-indicators', date: '2024' },
   { num: 2, name: 'Offshore Wind Industry Council', dataset: 'Sector Deal progress report', url: 'https://www.orr.gov.uk', date: '2024' },
-  { num: 3, name: 'ONS', dataset: 'Annual Survey of Hours and Earnings (ASHE)', date: '2023' },
+  { num: 3, name: 'ONS', dataset: 'Annual Survey of Hours and Earnings (ASHE)', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/annualsurveyofhoursandearnings/2023', date: '2023' },
 ];
 
 // Low-carbon economy employment (thousands), 2014–2023

@@ -16,7 +16,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Index of Production', url: 'https://www.ons.gov.uk/economy/economicoutputandproductivity/output/bulletins/indexofproduction/latestrelease', date: 'Feb 2026' },
   { num: 2, name: 'ONS', dataset: 'GDP output approach — low-level aggregates', url: 'https://www.ons.gov.uk/economy/grossdomesticproductgdp/datasets/ukgdpolowlevelaggregates', date: 'Feb 2026' },
   { num: 3, name: 'ONS', dataset: 'Workforce Jobs by Industry', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/datasets/workforcejobsbyindustryjobs02', date: 'Feb 2026' },
-  { num: 4, name: 'HM Government', dataset: 'Advanced Manufacturing Plan', date: 'Oct 2024' },
+  { num: 4, name: 'HM Government', dataset: 'Advanced Manufacturing Plan', date: 'Oct 2024', url: 'https://www.gov.uk/government/statistics' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────
