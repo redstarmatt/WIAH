@@ -126,6 +126,13 @@ export default function TopicPage() {
           colour="#F4A261"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Pension Credit is a means-tested benefit worth up to £3,900 per year to the poorest pensioners, yet 880,000 eligible people do not claim it. The take-up rate has been stuck at 63% for over a decade, making it one of the most persistently underclaimed benefits in the welfare system. The consequences extend beyond the benefit itself: Pension Credit acts as a gateway to free TV licences, council tax reductions, the Warm Home Discount and, until 2024, the Winter Fuel Payment. Non-claimants therefore miss out on a cascade of support that can be worth considerably more than the credit alone. The typical non-claimant is older, lives alone, rents privately and has a small occupational pension that they wrongly believe disqualifies them.<Cite nums={1} /></p>
+            <p>The barriers are both informational and psychological. DWP research consistently finds that around three-quarters of eligible non-claimants are unaware they qualify, often because they assume the means test excludes anyone with savings or a modest private pension. Stigma also plays a role: many older people who have never claimed benefits in their working lives are reluctant to do so in retirement, viewing it as an admission of need. The 2024 decision to restrict the Winter Fuel Payment to Pension Credit recipients inadvertently created the largest awareness drive in the benefit's history, producing a 20% spike in new claims. The government has since announced plans to auto-enrol Housing Benefit recipients, which could reach 120,000 additional pensioners, but the fundamental design problem remains: a benefit that requires a complex application process will always have lower take-up than one that is delivered automatically.<Cite nums={2} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

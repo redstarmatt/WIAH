@@ -126,6 +126,13 @@ export default function TopicPage() {
           colour="#6B7280"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Britain has run a trade deficit every year since 1998, importing more than it exports and financing the gap through foreign investment and borrowing. The goods deficit reached £233 billion in 2024, widening significantly after Brexit introduced new friction at the border.<Cite nums={1} /> The UK no longer manufactures enough to cover its consumption of physical goods, and the sectors where it was once competitive, such as automotive and chemicals, have seen production shift to the EU and Asia. The resulting structural dependence on imports for food, energy and manufactured goods leaves the economy vulnerable to supply chain disruption and currency depreciation.</p>
+            <p>What prevents the picture from being worse is services. The UK exported a record £452 billion in services in 2024, driven by financial services, professional consulting, higher education and intellectual property licensing.<Cite nums={2} /> This surplus of £196 billion partially offsets the goods deficit, leaving an overall trade gap of £37 billion. But the services surplus cannot fully compensate for a goods deficit that has grown twice as fast, and the current account deficit means the UK is reliant on continued foreign appetite for British assets. The risk is that this model works until it does not, with sterling acting as the adjustment mechanism when confidence shifts.</p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },
