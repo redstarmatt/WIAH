@@ -9,6 +9,19 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+// ── References ───────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NAO', dataset: 'Financial Sustainability of Local Authorities in England', url: 'https://www.nao.org.uk/reports/financial-sustainability-of-local-authorities-in-england/', date: '2025' },
+  { num: 2, name: 'LGA', dataset: 'Local Government Funding Gap Analysis', url: 'https://www.local.gov.uk/', date: '2025' },
+  { num: 3, name: 'IFS / DLUHC', dataset: 'Core Spending Power data tables', url: 'https://ifs.org.uk/publications/local-government-funding-and-service-data', date: '2024' },
+  { num: 4, name: 'MHCLG', dataset: 'Section 114 notices and government intervention reports', url: 'https://www.gov.uk/government/collections/local-authority-capital-expenditure-receipts-and-financing', date: '2025' },
+  { num: 5, name: 'DfE', dataset: 'SEND statistics — Education, Health and Care Plans', url: 'https://explore-education-statistics.service.gov.uk/', date: '2025' },
+  { num: 6, name: 'CIPFA', dataset: 'Resilience Index — council reserves guidance', url: 'https://www.cipfa.org/', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -159,13 +172,13 @@ export default function LocalGovernmentFundingGapPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              In September 2023 Birmingham City Council — Europe's largest local authority, serving 1.1 million people — issued a Section 114 notice, the legal declaration that it could no longer balance its books. It was not alone. Croydon had already issued two such notices. Thurrock had lost over £500 million in a catastrophic solar farm investment scheme. Woking had accumulated £1.8 billion in debt through commercial property speculation. Slough and Nottingham followed. These were not reckless outliers — they were canaries. The National Audit Office found that one in five councils in England now show signs of financial stress, and the Local Government Association estimates the sector faces a funding gap of £4.1 billion for 2025/26 alone.
+              In September 2023 Birmingham City Council — Europe's largest local authority, serving 1.1 million people — issued a Section 114 notice, the legal declaration that it could no longer balance its books.<Cite nums={4} /> It was not alone. Croydon had already issued two such notices. Thurrock had lost over £500 million in a catastrophic solar farm investment scheme. Woking had accumulated £1.8 billion in debt through commercial property speculation. Slough and Nottingham followed.<Cite nums={4} /> These were not reckless outliers — they were canaries. The National Audit Office found that one in five councils in England now show signs of financial stress, and the Local Government Association estimates the sector faces a funding gap of £4.1 billion for 2025/26 alone.<Cite nums={[1, 2]} />
             </p>
             <p>
-              The arithmetic is straightforward and unforgiving. Between 2010 and 2020, central government funding to councils was cut by approximately 50% in real terms under austerity. Councils were told to raise more through council tax and business rates, but these are slow-growing revenue streams that cannot keep pace with rocketing demand. Adult social care now consumes over 40% of the average upper-tier council's budget — up from around 35% a decade ago. Children's social care costs have risen 25% since 2018, driven by a surge in referrals and the spiralling cost of children's home placements, many now run by private equity-backed providers charging over £5,000 per child per week. SEND (Special Educational Needs and Disabilities) transport costs have doubled in many areas as the number of children with Education, Health and Care Plans has increased by 60% since 2015, with councils legally obligated to fund placements regardless of whether the money exists.
+              The arithmetic is straightforward and unforgiving. Between 2010 and 2020, central government funding to councils was cut by approximately 50% in real terms under austerity.<Cite nums={3} /> Councils were told to raise more through council tax and business rates, but these are slow-growing revenue streams that cannot keep pace with rocketing demand. Adult social care now consumes over 40% of the average upper-tier council's budget — up from around 35% a decade ago. Children's social care costs have risen 25% since 2018, driven by a surge in referrals and the spiralling cost of children's home placements, many now run by private equity-backed providers charging over £5,000 per child per week. SEND (Special Educational Needs and Disabilities) transport costs have doubled in many areas as the number of children with Education, Health and Care Plans has increased by 60% since 2015, with councils legally obligated to fund placements regardless of whether the money exists.<Cite nums={5} />
             </p>
             <p>
-              The result is a hollowing out of everything that is not a statutory obligation. Libraries have closed. Parks are unmaintained. Potholes go unrepaired. Planning departments are skeletal. Leisure centres have been handed to trusts or shut entirely. Council reserves — the rainy-day funds that once provided a buffer — have been run down across the sector, with some councils operating with less than 5% of their annual revenue in reserve, well below the level the Chartered Institute of Public Finance and Accountancy considers prudent. Council tax, meanwhile, has risen by over 30% since 2015 in many areas, with councils forced to levy the maximum increases allowed under referendum caps simply to stand still. The system has reached a point where even well-managed councils cannot deliver the services residents expect — not because of poor decisions, but because the funding model is structurally broken.
+              The result is a hollowing out of everything that is not a statutory obligation. Libraries have closed. Parks are unmaintained. Potholes go unrepaired. Planning departments are skeletal. Leisure centres have been handed to trusts or shut entirely. Council reserves — the rainy-day funds that once provided a buffer — have been run down across the sector, with some councils operating with less than 5% of their annual revenue in reserve, well below the level the Chartered Institute of Public Finance and Accountancy considers prudent.<Cite nums={6} /> Council tax, meanwhile, has risen by over 30% since 2015 in many areas, with councils forced to levy the maximum increases allowed under referendum caps simply to stand still. The system has reached a point where even well-managed councils cannot deliver the services residents expect — not because of poor decisions, but because the funding model is structurally broken.
             </p>
           </div>
         </section>
@@ -284,6 +297,10 @@ export default function LocalGovernmentFundingGapPage() {
             source="Source: DLUHC — English Devolution Accountability Framework, 2025. LGA — Local Government Finance Settlement analysis, 2025/26."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <RelatedTopics />
       </main>

@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Labour Force Survey — Self-Employment', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes', date: '2024', note: 'Self-employment peaked at 4.93M (2019), fell to 4.29M (2024); 700K left during COVID; most not returned' },
+  { num: 2, name: 'HMRC', dataset: 'Self-Employment Income Support Scheme', date: '2022', note: '2.7M received SEISS grants; 1.4M excluded (newly self-employed, >£50K profits, no 2018/19 return)' },
+  { num: 3, name: 'IPSE', dataset: 'Freelancer Confidence Index', date: 'Q4 2024', note: '45% of freelancers experienced 50%+ month-to-month income swings in 2023; median weekly earnings £310' },
+  { num: 4, name: 'Resolution Foundation', dataset: 'Self-Employment Incomes Analysis', date: '2024', note: '40% of Self Assessment returns below personal allowance; 16% pension participation vs 79% for employees' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -94,8 +103,8 @@ export default function SelfEmploymentPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK's self-employed workforce peaked at 4.93 million in late 2019, representing approximately 15% of total employment and making the UK one of the most self-employed economies in the OECD. The sector then experienced a collapse without modern precedent: approximately 700,000 people left self-employment during the COVID-19 pandemic and, by 2024, the total had recovered to only 4.29 million — still 13% below the pre-pandemic peak. This is not a temporary dip but a structural shift. ONS analysis suggests that most of those who left moved into employee roles (attracted by the security of PAYE employment), retired, or became economically inactive. The Self-Employment Income Support Scheme (SEISS) provided emergency grants to 2.7 million self-employed individuals during the pandemic, but excluded the newly self-employed (less than one year of trading), those with trading profits above £50,000, and those who had not filed a 2018/19 Self Assessment return — leaving approximately 1.4 million self-employed people with no income support.</p>
-            <p>The economics of self-employment have deteriorated. Median weekly earnings for the self-employed are approximately £310, compared with £535 for employees — a gap of 42%. One in three self-employed workers earns below the National Living Wage on an hourly basis. Income volatility is extreme: IPSE research shows that 45% of freelancers experienced month-to-month income swings of more than 50% in 2023. The self-employed have no statutory right to sick pay, holiday pay, maternity/paternity pay, or redundancy pay. Auto-enrolment into workplace pensions does not apply, meaning only 16% of the self-employed contribute to a pension, compared with 79% of employees. HMRC data shows that 40% of Self Assessment tax returns declare income below £12,570 (the personal allowance), meaning a substantial proportion of the self-employed earn so little that they owe no income tax. The Resolution Foundation has described self-employment as an &ldquo;incomes crisis hiding in plain sight.&rdquo;</p>
+            <p>The UK's self-employed workforce peaked at 4.93 million in late 2019, representing approximately 15% of total employment and making the UK one of the most self-employed economies in the OECD. The sector then experienced a collapse without modern precedent: approximately 700,000 people left self-employment during the COVID-19 pandemic and, by 2024, the total had recovered to only 4.29 million — still 13% below the pre-pandemic peak.<Cite nums={1} /> This is not a temporary dip but a structural shift. ONS analysis suggests that most of those who left moved into employee roles (attracted by the security of PAYE employment), retired, or became economically inactive. The Self-Employment Income Support Scheme (SEISS) provided emergency grants to 2.7 million self-employed individuals during the pandemic, but excluded the newly self-employed (less than one year of trading), those with trading profits above £50,000, and those who had not filed a 2018/19 Self Assessment return — leaving approximately 1.4 million self-employed people with no income support.<Cite nums={2} /></p>
+            <p>The economics of self-employment have deteriorated. Median weekly earnings for the self-employed are approximately £310, compared with £535 for employees — a gap of 42%. One in three self-employed workers earns below the National Living Wage on an hourly basis. Income volatility is extreme: IPSE research shows that 45% of freelancers experienced month-to-month income swings of more than 50% in 2023.<Cite nums={3} /> The self-employed have no statutory right to sick pay, holiday pay, maternity/paternity pay, or redundancy pay. Auto-enrolment into workplace pensions does not apply, meaning only 16% of the self-employed contribute to a pension, compared with 79% of employees. HMRC data shows that 40% of Self Assessment tax returns declare income below £12,570 (the personal allowance), meaning a substantial proportion of the self-employed earn so little that they owe no income tax.<Cite nums={4} /> The Resolution Foundation has described self-employment as an &ldquo;incomes crisis hiding in plain sight.&rdquo;</p>
             </div>
         </section>
 
@@ -178,6 +187,10 @@ export default function SelfEmploymentPage() {
             source="Source: ONS — Labour Force Survey 2024; HMRC — Self Assessment Statistics 2024; IPSE — Freelancer Confidence Index Q4 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

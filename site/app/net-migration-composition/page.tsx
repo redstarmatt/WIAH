@@ -8,6 +8,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Long-term international migration', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration', date: '2025' },
+  { num: 2, name: 'Home Office', dataset: 'Immigration Statistics', url: 'https://www.gov.uk/government/statistics/immigration-statistics-year-ending-december-2024', date: '2025' },
+  { num: 3, name: 'Universities UK', dataset: 'International student income analysis', url: 'https://www.universitiesuk.ac.uk/', date: '2025' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -194,6 +202,10 @@ export default function TopicPage() {
             source="Source: Home Office Immigration statistics, 2025. Universities UK, 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

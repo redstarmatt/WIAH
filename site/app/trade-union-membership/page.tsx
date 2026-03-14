@@ -8,6 +8,13 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'BEIS', dataset: 'Trade Union Statistics 2024', url: 'https://www.gov.uk/government/statistics/trade-union-statistics-2024', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Labour Disputes — Working days lost', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/workplacedisputesandworkingconditions', date: '2024', note: '2.7 million days lost in 2023 — highest since 1989' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -194,6 +201,10 @@ export default function TopicPage() {
             source="Source: BEIS — Trade union statistics, 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

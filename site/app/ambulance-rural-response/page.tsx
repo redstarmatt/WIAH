@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Urban Cat 2 mean response time (minutes), 2019–2024 — NHS England AQI
 const urbanResponseValues = [21, 22, 19, 34, 42, 37];
@@ -50,6 +52,11 @@ const annotations: Annotation[] = [
   { date: new Date(2022, 0, 1), label: '2022: Winter crisis — rural gap widens sharply' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Ambulance Quality Indicators', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/ambulance-quality-indicators/', date: '2024' },
+  { num: 2, name: 'NHS England', dataset: 'Ambulance Quality Indicators — trust level', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/ambulance-quality-indicators/', date: '2024' },
+];
+
 export default function AmbulanceRuralPage() {
   return (
     <>
@@ -64,8 +71,8 @@ export default function AmbulanceRuralPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Living in a rural area means waiting far longer for an ambulance. The Category 2 target — for emergencies including suspected stroke and heart attack — is an 18-minute mean response time. In rural areas of England, the actual 2024 mean is 45 minutes. The South Western Ambulance Service, covering Devon, Cornwall, and rural Somerset, averages 48 minutes for rural Category 2 calls. A heart attack patient waiting 48 minutes has a dramatically worse prognosis than one reached in 18: for every minute of delay, roughly 2 million additional heart muscle cells die. The rural-urban gap is not a minor statistical artifact — it is a structural inequality in the likelihood of surviving a medical emergency based on where you live.</p>
-            <p>The drivers are structural: sparsely distributed ambulance stations, long road distances, and a disproportionate impact from hospital handover delays at small rural hospitals with limited surge capacity. When the nearest ambulance is tied up in a handover queue at a rural district general hospital, the next-nearest resource may be 30 or 40 miles away. Community First Responder schemes — trained volunteers who can reach cardiac arrest patients before an ambulance — provide valuable early intervention but cannot replace professional paramedic response. Air ambulances cover critical cases in the most remote locations but operate in very limited numbers and are weather-dependent. The 90th-percentile rural Cat 1 response time — the benchmark for the worst-served patients — routinely exceeds 25 minutes, against a target of 15 minutes.</p>
+            <p>Living in a rural area means waiting far longer for an ambulance. The Category 2 target — for emergencies including suspected stroke and heart attack — is an 18-minute mean response time. In rural areas of England, the actual 2024 mean is 45 minutes.<Cite nums={1} /> The South Western Ambulance Service, covering Devon, Cornwall, and rural Somerset, averages 48 minutes for rural Category 2 calls.<Cite nums={2} /> A heart attack patient waiting 48 minutes has a dramatically worse prognosis than one reached in 18: for every minute of delay, roughly 2 million additional heart muscle cells die. The rural-urban gap is not a minor statistical artifact — it is a structural inequality in the likelihood of surviving a medical emergency based on where you live.</p>
+            <p>The drivers are structural: sparsely distributed ambulance stations, long road distances, and a disproportionate impact from hospital handover delays at small rural hospitals with limited surge capacity. When the nearest ambulance is tied up in a handover queue at a rural district general hospital, the next-nearest resource may be 30 or 40 miles away. Community First Responder schemes — trained volunteers who can reach cardiac arrest patients before an ambulance — provide valuable early intervention but cannot replace professional paramedic response. Air ambulances cover critical cases in the most remote locations but operate in very limited numbers and are weather-dependent. The 90th-percentile rural Cat 1 response time — the benchmark for the worst-served patients — routinely exceeds 25 minutes, against a target of 15 minutes.<Cite nums={1} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -144,6 +151,9 @@ export default function AmbulanceRuralPage() {
             source="Source: NHS England — Ambulance Quality Indicators 2024. Association of Ambulance Chief Executives — CFR programme data 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

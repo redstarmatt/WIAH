@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Diabetes UK', dataset: 'Statistics', url: 'https://www.diabetes.org.uk/professionals/position-statements-reports/statistics', date: '2024' },
+  { num: 2, name: 'NHS Digital', dataset: 'National Diabetes Audit', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/national-diabetes-audit', date: '2024' },
+  { num: 3, name: 'NHS England', dataset: 'Diabetes — expenditure and prevention programme data', url: 'https://www.england.nhs.uk/diabetes/', date: '2024' },
+];
 
 export default function DiabetesPage() {
   const type1Prevalence = [0.40, 0.41, 0.42, 0.43, 0.44, 0.45, 0.45, 0.46, 0.46, 0.47, 0.47, 0.48, 0.48, 0.49];
@@ -151,13 +159,16 @@ export default function DiabetesPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on diabetes</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Diabetes is one of the fastest-growing long-term conditions in the UK. The number of people diagnosed has risen from around 3.3 million in 2010 to 5.6 million in 2024. Add in the estimated 1 million with undiagnosed type 2 diabetes and a further 13.6 million at high risk of developing it, and the scale of the challenge becomes clear. Type 2 diabetes accounts for 91% of cases and is almost entirely preventable — it is driven by obesity, physical inactivity, and dietary patterns that are themselves shaped by socioeconomic conditions.</p>
-              <p>The NHS spends around £10bn per year on diabetes — approximately 10% of its entire budget. Around 80% of that cost falls on managing complications: kidney failure, cardiovascular disease, lower limb amputations, and retinopathy. The UK has a higher rate of diabetes-related lower limb amputations than most comparable countries, reflecting both delayed diagnosis and inconsistent access to specialist foot care. Diabetes also drives a substantial share of NHS kidney disease, dialysis, and stroke workload.</p>
-              <p>Deprivation is a major factor. Type 2 diabetes prevalence is two to three times higher in the most deprived communities compared to the least deprived. South Asian, Black African, and Black Caribbean populations face significantly higher risk at lower BMI thresholds than white European populations — a difference that is not consistently reflected in clinical guidance or screening thresholds.</p>
+              <p>Diabetes is one of the fastest-growing long-term conditions in the UK. The number of people diagnosed has risen from around 3.3 million in 2010 to 5.6 million in 2024.<Cite nums={1} /> Add in the estimated 1 million with undiagnosed type 2 diabetes and a further 13.6 million at high risk of developing it, and the scale of the challenge becomes clear.<Cite nums={1} /> Type 2 diabetes accounts for 91% of cases and is almost entirely preventable — it is driven by obesity, physical inactivity, and dietary patterns that are themselves shaped by socioeconomic conditions.<Cite nums={2} /></p>
+              <p>The NHS spends around £10bn per year on diabetes — approximately 10% of its entire budget.<Cite nums={3} /> Around 80% of that cost falls on managing complications: kidney failure, cardiovascular disease, lower limb amputations, and retinopathy.<Cite nums={3} /> The UK has a higher rate of diabetes-related lower limb amputations than most comparable countries, reflecting both delayed diagnosis and inconsistent access to specialist foot care.<Cite nums={2} /> Diabetes also drives a substantial share of NHS kidney disease, dialysis, and stroke workload.</p>
+              <p>Deprivation is a major factor. Type 2 diabetes prevalence is two to three times higher in the most deprived communities compared to the least deprived.<Cite nums={1} /> South Asian, Black African, and Black Caribbean populations face significantly higher risk at lower BMI thresholds than white European populations — a difference that is not consistently reflected in clinical guidance or screening thresholds.<Cite nums={2} /></p>
             </div>
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">

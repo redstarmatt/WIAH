@@ -8,6 +8,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Home Office', dataset: 'Irregular migration to the UK statistics', url: 'https://www.gov.uk/government/collections/irregular-migration-to-the-uk-statistics', date: 'Q3 2025' },
+  { num: 2, name: 'Home Office', dataset: 'Immigration system statistics — asylum applications and decisions', url: 'https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables', date: 'Q3 2025' },
+  { num: 3, name: 'UNHCR', dataset: 'UK asylum and refugee statistics', url: 'https://www.unhcr.org/uk/', date: '2025' },
+];
 
 interface DataPoint {
   year: number;
@@ -93,10 +101,10 @@ export default function SmallBoatsPage() {
         <section className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              45,183 people made dangerous Channel crossings in small boats in the year to September 2025 — a 51% rise; more than 190,000 have crossed since 2018. The data below draws on official sources to show how this has changed over the past decade and where the pressures are most acute.
+              45,183 people made dangerous Channel crossings in small boats in the year to September 2025 — a 51% rise; more than 190,000 have crossed since 2018.<Cite nums={1} /> The data below draws on official sources to show how this has changed over the past decade and where the pressures are most acute.
             </p>
             <p>
-              The figures reflect a structural pattern rather than a short-term fluctuation. Understanding the scale of the issue is the first step toward holding policymakers to account for the decisions that shape these outcomes.
+              The figures reflect a structural pattern rather than a short-term fluctuation.<Cite nums={[1, 2]} /> Understanding the scale of the issue is the first step toward holding policymakers to account for the decisions that shape these outcomes.
             </p>
           </div>
         </section>
@@ -171,6 +179,10 @@ export default function SmallBoatsPage() {
             source="Source: Home Office \u2014 Immigration system statistics, Q3 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

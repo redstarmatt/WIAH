@@ -7,7 +7,16 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'NHS Vacancy Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/nhs-vacancies-survey', date: 'Jan 2024', note: '112,000 vacancies (1 in 10 posts); down from 133,000 peak in 2022; 34,200 nursing vacancies' },
+  { num: 2, name: 'NHS England', dataset: 'NHS Workforce Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/nhs-workforce-statistics', date: 'Jan 2024', note: '32,400 internationally recruited nurses joined in 2024; up from 4,100 in 2015' },
+  { num: 3, name: 'NHS Digital', dataset: 'NHS Sickness Absence Rates', date: '2023', note: '5.6% absence rate; agency/bank staff filled 8% of shifts at £3.2bn cost' },
+  { num: 4, name: 'NHS England', dataset: 'NHS Long Term Workforce Plan', url: 'https://www.england.nhs.uk/long-read/nhs-long-term-workforce-plan-2/', date: '2023', note: '10,000 additional nursing places funded since 2019; 24,000 more promised by 2031' },
+];
 
 export default function NhsStaffingPage() {
   const colour = '#E63946';
@@ -153,13 +162,16 @@ export default function NhsStaffingPage() {
           <section className="max-w-2xl mb-12 mt-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">What the data shows</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>The NHS had 112,000 vacancies in 2024 — roughly 1 in 10 of all posts. This represents a partial recovery from the 133,000-vacancy peak in 2022, but remains more than double the pre-pandemic level. Nursing shortages are most acute: 34,200 nursing posts sit unfilled, representing 1 in 9 of the total nursing establishment. The Royal College of Nursing estimates that safe staffing requires the NHS to recruit and retain 40,000 additional nurses over the next decade.</p>
-              <p>International recruitment has become the primary mechanism for workforce growth. In 2024, 32,400 internationally trained nurses joined the NHS — up from just 4,100 in 2015. The majority came from the Philippines and India. This has stabilised total nursing numbers, but it masks a domestic training pipeline that has not kept pace with demand. The removal of NHS bursaries for student nurses in 2017 reduced applications by 30%; the bursaries were partially restored in 2020, but take-up has not fully recovered. The domestic training system simply cannot produce nurses fast enough: undergraduate courses take three years, and attrition rates during training are around 20%.</p>
-              <p>Staff sickness absence — running at 5.6% of contracted hours, compared to 3.8% in 2019 — further depletes effective workforce capacity. Burnout, post-COVID trauma, and unmanageable caseloads drive both absence and resignation. The pay dispute of 2022–23, which saw nurses strike for the first time in NHS history, reflected a real-terms pay cut of around 20% since 2010. The 2023 pay settlement of 5% remained below inflation. Agency and bank staff filled an estimated 8% of NHS shifts in 2024, at a cost of £3.2 billion — more than double the pre-pandemic agency spend.</p>
+              <p>The NHS had 112,000 vacancies in 2024 — roughly 1 in 10 of all posts. This represents a partial recovery from the 133,000-vacancy peak in 2022, but remains more than double the pre-pandemic level. Nursing shortages are most acute: 34,200 nursing posts sit unfilled, representing 1 in 9 of the total nursing establishment.<Cite nums={1} /> The Royal College of Nursing estimates that safe staffing requires the NHS to recruit and retain 40,000 additional nurses over the next decade.</p>
+              <p>International recruitment has become the primary mechanism for workforce growth. In 2024, 32,400 internationally trained nurses joined the NHS — up from just 4,100 in 2015.<Cite nums={2} /> The majority came from the Philippines and India. This has stabilised total nursing numbers, but it masks a domestic training pipeline that has not kept pace with demand. The removal of NHS bursaries for student nurses in 2017 reduced applications by 30%; the bursaries were partially restored in 2020, but take-up has not fully recovered. The domestic training system simply cannot produce nurses fast enough: undergraduate courses take three years, and attrition rates during training are around 20%.</p>
+              <p>Staff sickness absence — running at 5.6% of contracted hours, compared to 3.8% in 2019 — further depletes effective workforce capacity.<Cite nums={3} /> Burnout, post-COVID trauma, and unmanageable caseloads drive both absence and resignation. The pay dispute of 2022–23, which saw nurses strike for the first time in NHS history, reflected a real-terms pay cut of around 20% since 2010. The 2023 pay settlement of 5% remained below inflation. Agency and bank staff filled an estimated 8% of NHS shifts in 2024, at a cost of £3.2 billion — more than double the pre-pandemic agency spend.</p>
             </div>
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">

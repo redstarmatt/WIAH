@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Art & Design GCSE entries, 2010–2024 — JCQ
 const artDesignValues = [191500, 183200, 170100, 158400, 146200, 135800, 125100, 118400, 115200, 113200, 112800, 113200, 114000, 113800, 113200];
@@ -56,6 +58,13 @@ const annotations: Annotation[] = [
   { date: new Date(2016, 0, 1), label: '2016: EBacc government target raised to 90% of pupils' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'JCQ', dataset: 'GCSE Examination Results', url: 'https://www.jcq.org.uk/examination-results', date: '2024' },
+  { num: 2, name: 'DfE', dataset: 'School Workforce in England', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/school-workforce-in-england', date: '2024' },
+  { num: 3, name: 'DfE', dataset: 'Key Stage 4 Performance Tables — EBacc entries', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-4-performance', date: '2024' },
+  { num: 4, name: 'DCMS', dataset: 'Creative Industries Economic Estimates', url: 'https://www.gov.uk/government/collections/dcms-sectors-economic-estimates', date: '2024' },
+];
+
 export default function ArtsInSchoolsPage() {
   return (
     <>
@@ -70,8 +79,8 @@ export default function ArtsInSchoolsPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The picture is stark and consistent across every arts subject. GCSE entries in art and design, music, drama, and dance have all fallen sharply since 2010, with the steepest drops in music and art (both down around 41%). This is not a reflection of changing pupil preferences: it is the direct consequence of the EBacc — a performance measure introduced in 2010 that rewards schools for the proportion of pupils gaining GCSE grades in English, maths, science, history or geography, and a language. The arts are absent from the EBacc. Schools focused on performance table positions have a structural incentive to reduce arts provision to free timetable space for EBacc subjects, particularly in Year 10 and 11 when option choices are made. The government's aspiration for 90% of pupils to take the EBacc intensified this pressure significantly from 2016 onwards.</p>
-            <p>The impact is clearest in the most deprived schools. Arts subjects are typically the first to be cut when budgets are under pressure, as they require specialist teachers, instruments, equipment, and studio space. Schools in areas of high deprivation have cut arts provision most deeply. The result is that access to music and art education has become increasingly stratified by family income: private schools have not cut arts provision, reinforcing the class dimension of the decline. Arts specialist teacher numbers have fallen from around 42,800 in 2012 to approximately 33,200 in 2024 — a 22% reduction. Once specialist teachers leave the profession, arts departments close and the subject knowledge they embodied is not easily rebuilt. The cultural industries that benefit from arts education — music, film, theatre, games, advertising — generate over £116 billion for the UK economy annually. The pipeline of talent those industries depend on is being narrowed by a structural funding and incentives problem that affects the whole of state education.</p>
+            <p>The picture is stark and consistent across every arts subject. GCSE entries in art and design, music, drama, and dance have all fallen sharply since 2010, with the steepest drops in music and art (both down around 41%).<Cite nums={1} /> This is not a reflection of changing pupil preferences: it is the direct consequence of the EBacc — a performance measure introduced in 2010 that rewards schools for the proportion of pupils gaining GCSE grades in English, maths, science, history or geography, and a language.<Cite nums={3} /> The arts are absent from the EBacc. Schools focused on performance table positions have a structural incentive to reduce arts provision to free timetable space for EBacc subjects, particularly in Year 10 and 11 when option choices are made. The government's aspiration for 90% of pupils to take the EBacc intensified this pressure significantly from 2016 onwards.<Cite nums={3} /></p>
+            <p>The impact is clearest in the most deprived schools. Arts subjects are typically the first to be cut when budgets are under pressure, as they require specialist teachers, instruments, equipment, and studio space. Schools in areas of high deprivation have cut arts provision most deeply. The result is that access to music and art education has become increasingly stratified by family income: private schools have not cut arts provision, reinforcing the class dimension of the decline. Arts specialist teacher numbers have fallen from around 42,800 in 2012 to approximately 33,200 in 2024 — a 22% reduction.<Cite nums={2} /> Once specialist teachers leave the profession, arts departments close and the subject knowledge they embodied is not easily rebuilt. The cultural industries that benefit from arts education — music, film, theatre, games, advertising — generate over £116 billion for the UK economy annually.<Cite nums={4} /> The pipeline of talent those industries depend on is being narrowed by a structural funding and incentives problem that affects the whole of state education.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -150,6 +159,9 @@ export default function ArtsInSchoolsPage() {
             source="Source: DfE — National Plan for Music Education 2022–2030. Cultural Learning Alliance — The Case for Cultural Learning 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

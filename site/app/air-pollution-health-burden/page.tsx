@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Premature deaths attributed to air pollution, England, 2003–2024 — COMEAP
 const prematureDeathsValues = [39200, 38500, 37800, 37000, 36200, 35500, 34800, 34000, 33200, 32500, 31800, 31100, 30500, 29900, 29400, 29000, 28800, 28700, 28500, 28400, 28300, 28900];
@@ -49,6 +51,12 @@ const annotations: Annotation[] = [
   { date: new Date(2021, 0, 1), label: '2021: WHO tightens guidelines to 5 µg/m³' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'COMEAP', dataset: 'Long-term exposure mortality estimates', url: 'https://www.gov.uk/government/groups/committee-on-the-medical-effects-of-air-pollutants-comeap', date: '2024' },
+  { num: 2, name: 'DEFRA', dataset: 'Air quality statistics — PM2.5 annual mean', url: 'https://www.gov.uk/government/collections/air-quality-statistics', date: '2024' },
+  { num: 3, name: 'PHE', dataset: 'Estimation of costs to the NHS and social care due to air pollution', date: '2024' },
+];
+
 export default function AirPollutionHealthBurdenPage() {
   return (
     <>
@@ -63,8 +71,8 @@ export default function AirPollutionHealthBurdenPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Air pollution is the largest environmental risk to public health in the United Kingdom. The Committee on the Medical Effects of Air Pollutants (COMEAP) estimates that long-term exposure to fine particulate matter (PM2.5) and nitrogen dioxide (NO2) contributes to between 28,000 and 36,000 premature deaths annually in England alone — more than obesity, more than alcohol. PM2.5 particles, smaller than a red blood cell, penetrate deep into lung tissue, cross into the bloodstream, and drive chronic cardiovascular disease, stroke, lung cancer, and respiratory conditions including asthma and COPD. The evidence linking air pollution to cardiovascular mortality is now as robust as the evidence linking smoking to lung cancer. NO2, primarily from diesel vehicles, inflames airways and worsens existing respiratory conditions.</p>
-            <p>The burden falls unevenly. Children are disproportionately vulnerable — their lungs are still developing, they breathe faster relative to their body weight, and they are closer to exhaust-pipe height. The death of nine-year-old Ella Adoo-Kissi-Debrah in 2013 — the first person in the UK to have air pollution listed as a cause of death — brought this disparity into national consciousness. The most polluted neighbourhoods in England are overwhelmingly the poorest, creating a toxic gradient where the people least able to move or adapt bear the greatest health cost. National average PM2.5 has fallen 54% since 2003, driven by tighter vehicle emission standards, the phase-out of coal power, and industrial regulation. But the UK still exceeds WHO guidelines by 40%, and domestic wood burning now accounts for 17% of total UK PM2.5 emissions — more than road transport.</p>
+            <p>Air pollution is the largest environmental risk to public health in the United Kingdom. The Committee on the Medical Effects of Air Pollutants (COMEAP) estimates that long-term exposure to fine particulate matter (PM2.5) and nitrogen dioxide (NO2) contributes to between 28,000 and 36,000 premature deaths annually in England alone — more than obesity, more than alcohol.<Cite nums={1} /> PM2.5 particles, smaller than a red blood cell, penetrate deep into lung tissue, cross into the bloodstream, and drive chronic cardiovascular disease, stroke, lung cancer, and respiratory conditions including asthma and COPD. The evidence linking air pollution to cardiovascular mortality is now as robust as the evidence linking smoking to lung cancer. NO2, primarily from diesel vehicles, inflames airways and worsens existing respiratory conditions.</p>
+            <p>The burden falls unevenly. Children are disproportionately vulnerable — their lungs are still developing, they breathe faster relative to their body weight, and they are closer to exhaust-pipe height. The death of nine-year-old Ella Adoo-Kissi-Debrah in 2013 — the first person in the UK to have air pollution listed as a cause of death — brought this disparity into national consciousness. The most polluted neighbourhoods in England are overwhelmingly the poorest, creating a toxic gradient where the people least able to move or adapt bear the greatest health cost.<Cite nums={3} /> National average PM2.5 has fallen 54% since 2003, driven by tighter vehicle emission standards, the phase-out of coal power, and industrial regulation.<Cite nums={2} /> But the UK still exceeds WHO guidelines by 40%, and domestic wood burning now accounts for 17% of total UK PM2.5 emissions — more than road transport.<Cite nums={2} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -143,6 +151,9 @@ export default function AirPollutionHealthBurdenPage() {
             source="Source: DEFRA — Air quality statistics 2024. COMEAP — Long-term exposure mortality estimates. PHE — Costs to NHS and social care."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Interpreter booking failures, 2015–2023 (MOJ)
 const bookingFailureValues = [14200, 13100, 12400, 11800, 11200, 8400, 9100, 9700, 10200];
@@ -49,6 +51,12 @@ const annotations1: Annotation[] = [
 
 const annotations2: Annotation[] = [];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ministry of Justice', dataset: 'HMCTS Interpreter Services Data', url: 'https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service', date: '2023' },
+  { num: 2, name: 'National Audit Office', dataset: 'Language Services in the Justice System', url: 'https://www.nao.org.uk', date: '2023' },
+  { num: 3, name: 'HMCTS', dataset: 'Court Statistics Quarterly', url: 'https://www.gov.uk/government/collections/court-statistics-quarterly', date: '2023' },
+];
+
 export default function CourtInterpreterServicesPage() {
   return (
     <>
@@ -63,8 +71,8 @@ export default function CourtInterpreterServicesPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>In 2023 there were 10,200 recorded interpreter booking failures in Crown and magistrates courts in England and Wales, with 8% of hearings requiring an interpreter delayed or adjourned as a result. The Ministry of Justice outsourced interpretation to a single contractor in 2012; the NAO found 34% of bookings were not fulfilled on time in the first six months. The fragmented market of agencies and freelance interpreters has never fully recovered public confidence. Pay rates offered by framework contracts have deterred qualified interpreters, and supply in high-demand languages — Kurdish, Albanian, Arabic, Somali — is genuinely scarce. The NAO estimates interpreter failures cost the system over £50 million annually in direct and indirect costs.</p>
-            <p>Each failed hearing delays justice for defendants, victims, and witnesses — some already in custody or in acute distress. A Crown Court day costs approximately £10,000; adjournments compound existing backlogs that built through the COVID-19 pandemic. Remote interpretation via video link has been partially adopted but raises quality concerns in complex criminal hearings. Reform of the procurement framework has been repeatedly deferred despite sustained criticism from the judiciary, practitioners, and Parliament. Wrong-language bookings — where a court receives an interpreter who speaks the wrong dialect or an entirely different language — now affect more than 400 hearings a year.</p>
+            <p>In 2023 there were 10,200 recorded interpreter booking failures in Crown and magistrates courts in England and Wales, with 8% of hearings requiring an interpreter delayed or adjourned as a result.<Cite nums={1} /> The Ministry of Justice outsourced interpretation to a single contractor in 2012; the NAO found 34% of bookings were not fulfilled on time in the first six months.<Cite nums={2} /> Pay rates offered by framework contracts have deterred qualified interpreters, and supply in high-demand languages — Kurdish, Albanian, Arabic, Somali — is genuinely scarce. The NAO estimates interpreter failures cost the system over £50 million annually in direct and indirect costs.<Cite nums={2} /></p>
+            <p>Each failed hearing delays justice for defendants, victims, and witnesses — some already in custody or in acute distress. A Crown Court day costs approximately £10,000; adjournments compound existing backlogs that built through the COVID-19 pandemic.<Cite nums={3} /> Remote interpretation via video link has been partially adopted but raises quality concerns in complex criminal hearings. Wrong-language bookings — where a court receives an interpreter who speaks the wrong dialect or an entirely different language — now affect more than 400 hearings a year.<Cite nums={1} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -143,6 +151,9 @@ export default function CourtInterpreterServicesPage() {
             source="Source: Ministry of Justice — Court Interpreting Services Statistics 2024. HMCTS Remote Hearing Pilot Evaluation 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

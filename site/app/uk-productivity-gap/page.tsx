@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'International comparisons of productivity — output per hour worked', url: 'https://www.ons.gov.uk/economy/economicoutputandproductivity/productivitymeasures', date: '2024' },
+  { num: 2, name: 'OECD', dataset: 'Investment (GFCF) as % of GDP and R&D spending', url: 'https://data.oecd.org/gdp/investment-gfcf.htm', date: '2024' },
+  { num: 3, name: 'ONS', dataset: 'Subregional productivity: labour productivity indices by NUTS1 region', url: 'https://www.ons.gov.uk/economy/economicoutputandproductivity/productivitymeasures/datasets/subregionalproductivitylabourproductivitygvaperhourworkedandgvaperfilledjobindicesbyuknuts2andnuts3subregions', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -187,9 +195,9 @@ export default function UkProductivityGapPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Before 2008, UK productivity growth tracked other advanced economies reasonably well, averaging around 2% per year. Then it stopped. While every G7 country saw a post-crisis slowdown, Britain's was uniquely severe: average annual growth fell to 0.4% per year between 2010 and 2024, less than a quarter of the pre-crisis rate. The result is a cumulative shortfall worth roughly GBP 5,000 per worker per year in lost output -- the single largest driver of stagnant living standards over the past fifteen years.</p>
-            <p>The causes are structural and well-documented. Business investment as a share of GDP has been the lowest in the G7 for most of the past two decades, running 5 percentage points below the OECD average. R&D spending, at 1.78% of GDP, sits far below Germany (3.18%) and the United States (3.56%). Public infrastructure spending has been cut repeatedly, planning constraints limit commercial development, and the UK's unusually centralised fiscal system starves regional economies of the investment autonomy that drives growth in federal countries like Germany and the US.</p>
-            <p>There is also a regional dimension. London's output per hour is 62% higher than Northern Ireland's and 56% higher than Wales. This is not merely a London success story; it reflects decades of infrastructure, skills, and institutional investment concentrated in the South East while other regions received far less. Closing the productivity gap requires closing the geography gap.</p>
+            <p>Before 2008, UK productivity growth tracked other advanced economies reasonably well, averaging around 2% per year. Then it stopped. While every G7 country saw a post-crisis slowdown, Britain's was uniquely severe: average annual growth fell to 0.4% per year between 2010 and 2024, less than a quarter of the pre-crisis rate. The result is a cumulative shortfall worth roughly GBP 5,000 per worker per year in lost output -- the single largest driver of stagnant living standards over the past fifteen years.<Cite nums={1} /></p>
+            <p>The causes are structural and well-documented. Business investment as a share of GDP has been the lowest in the G7 for most of the past two decades, running 5 percentage points below the OECD average. R&D spending, at 1.78% of GDP, sits far below Germany (3.18%) and the United States (3.56%). Public infrastructure spending has been cut repeatedly, planning constraints limit commercial development, and the UK's unusually centralised fiscal system starves regional economies of the investment autonomy that drives growth in federal countries like Germany and the US.<Cite nums={2} /></p>
+            <p>There is also a regional dimension. London's output per hour is 62% higher than Northern Ireland's and 56% higher than Wales.<Cite nums={3} /> This is not merely a London success story; it reflects decades of infrastructure, skills, and institutional investment concentrated in the South East while other regions received far less. Closing the productivity gap requires closing the geography gap.</p>
           </div>
         </section>
 

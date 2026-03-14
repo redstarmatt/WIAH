@@ -8,6 +8,8 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // -- Types --
 
@@ -23,6 +25,15 @@ interface CoastalCommunitiesData {
     knownIssues: string[];
   };
 }
+
+// -- References -------------------------------------------------------------
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Annual Survey of Hours and Earnings (ASHE)', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours', date: '2023' },
+  { num: 2, name: 'DLUHC', dataset: 'English Indices of Deprivation', url: 'https://www.gov.uk/government/statistics/english-indices-of-deprivation-2019', date: '2019' },
+  { num: 3, name: 'ONS', dataset: 'Internal Migration Statistics', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/migrationwithintheuk', date: '2023' },
+  { num: 4, name: 'DLUHC', dataset: 'Coastal Communities Fund Evaluation', date: '2022' },
+];
 
 // -- Component --
 
@@ -81,8 +92,8 @@ export default function CoastalCommunitiesPage() {
         {/* Context section (MUST come before SectionNav) */}
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England's coastal communities sit outside the city-deal and urban-regeneration frameworks that have shaped most post-industrial policy. Average wages are 17% below the national median — a gap that has widened from 12% in 2010 — child poverty runs at 34% against a national average of 24%, and economic inactivity is five percentage points above the national figure. In the most deprived coastal authorities — Blackpool, Thanet, Torbay, East Lindsey, Hastings — life expectancy is 8–10 years below the national average. Second homes and holiday lets have displaced working-age residents in many areas: in parts of the South West, one in five households is a second home, pushing property prices beyond the reach of local earners and accelerating the outflow of young people. Some 40% of coastal areas record GCSE attainment below the national average, and GP patient lists are above average in 67% of coastal areas.</p>
-            <p>The Coastal Communities Fund (£200 million, 2012–2022) and Levelling Up Fund designations have delivered capital spending without reliably changing the structural conditions that produce persistent deprivation. A few towns — Margate, Whitstable, parts of Scarborough — have seen culture-led regeneration shift their trajectories, but these tend to involve proximity to large cities or specific local assets that are not replicable. The burden falls most heavily on older residents with complex health needs and on children in schools losing pupils and funding as working-age families relocate.</p>
+            <p>England's coastal communities sit outside the city-deal and urban-regeneration frameworks that have shaped most post-industrial policy. Average wages are 17% below the national median — a gap that has widened from 12% in 2010 — child poverty runs at 34% against a national average of 24%, and economic inactivity is five percentage points above the national figure.<Cite nums={[1, 2]} /> In the most deprived coastal authorities — Blackpool, Thanet, Torbay, East Lindsey, Hastings — life expectancy is 8–10 years below the national average.<Cite nums={2} /> Second homes and holiday lets have displaced working-age residents in many areas: in parts of the South West, one in five households is a second home, pushing property prices beyond the reach of local earners and accelerating the outflow of young people.<Cite nums={3} /> Some 40% of coastal areas record GCSE attainment below the national average, and GP patient lists are above average in 67% of coastal areas.<Cite nums={2} /></p>
+            <p>The Coastal Communities Fund (£200 million, 2012–2022) and Levelling Up Fund designations have delivered capital spending without reliably changing the structural conditions that produce persistent deprivation.<Cite nums={4} /> A few towns — Margate, Whitstable, parts of Scarborough — have seen culture-led regeneration shift their trajectories, but these tend to involve proximity to large cities or specific local assets that are not replicable. The burden falls most heavily on older residents with complex health needs and on children in schools losing pupils and funding as working-age families relocate.<Cite nums={[2, 3]} /></p>
           </div>
         </section>
 
@@ -206,6 +217,10 @@ export default function CoastalCommunitiesPage() {
             </div>
           </ScrollReveal>
         </section>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources section */}
         <section id="sec-sources" className="mt-12 border-t border-wiah-border pt-8">

@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'CIPFA', dataset: 'Public Library Statistics 2024', url: 'https://www.cipfa.org/services/benchmarking/profiles/public-library-profiles', date: '2024' },
+  { num: 2, name: 'Libraries Connected', dataset: 'Annual Library Survey 2024', url: 'https://www.librariesconnected.org.uk/resource/annual-library-survey', date: '2024' },
+  { num: 3, name: 'DCMS', dataset: 'Libraries Strategy 2025', url: 'https://www.gov.uk/government/publications/libraries-strategy', date: '2025' },
+];
 
 // Annual visits (millions), 2010–2024 — England statutory public libraries
 const visitsMillions = [289, 274, 261, 248, 238, 225, 216, 207, 195, 45, 168, 182, 191, 193, 191];
@@ -76,8 +84,8 @@ export default function LibraryUsagePage() {
 
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England's public library network has contracted sharply under a decade and a half of local government funding pressure. Over 1,000 branches have been closed or transferred since 2010 — around 28% of the 2010 stock — while annual visits have fallen from 289 million to 191 million, a reduction of 34%. These headline figures, however, obscure a more complex story: the libraries that remain are adapting, and digital services are growing at pace.</p>
-            <p>The digital transition is real and accelerating. eBook and audiobook downloads have grown from 3 million in 2015 to nearly 22 million in 2024. Physical book issues, by contrast, were already falling before the pandemic; COVID accelerated a structural shift. Libraries that survived closure are now operating as community hubs, social prescribing venues and digital access points — not just book repositories.</p>
+            <p>England's public library network has contracted sharply under a decade and a half of local government funding pressure. Over 1,000 branches have been closed or transferred since 2010 — around 28% of the 2010 stock — while annual visits have fallen from 289 million to 191 million, a reduction of 34%.<Cite nums={1} /> These headline figures, however, obscure a more complex story: the libraries that remain are adapting, and digital services are growing at pace.</p>
+            <p>The digital transition is real and accelerating. eBook and audiobook downloads have grown from 3 million in 2015 to nearly 22 million in 2024.<Cite nums={2} /> Physical book issues, by contrast, were already falling before the pandemic; COVID accelerated a structural shift. Libraries that survived closure are now operating as community hubs, social prescribing venues and digital access points — not just book repositories.</p>
           </div>
         </section>
 
@@ -175,12 +183,16 @@ export default function LibraryUsagePage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">What the data shows</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>The decline in library visits is real and sustained, but context matters. The 2020 figure of 45 million reflects full closure during COVID lockdowns; the recovery to 191 million by 2024 is faster than many predicted, and libraries that survived closure are receiving more visits per site than a decade ago — suggesting demand for those that remain is robust.</p>
+              <p>The decline in library visits is real and sustained, but context matters. The 2020 figure of 45 million reflects full closure during COVID lockdowns; the recovery to 191 million by 2024 is faster than many predicted,<Cite nums={1} /> and libraries that survived closure are receiving more visits per site than a decade ago — suggesting demand for those that remain is robust.</p>
               <p>The closure pattern is not uniform. Libraries in the most deprived communities have been disproportionately affected: councils with the highest deprivation faced the deepest funding cuts and made the most closures. This creates a troubling geography where the people with the least access to home broadband and private book purchasing are also most likely to have lost their nearest branch.</p>
               <p>Digital growth is not an automatic replacement. eBook loans require a device, a broadband connection and digital confidence — all of which correlate with income. If digital expansion is to compensate for physical closure rather than merely serving those who already have options, it requires active outreach, device lending, and targeted support in the communities that need the library most.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

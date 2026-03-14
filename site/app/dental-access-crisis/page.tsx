@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Patients seen by NHS dentist (24-month, %), 2012–2024
 const patientsSeenValues = [59.2, 58.8, 58.4, 57.9, 57.3, 56.8, 56.1, 55.4, 35.8, 43.1, 47.2, 49.1, 49.1];
@@ -51,6 +53,14 @@ const annotations2: Annotation[] = [
   { date: new Date(2020, 2, 1), label: '2020: COVID — GA procedures halted' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'NHS Dental Statistics for England', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/nhs-dental-statistics', date: '2024' },
+  { num: 2, name: 'NHS England', dataset: 'Hospital Episode Statistics — Admitted Patient Care', url: 'https://digital.nhs.uk/data-and-information/data-tools-and-services/data-services/hospital-episode-statistics', date: '2024' },
+  { num: 3, name: 'British Dental Association', dataset: 'NHS Vacancies Survey', url: 'https://www.bda.org', date: '2024' },
+  { num: 4, name: 'Healthwatch England', dataset: 'Dental Access Survey', url: 'https://www.healthwatch.co.uk', date: '2024' },
+  { num: 5, name: 'Which?', dataset: 'NHS Dentist Availability Survey', date: '2024' },
+];
+
 export default function DentalAccessCrisisPage() {
   return (
     <>
@@ -65,8 +75,8 @@ export default function DentalAccessCrisisPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The structural cause of the NHS dental access crisis is the 2006 contract, which replaced item-of-service fees with Units of Dental Activity (UDAs). Under the UDA system, a routine check-up and a complex root canal treatment generate almost the same income for a practice. The financial incentive to perform simple, quick treatments — and to avoid complex, time-consuming NHS work — is baked into the contract. The consequence has been a steady drift of dentists away from NHS work and into private practice. Between 2018 and 2023, the number of dentists performing NHS activity fell by over 1,600, while the number working exclusively privately nearly doubled. COVID-19 accelerated the exodus: infection control requirements made already marginal NHS work financially unviable, and many practices used the opportunity to convert permanently to private list-only or mixed models.</p>
-            <p>The result is dental deserts — entire towns, coastal communities, and rural areas where no NHS dentist is accepting new patients within a 25-mile radius. A 2024 Dental Recovery Plan introduced new patient premiums and adjusted UDA values, but the British Dental Association described the measures as insufficient to reverse structural failure two decades in the making. The human cost is most visible in hospital data: around 35,000–40,000 children are admitted each year for tooth extractions under general anaesthetic. These are overwhelmingly preventable, caused by decay compounded by lack of access to routine check-ups. Hospital extraction costs the NHS over £1,000 per child — compared with less than £30 for a routine NHS check-up and filling that might have prevented it.</p>
+            <p>The structural cause of the NHS dental access crisis is the 2006 contract, which replaced item-of-service fees with Units of Dental Activity (UDAs). Under the UDA system, a routine check-up and a complex root canal treatment generate almost the same income for a practice. The financial incentive to perform simple, quick treatments — and to avoid complex, time-consuming NHS work — is baked into the contract. The consequence has been a steady drift of dentists away from NHS work and into private practice. Between 2018 and 2023, the number of dentists performing NHS activity fell by over 1,600, while the number working exclusively privately nearly doubled.<Cite nums={1} /> COVID-19 accelerated the exodus: infection control requirements made already marginal NHS work financially unviable, and many practices used the opportunity to convert permanently to private list-only or mixed models.</p>
+            <p>The result is dental deserts — entire towns, coastal communities, and rural areas where no NHS dentist is accepting new patients within a 25-mile radius.<Cite nums={5} /> A 2024 Dental Recovery Plan introduced new patient premiums and adjusted UDA values, but the British Dental Association described the measures as insufficient to reverse structural failure two decades in the making.<Cite nums={3} /> The human cost is most visible in hospital data: around 35,000–40,000 children are admitted each year for tooth extractions under general anaesthetic.<Cite nums={2} /> These are overwhelmingly preventable, caused by decay compounded by lack of access to routine check-ups. Hospital extraction costs the NHS over £1,000 per child — compared with less than £30 for a routine NHS check-up and filling that might have prevented it.<Cite nums={2} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -145,6 +155,9 @@ export default function DentalAccessCrisisPage() {
             source="Source: NHS England — Community Dental Services Data 2024. OHID — Supervised Tooth Brushing Programme 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

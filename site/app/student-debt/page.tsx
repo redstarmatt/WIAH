@@ -9,6 +9,14 @@ import ScrollReveal from '@/components/ScrollReveal'
 import PositiveCallout from '@/components/PositiveCallout'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Student Loans Company', dataset: 'Student Loans in England — Statistical First Release', url: 'https://www.gov.uk/government/collections/student-loans-statistics', date: '2024', note: 'Average debt £45,600; tuition fees £9,535 from 2025; repayment threshold £25,000' },
+  { num: 2, name: 'Institute for Fiscal Studies', dataset: 'Student Finance Policy Evaluation', url: 'https://ifs.org.uk/publications/student-finance', date: '2023', note: '23% expected to repay in full (vs 40% pre-2012); 2023 reforms increased government subsidy per student' },
+  { num: 3, name: 'Department for Education', dataset: 'Student Loan Forecasts for England', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/student-loan-forecasts-for-england', date: '2024', note: '£8.6bn unpaid debt written off per year; forecast to reach £12bn by 2040' },
+];
 
 interface StudentDebtData {
   averageDebt: Array<{ year: number; avgDebt: number }>
@@ -125,8 +133,8 @@ export default function StudentDebtPage() {
           <h2 className="text-xl font-bold text-wiah-black mb-6">Context</h2>
           <div className="max-w-2xl mt-4 mb-12">
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>England's student loan system is, by design, a graduate contribution scheme rather than a conventional debt. Since 2012, undergraduates have paid up to £9,000 a year in tuition fees — raised to £9,250 in 2017 and to £9,535 from 2025. The average English graduate now leaves university owing £45,600. Repayments are structured as 9% of earnings above a £25,000 threshold, and any balance unpaid after 40 years is written off. The total cost of that write-off currently runs to £8.6bn a year and is rising.</p>
-              <p>The central paradox is that a system designed to reduce public subsidy has increased it. Analysis by the Institute for Fiscal Studies found that only 23% of graduates will repay their loans in full — compared with 40% under the pre-2012 system. The 2023 reforms, which lowered annual repayments by extending the term from 30 to 40 years, made this worse: the expected government subsidy per student increased, because graduates now carry debt for longer and accrue more interest, but repay less each year. The system redistributes cost by earnings: high earners in medicine, law and finance repay in full and at market-rate interest; median earners pay more in total over a longer period; lower earners repay the least but carry the debt for their entire working lives.</p>
+              <p>England's student loan system is, by design, a graduate contribution scheme rather than a conventional debt. Since 2012, undergraduates have paid up to £9,000 a year in tuition fees — raised to £9,250 in 2017 and to £9,535 from 2025. The average English graduate now leaves university owing £45,600.<Cite nums={1} /> Repayments are structured as 9% of earnings above a £25,000 threshold, and any balance unpaid after 40 years is written off. The total cost of that write-off currently runs to £8.6bn a year and is rising.<Cite nums={3} /></p>
+              <p>The central paradox is that a system designed to reduce public subsidy has increased it. Analysis by the Institute for Fiscal Studies found that only 23% of graduates will repay their loans in full — compared with 40% under the pre-2012 system.<Cite nums={2} /> The 2023 reforms, which lowered annual repayments by extending the term from 30 to 40 years, made this worse: the expected government subsidy per student increased, because graduates now carry debt for longer and accrue more interest, but repay less each year.<Cite nums={2} /> The system redistributes cost by earnings: high earners in medicine, law and finance repay in full and at market-rate interest; median earners pay more in total over a longer period; lower earners repay the least but carry the debt for their entire working lives.</p>
             </div>
           </div>
         </section>
@@ -194,6 +202,10 @@ export default function StudentDebtPage() {
             </div>
           </ScrollReveal>
         </section>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="py-12 border-t border-wiah-border">
           <h2 className="text-xl font-bold text-wiah-black mb-6">

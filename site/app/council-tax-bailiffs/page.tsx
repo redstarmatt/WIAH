@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Council tax enforcement actions (millions), 2014–2024
 const enforcementValues = [1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 2.2, 0.8, 1.5, 2.0, 2.3];
@@ -59,6 +61,12 @@ const annotations3: Annotation[] = [
   { date: new Date(2022, 0, 1), label: '2022: complaints exceed pre-pandemic peak' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ministry of Justice', dataset: 'Taking Control of Goods National Standards Statistics', url: 'https://www.gov.uk/government/statistics/taking-control-of-goods-national-standards', date: 'Feb 2026' },
+  { num: 2, name: 'MHCLG', dataset: 'Council Taxbase and Collection Rates', url: 'https://www.gov.uk/government/collections/council-taxbase-statistics', date: 'Feb 2026' },
+  { num: 3, name: 'StepChange Debt Charity', dataset: 'Council Tax Debt Statistics', url: 'https://www.stepchange.org/policy-and-research/council-tax-debt.aspx', date: '2026' },
+];
+
 export default function CouncilTaxBailiffsPage() {
   return (
     <>
@@ -73,8 +81,8 @@ export default function CouncilTaxBailiffsPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Council tax is the most aggressively enforced debt in England. Unlike almost every other form of consumer debt, councils can fast-track collection through the magistrates' court system without the creditor protections that apply to credit card arrears or energy bills. A single missed payment can trigger a liability order within weeks, and once that order is granted, the full annual bill becomes due immediately — not just the missed instalment. In 2024, councils obtained 2.3 million enforcement actions against residents, a record that exceeds even the post-COVID surge. The system is structured so that falling behind by a single month can escalate into bailiff visits, added fees of £310 or more, and attachment of earnings orders deducting money directly from wages.</p>
-            <p>The scale of outstanding council tax debt — now £6.1 billion across England — reflects a structural problem, not individual irresponsibility. Council tax is regressive: it takes a larger share of income from poorer households. Council tax support schemes, which replaced national Council Tax Benefit in 2013, vary wildly between authorities. Some councils still require the poorest residents to pay at least 20% of their bill. When those residents cannot pay, the enforcement machinery activates — and the added fees make the debt harder, not easier, to clear. In 2024, 51% of people referred to bailiffs met at least one recognised vulnerability criterion, a figure that has nearly doubled since 2017.</p>
+            <p>Council tax is the most aggressively enforced debt in England. Unlike almost every other form of consumer debt, councils can fast-track collection through the magistrates' court system without the creditor protections that apply to credit card arrears or energy bills. A single missed payment can trigger a liability order within weeks, and once that order is granted, the full annual bill becomes due immediately — not just the missed instalment.<Cite nums={1} /> In 2024, councils obtained 2.3 million enforcement actions against residents, a record that exceeds even the post-COVID surge.<Cite nums={1} /> The system is structured so that falling behind by a single month can escalate into bailiff visits, added fees of £310 or more, and attachment of earnings orders deducting money directly from wages.<Cite nums={1} /></p>
+            <p>The scale of outstanding council tax debt — now £6.1 billion across England — reflects a structural problem, not individual irresponsibility.<Cite nums={2} /> Council tax is regressive: it takes a larger share of income from poorer households. Council tax support schemes, which replaced national Council Tax Benefit in 2013, vary wildly between authorities. Some councils still require the poorest residents to pay at least 20% of their bill. When those residents cannot pay, the enforcement machinery activates — and the added fees make the debt harder, not easier, to clear. In 2024, 51% of people referred to bailiffs met at least one recognised vulnerability criterion, a figure that has nearly doubled since 2017.<Cite nums={3} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -153,6 +161,9 @@ export default function CouncilTaxBailiffsPage() {
             source="Source: Welsh Government — Council Tax Collection Act 2024. Bristol City Council — Ethical Debt Collection Pilot Report, 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

@@ -7,6 +7,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Vrije Universiteit Amsterdam', dataset: 'Discovery and quantification of plastic particle pollution in human blood (Leslie et al.)', date: '2022', note: 'Published in Environment International' },
+  { num: 2, name: 'CEFAS / Plymouth Marine Laboratory', dataset: 'UK freshwater microplastic monitoring programme', url: 'https://www.cefas.co.uk/research/ocean-processes/marine-litter/microplastics/', date: '2024' },
+  { num: 3, name: 'DEFRA', dataset: 'Environmental Protection (Microbeads) (England) Regulations', date: '2018' },
+];
 
 export default function MicroplasticsContaminationPage() {
   // Chart 1: Microplastic concentrations in UK rivers 2016–2024 (particles per litre)
@@ -144,12 +152,16 @@ export default function MicroplasticsContaminationPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on microplastic contamination</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Microplastics are now present in virtually every environment scientists have measured — Arctic sea ice, deep ocean trenches, and the human body itself. In 2022, the first study confirmed microplastics in human blood, finding particles in 77% of donors. Subsequent research has found them in lung tissue, placenta, and breast milk. A 2024 study found higher concentrations of microplastics in the carotid arteries of people who subsequently had cardiovascular events, though causation has not been established.</p>
-              <p>UK rivers contain some of the highest microplastic concentrations recorded in Europe, averaging 5.3 particles per litre across monitored sites — up from 2.1 in 2016. Synthetic textile fibres from washing machines account for around 65% of the total load, followed by plastic fragment degradation. Tyres are a major unregulated source: tyre wear particles wash off roads into waterways and are now among the most abundant plastics in marine sediments.</p>
-              <p>Regulatory responses have addressed only a fraction of input pathways. The UK microbead ban (2018) covers rinse-off cosmetics and has reduced bead concentrations in monitored sites. Extended producer responsibility for packaging will reduce fragment sources over time. But tyres, synthetic textiles, and agricultural plastics — the dominant sources — remain largely unregulated, and the stock of plastic already in the environment will continue breaking down for decades regardless of what is done at source.</p>
+              <p>Microplastics are now present in virtually every environment scientists have measured — Arctic sea ice, deep ocean trenches, and the human body itself. In 2022, the first study confirmed microplastics in human blood, finding particles in 77% of donors.<Cite nums={1} /> Subsequent research has found them in lung tissue, placenta, and breast milk. A 2024 study found higher concentrations of microplastics in the carotid arteries of people who subsequently had cardiovascular events, though causation has not been established.</p>
+              <p>UK rivers contain some of the highest microplastic concentrations recorded in Europe, averaging 5.3 particles per litre across monitored sites — up from 2.1 in 2016.<Cite nums={2} /> Synthetic textile fibres from washing machines account for around 65% of the total load, followed by plastic fragment degradation. Tyres are a major unregulated source: tyre wear particles wash off roads into waterways and are now among the most abundant plastics in marine sediments.</p>
+              <p>Regulatory responses have addressed only a fraction of input pathways. The UK microbead ban (2018) covers rinse-off cosmetics and has reduced bead concentrations in monitored sites.<Cite nums={3} /> Extended producer responsibility for packaging will reduce fragment sources over time. But tyres, synthetic textiles, and agricultural plastics — the dominant sources — remain largely unregulated, and the stock of plastic already in the environment will continue breaking down for decades regardless of what is done at source.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

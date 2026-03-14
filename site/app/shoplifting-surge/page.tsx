@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Home Office', dataset: 'Police Recorded Crime Statistics', url: 'https://www.gov.uk/government/statistics/police-recorded-crime-open-data-tables', date: '2023/24', note: '469,000 recorded shoplifting offences (YE March 2024); 30% annual increase; highest since records began' },
+  { num: 2, name: 'British Retail Consortium', dataset: 'Retail Crime Survey', date: '2024', note: 'Organised crime accounts for ~30% of total retail theft value; £1.8bn annual cost; concentrated in electronics, alcohol, cosmetics' },
+  { num: 3, name: 'Home Office', dataset: 'Criminal Justice Bill 2024 — Shoplifting Provisions', date: '2024', note: '£200 de facto threshold formally abolished; charge rate fallen from 18% (2015) to 12% (2024)' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -137,10 +145,10 @@ export default function ShopliftingSurgePage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The surge in recorded shoplifting has multiple drivers operating simultaneously. Cost-of-living pressures have pushed more individuals into opportunistic theft for survival goods — supermarkets report significant increases in small-value food thefts that would previously have gone unrecorded. But organised retail crime — coordinated gangs systematically targeting stores for resale — has grown proportionally faster, accounting for an increasing share of total losses. The British Retail Consortium estimates organised crime now accounts for around 30% of total retail theft value, concentrated in high-value electronics, alcohol, and cosmetics.
+              The surge in recorded shoplifting has multiple drivers operating simultaneously. Cost-of-living pressures have pushed more individuals into opportunistic theft for survival goods — supermarkets report significant increases in small-value food thefts that would previously have gone unrecorded.<Cite nums={1} /> But organised retail crime — coordinated gangs systematically targeting stores for resale — has grown proportionally faster, accounting for an increasing share of total losses. The British Retail Consortium estimates organised crime now accounts for around 30% of total retail theft value, concentrated in high-value electronics, alcohol, and cosmetics.<Cite nums={2} />
             </p>
             <p>
-              The charge rate of 12% reflects both a policing prioritisation problem and structural evidentiary challenges. The de facto £200 threshold — an unofficial police policy under which lower-value thefts were rarely actively investigated — has now been formally abolished by the Criminal Justice Bill 2024. Whether this will translate into higher enforcement remains to be seen: police capacity is constrained, and retailers themselves often do not report thefts below certain values because the opportunity cost of staff time exceeds the benefit. The £1.8 billion annual cost to retailers — ultimately passed on in prices — falls disproportionately on smaller independent retailers who lack the security infrastructure of large chains.
+              The charge rate of 12% reflects both a policing prioritisation problem and structural evidentiary challenges. The de facto £200 threshold — an unofficial police policy under which lower-value thefts were rarely actively investigated — has now been formally abolished by the Criminal Justice Bill 2024.<Cite nums={3} /> Whether this will translate into higher enforcement remains to be seen: police capacity is constrained, and retailers themselves often do not report thefts below certain values because the opportunity cost of staff time exceeds the benefit. The £1.8 billion annual cost to retailers — ultimately passed on in prices — falls disproportionately on smaller independent retailers who lack the security infrastructure of large chains.<Cite nums={2} />
             </p>
           </div>
         </section>
@@ -235,6 +243,10 @@ export default function ShopliftingSurgePage() {
             source="Source: Home Office Police Recorded Crime 2023/24 · British Retail Consortium Retail Crime Survey 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

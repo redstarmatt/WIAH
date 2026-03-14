@@ -9,6 +9,15 @@ import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Home Office', dataset: 'Police Workforce Statistics', url: 'https://www.gov.uk/government/collections/police-workforce-england-and-wales', date: '2024', note: '147,000 officers in 2024; fell from 143,000 in 2010 to 122,400 by 2018; 40% of officers have fewer than five years service' },
+  { num: 2, name: 'Home Office', dataset: 'Police Uplift Programme — Final Report', date: '2023', note: '20,000-officer uplift met target; pushed numbers to record 149,566 by March 2022' },
+  { num: 3, name: 'HMICFRS', dataset: 'State of Policing — Annual Assessment', url: 'https://www.justiceinspectorates.gov.uk/hmicfrs/publications/state-of-policing', date: '2024', note: 'Average emergency response time 9.4 minutes; detective shortfalls at 15% nationally' },
+  { num: 4, name: 'Home Office', dataset: 'Neighbourhood Policing Statistics', date: '2023', note: 'Dedicated neighbourhood officers fell from 20,000 in 2015 to under 12,000 by 2023' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -69,8 +78,8 @@ export default function PoliceOfficerNumbersPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Police officer numbers in England and Wales fell from around 143,000 in 2010 to a low of 122,400 by 2018 — a loss of over 20,000 posts through austerity. The Police Uplift Programme, announced in 2019, met its 20,000 target and pushed numbers to a record 149,566 by March 2022, since falling back to around 147,000 in 2024. On paper this represents near-restoration of 2010 levels. In practice, the comparison misleads: 40% of officers now have fewer than five years' service, detective shortfalls persist at 15% nationally, and demand has changed materially. Mental health-related calls have grown as community services contracted; digital crime investigations require capabilities that barely existed in 2010. Average emergency response time has risen from around 7 minutes in 2010 to 9.4 minutes in 2024.</p>
-            <p>The impact of thin and inexperienced policing falls hardest on communities with the highest needs. Rural forces covering vast geographies with fewer than 1,500 officers face response times exceeding 24 hours for non-emergency calls. Neighbourhood policing — the function most linked to public trust — has absorbed the deepest cuts, with dedicated officers falling from 20,000 in 2015 to under 12,000 by 2023. Retention among post-Uplift recruits is poor, particularly in the first two to five years, creating a treadmill: substantial ongoing recruitment is required merely to maintain current numbers, with limited capacity to build the deep experience needed for complex investigations.</p>
+            <p>Police officer numbers in England and Wales fell from around 143,000 in 2010 to a low of 122,400 by 2018 — a loss of over 20,000 posts through austerity.<Cite nums={1} /> The Police Uplift Programme, announced in 2019, met its 20,000 target and pushed numbers to a record 149,566 by March 2022, since falling back to around 147,000 in 2024.<Cite nums={2} /> On paper this represents near-restoration of 2010 levels. In practice, the comparison misleads: 40% of officers now have fewer than five years' service, detective shortfalls persist at 15% nationally, and demand has changed materially.<Cite nums={[1, 3]} /> Mental health-related calls have grown as community services contracted; digital crime investigations require capabilities that barely existed in 2010. Average emergency response time has risen from around 7 minutes in 2010 to 9.4 minutes in 2024.<Cite nums={3} /></p>
+            <p>The impact of thin and inexperienced policing falls hardest on communities with the highest needs. Rural forces covering vast geographies with fewer than 1,500 officers face response times exceeding 24 hours for non-emergency calls. Neighbourhood policing — the function most linked to public trust — has absorbed the deepest cuts, with dedicated officers falling from 20,000 in 2015 to under 12,000 by 2023.<Cite nums={4} /> Retention among post-Uplift recruits is poor, particularly in the first two to five years, creating a treadmill: substantial ongoing recruitment is required merely to maintain current numbers, with limited capacity to build the deep experience needed for complex investigations.</p>
           </div>
         </section>
 
@@ -143,6 +152,10 @@ export default function PoliceOfficerNumbersPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

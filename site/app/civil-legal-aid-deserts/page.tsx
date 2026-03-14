@@ -8,6 +8,15 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ministry of Justice', dataset: 'Legal aid statistics', url: 'https://www.gov.uk/government/collections/legal-aid-statistics', date: '2024' },
+  { num: 2, name: 'Law Society', dataset: 'Legal aid deserts report and provider mapping', url: 'https://www.lawsociety.org.uk', date: '2024' },
+  { num: 3, name: 'HMCTS', dataset: 'Family court statistics — litigants in person', date: '2023' },
+  { num: 4, name: 'Access to Justice Foundation', dataset: 'Civil legal need research', url: 'https://atjf.org.uk', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -75,8 +84,8 @@ export default function CivilLegalAidDesertsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Legal Aid, Sentencing and Punishment of Offenders Act 2012 removed housing, family, welfare benefits, immigration, and employment advice from civil legal aid scope, cutting total cases from around 968,000 in 2010 to under 400,000 by 2024 — a 60% reduction. The Law Society's provider mapping found that 54% of local authority areas in England and Wales now have no housing legal aid provider and 40% have no immigration legal aid provider. These legal aid deserts are concentrated in rural areas, coastal towns, and deprived communities where demand is highest but the commercial case for a legal aid practice is weakest. In the family courts, litigants in person rose from 17% of parties in 2010 to 36% in 2023, with domestic abuse survivors among those navigating complex child arrangements proceedings without legal help.</p>
-            <p>Law centres, Citizens Advice, and voluntary sector providers have partially filled the gap, but all face sustained funding pressure from local authority and charitable cuts while demand has risen sharply with cost-of-living pressures. The government increased means test thresholds in 2023 and restored some family law legal aid, but the post-LASPO architecture remains intact. Provider markets in many areas of law have contracted to a point where even restored funding would take years to produce available advice — the firms and practitioners no longer exist. The Access to Justice Foundation estimates millions of people face legal problems each year with no legal help, allowing problems to compound into crises.</p>
+            <p>The Legal Aid, Sentencing and Punishment of Offenders Act 2012 removed housing, family, welfare benefits, immigration, and employment advice from civil legal aid scope, cutting total cases from around 968,000 in 2010 to under 400,000 by 2024 — a 60% reduction.<Cite nums={1} /> The Law Society's provider mapping found that 54% of local authority areas in England and Wales now have no housing legal aid provider and 40% have no immigration legal aid provider.<Cite nums={2} /> These legal aid deserts are concentrated in rural areas, coastal towns, and deprived communities where demand is highest but the commercial case for a legal aid practice is weakest. In the family courts, litigants in person rose from 17% of parties in 2010 to 36% in 2023, with domestic abuse survivors among those navigating complex child arrangements proceedings without legal help.<Cite nums={3} /></p>
+            <p>Law centres, Citizens Advice, and voluntary sector providers have partially filled the gap, but all face sustained funding pressure from local authority and charitable cuts while demand has risen sharply with cost-of-living pressures. The government increased means test thresholds in 2023 and restored some family law legal aid, but the post-LASPO architecture remains intact.<Cite nums={1} /> Provider markets in many areas of law have contracted to a point where even restored funding would take years to produce available advice — the firms and practitioners no longer exist.<Cite nums={2} /> The Access to Justice Foundation estimates millions of people face legal problems each year with no legal help, allowing problems to compound into crises.<Cite nums={4} /></p>
           </div>
         </section>
 
@@ -137,6 +146,9 @@ export default function CivilLegalAidDesertsPage() {
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">

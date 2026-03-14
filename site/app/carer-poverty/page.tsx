@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Carer's Allowance weekly rate (£), 2016–2024
 const allowanceRateData = [62.70, 64.60, 64.60, 66.15, 67.25, 67.60, 69.70, 76.75, 81.90];
@@ -50,6 +52,12 @@ const povertyAnnotations: Annotation[] = [
   { date: new Date(2023, 0, 1), label: '2023: NAO finds widespread overpayment problem' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Carers UK', dataset: 'State of Caring Annual Survey', url: 'https://www.carersuk.org/media-centre/press-releases/state-of-caring-report', date: '2024' },
+  { num: 2, name: 'DWP', dataset: "Carer's Allowance Statistics", url: 'https://www.gov.uk/government/collections/carers-allowance-statistics', date: '2024' },
+  { num: 3, name: 'NAO', dataset: "Carer's Allowance: DWP's Management of Overpayments", url: 'https://www.nao.org.uk/reports/carers-allowance/', date: '2023' },
+];
+
 export default function CarerPovertyPage() {
   return (
     <>
@@ -64,8 +72,8 @@ export default function CarerPovertyPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>There are approximately 10.6 million unpaid carers in the UK — people who provide regular, often intensive care for a family member or friend with a disability, long-term illness, mental health condition, or age-related need. Carers UK estimates that the value of unpaid care is £93 billion per year — comparable to the entire NHS England budget. This enormous contribution to the welfare state is largely invisible in national accounts and largely unrewarded in the benefits system. Carer's Allowance — the main benefit for unpaid carers providing 35 or more hours per week of care — is £81.90 per week in 2024, the lowest rate of any major benefit in comparable European welfare states. Working out at £2.34 per hour for 35 hours of care, it falls well below any minimum wage calculation.</p>
-            <p>The earnings trap built into Carer's Allowance is a source of acute hardship. For most of the period from 2016 to 2023, the benefit was withdrawn entirely if the carer earned above £151 per week — creating a cliff edge where a small pay rise could cost a carer over £3,500 per year in lost benefit. Many carers providing 35 or more hours of care per week cannot work full-time, making the earnings limit both insulting and practically harmful. The 2024 Autumn Budget raised the earnings threshold to £195 per week, providing some relief. But the 2023 NAO report on Carer's Allowance found widespread problems with overpayment recovery: carers who had unknowingly exceeded the earnings limit were pursued for years for repayments they could not afford, in some cases losing thousands of pounds they had already spent.</p>
+            <p>There are approximately 10.6 million unpaid carers in the UK — people who provide regular, often intensive care for a family member or friend with a disability, long-term illness, mental health condition, or age-related need.<Cite nums={1} /> Carers UK estimates that the value of unpaid care is £93 billion per year — comparable to the entire NHS England budget.<Cite nums={1} /> This enormous contribution to the welfare state is largely invisible in national accounts and largely unrewarded in the benefits system. Carer's Allowance — the main benefit for unpaid carers providing 35 or more hours per week of care — is £81.90 per week in 2024, the lowest rate of any major benefit in comparable European welfare states.<Cite nums={2} /> Working out at £2.34 per hour for 35 hours of care, it falls well below any minimum wage calculation.</p>
+            <p>The earnings trap built into Carer's Allowance is a source of acute hardship. For most of the period from 2016 to 2023, the benefit was withdrawn entirely if the carer earned above £151 per week — creating a cliff edge where a small pay rise could cost a carer over £3,500 per year in lost benefit.<Cite nums={2} /> Many carers providing 35 or more hours of care per week cannot work full-time, making the earnings limit both insulting and practically harmful. The 2024 Autumn Budget raised the earnings threshold to £195 per week, providing some relief.<Cite nums={2} /> But the 2023 NAO report on Carer's Allowance found widespread problems with overpayment recovery: carers who had unknowingly exceeded the earnings limit were pursued for years for repayments they could not afford, in some cases losing thousands of pounds they had already spent.<Cite nums={3} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -144,6 +152,10 @@ export default function CarerPovertyPage() {
             source="Source: DWP — Carer's Allowance earnings threshold reform 2024. NAO — Carer's Allowance overpayments report 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

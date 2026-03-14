@@ -8,7 +8,15 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'National Audit Office', dataset: 'Recovering the Cost of NHS Treatment for Overseas Visitors', url: 'https://www.nao.org.uk/report/recovering-the-cost-of-nhs-treatment-for-overseas-visitors/', date: '2016', note: 'Estimated £1.8–2bn annual cost of overseas visitor NHS use; less than £90m recovered in 2014' },
+  { num: 2, name: 'DHSC', dataset: 'Overseas Visitor and Migrant Cost Recovery Programme', url: 'https://www.gov.uk/government/publications/overseas-visitor-and-migrant-cost-recovery-programme', date: 'Dec 2024', note: '£600m recovered in 2023/24, exceeding £500m target' },
+  { num: 3, name: 'NHS England', dataset: 'Overseas Visitor Cost Recovery Implementation Data', url: 'https://www.england.nhs.uk/publication/overseas-visitor-cost-recovery/', date: 'Dec 2024', note: 'Identification rate rose from 52% (2015) to 89% (2024); debts written off fell from £58m to £25m' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -137,8 +145,8 @@ export default function NhsOverseasCostRecoveryPage() {
         {/* Editorial context */}
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The NHS cost recovery programme was designed to ensure that people not entitled to free NHS care are identified and charged appropriately. Before the programme began in earnest, recovery was minimal: trusts lacked systems to identify overseas visitors, and the administrative burden of chasing debts meant many were simply absorbed. In 2014, the National Audit Office estimated that the NHS was spending between £1.8 billion and £2 billion treating overseas visitors and short-term migrants annually, but recovering less than £90 million. The gap between what was owed and what was collected was enormous, and politically incendiary. The 2017 amendments to the charging regulations — which introduced upfront charging for non-urgent care and extended charges to community and mental health services — marked a step change. Since then, recovery has risen every year except 2020, when COVID-19 travel restrictions and a temporary suspension of charging for coronavirus treatment depressed the figures.</p>
-            <p>The improvement is real but requires context. The £600 million recovered in 2023/24 exceeds the government's £500 million target, yet the total estimated cost of overseas visitor NHS use has not been formally updated since the NAO's 2016 figure of £1.8 billion. If that estimate still holds — and demographic and migration patterns suggest it may have grown — then the recovery rate remains well below 50%. The biggest gains have come from better upfront identification: the proportion of chargeable visitors correctly identified at point of NHS contact has risen from 52% in 2015 to 89% in 2024, driven by improved ID checking, data sharing between the Home Office and NHS, and dedicated overseas visitor managers in acute trusts. Debts written off have fallen correspondingly, from £58 million in 2015 to £25 million in 2024, indicating that charging is happening at the point of care rather than retrospectively.</p>
+            <p>The NHS cost recovery programme was designed to ensure that people not entitled to free NHS care are identified and charged appropriately. Before the programme began in earnest, recovery was minimal: trusts lacked systems to identify overseas visitors, and the administrative burden of chasing debts meant many were simply absorbed. In 2014, the National Audit Office estimated that the NHS was spending between £1.8 billion and £2 billion treating overseas visitors and short-term migrants annually, but recovering less than £90 million.<Cite nums={1} /> The gap between what was owed and what was collected was enormous, and politically incendiary. The 2017 amendments to the charging regulations — which introduced upfront charging for non-urgent care and extended charges to community and mental health services — marked a step change. Since then, recovery has risen every year except 2020, when COVID-19 travel restrictions and a temporary suspension of charging for coronavirus treatment depressed the figures.</p>
+            <p>The improvement is real but requires context. The £600 million recovered in 2023/24 exceeds the government's £500 million target, yet the total estimated cost of overseas visitor NHS use has not been formally updated since the NAO's 2016 figure of £1.8 billion.<Cite nums={2} /> If that estimate still holds — and demographic and migration patterns suggest it may have grown — then the recovery rate remains well below 50%. The biggest gains have come from better upfront identification: the proportion of chargeable visitors correctly identified at point of NHS contact has risen from 52% in 2015 to 89% in 2024, driven by improved ID checking, data sharing between the Home Office and NHS, and dedicated overseas visitor managers in acute trusts. Debts written off have fallen correspondingly, from £58 million in 2015 to £25 million in 2024, indicating that charging is happening at the point of care rather than retrospectively.<Cite nums={3} /></p>
             <p>The programme remains contentious. Critics argue that charging deters vulnerable migrants from seeking care, including for infectious diseases, creating a public health risk. NHS staff have raised concerns about the administrative burden and the ethical tension between charging and caring. Supporters point to the principle of fairness: the NHS is funded by UK taxpayers and residents, and it is reasonable to recover costs from those not contributing. The data shows that the system is recovering substantially more than it used to, but the question of whether it is recovering enough — and at what human cost — remains open.</p>
           </div>
         </section>
@@ -307,6 +315,9 @@ export default function NhsOverseasCostRecoveryPage() {
           />
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         {/* Sources & Methodology */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

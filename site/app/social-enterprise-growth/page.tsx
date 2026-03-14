@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Social Enterprise UK', dataset: 'State of Social Enterprise', url: 'https://www.socialenterprise.org.uk/state-of-social-enterprise', date: '2023' },
+  { num: 2, name: 'Big Society Capital', dataset: 'Market Sizing Research', url: 'https://bigsocietycapital.com/', date: '2023' },
+  { num: 3, name: 'HM Government', dataset: 'Social Value Act 2012 — guidance and impact', url: 'https://www.gov.uk/government/publications/social-value-act-information-and-resources', date: '2012' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -78,8 +86,8 @@ export default function SocialEnterpriseGrowthPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Social enterprises — businesses that trade for a social or environmental purpose and reinvest surpluses into their mission rather than distributing them to private shareholders — have grown from around 70,000 organisations in 2015 to approximately 100,000 in 2023, generating an estimated £60 billion in annual turnover and employing 2.3 million people. That makes the sector larger than UK agriculture and comparable in employment to financial services, yet it remains largely invisible in public and political discourse. The UK has developed one of the world&rsquo;s most supportive ecosystems for this model: the Community Interest Company legal form (2005), the Social Value Act 2012 requiring public bodies to consider social value in procurement, and specialist investors including Big Society Capital. Some 44% of social enterprises actively prioritise employment of disadvantaged workers — people with disabilities, ex-offenders, and those leaving care — a social impact that conventional employment statistics do not capture.</p>
-            <p>Access to capital remains the sector&rsquo;s most significant constraint: social enterprises struggle to demonstrate returns to conventional investors when surplus is reinvested in mission rather than distributed to shareholders. Patient capital, blended finance, and social impact bonds exist as alternatives but remain niche. Growth of social enterprise is also partly a response to state withdrawal and market failure: community energy companies, village shops, local news outlets, and community pubs represent social enterprises filling gaps that neither market nor state adequately addresses. That is the sector&rsquo;s greatest contribution and deepest challenge simultaneously — it should not have to compensate for systematic public sector underfunding, but in many communities it is the only entity willing to try.</p>
+            <p>Social enterprises — businesses that trade for a social or environmental purpose and reinvest surpluses into their mission rather than distributing them to private shareholders — have grown from around 70,000 organisations in 2015 to approximately 100,000 in 2023, generating an estimated £60 billion in annual turnover and employing 2.3 million people.<Cite nums={1} /> That makes the sector larger than UK agriculture and comparable in employment to financial services, yet it remains largely invisible in public and political discourse. The UK has developed one of the world&rsquo;s most supportive ecosystems for this model: the Community Interest Company legal form (2005), the Social Value Act 2012 requiring public bodies to consider social value in procurement, and specialist investors including Big Society Capital.<Cite nums={3} /> Some 44% of social enterprises actively prioritise employment of disadvantaged workers — people with disabilities, ex-offenders, and those leaving care — a social impact that conventional employment statistics do not capture.<Cite nums={1} /></p>
+            <p>Access to capital remains the sector&rsquo;s most significant constraint: social enterprises struggle to demonstrate returns to conventional investors when surplus is reinvested in mission rather than distributed to shareholders.<Cite nums={2} /> Patient capital, blended finance, and social impact bonds exist as alternatives but remain niche. Growth of social enterprise is also partly a response to state withdrawal and market failure: community energy companies, village shops, local news outlets, and community pubs represent social enterprises filling gaps that neither market nor state adequately addresses.<Cite nums={1} /> That is the sector&rsquo;s greatest contribution and deepest challenge simultaneously — it should not have to compensate for systematic public sector underfunding, but in many communities it is the only entity willing to try.</p>
           </div>
         </section>
 
@@ -152,6 +160,10 @@ export default function SocialEnterpriseGrowthPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

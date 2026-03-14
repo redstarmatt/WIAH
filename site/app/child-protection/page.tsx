@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Child protection referrals (thousands) and children in care (thousands), 2012–2024
 const referralsData = [521, 545, 570, 590, 604, 630, 640, 655, 670, 690, 714, 720, 730];
@@ -57,6 +59,13 @@ const workforceAnnotations: Annotation[] = [
   { date: new Date(2023, 5, 1), label: '2023: Workforce crisis leads to mandatory agency cost caps' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DfE', dataset: 'Children in Need Census', url: 'https://www.gov.uk/government/collections/statistics-children-in-need', date: '2024' },
+  { num: 2, name: 'DfE', dataset: 'Looked After Children Statistics', url: 'https://www.gov.uk/government/collections/statistics-looked-after-children', date: '2024' },
+  { num: 3, name: 'DfE', dataset: "Children's Social Care Workforce Survey", url: 'https://www.gov.uk/government/collections/statistics-childrens-social-care-workforce', date: '2024' },
+  { num: 4, name: 'Independent Review of Children\'s Social Care', dataset: 'MacAlister Review Final Report', date: '2022' },
+];
+
 export default function ChildProtectionPage() {
   return (
     <>
@@ -71,8 +80,8 @@ export default function ChildProtectionPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England's child protection system is carrying a load it was not designed for. In 2024, local authorities received around 730,000 referrals to children's social care — up 40% since 2012. At the same moment, 85,500 children were in local authority care, a record high and 30% more than a decade ago; a further 52,000 were on child protection plans. These numbers have risen in almost every year since 2008. They do not describe a system in crisis at the margins — they describe structural overload at the centre, driven by rising domestic abuse, parental substance misuse, mental health crises, and a family support system cut by nearly 50% in real terms since 2010.</p>
-            <p>The workforce cannot absorb this demand. Social worker vacancy rates stand at around 19%, with average caseloads of 18 cases per worker — well above what professional bodies consider safe for complex child protection work. The gap is filled by agency staff at significantly higher cost to already stretched council budgets. Turnover runs at 16% per year, eroding the continuity of relationship that effective child protection depends on. The consequences are visible in the record of serious case reviews: Arthur Labinjo-Hughes and Star Hobson, both murdered in 2020 by family members, had multiple prior contacts with social services. The Child Safeguarding Practice Review Panel reviewed 256 serious incidents in 2022–23 alone. The 2022 MacAlister Review found children's social care requires transformative reform rather than incremental adjustment.</p>
+            <p>England's child protection system is carrying a load it was not designed for. In 2024, local authorities received around 730,000 referrals to children's social care — up 40% since 2012.<Cite nums={1} /> At the same moment, 85,500 children were in local authority care, a record high and 30% more than a decade ago; a further 52,000 were on child protection plans.<Cite nums={2} /> These numbers have risen in almost every year since 2008. They do not describe a system in crisis at the margins — they describe structural overload at the centre, driven by rising domestic abuse, parental substance misuse, mental health crises, and a family support system cut by nearly 50% in real terms since 2010.</p>
+            <p>The workforce cannot absorb this demand. Social worker vacancy rates stand at around 19%, with average caseloads of 18 cases per worker — well above what professional bodies consider safe for complex child protection work.<Cite nums={3} /> The gap is filled by agency staff at significantly higher cost to already stretched council budgets. Turnover runs at 16% per year, eroding the continuity of relationship that effective child protection depends on.<Cite nums={3} /> The consequences are visible in the record of serious case reviews: Arthur Labinjo-Hughes and Star Hobson, both murdered in 2020 by family members, had multiple prior contacts with social services. The Child Safeguarding Practice Review Panel reviewed 256 serious incidents in 2022–23 alone. The 2022 MacAlister Review found children's social care requires transformative reform rather than incremental adjustment.<Cite nums={4} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -151,6 +160,9 @@ export default function ChildProtectionPage() {
             source="Source: DfE — Family Hubs programme 2024. Independent Review of Children's Social Care (MacAlister) — Final Report 2022."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

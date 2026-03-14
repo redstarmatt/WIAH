@@ -8,6 +8,18 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+// ── References ───────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'IFS', dataset: 'English local government funding analysis', url: 'https://ifs.org.uk/publications/local-government-funding-and-service-data', date: '2024' },
+  { num: 2, name: 'MHCLG', dataset: 'Local authority revenue expenditure and financing', url: 'https://www.gov.uk/government/collections/local-authority-revenue-expenditure-and-financing', date: '2024' },
+  { num: 3, name: 'MHCLG', dataset: 'Section 114 notices and government intervention reports', url: 'https://www.gov.uk/government/collections/local-authority-capital-expenditure-receipts-and-financing', date: '2026' },
+  { num: 4, name: 'MHCLG', dataset: 'Council tax statistics', url: 'https://www.gov.uk/government/collections/council-tax-statistics', date: '2025' },
+  { num: 5, name: 'LGA', dataset: 'Local Government Funding Gap Analysis', url: 'https://www.local.gov.uk/', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -309,13 +321,13 @@ export default function LocalGovPage() {
       {/* Editorial context */}
       <section className="max-w-3xl mx-auto px-6 py-12 space-y-6">
         <p className="text-base leading-relaxed text-wiah-black">
-          No part of the English state has been cut deeper. IFS analysis shows real-terms council funding fell 32% between 2010/11 and 2023/24 as central grants shrank faster than local revenue could grow. Councils slashed what they legally could: planning spending is down 52% in real terms, highways maintenance 41%, libraries 37%, parks and environmental services 28%. What they could not cut—adult social care, now consuming more than 40% of average council budgets—kept growing in cash terms, squeezing everything else. The result is a system that funds statutory obligations and almost nothing beyond them.
+          No part of the English state has been cut deeper. IFS analysis shows real-terms council funding fell 32% between 2010/11 and 2023/24 as central grants shrank faster than local revenue could grow.<Cite nums={1} /> Councils slashed what they legally could: planning spending is down 52% in real terms, highways maintenance 41%, libraries 37%, parks and environmental services 28%.<Cite nums={2} /> What they could not cut—adult social care, now consuming more than 40% of average council budgets—kept growing in cash terms, squeezing everything else. The result is a system that funds statutory obligations and almost nothing beyond them.
         </p>
         <p className="text-base leading-relaxed text-wiah-black">
-          Eight councils have issued Section 114 notices since 2020, formally declaring they cannot balance their books. The combined deficit stands at £3.3 billion. Birmingham City Council, the UK's largest authority, accounts for £760 million of that—driven partly by an unresolved equal pay liability. Woking Borough Council racked up £1.2 billion in losses from speculative commercial property investments that collapsed as interest rates rose; Thurrock followed a similar path. In each case central government has dispatched commissioners and emergency funding, but the interventions treat symptoms rather than the structural shortfall.
+          Eight councils have issued Section 114 notices since 2020, formally declaring they cannot balance their books. The combined deficit stands at £3.3 billion.<Cite nums={3} /> Birmingham City Council, the UK's largest authority, accounts for £760 million of that—driven partly by an unresolved equal pay liability. Woking Borough Council racked up £1.2 billion in losses from speculative commercial property investments that collapsed as interest rates rose; Thurrock followed a similar path.<Cite nums={3} /> In each case central government has dispatched commissioners and emergency funding, but the interventions treat symptoms rather than the structural shortfall.
         </p>
         <p className="text-base leading-relaxed text-wiah-black">
-          Average Band D council tax has climbed from £1,196 to £1,900 since 2010/11—up £704, or 59% in cash terms—with councils raising by the maximum 5% a year permitted without a referendum. Even so, the gap keeps widening: SEND-related costs have doubled, homelessness spending has more than doubled, and adult social care demand outpaces inflation. The LGA estimated in 2024 that English councils face a collective £4 billion shortfall by 2026/27. Fundamental reform—including revaluation of council tax bands, still based on 1991 property prices—has been deferred by every government for over three decades.
+          Average Band D council tax has climbed from £1,196 to £1,900 since 2010/11—up £704, or 59% in cash terms—with councils raising by the maximum 5% a year permitted without a referendum.<Cite nums={4} /> Even so, the gap keeps widening: SEND-related costs have doubled, homelessness spending has more than doubled, and adult social care demand outpaces inflation. The LGA estimated in 2024 that English councils face a collective £4 billion shortfall by 2026/27.<Cite nums={5} /> Fundamental reform—including revaluation of council tax bands, still based on 1991 property prices—has been deferred by every government for over three decades.
         </p>
       </section>
 
@@ -331,6 +343,10 @@ export default function LocalGovPage() {
           />
         </section>
       </ScrollReveal>
+
+      <div className="mt-6 max-w-3xl mx-auto px-6">
+        <References items={editorialRefs} />
+      </div>
 
       {/* Sources */}
       <section className="max-w-3xl mx-auto px-6 py-12">

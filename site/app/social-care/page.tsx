@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Adult Social Care Activity and Finance Report', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/adult-social-care-activity-and-finance-report', date: '2022/23' },
+  { num: 2, name: 'Skills for Care', dataset: 'State of the Adult Social Care Sector and Workforce', url: 'https://www.skillsforcare.org.uk/', date: '2023' },
+  { num: 3, name: 'Dilnot Commission / DHSC', dataset: 'Care cap and means test reform', date: '2022' },
+  { num: 4, name: 'Home Office', dataset: 'Health and Care Worker visa statistics', url: 'https://www.gov.uk/government/collections/immigration-statistics-quarterly-release', date: '2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -91,8 +100,8 @@ export default function SocialCarePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England processes around 1.9 million requests for adult social care support each year, yet only 1.5 million people receive publicly funded care. The gap is largely explained by a means test set in 2010 and never meaningfully uprated: anyone with assets above £23,250 must fund their own care entirely, so a modest terraced house disqualifies someone from all state support. The Dilnot Commission recommended a £35,000 lifetime care cost cap in 2011; the government eventually committed to an £86,000 cap due in 2023, then postponed it indefinitely in September 2022. Families facing dementia or stroke-related care can still spend £100,000 or more before state support begins. The NHS pays the price directly: between 13,500 and 17,900 patients occupy hospital beds on any given day awaiting a social care package, with the sector carrying around 165,000 vacancies and a 30% annual workforce turnover rate that degrades care quality and makes commissioning unreliable.</p>
-            <p>The burden falls on those least able to bear it. Around 5.7 million people in England provide unpaid care to a family member or friend — often at significant cost to their own employment, health, and finances — absorbing demand that would otherwise fall on a system already at capacity. Those who do seek formal care face a system stratified by wealth: self-funders subsidise publicly commissioned places, and once private funds are exhausted, access to quality provision becomes uncertain. Visa rule changes in 2024 sharply restricted overseas care worker entry after the sector had become heavily dependent on international recruitment, triggering renewed provider warnings of shortages and leaving the sector with no credible domestic workforce pipeline in place.</p>
+            <p>England processes around 1.9 million requests for adult social care support each year, yet only 1.5 million people receive publicly funded care.<Cite nums={1} /> The gap is largely explained by a means test set in 2010 and never meaningfully uprated: anyone with assets above £23,250 must fund their own care entirely, so a modest terraced house disqualifies someone from all state support. The Dilnot Commission recommended a £35,000 lifetime care cost cap in 2011; the government eventually committed to an £86,000 cap due in 2023, then postponed it indefinitely in September 2022.<Cite nums={3} /> Families facing dementia or stroke-related care can still spend £100,000 or more before state support begins. The NHS pays the price directly: between 13,500 and 17,900 patients occupy hospital beds on any given day awaiting a social care package, with the sector carrying around 165,000 vacancies and a 30% annual workforce turnover rate that degrades care quality and makes commissioning unreliable.<Cite nums={2} /></p>
+            <p>The burden falls on those least able to bear it. Around 5.7 million people in England provide unpaid care to a family member or friend — often at significant cost to their own employment, health, and finances — absorbing demand that would otherwise fall on a system already at capacity.<Cite nums={1} /> Those who do seek formal care face a system stratified by wealth: self-funders subsidise publicly commissioned places, and once private funds are exhausted, access to quality provision becomes uncertain. Visa rule changes in 2024 sharply restricted overseas care worker entry after the sector had become heavily dependent on international recruitment, triggering renewed provider warnings of shortages and leaving the sector with no credible domestic workforce pipeline in place.<Cite nums={4} /></p>
           </div>
         </section>
 
@@ -196,6 +205,10 @@ export default function SocialCarePage() {
             source="Source: NHS England — Adult Social Care Activity Report 2022/23; Skills for Care — State of the Social Care Workforce 2023."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

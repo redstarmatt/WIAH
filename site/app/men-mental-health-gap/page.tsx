@@ -8,6 +8,13 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Suicides in England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/suicidesintheunitedkingdom/2022registrations', date: 'Jan 2026' },
+  { num: 2, name: 'NHS England', dataset: 'NHS Talking Therapies (IAPT) monthly statistics', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/iapt-waiting-times/', date: 'Jan 2026' },
+];
 
 export default function MenMentalHealthGapPage() {
   const maleSuicideRates = [17.0, 17.8, 18.2, 17.4, 16.8, 16.6, 15.8, 15.5, 16.2, 15.9, 15.3, 15.8, 16.1, 15.4, 14.9];
@@ -156,12 +163,16 @@ export default function MenMentalHealthGapPage() {
           <section id="sec-context" className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data in context</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>The gap between men's mental health need and their use of mental health services is one of the most striking inequalities in British healthcare. Men account for around three-quarters of all suicides, yet make up only 36% of referrals to NHS Talking Therapies — the main route into psychological support for common conditions like depression and anxiety. This mismatch has been stable for a decade. Small improvements in referral share mask a fundamental failure to reach men who are struggling.</p>
+              <p>The gap between men's mental health need and their use of mental health services is one of the most striking inequalities in British healthcare. Men account for around three-quarters of all suicides,<Cite nums={1} /> yet make up only 36% of referrals to NHS Talking Therapies<Cite nums={2} /> — the main route into psychological support for common conditions like depression and anxiety. This mismatch has been stable for a decade. Small improvements in referral share mask a fundamental failure to reach men who are struggling.</p>
               <p>The reasons are structural as much as cultural. Men are more likely to present to GPs with physical symptoms that mask underlying mental distress. They are less likely to recognise or name their experiences as mental health problems, and historically less likely to be identified and referred by healthcare professionals. The design of talking therapies — largely delivered in clinical outpatient settings, during working hours, using frameworks developed primarily with female patient populations — has not been adapted to the ways men are most likely to engage with support.</p>
-              <p>There are promising models. Workplace-based support programmes, community-based services embedded in sport and social settings (Men in Sheds, football-based mental health projects), and online and app-based CBT have all shown higher male uptake than traditional clinical pathways. The NHS Talking Therapies programme has begun tracking male access as a specific equity goal. But progress is slow, and the fundamental statistic — that men die by suicide at three times the rate of women — has not materially changed in thirty years.</p>
+              <p>There are promising models. Workplace-based support programmes, community-based services embedded in sport and social settings (Men in Sheds, football-based mental health projects), and online and app-based CBT have all shown higher male uptake than traditional clinical pathways. The NHS Talking Therapies programme has begun tracking male access as a specific equity goal. But progress is slow, and the fundamental statistic — that men die by suicide at three times the rate of women — has not materially changed in thirty years.<Cite nums={1} /></p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Same Day Emergency Care Dashboard', url: 'https://www.england.nhs.uk/same-day-emergency-care/', date: 'Feb 2026' },
+  { num: 2, name: 'NHS England', dataset: 'NHS Long Term Plan', url: 'https://www.longtermplan.nhs.uk/', date: '2019' },
+  { num: 3, name: 'NHS England', dataset: 'A&E Attendances and Emergency Admissions', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/', date: 'Feb 2026' },
+  { num: 4, name: 'The King\'s Fund', dataset: 'NHS Key Statistics — bed-day estimates', url: 'https://www.kingsfund.org.uk/insight-and-analysis/data-and-charts/key-facts-figures-nhs', date: '2025' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -151,9 +160,9 @@ export default function SameDayEmergencyCarePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Same-day emergency care represents one of the most significant structural changes to NHS emergency medicine in the past decade. The model is straightforward: patients who arrive at hospital as emergencies but do not need overnight admission are assessed, treated, and sent home the same day through dedicated ambulatory pathways. Before SDEC expansion, many of these patients would have been admitted to acute wards, occupying beds for 24-48 hours for conditions that could be managed in a few hours — cellulitis, deep vein thrombosis, pulmonary embolism, low-risk chest pain. The NHS Long Term Plan in 2019 mandated that every acute hospital establish SDEC services, and COVID-19 unexpectedly accelerated adoption as trusts sought to reduce overnight bed occupancy and infection risk.</p>
-            <p>The growth has been substantial. SDEC attendances have risen from 1.2 million in 2017 to 3.3 million in 2025, a 183% increase. The conversion rate — the proportion of emergency attendances handled through SDEC rather than traditional overnight admission — has climbed from 18% to nearly 39%. Average length of stay for SDEC patients has fallen from 6.8 hours to 4.7 hours, reflecting maturation of clinical pathways and better patient streaming at the front door. Without SDEC, the NHS bed crisis would be measurably worse: an estimated 1.3 million additional overnight bed-days would have been required in 2024/25 alone.</p>
-            <p>Yet the broader emergency care picture remains deeply strained. A&E four-hour performance — the percentage of patients seen within four hours of arrival — has not met the 95% standard since 2013. It bottomed out at 73% in 2024 and has improved only marginally to 74.3% in 2025. The system faces compounding pressures: an ageing population generating more complex presentations, social care delays blocking hospital discharge, a primary care access crisis pushing patients toward emergency departments, and workforce gaps across emergency medicine, acute medicine, and nursing. SDEC is absorbing demand that would otherwise overwhelm an already overwhelmed system, but it cannot solve problems rooted in insufficient capacity and upstream failures. The data shows a service that is working — quietly, effectively — within a system that is not.</p>
+            <p>Same-day emergency care represents one of the most significant structural changes to NHS emergency medicine in the past decade. The model is straightforward: patients who arrive at hospital as emergencies but do not need overnight admission are assessed, treated, and sent home the same day through dedicated ambulatory pathways. Before SDEC expansion, many of these patients would have been admitted to acute wards, occupying beds for 24-48 hours for conditions that could be managed in a few hours — cellulitis, deep vein thrombosis, pulmonary embolism, low-risk chest pain. The NHS Long Term Plan in 2019 mandated that every acute hospital establish SDEC services, and COVID-19 unexpectedly accelerated adoption as trusts sought to reduce overnight bed occupancy and infection risk.<Cite nums={2} /></p>
+            <p>The growth has been substantial. SDEC attendances have risen from 1.2 million in 2017 to 3.3 million in 2025, a 183% increase.<Cite nums={1} /> The conversion rate — the proportion of emergency attendances handled through SDEC rather than traditional overnight admission — has climbed from 18% to nearly 39%. Average length of stay for SDEC patients has fallen from 6.8 hours to 4.7 hours, reflecting maturation of clinical pathways and better patient streaming at the front door. Without SDEC, the NHS bed crisis would be measurably worse: an estimated 1.3 million additional overnight bed-days would have been required in 2024/25 alone.<Cite nums={4} /></p>
+            <p>Yet the broader emergency care picture remains deeply strained. A&E four-hour performance — the percentage of patients seen within four hours of arrival — has not met the 95% standard since 2013. It bottomed out at 73% in 2024 and has improved only marginally to 74.3% in 2025.<Cite nums={3} /> The system faces compounding pressures: an ageing population generating more complex presentations, social care delays blocking hospital discharge, a primary care access crisis pushing patients toward emergency departments, and workforce gaps across emergency medicine, acute medicine, and nursing. SDEC is absorbing demand that would otherwise overwhelm an already overwhelmed system, but it cannot solve problems rooted in insufficient capacity and upstream failures. The data shows a service that is working — quietly, effectively — within a system that is not.</p>
           </div>
         </section>
 
@@ -281,6 +290,10 @@ export default function SameDayEmergencyCarePage() {
             source="Source: NHS England — SDEC Dashboard, Feb 2026. The King's Fund — NHS Key Statistics, 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources & Methodology */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

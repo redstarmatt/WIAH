@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Eating Disorder Waiting Times', url: 'https://www.england.nhs.uk/mental-health/taskforce/imp/mh-dashboard/', date: '2024' },
+  { num: 2, name: 'NHS Digital', dataset: 'Mental Health Services Data Set (MHSDS)', url: 'https://digital.nhs.uk/data-and-information/data-collections-and-data-sets/data-sets/mental-health-services-data-set', date: '2024' },
+  { num: 3, name: 'NHS England', dataset: 'Mental Health Dashboard', url: 'https://www.england.nhs.uk/mental-health/taskforce/imp/mh-dashboard/', date: '2024' },
+];
 
 // Urgent referrals meeting 1-week target (%), 2018–2024 — NHS England
 const urgentTargetValues = [72, 68, 65, 61, 57, 54, 59, 62];
@@ -57,8 +65,8 @@ export default function EatingDisorderWaitingPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Eating disorders carry the highest mortality rate of any mental illness, and for anorexia nervosa early intervention is strongly associated with recovery. The NHS standard, introduced in 2016, set a target that 95% of urgent cases should be seen within one week and 95% of routine cases within four weeks. By 2024, only 62% of urgent cases and 47% of routine cases met those targets — down from 72% urgent in 2018, with a pandemic-driven surge from 2020 pushing services further behind. Inpatient bed provision has risen modestly, from 5.8 to 6.3 per million people, but out-of-area placements remain common because local capacity is insufficient; these placements are associated with worse outcomes and disrupt the family contact that is a core component of treatment.</p>
-            <p>The consequences of delay are medical as well as psychological: prolonged malnutrition causes irreversible cardiac, skeletal, and hormonal damage, meaning each week of waiting has physical costs that cannot be fully reversed by later treatment. The central constraint is workforce: dietitians, psychiatrists, and clinical psychologists with eating disorder specialism take years to train, and NHS England's Long Term Plan commitments have not kept pace with post-pandemic demand. Referral volumes have continued rising across all age groups and increasingly among boys and young men.</p>
+            <p>Eating disorders carry the highest mortality rate of any mental illness, and for anorexia nervosa early intervention is strongly associated with recovery. The NHS standard, introduced in 2016, set a target that 95% of urgent cases should be seen within one week and 95% of routine cases within four weeks. By 2024, only 62% of urgent cases and 47% of routine cases met those targets — down from 72% urgent in 2018, with a pandemic-driven surge from 2020 pushing services further behind.<Cite nums={[1]} /> Inpatient bed provision has risen modestly, from 5.8 to 6.3 per million people, but out-of-area placements remain common because local capacity is insufficient.<Cite nums={[3]} /></p>
+            <p>The consequences of delay are medical as well as psychological: prolonged malnutrition causes irreversible cardiac, skeletal, and hormonal damage, meaning each week of waiting has physical costs that cannot be fully reversed by later treatment. The central constraint is workforce: dietitians, psychiatrists, and clinical psychologists with eating disorder specialism take years to train, and NHS England's Long Term Plan commitments have not kept pace with post-pandemic demand. Referral volumes have continued rising across all age groups and increasingly among boys and young men.<Cite nums={[2]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -136,6 +144,9 @@ export default function EatingDisorderWaitingPage() {
             source="Source: NHS England — Long Term Plan commitments for mental health, 2019–2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

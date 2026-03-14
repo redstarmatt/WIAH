@@ -8,7 +8,16 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Sport England', dataset: 'Active Lives Adult Survey', url: 'https://www.sportengland.org/research-and-data/data/active-lives', date: '2024-25' },
+  { num: 2, name: 'Sport England', dataset: 'Active Lives Adult Survey — IMD Quintile Analysis', url: 'https://www.sportengland.org/research-and-data/data/active-lives', date: '2024-25' },
+  { num: 3, name: 'Sport England', dataset: 'Active Lives Children and Young People Survey', url: 'https://www.sportengland.org/research-and-data/data/active-lives', date: '2024-25' },
+  { num: 4, name: 'Active Travel England / DfT', dataset: 'Walking and Cycling Statistics', url: 'https://www.gov.uk/government/collections/walking-and-cycling-statistics', date: '2025' },
+];
 
 // -- Types --------------------------------------------------------------------
 
@@ -163,13 +172,13 @@ export default function PhysicalActivityPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              England is, on balance, getting slightly more active. The proportion of adults meeting the Chief Medical Officers' guideline of 150 minutes of moderate activity per week has risen from 55.8% in 2015-16 to 61.7% in 2024-25. The proportion classified as inactive — doing fewer than 30 minutes a week — has fallen from 27.7% to 22.5% over the same period. Walking remains the dominant form of activity; it accounts for more of the total than all organised sport combined. The pandemic temporarily reversed the trend in 2020, when gym closures and lockdowns pushed inactivity up sharply, but recovery was swift and the overall trajectory has resumed.
+              England is, on balance, getting slightly more active. The proportion of adults meeting the Chief Medical Officers' guideline of 150 minutes of moderate activity per week has risen from 55.8% in 2015-16 to 61.7% in 2024-25.<Cite nums={1} /> The proportion classified as inactive — doing fewer than 30 minutes a week — has fallen from 27.7% to 22.5% over the same period.<Cite nums={1} /> Walking remains the dominant form of activity; it accounts for more of the total than all organised sport combined. The pandemic temporarily reversed the trend in 2020, when gym closures and lockdowns pushed inactivity up sharply, but recovery was swift and the overall trajectory has resumed.
             </p>
             <p>
-              The headline numbers, however, conceal a structural inequality that successive sport strategies have failed to close. In the least deprived fifth of neighbourhoods, 70.3% of adults are active. In the most deprived fifth, the figure is 51.1% — a 19 percentage-point gap that has barely moved in a decade. The pattern is reproduced across gender, ethnicity, disability, and age. People in lower-income areas have fewer parks, fewer leisure centres, less safe walking infrastructure, and less free time. These are not lifestyle choices but structural conditions.
+              The headline numbers, however, conceal a structural inequality that successive sport strategies have failed to close. In the least deprived fifth of neighbourhoods, 70.3% of adults are active. In the most deprived fifth, the figure is 51.1% — a 19 percentage-point gap that has barely moved in a decade.<Cite nums={2} /> The pattern is reproduced across gender, ethnicity, disability, and age. People in lower-income areas have fewer parks, fewer leisure centres, less safe walking infrastructure, and less free time. These are not lifestyle choices but structural conditions.
             </p>
             <p>
-              Children's activity tells a more encouraging story. The proportion meeting the guideline of 60 minutes of moderate-to-vigorous activity per day has risen from 17.5% in 2015 to 47% in 2025, boosted by the doubling of the school sport premium and expanded community programmes. But the 2012 Olympic legacy target of every child active every day remains unmet, and the pandemic set progress back by several years. Active travel — walking and cycling for transport — has also grown, with nearly half of adults now making at least one active journey per week, supported by new cycling infrastructure and the creation of Active Travel England.
+              Children's activity tells a more encouraging story. The proportion meeting the guideline of 60 minutes of moderate-to-vigorous activity per day has risen from 17.5% in 2015 to 47% in 2025, boosted by the doubling of the school sport premium and expanded community programmes.<Cite nums={3} /> But the 2012 Olympic legacy target of every child active every day remains unmet, and the pandemic set progress back by several years. Active travel — walking and cycling for transport — has also grown, with nearly half of adults now making at least one active journey per week, supported by new cycling infrastructure and the creation of Active Travel England.<Cite nums={4} />
             </p>
           </div>
         </section>
@@ -337,6 +346,10 @@ export default function PhysicalActivityPage() {
             source="Source: Active Travel England \u2014 programme statistics, 2025. Sport England \u2014 Active Lives Adult and CYP Surveys, 2024-25."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources & Methodology */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

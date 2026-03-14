@@ -9,6 +9,13 @@ import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'NHS Talking Therapies Monthly Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-for-anxiety-and-depression', date: '2023', note: '1.2M treated annually; recovery rate 52.3% (target 50%); provider range 40-75%' },
+  { num: 2, name: 'Clark & Layard', dataset: 'IAPT Programme Design and Economic Case', date: '2008', note: 'Programme architects estimated treatment would pay for itself through reduced welfare costs and absenteeism' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -111,8 +118,8 @@ export default function TalkingTherapiesPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>NHS Talking Therapies — formerly known as Improving Access to Psychological Therapies (IAPT) — was established in 2008 as the world's first large-scale, population-level psychological therapy programme. It was designed to deliver evidence-based cognitive behavioural therapy (CBT) and related therapies for common mental health conditions, primarily depression and anxiety disorders, using a stepped-care model in which patients are matched to the least intensive effective treatment first. By 2023, the programme had grown to treat over 1.2 million people per year through approximately 60 commissioned services across England, delivered by NHS trusts, social enterprises, and third-sector organisations. Its scale is genuinely without international precedent: no other country has attempted to provide structured psychological therapies at population level through a nationally funded and monitored healthcare system. The programme's architects — economists Richard Layard and David Clark — estimated that effective treatment would largely pay for itself through reduced welfare costs, reduced GP consultations, and reduced absenteeism.</p>
-            <p>The programme's core metric is the recovery rate: the proportion of people who complete a course of therapy and move from clinical caseness on a validated measure of anxiety or depression to below the clinical threshold. The national recovery rate has improved from around 45% in 2016 to 52.3% in 2023, comfortably above the programme's 50% target. However, this national figure conceals enormous variation between individual providers: in 2023, recovery rates across the 60 commissioned services ranged from below 40% to above 75%. A person's chances of recovering through NHS therapy are therefore strongly influenced by geography. The differences are not fully explained by case mix or population characteristics: even after controlling for severity of presenting condition and socioeconomic deprivation, substantial provider-level variation persists. Some of this variation reflects genuine differences in clinical quality; some reflects differences in how providers define and record recovery; and some reflects differences in the populations they serve and the conditions they treat.</p>
+            <p>NHS Talking Therapies — formerly known as Improving Access to Psychological Therapies (IAPT) — was established in 2008 as the world's first large-scale, population-level psychological therapy programme.<Cite nums={2} /> It was designed to deliver evidence-based cognitive behavioural therapy (CBT) and related therapies for common mental health conditions, primarily depression and anxiety disorders, using a stepped-care model in which patients are matched to the least intensive effective treatment first. By 2023, the programme had grown to treat over 1.2 million people per year through approximately 60 commissioned services across England, delivered by NHS trusts, social enterprises, and third-sector organisations.<Cite nums={1} /> Its scale is genuinely without international precedent: no other country has attempted to provide structured psychological therapies at population level through a nationally funded and monitored healthcare system. The programme's architects — economists Richard Layard and David Clark — estimated that effective treatment would largely pay for itself through reduced welfare costs, reduced GP consultations, and reduced absenteeism.<Cite nums={2} /></p>
+            <p>The programme's core metric is the recovery rate: the proportion of people who complete a course of therapy and move from clinical caseness on a validated measure of anxiety or depression to below the clinical threshold. The national recovery rate has improved from around 45% in 2016 to 52.3% in 2023, comfortably above the programme's 50% target.<Cite nums={1} /> However, this national figure conceals enormous variation between individual providers: in 2023, recovery rates across the 60 commissioned services ranged from below 40% to above 75%.<Cite nums={1} /> A person's chances of recovering through NHS therapy are therefore strongly influenced by geography. The differences are not fully explained by case mix or population characteristics: even after controlling for severity of presenting condition and socioeconomic deprivation, substantial provider-level variation persists. Some of this variation reflects genuine differences in clinical quality; some reflects differences in how providers define and record recovery; and some reflects differences in the populations they serve and the conditions they treat.</p>
             </div>
         </section>
 
@@ -199,6 +206,10 @@ export default function TalkingTherapiesPage() {
             source="Source: NHS England — NHS Talking Therapies Five Year Forward View, 2023 progress report."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

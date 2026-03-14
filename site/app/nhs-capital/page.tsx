@@ -8,6 +8,15 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS Digital', dataset: 'ERIC (Estates Returns Information Collection)', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/estates-returns-information-collection', date: '2024' },
+  { num: 2, name: 'DHSC', dataset: 'RAAC in NHS estate survey', url: 'https://www.gov.uk/government/publications/reinforced-autoclaved-aerated-concrete-raac-in-nhs-estates', date: '2024' },
+  { num: 3, name: 'NAO', dataset: 'NHS capital expenditure and financial sustainability', url: 'https://www.nao.org.uk/', date: '2024' },
+  { num: 4, name: 'Lord Darzi', dataset: 'Independent Investigation of the NHS in England', url: 'https://www.gov.uk/government/publications/independent-investigation-of-the-nhs-in-england', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -98,8 +107,8 @@ export default function NhsCapitalPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The NHS maintenance backlog — the estimated cost of returning buildings to an acceptable standard — reached £13.8 billion in 2024, more than three times the £4.3 billion recorded in 2014. Over 40% of the hospital estate predates 1978. Annual NHS capital expenditure has been roughly flat in real terms over that same decade, at £5.9 billion in 2024 versus £5.8 billion in 2014, while the backlog tripled; trusts have repeatedly surrendered capital budgets mid-year to cover revenue deficits. The RAAC concrete crisis sharpened public focus: 42 trusts have confirmed the structurally unsound 1960s–80s building material in their estate, several wards have been closed at short notice, and one in four NHS buildings is now rated high-risk for infrastructure failure. NHS IT infrastructure is equally antiquated, and the Lord Darzi review estimated the true combined capital deficit across buildings, equipment, and digital systems significantly exceeds the headline ERIC figure.</p>
-            <p>The consequences fall on patients and staff across the system. Aging diagnostic equipment increases downtime and scan wait times; crumbling wards force department relocations and reduce clinical capacity. The UK spends less per capita on health capital than the OECD average — a gap that has widened over the past decade — and the NAO has repeatedly flagged concerns about data quality, meaning the true scale of decay is likely larger than the £13.8 billion headline. Building new hospitals attracts political attention; maintaining existing ones does not, and that asymmetry has compounded year after year.</p>
+            <p>The NHS maintenance backlog — the estimated cost of returning buildings to an acceptable standard — reached £13.8 billion in 2024, more than three times the £4.3 billion recorded in 2014.<Cite nums={1} /> Over 40% of the hospital estate predates 1978. Annual NHS capital expenditure has been roughly flat in real terms over that same decade, at £5.9 billion in 2024 versus £5.8 billion in 2014, while the backlog tripled; trusts have repeatedly surrendered capital budgets mid-year to cover revenue deficits.<Cite nums={3} /> The RAAC concrete crisis sharpened public focus: 42 trusts have confirmed the structurally unsound 1960s–80s building material in their estate, several wards have been closed at short notice, and one in four NHS buildings is now rated high-risk for infrastructure failure.<Cite nums={2} /> NHS IT infrastructure is equally antiquated, and the Lord Darzi review estimated the true combined capital deficit across buildings, equipment, and digital systems significantly exceeds the headline ERIC figure.<Cite nums={4} /></p>
+            <p>The consequences fall on patients and staff across the system. Aging diagnostic equipment increases downtime and scan wait times; crumbling wards force department relocations and reduce clinical capacity. The UK spends less per capita on health capital than the OECD average — a gap that has widened over the past decade — and the NAO has repeatedly flagged concerns about data quality, meaning the true scale of decay is likely larger than the £13.8 billion headline.<Cite nums={3} /> Building new hospitals attracts political attention; maintaining existing ones does not, and that asymmetry has compounded year after year.</p>
           </div>
         </section>
 
@@ -190,6 +199,10 @@ export default function NhsCapitalPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

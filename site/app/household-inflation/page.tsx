@@ -8,6 +8,13 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Household Costs Indices', url: 'https://www.ons.gov.uk/economy/inflationandpriceindices/articles/householdcostsindices/latest', date: '2025', note: 'Low-income households face 2-3pp more inflation than wealthy households' },
+  { num: 2, name: 'ONS', dataset: 'Consumer Price Inflation', url: 'https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/latest', date: '2025', note: 'Food and energy make up larger share of low-income spending' },
+];
 
 interface DataPoint {
   year: number;
@@ -92,7 +99,7 @@ export default function HouseholdInflationPage() {
         <section className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Low-income households face 2–3 percentage points more inflation than wealthy households because food and energy make up a far larger share of their spending. The data below draws on official sources to show how this has changed over the past decade and where the pressures are most acute.
+              Low-income households face 2–3 percentage points more inflation than wealthy households because food and energy make up a far larger share of their spending.<Cite nums={[1,2]} /> The data below draws on official sources to show how this has changed over the past decade and where the pressures are most acute.
             </p>
             <p>
               The figures reflect a structural pattern rather than a short-term fluctuation. Understanding the scale of the issue is the first step toward holding policymakers to account for the decisions that shape these outcomes.
@@ -170,6 +177,10 @@ export default function HouseholdInflationPage() {
             source="Source: ONS \u2014 Household Costs Indices, 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

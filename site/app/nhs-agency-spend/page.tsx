@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England / NHS Improvement', dataset: 'Agency Spend Statistics', url: 'https://www.england.nhs.uk/financial-accounting-and-reporting/', date: '2024' },
+  { num: 2, name: 'NHS Improvement', dataset: 'Agency rules and price caps', url: 'https://www.england.nhs.uk/pay-sickness/agency-rules/', date: '2024' },
+  { num: 3, name: 'NHS England', dataset: 'NHS Long Term Workforce Plan', url: 'https://www.england.nhs.uk/long-read/nhs-long-term-workforce-plan/', date: '2023' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -62,8 +70,8 @@ export default function NhsAgencySpendPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The NHS spent £3.7 billion on agency and locum workers in 2023/24, representing 8.2% of the total pay bill — more than double the NHS Improvement target of 3.5% and up from a low of 4.3% in 2020. An agency nurse costs £47 per hour against roughly £18 for a contracted equivalent — a 2.6-times premium funding agency margins rather than patient care. Agency spend fell between 2016 and 2020 after rate caps were introduced in 2015–16, but the pandemic reversed that progress: extraordinary staffing demands, followed by burnout-driven attrition as the emergency subsided, drove agency use back upward. Industrial action in 2022–23 further increased reliance on temporary cover. The cycle is self-reinforcing: burnt-out staff leave for agency work where they earn more with greater flexibility; trusts pay a premium to bring them back; remaining substantive staff face higher workloads and burn out in turn.</p>
-            <p>The £3.7 billion annual premium over what the same hours of care would cost from a substantive workforce represents money not spent on additional permanent posts, training, or patient-facing services. The burden falls disproportionately on the trusts with the highest vacancy rates and the most acute recruitment difficulties — typically those in areas with higher living costs or less attractive working environments — creating a fiscal inequality between well-staffed trusts that can contain agency costs and struggling trusts that cannot. The NHS Long Term Workforce Plan commits to training more staff over the long term; training pipelines take years to fill, leaving the immediate cycle of churn and premium payments largely unaddressed.</p>
+            <p>The NHS spent £3.7 billion on agency and locum workers in 2023/24, representing 8.2% of the total pay bill — more than double the NHS Improvement target of 3.5% and up from a low of 4.3% in 2020.<Cite nums={1} /> An agency nurse costs £47 per hour against roughly £18 for a contracted equivalent — a 2.6-times premium funding agency margins rather than patient care.<Cite nums={2} /> Agency spend fell between 2016 and 2020 after rate caps were introduced in 2015–16, but the pandemic reversed that progress: extraordinary staffing demands, followed by burnout-driven attrition as the emergency subsided, drove agency use back upward. Industrial action in 2022–23 further increased reliance on temporary cover. The cycle is self-reinforcing: burnt-out staff leave for agency work where they earn more with greater flexibility; trusts pay a premium to bring them back; remaining substantive staff face higher workloads and burn out in turn.</p>
+            <p>The £3.7 billion annual premium over what the same hours of care would cost from a substantive workforce represents money not spent on additional permanent posts, training, or patient-facing services.<Cite nums={1} /> The burden falls disproportionately on the trusts with the highest vacancy rates and the most acute recruitment difficulties — typically those in areas with higher living costs or less attractive working environments — creating a fiscal inequality between well-staffed trusts that can contain agency costs and struggling trusts that cannot. The NHS Long Term Workforce Plan commits to training more staff over the long term; training pipelines take years to fill, leaving the immediate cycle of churn and premium payments largely unaddressed.<Cite nums={3} /></p>
           </div>
         </section>
 
@@ -123,6 +131,10 @@ export default function NhsAgencySpendPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'OHID', dataset: 'Adult substance misuse treatment statistics', url: 'https://www.gov.uk/government/collections/alcohol-and-drug-misuse-and-treatment-statistics', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Drug misuse in England and Wales', url: 'https://www.gov.uk/government/statistics/drug-misuse-findings-from-the-2023-to-2024-csew', date: '2024' },
+  { num: 3, name: 'Dame Carol Black', dataset: 'Independent Review of Drugs', url: 'https://www.gov.uk/government/publications/review-of-drugs-phase-two-report', date: '2021' },
+];
 
 export default function AddictionTreatmentOutcomesPage() {
   const colour = '#264653';
@@ -162,13 +170,16 @@ export default function AddictionTreatmentOutcomesPage() {
           <section className="max-w-2xl mb-12 mt-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">What the data shows</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>England has around 288,000 people in specialist drug treatment and 90,000 in alcohol treatment at any given time. These numbers represent a small fraction of total need: official estimates suggest around 315,000 people are dependent on opiates or crack cocaine, and 600,000 are dependent on alcohol at harmful levels. The &ldquo;treatment gap&rdquo; — the proportion of dependent users not in treatment — stands at approximately 79% for drugs and 73% for alcohol. Most people with addiction problems never access any specialist support.</p>
-              <p>For those who do access treatment, outcomes vary significantly by substance. Alcohol treatment achieves relatively good outcomes: 73% of people completing alcohol treatment leave it alcohol-free. Drug treatment — particularly for opiate and crack cocaine dependency — is harder: overall successful exits run at around 48%, but this aggregates very different patterns. Non-opiate drug users achieve success rates above 65%; for opiate users, long-term opiate substitution therapy rather than abstinence is often the clinical goal, and &ldquo;success&rdquo; must be understood in terms of harm reduction rather than abstinence. Drug-related deaths — a direct consequence of untreated addiction — reached 4,907 in England and Wales in 2021 before beginning to plateau.</p>
-              <p>The treatment system was cut severely between 2012 and 2020: the public health grant that funds local authority drug and alcohol services fell 24% in real terms over this period. Dame Carol Black's 2021 review found the system in a state of chronic underfunding, with depleted workforce capacity, inadequate housing support for people in recovery, and poor integration with criminal justice. The £780 million three-year investment announced in 2022 is the largest uplift in treatment funding in a generation. Early indicators suggest it is expanding capacity, though workforce shortages mean not all new places have been filled.</p>
+              <p>England has around 288,000 people in specialist drug treatment and 90,000 in alcohol treatment at any given time.<Cite nums={1} /> These numbers represent a small fraction of total need: official estimates suggest around 315,000 people are dependent on opiates or crack cocaine, and 600,000 are dependent on alcohol at harmful levels.<Cite nums={2} /> The &ldquo;treatment gap&rdquo; — the proportion of dependent users not in treatment — stands at approximately 79% for drugs and 73% for alcohol.<Cite nums={[1, 2]} /> Most people with addiction problems never access any specialist support.</p>
+              <p>For those who do access treatment, outcomes vary significantly by substance. Alcohol treatment achieves relatively good outcomes: 73% of people completing alcohol treatment leave it alcohol-free.<Cite nums={1} /> Drug treatment — particularly for opiate and crack cocaine dependency — is harder: overall successful exits run at around 48%, but this aggregates very different patterns.<Cite nums={1} /> Non-opiate drug users achieve success rates above 65%; for opiate users, long-term opiate substitution therapy rather than abstinence is often the clinical goal, and &ldquo;success&rdquo; must be understood in terms of harm reduction rather than abstinence. Drug-related deaths — a direct consequence of untreated addiction — reached 4,907 in England and Wales in 2021 before beginning to plateau.<Cite nums={2} /></p>
+              <p>The treatment system was cut severely between 2012 and 2020: the public health grant that funds local authority drug and alcohol services fell 24% in real terms over this period.<Cite nums={3} /> Dame Carol Black's 2021 review found the system in a state of chronic underfunding, with depleted workforce capacity, inadequate housing support for people in recovery, and poor integration with criminal justice.<Cite nums={3} /> The £780 million three-year investment announced in 2022 is the largest uplift in treatment funding in a generation. Early indicators suggest it is expanding capacity, though workforce shortages mean not all new places have been filled.<Cite nums={1} /></p>
             </div>
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">

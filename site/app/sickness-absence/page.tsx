@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Sickness absence in the labour market', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/labourproductivity/articles/sicknessabsenceinthelabourmarket/latest', date: '2025' },
+  { num: 2, name: 'CIPD', dataset: 'Health and wellbeing at work survey', url: 'https://www.cipd.org/uk/knowledge/reports/health-well-being-work/', date: '2025' },
+  { num: 3, name: 'Health Foundation', dataset: 'Economic cost of sickness absence analysis', url: 'https://www.health.org.uk/', date: '2024' },
+  { num: 4, name: 'ONS', dataset: 'Labour Force Survey — sickness absence by industry', date: '2024/25' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -144,10 +153,10 @@ export default function SicknessAbsencePage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Britain is losing more working days to illness than at any point since records began. The 192 million days lost in 2025 represents a 29% increase on 2019 levels, and the trend shows no sign of reversing. The average worker now loses 5.7 days per year to sickness, up from 4.4 days before the pandemic. This is not a temporary post-COVID hangover — it reflects a structural shift in the relationship between work and health that was accelerated, but not caused, by the pandemic.
+              Britain is losing more working days to illness than at any point since records began. The 192 million days lost in 2025 represents a 29% increase on 2019 levels, and the trend shows no sign of reversing.<Cite nums={1} /> The average worker now loses 5.7 days per year to sickness, up from 4.4 days before the pandemic.<Cite nums={1} /> This is not a temporary post-COVID hangover — it reflects a structural shift in the relationship between work and health that was accelerated, but not caused, by the pandemic.
             </p>
             <p>
-              The composition of absence has changed as dramatically as the volume. Mental health conditions — stress, anxiety, depression and burnout — have risen from 13% of all sickness absence in 2015 to 24% in 2025, overtaking musculoskeletal problems as the single largest cause. The Health Foundation estimates the annual cost to the economy at over 43 billion pounds when reduced productivity is included alongside direct absence. The public sector is hit hardest: health and social care workers lose 8.2 days per year on average, more than double the rate in professional services.
+              The composition of absence has changed as dramatically as the volume. Mental health conditions — stress, anxiety, depression and burnout — have risen from 13% of all sickness absence in 2015 to 24% in 2025, overtaking musculoskeletal problems as the single largest cause.<Cite nums={2} /> The Health Foundation estimates the annual cost to the economy at over 43 billion pounds when reduced productivity is included alongside direct absence.<Cite nums={3} /> The public sector is hit hardest: health and social care workers lose 8.2 days per year on average, more than double the rate in professional services.<Cite nums={4} />
             </p>
             <p>
               These figures matter because they sit at the intersection of three crises the site tracks — health, work, and public services. Rising absence in the NHS workforce compounds waiting list pressures. Rising absence in schools exacerbates the teacher shortage. And rising mental health absence reflects a system where demand for psychological support vastly outstrips supply. The data below draws on ONS Labour Force Survey figures, CIPD employer surveys, and Health Foundation analysis.
@@ -306,6 +315,10 @@ export default function SicknessAbsencePage() {
         </ScrollReveal>
 
         <RelatedTopics />
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

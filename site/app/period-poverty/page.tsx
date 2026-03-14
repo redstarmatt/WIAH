@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Plan International UK', dataset: 'Making the Grade: Period poverty and menstrual health survey', url: 'https://www.plan-international.org.uk/publications/making-grade-period-poverty-and-menstrual-health-survey', date: '2023', note: '1 in 5 girls aged 14-21 struggled to afford period products' },
+  { num: 2, name: 'DLUHC', dataset: 'Menstrual Products Access Scheme', url: 'https://www.gov.uk/government/collections/period-products', date: '2023', note: '63% of eligible institutions participating in England' },
+  { num: 3, name: 'Scottish Government', dataset: 'Period Products (Free Provision) Act 2021', date: '2021', note: 'First legal right to free period products worldwide' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -103,8 +111,8 @@ export default function PeriodPovertyPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Period poverty — the inability to afford or access period products — affected 1 in 10 girls aged 14–21 in 2017, according to Plan International; by 2023 that figure had risen to 1 in 5, driven by the cost-of-living crisis compounding underlying income inadequacy. Around 137,000 girls missed school because of period poverty in 2017 alone, using improvised alternatives or staying home in environments with inadequate provision or privacy. Scotland passed the Period Products (Free Provision) Act in 2021 — the first legal right to free period products in the world — achieving near-universal school uptake. England's voluntary Period Products Scheme, launched the same year, reached only 63% of eligible institutions by 2023. VAT on period products was cut to zero in January 2021, but the saving is modest relative to the affordability gap for the lowest-income households.</p>
-            <p>The problem is sharpest at the margins and least visible in the data. Girls in the most deprived areas, care-experienced young people, asylum seekers in Home Office accommodation, and those in prisons face the most acute shortfalls with the least consistent provision. Survey estimates rely on self-reporting a stigmatised experience, meaning the figures likely understate the true scale: 52% of those experiencing period poverty said they did not know help was available, and 38% cited embarrassment as a barrier to seeking it. The educational disruption — lessons missed without formal absence records, improvised management across years — accumulates in ways that aggregate statistics cannot fully capture.</p>
+            <p>Period poverty — the inability to afford or access period products — affected 1 in 10 girls aged 14–21 in 2017, according to Plan International; by 2023 that figure had risen to 1 in 5, driven by the cost-of-living crisis compounding underlying income inadequacy.<Cite nums={1} /> Around 137,000 girls missed school because of period poverty in 2017 alone, using improvised alternatives or staying home in environments with inadequate provision or privacy.<Cite nums={1} /> Scotland passed the Period Products (Free Provision) Act in 2021 — the first legal right to free period products in the world — achieving near-universal school uptake.<Cite nums={3} /> England's voluntary Period Products Scheme, launched the same year, reached only 63% of eligible institutions by 2023.<Cite nums={2} /> VAT on period products was cut to zero in January 2021, but the saving is modest relative to the affordability gap for the lowest-income households.</p>
+            <p>The problem is sharpest at the margins and least visible in the data. Girls in the most deprived areas, care-experienced young people, asylum seekers in Home Office accommodation, and those in prisons face the most acute shortfalls with the least consistent provision. Survey estimates rely on self-reporting a stigmatised experience, meaning the figures likely understate the true scale: 52% of those experiencing period poverty said they did not know help was available, and 38% cited embarrassment as a barrier to seeking it.<Cite nums={1} /> The educational disruption — lessons missed without formal absence records, improvised management across years — accumulates in ways that aggregate statistics cannot fully capture.</p>
           </div>
         </section>
 
@@ -231,6 +239,10 @@ export default function PeriodPovertyPage() {
               </p>
             </section>
           )}
+        </div>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
         </div>
 
         <section id="sec-sources" className="border-t border-wiah-border pt-8">

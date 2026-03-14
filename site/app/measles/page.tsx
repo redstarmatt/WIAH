@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'UKHSA', dataset: 'Confirmed cases of measles in England', date: '2024' },
+  { num: 2, name: 'NHS Digital', dataset: 'Childhood Vaccination Coverage Statistics (COVER)', date: '2024' },
+  { num: 3, name: 'The Lancet', dataset: 'Retraction — Ileal-lymphoid-nodular hyperplasia (Wakefield et al.)', date: '2010' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -127,9 +135,9 @@ export default function MeaslesPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Measles was effectively eliminated in England by 2016, with cases falling to fewer than 100 per year. That achievement is now unravelling. In 2024, confirmed cases surged to 2,089 — a tenfold increase on 2022 and the highest annual total since the Swansea outbreak of 2012-13. The epicentre was Birmingham and the wider West Midlands, where 612 cases were concentrated in communities with historically low MMR uptake. London, with the lowest dose 2 coverage of any region at 80.3%, recorded 489 cases. These are not abstract numbers: measles hospitalises roughly one in five infected children, causes encephalitis in approximately one in 1,000 cases, and remains fatal in around one in 5,000 cases in developed countries.</p>
-            <p>The roots of this resurgence stretch back more than two decades. Andrew Wakefield's fraudulent 1998 paper linking MMR to autism — retracted by The Lancet in 2010 and comprehensively debunked by studies involving millions of children — triggered a collapse in MMR uptake that created a cohort of unvaccinated young people now in their twenties. While first-dose coverage partially recovered, second-dose uptake has declined steadily from a peak of 92.7% in 2015 to 86.0% in 2024. The COVID-19 pandemic accelerated this decline: routine childhood vaccination appointments were disrupted during lockdowns, and catch-up efforts have not fully compensated. Social media misinformation about vaccines, amplified during the pandemic, has further eroded confidence in some communities.</p>
-            <p>The 95% coverage threshold for herd immunity against measles is not arbitrary — it reflects the virus's extraordinary infectiousness. Measles has a basic reproduction number (R0) of 12-18, meaning each infected person will infect 12 to 18 others in an unvaccinated population. At 86% dose 2 coverage, England has a 9 percentage point gap to close. Every percentage point below 95% represents roughly 12,000 five-year-olds entering school without full protection each year. The geographic concentration of under-vaccination — particularly in urban areas with high population density and mobility — means outbreaks can spread rapidly once a case is introduced, as the 2024 West Midlands experience demonstrated.</p>
+            <p>Measles was effectively eliminated in England by 2016, with cases falling to fewer than 100 per year. That achievement is now unravelling. In 2024, confirmed cases surged to 2,089 — a tenfold increase on 2022 and the highest annual total since the Swansea outbreak of 2012-13.<Cite nums={1} /> The epicentre was Birmingham and the wider West Midlands, where 612 cases were concentrated in communities with historically low MMR uptake. London, with the lowest dose 2 coverage of any region at 80.3%, recorded 489 cases. These are not abstract numbers: measles hospitalises roughly one in five infected children, causes encephalitis in approximately one in 1,000 cases, and remains fatal in around one in 5,000 cases in developed countries.</p>
+            <p>The roots of this resurgence stretch back more than two decades. Andrew Wakefield's fraudulent 1998 paper linking MMR to autism — retracted by The Lancet in 2010<Cite nums={3} /> and comprehensively debunked by studies involving millions of children — triggered a collapse in MMR uptake that created a cohort of unvaccinated young people now in their twenties. While first-dose coverage partially recovered, second-dose uptake has declined steadily from a peak of 92.7% in 2015 to 86.0% in 2024.<Cite nums={2} /> The COVID-19 pandemic accelerated this decline: routine childhood vaccination appointments were disrupted during lockdowns, and catch-up efforts have not fully compensated. Social media misinformation about vaccines, amplified during the pandemic, has further eroded confidence in some communities.</p>
+            <p>The 95% coverage threshold for herd immunity against measles is not arbitrary — it reflects the virus's extraordinary infectiousness. Measles has a basic reproduction number (R0) of 12-18, meaning each infected person will infect 12 to 18 others in an unvaccinated population. At 86% dose 2 coverage, England has a 9 percentage point gap to close.<Cite nums={2} /> Every percentage point below 95% represents roughly 12,000 five-year-olds entering school without full protection each year. The geographic concentration of under-vaccination — particularly in urban areas with high population density and mobility — means outbreaks can spread rapidly once a case is introduced, as the 2024 West Midlands experience demonstrated.</p>
           </div>
         </section>
 
@@ -290,6 +298,10 @@ export default function MeaslesPage() {
             source="Source: NHS England — MMR catch-up campaign progress report, 2024. UKHSA — COVER programme quarterly data."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <RelatedTopics />
       </main>

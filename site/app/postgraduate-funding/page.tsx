@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'IFS', dataset: 'Graduate Repayment Analysis', url: 'https://ifs.org.uk/publications', date: '2024', note: 'Combined marginal effective tax rate of up to 67-68% for graduates with both Plan 2 UG and PG loans on £40,000' },
+  { num: 2, name: 'HESA', dataset: 'Higher Education Student Statistics', url: 'https://www.hesa.ac.uk/data-and-analysis', date: '2024', note: 'Postgraduate enrolments fell approximately 8% in 2023-24; concentrated among home students on taught masters' },
+  { num: 3, name: 'UKRI', dataset: 'Doctoral Stipend Rates', date: '2024', note: 'Doctoral stipends approximately £19,000/yr; not keeping pace with living costs' },
+];
 
 interface PostgraduateFundingDataPoint {
   year: number
@@ -59,8 +67,8 @@ export default function PostgraduateFundingPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Postgraduate master's loans were introduced in 2016 and doctoral loans in 2018, allowing students to access government-backed funding repaid through the income-contingent loan system alongside undergraduate repayments. The policy expanded access, but the interaction between the two loan plans creates an acute marginal tax problem: a graduate on £40,000 per year with both Plan 2 undergraduate and postgraduate loans faces a combined marginal effective tax rate — including income tax and National Insurance — of up to 67–68%. Postgraduate enrolments fell approximately 8% in 2023–24, concentrated among home students on taught master's programmes who are most exposed to this combined burden. UKRI doctoral stipends of approximately £19,000 per year have also failed to keep pace with living costs, particularly in London and other high-cost cities.</p>
-            <p>The disincentive falls hardest on students from lower-income backgrounds, who are more likely to use the full loan facility and more sensitive to marginal effective tax rates when calculating whether postgraduate study is worth it. England's current structure — high fees stacked on top of existing undergraduate debt with no effective cap on combined repayment rates — is unusual among comparable countries and risks channelling advanced qualification into the hands of those who can afford not to borrow.</p>
+            <p>Postgraduate master's loans were introduced in 2016 and doctoral loans in 2018, allowing students to access government-backed funding repaid through the income-contingent loan system alongside undergraduate repayments. The policy expanded access, but the interaction between the two loan plans creates an acute marginal tax problem: a graduate on £40,000 per year with both Plan 2 undergraduate and postgraduate loans faces a combined marginal effective tax rate — including income tax and National Insurance — of up to 67–68%.<Cite nums={1} /> Postgraduate enrolments fell approximately 8% in 2023–24, concentrated among home students on taught master's programmes who are most exposed to this combined burden.<Cite nums={2} /> UKRI doctoral stipends of approximately £19,000 per year have also failed to keep pace with living costs, particularly in London and other high-cost cities.<Cite nums={3} /></p>
+            <p>The disincentive falls hardest on students from lower-income backgrounds, who are more likely to use the full loan facility and more sensitive to marginal effective tax rates when calculating whether postgraduate study is worth it.<Cite nums={1} /> England's current structure — high fees stacked on top of existing undergraduate debt with no effective cap on combined repayment rates — is unusual among comparable countries and risks channelling advanced qualification into the hands of those who can afford not to borrow.</p>
           </div>
         </section>
 
@@ -113,6 +121,10 @@ export default function PostgraduateFundingPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

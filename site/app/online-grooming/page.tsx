@@ -9,6 +9,17 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Home Office / ONS', dataset: 'Police Recorded Crime, England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/datasets/crimeinenglandandwalesappendixtables', date: 'Mar 2025' },
+  { num: 2, name: 'National Crime Agency', dataset: 'National Strategic Assessment — Online Child Sexual Exploitation', date: '2024' },
+  { num: 3, name: 'NSPCC', dataset: 'Online grooming age profile analysis', url: 'https://www.nspcc.org.uk/about-us/news-opinion/online-grooming-crimes-rise/', date: 'Jan 2025' },
+  { num: 4, name: 'Internet Watch Foundation', dataset: 'Annual Report — Encryption and grooming detection', url: 'https://www.iwf.org.uk/annual-report/', date: '2024' },
+  { num: 5, name: 'Home Office', dataset: 'Crime Outcomes in England and Wales', url: 'https://www.gov.uk/government/statistics/crime-outcomes-in-england-and-wales', date: 'Mar 2025' },
+  { num: 6, name: 'Ofcom', dataset: 'Online Safety Act implementation report', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -148,22 +159,22 @@ export default function OnlineGroomingPage() {
               The scale of online child grooming in England and Wales has grown relentlessly. Police
               recorded 8,420 sexual communication with a child offences in the year to March 2025 —
               up 165% from the 3,172 recorded in the first full year after the offence was created in
-              2017. Some of this increase reflects improved police awareness and reporting by
+              2017.<Cite nums={1} /> Some of this increase reflects improved police awareness and reporting by
               platforms, but the National Crime Agency estimates that the true number of children
-              targeted online each year is many times the recorded figure. The COVID-19 lockdowns
+              targeted online each year is many times the recorded figure.<Cite nums={2} /> The COVID-19 lockdowns
               marked a step change: with children spending dramatically more time online and
               unsupervised, offences rose sharply in 2020 and never returned to pre-pandemic levels.
               The growth of end-to-end encrypted messaging has made detection significantly harder,
               with the Internet Watch Foundation warning that known tools for identifying grooming
-              conversations are rendered ineffective on encrypted platforms.
+              conversations are rendered ineffective on encrypted platforms.<Cite nums={4} />
             </p>
             <p>
               What is most alarming is the age profile of victims. In 2017, 24% of recorded grooming
-              offences involved children under 13. By 2025, that share had risen to 40%. This shift
+              offences involved children under 13. By 2025, that share had risen to 40%.<Cite nums={3} /> This shift
               is closely linked to earlier smartphone ownership — 50% of UK children now have their
               own smartphone by age seven — and the design of social media and gaming platforms that
               allow adult strangers to contact children directly. The NSPCC reports that Snapchat,
-              Instagram, and WhatsApp remain the most commonly used platforms in grooming cases, but
+              Instagram, and WhatsApp remain the most commonly used platforms in grooming cases<Cite nums={3} />, but
               online gaming environments and live-streaming services are growing rapidly as vectors.
               Perpetrators typically establish contact on open platforms before migrating conversations
               to encrypted channels where they cannot be monitored.
@@ -171,14 +182,18 @@ export default function OnlineGroomingPage() {
             <p>
               The criminal justice response has not kept pace with the scale of the problem. The
               charge rate for online grooming offences has fallen from 11.2% in 2017 to just 4.6% in
-              2025. Digital forensic examination backlogs of 12 months or more are common, and police
+              2025.<Cite nums={5} /> Digital forensic examination backlogs of 12 months or more are common, and police
               forces report that the volume of digital evidence in each case has grown exponentially.
               The Online Safety Act 2023 placed new duties on platforms to prevent child sexual
               exploitation, but Ofcom is still finalising enforcement codes and the practical impact
-              on grooming volumes remains to be seen. Proactive policing — where officers pose as
+              on grooming volumes remains to be seen.<Cite nums={6} /> Proactive policing — where officers pose as
               children online — accounts for a significant share of detected offences, but
               capacity is limited. The gap between recorded crime and actual harm remains vast.
             </p>
+          </div>
+
+          <div className="mt-6">
+            <References items={editorialRefs} />
           </div>
         </section>
 

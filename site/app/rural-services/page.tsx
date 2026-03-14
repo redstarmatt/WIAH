@@ -9,6 +9,16 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DfT', dataset: 'Bus Statistics — Annual Bus Route Data', url: 'https://www.gov.uk/government/collections/bus-statistics', date: '2023' },
+  { num: 2, name: 'NHS Digital', dataset: 'GP Practice Registered Patients Distance', url: 'https://digital.nhs.uk', date: '2023' },
+  { num: 3, name: 'CPRE', dataset: 'Rural England — State of Rural Services Report', url: 'https://www.cpre.org.uk', date: '2023' },
+  { num: 4, name: 'DfT', dataset: 'Transport Act 1985 — Local Bus Subsidy Data', url: 'https://www.gov.uk/government/collections/bus-statistics', date: '2023' },
+  { num: 5, name: 'UK Finance', dataset: 'Bank Branch Closure Statistics', url: 'https://www.ukfinance.org.uk', date: '2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -100,8 +110,8 @@ export default function RuralServicesPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Ten million people live in rural England — 17% of the population spread across 86% of the land area. The arithmetic of rural service provision has never been favourable: fewer residents per square mile means higher costs per user and thinner commercial viability. Since 2010, more than 1,000 bus routes have been cut. Rural residents now travel an average of 5.8 miles to their nearest GP, against 0.8 miles for urban residents. Forty-five per cent of rural bank branches have closed. Some 740,000 premises cannot access a 10Mbps broadband connection — the government's own minimum &ldquo;decent&rdquo; standard. The 17% of rural households without a car are overwhelmingly elderly, disabled, or low-income: those with the least capacity to absorb the distance.</p>
-            <p>The causes are structural and long-running. Bus deregulation under the Transport Act 1985 left rural services entirely dependent on local authority subsidies; those subsidies were cut by 57% in real terms between 2010 and 2020. GP surgeries in rural areas face a compounding disadvantage: they pay on average £10,000 less in annual pay than urban practices, carry smaller patient lists that reduce NHS income, and bear higher per-patient running costs. Bank branch closures accelerated as digital banking expanded — 6,000 branches closed across the UK between 2015 and 2023, with rural and ex-industrial areas absorbing a disproportionate share. Post offices, pubs, and public libraries followed identical economic logic: fixed costs that cannot be shared across a critical mass of nearby users.</p>
+            <p>Ten million people live in rural England — 17% of the population spread across 86% of the land area. The arithmetic of rural service provision has never been favourable: fewer residents per square mile means higher costs per user and thinner commercial viability. Since 2010, more than 1,000 bus routes have been cut.<Cite nums={1} /> Rural residents now travel an average of 5.8 miles to their nearest GP, against 0.8 miles for urban residents.<Cite nums={2} /> Forty-five per cent of rural bank branches have closed.<Cite nums={5} /> Some 740,000 premises cannot access a 10Mbps broadband connection — the government's own minimum &ldquo;decent&rdquo; standard.<Cite nums={3} /> The 17% of rural households without a car are overwhelmingly elderly, disabled, or low-income: those with the least capacity to absorb the distance.</p>
+            <p>The causes are structural and long-running. Bus deregulation under the Transport Act 1985 left rural services entirely dependent on local authority subsidies; those subsidies were cut by 57% in real terms between 2010 and 2020.<Cite nums={4} /> GP surgeries in rural areas face a compounding disadvantage: they pay on average £10,000 less in annual pay than urban practices, carry smaller patient lists that reduce NHS income, and bear higher per-patient running costs. Bank branch closures accelerated as digital banking expanded — 6,000 branches closed across the UK between 2015 and 2023, with rural and ex-industrial areas absorbing a disproportionate share.<Cite nums={5} /> Post offices, pubs, and public libraries followed identical economic logic: fixed costs that cannot be shared across a critical mass of nearby users.</p>
             </div>
         </section>
 
@@ -211,6 +221,10 @@ export default function RuralServicesPage() {
             source="Source: DfT — Bus Statistics 2023; NHS Digital — Patients Registered at GP Practice 2023."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

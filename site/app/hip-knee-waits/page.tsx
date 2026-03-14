@@ -9,6 +9,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -56,6 +58,14 @@ function yearToDate(y: number): Date {
 function sparkFrom(arr: number[], n = 10) {
   return arr.slice(-n);
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Referral to Treatment Waiting Times', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/referral-to-treatment-waiting-times/', date: 'Feb 2025' },
+  { num: 2, name: 'NHS Digital', dataset: 'Hospital Episode Statistics — Admitted Patient Care', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/hospital-episode-statistics-for-admitted-patient-care-outpatient-and-accident-and-emergency-data', date: 'Jan 2025' },
+  { num: 3, name: 'BMJ', dataset: 'Impact of Waiting Times on Joint Replacement Outcomes', url: 'https://www.bmj.com/', date: '2023' },
+  { num: 4, name: 'National Joint Registry', dataset: '21st Annual Report', url: 'https://reports.njrcentre.org.uk/', date: '2024' },
+  { num: 5, name: 'NHS England', dataset: 'Elective Recovery Plan', url: 'https://www.england.nhs.uk/coronavirus/publication/delivery-plan-for-tackling-the-covid-19-backlog-of-elective-care/', date: '2022' },
+];
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -167,13 +177,13 @@ export default function HipKneeWaitsPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Hip and knee replacements are among the most common elective surgeries in England, and among the most life-changing. For the roughly 200,000 people who received one each year before the pandemic, the operation typically meant the end of years of worsening pain and the return of basic mobility — climbing stairs, walking to the shops, sleeping through the night. The NHS waiting list for these two procedures alone now stands at 780,000, a figure that has more than quadrupled since 2019. The median wait has stretched from under 15 weeks to over a year. For patients in the South West, it is closer to 14 months.
+              Hip and knee replacements are among the most common elective surgeries in England, and among the most life-changing. For the roughly 200,000 people who received one each year before the pandemic, the operation typically meant the end of years of worsening pain and the return of basic mobility — climbing stairs, walking to the shops, sleeping through the night.<Cite nums={2} /> The NHS waiting list for these two procedures alone now stands at 780,000, a figure that has more than quadrupled since 2019.<Cite nums={1} /> The median wait has stretched from under 15 weeks to over a year. For patients in the South West, it is closer to 14 months.<Cite nums={1} />
             </p>
             <p>
-              The collapse began in March 2020, when all non-urgent elective surgery was suspended to free hospital capacity for COVID-19. In the first year of the pandemic, hip and knee replacements fell by 60% — from 195,000 annual procedures to just 78,000. The backlog that had been building slowly for years became an avalanche. Orthopaedic theatre capacity has still not fully recovered: infection control measures reduced the number of operations per session, staff shortages have constrained lists, and the independent sector — which now performs around a third of NHS-funded joint replacements — cannot absorb the scale of unmet demand. The 2022 Elective Recovery Plan pledged to eliminate waits over 18 months, but the 18-week standard that patients were once entitled to expect has become a distant memory.
+              The collapse began in March 2020, when all non-urgent elective surgery was suspended to free hospital capacity for COVID-19. In the first year of the pandemic, hip and knee replacements fell by 60% — from 195,000 annual procedures to just 78,000.<Cite nums={2} /> The backlog that had been building slowly for years became an avalanche. Orthopaedic theatre capacity has still not fully recovered: infection control measures reduced the number of operations per session, staff shortages have constrained lists, and the independent sector — which now performs around a third of NHS-funded joint replacements — cannot absorb the scale of unmet demand. The 2022 Elective Recovery Plan pledged to eliminate waits over 18 months, but the 18-week standard that patients were once entitled to expect has become a distant memory.<Cite nums={5} />
             </p>
             <p>
-              The human cost is not abstract. Research published in the BMJ found that patients who wait more than six months for joint replacement experience measurable deterioration — muscle wasting, weight gain from immobility, worsening mental health, and increased use of opioid painkillers. Around one in five patients waiting over a year report that they have had to leave work or reduce their hours. The National Joint Registry data shows that patients who wait longer have worse post-operative outcomes and higher revision rates. There is one significant positive development: procedure volumes in 2025 have exceeded pre-pandemic levels for the first time, reaching an estimated 198,000 operations. If sustained, this rate should begin to reduce the backlog — but at current volumes, clearing the accumulated list would take several years even if no new patients were added.
+              The human cost is not abstract. Research published in the BMJ found that patients who wait more than six months for joint replacement experience measurable deterioration — muscle wasting, weight gain from immobility, worsening mental health, and increased use of opioid painkillers.<Cite nums={3} /> Around one in five patients waiting over a year report that they have had to leave work or reduce their hours.<Cite nums={3} /> The National Joint Registry data shows that patients who wait longer have worse post-operative outcomes and higher revision rates.<Cite nums={4} /> There is one significant positive development: procedure volumes in 2025 have exceeded pre-pandemic levels for the first time, reaching an estimated 198,000 operations.<Cite nums={2} /> If sustained, this rate should begin to reduce the backlog — but at current volumes, clearing the accumulated list would take several years even if no new patients were added.
             </p>
           </div>
         </section>
@@ -355,6 +365,10 @@ export default function HipKneeWaitsPage() {
             source="Source: NHS England — Hospital Episode Statistics, 2024/25. National Joint Registry 21st Annual Report."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* ── Sources & methodology ────────────────────────────────────── */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

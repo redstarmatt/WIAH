@@ -8,6 +8,15 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DWP', dataset: 'Stat-Xplore: PIP and UC health element claimants', url: 'https://stat-xplore.dwp.gov.uk/', date: '2024' },
+  { num: 2, name: 'OBR', dataset: 'Economic and Fiscal Outlook — welfare spending projections', url: 'https://obr.uk/efo/', date: '2024' },
+  { num: 3, name: 'ONS', dataset: 'Long COVID prevalence estimates', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/bulletins/prevalenceofongoingsymptomsfollowingcoronaviruscovid19infectionintheuk', date: '2024' },
+  { num: 4, name: 'DWP', dataset: 'Universal Credit statistics', url: 'https://www.gov.uk/government/collections/universal-credit-statistics', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -72,8 +81,8 @@ export default function SicknessBenefitClaimantsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Working-age people on health-related benefits (PIP, DLA, and the UC health component) rose from 2.2 million in 2019 to 3.2 million in 2024 — a 45% increase and the fastest rise in three decades. Mental health is now the most common primary condition cited by new claimants, at around 39% of all new awards, with anxiety, depression, and a growing contribution from ADHD and autism diagnoses. Musculoskeletal conditions account for a further 18%; long COVID has added a medically distinct new category. PIP and the UC health element together cost an estimated £21 billion per year in 2024 — more than the defence budget — and the OBR projects continued growth absent policy intervention. Under-35 claimants have nearly doubled since 2020. The government's response has focused on assessment reform and new conditionality requirements for those assessed as able to undertake some work activity.</p>
-            <p>Critics argue these measures are punitive responses to a genuine health crisis. Achieving the government's stated goal of bringing 200,000 economically inactive people back into work by 2028 requires not just benefit reform but genuine progress on NHS waiting lists, occupational health access, and the availability of flexible employment for people managing health conditions — none of which is currently on a sufficient trajectory. The burden falls hardest on people with the most complex and least well-understood conditions: those with mental illness, long COVID, and neurodevelopmental conditions face the most contested assessments and the longest distances to sustainable employment.</p>
+            <p>Working-age people on health-related benefits (PIP, DLA, and the UC health component) rose from 2.2 million in 2019 to 3.2 million in 2024 — a 45% increase and the fastest rise in three decades.<Cite nums={1} /> Mental health is now the most common primary condition cited by new claimants, at around 39% of all new awards, with anxiety, depression, and a growing contribution from ADHD and autism diagnoses.<Cite nums={1} /> Musculoskeletal conditions account for a further 18%; long COVID has added a medically distinct new category.<Cite nums={3} /> PIP and the UC health element together cost an estimated £21 billion per year in 2024 — more than the defence budget — and the OBR projects continued growth absent policy intervention.<Cite nums={2} /> Under-35 claimants have nearly doubled since 2020.<Cite nums={1} /> The government's response has focused on assessment reform and new conditionality requirements for those assessed as able to undertake some work activity.</p>
+            <p>Critics argue these measures are punitive responses to a genuine health crisis. Achieving the government's stated goal of bringing 200,000 economically inactive people back into work by 2028 requires not just benefit reform but genuine progress on NHS waiting lists, occupational health access, and the availability of flexible employment for people managing health conditions — none of which is currently on a sufficient trajectory.<Cite nums={4} /> The burden falls hardest on people with the most complex and least well-understood conditions: those with mental illness, long COVID, and neurodevelopmental conditions face the most contested assessments and the longest distances to sustainable employment.<Cite nums={[1, 3]} /></p>
           </div>
         </section>
 
@@ -133,6 +142,10 @@ export default function SicknessBenefitClaimantsPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

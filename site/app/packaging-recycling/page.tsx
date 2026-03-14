@@ -8,6 +8,13 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DEFRA / Environment Agency', dataset: 'Packaging Recycling Statistics', url: 'https://www.gov.uk/government/statistical-data-sets/env23-uk-waste-data-and-management', date: '2024' },
+  { num: 2, name: 'WRAP', dataset: 'UK Plastics Pact Annual Report', date: '2025' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -194,6 +201,10 @@ export default function TopicPage() {
             source="Source: WRAP — UK Plastics Pact annual report, 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

@@ -5,6 +5,15 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'OECD / LSE Centre for Economic Performance', dataset: 'Intergenerational Income Elasticity Research', date: '2024', note: 'UK elasticity ~0.47, among highest in OECD' },
+  { num: 2, name: 'Social Mobility Commission', dataset: 'State of the Nation — Social Mobility in Great Britain', url: 'https://www.gov.uk/government/collections/state-of-the-nation', date: '2024' },
+  { num: 3, name: 'Social Mobility Commission', dataset: 'Elitist Britain', url: 'https://www.gov.uk/government/publications/elitist-britain-2019', date: '2024', note: '7% of pupils attend private schools but hold 65% of elite posts' },
+  { num: 4, name: 'University of Oxford / University of Cambridge', dataset: 'Undergraduate Admissions Statistics', url: 'https://www.ox.ac.uk/about/facts-and-figures/admissions-statistics', date: '2024' },
+];
 
 export default function SocialMobilityPage() {
   // Social mobility composite index (indexed to 100 at 2010), 2010–2024
@@ -141,12 +150,16 @@ export default function SocialMobilityPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">A class ceiling</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>The UK's intergenerational income elasticity — a measure of how much a parent's income predicts a child's income — stands at around 0.47, one of the highest in the OECD. This means nearly half of income advantage is passed from parent to child. A child born into the bottom income quintile has roughly a 9% chance of reaching the top quintile as an adult.</p>
-              <p>The share of professionals from working class backgrounds has fallen from 36% to 32% since 2010, despite the share of working class origin people in the population remaining roughly stable. The Social Mobility Commission identifies a persistent "class ceiling" — where those from privileged backgrounds earn more than their equally qualified working class peers, controlling for occupation and education level.</p>
-              <p>Private schools educate around 7% of pupils but supply 34% of Oxbridge admissions and 65% of the most senior positions in law, politics, medicine, and journalism. Slow progress on Oxbridge state school admissions has been made — rising from 55% to 66% over 14 years — but the gap to population representation (93% state-educated) remains vast.</p>
+              <p>The UK's intergenerational income elasticity — a measure of how much a parent's income predicts a child's income — stands at around 0.47, one of the highest in the OECD.<Cite nums={1} /> This means nearly half of income advantage is passed from parent to child. A child born into the bottom income quintile has roughly a 9% chance of reaching the top quintile as an adult.</p>
+              <p>The share of professionals from working class backgrounds has fallen from 36% to 32% since 2010, despite the share of working class origin people in the population remaining roughly stable.<Cite nums={2} /> The Social Mobility Commission identifies a persistent "class ceiling" — where those from privileged backgrounds earn more than their equally qualified working class peers, controlling for occupation and education level.<Cite nums={2} /></p>
+              <p>Private schools educate around 7% of pupils but supply 34% of Oxbridge admissions and 65% of the most senior positions in law, politics, medicine, and journalism.<Cite nums={[3, 4]} /> Slow progress on Oxbridge state school admissions has been made — rising from 55% to 66% over 14 years — but the gap to population representation (93% state-educated) remains vast.<Cite nums={4} /></p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

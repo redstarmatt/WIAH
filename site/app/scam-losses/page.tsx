@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'UK Finance', dataset: 'Annual Fraud Report — Fraud the Facts', url: 'https://www.ukfinance.org.uk/data-and-research/data/fraud/fraud-the-facts', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Crime Survey for England and Wales — fraud estimates', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice', date: '2023' },
+  { num: 3, name: 'Payment Systems Regulator', dataset: 'APP Scams Performance Report', url: 'https://www.psr.org.uk/our-work/app-scams/', date: '2024' },
+  { num: 4, name: 'UK Parliament', dataset: 'Online Safety Act 2023', url: 'https://www.legislation.gov.uk/ukpga/2023/50', date: '2023' },
+];
 
 export default function ScamLossesPage() {
   const totalLossesData = [1.2, 1.4, 1.6, 1.8, 2.0, 2.2, 2.3];
@@ -149,12 +158,16 @@ export default function ScamLossesPage() {
           <section id="sec-context" className="max-w-2xl mb-12 mt-8">
             <h2 className="text-xl font-bold text-wiah-black mb-4">Britain has become a world centre for fraud</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>The UK loses more money to fraud per capita than almost any other developed country — a consequence of sophisticated criminal networks, a digital banking infrastructure that makes instant payments easy to exploit, and an online advertising ecosystem that enables fraudsters to reach millions at low cost. Total scam losses reached £2.3 billion in 2023, but this almost certainly underestimates the true figure: the Crime Survey for England and Wales estimated 3.6 million fraud offences in the year to March 2023, most of which are never reported to banks or police.</p>
-              <p>Authorised push payment fraud — where victims are manipulated into transferring money to accounts controlled by fraudsters — is the most damaging category for individuals because historically banks treated it as the victim's fault and refused to refund losses. The 2019 voluntary reimbursement code improved matters marginally, but banks reimbursed only 46% of APP losses in 2022. The mandatory reimbursement regime introduced in October 2024 changes this: banks must now return funds within five days, funded equally by the sending and receiving bank. Early evidence suggests reimbursement rates are improving.</p>
-              <p>The deeper problem is that most UK fraud originates through Meta's social media platforms and Google's advertising network — through fake investment advertisements, romance profiles, and impersonation of legitimate organisations. The Online Safety Act 2023 includes provisions requiring platforms to address fraudulent advertising, but implementation is ongoing and enforcement uncertain. International money flows — frequently through East and West African mule networks and cryptocurrency exchanges — make asset recovery extremely rare even when perpetrators are identified.</p>
+              <p>The UK loses more money to fraud per capita than almost any other developed country — a consequence of sophisticated criminal networks, a digital banking infrastructure that makes instant payments easy to exploit, and an online advertising ecosystem that enables fraudsters to reach millions at low cost. Total scam losses reached £2.3 billion in 2023, but this almost certainly underestimates the true figure: the Crime Survey for England and Wales estimated 3.6 million fraud offences in the year to March 2023, most of which are never reported to banks or police.<Cite nums={[1, 2]} /></p>
+              <p>Authorised push payment fraud — where victims are manipulated into transferring money to accounts controlled by fraudsters — is the most damaging category for individuals because historically banks treated it as the victim's fault and refused to refund losses. The 2019 voluntary reimbursement code improved matters marginally, but banks reimbursed only 46% of APP losses in 2022. The mandatory reimbursement regime introduced in October 2024 changes this: banks must now return funds within five days, funded equally by the sending and receiving bank.<Cite nums={3} /> Early evidence suggests reimbursement rates are improving.</p>
+              <p>The deeper problem is that most UK fraud originates through Meta's social media platforms and Google's advertising network — through fake investment advertisements, romance profiles, and impersonation of legitimate organisations. The Online Safety Act 2023 includes provisions requiring platforms to address fraudulent advertising, but implementation is ongoing and enforcement uncertain.<Cite nums={4} /> International money flows — frequently through East and West African mule networks and cryptocurrency exchanges — make asset recovery extremely rare even when perpetrators are identified.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

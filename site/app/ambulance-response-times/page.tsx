@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Cat 1 mean response time (minutes), 2017–2024 — NHS England AQI
 const cat1Values = [7.0, 7.2, 7.3, 7.8, 8.7, 8.6, 8.4, 8.2];
@@ -54,6 +56,11 @@ const annotations: Annotation[] = [
   { date: new Date(2023, 0, 1), label: '2023: NHS ambulance recovery plan launched' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Ambulance Quality Indicators', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/ambulance-quality-indicators/', date: '2024' },
+  { num: 2, name: 'NHS England', dataset: 'Urgent and Emergency Care Recovery Plan', date: '2023' },
+];
+
 export default function AmbulanceResponseTimesPage() {
   return (
     <>
@@ -68,8 +75,8 @@ export default function AmbulanceResponseTimesPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England's ambulance services operate under two key targets: Category 1 calls — immediately life-threatening emergencies including cardiac arrests — should receive a response within 7 minutes on average. Category 2 calls, covering strokes and heart attacks, carry an 18-minute target. Both are being missed. Category 2 response times deteriorated from 18 minutes in 2017 to 48 minutes at their worst in 2022, before partial recovery to 38.6 minutes in 2024. For a stroke patient, 1.9 million neurons are lost for each minute without treatment — a 38-minute average means many patients routinely wait an hour or more. The primary structural cause is ambulance handover delays: over 1.8 million crew-hours were lost to queuing outside A&E departments in 2022/23 alone.</p>
-            <p>Performance variation between trusts is severe. The best-performing trust achieved a Category 1 average of 7.1 minutes in 2024; the worst reached 12.3 minutes — nearly double the target. Rural ambulance services are disproportionately affected: geography means a crew trapped at a distant hospital for hours can leave hundreds of square miles without emergency cover. The national average conceals a postcode lottery in emergency care that is, by definition, life-or-death. NHS England's ambulance recovery plan, launched in 2023, combined hospital discharge acceleration with additional call-handling capacity. Cat 2 times have improved but remain more than twice the target, and the underlying constraints — social care capacity, A&E crowding, workforce vacancies — have not been structurally resolved.</p>
+            <p>England's ambulance services operate under two key targets: Category 1 calls — immediately life-threatening emergencies including cardiac arrests — should receive a response within 7 minutes on average. Category 2 calls, covering strokes and heart attacks, carry an 18-minute target. Both are being missed.<Cite nums={1} /> Category 2 response times deteriorated from 18 minutes in 2017 to 48 minutes at their worst in 2022, before partial recovery to 38.6 minutes in 2024.<Cite nums={1} /> For a stroke patient, 1.9 million neurons are lost for each minute without treatment — a 38-minute average means many patients routinely wait an hour or more. The primary structural cause is ambulance handover delays: over 1.8 million crew-hours were lost to queuing outside A&E departments in 2022/23 alone.<Cite nums={1} /></p>
+            <p>Performance variation between trusts is severe. The best-performing trust achieved a Category 1 average of 7.1 minutes in 2024; the worst reached 12.3 minutes — nearly double the target.<Cite nums={1} /> Rural ambulance services are disproportionately affected: geography means a crew trapped at a distant hospital for hours can leave hundreds of square miles without emergency cover. The national average conceals a postcode lottery in emergency care that is, by definition, life-or-death. NHS England's ambulance recovery plan, launched in 2023, combined hospital discharge acceleration with additional call-handling capacity.<Cite nums={2} /> Cat 2 times have improved but remain more than twice the target, and the underlying constraints — social care capacity, A&E crowding, workforce vacancies — have not been structurally resolved.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -148,6 +155,9 @@ export default function AmbulanceResponseTimesPage() {
             source="Source: NHS England — Urgent and Emergency Care Recovery Plan 2023 progress report. NHS England — Ambulance Quality Indicators 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

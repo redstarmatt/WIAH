@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Pensions Policy Institute', dataset: 'UK Pension Adequacy Research', url: 'https://www.pensionspolicyinstitute.org.uk/', date: '2023', note: 'Aggregate savings gap estimated at £350bn' },
+  { num: 2, name: 'DWP', dataset: 'Family Resources Survey', url: 'https://www.gov.uk/government/collections/family-resources-survey--2', date: '2023', note: '39% of self-employed saving nothing for retirement' },
+  { num: 3, name: 'ONS', dataset: 'Wealth and Assets Survey', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/debt/bulletins/wealthingreatbritainwave', date: '2023', note: 'Median pension pot at 55 approximately £72,000' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -64,8 +72,8 @@ export default function PensionSavingsGapPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The median pension pot for a 55-year-old stands at approximately £72,000 — well below the £200,000+ required for a comfortable retirement when combined with the state pension. The aggregate savings gap is estimated at £350 billion by the Pensions Policy Institute and is growing at roughly 5% per year. Auto-enrolment has expanded pension participation from 47% to 88% of eligible employees since 2012, but design limitations leave 39% of self-employed workers — around 1.75 million people — saving nothing for retirement. The minimum 8% contribution rate (3% employer, 5% employee) is estimated to be roughly half what is needed for a moderate retirement income, and very few workers voluntarily exceed the minimum.</p>
-            <p>The savings gap falls hardest on those with the least capacity to compensate. Women face a particularly acute shortfall because career breaks for caring reduce both savings years and state pension entitlement; the gender pension gap sees women receive around £7,900 less per year in private pension income than men. Workers in low-paid, part-time, or gig economy roles — disproportionately from minority ethnic backgrounds — combine low contribution rates with exclusion from the auto-enrolment earnings threshold. The shift from defined benefit to defined contribution schemes over the past three decades has transferred investment risk entirely to individuals, meaning retirement outcomes now depend on market conditions over which savers have no control.</p>
+            <p>The median pension pot for a 55-year-old stands at approximately £72,000 — well below the £200,000+ required for a comfortable retirement when combined with the state pension.<Cite nums={3} /> The aggregate savings gap is estimated at £350 billion by the Pensions Policy Institute and is growing at roughly 5% per year.<Cite nums={1} /> Auto-enrolment has expanded pension participation from 47% to 88% of eligible employees since 2012, but design limitations leave 39% of self-employed workers — around 1.75 million people — saving nothing for retirement.<Cite nums={2} /> The minimum 8% contribution rate (3% employer, 5% employee) is estimated to be roughly half what is needed for a moderate retirement income, and very few workers voluntarily exceed the minimum.</p>
+            <p>The savings gap falls hardest on those with the least capacity to compensate. Women face a particularly acute shortfall because career breaks for caring reduce both savings years and state pension entitlement; the gender pension gap sees women receive around £7,900 less per year in private pension income than men.<Cite nums={3} /> Workers in low-paid, part-time, or gig economy roles — disproportionately from minority ethnic backgrounds — combine low contribution rates with exclusion from the auto-enrolment earnings threshold.<Cite nums={2} /> The shift from defined benefit to defined contribution schemes over the past three decades has transferred investment risk entirely to individuals, meaning retirement outcomes now depend on market conditions over which savers have no control.</p>
           </div>
         </section>
 
@@ -125,6 +133,10 @@ export default function PensionSavingsGapPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

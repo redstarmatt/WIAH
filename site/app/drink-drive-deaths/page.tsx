@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Drink-drive deaths, 2012–2023 — DfT
 const deathValues = [260, 240, 250, 230, 220, 250, 280, 290, 210, 260, 280, 270];
@@ -43,6 +45,12 @@ const annotations: Annotation[] = [
   { date: new Date(2014, 0, 1), label: '2014: Scotland lowers limit to 50mg' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Department for Transport', dataset: 'Reported Road Casualties Great Britain', url: 'https://www.gov.uk/government/collections/road-accidents-and-safety-statistics', date: '2023' },
+  { num: 2, name: 'Transport Research Laboratory', dataset: 'Drink drive limit research', date: '2023' },
+  { num: 3, name: 'Ministry of Justice', dataset: 'Criminal Justice Statistics', url: 'https://www.gov.uk/government/collections/criminal-justice-statistics', date: '2023' },
+];
+
 export default function DrinkDriveDeathsPage() {
   return (
     <>
@@ -57,7 +65,7 @@ export default function DrinkDriveDeathsPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Drink driving deaths in Great Britain fell dramatically through the 1980s and 1990s, but progress has stalled completely since the early 2010s. Deaths have oscillated between 210 and 290 per year for over a decade, with the 2023 figure at 270. England and Wales retain the highest legal alcohol limit for driving in Western Europe at 80mg per 100ml of blood. Scotland lowered its limit to 50mg in 2014, in line with the rest of Europe, and recorded a measurable reduction in drink-drive casualties. Multiple road safety organisations, the British Medical Association, and the Parliamentary Advisory Council for Transport Safety have recommended the same change for England and Wales; ministers have consistently declined to act, citing rural community and hospitality industry impacts. Modelling by the Transport Research Laboratory estimated that lowering the limit would prevent around 25 deaths per year in England alone.</p>
+            <p>Drink driving deaths in Great Britain fell dramatically through the 1980s and 1990s, but progress has stalled completely since the early 2010s. Deaths have oscillated between 210 and 290 per year for over a decade, with the 2023 figure at 270.<Cite nums={1} /> England and Wales retain the highest legal alcohol limit for driving in Western Europe at 80mg per 100ml of blood. Scotland lowered its limit to 50mg in 2014, in line with the rest of Europe, and recorded a measurable reduction in drink-drive casualties. Multiple road safety organisations, the British Medical Association, and the Parliamentary Advisory Council for Transport Safety have recommended the same change for England and Wales; ministers have consistently declined to act, citing rural community and hospitality industry impacts. Modelling by the Transport Research Laboratory estimated that lowering the limit would prevent around 25 deaths per year in England alone.<Cite nums={2} /></p>
             <p>The number of police breath tests administered has fallen substantially since 2009 as officer numbers fell and breath testing operations were deprioritised. Random breath testing — permitted across most of Europe — is not currently allowed in England and Wales. The moral arithmetic is straightforward: a proven intervention is available, has been implemented without apparent harm in Scotland and across Europe, and has a strong evidence base. The decision not to implement it is a political choice with measurable, fatal consequences.</p>
           </div>
         </section>
@@ -137,6 +145,10 @@ export default function DrinkDriveDeathsPage() {
             source="Source: Transport Scotland — Road Casualties Scotland 2023. Transport Research Laboratory — drink drive limit research."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

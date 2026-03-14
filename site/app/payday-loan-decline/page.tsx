@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'FCA', dataset: 'Consumer Credit Market Study', date: '2024', note: 'Payday loan volumes fell 95% after 2015 price cap' },
+  { num: 2, name: 'FCA', dataset: 'Financial Lives Survey', date: '2024', note: 'BNPL lending reached £19bn, used by 17 million people' },
+  { num: 3, name: 'Illegal Money Lending Teams / Centre for Responsible Credit', dataset: 'Annual Report', date: '2024', note: 'Estimated 1.1 million people using illegal lenders' },
+];
 
 interface PaydayLoanData {
   topic: string
@@ -63,8 +71,8 @@ export default function PaydayLoanDeclinePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The payday loan market collapsed 95% after the FCA introduced a price cap in January 2015 — total loans issued fell from 10.3 million in 2013 to 1.8 million in 2023. The cap limited costs to 0.8% per day, capped default fees at £15, and prevented total charges exceeding 100% of the original loan. The regulation ended the worst debt-spiral abuses, but it also removed short-term credit that met genuine liquidity needs for households with irregular incomes or no mainstream access. Buy-now-pay-later grew explosively to fill part of the gap — total BNPL lending reached £19 billion in 2023, used by 17 million people — operating largely outside FCA regulation until 2024. Illegal lending is estimated to affect 1.1 million people, the Illegal Money Lending Teams prosecuting lenders who use intimidation rather than legal process.</p>
-            <p>The credit gap from payday regulation falls hardest on the financially excluded: those with poor credit scores, benefit income, or multiple debt obligations who cannot access credit unions and lack the time to navigate their application processes. Credit union membership has grown 30% since 2015 to 2 million, but the sector remains geographically concentrated — strong in Northern Ireland, Scotland, and some urban English communities, sparse in rural and suburban areas. The consequence is that the lowest-income households face a choice between unregulated BNPL products, illegal lenders, or going without — a constraint concentrated in deprived areas already experiencing the highest rates of problem debt.</p>
+            <p>The payday loan market collapsed 95% after the FCA introduced a price cap in January 2015 — total loans issued fell from 10.3 million in 2013 to 1.8 million in 2023.<Cite nums={1} /> The cap limited costs to 0.8% per day, capped default fees at £15, and prevented total charges exceeding 100% of the original loan. The regulation ended the worst debt-spiral abuses, but it also removed short-term credit that met genuine liquidity needs for households with irregular incomes or no mainstream access. Buy-now-pay-later grew explosively to fill part of the gap — total BNPL lending reached £19 billion in 2023, used by 17 million people — operating largely outside FCA regulation until 2024.<Cite nums={2} /> Illegal lending is estimated to affect 1.1 million people, the Illegal Money Lending Teams prosecuting lenders who use intimidation rather than legal process.<Cite nums={3} /></p>
+            <p>The credit gap from payday regulation falls hardest on the financially excluded: those with poor credit scores, benefit income, or multiple debt obligations who cannot access credit unions and lack the time to navigate their application processes.<Cite nums={[1, 2]} /> Credit union membership has grown 30% since 2015 to 2 million, but the sector remains geographically concentrated — strong in Northern Ireland, Scotland, and some urban English communities, sparse in rural and suburban areas. The consequence is that the lowest-income households face a choice between unregulated BNPL products, illegal lenders, or going without — a constraint concentrated in deprived areas already experiencing the highest rates of problem debt.<Cite nums={3} /></p>
           </div>
         </section>
 
@@ -119,6 +127,10 @@ export default function PaydayLoanDeclinePage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

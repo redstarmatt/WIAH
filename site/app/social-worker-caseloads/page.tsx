@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DfE', dataset: "Children's Social Work Workforce — Caseloads and Vacancies", url: 'https://explore-education-statistics.service.gov.uk/find-statistics/children-s-social-work-workforce', date: '2024' },
+  { num: 2, name: 'DfE', dataset: 'Characteristics of Children in Need — Referrals and Protection Plans', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/characteristics-of-children-in-need', date: '2024' },
+  { num: 3, name: 'Independent Review of Children\'s Social Care (MacAlister)', dataset: 'Final Report and Recommendations', url: 'https://childrenssocialcare.independent-review.uk', date: '2022' },
+  { num: 4, name: 'Ofsted', dataset: 'Inspection Outcomes for Local Authority Children\'s Services', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -130,8 +139,8 @@ export default function SocialWorkerCaseloadsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England's children's social workers are the frontline of child protection — the professionals who investigate neglect, assess risk, and decide whether a child is safe at home. There are roughly 33,000 of them, and they are not enough. The average caseload has risen to 18 children per worker, against a recommended maximum of 12 to 15. In the most pressured local authorities, individual workers carry 25 or more cases simultaneously, each involving home visits, court reports, multi-agency meetings, and families in crisis. The human cost is measurable: 40 percent of newly qualified social workers leave the profession within five years. Annual turnover exceeds 30 percent in some authorities. The 6,600 vacancies across England are plugged by agency staff, who fill 17 percent of posts at two to three times the cost of permanent employees — money that could fund additional permanent roles. Every year, around 650,000 referrals reach children's services, and more than 50,000 children are subject to child protection plans at any given time.</p>
-            <p>The consequences of this workforce crisis are not abstract. Serious case reviews following the deaths of Victoria Climbi&eacute;, Baby Peter, and Arthur Labinjo-Hughes each identified overloaded, under-supported social workers as a contributing factor. When a practitioner is managing twice the recommended caseload, the quality of assessment drops, warning signs are missed, and children fall through gaps in the system. The Independent Review of Children's Social Care, led by Josh MacAlister and published in 2022, called the situation unsustainable and recommended fundamental reform — including a national framework for caseload limits, investment in early help to reduce demand, and measures to end the reliance on expensive agency labour. Some progress has followed: regional social work academies have been established to improve training pipelines, and several local authorities have introduced retention bonuses. But the structural problem remains. Ofsted continues to rate some authorities &ldquo;inadequate&rdquo; for years running, and the emotional toll on practitioners — secondary trauma, burnout, and public blame after child deaths — drives an exit cycle that recruitment alone cannot fix.</p>
+            <p>England's children's social workers are the frontline of child protection — the professionals who investigate neglect, assess risk, and decide whether a child is safe at home. There are roughly 33,000 of them, and they are not enough. The average caseload has risen to 18 children per worker, against a recommended maximum of 12 to 15.<Cite nums={1} /> In the most pressured local authorities, individual workers carry 25 or more cases simultaneously, each involving home visits, court reports, multi-agency meetings, and families in crisis. The human cost is measurable: 40 percent of newly qualified social workers leave the profession within five years. Annual turnover exceeds 30 percent in some authorities. The 6,600 vacancies across England are plugged by agency staff, who fill 17 percent of posts at two to three times the cost of permanent employees — money that could fund additional permanent roles.<Cite nums={1} /> Every year, around 650,000 referrals reach children's services, and more than 50,000 children are subject to child protection plans at any given time.<Cite nums={2} /></p>
+            <p>The consequences of this workforce crisis are not abstract. Serious case reviews following the deaths of Victoria Climbi&eacute;, Baby Peter, and Arthur Labinjo-Hughes each identified overloaded, under-supported social workers as a contributing factor. When a practitioner is managing twice the recommended caseload, the quality of assessment drops, warning signs are missed, and children fall through gaps in the system. The Independent Review of Children's Social Care, led by Josh MacAlister and published in 2022, called the situation unsustainable and recommended fundamental reform — including a national framework for caseload limits, investment in early help to reduce demand, and measures to end the reliance on expensive agency labour.<Cite nums={3} /> Some progress has followed: regional social work academies have been established to improve training pipelines, and several local authorities have introduced retention bonuses. But the structural problem remains. Ofsted continues to rate some authorities &ldquo;inadequate&rdquo; for years running,<Cite nums={4} /> and the emotional toll on practitioners — secondary trauma, burnout, and public blame after child deaths — drives an exit cycle that recruitment alone cannot fix.</p>
           </div>
         </section>
 
@@ -232,6 +241,10 @@ export default function SocialWorkerCaseloadsPage() {
             source="Source: DfE — Children's Social Work Workforce 2024; Independent Review of Children's Social Care 2022."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

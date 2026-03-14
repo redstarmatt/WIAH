@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Regional Gross Value Added (balanced) per head', url: 'https://www.ons.gov.uk/economy/grossvalueaddedgva/bulletins/regionaleconomicactivitybygrossvalueaddedukbalanced/1998to2022', date: '2023' },
+  { num: 2, name: 'ONS', dataset: 'Sub-regional productivity — GVA per hour worked', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/labourproductivity/articles/regionalandsubregionalproductivityintheuk/bulletin', date: '2023' },
+  { num: 3, name: 'IFS', dataset: 'Levelling Up Funding Allocations Analysis', date: '2024', note: 'Institute for Fiscal Studies analysis of targeting against deprivation' },
+];
 
 export default function RegionalInequalityPage() {
   // GVA per head indexed to UK=100 by region, 2000–2023
@@ -86,9 +94,9 @@ export default function RegionalInequalityPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Regional inequality in the UK is among the highest of any developed country. London's Gross Value Added (GVA) per head is around 2.5 times the UK average — and within London, Inner London West (Westminster, Kensington) sits at over 9 times the UK average. The North East of England, at around 75% of the UK average, sits below all but the poorest regions of Romania and Bulgaria in the European regional ranking. This is not a gap that fluctuates with economic cycles: it has widened over three decades and shows no sign of narrowing.</p>
-            <p>The regional productivity gap is even more stark when measured by GVA per hour worked — the most meaningful measure of economic efficiency. London workers produce around 45% more per hour than the UK average; North East workers produce around 20% less. This gap reflects differences in industrial composition (financial services and professional services are concentrated in London), educational attainment (graduates cluster in cities with graduate-level jobs), and public investment (transport infrastructure spending per head is dramatically skewed towards London).</p>
-            <p>Every government since 1997 has launched an initiative to address regional inequality: Northern Powerhouse, City Deals, Levelling Up, Investment Zones, Freeports. The evidence that any of them has materially changed the trajectory is thin. The Institute for Fiscal Studies found that Levelling Up funding allocations were poorly targeted against deprivation metrics, and that total public investment per head in London still exceeds that of any northern region. The structural forces — agglomeration economics, network effects, the concentration of decision-making in London — are powerful and slow-moving.</p>
+            <p>Regional inequality in the UK is among the highest of any developed country. London's Gross Value Added (GVA) per head is around 2.5 times the UK average — and within London, Inner London West (Westminster, Kensington) sits at over 9 times the UK average.<Cite nums={1} /> The North East of England, at around 75% of the UK average, sits below all but the poorest regions of Romania and Bulgaria in the European regional ranking.<Cite nums={1} /> This is not a gap that fluctuates with economic cycles: it has widened over three decades and shows no sign of narrowing.</p>
+            <p>The regional productivity gap is even more stark when measured by GVA per hour worked — the most meaningful measure of economic efficiency. London workers produce around 45% more per hour than the UK average; North East workers produce around 20% less.<Cite nums={2} /> This gap reflects differences in industrial composition (financial services and professional services are concentrated in London), educational attainment (graduates cluster in cities with graduate-level jobs), and public investment (transport infrastructure spending per head is dramatically skewed towards London).</p>
+            <p>Every government since 1997 has launched an initiative to address regional inequality: Northern Powerhouse, City Deals, Levelling Up, Investment Zones, Freeports. The evidence that any of them has materially changed the trajectory is thin.<Cite nums={3} /> The Institute for Fiscal Studies found that Levelling Up funding allocations were poorly targeted against deprivation metrics, and that total public investment per head in London still exceeds that of any northern region.<Cite nums={3} /> The structural forces — agglomeration economics, network effects, the concentration of decision-making in London — are powerful and slow-moving.</p>
           </div>
         </section>
 
@@ -173,6 +181,10 @@ export default function RegionalInequalityPage() {
             source="Source: DLUHC — Levelling Up Fund outcomes 2024; Centre for Cities — UK Cities Outlook 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

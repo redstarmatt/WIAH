@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Gambling Commission', dataset: 'Gambling Survey for Great Britain', url: 'https://www.gamblingcommission.gov.uk/statistics-and-research/publication/gambling-survey-for-great-britain', date: '2024' },
+  { num: 2, name: 'Gambling Commission', dataset: 'Industry Statistics', url: 'https://www.gamblingcommission.gov.uk/statistics-and-research/publication/industry-statistics', date: '2024' },
+  { num: 3, name: 'DCMS', dataset: 'Gambling Act White Paper 2023', url: 'https://www.gov.uk/government/publications/high-stakes-gambling-reform-for-the-digital-age', date: '2023' },
+];
 
 export default function GamblingHarmPage() {
   const colour = '#E63946';
@@ -155,12 +163,16 @@ export default function GamblingHarmPage() {
           <section className="max-w-2xl mb-12 mt-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">What the data shows</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Around 300,000 people in Britain are problem gamblers — scoring 8 or above on the Problem Gambling Severity Index — and up to 1.4 million are classified as &ldquo;at-risk&rdquo;. The overall prevalence rate of around 0.5% has remained relatively stable, but the composition of harm has shifted dramatically. Online gambling now accounts for around 50% of total market yield, up from 31% in 2015. Online harms are structurally harder to detect: they occur in private, 24 hours a day, without the social context of a betting shop or casino where staff might intervene.</p>
-              <p>The fixed-odds betting terminal (FOBT) crisis of the mid-2010s — machines in bookmakers where players could stake £100 every 20 seconds — mobilised a cross-party campaign that resulted in maximum stakes being cut from £100 to £2 in 2019. FOBTs were responsible for an estimated 40% of problem gambling presentations in treatment services at their peak. Their curtailment demonstrated that product design regulation can reduce harm; but as land-based play declined, online play accelerated, and the same vulnerable individuals followed the product.</p>
-              <p>Treatment capacity remains deeply inadequate. The NHS has fourteen gambling treatment clinics — up from one in 2019 — but waiting times exceed three months in most areas. Only 2–3% of problem gamblers in England access any form of treatment in a given year. The voluntary levy system that funded research and treatment was chronically underfunded; the statutory levy introduced in 2024 should produce around £100 million annually, but the sector cautions it will take years to build adequate treatment infrastructure.</p>
+              <p>Around 300,000 people in Britain are problem gamblers — scoring 8 or above on the Problem Gambling Severity Index — and up to 1.4 million are classified as &ldquo;at-risk&rdquo;.<Cite nums={[1]} /> The overall prevalence rate of around 0.5% has remained relatively stable, but the composition of harm has shifted dramatically. Online gambling now accounts for around 50% of total market yield, up from 31% in 2015.<Cite nums={[2]} /> Online harms are structurally harder to detect: they occur in private, 24 hours a day, without the social context of a betting shop or casino where staff might intervene.</p>
+              <p>The fixed-odds betting terminal (FOBT) crisis of the mid-2010s — machines in bookmakers where players could stake £100 every 20 seconds — mobilised a cross-party campaign that resulted in maximum stakes being cut from £100 to £2 in 2019.<Cite nums={[3]} /> FOBTs were responsible for an estimated 40% of problem gambling presentations in treatment services at their peak. Their curtailment demonstrated that product design regulation can reduce harm; but as land-based play declined, online play accelerated, and the same vulnerable individuals followed the product.</p>
+              <p>Treatment capacity remains deeply inadequate. The NHS has fourteen gambling treatment clinics — up from one in 2019 — but waiting times exceed three months in most areas. Only 2–3% of problem gamblers in England access any form of treatment in a given year.<Cite nums={[1]} /> The voluntary levy system that funded research and treatment was chronically underfunded; the statutory levy introduced in 2024 should produce around £100 million annually, but the sector cautions it will take years to build adequate treatment infrastructure.<Cite nums={[3]} /></p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Children in poverty (millions, total) and in working families (millions), 2015–2025
 const childrenInPovertyData = [3.7, 3.8, 4.0, 4.1, 4.1, 4.1, 4.2, 4.2, 4.3, 4.3, 4.4];
@@ -57,6 +59,12 @@ const laAnnotations: Annotation[] = [
   { date: new Date(2025, 5, 1), label: '2025: Two-child limit reform announced' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DWP', dataset: 'Households Below Average Income', url: 'https://www.gov.uk/government/collections/households-below-average-income-hbai--2', date: '2025' },
+  { num: 2, name: 'DLUHC / DWP', dataset: 'Children in Low Income Families Local Area Statistics', url: 'https://www.gov.uk/government/statistics/children-in-low-income-families-local-area-statistics', date: '2025' },
+  { num: 3, name: 'Child Poverty Action Group', dataset: 'Two-child limit impact analysis', url: 'https://cpag.org.uk/', date: '2024' },
+];
+
 export default function ChildPovertyLocalPage() {
   return (
     <>
@@ -71,8 +79,8 @@ export default function ChildPovertyLocalPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>4.4 million children in England — 31% of all children — live in households below 60% of median income after housing costs. This figure has grown by over 700,000 since 2015, driven by stagnant real wages for low-income families, rising housing costs, and a series of benefit changes that have reduced the relative income of families with children. Three in four children in poverty now live in working households — a structural shift from the 1990s, when out-of-work poverty was dominant. The introduction of the two-child benefit limit in 2017, which restricts child tax credit and the child element of Universal Credit to the first two children, is estimated to have pushed 360,000 additional children into poverty by 2024.</p>
-            <p>The geography of child poverty is stark. Tower Hamlets — the highest-rate local authority at 46% — has a child poverty rate seven times higher than Surrey at 6%. Inner London boroughs, coastal towns such as Blackpool and Torbay, and post-industrial areas of the Midlands and North consistently record rates above 40%. In these places, poverty in childhood shapes educational attainment, health outcomes, and adult life chances across generations. The OECD has identified the UK as having one of the steepest area-based inequalities in child poverty among comparable wealthy nations. The two-child limit abolition announced in the 2024 Autumn Budget — to be phased in from 2026 — is projected to lift 540,000 children out of poverty if implemented in full.</p>
+            <p>4.4 million children in England — 31% of all children — live in households below 60% of median income after housing costs.<Cite nums={1} /> This figure has grown by over 700,000 since 2015, driven by stagnant real wages for low-income families, rising housing costs, and a series of benefit changes that have reduced the relative income of families with children.<Cite nums={1} /> Three in four children in poverty now live in working households — a structural shift from the 1990s, when out-of-work poverty was dominant.<Cite nums={1} /> The introduction of the two-child benefit limit in 2017, which restricts child tax credit and the child element of Universal Credit to the first two children, is estimated to have pushed 360,000 additional children into poverty by 2024.<Cite nums={3} /></p>
+            <p>The geography of child poverty is stark. Tower Hamlets — the highest-rate local authority at 46% — has a child poverty rate seven times higher than Surrey at 6%.<Cite nums={2} /> Inner London boroughs, coastal towns such as Blackpool and Torbay, and post-industrial areas of the Midlands and North consistently record rates above 40%.<Cite nums={2} /> In these places, poverty in childhood shapes educational attainment, health outcomes, and adult life chances across generations. The OECD has identified the UK as having one of the steepest area-based inequalities in child poverty among comparable wealthy nations. The two-child limit abolition announced in the 2024 Autumn Budget — to be phased in from 2026 — is projected to lift 540,000 children out of poverty if implemented in full.<Cite nums={3} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -151,6 +159,9 @@ export default function ChildPovertyLocalPage() {
             source="Source: DWP — Households Below Average Income 2025. Child Poverty Action Group — Two-child limit impact analysis 2024. Scottish Government — Scottish Child Payment evaluation 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

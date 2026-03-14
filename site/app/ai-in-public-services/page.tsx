@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Government AI projects identified, 2019–2025 — CDDO Algorithmic Transparency Recording Standard
 const aiProjectsValues = [54, 72, 98, 130, 165, 192, 215];
@@ -48,6 +50,12 @@ const annotations: Annotation[] = [
   { date: new Date(2023, 0, 1), label: '2023: AI Safety Institute established' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'CDDO', dataset: 'Algorithmic Transparency Recording Standard', url: 'https://www.gov.uk/government/collections/algorithmic-transparency-recording-standard-hub', date: '2025' },
+  { num: 2, name: 'Ada Lovelace Institute', dataset: 'Public Attitudes to Data and AI Survey', url: 'https://www.adalovelaceinstitute.org', date: '2025' },
+  { num: 3, name: 'NHS England', dataset: 'AI Lab programme evaluations', date: '2024' },
+];
+
 export default function AIInPublicServicesPage() {
   return (
     <>
@@ -62,8 +70,8 @@ export default function AIInPublicServicesPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The A-level algorithm scandal of August 2020 remains the defining cautionary tale for AI in UK public services. When Ofqual deployed a statistical model to replace cancelled exams, it systematically downgraded students from schools in disadvantaged areas while inflating grades at private schools. Five years on, the lessons have been only partially learned. The DWP's fraud and error detection system has faced sustained criticism for disproportionately targeting disabled claimants and people in low-income households, raising serious questions about whether bias in training data is being identified before systems go live. Predictive policing tools, trialled by at least fourteen forces between 2018 and 2024, have shown similar patterns of reinforcing existing over-policing in Black and minority ethnic communities.</p>
-            <p>The algorithmic transparency recording standard, introduced by CDDO in 2022, was meant to address visibility concerns. It now contains 67 entries — but researchers at the Ada Lovelace Institute estimate this covers only around 31% of known government AI projects. Compliance is voluntary, and most entries lack the technical detail needed for meaningful external scrutiny. There are genuine bright spots: the AI Safety Institute, established in November 2023, has positioned the UK as a serious player in frontier AI evaluation. The NHS AI Lab has supported the approval of over 30 AI-driven diagnostic tools through NICE, including systems for detecting diabetic eye disease and breast cancer. These successes share a common feature — rigorous evaluation frameworks, clinical trial evidence, and transparent reporting. Until algorithmic impact assessments become mandatory rather than aspirational, public trust will continue to erode.</p>
+            <p>The A-level algorithm scandal of August 2020 remains the defining cautionary tale for AI in UK public services. When Ofqual deployed a statistical model to replace cancelled exams, it systematically downgraded students from schools in disadvantaged areas while inflating grades at private schools. Five years on, the lessons have been only partially learned. The DWP's fraud and error detection system has faced sustained criticism for disproportionately targeting disabled claimants and people in low-income households, raising serious questions about whether bias in training data is being identified before systems go live. Predictive policing tools, trialled by at least fourteen forces between 2018 and 2024, have shown similar patterns of reinforcing existing over-policing in Black and minority ethnic communities.<Cite nums={2} /></p>
+            <p>The algorithmic transparency recording standard, introduced by CDDO in 2022, was meant to address visibility concerns. It now contains 67 entries — but researchers at the Ada Lovelace Institute estimate this covers only around 31% of known government AI projects.<Cite nums={[1, 2]} /> Compliance is voluntary, and most entries lack the technical detail needed for meaningful external scrutiny. There are genuine bright spots: the AI Safety Institute, established in November 2023, has positioned the UK as a serious player in frontier AI evaluation. The NHS AI Lab has supported the approval of over 30 AI-driven diagnostic tools through NICE, including systems for detecting diabetic eye disease and breast cancer.<Cite nums={3} /> These successes share a common feature — rigorous evaluation frameworks, clinical trial evidence, and transparent reporting. Until algorithmic impact assessments become mandatory rather than aspirational, public trust will continue to erode.<Cite nums={2} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -142,6 +150,9 @@ export default function AIInPublicServicesPage() {
             source="Source: DSIT — AI Safety Institute annual report 2024. NHS England — AI Lab programme evaluations 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

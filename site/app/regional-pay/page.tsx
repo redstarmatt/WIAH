@@ -8,6 +8,8 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -31,6 +33,11 @@ interface RegionalPayData {
 function yearToDate(y: number): Date {
   return new Date(y, 5, 1);
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Annual Survey of Hours and Earnings (ASHE)', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/annualsurveyofhoursandearnings/2023', date: '2023' },
+  { num: 2, name: 'ONS', dataset: 'ASHE Historical Series — Median full-time gross annual pay by region', date: '1997–2023' },
+];
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -75,8 +82,8 @@ export default function RegionalPayPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The median full-time worker in London earned £46,100 in 2023, against £30,200 in the North East or Wales. The gap — £15,900 per year — has grown from £4,200 in 1997, nearly quadrupling in 26 years. Financial services, professional services, and technology have concentrated in London and the South East to a degree that has few parallels among comparable economies: the financial sector accounts for roughly 7% of UK economic output but is overwhelmingly based in one city. Agglomeration effects are self-reinforcing — the best-paid work gravitates to where talent is already concentrated, increasing productivity and wages further. Remote working after COVID offered brief optimism about pay geography shifting, but by 2023 the regional pay gap was as wide as it had ever been.</p>
-            <p>Adjusting for housing costs reduces but does not come close to equalising the gap, and workers outside London face constrained routes to wealth accumulation through property. London draws a much higher share of degree-level workers than any other region, sustaining a brain drain from northern and midland areas that have failed to develop equivalent productive local economies. The post-industrial communities of the North and Midlands bear the heaviest burden: decades of below-average wages compound into lower savings, lower pension wealth, and weaker public services funded by a narrower tax base.</p>
+            <p>The median full-time worker in London earned £46,100 in 2023, against £30,200 in the North East or Wales.<Cite nums={1} /> The gap — £15,900 per year — has grown from £4,200 in 1997, nearly quadrupling in 26 years.<Cite nums={2} /> Financial services, professional services, and technology have concentrated in London and the South East to a degree that has few parallels among comparable economies: the financial sector accounts for roughly 7% of UK economic output but is overwhelmingly based in one city. Agglomeration effects are self-reinforcing — the best-paid work gravitates to where talent is already concentrated, increasing productivity and wages further. Remote working after COVID offered brief optimism about pay geography shifting, but by 2023 the regional pay gap was as wide as it had ever been.<Cite nums={1} /></p>
+            <p>Adjusting for housing costs reduces but does not come close to equalising the gap, and workers outside London face constrained routes to wealth accumulation through property.<Cite nums={1} /> London draws a much higher share of degree-level workers than any other region, sustaining a brain drain from northern and midland areas that have failed to develop equivalent productive local economies. The post-industrial communities of the North and Midlands bear the heaviest burden: decades of below-average wages compound into lower savings, lower pension wealth, and weaker public services funded by a narrower tax base.<Cite nums={[1, 2]} /></p>
           </div>
         </section>
 
@@ -178,6 +185,10 @@ export default function RegionalPayPage() {
             </div>
           </div>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <ScrollReveal>

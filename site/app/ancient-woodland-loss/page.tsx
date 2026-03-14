@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Ancient woodland sites under planning threat, England, 2010–2024 — Woodland Trust
 const planningThreatsValues = [206, 248, 290, 340, 390, 442, 498, 560, 620, 680, 710, 730, 728, 738, 742];
@@ -48,6 +50,12 @@ const annotations: Annotation[] = [
   { date: new Date(2023, 0, 1), label: '2023: Revised NPPF strengthens ancient woodland protection' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Woodland Trust', dataset: 'Planning Threats Register', url: 'https://www.woodlandtrust.org.uk/protecting-trees-and-woods/campaign-with-us/ancient-woodland-protection/', date: '2024' },
+  { num: 2, name: 'Natural England', dataset: 'Ancient Woodland Inventory', date: '2024' },
+  { num: 3, name: 'Forestry Commission', dataset: 'Forestry Statistics — Woodland Area and Planting', url: 'https://www.forestresearch.gov.uk/tools-and-resources/statistics/forestry-statistics/', date: '2024' },
+];
+
 export default function AncientWoodlandLossPage() {
   return (
     <>
@@ -62,8 +70,8 @@ export default function AncientWoodlandLossPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Ancient woodland is defined as land that has been continuously wooded since at least 1600 AD, though many sites are far older — some date to the last ice age, making them among the most ecologically complex habitats in Britain. These woodlands cannot be recreated. Unlike a plantation, which can be grown in decades, the soil biology, fungal networks, invertebrate communities, and plant assemblages of an ancient woodland take centuries to develop. When an ancient woodland is destroyed, that biological continuity is severed permanently. The Woodland Trust's Ancient Woodland Inventory identifies approximately 52,000 sites in England, covering around 340,000 hectares — just 2.5% of the country's land area. HS2 alone affects 108 ancient woodlands along its Phase 1 route. The developer's mitigation strategy — translocation of ancient woodland soil — has been widely criticised by ecologists as scientifically unsupported; monitoring of translocated material shows most fails to establish functioning ecosystems within the first decade.</p>
-            <p>Meanwhile, new woodland creation is falling far short of government ambitions. England's target of planting 16,500 hectares of new woodland per year remains unmet — actual planting in 2024 reached 7,420 hectares, less than half the target. Even this figure flatters the picture: the vast majority of new planting is commercial conifer or fast-growing broadleaf, not the native species mix that characterises ancient woodland. The National Planning Policy Framework states that development resulting in the loss of ancient woodland should be refused unless there are "wholly exceptional reasons," but planning authorities have interpreted this inconsistently. Between 2010 and 2024, the Woodland Trust recorded over 1,200 planning cases threatening ancient woodland sites, and the approval rate on contested applications remains above 70%.</p>
+            <p>Ancient woodland is defined as land that has been continuously wooded since at least 1600 AD, though many sites are far older — some date to the last ice age, making them among the most ecologically complex habitats in Britain. These woodlands cannot be recreated. Unlike a plantation, which can be grown in decades, the soil biology, fungal networks, invertebrate communities, and plant assemblages of an ancient woodland take centuries to develop. When an ancient woodland is destroyed, that biological continuity is severed permanently. The Woodland Trust's Ancient Woodland Inventory identifies approximately 52,000 sites in England, covering around 340,000 hectares — just 2.5% of the country's land area.<Cite nums={2} /> HS2 alone affects 108 ancient woodlands along its Phase 1 route. The developer's mitigation strategy — translocation of ancient woodland soil — has been widely criticised by ecologists as scientifically unsupported; monitoring of translocated material shows most fails to establish functioning ecosystems within the first decade.</p>
+            <p>Meanwhile, new woodland creation is falling far short of government ambitions. England's target of planting 16,500 hectares of new woodland per year remains unmet — actual planting in 2024 reached 7,420 hectares, less than half the target.<Cite nums={3} /> Even this figure flatters the picture: the vast majority of new planting is commercial conifer or fast-growing broadleaf, not the native species mix that characterises ancient woodland. The National Planning Policy Framework states that development resulting in the loss of ancient woodland should be refused unless there are "wholly exceptional reasons," but planning authorities have interpreted this inconsistently. Between 2010 and 2024, the Woodland Trust recorded over 1,200 planning cases threatening ancient woodland sites, and the approval rate on contested applications remains above 70%.<Cite nums={1} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -142,6 +150,9 @@ export default function AncientWoodlandLossPage() {
             source="Source: NPPF 2023 revision. DEFRA — Environmental Improvement Plan 2023. Woodland Trust — State of the UK's Woods and Trees 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

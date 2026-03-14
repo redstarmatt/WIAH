@@ -8,6 +8,13 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'WRAP', dataset: 'Household food waste in the UK', url: 'https://wrap.org.uk/resources/report/food-surplus-and-waste-uk-key-facts', date: '2024' },
+  { num: 2, name: 'WRAP', dataset: 'Courtauld Commitment 2030 progress report', url: 'https://wrap.org.uk/taking-action/food-drink/initiatives/courtauld-commitment', date: '2024' },
+];
 
 // Food waste by weight (million tonnes), 2015–2025
 const wasteMillionTonnes = [7.3, 7.2, 7.1, 7.0, 6.9, 6.8, 6.7, 6.6, 6.5, 6.4, 6.4];
@@ -71,8 +78,8 @@ export default function TopicPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>UK households waste 6.4 million tonnes of food every year, worth approximately £17 billion. That is roughly £640 per person or £1,000 for a family of four. Around 73% of this food was still edible when it was thrown away — not past its use-by date, not inedible, simply not used. Bread, salad leaves, and fruit are the most commonly wasted foods. The environmental cost compounds the economic one: the production, transportation, and decomposition of wasted food generates around 25 million tonnes of CO2-equivalent emissions annually.</p>
-            <p>Progress has been modest. Household food waste has fallen from 7.3 million tonnes in 2015 to 6.4 million tonnes in 2024 — a reduction of around 12% over a decade. The WRAP-led Courtauld Commitment has engaged major retailers in waste reduction targets, but voluntary action has inherent limits. The UN Sustainable Development Goal requires a 50% per-capita reduction at retail and consumer level by 2030 — an ambition that would require cutting household waste roughly in half from today's levels in just six years. At current rates, the UK will fall substantially short. Mandatory food waste reporting for large businesses, enacted in Wales in 2024, has not yet been extended to England.</p>
+            <p>UK households waste 6.4 million tonnes of food every year, worth approximately £17 billion.<Cite nums={[1]} /> That is roughly £640 per person or £1,000 for a family of four.<Cite nums={[1]} /> Around 73% of this food was still edible when it was thrown away — not past its use-by date, not inedible, simply not used.<Cite nums={[1]} /> Bread, salad leaves, and fruit are the most commonly wasted foods. The environmental cost compounds the economic one: the production, transportation, and decomposition of wasted food generates around 25 million tonnes of CO2-equivalent emissions annually.<Cite nums={[1]} /></p>
+            <p>Progress has been modest. Household food waste has fallen from 7.3 million tonnes in 2015 to 6.4 million tonnes in 2024 — a reduction of around 12% over a decade.<Cite nums={[1]} /> The WRAP-led Courtauld Commitment has engaged major retailers in waste reduction targets, but voluntary action has inherent limits.<Cite nums={[2]} /> The UN Sustainable Development Goal requires a 50% per-capita reduction at retail and consumer level by 2030 — an ambition that would require cutting household waste roughly in half from today's levels in just six years. At current rates, the UK will fall substantially short. Mandatory food waste reporting for large businesses, enacted in Wales in 2024, has not yet been extended to England.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -151,6 +158,9 @@ export default function TopicPage() {
             source="Source: WRAP — Household food waste statistics, 2025; Courtauld Commitment 2030 progress report."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

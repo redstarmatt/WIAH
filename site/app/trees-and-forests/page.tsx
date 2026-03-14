@@ -7,6 +7,15 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Forest Research', dataset: 'Forestry Statistics — woodland area and planting', url: 'https://www.forestresearch.gov.uk/tools-and-resources/statistics/forestry-statistics/', date: '2024' },
+  { num: 2, name: 'Climate Change Committee', dataset: 'Land Use Policies for a Net Zero UK — 30,000 ha/yr target', url: 'https://www.theccc.org.uk/publication/land-use-policies-for-a-net-zero-uk/', date: '2023' },
+  { num: 3, name: 'Woodland Trust', dataset: 'Ancient Woodland Threat Monitoring', url: 'https://www.woodlandtrust.org.uk', date: '2024' },
+  { num: 4, name: 'Defra', dataset: 'England Woodland Creation Offer guidance', url: 'https://www.gov.uk/guidance/england-woodland-creation-offer', date: '2022' },
+];
 
 export default function TreesAndForestsPage() {
   // New woodland creation 2015–2024 (ha/yr) — UK
@@ -55,9 +64,9 @@ export default function TreesAndForestsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK has approximately 3.24 million hectares of woodland, covering 13.2% of land area — one of the lowest proportions in Europe, where the average is 38%. England is the least wooded nation at just 10%. The government's Environmental Improvement Plan set a target of increasing UK woodland cover to 16.5% by 2050, requiring approximately 30,000 hectares of new planting per year. The UK is currently planting 13,200 hectares per year — less than half the target rate.</p>
-            <p>The Climate Change Committee identifies tree planting as essential for the UK to reach net zero, with woodland sequestering carbon while also providing biodiversity, flood attenuation, and shade benefits. At the current rate of planting and the current rate of ancient woodland loss — over 1,225 sites are currently threatened by development — the UK will fall far short of both its climate and nature targets.</p>
-            <p>Scotland accounts for around 85% of UK new woodland creation, driven by a more generous planting grant regime. England's contribution remains modest. The England Woodland Creation Offer, launched in 2022, offers payments of up to £10,200 per hectare in its first year, but take-up has been constrained by planning complexity, landowner uncertainty, and the 25-year management commitment required.</p>
+            <p>The UK has approximately 3.24 million hectares of woodland, covering 13.2% of land area — one of the lowest proportions in Europe, where the average is 38%.<Cite nums={1} /> England is the least wooded nation at just 10%. The government's Environmental Improvement Plan set a target of increasing UK woodland cover to 16.5% by 2050, requiring approximately 30,000 hectares of new planting per year.<Cite nums={2} /> The UK is currently planting 13,200 hectares per year — less than half the target rate.</p>
+            <p>The Climate Change Committee identifies tree planting as essential for the UK to reach net zero, with woodland sequestering carbon while also providing biodiversity, flood attenuation, and shade benefits.<Cite nums={2} /> At the current rate of planting and the current rate of ancient woodland loss — over 1,225 sites are currently threatened by development — the UK will fall far short of both its climate and nature targets.<Cite nums={3} /></p>
+            <p>Scotland accounts for around 85% of UK new woodland creation, driven by a more generous planting grant regime.<Cite nums={1} /> England's contribution remains modest. The England Woodland Creation Offer, launched in 2022, offers payments of up to £10,200 per hectare in its first year, but take-up has been constrained by planning complexity, landowner uncertainty, and the 25-year management commitment required.<Cite nums={4} /></p>
           </div>
         </section>
 
@@ -138,6 +147,10 @@ export default function TreesAndForestsPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

@@ -9,6 +9,17 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+// ── References ───────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'HM Government', dataset: 'National Living Wage rates 2016–2024', url: 'https://www.gov.uk/government/publications/the-national-minimum-wage-in-2024', date: '2024' },
+  { num: 2, name: 'Living Wage Foundation', dataset: 'Real Living Wage rates & employer accreditation', url: 'https://www.livingwage.org.uk/', date: '2024' },
+  { num: 3, name: 'Loughborough University', dataset: 'Minimum Income Standard methodology', url: 'https://www.lboro.ac.uk/research/crsp/minimum-income-standard/', date: '2024' },
+  { num: 4, name: 'Resolution Foundation', dataset: 'Low Pay Britain — workers below Real Living Wage', url: 'https://www.resolutionfoundation.org/publications/', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -100,8 +111,8 @@ export default function LivingWagePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The United Kingdom has two different concepts of a &ldquo;living wage&rdquo; that are frequently confused. The National Living Wage (NLW) is a statutory minimum wage set annually by the government following recommendations from the Low Pay Commission, and was introduced in April 2016 at £7.20 per hour for workers aged 25 and over (the age threshold was reduced to 21 in 2021). In April 2024 it rose to £11.44 per hour, representing a substantial real-terms increase over eight years and meeting the government's target of raising the NLW to two-thirds of median earnings. The Real Living Wage (RLW) is a separate, independently calculated rate published annually by the Living Wage Foundation, based on a basket of goods and services representing the actual cost of a decent standard of living for workers in the UK. The RLW stood at £12.60 per hour outside London and £13.15 per hour in London in 2024 — significantly above the statutory floor. Accreditation as a Real Living Wage employer is voluntary; companies that pay it display the Living Wage Foundation's logo and commit to applying the rate to all directly employed workers and regular subcontractors. As of 2024, over 15,000 employers had been accredited, covering approximately 460,000 workers.</p>
-            <p>Despite the significant increases in the National Living Wage, a substantial gap between the statutory floor and the Real Living Wage has persisted and in some years widened. In 2016, the gap between the NLW and RLW was £1.25 per hour; by 2023 it had grown to £1.58 before closing slightly in 2024 as the government raised the NLW by a record 9.8%. The Living Wage Foundation calculates the RLW using the Minimum Income Standard (MIS) methodology developed by Loughborough University, which surveys the public on what goods and services are needed for a socially acceptable standard of living and translates this into an hourly rate based on typical working hours. The MIS-based rate responds to actual living cost pressures — including food, energy, transport, and childcare — rather than to wage distribution statistics, which is why it tracks inflation more closely and moved sharply higher in 2022 and 2023 as consumer prices surged. The Resolution Foundation estimates that approximately 3.8 million employees were paid below the Real Living Wage in 2023, with the gap between their actual pay and the RLW representing an annual shortfall of around £2,100 per worker.</p>
+            <p>The United Kingdom has two different concepts of a &ldquo;living wage&rdquo; that are frequently confused. The National Living Wage (NLW) is a statutory minimum wage set annually by the government following recommendations from the Low Pay Commission, and was introduced in April 2016 at £7.20 per hour for workers aged 25 and over (the age threshold was reduced to 21 in 2021). In April 2024 it rose to £11.44 per hour, representing a substantial real-terms increase over eight years and meeting the government's target of raising the NLW to two-thirds of median earnings.<Cite nums={1} /> The Real Living Wage (RLW) is a separate, independently calculated rate published annually by the Living Wage Foundation, based on a basket of goods and services representing the actual cost of a decent standard of living for workers in the UK. The RLW stood at £12.60 per hour outside London and £13.15 per hour in London in 2024 — significantly above the statutory floor.<Cite nums={2} /> Accreditation as a Real Living Wage employer is voluntary; companies that pay it display the Living Wage Foundation's logo and commit to applying the rate to all directly employed workers and regular subcontractors. As of 2024, over 15,000 employers had been accredited, covering approximately 460,000 workers.<Cite nums={2} /></p>
+            <p>Despite the significant increases in the National Living Wage, a substantial gap between the statutory floor and the Real Living Wage has persisted and in some years widened. In 2016, the gap between the NLW and RLW was £1.25 per hour; by 2023 it had grown to £1.58 before closing slightly in 2024 as the government raised the NLW by a record 9.8%.<Cite nums={1} /> The Living Wage Foundation calculates the RLW using the Minimum Income Standard (MIS) methodology developed by Loughborough University, which surveys the public on what goods and services are needed for a socially acceptable standard of living and translates this into an hourly rate based on typical working hours.<Cite nums={3} /> The MIS-based rate responds to actual living cost pressures — including food, energy, transport, and childcare — rather than to wage distribution statistics, which is why it tracks inflation more closely and moved sharply higher in 2022 and 2023 as consumer prices surged. The Resolution Foundation estimates that approximately 3.8 million employees were paid below the Real Living Wage in 2023, with the gap between their actual pay and the RLW representing an annual shortfall of around £2,100 per worker.<Cite nums={4} /></p>
             </div>
         </section>
 
@@ -183,6 +194,10 @@ export default function LivingWagePage() {
             source="Source: Living Wage Foundation — UK Living Wage Report 2024; ONS — Annual Survey of Hours and Earnings 2023; Resolution Foundation — Low Pay Britain 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

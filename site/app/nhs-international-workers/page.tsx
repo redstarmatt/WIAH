@@ -7,6 +7,8 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
@@ -23,6 +25,13 @@ interface NhsInternationalWorkersData {
   timeSeries: InternationalWorkersDataPoint[]
   topSourceCountries: string[]
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS Digital', dataset: 'NHS Workforce Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/nhs-workforce-statistics', date: '2024', note: '33.4% of nurses and 31.9% of doctors internationally trained — record highs' },
+  { num: 2, name: 'WHO', dataset: 'Global Code of Practice on International Recruitment of Health Personnel — Health Workforce Support and Safeguards List', url: 'https://www.who.int/publications/m/item/who-global-code-of-practice-on-the-international-recruitment-of-health-personnel', date: '2024', note: '47 red-list countries; NHS still recruits from 13' },
+  { num: 3, name: 'NHS England', dataset: 'NHS Staff Survey — Bullying and Harassment Data', date: '2023', note: '31% of internationally educated nurses report bullying/harassment' },
+  { num: 4, name: 'NHS England', dataset: 'NHS Long Term Workforce Plan', date: '2023', note: 'Commits to doubling domestic medical school places' },
+];
 
 function yearToDate(y: number): Date {
   return new Date(y, 0, 1)
@@ -71,8 +80,8 @@ export default function NhsInternationalWorkersPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>In 2024, 33.4% of NHS nurses and 31.9% of doctors were internationally trained — the highest proportions on record — as intensive recruitment from India, the Philippines, Nigeria, Zimbabwe, and Pakistan filled vacancies that domestic training has consistently failed to meet. The NHS has recruited from several WHO &ldquo;red list&rdquo; countries — 47 nations facing severe healthcare workforce crises from which ethical guidelines recommend avoiding recruitment. The 2023 NHS Long Term Workforce Plan commits to doubling domestic medical school places and achieving greater self-sufficiency, but that pipeline takes a decade to deliver qualified staff.</p>
-            <p>The ethical and geopolitical burden is concentrated on the source countries least able to absorb the loss. When a Nigerian-trained nurse or doctor joins the NHS, the investment made in their training by Nigeria&rsquo;s health system is transferred to one of the world&rsquo;s wealthiest economies — a structural subsidy flowing in the wrong direction. Within the NHS, internationally educated nurses (predominantly Black African) report the highest rates of bullying and harassment at 31%, and face disproportionate disciplinary proceedings, compounding a system that has become dependent on their labour without fully protecting them.</p>
+            <p>In 2024, 33.4% of NHS nurses and 31.9% of doctors were internationally trained — the highest proportions on record — as intensive recruitment from India, the Philippines, Nigeria, Zimbabwe, and Pakistan filled vacancies that domestic training has consistently failed to meet.<Cite nums={1} /> The NHS has recruited from several WHO &ldquo;red list&rdquo; countries — 47 nations facing severe healthcare workforce crises from which ethical guidelines recommend avoiding recruitment.<Cite nums={2} /> The 2023 NHS Long Term Workforce Plan commits to doubling domestic medical school places and achieving greater self-sufficiency, but that pipeline takes a decade to deliver qualified staff.<Cite nums={4} /></p>
+            <p>The ethical and geopolitical burden is concentrated on the source countries least able to absorb the loss. When a Nigerian-trained nurse or doctor joins the NHS, the investment made in their training by Nigeria&rsquo;s health system is transferred to one of the world&rsquo;s wealthiest economies — a structural subsidy flowing in the wrong direction. Within the NHS, internationally educated nurses (predominantly Black African) report the highest rates of bullying and harassment at 31%, and face disproportionate disciplinary proceedings, compounding a system that has become dependent on their labour without fully protecting them.<Cite nums={3} /></p>
           </div>
         </section>
 
@@ -133,6 +142,9 @@ export default function NhsInternationalWorkersPage() {
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">

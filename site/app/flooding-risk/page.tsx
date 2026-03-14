@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Properties at flood risk (millions), 2015–2025
 const propertiesAtRisk = [4.9, 4.9, 5.0, 5.0, 5.0, 5.1, 5.2, 5.2, 5.3, 5.3, 5.4];
@@ -57,6 +59,12 @@ const annotations2: Annotation[] = [
   { date: new Date(2021, 0, 1), label: '2021: £5.2bn 6-year programme begins' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Environment Agency', dataset: 'National Flood Risk Assessment', url: 'https://www.gov.uk/government/organisations/environment-agency', date: '2024' },
+  { num: 2, name: 'Environment Agency', dataset: 'Asset management report', date: '2024' },
+  { num: 3, name: 'Environment Agency', dataset: 'Flood and coastal erosion risk management report', url: 'https://www.gov.uk/government/statistics/flood-and-coastal-risk-management-in-england-report', date: '2025' },
+];
+
 export default function FloodingRiskPage() {
   return (
     <>
@@ -71,8 +79,8 @@ export default function FloodingRiskPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>5.4 million properties in England face some risk of flooding from rivers, the sea, or surface water. This figure has grown steadily over the past decade, driven by housing development in flood-prone areas, aging infrastructure, and changing rainfall patterns linked to climate change. The Environment Agency's risk mapping covers both low and high probability zones, but even low-probability events cause enormous financial and psychological damage when they occur. The 2019–20 winter floods alone caused an estimated £333 million in damage and displaced thousands of households for months.</p>
-            <p>The condition of existing flood defences is a mounting concern. Only 54% of flood defence assets are rated in good or very good condition, down from 67% in 2015. A maintenance backlog — estimated at over £1 billion — has accumulated during a decade of constrained local authority and Environment Agency budgets. Capital investment in new defences has risen significantly since 2021 under the government's six-year programme, but maintenance of existing assets has not kept pace. A new defence that is poorly maintained can fail at a critical moment, meaning headline investment figures can be misleading without a parallel focus on upkeep.</p>
+            <p>5.4 million properties in England face some risk of flooding from rivers, the sea, or surface water<Cite nums={1} />. This figure has grown steadily over the past decade, driven by housing development in flood-prone areas, aging infrastructure, and changing rainfall patterns linked to climate change. The Environment Agency's risk mapping covers both low and high probability zones, but even low-probability events cause enormous financial and psychological damage when they occur. The 2019–20 winter floods alone caused an estimated £333 million in damage<Cite nums={3} /> and displaced thousands of households for months.</p>
+            <p>The condition of existing flood defences is a mounting concern. Only 54% of flood defence assets are rated in good or very good condition, down from 67% in 2015<Cite nums={2} />. A maintenance backlog — estimated at over £1 billion — has accumulated during a decade of constrained local authority and Environment Agency budgets. Capital investment in new defences has risen significantly since 2021 under the government's six-year programme, but maintenance of existing assets has not kept pace. A new defence that is poorly maintained can fail at a critical moment, meaning headline investment figures can be misleading without a parallel focus on upkeep.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -151,6 +159,9 @@ export default function FloodingRiskPage() {
             source="Source: Environment Agency — Flood and coastal erosion risk management report, 2025."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

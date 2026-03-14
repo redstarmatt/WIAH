@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Workers with access to flexible working (%), 2015–2024 — CIPD / ONS
 const flexAccessValues = [38, 40, 42, 44, 46, 55, 62, 65, 68, 70];
@@ -47,6 +49,13 @@ const flexAnnotations: Annotation[] = [
   { date: new Date(2024, 3, 1), label: 'Apr 2024: Day-one flexible working rights' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'CIPD', dataset: 'Working lives survey', url: 'https://www.cipd.org/uk/knowledge/reports/flexible-working/', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Homeworking in the UK', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/articles/homeworkingintheuk/latest', date: '2024' },
+  { num: 3, name: 'CIPD', dataset: 'Flexible working survey', url: 'https://www.cipd.org/uk/knowledge/reports/flexible-working/', date: '2024' },
+  { num: 4, name: 'TUC', dataset: 'Flexible working and equality analysis', date: '2024' },
+];
+
 export default function FlexibleWorkingAccessPage() {
   return (
     <>
@@ -61,8 +70,8 @@ export default function FlexibleWorkingAccessPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The right to request flexible working has existed since 2003, but take-up and employer response were patchy for most of its history: around 42% of requests were refused in 2015. The COVID-19 pandemic forced a mass experiment in remote and flexible working that fundamentally changed employer attitudes. Approximately 37% of the workforce was working from home at the peak of lockdown restrictions in spring 2020; by 2024, around 22% worked remotely at least part of the time — a fourfold increase on pre-pandemic levels. This normalisation coincided with a significant cultural shift: CIPD surveys show employer refusal rates fell from 42% to around 22% between 2015 and 2024.</p>
-            <p>The Employment Relations (Flexible Working) Act 2023 significantly strengthened the statutory right from April 2024: workers can now request flexible working from the first day of employment (previously after 26 weeks), can make two requests per year (previously one), and employers must consult with the employee and provide their reasons for refusal within two months. However, the Act does not create a right to work flexibly — only a right to request it. The inequality in access between those who can work from home (predominantly office-based, higher-paid, graduate jobs) and those who cannot (care workers, retail, manual trades) represents a structural divide that flexible working law alone cannot address. The TUC's analysis shows that black and minority ethnic workers are significantly less likely to have flexible working arrangements than White workers, even in similar occupations.</p>
+            <p>The right to request flexible working has existed since 2003, but take-up and employer response were patchy for most of its history: around 42% of requests were refused in 2015<Cite nums={3} />. The COVID-19 pandemic forced a mass experiment in remote and flexible working that fundamentally changed employer attitudes. Approximately 37% of the workforce was working from home at the peak of lockdown restrictions in spring 2020; by 2024, around 22% worked remotely at least part of the time — a fourfold increase on pre-pandemic levels<Cite nums={2} />. This normalisation coincided with a significant cultural shift: CIPD surveys show employer refusal rates fell from 42% to around 22% between 2015 and 2024<Cite nums={3} />.</p>
+            <p>The Employment Relations (Flexible Working) Act 2023 significantly strengthened the statutory right from April 2024: workers can now request flexible working from the first day of employment (previously after 26 weeks), can make two requests per year (previously one), and employers must consult with the employee and provide their reasons for refusal within two months. However, the Act does not create a right to work flexibly — only a right to request it. The inequality in access between those who can work from home (predominantly office-based, higher-paid, graduate jobs) and those who cannot (care workers, retail, manual trades) represents a structural divide that flexible working law alone cannot address. The TUC's analysis shows that black and minority ethnic workers are significantly less likely to have flexible working arrangements than White workers, even in similar occupations<Cite nums={4} />.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -140,6 +149,9 @@ export default function FlexibleWorkingAccessPage() {
             source="Source: ONS — Homeworking and labour market outcomes 2024. CIPD — Working Lives Survey 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

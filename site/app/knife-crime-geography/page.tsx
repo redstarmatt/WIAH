@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Home Office', dataset: 'Knife and Offensive Weapon Statistics 2024', url: 'https://www.gov.uk/government/statistics/knife-and-offensive-weapon-statistics', date: '2024' },
+  { num: 2, name: 'Home Office', dataset: 'Crime Outcomes in England and Wales 2024', url: 'https://www.gov.uk/government/collections/crime-outcomes-in-england-and-wales-statistics', date: '2024' },
+  { num: 3, name: 'Home Office', dataset: 'Violence Reduction Units — Year 4 Evaluation', url: 'https://www.gov.uk/government/publications/violence-reduction-units', date: '2023' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -70,8 +78,8 @@ export default function KnifeCrimeGeographyPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Knife crime in England and Wales peaked at 50,836 recorded offences in 2023 before falling to 48,400 in 2024. The national trend masks enormous geographic variation: London accounts for roughly a quarter of all knife offences at a rate around three times the national average, concentrated in a small number of inner south and east London boroughs. Force-level variation is 12-fold, from rural forces under 10 offences per 100,000 to the Metropolitan Police at over 120. Economic deprivation is the strongest predictor of concentrated knife crime — areas with high youth unemployment, inadequate housing, and reduced youth services consistently record higher rates. The county lines drug supply model has extended knife violence into market towns and coastal communities that previously would not have featured in the data.</p>
-            <p>Violence reduction units, funded since 2019 in the highest-rate areas, have adopted a public health approach treating violence as preventable, and early evaluations show measurable reductions in hospital admissions for assault. Stop and search powers were expanded but have not demonstrably reduced knife crime at the population level; critics argue intensive use without intelligence erodes community trust particularly among young Black men, who are stopped at many times the rate of white counterparts. The 2024 downward trend is fragile: it coincides with disruption of county lines networks and post-COVID stabilisation, but whether it continues depends on sustained prevention investment and whether the underlying economic conditions — concentrated deprivation, high youth unemployment, housing insecurity — are themselves addressed.</p>
+            <p>Knife crime in England and Wales peaked at 50,836 recorded offences in 2023 before falling to 48,400 in 2024.<Cite nums={1} /> The national trend masks enormous geographic variation: London accounts for roughly a quarter of all knife offences at a rate around three times the national average, concentrated in a small number of inner south and east London boroughs. Force-level variation is 12-fold, from rural forces under 10 offences per 100,000 to the Metropolitan Police at over 120.<Cite nums={1} /> Economic deprivation is the strongest predictor of concentrated knife crime — areas with high youth unemployment, inadequate housing, and reduced youth services consistently record higher rates. The county lines drug supply model has extended knife violence into market towns and coastal communities that previously would not have featured in the data.</p>
+            <p>Violence reduction units, funded since 2019 in the highest-rate areas, have adopted a public health approach treating violence as preventable, and early evaluations show measurable reductions in hospital admissions for assault.<Cite nums={3} /> Stop and search powers were expanded but have not demonstrably reduced knife crime at the population level; critics argue intensive use without intelligence erodes community trust particularly among young Black men, who are stopped at many times the rate of white counterparts. The 2024 downward trend is fragile: it coincides with disruption of county lines networks and post-COVID stabilisation, but whether it continues depends on sustained prevention investment and whether the underlying economic conditions — concentrated deprivation, high youth unemployment, housing insecurity — are themselves addressed.<Cite nums={2} /></p>
           </div>
         </section>
 
@@ -131,6 +139,10 @@ export default function KnifeCrimeGeographyPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

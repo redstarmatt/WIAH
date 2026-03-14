@@ -8,7 +8,15 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS Business Services Authority', dataset: 'Prescription Cost Analysis', url: 'https://www.nhsbsa.nhs.uk/statistical-collections/prescription-cost-analysis-england', date: '2023', note: '1.1bn items dispensed; £10.8bn total net ingredient cost; 90% free of charge' },
+  { num: 2, name: 'DHSC', dataset: 'Prescription Charges Statistics', date: '2024', note: '£9.90 per item (April 2024); up 60% in real terms since 2000; exemption list last updated 1968' },
+  { num: 3, name: 'Health Foundation', dataset: 'Prescription Charge Non-Adherence Research', date: '2022', note: 'Estimated 750,000 people skip medication annually due to cost' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -96,7 +104,7 @@ export default function PrescriptionsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England dispenses 1.1 billion prescription items each year at a total net ingredient cost of £10.8 billion. The prescription charge stands at £9.90 per item (April 2024), up 60% in real terms since 2000, but 90% of items are dispensed free — the over-60s account for 43% of all items, medical exemption certificates a further 31%. The charge falls almost entirely on working-age adults without a qualifying condition. England is alone in the UK in maintaining the charge: Scotland abolished it in 2011, Wales in 2007, Northern Ireland in 2010. An estimated 750,000 people skip or cut medication each year due to cost — a rationing effect invisible to the health system. The exemption certificate list, last updated substantively in 1968, covers diabetes and epilepsy but excludes asthma, rheumatoid arthritis, depression, and most chronic pain conditions.</p>
+            <p>England dispenses 1.1 billion prescription items each year at a total net ingredient cost of £10.8 billion.<Cite nums={1} /> The prescription charge stands at £9.90 per item (April 2024), up 60% in real terms since 2000, but 90% of items are dispensed free — the over-60s account for 43% of all items, medical exemption certificates a further 31%.<Cite nums={2} /> The charge falls almost entirely on working-age adults without a qualifying condition. England is alone in the UK in maintaining the charge: Scotland abolished it in 2011, Wales in 2007, Northern Ireland in 2010. An estimated 750,000 people skip or cut medication each year due to cost — a rationing effect invisible to the health system.<Cite nums={3} /> The exemption certificate list, last updated substantively in 1968, covers diabetes and epilepsy but excludes asthma, rheumatoid arthritis, depression, and most chronic pain conditions.</p>
             <p>The burden falls hardest on working-age adults with chronic conditions outside the exemption list and on those earning just above means-tested benefit thresholds. A patient with rheumatoid arthritis on three items faces £356 in charges annually unless they buy the Prescription Prepayment Certificate — requiring upfront payment many cannot afford. Prescription charge revenue is highest per capita in the Midlands and North, where chronic disease prevalence is greatest and household incomes lowest. Black and Asian patients, disproportionately in working age without exemption, pay charges at higher rates. The government cites £570 million in annual revenue as justification — roughly 0.4% of the NHS England budget — without accounting for the downstream costs of non-adherence.</p>
           </div>
         </section>
@@ -205,6 +213,9 @@ export default function PrescriptionsPage() {
           />
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">

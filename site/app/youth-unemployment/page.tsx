@@ -9,6 +9,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -32,6 +34,11 @@ interface YouthUnemploymentData {
   youthUnemployment: UnemploymentPoint[];
   byReason: ReasonBreakdown[];
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Labour Force Survey — Young people not in education, employment or training (NEET)', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/neet', date: '2023' },
+  { num: 2, name: 'ONS', dataset: 'Labour Force Survey — Economic inactivity by reason (16-24)', date: '2023', note: 'Long-term sickness near-doubled from 120,000 to 230,000 between 2019 and 2023' },
+];
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -117,8 +124,8 @@ export default function YouthUnemploymentPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Around 870,000 young people aged 16–24 — 12.2% of the age group — were NEET in 2023, up from a historic low of 10.8% in 2019. That pre-pandemic figure represented the best outcome in a generation, achieved after years of steady economic growth, apprenticeship expansion, and rising minimum wages. The pandemic reversed much of that progress. Three years on, the rate has not returned to its 2019 level. The UK's youth NEET share is higher than in Germany, the Netherlands, and most Nordic countries, though comparable to France and below Southern European peaks.</p>
-            <p>The fastest-growing reason for young people being economically inactive is long-term sickness. ONS Labour Force Survey data shows the number of 16–24 year olds inactive due to illness or disability rose from roughly 120,000 in 2019 to over 230,000 by 2023 — a near-doubling in four years. Mental health conditions are the primary driver, accounting for the majority of new cases. Geography compounds the problem: NEET rates range from around 7% in London and the South East to 16–18% in coastal towns and post-industrial areas of South Wales, the North East, and the Midlands. High NEET concentrations correlate with lower life expectancy, higher welfare dependency, and reduced civic participation across generations.</p>
+            <p>Around 870,000 young people aged 16–24 — 12.2% of the age group — were NEET in 2023, up from a historic low of 10.8% in 2019.<Cite nums={1} /> That pre-pandemic figure represented the best outcome in a generation, achieved after years of steady economic growth, apprenticeship expansion, and rising minimum wages. The pandemic reversed much of that progress. Three years on, the rate has not returned to its 2019 level. The UK's youth NEET share is higher than in Germany, the Netherlands, and most Nordic countries, though comparable to France and below Southern European peaks.</p>
+            <p>The fastest-growing reason for young people being economically inactive is long-term sickness. ONS Labour Force Survey data shows the number of 16–24 year olds inactive due to illness or disability rose from roughly 120,000 in 2019 to over 230,000 by 2023 — a near-doubling in four years.<Cite nums={2} /> Mental health conditions are the primary driver, accounting for the majority of new cases. Geography compounds the problem: NEET rates range from around 7% in London and the South East to 16–18% in coastal towns and post-industrial areas of South Wales, the North East, and the Midlands. High NEET concentrations correlate with lower life expectancy, higher welfare dependency, and reduced civic participation across generations.</p>
             </div>
         </section>
 
@@ -247,6 +254,10 @@ export default function YouthUnemploymentPage() {
           ) : (
             <div className="h-32 bg-wiah-light rounded animate-pulse" />
           )}
+        </div>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
         </div>
 
         {/* Positive callout */}

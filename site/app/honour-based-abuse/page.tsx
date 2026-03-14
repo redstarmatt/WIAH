@@ -9,6 +9,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -54,6 +56,13 @@ function yearToDate(y: number): Date {
 function sparkFrom(arr: number[], n = 10) {
   return arr.slice(-n);
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Home Office', dataset: 'Honour Based Abuse Statistics', url: 'https://www.gov.uk/government/collections/honour-based-abuse-and-forced-marriage-data', date: 'Feb 2026' },
+  { num: 2, name: 'Crown Prosecution Service', dataset: 'Violence Against Women and Girls Report', url: 'https://www.cps.gov.uk/publication/violence-against-women-and-girls', date: 'Feb 2026' },
+  { num: 3, name: 'Forced Marriage Unit', dataset: 'Referral Statistics', url: 'https://www.gov.uk/government/collections/forced-marriage-unit-statistics', date: 'Feb 2026' },
+  { num: 4, name: 'Ministry of Justice', dataset: 'Family Court Statistics Quarterly — FMPO Data', url: 'https://www.gov.uk/government/collections/family-court-statistics-quarterly', date: 'Feb 2026' },
+];
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -152,13 +161,13 @@ export default function HonourBasedAbusePage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Honour-based abuse encompasses a range of behaviours including physical violence, coercive control, forced marriage, female genital mutilation, and murder committed to protect or restore perceived family or community honour. The Home Office began systematically collecting police-recorded data in 2016, and the upward trend since then reflects both improved awareness among police forces and a genuine increase in victims feeling able to come forward. The Metropolitan Police alone accounts for roughly a third of all recorded offences, partly because of its dedicated Honour Based Abuse command, but also because London is home to large communities where these practices have historically been prevalent.
+              Honour-based abuse encompasses a range of behaviours including physical violence, coercive control, forced marriage, female genital mutilation, and murder committed to protect or restore perceived family or community honour. The Home Office began systematically collecting police-recorded data in 2016, and the upward trend since then reflects both improved awareness among police forces and a genuine increase in victims feeling able to come forward.<Cite nums={1} /> The Metropolitan Police alone accounts for roughly a third of all recorded offences, partly because of its dedicated Honour Based Abuse command, but also because London is home to large communities where these practices have historically been prevalent.<Cite nums={1} />
             </p>
             <p>
-              The prosecution picture is far more troubling. Despite nearly 3,700 offences recorded in the most recent year, the Crown Prosecution Service secured just 72 prosecutions flagged as honour-based abuse in the same period. That is a prosecution rate of under 2%. The reasons are structural: victims face intense family and community pressure to withdraw statements, cases often involve complex multi-perpetrator dynamics that are difficult to prosecute, and many offences are charged under general assault or coercive control statutes without the HBA flag, meaning the true prosecution figure is higher than headline numbers suggest but still wholly inadequate. The Forced Marriage Unit, a joint Home Office and Foreign Office operation, handled over 1,100 referrals in 2024, though this too is widely acknowledged to represent only a fraction of actual forced marriages.
+              The prosecution picture is far more troubling. Despite nearly 3,700 offences recorded in the most recent year, the Crown Prosecution Service secured just 72 prosecutions flagged as honour-based abuse in the same period.<Cite nums={2} /> That is a prosecution rate of under 2%. The reasons are structural: victims face intense family and community pressure to withdraw statements, cases often involve complex multi-perpetrator dynamics that are difficult to prosecute, and many offences are charged under general assault or coercive control statutes without the HBA flag, meaning the true prosecution figure is higher than headline numbers suggest but still wholly inadequate. The Forced Marriage Unit, a joint Home Office and Foreign Office operation, handled over 1,100 referrals in 2024, though this too is widely acknowledged to represent only a fraction of actual forced marriages.<Cite nums={3} />
             </p>
             <p>
-              There are grounds for cautious optimism. Forced Marriage Protection Orders have risen sharply, from 68 in 2016 to 189 in 2024, reflecting both greater judicial willingness to intervene and better pathways for victims to access civil remedies. Specialist organisations like Karma Nirvana, the Iranian and Kurdish Women's Rights Organisation, and Southall Black Sisters report growing demand for their services, which, while indicating the scale of the problem, also shows that more people know where to turn. The Domestic Abuse Act 2021 placed coercive control within a statutory framework that better captures the dynamics of honour-based abuse. But without sustained investment in specialist police units, culturally competent support services, and community-led prevention programmes, recording improvements alone will not translate into safety for victims.
+              There are grounds for cautious optimism. Forced Marriage Protection Orders have risen sharply, from 68 in 2016 to 189 in 2024, reflecting both greater judicial willingness to intervene and better pathways for victims to access civil remedies.<Cite nums={4} /> Specialist organisations like Karma Nirvana, the Iranian and Kurdish Women's Rights Organisation, and Southall Black Sisters report growing demand for their services, which, while indicating the scale of the problem, also shows that more people know where to turn. The Domestic Abuse Act 2021 placed coercive control within a statutory framework that better captures the dynamics of honour-based abuse. But without sustained investment in specialist police units, culturally competent support services, and community-led prevention programmes, recording improvements alone will not translate into safety for victims.
             </p>
           </div>
         </section>
@@ -320,6 +329,10 @@ export default function HonourBasedAbusePage() {
             source="Source: Ministry of Justice — Family Court Statistics Quarterly, 2024. Home Office — Forced Marriage Unit Statistics, 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources & Methodology */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

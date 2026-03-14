@@ -8,6 +8,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'A&E Attendances and Emergency Admissions', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/', date: '2024' },
+  { num: 2, name: 'Royal College of Emergency Medicine', dataset: 'Corridor care and avoidable deaths estimates', url: 'https://rcem.ac.uk/', date: '2023' },
+  { num: 3, name: 'NHS England', dataset: 'Urgent and Emergency Care Recovery Plan', url: 'https://www.england.nhs.uk/long-read/delivery-plan-for-recovering-urgent-and-emergency-care-services/', date: '2023' },
+];
 
 interface AeData {
   national: {
@@ -228,14 +236,18 @@ export default function NhsAePage() {
           <div className="bg-wiah-light p-6 rounded-lg space-y-4">
             <h2 className="text-lg font-bold text-wiah-black">Context</h2>
             <p className="text-base text-wiah-black leading-relaxed">
-              The 4-hour A&amp;E target — 95% of patients seen within four hours — was last consistently met in 2015, when performance stood at 93%. By 2019 it had fallen to 83% in Type 1 major departments, and by 2023/24 it reached 70%. Total attendances hit 24 million in 2022/23, the highest ever recorded, with 45% at major A&amp;E and 44% at Urgent Treatment Centres. Presentations by over-85s have risen 40% since 2012, bringing longer assessment times and greater clinical complexity that compound the capacity squeeze.
+              The 4-hour A&amp;E target — 95% of patients seen within four hours — was last consistently met in 2015, when performance stood at 93%. By 2019 it had fallen to 83% in Type 1 major departments, and by 2023/24 it reached 70%.<Cite nums={1} /> Total attendances hit 24 million in 2022/23, the highest ever recorded, with 45% at major A&amp;E and 44% at Urgent Treatment Centres.<Cite nums={1} /> Presentations by over-85s have risen 40% since 2012, bringing longer assessment times and greater clinical complexity that compound the capacity squeeze.
             </p>
             <p className="text-base text-wiah-black leading-relaxed">
-              Twelve-hour trolley waits — the interval from a decision to admit to actual departure from A&amp;E — were near zero before 2020. They reached 14,000 in 2021, surpassed 200,000 in 2023, and exceeded 300,000 in 2023/24. December 2023 alone recorded 88,000, more in a single month than any full year before 2021. The Royal College of Emergency Medicine declared corridor care a permanent feature of emergency medicine and estimates 23,000 avoidable deaths per year are linked to prolonged A&amp;E waits, based on mortality studies of 8–12-hour wait cohorts.
+              Twelve-hour trolley waits — the interval from a decision to admit to actual departure from A&amp;E — were near zero before 2020. They reached 14,000 in 2021, surpassed 200,000 in 2023, and exceeded 300,000 in 2023/24.<Cite nums={1} /> December 2023 alone recorded 88,000, more in a single month than any full year before 2021. The Royal College of Emergency Medicine declared corridor care a permanent feature of emergency medicine and estimates 23,000 avoidable deaths per year are linked to prolonged A&amp;E waits, based on mortality studies of 8–12-hour wait cohorts.<Cite nums={2} />
             </p>
             <p className="text-base text-wiah-black leading-relaxed">
-              The bottleneck runs both ways. Ambulance handover delays exceeding 30 minutes rose from 3% in 2019 to 31% in 2023, with worst-performing trusts averaging 45-minute offload times. Behind that: over 10,000 patients per day awaited discharge in 2022/23, each delayed day costing the NHS £345 in occupied beds. One study found 1 in 7 A&amp;E attendees cited inability to get a GP appointment. NHS England's 2023 recovery plan targeted the 10 worst-performing trusts and expanded Same Day Emergency Care units, but demand from a growing, ageing population continues to outpace supply.
+              The bottleneck runs both ways. Ambulance handover delays exceeding 30 minutes rose from 3% in 2019 to 31% in 2023, with worst-performing trusts averaging 45-minute offload times.<Cite nums={1} /> Behind that: over 10,000 patients per day awaited discharge in 2022/23, each delayed day costing the NHS £345 in occupied beds. One study found 1 in 7 A&amp;E attendees cited inability to get a GP appointment. NHS England's 2023 recovery plan targeted the 10 worst-performing trusts and expanded Same Day Emergency Care units, but demand from a growing, ageing population continues to outpace supply.<Cite nums={3} />
             </p>
+          </div>
+
+          <div className="mt-6">
+            <References items={editorialRefs} />
           </div>
 
           <div className="bg-wiah-light p-6 rounded-lg space-y-4">

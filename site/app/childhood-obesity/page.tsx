@@ -8,6 +8,13 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS Digital', dataset: 'National Child Measurement Programme', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/national-child-measurement-programme', date: '2023/24' },
+  { num: 2, name: 'NHS England', dataset: 'NHS Long Term Plan — obesity cost estimates', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -70,8 +77,8 @@ export default function ChildhoodObesityPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>22.7% of Year 6 children in England were classified as obese in 2023/24 — up from 17.3% when measurement began in 2006 and substantially above the 20.2% recorded before the pandemic. Between 2019/20 and 2021/22, Year 6 obesity jumped 3.2 percentage points in two years as school closures, reduced physical activity, and disrupted food environments accelerated a pre-existing trend. The National Child Measurement Programme covers nearly all Reception and Year 6 children each year and provides one of the most consistent public health datasets in the country. The Soft Drinks Industry Levy (2018) and HFSS advertising watershed (2023) are the main policy responses, but their cumulative effect remains modest relative to the scale of deterioration.</p>
-            <p>The deprivation gradient is stark and widening: children in the most deprived fifth of areas have an obesity rate of 35.7%, compared to 11.2% in the least deprived — a 3.2-times gap. Obese children are more likely to become obese adults, facing higher risks of Type 2 diabetes, cardiovascular disease, certain cancers, and mental health conditions. The NHS Long Term Plan estimates obesity costs the health service £6.5 billion a year in direct treatment costs, with an additional £27 billion in indirect economic costs. A child growing up in a deprived neighbourhood is more than three times as likely to be obese at the end of primary school as a child growing up in an affluent one.</p>
+            <p>22.7% of Year 6 children in England were classified as obese in 2023/24 — up from 17.3% when measurement began in 2006 and substantially above the 20.2% recorded before the pandemic.<Cite nums={1} /> Between 2019/20 and 2021/22, Year 6 obesity jumped 3.2 percentage points in two years as school closures, reduced physical activity, and disrupted food environments accelerated a pre-existing trend.<Cite nums={1} /> The National Child Measurement Programme covers nearly all Reception and Year 6 children each year and provides one of the most consistent public health datasets in the country. The Soft Drinks Industry Levy (2018) and HFSS advertising watershed (2023) are the main policy responses, but their cumulative effect remains modest relative to the scale of deterioration.</p>
+            <p>The deprivation gradient is stark and widening: children in the most deprived fifth of areas have an obesity rate of 35.7%, compared to 11.2% in the least deprived — a 3.2-times gap.<Cite nums={1} /> Obese children are more likely to become obese adults, facing higher risks of Type 2 diabetes, cardiovascular disease, certain cancers, and mental health conditions. The NHS Long Term Plan estimates obesity costs the health service £6.5 billion a year in direct treatment costs, with an additional £27 billion in indirect economic costs.<Cite nums={2} /> A child growing up in a deprived neighbourhood is more than three times as likely to be obese at the end of primary school as a child growing up in an affluent one.<Cite nums={1} /></p>
           </div>
         </section>
 
@@ -160,6 +167,9 @@ export default function ChildhoodObesityPage() {
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">

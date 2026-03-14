@@ -7,6 +7,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Department for Transport', dataset: 'Bus Statistics Table BUS0103', url: 'https://www.gov.uk/government/statistical-data-sets/bus01-local-bus-passenger-journeys', date: '2024' },
+  { num: 2, name: 'Campaign for Better Transport', dataset: 'Annual Bus Report — route cut analysis', url: 'https://bettertransport.org.uk', date: '2024' },
+  { num: 3, name: 'CPRE / Campaign for Better Transport', dataset: 'Rural bus service coverage analysis', date: '2024' },
+];
 
 export default function BusServiceCutsPage() {
   // Local bus vehicle miles outside London 2010–2024 (billion miles)
@@ -57,8 +65,8 @@ export default function BusServiceCutsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England outside London has experienced the most severe peacetime collapse of public bus provision on record. Between 2010 and 2024, local bus vehicle miles fell from 14.8 billion to around 10 billion — a 44% reduction driven directly by local authority funding cuts that stripped over £600 million a year from supported bus services. Commercial operators withdrew routes that could not survive without subsidy, and over 3,000 routes have been cut entirely.</p>
-            <p>The impact falls hardest on rural communities, older people, those without cars, and low-income households — the same groups who depend most on buses to reach work, healthcare, and shops. Around 2.3 million people in rural England now live in a community with no bus service at all. London, with its dedicated TfL funding, has seen bus use recover strongly. Outside the capital, the gap widens year on year.</p>
+            <p>England outside London has experienced the most severe peacetime collapse of public bus provision on record. Between 2010 and 2024, local bus vehicle miles fell from 14.8 billion to around 10 billion — a 44% reduction driven directly by local authority funding cuts that stripped over £600 million a year from supported bus services.<Cite nums={1} /> Commercial operators withdrew routes that could not survive without subsidy, and over 3,000 routes have been cut entirely.<Cite nums={2} /></p>
+            <p>The impact falls hardest on rural communities, older people, those without cars, and low-income households — the same groups who depend most on buses to reach work, healthcare, and shops. Around 2.3 million people in rural England now live in a community with no bus service at all.<Cite nums={3} /> London, with its dedicated TfL funding, has seen bus use recover strongly. Outside the capital, the gap widens year on year.</p>
             <p>The 2022 Bus Back Better strategy promised recovery, but funding has been fragmented and short-term. Restoring the network to 2010 levels would require sustained annual investment that current commitments do not provide.</p>
           </div>
         </section>
@@ -140,6 +148,9 @@ export default function BusServiceCutsPage() {
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">

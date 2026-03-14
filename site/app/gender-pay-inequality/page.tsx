@@ -8,6 +8,13 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Annual Survey of Hours and Earnings (ASHE)', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/genderpaygapintheuk/2024', date: '2024' },
+  { num: 2, name: 'Gov.uk', dataset: 'Gender Pay Gap Service', url: 'https://gender-pay-gap.service.gov.uk/', date: '2024' },
+];
 
 // Full-time gender pay gap (%), 1997–2024 (selected years)
 const fullTimePct = [17.4, 17.0, 16.5, 16.0, 15.5, 15.0, 14.5, 14.0, 13.5, 13.0, 12.0, 10.5, 9.4, 8.6, 8.3, 7.9, 7.9, 7.7, 7.7, 7.8, 6.9];
@@ -71,8 +78,8 @@ export default function GenderPayInequalityPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Among full-time employees, the median gender pay gap fell from 17.4% in 1997 to 6.9% in 2024 — a genuine narrowing driven by legislation, transparency, and generational shifts in women's workforce participation. But this figure flatters reality. When all employees are counted — including the millions of women in part-time roles — the gap sits at 13.1%. Women are far more likely to work part-time than men, and part-time work pays less per hour than full-time work, even for equivalent roles. This is the part-time penalty, and it remains one of the largest structural drivers of pay inequality in the UK. It is closely tied to the motherhood penalty: women's earnings drop sharply after having children and rarely recover to pre-birth levels, while men's earnings are largely unaffected.</p>
-            <p>The age breakdown reveals a striking pattern: among workers under 30, the gender pay gap is near zero or slightly favours women. The gap opens dramatically from the mid-30s onwards — precisely when caring responsibilities begin. This is not a pipeline problem being solved by generational change. It is a structural penalty applied to women who become mothers, and it has barely shifted in two decades. Shared Parental Leave, introduced in 2015, has been taken up by only 2% of eligible fathers. At the current rate of decline, the full-time gender pay gap will not reach zero until the mid-2060s. The all-employees gap, which better captures the lived reality of women's earnings, would take even longer.</p>
+            <p>Among full-time employees, the median gender pay gap fell from 17.4% in 1997 to 6.9% in 2024 — a genuine narrowing driven by legislation, transparency, and generational shifts in women's workforce participation.<Cite nums={[1]} /> But this figure flatters reality. When all employees are counted — including the millions of women in part-time roles — the gap sits at 13.1%.<Cite nums={[1]} /> Women are far more likely to work part-time than men, and part-time work pays less per hour than full-time work, even for equivalent roles. This is the part-time penalty, and it remains one of the largest structural drivers of pay inequality in the UK. It is closely tied to the motherhood penalty: women's earnings drop sharply after having children and rarely recover to pre-birth levels, while men's earnings are largely unaffected.</p>
+            <p>The age breakdown reveals a striking pattern: among workers under 30, the gender pay gap is near zero or slightly favours women.<Cite nums={[1]} /> The gap opens dramatically from the mid-30s onwards — precisely when caring responsibilities begin. This is not a pipeline problem being solved by generational change. It is a structural penalty applied to women who become mothers, and it has barely shifted in two decades. Shared Parental Leave, introduced in 2015, has been taken up by only 2% of eligible fathers. At the current rate of decline, the full-time gender pay gap will not reach zero until the mid-2060s.<Cite nums={[1]} /> The all-employees gap, which better captures the lived reality of women's earnings, would take even longer.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -151,6 +158,10 @@ export default function GenderPayInequalityPage() {
             source="Source: Gov.uk Gender Pay Gap Service. ONS — ASHE 2024. DfE — Childcare expansion update 2025."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

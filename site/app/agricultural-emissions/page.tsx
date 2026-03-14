@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Total UK agricultural GHG emissions (MtCO2e), 1990–2024
 // Fell sharply to ~2000, flat since then
@@ -83,6 +85,12 @@ const breakdownAnnotations: Annotation[] = [
   { date: new Date(2022, 0, 1), label: '2022: Ukraine war — fertiliser price spike, N2O falls briefly' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DESNZ', dataset: 'UK Greenhouse Gas Emissions National Statistics', url: 'https://www.gov.uk/government/statistics/provisional-uk-greenhouse-gas-emissions-national-statistics', date: '2024' },
+  { num: 2, name: 'Climate Change Committee', dataset: 'Progress in Reducing Emissions 2024', url: 'https://www.theccc.org.uk/publication/progress-in-reducing-emissions-2024-report-to-parliament/', date: '2024' },
+  { num: 3, name: 'Defra', dataset: 'Agriculture in the United Kingdom', url: 'https://www.gov.uk/government/statistics/agriculture-in-the-united-kingdom', date: '2024' },
+];
+
 export default function AgriculturalEmissionsPage() {
   return (
     <>
@@ -98,8 +106,8 @@ export default function AgriculturalEmissionsPage() {
 
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Agriculture is the third-largest source of greenhouse gas emissions in the UK, responsible for around 11% of the national total in 2024. Unlike energy or transport, where electrification offers a clear decarbonisation pathway, agricultural emissions are primarily biological: methane from the digestive systems of livestock (enteric fermentation), nitrous oxide from fertilisers applied to soils, and methane and N2O from animal manure. These are structurally difficult to eliminate without changes to what and how the UK produces food.</p>
-            <p>The 16% reduction since 1990 came largely from efficiency gains in the 1990s, combined with herd size reductions and the one-off effect of the 2001 foot-and-mouth cull. Since 2010, emissions have been essentially flat — declining in absolute terms by only around 3% over 14 years. As other sectors (power, transport, heating) decarbonise faster, agriculture's share of remaining national emissions is rising. The Climate Change Committee has warned that agriculture is not on track for its 2030 target of a 27% reduction from the 2018–2022 baseline.</p>
+            <p>Agriculture is the third-largest source of greenhouse gas emissions in the UK, responsible for around 11% of the national total in 2024.<Cite nums={1} /> Unlike energy or transport, where electrification offers a clear decarbonisation pathway, agricultural emissions are primarily biological: methane from the digestive systems of livestock (enteric fermentation), nitrous oxide from fertilisers applied to soils, and methane and N2O from animal manure. These are structurally difficult to eliminate without changes to what and how the UK produces food.</p>
+            <p>The 16% reduction since 1990 came largely from efficiency gains in the 1990s, combined with herd size reductions and the one-off effect of the 2001 foot-and-mouth cull.<Cite nums={1} /> Since 2010, emissions have been essentially flat — declining in absolute terms by only around 3% over 14 years.<Cite nums={1} /> As other sectors (power, transport, heating) decarbonise faster, agriculture's share of remaining national emissions is rising. The Climate Change Committee has warned that agriculture is not on track for its 2030 target of a 27% reduction from the 2018–2022 baseline.<Cite nums={2} /></p>
           </div>
         </section>
 
@@ -197,13 +205,16 @@ export default function AgriculturalEmissionsPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">What the data shows</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>The UK's agricultural emissions trajectory has two distinct phases. Between 1990 and 2005, there was meaningful progress — emissions fell by around 20% as livestock numbers declined, nitrogen fertiliser application became more efficient, and manure management improved. Since then, progress has essentially stopped. Despite significant policy attention, agricultural emissions in 2024 are barely lower than in 2010.</p>
-              <p>The livestock methane problem illustrates why agriculture is different. Enteric fermentation — the methane produced during digestion in ruminants — cannot be engineered away within the current production system without either reducing cattle and sheep numbers significantly or deploying feed additives at scale. Neither has happened. The beef and dairy sector has resisted production limits, and feed additives, while promising, require every farmer to adopt them voluntarily with limited financial incentive to do so in the absence of mandatory requirements or carbon pricing.</p>
-              <p>The fertiliser N2O story is more nuanced. The sharp rise in fertiliser costs following Russia's invasion of Ukraine in 2022 caused a temporary reduction in application rates, and UK farmers have been improving precision application for cost reasons. These factors explain a modest recent improvement in soil-source N2O. But baseline fertiliser use remains high, and without precision agriculture mandates or a fertiliser nitrogen tax, further reductions will be slow and market-dependent.</p>
+              <p>The UK's agricultural emissions trajectory has two distinct phases. Between 1990 and 2005, there was meaningful progress — emissions fell by around 20% as livestock numbers declined, nitrogen fertiliser application became more efficient, and manure management improved.<Cite nums={1} /> Since then, progress has essentially stopped. Despite significant policy attention, agricultural emissions in 2024 are barely lower than in 2010.<Cite nums={1} /></p>
+              <p>The livestock methane problem illustrates why agriculture is different. Enteric fermentation — the methane produced during digestion in ruminants — cannot be engineered away within the current production system without either reducing cattle and sheep numbers significantly or deploying feed additives at scale.<Cite nums={[1, 3]} /> Neither has happened. The beef and dairy sector has resisted production limits, and feed additives, while promising, require every farmer to adopt them voluntarily with limited financial incentive to do so in the absence of mandatory requirements or carbon pricing.</p>
+              <p>The fertiliser N2O story is more nuanced. The sharp rise in fertiliser costs following Russia's invasion of Ukraine in 2022 caused a temporary reduction in application rates, and UK farmers have been improving precision application for cost reasons.<Cite nums={3} /> These factors explain a modest recent improvement in soil-source N2O.<Cite nums={1} /> But baseline fertiliser use remains high, and without precision agriculture mandates or a fertiliser nitrogen tax, further reductions will be slow and market-dependent.</p>
             </div>
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

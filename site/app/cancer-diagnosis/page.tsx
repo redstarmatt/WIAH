@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Cancers diagnosed at early stage (1 & 2) (%), 2015–2024
 const earlyStageData = [50.2, 51.0, 51.8, 52.4, 52.8, 52.1, 53.0, 53.5, 54.0, 54.1];
@@ -45,6 +47,12 @@ const target62Annotations: Annotation[] = [
   { date: new Date(2020, 0, 1), label: '2020: Pandemic causes further collapse' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Cancer Waiting Times', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/cancer-waiting-times/', date: 'March 2026' },
+  { num: 2, name: 'ONS', dataset: 'Cancer survival in England', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/datasets/cancersurvivalratescancersurvivalinenglandadultsdiagnosed', date: 'March 2026' },
+  { num: 3, name: 'Cancer Research UK', dataset: 'Cancer Statistics', url: 'https://www.cancerresearchuk.org/health-professional/cancer-statistics', date: 'March 2026' },
+];
+
 export default function CancerDiagnosisPage() {
   return (
     <>
@@ -59,8 +67,8 @@ export default function CancerDiagnosisPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England has some of the worst cancer survival rates in Western Europe, and late diagnosis is the single most important explanation. Five-year cancer survival is strongly correlated with stage at diagnosis: for bowel cancer, the five-year survival rate is 97% at stage 1 but falls to 7% at stage 4. For lung cancer, the gap is even more extreme — stage 1 survival exceeds 80% but stage 4 survival is below 5%. England diagnoses 54% of cancers at the earliest stages, against an NHS Long Term Plan target of 75% by 2028. Meeting that target would, by NHS England's own modelling, save approximately 55,000 additional lives per decade. Between 300,000 and 350,000 new cancer cases are diagnosed in England each year; if 75% were diagnosed early rather than 54%, approximately 63,000 more patients per year would face treatment when it is most likely to be curative.</p>
-            <p>The 62-day standard — the longest-standing treatment timeliness metric, with a target of 85% compliance — has not been met nationally since 2015. By 2024, only 65% of cancer patients began treatment within 62 days of urgent GP referral. This means approximately 100,000 people per year are waiting longer than they should from GP referral to treatment start. The Faster Diagnosis Standard, introduced in 2020 to ensure resolution of diagnostic uncertainty within 28 days of referral, met its 95% target for only a handful of months before falling back to around 65%. COVID-19 made an existing problem acute: backlog from the pandemic has not been fully resolved, and additional demand from an ageing population continues to outpace diagnostic capacity.</p>
+            <p>England has some of the worst cancer survival rates in Western Europe, and late diagnosis is the single most important explanation.<Cite nums={3} /> Five-year cancer survival is strongly correlated with stage at diagnosis: for bowel cancer, the five-year survival rate is 97% at stage 1 but falls to 7% at stage 4.<Cite nums={2} /> For lung cancer, the gap is even more extreme — stage 1 survival exceeds 80% but stage 4 survival is below 5%.<Cite nums={2} /> England diagnoses 54% of cancers at the earliest stages, against an NHS Long Term Plan target of 75% by 2028.<Cite nums={1} /> Meeting that target would, by NHS England's own modelling, save approximately 55,000 additional lives per decade. Between 300,000 and 350,000 new cancer cases are diagnosed in England each year.<Cite nums={3} /></p>
+            <p>The 62-day standard — the longest-standing treatment timeliness metric, with a target of 85% compliance — has not been met nationally since 2015. By 2024, only 65% of cancer patients began treatment within 62 days of urgent GP referral.<Cite nums={1} /> This means approximately 100,000 people per year are waiting longer than they should from GP referral to treatment start. The Faster Diagnosis Standard, introduced in 2020 to ensure resolution of diagnostic uncertainty within 28 days of referral, met its 95% target for only a handful of months before falling back to around 65%.<Cite nums={1} /> COVID-19 made an existing problem acute: backlog from the pandemic has not been fully resolved, and additional demand from an ageing population continues to outpace diagnostic capacity.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -141,6 +149,9 @@ export default function CancerDiagnosisPage() {
             source="Source: NHS England — NHS Long Term Plan Cancer Programme 2024. Targeted Lung Health Check interim evaluation."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

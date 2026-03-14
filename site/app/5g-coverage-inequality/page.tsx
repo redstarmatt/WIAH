@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // UK 5G population coverage (%), 2019–2025 — Ofcom Connected Nations
 const populationCoverageValues = [1, 8, 21, 36, 44, 50, 57];
@@ -54,6 +56,12 @@ const annotations: Annotation[] = [
   { date: new Date(2022, 0, 1), label: '2022: Shared Rural Network begins' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ofcom', dataset: 'Connected Nations Report', url: 'https://www.ofcom.org.uk/research-and-data/telecoms-research/connected-nations', date: '2025' },
+  { num: 2, name: 'DSIT', dataset: 'UK Gigabit Programme Statistics', url: 'https://www.gov.uk/guidance/project-gigabit-programme', date: '2025' },
+  { num: 3, name: 'DSIT', dataset: 'Shared Rural Network Progress Report', date: '2025' },
+];
+
 export default function FiveGCoverageInequalityPage() {
   return (
     <>
@@ -68,8 +76,8 @@ export default function FiveGCoverageInequalityPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK's 5G rollout has reached a headline figure of around 57% population coverage, but that number conceals a deepening geographic divide. Coverage is overwhelmingly concentrated in urban centres, where all four major operators now provide service across most of central London, Manchester, Birmingham, and other large cities. Step outside these areas and the picture changes sharply. Rural 5G coverage stands at just 14%, compared with 73% in urban areas — a 59 percentage-point gap that has grown wider each year since commercial 5G launched in 2019. This is not simply a matter of inconvenience: 5G-dependent applications in precision agriculture, remote healthcare, and industrial automation are being trialled in urban testbeds while the communities that could benefit most remain on 4G or patchy 3G.</p>
-            <p>Several structural factors drive this inequality. Spectrum allocation decisions have favoured high-frequency bands that deliver fast speeds but have limited range — ideal for dense urban areas, less so for scattered rural settlements. The economics of mast deployment are unfavourable in low-density areas, and planning objections have slowed rollout. The Shared Rural Network, a joint initiative between government and the four operators to extend 4G coverage to 95% of the UK landmass, has made genuine progress — but it addresses 4G, not 5G. By contrast, fixed gigabit broadband has expanded rapidly, reaching 82% of premises in 2025, driven by full-fibre rollout. The gap between wireless and fixed connectivity haves and have-nots maps almost perfectly onto the UK's existing economic geography.</p>
+            <p>The UK's 5G rollout has reached a headline figure of around 57% population coverage, but that number conceals a deepening geographic divide.<Cite nums={1} /> Coverage is overwhelmingly concentrated in urban centres, where all four major operators now provide service across most of central London, Manchester, Birmingham, and other large cities. Step outside these areas and the picture changes sharply. Rural 5G coverage stands at just 14%, compared with 73% in urban areas — a 59 percentage-point gap that has grown wider each year since commercial 5G launched in 2019.<Cite nums={1} /> This is not simply a matter of inconvenience: 5G-dependent applications in precision agriculture, remote healthcare, and industrial automation are being trialled in urban testbeds while the communities that could benefit most remain on 4G or patchy 3G.</p>
+            <p>Several structural factors drive this inequality. Spectrum allocation decisions have favoured high-frequency bands that deliver fast speeds but have limited range — ideal for dense urban areas, less so for scattered rural settlements.<Cite nums={1} /> The economics of mast deployment are unfavourable in low-density areas, and planning objections have slowed rollout. The Shared Rural Network, a joint initiative between government and the four operators to extend 4G coverage to 95% of the UK landmass, has made genuine progress — but it addresses 4G, not 5G.<Cite nums={3} /> By contrast, fixed gigabit broadband has expanded rapidly, reaching 82% of premises in 2025, driven by full-fibre rollout.<Cite nums={2} /> The gap between wireless and fixed connectivity haves and have-nots maps almost perfectly onto the UK's existing economic geography.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -148,6 +156,9 @@ export default function FiveGCoverageInequalityPage() {
             source="Source: DSIT — Shared Rural Network Progress Report 2025. Ofcom — Connected Nations 2025."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

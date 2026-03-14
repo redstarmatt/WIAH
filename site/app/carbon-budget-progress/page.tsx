@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // UK greenhouse gas emissions (MtCO2e), 2015–2025
 const actualEmissionsData = [490, 475, 460, 451, 435, 380, 420, 415, 408, 400, 392];
@@ -61,6 +63,12 @@ const decarbAnnotations: Annotation[] = [
   { date: new Date(2023, 5, 1), label: '2023: ZEV mandate: 2030 ICE ban confirmed' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DESNZ', dataset: 'UK greenhouse gas emissions statistics', url: 'https://www.gov.uk/government/collections/uk-greenhouse-gas-emissions-statistics', date: 'March 2026' },
+  { num: 2, name: 'Climate Change Committee', dataset: 'Progress in Reducing UK Emissions — 2025 Report to Parliament', url: 'https://www.theccc.org.uk/publication/progress-in-reducing-uk-emissions-2025-report-to-parliament/', date: 'March 2026' },
+  { num: 3, name: 'SMMT', dataset: 'Vehicle Registration Statistics', url: 'https://www.smmt.co.uk/vehicle-data/', date: 'March 2026' },
+];
+
 export default function CarbonBudgetProgressPage() {
   return (
     <>
@@ -75,8 +83,8 @@ export default function CarbonBudgetProgressPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK has made genuine and substantial progress on reducing greenhouse gas emissions, cutting territorial emissions by 53% since 1990 — the fastest reduction of any major economy over that period. Decarbonisation of the electricity grid has been the primary driver: coal has been virtually eliminated from power generation, and renewables now supply over 50% of electricity. But the easy gains are largely behind us. The remaining emissions are harder to cut: heating homes accounts for 14% of UK emissions, the vast majority from gas boilers; agriculture produces 11%; and transport — despite growing EV sales — remains the largest single sector. The Climate Change Committee's 2025 progress report found the UK is on track to meet only 8 of its 50 key net zero policy milestones.</p>
-            <p>Heat pump installation is the most glaring gap. The government's Boiler Upgrade Scheme offers grants of £7,500 for heat pump installation, but uptake remains at around 90,000 per year — against the CCC's pathway requiring 600,000 per year by 2028. High upfront costs, planning restrictions, and public uncertainty about operating costs are all contributing factors. EV uptake has been more encouraging: the zero-emission vehicle mandate requires 22% of new car sales to be electric in 2024, rising to 80% by 2030, and is currently tracking roughly on target. But without a parallel acceleration in grid capacity and home charging infrastructure, the transport transition risks stalling at higher penetration rates where overnight home charging becomes the bottleneck.</p>
+            <p>The UK has made genuine and substantial progress on reducing greenhouse gas emissions, cutting territorial emissions by 53% since 1990 — the fastest reduction of any major economy over that period.<Cite nums={1} /> Decarbonisation of the electricity grid has been the primary driver: coal has been virtually eliminated from power generation, and renewables now supply over 50% of electricity. But the easy gains are largely behind us. The remaining emissions are harder to cut: heating homes accounts for 14% of UK emissions, the vast majority from gas boilers; agriculture produces 11%; and transport — despite growing EV sales — remains the largest single sector.<Cite nums={1} /> The Climate Change Committee's 2025 progress report found the UK is on track to meet only 8 of its 50 key net zero policy milestones.<Cite nums={2} /></p>
+            <p>Heat pump installation is the most glaring gap. The government's Boiler Upgrade Scheme offers grants of £7,500 for heat pump installation, but uptake remains at around 90,000 per year — against the CCC's pathway requiring 600,000 per year by 2028.<Cite nums={2} /> High upfront costs, planning restrictions, and public uncertainty about operating costs are all contributing factors. EV uptake has been more encouraging: the zero-emission vehicle mandate requires 22% of new car sales to be electric in 2024, rising to 80% by 2030, and is currently tracking roughly on target.<Cite nums={3} /> But without a parallel acceleration in grid capacity and home charging infrastructure, the transport transition risks stalling at higher penetration rates where overnight home charging becomes the bottleneck.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -155,6 +163,9 @@ export default function CarbonBudgetProgressPage() {
             source="Source: DESNZ — UK greenhouse gas emissions statistics 2025. Ofgem — Energy generation statistics 2025."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

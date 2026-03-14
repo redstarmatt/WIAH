@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DLUHC', dataset: 'Supported Housing Review', url: 'https://www.gov.uk/government/publications/supported-housing-review', date: '2024', note: 'Stock fell from 458K to 448K units; waiting list doubled to 58K; LHA rates lag actual rents' },
+  { num: 2, name: 'NHS England', dataset: 'Delayed Transfers of Care Statistics', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/delayed-transfers-of-care/', date: '2024', note: '~13K people stuck in hospital due to lack of supported housing; >£300/day unnecessary hospital cost' },
+  { num: 3, name: 'Housing LIN', dataset: 'Supported Housing Deficit Report', url: 'https://www.housinglin.org.uk/', date: '2024', note: '45K unit shortfall; gap growing annually' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -77,8 +85,8 @@ export default function SupportedHousinShortage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Supported housing stock has contracted from approximately 458,000 units in 2016 to 448,000 today — a loss of 10,000 units at exactly the moment when an ageing population is driving demand upward. The waiting list has more than doubled over the same period, from 32,000 to 58,000 people. Local housing allowance rates have repeatedly failed to keep pace with actual rents, making it financially unviable to build or maintain supported units in high-cost areas; the specialised construction requirements — en-suite, wider corridors, staff facilities — add further cost. The Supported Housing (Regulatory Oversight) Act 2023 improved quality standards but did nothing to increase supply.</p>
-            <p>The shortage cascades across other public services. NHS England estimates around 13,000 people are stuck in hospital because no appropriate supported housing exists for them — at over £300 per unnecessary hospital day. Adult social care routinely places people with learning disabilities in residential care settings at greater cost and worse outcomes because local supported housing is unavailable. The burden falls on older people with complex needs, young adults with learning disabilities, and those leaving mental health inpatient care — the groups with the fewest options when the system fails.</p>
+            <p>Supported housing stock has contracted from approximately 458,000 units in 2016 to 448,000 today — a loss of 10,000 units at exactly the moment when an ageing population is driving demand upward.<Cite nums={1} /> The waiting list has more than doubled over the same period, from 32,000 to 58,000 people.<Cite nums={1} /> Local housing allowance rates have repeatedly failed to keep pace with actual rents, making it financially unviable to build or maintain supported units in high-cost areas; the specialised construction requirements — en-suite, wider corridors, staff facilities — add further cost. The Supported Housing (Regulatory Oversight) Act 2023 improved quality standards but did nothing to increase supply.</p>
+            <p>The shortage cascades across other public services. NHS England estimates around 13,000 people are stuck in hospital because no appropriate supported housing exists for them — at over £300 per unnecessary hospital day.<Cite nums={2} /> Adult social care routinely places people with learning disabilities in residential care settings at greater cost and worse outcomes because local supported housing is unavailable. The burden falls on older people with complex needs, young adults with learning disabilities, and those leaving mental health inpatient care — the groups with the fewest options when the system fails.<Cite nums={3} /></p>
           </div>
         </section>
 
@@ -138,6 +146,10 @@ export default function SupportedHousinShortage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

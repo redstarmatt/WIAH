@@ -5,6 +5,13 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Suicides in England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/suicidesintheunitedkingdom/latest', date: '2024', note: '~6,400 deaths in 2023; rate 11.0 per 100K; men 3x female rate; 25-44 cohort rising fastest' },
+  { num: 2, name: 'DHSC', dataset: 'National Suicide Prevention Strategy', url: 'https://www.gov.uk/government/publications/suicide-prevention-strategy-for-england-2023-to-2028', date: '2023', note: 'Refreshed 2023; ambitions but no binding targets or ring-fenced funding' },
+];
 
 export default function SuicidePreventionPage() {
   // UK suicide rate per 100,000 (age-standardised) 2010–2024
@@ -139,12 +146,16 @@ export default function SuicidePreventionPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">What the numbers show</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Around 6,400 people died by suicide in the UK in 2023 — roughly 17 people every day. The age-standardised rate has edged upward since 2010, with the sharpest increases concentrated among men aged 25–44. Men account for three quarters of all suicide deaths, a gap that has remained stubbornly constant despite targeted prevention strategies.</p>
-              <p>The UK's National Suicide Prevention Strategy, refreshed in 2019 and updated in 2023, sets ambitions for reducing rates but lacks binding targets or ring-fenced funding. Mental health crisis services — the frontline response to suicidal distress — face demand that has grown faster than capacity. Waiting times for talking therapies exceed 18 weeks in many NHS trusts, and crisis lines regularly operate below staffing levels.</p>
-              <p>Means restriction — such as packaging limits on paracetamol — has demonstrably reduced method-specific deaths. But economic stressors, social isolation, and unmet mental health need continue to drive overall rates upward. The data does not yet show a sustained downward trend.</p>
+              <p>Around 6,400 people died by suicide in the UK in 2023 — roughly 17 people every day. The age-standardised rate has edged upward since 2010, with the sharpest increases concentrated among men aged 25–44.<Cite nums={1} /> Men account for three quarters of all suicide deaths, a gap that has remained stubbornly constant despite targeted prevention strategies.</p>
+              <p>The UK's National Suicide Prevention Strategy, refreshed in 2019 and updated in 2023, sets ambitions for reducing rates but lacks binding targets or ring-fenced funding.<Cite nums={2} /> Mental health crisis services — the frontline response to suicidal distress — face demand that has grown faster than capacity. Waiting times for talking therapies exceed 18 weeks in many NHS trusts, and crisis lines regularly operate below staffing levels.</p>
+              <p>Means restriction — such as packaging limits on paracetamol — has demonstrably reduced method-specific deaths. But economic stressors, social isolation, and unmet mental health need continue to drive overall rates upward. The data does not yet show a sustained downward trend.<Cite nums={1} /></p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

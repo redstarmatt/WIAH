@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Labour Force Survey — Second Jobs', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes', date: '2025', note: '1.3 million second job holders; up 22% since 2019; near record high' },
+  { num: 2, name: 'CIPD', dataset: 'Good Work Index', date: '2025', note: '55% of second job holders cite financial necessity (up from 44% in 2022); tracks cost of living crisis' },
+  { num: 3, name: 'NHS England', dataset: 'NHS Staff Survey — Secondary Employment', date: '2024', note: '13% of NHS staff hold second jobs (up from 7% in 2019); nurses working agency shifts; fatigue risks' },
+  { num: 4, name: 'ONS / Fair Pay Commission', dataset: 'Public Sector Pay Analysis', date: '2024', note: '6-7% public sector pay awards in 2023-24; largest in two decades; partial real-pay restoration' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -149,10 +158,10 @@ export default function SecondJobHoldersPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The Office for National Statistics Labour Force Survey has tracked second job holding for three decades. The current figure of 1.3 million is near a record high, up 22% since 2019. Growth in gig economy platforms — Deliveroo, Uber, TaskRabbit, Fiverr — has made acquiring a second income stream significantly easier than it was for previous generations. But the CIPD's analysis suggests the dominant driver is not voluntary portfolio working but financial need: 55% of second job holders in 2025 cite financial necessity as their primary motivation, up from 44% in 2022, tracking the cost of living crisis almost exactly.
+              The Office for National Statistics Labour Force Survey has tracked second job holding for three decades. The current figure of 1.3 million is near a record high, up 22% since 2019.<Cite nums={1} /> Growth in gig economy platforms — Deliveroo, Uber, TaskRabbit, Fiverr — has made acquiring a second income stream significantly easier than it was for previous generations. But the CIPD's analysis suggests the dominant driver is not voluntary portfolio working but financial need: 55% of second job holders in 2025 cite financial necessity as their primary motivation, up from 44% in 2022, tracking the cost of living crisis almost exactly.<Cite nums={2} />
             </p>
             <p>
-              The sharpest increases have been in the public sector, where real pay has been eroded most severely. NHS staff holding second jobs rose from 7% in 2019 to 13% in 2024. Nurses working agency shifts at weekends, teachers tutoring privately, police officers moonlighting as security guards: the phenomenon has moved from anecdote to data. The practical consequences extend beyond individual wellbeing. NHS staff working excessive hours across multiple employers risk errors from fatigue. The conflict of interest for police officers working private security is obvious. Teachers tutoring privately exacerbates educational inequality as those who can pay get more teacher time. These are externalities of a pay policy choice, not inevitable features of a modern labour market.
+              The sharpest increases have been in the public sector, where real pay has been eroded most severely. NHS staff holding second jobs rose from 7% in 2019 to 13% in 2024.<Cite nums={3} /> Nurses working agency shifts at weekends, teachers tutoring privately, police officers moonlighting as security guards: the phenomenon has moved from anecdote to data. The practical consequences extend beyond individual wellbeing. NHS staff working excessive hours across multiple employers risk errors from fatigue. The conflict of interest for police officers working private security is obvious. Teachers tutoring privately exacerbates educational inequality as those who can pay get more teacher time. These are externalities of a pay policy choice, not inevitable features of a modern labour market.
             </p>
           </div>
         </section>
@@ -235,6 +244,10 @@ export default function SecondJobHoldersPage() {
             source="Source: ONS — Labour Force Survey, employee second jobs. NHS Staff Survey 2024 — secondary employment analysis. CIPD — Good Work Index 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

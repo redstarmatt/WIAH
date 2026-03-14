@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // 5-year business survival rate (%) and hospitality sector, 2010–2024
 const survivalData = [48.0, 47.5, 47.2, 46.8, 46.5, 46.2, 45.8, 45.4, 45.0, 44.6, 43.8, 43.2, 43.6, 44.0, 44.0];
@@ -57,6 +59,11 @@ const birthDeathAnnotations: Annotation[] = [
   { date: new Date(2021, 5, 1), label: '2021: Furlough ends, delayed closures follow' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Business Demography — UK Business Activity, Size and Location', url: 'https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/bulletins/businessdemography/latest', date: '2024' },
+  { num: 2, name: 'British Business Bank', dataset: 'Start Up Loans Annual Report', url: 'https://www.britishbusinessbank.co.uk/research-and-publications/', date: 'March 2026' },
+];
+
 export default function BusinessSurvivalPage() {
   return (
     <>
@@ -71,8 +78,8 @@ export default function BusinessSurvivalPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK registered around 690,000 new businesses in 2024 — one of the highest formation rates in Europe — but the five-year survival rate has fallen to 44%, the lowest since comparable records began. Around one in two businesses that start up today will not exist in five years. The pattern is consistent across regions and sectors, though hospitality, retail, and construction face particularly high failure rates. The post-pandemic period has been especially brutal: businesses that survived 2020 on furlough support faced a sequence of shocks — supply chain disruption, energy cost spikes in 2022, and the fastest interest rate rise in 40 years — that each reduced the odds of survival.</p>
-            <p>Business deaths hit 600,000 in 2020 — far above any previous year — as closures that had been deferred by government support materialised when schemes ended. Since then, annual closures have moderated to around 440,000, but remain above pre-pandemic norms. The net effect is that the stock of businesses has grown more slowly than at any point since 2012. For many sectors, the problem is not a shortage of entrepreneurship but a hostile operating environment: business rates that do not adjust to economic conditions, planning rules that make physical expansion costly, and a late-payment culture that leaves small suppliers financing large clients at elevated interest rates.</p>
+            <p>The UK registered around 690,000 new businesses in 2024 — one of the highest formation rates in Europe — but the five-year survival rate has fallen to 44%, the lowest since comparable records began.<Cite nums={1} /> Around one in two businesses that start up today will not exist in five years. The pattern is consistent across regions and sectors, though hospitality, retail, and construction face particularly high failure rates. The post-pandemic period has been especially brutal: businesses that survived 2020 on furlough support faced a sequence of shocks — supply chain disruption, energy cost spikes in 2022, and the fastest interest rate rise in 40 years — that each reduced the odds of survival.</p>
+            <p>Business deaths hit 600,000 in 2020 — far above any previous year — as closures that had been deferred by government support materialised when schemes ended.<Cite nums={1} /> Since then, annual closures have moderated to around 440,000, but remain above pre-pandemic norms. The net effect is that the stock of businesses has grown more slowly than at any point since 2012.<Cite nums={1} /> For many sectors, the problem is not a shortage of entrepreneurship but a hostile operating environment: business rates that do not adjust to economic conditions, planning rules that make physical expansion costly, and a late-payment culture that leaves small suppliers financing large clients at elevated interest rates.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -151,6 +158,9 @@ export default function BusinessSurvivalPage() {
             source="Source: ONS — Business Demography 2024. British Business Bank — Start Up Loans Annual Report 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

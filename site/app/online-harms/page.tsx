@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ofcom', dataset: 'Children and Parents Media Use and Attitudes report', url: 'https://www.ofcom.org.uk/research-and-data/telecoms-research/adults-media-use-and-attitudes/children-and-parents-media-use-and-attitudes', date: '2024' },
+  { num: 2, name: "Children's Commissioner", dataset: 'Growing Up Digital — Online harms report', date: '2022' },
+  { num: 3, name: 'Internet Watch Foundation', dataset: 'Annual Report — CSAM reports actioned', url: 'https://www.iwf.org.uk/annual-report/', date: '2024' },
+  { num: 4, name: 'Ofcom', dataset: 'Online Safety Act implementation', url: 'https://www.ofcom.org.uk/online-safety', date: '2024' },
+];
 
 export default function OnlineHarmsPage() {
   const csamReports       = [61.5, 80.0, 98.0, 121.0, 130.0, 122.0, 156.0];
@@ -164,9 +173,13 @@ export default function OnlineHarmsPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on online harms</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>The scale of harmful content encountered by children online has grown dramatically in the past decade and accelerated sharply during the Covid pandemic. Ofcom's annual Children and Parents Media Use survey found that 74% of children aged 9–17 had encountered at least one category of harmful content online — including self-harm, pornography, violent content, hate speech, or content promoting eating disorders — in the previous year. The survey has been running since 2019; exposure has risen in every measured category in every year. This is not marginal; it is the majority experience of childhood online in the UK.</p>
-              <p>Self-harm and suicide content represents a particular concern. Research from the Samaritans and the Children's Commissioner has found that recommendation algorithms on TikTok, YouTube, and Instagram can serve increasingly extreme self-harm content to vulnerable young people within minutes of a first exposure. A 2022 report by the Children's Commissioner found that a 13-year-old creating a new account and expressing the mildest interest in mental health topics would be served graphic self-harm content within hours. Causal evidence linking social media use to mental health outcomes is contested, but evidence that algorithmic amplification concentrates harmful content toward vulnerable users is strong.</p>
-              <p>Child sexual abuse material (CSAM) online has grown at an alarming rate. The Internet Watch Foundation — which identifies and removes CSAM from the internet — actioned reports of 156,000 individual pieces of content in 2024, up from 61,000 in 2018. The organisation estimates that around 30% of all known CSAM URLs are now AI-generated, representing a new and qualitatively different threat. Law enforcement capacity to investigate online child abuse has not kept pace with the scale of the problem.</p>
+              <p>The scale of harmful content encountered by children online has grown dramatically in the past decade and accelerated sharply during the Covid pandemic. Ofcom's annual Children and Parents Media Use survey found that 74% of children aged 9–17 had encountered at least one category of harmful content online<Cite nums={1} /> — including self-harm, pornography, violent content, hate speech, or content promoting eating disorders — in the previous year. The survey has been running since 2019; exposure has risen in every measured category in every year. This is not marginal; it is the majority experience of childhood online in the UK.</p>
+              <p>Self-harm and suicide content represents a particular concern. Research from the Samaritans and the Children's Commissioner has found that recommendation algorithms on TikTok, YouTube, and Instagram can serve increasingly extreme self-harm content to vulnerable young people within minutes of a first exposure. A 2022 report by the Children's Commissioner found that a 13-year-old creating a new account and expressing the mildest interest in mental health topics would be served graphic self-harm content within hours.<Cite nums={2} /> Causal evidence linking social media use to mental health outcomes is contested, but evidence that algorithmic amplification concentrates harmful content toward vulnerable users is strong.</p>
+              <p>Child sexual abuse material (CSAM) online has grown at an alarming rate. The Internet Watch Foundation — which identifies and removes CSAM from the internet — actioned reports of 156,000 individual pieces of content in 2024, up from 61,000 in 2018.<Cite nums={3} /> The organisation estimates that around 30% of all known CSAM URLs are now AI-generated, representing a new and qualitatively different threat.<Cite nums={3} /> Law enforcement capacity to investigate online child abuse has not kept pace with the scale of the problem.</p>
+            </div>
+
+            <div className="mt-6">
+              <References items={editorialRefs} />
             </div>
           </section>
         </ScrollReveal>

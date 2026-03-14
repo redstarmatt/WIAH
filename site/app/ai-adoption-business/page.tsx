@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // AI adoption by business size (%), 2016–2024 — DSIT AI Activity in UK Businesses Survey
 const largeBusinessValues = [8, 12, 18, 24, 31, 38, 42, 44, 46];
@@ -45,6 +47,11 @@ const annotations: Annotation[] = [
   { date: new Date(2025, 0, 1), label: '2025: AI Opportunities Action Plan' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DSIT', dataset: 'AI Activity in UK Businesses Survey', url: 'https://www.gov.uk/government/statistics/ai-activity-in-uk-businesses', date: '2024' },
+  { num: 2, name: 'OECD', dataset: 'AI Investment and Productivity Analysis', url: 'https://www.oecd.org/going-digital/ai', date: '2024' },
+];
+
 export default function AiAdoptionBusinessPage() {
   return (
     <>
@@ -59,8 +66,8 @@ export default function AiAdoptionBusinessPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>AI adoption in UK businesses has accelerated since 2020 but reveals a stark two-tier pattern. Large enterprises — particularly in financial services, professional services, and technology — have embedded AI into core workflows rapidly: 46% of businesses with 250 or more employees now use at least one AI application. SMEs, which account for 99.9% of all UK businesses and 60% of private sector employment, have been far slower, at just 15% adoption in 2024. Skills are the primary barrier: 78% of firms in the 2024 DSIT survey cited lack of AI-related skills — up from 51% in 2021. UK AI investment per worker stood at £890 in 2023, well below the US at £2,100 and Germany at £1,400.</p>
-            <p>The productivity consequences are significant and may be compounding. OECD analysis shows firms adopting AI achieve 15–40% productivity gains in affected tasks, but diffusion to the broader economy takes 5–10 years without active policy support. The current adoption pattern — concentrated in sectors already productive — risks widening rather than closing the UK's existing productivity gap. The AI Opportunities Action Plan (2025) committed to sector-specific adoption programmes, and the Made Smarter manufacturing AI programme showed strong results in pilot regions — but neither has yet shifted the adoption curve for the 5.5 million SMEs that currently have no AI strategy. The pipeline of AI-competent workers remains heavily concentrated in London and the South East.</p>
+            <p>AI adoption in UK businesses has accelerated since 2020 but reveals a stark two-tier pattern. Large enterprises — particularly in financial services, professional services, and technology — have embedded AI into core workflows rapidly: 46% of businesses with 250 or more employees now use at least one AI application.<Cite nums={1} /> SMEs, which account for 99.9% of all UK businesses and 60% of private sector employment, have been far slower, at just 15% adoption in 2024.<Cite nums={1} /> Skills are the primary barrier: 78% of firms in the 2024 DSIT survey cited lack of AI-related skills — up from 51% in 2021.<Cite nums={1} /> UK AI investment per worker stood at £890 in 2023, well below the US at £2,100 and Germany at £1,400.<Cite nums={2} /></p>
+            <p>The productivity consequences are significant and may be compounding. OECD analysis shows firms adopting AI achieve 15–40% productivity gains in affected tasks, but diffusion to the broader economy takes 5–10 years without active policy support.<Cite nums={2} /> The current adoption pattern — concentrated in sectors already productive — risks widening rather than closing the UK's existing productivity gap. The AI Opportunities Action Plan (2025) committed to sector-specific adoption programmes, and the Made Smarter manufacturing AI programme showed strong results in pilot regions — but neither has yet shifted the adoption curve for the 5.5 million SMEs that currently have no AI strategy.<Cite nums={1} /> The pipeline of AI-competent workers remains heavily concentrated in London and the South East.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -139,6 +146,9 @@ export default function AiAdoptionBusinessPage() {
             source="Source: DSIT — Made Smarter evaluation 2024. AI Opportunities Action Plan 2025. ESFA — AI Skills Bootcamps outcomes data."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

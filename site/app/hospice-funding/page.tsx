@@ -9,6 +9,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import PositiveCallout from '@/components/PositiveCallout';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -26,6 +28,11 @@ interface HospiceFundingData {
 function yearToDate(y: string): Date {
   return new Date(parseInt(y), 5, 1);
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Hospice UK', dataset: 'Funding Analysis & Financial Sustainability Report', url: 'https://www.hospiceuk.org/about-us/media-centre/press-releases', date: '2023' },
+  { num: 2, name: 'CQC', dataset: 'Registered Palliative Care Capacity', url: 'https://www.cqc.org.uk/', date: '2023' },
+];
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -82,10 +89,10 @@ export default function HospiceFundingPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              There are around 200 hospices in the UK, providing specialist palliative care to approximately 225,000 people each year. They deliver roughly 30% of all inpatient specialist palliative care beds, and an even larger share of community palliative care through hospice-at-home services, day therapy, and bereavement support. Yet unlike NHS hospitals or GP practices, which are funded almost entirely by the public purse, hospices receive on average only 27% of their income from NHS commissioners — down from 34% in 2014. The remaining 73% must be raised from charity shops, fundraising events, legacies, and public donations. This structural dependency on charitable income makes hospices acutely vulnerable to economic downturns, rising costs, and the shifting priorities of an increasingly competitive charity fundraising market.
+              There are around 200 hospices in the UK, providing specialist palliative care to approximately 225,000 people each year.<Cite nums={1} /> They deliver roughly 30% of all inpatient specialist palliative care beds, and an even larger share of community palliative care through hospice-at-home services, day therapy, and bereavement support.<Cite nums={2} /> Yet unlike NHS hospitals or GP practices, which are funded almost entirely by the public purse, hospices receive on average only 27% of their income from NHS commissioners — down from 34% in 2014.<Cite nums={1} /> The remaining 73% must be raised from charity shops, fundraising events, legacies, and public donations. This structural dependency on charitable income makes hospices acutely vulnerable to economic downturns, rising costs, and the shifting priorities of an increasingly competitive charity fundraising market.
             </p>
             <p>
-              The financial crisis in the hospice sector deepened sharply after 2021. Staff pay — the largest cost for any care organisation — rose significantly as the care sector competed for workers with NHS employers who could offer Agenda for Change pay rates. Energy costs surged after the Ukrainian invasion of 2022. Meanwhile, NHS commissioning rates — which are negotiated locally and vary enormously between integrated care boards — did not keep pace with inflation. Hospice UK reported in 2023 that 58% of member hospices were in deficit, up from 20% in 2014. Several hospices cut bed numbers, reduced opening hours, or closed day therapy services entirely. Kirkwood Hospice in Yorkshire closed its inpatient unit temporarily in 2023; Nottinghamshire Hospice scaled back community services. These are not isolated incidents but symptoms of a systemic funding model that has not been reviewed since the 1980s.
+              The financial crisis in the hospice sector deepened sharply after 2021. Staff pay — the largest cost for any care organisation — rose significantly as the care sector competed for workers with NHS employers who could offer Agenda for Change pay rates. Energy costs surged after the Ukrainian invasion of 2022. Meanwhile, NHS commissioning rates — which are negotiated locally and vary enormously between integrated care boards — did not keep pace with inflation. Hospice UK reported in 2023 that 58% of member hospices were in deficit, up from 20% in 2014.<Cite nums={1} /> Several hospices cut bed numbers, reduced opening hours, or closed day therapy services entirely.<Cite nums={2} /> Kirkwood Hospice in Yorkshire closed its inpatient unit temporarily in 2023; Nottinghamshire Hospice scaled back community services. These are not isolated incidents but symptoms of a systemic funding model that has not been reviewed since the 1980s.
             </p>
             </div>
         </section>
@@ -182,6 +189,10 @@ export default function HospiceFundingPage() {
             source="NHS England · Palliative and End of Life Care Strategy 2024 · Hospice UK cost-benefit analysis 2023"
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="border-t border-wiah-border pt-8 mt-12">
           <h2 className="text-lg font-bold text-wiah-black mb-4">Sources &amp; methodology</h2>

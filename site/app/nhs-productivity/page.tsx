@@ -7,6 +7,8 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
@@ -24,6 +26,12 @@ interface NhsProductivityData {
     }
   }
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Public Service Productivity: Healthcare', date: '2024', note: 'Productivity index at 96.8 (2014=100); output per worker at 90.3' },
+  { num: 2, name: 'NHS Digital', dataset: 'NHS Workforce Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/nhs-workforce-statistics', date: '2024', note: '1.3m FTE staff in 2024, up 17% from 1.1m in 2019' },
+  { num: 3, name: 'Lord Darzi', dataset: 'Independent Investigation of the NHS in England', date: '2024', note: 'Closing the productivity gap equivalent to treating 1.5m additional patients annually' },
+];
 
 function yearToDate(y: number): Date {
   return new Date(y, 5, 1)
@@ -95,7 +103,7 @@ export default function NhsProductivityPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>NHS England employed 1.3 million FTE staff in 2024 — up 17% from 1.1 million in 2019 — yet the total productivity index (set at 100 for 2014) stood at just 96.8, and output per worker had fallen to 90.3 on the same index, nearly 10% below 2014 levels. COVID caused a genuine structural break, reducing NHS activity by nearly 20% in 2020 through cancelled elective care, infection control constraints, and staff absence. Four years on, the recovery is incomplete. The Lord Darzi review (2024) identified productivity as the central challenge and estimated that closing the productivity gap to pre-COVID levels would be equivalent to treating 1.5 million additional patients annually without additional spending — a figure against which the 7.5-million waiting list must be measured.</p>
+            <p>NHS England employed 1.3 million FTE staff in 2024 — up 17% from 1.1 million in 2019 — yet the total productivity index (set at 100 for 2014) stood at just 96.8, and output per worker had fallen to 90.3 on the same index, nearly 10% below 2014 levels.<Cite nums={[1, 2]} /> COVID caused a genuine structural break, reducing NHS activity by nearly 20% in 2020 through cancelled elective care, infection control constraints, and staff absence. Four years on, the recovery is incomplete. The Lord Darzi review (2024) identified productivity as the central challenge and estimated that closing the productivity gap to pre-COVID levels would be equivalent to treating 1.5 million additional patients annually without additional spending — a figure against which the 7.5-million waiting list must be measured.<Cite nums={3} /></p>
             <p>The productivity gap is a system-level phenomenon, not an individual failing. Ageing IT systems, estate constraints, and clinical pathways designed decades ago all contribute; a surgeon whose theatre list is cut from six to four cases by post-COVID cleaning protocols is not personally less productive, but system output falls. Germany, France, and the Netherlands recovered faster from equivalent COVID-era drops, in part because they had higher baseline capital investment in digital infrastructure — the UK spends significantly less per capita on health capital than the OECD average. Without sustained investment in buildings, technology, and reformed clinical pathways, the arithmetic of the waiting list does not balance.</p>
           </div>
         </section>
@@ -189,6 +197,9 @@ export default function NhsProductivityPage() {
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">

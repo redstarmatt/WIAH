@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'HMPPS / Ministry of Justice', dataset: 'Offender Management Statistics Quarterly', url: 'https://www.gov.uk/government/collections/offender-management-statistics-quarterly', date: '2024' },
+  { num: 2, name: 'Ministry of Justice', dataset: 'Prison Population Statistics', url: 'https://www.gov.uk/government/collections/prison-population-statistics', date: '2024' },
+  { num: 3, name: 'Ministry of Justice', dataset: 'IPP Sentence Statistics', date: '2024', note: 'Around 1,700 IPP prisoners remain in custody' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -69,8 +77,8 @@ export default function PrisonerRecallPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Recalled prisoners — those returned to custody after breaching licence conditions — numbered around 7,400 in custody in 2015. By 2024 that figure had nearly doubled to 14,200, representing around 12% of the total prison population. Licence conditions have become more numerous and more prescriptive; overburdened probation officers initiate recall as a risk management tool when contact is lost; and a shortage of approved premises means some recalls are triggered by failure to find housing rather than by breaching behaviour. Each recalled prisoner consumes a prison place for an average of around four months — the equivalent of several medium-sized prisons occupied by people whose recall may have been avoidable.</p>
-            <p>IPP (Imprisonment for Public Protection) sentences, abolished in 2012 but still affecting around 1,700 prisoners sentenced before abolition, add a particularly acute dimension: recalled IPP prisoners return to an indeterminate sentence with no automatic release point. The interaction with the court backlog creates a perverse dynamic — courts cannot sentence because prisons are full; prisons are partly full because recalled licence-breakers are occupying places. Reconviction rates among recalled and re-released prisoners are not significantly lower than among those not recalled, suggesting that automatic recall disrupts employment, housing, and family relationships without proportionate protective benefit.</p>
+            <p>Recalled prisoners — those returned to custody after breaching licence conditions — numbered around 7,400 in custody in 2015. By 2024 that figure had nearly doubled to 14,200, representing around 12% of the total prison population.<Cite nums={1} /> Licence conditions have become more numerous and more prescriptive; overburdened probation officers initiate recall as a risk management tool when contact is lost; and a shortage of approved premises means some recalls are triggered by failure to find housing rather than by breaching behaviour. Each recalled prisoner consumes a prison place for an average of around four months — the equivalent of several medium-sized prisons occupied by people whose recall may have been avoidable.<Cite nums={1} /></p>
+            <p>IPP (Imprisonment for Public Protection) sentences, abolished in 2012 but still affecting around 1,700 prisoners sentenced before abolition, add a particularly acute dimension: recalled IPP prisoners return to an indeterminate sentence with no automatic release point.<Cite nums={3} /> The interaction with the court backlog creates a perverse dynamic — courts cannot sentence because prisons are full; prisons are partly full because recalled licence-breakers are occupying places.<Cite nums={2} /> Reconviction rates among recalled and re-released prisoners are not significantly lower than among those not recalled, suggesting that automatic recall disrupts employment, housing, and family relationships without proportionate protective benefit.<Cite nums={1} /></p>
           </div>
         </section>
 
@@ -130,6 +138,10 @@ export default function PrisonerRecallPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

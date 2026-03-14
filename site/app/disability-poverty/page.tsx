@@ -8,6 +8,8 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -32,6 +34,14 @@ interface DisabilityPovertyData {
   extraCosts: ExtraCostItem[];
   shareOfPoverty: ShareOfPovertyPoint[];
 }
+
+// ── References ────────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DWP', dataset: 'Households Below Average Income (HBAI)', url: 'https://www.gov.uk/government/collections/households-below-average-income-hbai--2', date: '2022' },
+  { num: 2, name: 'Scope', dataset: 'Extra Costs Commission', url: 'https://www.scope.org.uk/campaigns/extra-costs', date: '2023' },
+  { num: 3, name: 'Joseph Rowntree Foundation', dataset: 'UK Poverty Report', url: 'https://www.jrf.org.uk', date: '2022' },
+];
 
 // ── Page ──────────────────────────────────────────────────────────────────────
 
@@ -90,16 +100,16 @@ export default function DisabilityPovertyPage() {
               of non-disabled households — a gap of 13 percentage points that has barely
               narrowed in a decade. This is not primarily about employment: even working-age
               disabled people in employment are significantly more likely to be in poverty
-              than non-disabled workers in equivalent roles.
+              than non-disabled workers in equivalent roles.<Cite nums={1} />
             </p>
             <p>
-              The core problem is extra costs. Scope's Extra Costs Commission estimated
+              The core problem is extra costs. Scope&apos;s Extra Costs Commission estimated
               that disabled people face, on average, approximately £570 per month in
-              additional costs directly related to their disability. These include specialist
+              additional costs directly related to their disability.<Cite nums={2} /> These include specialist
               equipment (£120/month), higher energy bills to maintain appropriate temperatures
               and run medical equipment (£95/month), transport to access care and services
               (£85/month), personal care and support (£180/month), and adapted food,
-              clothing, and household items (£90/month). These costs are largely invisible
+              clothing, and household items (£90/month).<Cite nums={2} /> These costs are largely invisible
               in standard poverty measures, which compare income to median thresholds
               without adjusting for the higher cost base that disabled households face.
             </p>
@@ -178,6 +188,10 @@ export default function DisabilityPovertyPage() {
             </p>
           </div>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <ScrollReveal>
           <div id="sec-sources" className="border-t border-wiah-border pt-8 mt-8">

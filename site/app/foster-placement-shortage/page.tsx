@@ -8,6 +8,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'The Fostering Network', dataset: 'State of the Nation 2023', url: 'https://www.thefosteringnetwork.org.uk', date: '2023' },
+  { num: 2, name: 'Ofsted', dataset: 'Fostering in England', url: 'https://www.gov.uk/government/statistics/fostering-in-england-1-april-2022-to-31-march-2023', date: '2023' },
+  { num: 3, name: 'DfE', dataset: 'Children Looked After in England', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions', date: '2023' },
+];
 
 // Approved foster carers, 2015–2023
 const fosterCarers = [55000, 54800, 54600, 54400, 54200, 54000, 53800, 53600, 53500];
@@ -63,8 +71,8 @@ export default function FosterPlacementShortagePage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England has a structural and worsening shortage of foster carers. The number of approved foster carers has declined from around 55,000 in 2015 to 53,500 in 2023 — while the number of children needing placement has risen sharply. The Fostering Network estimates a shortfall of 8,700 carers nationwide, meaning one in three children who needs a foster placement cannot be matched with a local carer. Recruitment campaigns repeatedly fail to close the gap because low allowances, poor professional recognition, and inadequate support make fostering unattractive for working-age adults. Emergency placements — where a child is placed at short notice without proper matching — have risen to 11,400 annually.</p>
-            <p>Children who cannot be matched locally are placed far from their schools, communities, and families, or into residential care costing over £6,000 per week. The shortfall drives a negative spiral: more children in care means more pressure on placements, and the shortage of placements diverts resources into costly residential provision that crowds out prevention. Teenagers with complex needs and unaccompanied asylum-seeking children are hardest to place, and placement instability — one of the strongest predictors of poor outcomes — is becoming structurally harder to avoid.</p>
+            <p>England has a structural and worsening shortage of foster carers. The number of approved foster carers has declined from around 55,000 in 2015 to 53,500 in 2023 — while the number of children needing placement has risen sharply.<Cite nums={[2]} /> The Fostering Network estimates a shortfall of 8,700 carers nationwide, meaning one in three children who needs a foster placement cannot be matched with a local carer.<Cite nums={[1]} /> Recruitment campaigns repeatedly fail to close the gap because low allowances, poor professional recognition, and inadequate support make fostering unattractive for working-age adults. Emergency placements — where a child is placed at short notice without proper matching — have risen to 11,400 annually.<Cite nums={[3]} /></p>
+            <p>Children who cannot be matched locally are placed far from their schools, communities, and families, or into residential care costing over £6,000 per week.<Cite nums={[3]} /> The shortfall drives a negative spiral: more children in care means more pressure on placements, and the shortage of placements diverts resources into costly residential provision that crowds out prevention. Teenagers with complex needs and unaccompanied asylum-seeking children are hardest to place, and placement instability — one of the strongest predictors of poor outcomes — is becoming structurally harder to avoid.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -143,6 +151,9 @@ export default function FosterPlacementShortagePage() {
             source="Source: DfE — Foster care recruitment strategy 2025. Fostering Network — State of the Nation 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

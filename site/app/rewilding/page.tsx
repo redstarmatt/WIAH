@@ -9,6 +9,16 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Natural History Museum', dataset: 'Biodiversity Intactness Index', url: 'https://www.nhm.ac.uk/our-science/data/biodiversity-indicators.html', date: '2021', note: 'UK ranked 189th out of 218 nations' },
+  { num: 2, name: 'RSPB / JNCC', dataset: 'State of Nature 2023', url: 'https://stateofnature.org.uk/', date: '2023', note: '41% of species declined since 1970; 15% at risk of extinction' },
+  { num: 3, name: 'DEFRA', dataset: '30x30 Ecological Condition Assessment', url: 'https://www.gov.uk/government/publications', date: '2024', note: '3.2% of land meets ecological standard; 8.5% in protected areas' },
+  { num: 4, name: 'Rewilding Britain', dataset: 'Carbon sequestration estimates', url: 'https://www.rewildingbritain.org.uk/', date: '2024', note: '47 million tonnes CO2/year from rewilding 30% of land' },
+  { num: 5, name: 'White Stork Project / Roy Dennis Wildlife Foundation', dataset: 'Reintroduction outcomes', url: 'https://www.whitestorkproject.org/', date: '2023' },
+];
 
 interface RewildingData {
   national: {
@@ -67,8 +77,8 @@ export default function RewildingPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK is one of the most nature-depleted countries in the world. The Natural History Museum's 2021 Biodiversity Intactness Index ranked Britain 189th out of 218 nations — behind every G7 peer. The State of Nature 2023 report, compiled by 60-plus wildlife organisations led by the RSPB and JNCC, found that 41% of UK species have declined since 1970 and 15% are at risk of extinction. Against this backdrop, the government signed the Kunming-Montreal Global Biodiversity Framework at COP15 in December 2022, committing to the 30x30 target: protecting 30% of land and 30% of seas in a good ecological condition by 2030. The problem is the gap between designation and reality — land within a protected boundary is not the same as land genuinely recovering for nature. DEFRA's own assessment shows just 3.2% of England's land meets the 30x30 ecological standard, even though 8.5% sits within statutory protected areas. The majority of SSSIs — the foundation of England's protected area network — are in unfavourable condition.</p>
-            <p>Rewilding as a distinct approach — allowing natural processes to resume rather than actively managing habitat toward a fixed endpoint — has gained significant momentum since the early 2010s. The Knepp Estate in West Sussex became the emblematic case: 3,500 acres returned to free-roaming cattle, pigs, ponies, and deer since 2001, producing extraordinary results. Purple emperor butterflies, turtle doves, nightingales, and peregrine falcons have returned without deliberate introduction. White storks have bred in Sussex for the first time in 600 years, reintroduced via a partnership between Knepp, the White Stork Project, and the Roy Dennis Wildlife Foundation — six chicks fledged in 2023. Wolves, lynx, and bison have been proposed for Scottish and Welsh uplands, and European bison were reintroduced to Kent woodland in 2022, the first wild bison in the UK for over 6,000 years. Rewilding Britain estimates that rewilding 30% of UK land could sequester 47 million tonnes of CO2 annually, roughly equivalent to taking all UK cars off the road.</p>
+            <p>The UK is one of the most nature-depleted countries in the world. The Natural History Museum's 2021 Biodiversity Intactness Index ranked Britain 189th out of 218 nations — behind every G7 peer.<Cite nums={1} /> The State of Nature 2023 report, compiled by 60-plus wildlife organisations led by the RSPB and JNCC, found that 41% of UK species have declined since 1970 and 15% are at risk of extinction.<Cite nums={2} /> Against this backdrop, the government signed the Kunming-Montreal Global Biodiversity Framework at COP15 in December 2022, committing to the 30x30 target: protecting 30% of land and 30% of seas in a good ecological condition by 2030. The problem is the gap between designation and reality — land within a protected boundary is not the same as land genuinely recovering for nature. DEFRA's own assessment shows just 3.2% of England's land meets the 30x30 ecological standard, even though 8.5% sits within statutory protected areas.<Cite nums={3} /> The majority of SSSIs — the foundation of England's protected area network — are in unfavourable condition.</p>
+            <p>Rewilding as a distinct approach — allowing natural processes to resume rather than actively managing habitat toward a fixed endpoint — has gained significant momentum since the early 2010s. The Knepp Estate in West Sussex became the emblematic case: 3,500 acres returned to free-roaming cattle, pigs, ponies, and deer since 2001, producing extraordinary results. Purple emperor butterflies, turtle doves, nightingales, and peregrine falcons have returned without deliberate introduction. White storks have bred in Sussex for the first time in 600 years, reintroduced via a partnership between Knepp, the White Stork Project, and the Roy Dennis Wildlife Foundation — six chicks fledged in 2023.<Cite nums={5} /> Wolves, lynx, and bison have been proposed for Scottish and Welsh uplands, and European bison were reintroduced to Kent woodland in 2022, the first wild bison in the UK for over 6,000 years. Rewilding Britain estimates that rewilding 30% of UK land could sequester 47 million tonnes of CO2 annually, roughly equivalent to taking all UK cars off the road.<Cite nums={4} /></p>
             </div>
         </section>
 
@@ -147,6 +157,10 @@ export default function RewildingPage() {
             source="Source: White Stork Project 2023; Rewilding Britain; Roy Dennis Wildlife Foundation."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <ScrollReveal>
           <section className="mt-8 pt-12 border-t border-wiah-border">

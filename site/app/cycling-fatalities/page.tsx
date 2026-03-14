@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Cyclists killed, 2010–2023
 const fatalityValues = [111, 107, 118, 109, 113, 100, 102, 101, 99, 102, 99, 141, 104, 104];
@@ -44,6 +46,12 @@ const annotations2: Annotation[] = [
   { date: new Date(2020, 0, 1), label: '2020: Fewer cars, fewer collisions' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Department for Transport', dataset: 'Reported Road Casualties Great Britain', url: 'https://www.gov.uk/government/statistics/reported-road-casualties-great-britain-annual-report-2023', date: '2023' },
+  { num: 2, name: 'Department for Transport', dataset: 'Road Traffic Estimates', url: 'https://www.gov.uk/government/statistics/road-traffic-estimates-in-great-britain-2023', date: '2023' },
+  { num: 3, name: 'Active Travel England', dataset: 'Annual Report', url: 'https://www.activetravel.gov.uk', date: '2024' },
+];
+
 export default function CyclingFatalitiesPage() {
   return (
     <>
@@ -58,8 +66,8 @@ export default function CyclingFatalitiesPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Britain's cycling fatality figures tell a story of stalled progress. Around 100 to 110 cyclists are killed on UK roads every year, a number that has remained essentially flat since 2010 despite significant increases in cycling participation. The fatality rate per billion miles cycled — roughly 16 deaths per billion miles — is six times higher than in the Netherlands and four times higher than in Denmark. The core reason is infrastructure: the Netherlands invested systematically in physically separated cycling lanes from the 1970s onward, while Britain has relied overwhelmingly on painted lanes, shared-use pavements, and advisory signage that offer no meaningful protection from motor traffic. Where separation does exist — parts of inner London, the Beeline network in Greater Manchester — casualty rates are markedly lower.</p>
-            <p>Serious injuries tell a more complex story. The raw numbers rose sharply after 2016, but much of that rise reflects the introduction of the CRASH severity scoring system in 2017, which reclassified many injuries previously recorded as "slight" to "serious." Adjusting for this methodological break, the underlying trend in serious injuries per mile cycled has been gradually declining. Government cycling investment has been volatile. Active Travel England was created in 2022 to hold local authorities to higher design standards, but sustained capital investment has failed to materialise at the scale needed. England averages around £4 per person per year on cycling infrastructure; the Netherlands spends roughly £30. Until that gap closes, the fatality plateau is unlikely to break.</p>
+            <p>Britain's cycling fatality figures tell a story of stalled progress. Around 100 to 110 cyclists are killed on UK roads every year, a number that has remained essentially flat since 2010 despite significant increases in cycling participation.<Cite nums={1} /> The fatality rate per billion miles cycled — roughly 16 deaths per billion miles — is six times higher than in the Netherlands and four times higher than in Denmark.<Cite nums={[1, 2]} /> The core reason is infrastructure: the Netherlands invested systematically in physically separated cycling lanes from the 1970s onward, while Britain has relied overwhelmingly on painted lanes, shared-use pavements, and advisory signage that offer no meaningful protection from motor traffic. Where separation does exist — parts of inner London, the Beeline network in Greater Manchester — casualty rates are markedly lower.</p>
+            <p>Serious injuries tell a more complex story. The raw numbers rose sharply after 2016, but much of that rise reflects the introduction of the CRASH severity scoring system in 2017, which reclassified many injuries previously recorded as "slight" to "serious."<Cite nums={1} /> Adjusting for this methodological break, the underlying trend in serious injuries per mile cycled has been gradually declining. Government cycling investment has been volatile. Active Travel England was created in 2022 to hold local authorities to higher design standards, but sustained capital investment has failed to materialise at the scale needed.<Cite nums={3} /> England averages around £4 per person per year on cycling infrastructure; the Netherlands spends roughly £30.<Cite nums={3} /> Until that gap closes, the fatality plateau is unlikely to break.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -138,6 +146,9 @@ export default function CyclingFatalitiesPage() {
             source="Source: TfL — Cycling Infrastructure Safety Monitoring 2024. Active Travel England design standards 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

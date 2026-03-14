@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Households with unsecured debt >40% of income %, 2012–2025 (Bank of England)
 const highDebtValues = [5.8, 5.9, 6.0, 6.1, 6.2, 6.3, 6.5, 7.0, 7.8, 6.9, 7.2, 7.8, 8.4, 8.9];
@@ -52,6 +54,13 @@ const annotations2: Annotation[] = [
   { date: new Date(2022, 10, 1), label: '2022: Base rate rises above 3%' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Bank of England', dataset: 'Financial Stability Report — Household Debt', url: 'https://www.bankofengland.co.uk/financial-stability-report', date: 'Dec 2025' },
+  { num: 2, name: 'Bank of England', dataset: 'Money and Credit Statistics (Table A5.2)', url: 'https://www.bankofengland.co.uk/statistics/money-and-credit', date: 'Feb 2026' },
+  { num: 3, name: 'Insolvency Service', dataset: 'Individual Insolvency Statistics', url: 'https://www.gov.uk/government/statistics/individual-insolvency-statistics', date: 'Q4 2025' },
+  { num: 4, name: 'Insolvency Service', dataset: 'Breathing Space Statistics', url: 'https://www.gov.uk/government/statistics/individual-insolvency-statistics', date: 'Q3 2025' },
+];
+
 export default function ConsumerCreditStressPage() {
   return (
     <>
@@ -66,8 +75,8 @@ export default function ConsumerCreditStressPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The cost-of-living crisis did not create household debt stress in the United Kingdom — it accelerated a trend that had been building for years. Between 2015 and 2019, the share of households carrying unsecured debt above 40% of their income crept steadily upward, driven by stagnating real wages, the expansion of buy-now-pay-later products, and a credit market that made borrowing frictionless. Then came the pandemic. Government support schemes temporarily masked the underlying fragility. When those protections ended and energy prices surged in 2022, millions of households discovered their financial cushion had been a mirage. The Bank of England now estimates that nearly one in eleven households is in serious debt stress, a level not seen since the aftermath of the 2008 financial crisis.</p>
-            <p>Individual insolvencies — bankruptcies, Individual Voluntary Arrangements, and Debt Relief Orders — have risen for four consecutive years and now stand at their highest level since 2011. Debt charities report that the fastest-growing group seeking help is working households on median incomes caught between rising mortgage costs, persistent food-price inflation, and childcare fees. The Breathing Space scheme, introduced in 2021, has provided temporary relief to over 150,000 people by pausing interest and enforcement action for 60 days — one of the few structural interventions that has made a measurable difference. But until real wages consistently outpace the cost of essentials, household debt stress will continue to rise.</p>
+            <p>The cost-of-living crisis did not create household debt stress in the United Kingdom — it accelerated a trend that had been building for years. Between 2015 and 2019, the share of households carrying unsecured debt above 40% of their income crept steadily upward, driven by stagnating real wages, the expansion of buy-now-pay-later products, and a credit market that made borrowing frictionless.<Cite nums={1} /> Then came the pandemic. Government support schemes temporarily masked the underlying fragility. When those protections ended and energy prices surged in 2022, millions of households discovered their financial cushion had been a mirage. The Bank of England now estimates that nearly one in eleven households is in serious debt stress, a level not seen since the aftermath of the 2008 financial crisis.<Cite nums={1} /></p>
+            <p>Individual insolvencies — bankruptcies, Individual Voluntary Arrangements, and Debt Relief Orders — have risen for four consecutive years and now stand at their highest level since 2011.<Cite nums={3} /> Debt charities report that the fastest-growing group seeking help is working households on median incomes caught between rising mortgage costs, persistent food-price inflation, and childcare fees. The Breathing Space scheme, introduced in 2021, has provided temporary relief to over 150,000 people by pausing interest and enforcement action for 60 days — one of the few structural interventions that has made a measurable difference.<Cite nums={4} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -146,6 +155,9 @@ export default function ConsumerCreditStressPage() {
             source="Source: Insolvency Service — Breathing Space Statistics Q3 2025. Money and Mental Health Policy Institute evaluation, 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

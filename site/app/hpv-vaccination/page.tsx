@@ -8,7 +8,16 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'The Lancet', dataset: 'Effect of HPV vaccination on cervical cancer in England', date: 'November 2021', note: 'Cervical cancer rates 87% lower in women vaccinated at age 12-13' },
+  { num: 2, name: 'UKHSA', dataset: 'HPV Vaccination Coverage in Adolescents in England', url: 'https://www.gov.uk/government/publications/hpv-vaccine-coverage-in-england', date: '2024', note: 'Girls uptake 84.1%; boys 76.8%; London below 80% for girls' },
+  { num: 3, name: 'Cancer Research UK / ONS', dataset: 'Cervical Cancer Incidence Statistics', url: 'https://www.cancerresearchuk.org/health-professional/cancer-statistics/statistics-by-cancer-type/cervical-cancer/incidence', date: '2024', note: 'Cervical cancer incidence fell 53% since 2010' },
+  { num: 4, name: 'WHO', dataset: 'Global Strategy to Accelerate the Elimination of Cervical Cancer', date: '2020', note: 'Target: 90% HPV vaccination coverage by 2030' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -157,13 +166,13 @@ export default function HpvVaccinationPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The UK introduced routine HPV vaccination for 12- to 13-year-old girls in 2008, with a catch-up programme for older teenagers. It was one of the first countries in the world to do so. The results have been remarkable: cervical cancer incidence among women aged 25 to 29 has fallen by more than half compared to pre-vaccination cohorts. A landmark 2021 study in The Lancet confirmed that the vaccine had near-eliminated cervical cancer in women vaccinated in their early teens. In September 2019, the programme was extended to boys, recognising that HPV causes cancers of the throat, mouth, and anus in men as well as cervical cancer in women. By 2024, 76.8% of boys were completing the vaccination course, up from 54.4% in the first year of the programme.
+              The UK introduced routine HPV vaccination for 12- to 13-year-old girls in 2008, with a catch-up programme for older teenagers. It was one of the first countries in the world to do so. The results have been remarkable: cervical cancer incidence among women aged 25 to 29 has fallen by more than half compared to pre-vaccination cohorts.<Cite nums={3} /> A landmark 2021 study in The Lancet confirmed that the vaccine had near-eliminated cervical cancer in women vaccinated in their early teens.<Cite nums={1} /> In September 2019, the programme was extended to boys, recognising that HPV causes cancers of the throat, mouth, and anus in men as well as cervical cancer in women. By 2024, 76.8% of boys were completing the vaccination course, up from 54.4% in the first year of the programme.<Cite nums={2} />
             </p>
             <p>
-              COVID-19 dealt the programme a serious blow. School-based vaccination sessions were cancelled from March 2020, and catch-up proved difficult. Girls' uptake fell from a peak of 87.4% in 2015 to just 76.7% in 2020. Recovery has been steady but slow: by 2024, uptake had climbed back to 84.1%, still short of the pre-pandemic high. London remains a persistent outlier, with uptake below 80% for girls and 70% for boys, driven by higher population mobility, greater school diversity, and lower consent form return rates. In September 2023, the UK followed World Health Organisation guidance and moved from a two-dose to a one-dose schedule, which should simplify delivery and improve completion rates, though it makes direct comparison with earlier years more difficult.
+              COVID-19 dealt the programme a serious blow. School-based vaccination sessions were cancelled from March 2020, and catch-up proved difficult. Girls' uptake fell from a peak of 87.4% in 2015 to just 76.7% in 2020.<Cite nums={2} /> Recovery has been steady but slow: by 2024, uptake had climbed back to 84.1%, still short of the pre-pandemic high. London remains a persistent outlier, with uptake below 80% for girls and 70% for boys, driven by higher population mobility, greater school diversity, and lower consent form return rates. In September 2023, the UK followed World Health Organisation guidance and moved from a two-dose to a one-dose schedule, which should simplify delivery and improve completion rates, though it makes direct comparison with earlier years more difficult.
             </p>
             <p>
-              The broader picture is overwhelmingly positive. The WHO has set a target of 90% HPV vaccination coverage by 2030 as part of its global strategy to eliminate cervical cancer. The UK is within striking distance but not there yet. The programme prevents an estimated 450 cancers and 150 deaths per year in England alone. The remaining challenge is reaching the teenagers who slip through the school-based system: those who are absent on vaccination day, those whose parents do not return consent forms, and those who are not enrolled in mainstream education. Community catch-up clinics, pharmacy-based vaccination, and digital consent systems are all being trialled. The data says the vaccine works. The question now is whether the delivery system can match the science.
+              The broader picture is overwhelmingly positive. The WHO has set a target of 90% HPV vaccination coverage by 2030 as part of its global strategy to eliminate cervical cancer.<Cite nums={4} /> The UK is within striking distance but not there yet. The programme prevents an estimated 450 cancers and 150 deaths per year in England alone.<Cite nums={[1,3]} /> The remaining challenge is reaching the teenagers who slip through the school-based system: those who are absent on vaccination day, those whose parents do not return consent forms, and those who are not enrolled in mainstream education. Community catch-up clinics, pharmacy-based vaccination, and digital consent systems are all being trialled. The data says the vaccine works. The question now is whether the delivery system can match the science.
             </p>
           </div>
         </section>
@@ -334,6 +343,10 @@ export default function HpvVaccinationPage() {
             source="Source: The Lancet, 'Effect of HPV vaccination on cervical cancer in England', November 2021. WHO — Global Strategy to Accelerate the Elimination of Cervical Cancer, 2020."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources & Methodology */}
         <ScrollReveal>

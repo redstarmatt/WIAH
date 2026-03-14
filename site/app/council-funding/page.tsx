@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Spending power per head £ real terms, 2010–2025
 const spendingPowerValues = [3120, 3050, 2920, 2800, 2740, 2680, 2640, 2620, 2600, 2620, 2640, 2580, 2490, 2420, 2370, 2360];
@@ -58,6 +60,12 @@ const annotations2: Annotation[] = [
   { date: new Date(2022, 0, 1), label: '2022: Residential care cost spike' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DLUHC', dataset: 'Local Authority Revenue Expenditure and Financing', url: 'https://www.gov.uk/government/collections/local-authority-revenue-expenditure-and-financing', date: '2025' },
+  { num: 2, name: 'Local Government Association', dataset: 'Local Government Funding', url: 'https://www.local.gov.uk/topics/finance/local-government-finance-and-spending', date: '2025' },
+  { num: 3, name: 'National Audit Office', dataset: 'Financial Sustainability of Local Authorities', url: 'https://www.nao.org.uk', date: '2025' },
+];
+
 export default function CouncilFundingPage() {
   return (
     <>
@@ -72,8 +80,8 @@ export default function CouncilFundingPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>English councils have lost nearly a quarter of their spending power per head since 2010 in real terms. The central government grant was cut faster and deeper than almost any other area of public spending during the austerity years, and the gap has never been restored. Councils were expected to replace lost grant income with council tax and business rates, but these revenues are capped by referendum limits and unevenly distributed. The result is a system where the councils serving the most deprived populations received the deepest cuts — in some cases 40% cuts in real terms compared to 10–15% for wealthy suburban councils.</p>
-            <p>At the same time, demand for the two largest council services has escalated relentlessly. Adult social care now absorbs over £19 billion annually, driven by an ageing population and rising provider costs. Children's social care spending has risen 62% in real terms since 2010, fuelled by rising child protection referrals and a residential care market where private providers charge councils up to £10,000 per week per child. When a council can no longer balance its budget, the chief finance officer issues a Section 114 notice. Before 2018, only one council had issued a s114 notice in two decades. Since then, fourteen have done so. Council tax has risen 54% since 2010 while services have contracted.</p>
+            <p>English councils have lost nearly a quarter of their spending power per head since 2010 in real terms.<Cite nums={1} /> The central government grant was cut faster and deeper than almost any other area of public spending during the austerity years, and the gap has never been restored. Councils were expected to replace lost grant income with council tax and business rates, but these revenues are capped by referendum limits and unevenly distributed.<Cite nums={2} /> The result is a system where the councils serving the most deprived populations received the deepest cuts — in some cases 40% cuts in real terms compared to 10–15% for wealthy suburban councils.<Cite nums={3} /></p>
+            <p>At the same time, demand for the two largest council services has escalated relentlessly. Adult social care now absorbs over £19 billion annually, driven by an ageing population and rising provider costs.<Cite nums={1} /> Children's social care spending has risen 62% in real terms since 2010, fuelled by rising child protection referrals and a residential care market where private providers charge councils up to £10,000 per week per child.<Cite nums={1} /> Before 2018, only one council had issued a s114 notice in two decades. Since then, fourteen have done so.<Cite nums={3} /> Council tax has risen 54% since 2010 while services have contracted.<Cite nums={1} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -152,6 +160,9 @@ export default function CouncilFundingPage() {
             source="Source: DLUHC — Local Government Finance Settlement 2025–26. LGA — Funding gap analysis, 2025. NAO — Financial sustainability of local authorities."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

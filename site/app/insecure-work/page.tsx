@@ -7,7 +7,15 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Labour Force Survey — Zero-Hours Contracts', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/zerohourcontracts', date: '2024' },
+  { num: 2, name: 'TUC / Resolution Foundation', dataset: 'Insecure Work Analysis', url: 'https://www.tuc.org.uk', date: '2024' },
+  { num: 3, name: 'CIPD', dataset: 'Gig Economy Research', url: 'https://www.cipd.org/uk/knowledge/reports/gig-economy/', date: '2024' },
+];
 
 export default function InsecureWorkPage() {
   const zeroHoursContracts = [174, 250, 586, 697, 744, 801, 883, 896, 974, 1026, 974, 1100];
@@ -143,12 +151,16 @@ export default function InsecureWorkPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on insecure work</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Insecure work in the UK has grown substantially since the 2008 financial crisis. Zero-hours contracts — which guarantee no minimum hours and give workers no control over their schedule — rose from around 174,000 in 2013, when the ONS began formally tracking them, to over 1.1 million by 2024. These figures capture only people who describe their main job as a zero-hours contract; the true number affected at any point during the year is substantially higher.</p>
-              <p>Beyond zero-hours contracts, the TUC and Resolution Foundation estimate that around 6 million workers are in some form of insecure employment, including agency workers, those on short-term or casual contracts, and workers classified as self-employed while working exclusively for one platform or employer. This last category — sometimes described as bogus or dependent self-employment — strips workers of sick pay, holiday pay, and pension contributions while giving them no guaranteed income. Deliveroo, Uber, and similar platforms have been the most visible examples, though the model is now widespread in logistics, cleaning, and care.</p>
-              <p>Insecure work is heavily concentrated in lower-paying sectors and among younger workers, women, and ethnic minorities. Research from the Resolution Foundation finds that insecure workers earn around 25% less per hour than equivalent workers in secure employment, and are significantly more likely to experience in-work poverty and housing instability.</p>
+              <p>Insecure work in the UK has grown substantially since the 2008 financial crisis. Zero-hours contracts — which guarantee no minimum hours and give workers no control over their schedule — rose from around 174,000 in 2013, when the ONS began formally tracking them, to over 1.1 million by 2024.<Cite nums={1} /> These figures capture only people who describe their main job as a zero-hours contract; the true number affected at any point during the year is substantially higher.</p>
+              <p>Beyond zero-hours contracts, the TUC and Resolution Foundation estimate that around 6 million workers are in some form of insecure employment, including agency workers, those on short-term or casual contracts, and workers classified as self-employed while working exclusively for one platform or employer.<Cite nums={2} /> This last category — sometimes described as bogus or dependent self-employment — strips workers of sick pay, holiday pay, and pension contributions while giving them no guaranteed income. Deliveroo, Uber, and similar platforms have been the most visible examples, though the model is now widespread in logistics, cleaning, and care.</p>
+              <p>Insecure work is heavily concentrated in lower-paying sectors and among younger workers, women, and ethnic minorities. Research from the Resolution Foundation finds that insecure workers earn around 25% less per hour than equivalent workers in secure employment, and are significantly more likely to experience in-work poverty and housing instability.<Cite nums={2} /></p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

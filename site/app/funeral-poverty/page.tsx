@@ -8,6 +8,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Sun Life', dataset: 'Cost of Dying Report', url: 'https://www.sunlife.co.uk/life-insurance/over-50s-life-insurance/cost-of-dying/', date: '2023' },
+  { num: 2, name: 'DWP', dataset: 'Funeral Expenses Payment statistics', url: 'https://www.gov.uk/government/collections/funeral-expenses-payment-statistics', date: '2023' },
+  { num: 3, name: 'CMA', dataset: 'Funerals Market Investigation', url: 'https://www.gov.uk/cma-cases/funerals-market-study', date: '2021' },
+];
 
 // Average funeral cost (£), selected years 2004–2023
 const funeralCost = [1835, 2050, 2400, 2900, 3284, 3590, 3693, 3916, 4056, 4141];
@@ -71,8 +79,8 @@ export default function FuneralPovertyPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The average cost of a funeral in the UK reached £4,141 in 2023, more than double the £1,835 it cost in 2004 — a 126% rise that substantially outpaced both inflation and wage growth. Around 110,000 families per year are in funeral poverty: unable to pay without significant financial distress or debt. The government's Funeral Expenses Payment covers less than 40% of average costs, with an average award of £1,593 and a maximum burial contribution of only £700. Until 2023, funeral directors were not required to publish their prices; the CMA's 2021 review found bereaved families structurally vulnerable to poor value and hidden charges. Public health funerals — arranged by councils when families cannot pay — have risen roughly 10% annually since 2010.</p>
-            <p>Geographic and cultural variation sharpens the inequality. A burial in London can cost over £8,000 — more than twice the national average — reflecting land costs where burial space is acutely scarce. Muslim, Jewish, and Sikh families face the full cost of burial with no lower-cost alternative as cremation is not permissible. Direct cremation — no service, ashes returned, cost around £1,500 — has grown from around 1% to over 24% of funerals in a decade, providing a genuine cheaper option that many families adopt under financial pressure rather than choice. The Child Funeral Charges Act 2019 abolished fees for children's funerals in England and Wales, removing one particularly acute source of financial distress for bereaved parents.</p>
+            <p>The average cost of a funeral in the UK reached £4,141 in 2023, more than double the £1,835 it cost in 2004 — a 126% rise that substantially outpaced both inflation and wage growth.<Cite nums={[1]} /> Around 110,000 families per year are in funeral poverty: unable to pay without significant financial distress or debt.<Cite nums={[1]} /> The government's Funeral Expenses Payment covers less than 40% of average costs, with an average award of £1,593 and a maximum burial contribution of only £700.<Cite nums={[2]} /> Until 2023, funeral directors were not required to publish their prices; the CMA's 2021 review found bereaved families structurally vulnerable to poor value and hidden charges.<Cite nums={[3]} /> Public health funerals — arranged by councils when families cannot pay — have risen roughly 10% annually since 2010.<Cite nums={[1]} /></p>
+            <p>Geographic and cultural variation sharpens the inequality. A burial in London can cost over £8,000 — more than twice the national average — reflecting land costs where burial space is acutely scarce.<Cite nums={[1]} /> Muslim, Jewish, and Sikh families face the full cost of burial with no lower-cost alternative as cremation is not permissible. Direct cremation — no service, ashes returned, cost around £1,500 — has grown from around 1% to over 24% of funerals in a decade, providing a genuine cheaper option that many families adopt under financial pressure rather than choice.<Cite nums={[1]} /> The Child Funeral Charges Act 2019 abolished fees for children's funerals in England and Wales, removing one particularly acute source of financial distress for bereaved parents.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -151,6 +159,10 @@ export default function FuneralPovertyPage() {
             source="Source: CMA — Funerals Market Investigation 2021. DWP — Funeral Expenses Payment guidance 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

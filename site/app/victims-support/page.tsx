@@ -8,6 +8,17 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+// ── References ──────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ministry of Justice', dataset: "Victims' Code of Practice", url: 'https://www.gov.uk/government/publications/the-code-of-practice-for-victims-of-crime', date: '2021', note: 'Revised 2021; first introduced 2006' },
+  { num: 2, name: 'ONS', dataset: 'Crime Survey for England and Wales — victim satisfaction', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice', date: '2024' },
+  { num: 3, name: "Victims' Commissioner", dataset: 'Annual Survey of Victims', url: 'https://victimscommissioner.org.uk/', date: '2024' },
+  { num: 4, name: 'UK Parliament', dataset: 'Victims and Prisoners Act 2024', url: 'https://www.legislation.gov.uk/ukpga/2024', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -84,9 +95,10 @@ export default function VictimsSupportPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Victims' Code of Practice, first introduced in 2006 and revised in 2021, sets out 12 rights for victims of crime in England and Wales. These include the right to be informed about the progress of their case, the right to make a personal statement at sentencing, and the right to be referred to support services. In theory, the Code provides a framework of entitlements. In practice, compliance is inconsistent and unenforceable. The 2024 crime survey of victims found that only 56.5% were satisfied with their overall experience of the criminal justice system — a decline from 73% in 2015. Fewer than 45% said they had been kept adequately informed about the progress of their case.</p>
-            <p>The Victims and Prisoners Act 2024 placed the Victims' Code on a statutory footing for the first time, requiring criminal justice agencies to collect and publish compliance data. However, the Act does not create individually enforceable rights — victims cannot take legal action if the Code is breached. Instead, compliance will be monitored through inspectorates. Critics, including the Victims' Commissioner, argue that without sanctions, the statutory duty amounts to a reporting obligation rather than a genuine enforcement mechanism. The Commissioner's 2024 annual survey found that 62% of victims had never heard of the Victims' Code.</p>
+            <p>The Victims' Code of Practice, first introduced in 2006 and revised in 2021, sets out 12 rights for victims of crime in England and Wales.<Cite nums={1} /> These include the right to be informed about the progress of their case, the right to make a personal statement at sentencing, and the right to be referred to support services. In theory, the Code provides a framework of entitlements. In practice, compliance is inconsistent and unenforceable. The 2024 crime survey of victims found that only 56.5% were satisfied with their overall experience of the criminal justice system — a decline from 73% in 2015.<Cite nums={2} /> Fewer than 45% said they had been kept adequately informed about the progress of their case.<Cite nums={3} /></p>
+            <p>The Victims and Prisoners Act 2024 placed the Victims' Code on a statutory footing for the first time, requiring criminal justice agencies to collect and publish compliance data.<Cite nums={4} /> However, the Act does not create individually enforceable rights — victims cannot take legal action if the Code is breached. Instead, compliance will be monitored through inspectorates. Critics, including the Victims' Commissioner, argue that without sanctions, the statutory duty amounts to a reporting obligation rather than a genuine enforcement mechanism. The Commissioner's 2024 annual survey found that 62% of victims had never heard of the Victims' Code.<Cite nums={3} /></p>
             </div>
+            <div className="mt-6"><References items={editorialRefs} /></div>
         </section>
 
         <SectionNav sections={[

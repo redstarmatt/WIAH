@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Rivers in good ecological status (%), 2009–2022 — Environment Agency
 const riverGoodValues = [27, 27, 27, 28, 28, 17, 17, 16, 16, 14, 14, 14, 16, 16];
@@ -44,6 +46,13 @@ const ghgAnnotations: Annotation[] = [
   { date: new Date(2020, 0, 1), label: '2020: COVID — industrial slowdown' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DESNZ', dataset: 'UK Greenhouse Gas Inventory', url: 'https://www.gov.uk/government/statistics/provisional-uk-greenhouse-gas-emissions-national-statistics', date: '2023' },
+  { num: 2, name: 'Environment Agency', dataset: 'Water Framework Directive classification', url: 'https://environment.data.gov.uk/catchment-planning/', date: '2022' },
+  { num: 3, name: 'JNCC', dataset: 'UK Biodiversity Indicators', url: 'https://jncc.gov.uk/our-work/ukbi/', date: '2022' },
+  { num: 4, name: 'Climate Change Committee', dataset: 'Progress Report to Parliament', date: '2024' },
+];
+
 export default function EnvironmentPage() {
   return (
     <>
@@ -58,8 +67,8 @@ export default function EnvironmentPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>UK greenhouse gas emissions have fallen by approximately 35% since 2010, driven primarily by the phase-out of coal from electricity generation and improved energy efficiency. This is one of the steepest decarbonisation trajectories of any large economy. But the progress masks an uneven picture: emissions from transport, buildings, and agriculture have barely moved. Per-capita UK emissions remain above the global average, and the UK's consumption-based footprint — which includes embedded carbon in imported goods — is significantly higher than the territorial measure. The Climate Change Committee has consistently found the UK off track for its legally binding carbon budgets without more ambitious action on heat and transport.</p>
-            <p>The state of nature tells a more troubling story. Only 16% of English rivers meet good ecological status under the Water Framework Directive — and this figure has barely changed in a decade, partly as a result of methodological reclassification in 2015 that lowered the proportion in good status overnight. Sewage discharge, agricultural runoff, and abstraction are the primary causes. UK biodiversity indicators show a continued long-term decline: the UK is among the most nature-depleted countries in the world, having lost around half its biodiversity over two centuries. The 30×30 target — to protect 30% of land and sea for nature by 2030 — is government policy, but only around 10% of land is currently in good enough condition to count toward it.</p>
+            <p>UK greenhouse gas emissions have fallen by approximately 35% since 2010<Cite nums={1} />, driven primarily by the phase-out of coal from electricity generation and improved energy efficiency. This is one of the steepest decarbonisation trajectories of any large economy. But the progress masks an uneven picture: emissions from transport, buildings, and agriculture have barely moved. Per-capita UK emissions remain above the global average, and the UK's consumption-based footprint — which includes embedded carbon in imported goods — is significantly higher than the territorial measure. The Climate Change Committee has consistently found the UK off track for its legally binding carbon budgets without more ambitious action on heat and transport.<Cite nums={4} /></p>
+            <p>The state of nature tells a more troubling story. Only 16% of English rivers meet good ecological status under the Water Framework Directive<Cite nums={2} /> — and this figure has barely changed in a decade, partly as a result of methodological reclassification in 2015 that lowered the proportion in good status overnight. Sewage discharge, agricultural runoff, and abstraction are the primary causes. UK biodiversity indicators show a continued long-term decline<Cite nums={3} />: the UK is among the most nature-depleted countries in the world, having lost around half its biodiversity over two centuries. The 30×30 target — to protect 30% of land and sea for nature by 2030 — is government policy, but only around 10% of land is currently in good enough condition to count toward it.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -137,6 +146,10 @@ export default function EnvironmentPage() {
             source="Source: DESNZ — UK Greenhouse Gas Inventory 2023. Climate Change Committee — Progress Report to Parliament 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

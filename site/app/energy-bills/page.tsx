@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Ofgem price cap (£/year, typical dual fuel), quarterly 2019–2025 — Ofgem
 const priceCap = [1137, 1138, 1138, 1138, 1138, 1138, 1138, 1277, 1277, 1971, 2500, 3549, 3000, 2500, 2100, 1834, 1717, 1717, 1717, 1717, 1849, 1923, 1717, 1717];
@@ -50,6 +52,13 @@ const povertyAnnotations: Annotation[] = [
   { date: new Date(2022, 0, 1), label: '2022: 3.4 million fuel poor' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ofgem', dataset: 'Energy price cap quarterly update', url: 'https://www.ofgem.gov.uk/check-if-energy-price-cap-affects-you', date: '2025' },
+  { num: 2, name: 'DESNZ', dataset: 'Annual Fuel Poverty Statistics', url: 'https://www.gov.uk/government/collections/fuel-poverty-statistics', date: '2024' },
+  { num: 3, name: 'Ofgem', dataset: 'Standing charge data', date: '2024' },
+  { num: 4, name: 'DESNZ', dataset: 'Warm Homes Plan', date: '2024' },
+];
+
 export default function EnergyBillsPage() {
   return (
     <>
@@ -64,8 +73,8 @@ export default function EnergyBillsPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Ofgem energy price cap — introduced in 2019 to protect consumers on default tariffs — became the central instrument of energy affordability policy when wholesale gas prices surged following Russia's invasion of Ukraine in February 2022. The cap rose from £1,138 per year in spring 2022 to a peak of £3,549 per year in October 2022 — a 212% increase in eight months. The government's Energy Price Guarantee, which effectively superseded the cap for several quarters, limited bills to around £2,500 per year at a fiscal cost of approximately £25 billion. As wholesale prices fell, the cap returned toward £1,717 by mid-2023, though this remains 50% above pre-crisis levels.</p>
-            <p>The standing charge — the fixed daily cost of being connected to the electricity grid, regardless of use — more than doubled from around 24p per day in 2019 to over 61p per day in 2024, disproportionately affecting low-consumption households including single occupiers, carers, and those in fuel poverty. The DESNZ fuel poverty estimate reached 3.44 million households in 2022, with the South East having higher absolute numbers but lower rates than the North East and Wales. Insulation remains the structural solution: upgrading from EPC E to C rating reduces annual bills by around £500 and reduces exposure to gas price volatility. The government's Warm Homes Plan commits £6.6 billion to insulation over five years, but this falls short of the Climate Change Committee's assessment of what is needed.</p>
+            <p>The Ofgem energy price cap — introduced in 2019 to protect consumers on default tariffs — became the central instrument of energy affordability policy when wholesale gas prices surged following Russia's invasion of Ukraine in February 2022. The cap rose from £1,138 per year in spring 2022 to a peak of £3,549 per year in October 2022 — a 212% increase in eight months.<Cite nums={1} /> The government's Energy Price Guarantee, which effectively superseded the cap for several quarters, limited bills to around £2,500 per year at a fiscal cost of approximately £25 billion. As wholesale prices fell, the cap returned toward £1,717 by mid-2023, though this remains 50% above pre-crisis levels.<Cite nums={1} /></p>
+            <p>The standing charge — the fixed daily cost of being connected to the electricity grid, regardless of use — more than doubled from around 24p per day in 2019 to over 61p per day in 2024<Cite nums={3} />, disproportionately affecting low-consumption households including single occupiers, carers, and those in fuel poverty. The DESNZ fuel poverty estimate reached 3.44 million households in 2022<Cite nums={2} />, with the South East having higher absolute numbers but lower rates than the North East and Wales. Insulation remains the structural solution: upgrading from EPC E to C rating reduces annual bills by around £500 and reduces exposure to gas price volatility. The government's Warm Homes Plan commits £6.6 billion to insulation over five years<Cite nums={4} />, but this falls short of the Climate Change Committee's assessment of what is needed.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -143,6 +152,10 @@ export default function EnergyBillsPage() {
             source="Source: DESNZ — Warm Homes Plan 2024. Climate Change Committee — Progress in reducing emissions 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

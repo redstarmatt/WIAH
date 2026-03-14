@@ -8,6 +8,8 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import PositiveCallout from '@/components/PositiveCallout'
 import ScrollReveal from '@/components/ScrollReveal'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 interface StatutoryPoint {
   year: string
@@ -78,6 +80,12 @@ function fyToDate(fy: string): Date {
 function yearToDate(y: number): Date {
   return new Date(y, 5, 1)
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'MHCLG', dataset: 'Statutory Homelessness in England', url: 'https://www.gov.uk/government/statistics/statutory-homelessness-in-england', date: '2023/24' },
+  { num: 2, name: 'MHCLG', dataset: 'Rough Sleeping Statistics — Autumn Snapshot', url: 'https://www.gov.uk/government/statistics/rough-sleeping-snapshot-in-england', date: '2024' },
+  { num: 3, name: 'MHCLG', dataset: 'Local Authority Housing Statistics — Temporary Accommodation', date: '2024' },
+];
 
 export default function HomelessnessPage() {
   const [data, setData] = useState<HomelessnessData | null>(null)
@@ -249,13 +257,13 @@ export default function HomelessnessPage() {
             <h3 className="text-xl font-bold text-wiah-black mb-6">The Context</h3>
             <div className="space-y-4 text-wiah-mid leading-relaxed">
               <p>
-                In 2023/24, 117,500 households were accepted as statutorily homeless in England — the highest figure since records began. A further 338,400 had homelessness prevented or relieved, also a record. The human cost is concentrated on children: 159,900 are growing up in temporary accommodation, including more than 5,000 in bed-and-breakfasts. Placing families in B&amp;Bs for longer than six weeks is illegal except in emergencies, yet 87% of local authorities breached that limit in 2023/24. Temporary accommodation now costs councils an average of £1,600 per household per month; the total bill reached an estimated £2.4bn in 2024/25, up from £1.0bn five years earlier.
+                In 2023/24, 117,500 households were accepted as statutorily homeless in England — the highest figure since records began.<Cite nums={1} /> A further 338,400 had homelessness prevented or relieved, also a record.<Cite nums={1} /> The human cost is concentrated on children: 159,900 are growing up in temporary accommodation, including more than 5,000 in bed-and-breakfasts.<Cite nums={3} /> Placing families in B&amp;Bs for longer than six weeks is illegal except in emergencies, yet 87% of local authorities breached that limit in 2023/24.<Cite nums={1} /> Temporary accommodation now costs councils an average of £1,600 per household per month; the total bill reached an estimated £2.4bn in 2024/25, up from £1.0bn five years earlier.<Cite nums={3} />
               </p>
               <p>
-                The private rented sector drives the crisis. End of tenancy accounts for 22.3% of accepted cases — the single largest cause for seven consecutive years. Section 21 no-fault evictions were finally abolished in October 2025 under the Renters' Rights Bill, but landlords served a wave of notices before the deadline, fuelling a surge in 2023/24 presentations. The deeper problem is affordability: Local Housing Allowance, the benefit that caps rent support at the 30th percentile of local rents, has been repeatedly frozen. In London the gap between LHA and an average one-bedroom rent is £500–£800 per month. Benefits no longer cover the cheapest third of the market they were designed to reach.
+                The private rented sector drives the crisis. End of tenancy accounts for 22.3% of accepted cases — the single largest cause for seven consecutive years.<Cite nums={1} /> Section 21 no-fault evictions were finally abolished in October 2025 under the Renters' Rights Bill, but landlords served a wave of notices before the deadline, fuelling a surge in 2023/24 presentations. The deeper problem is affordability: Local Housing Allowance, the benefit that caps rent support at the 30th percentile of local rents, has been repeatedly frozen. In London the gap between LHA and an average one-bedroom rent is £500–£800 per month. Benefits no longer cover the cheapest third of the market they were designed to reach.
               </p>
               <p>
-                The Everyone In programme proved what speed and political will can achieve: 37,000 rough sleepers were housed in hotels within weeks of the March 2020 lockdown, and the annual count fell from 4,266 to 2,440 by 2021. But the hotel programme wound down without adequate move-on housing, and by 2024 rough sleeping had climbed back to 4,255 — almost exactly the 2018 level. The structural deficit is social housing. One million council homes have been sold under Right to Buy since 1980, replaced at a ratio of roughly 1:8. Some 1.3 million households sit on social housing waiting lists in 2024. Until supply catches up, temporary accommodation will continue to function as England's de facto social housing system — at far greater cost.
+                The Everyone In programme proved what speed and political will can achieve: 37,000 rough sleepers were housed in hotels within weeks of the March 2020 lockdown, and the annual count fell from 4,266 to 2,440 by 2021.<Cite nums={2} /> But the hotel programme wound down without adequate move-on housing, and by 2024 rough sleeping had climbed back to 4,255 — almost exactly the 2018 level.<Cite nums={2} /> The structural deficit is social housing. One million council homes have been sold under Right to Buy since 1980, replaced at a ratio of roughly 1:8. Some 1.3 million households sit on social housing waiting lists in 2024. Until supply catches up, temporary accommodation will continue to function as England's de facto social housing system — at far greater cost.
               </p>
             </div>
           </div>
@@ -274,6 +282,10 @@ export default function HomelessnessPage() {
         </ScrollReveal>
 
         <ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
           <div className="mt-16 border-t border-wiah-border pt-12">
             <h3 className="text-xl font-bold text-wiah-black mb-6">Sources &amp; Methodology</h3>
             <div className="space-y-4 text-sm text-wiah-mid font-mono">

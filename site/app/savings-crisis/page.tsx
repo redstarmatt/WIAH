@@ -8,6 +8,15 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Money & Pensions Service', dataset: 'Financial Wellbeing Survey', url: 'https://maps.org.uk/en/research/research-projects/financial-wellbeing-survey', date: '2023' },
+  { num: 2, name: 'ONS', dataset: 'Household sector accounts — savings ratio', url: 'https://www.ons.gov.uk/economy/grossdomesticproductgdp/timeseries/dgd8', date: '2023' },
+  { num: 3, name: 'ONS', dataset: 'Wealth and Assets Survey, Wave 7', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/bulletins/wealthingreatbritainwave7/2018to2020', date: '2022' },
+  { num: 4, name: 'Money & Pensions Service', dataset: 'Over-indebtedness estimates', url: 'https://maps.org.uk', date: '2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -80,8 +89,8 @@ export default function SavingsCrisisPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>One in four UK adults — approximately 13 million people — has less than £100 in savings, a share that has worsened every year since 2020 as the cost-of-living crisis eroded already-thin buffers. The household savings rate fell from around 9% in 2010 to 4.2% in 2022, near the lowest level since records began, driven by real wage stagnation and rising housing and childcare costs. A COVID surge to 16.3% proved fleeting; by late 2022 the rate had collapsed again. The median savings balance for the bottom quintile of earners is £170 — not enough to cover a month's rent, a car repair, or a boiler replacement. The top quintile's median is £89,000: savings inequality in the UK closely tracks income and wealth inequality, both extreme by European standards.</p>
-            <p>The consequences extend beyond individual hardship. The Money and Pensions Service estimates around 9 million people are over-indebted, spending more on debt repayments than they can sustain. When an unexpected cost hits a household with no savings, the options narrow rapidly to consumer debt, reduced food spending, or food banks — and none of those options leave people better placed for the next shock. Younger households, renters, and those in low-wage work bear the heaviest burden: they cannot access the homeownership wealth accumulation route that has historically served as the UK's primary savings vehicle for the middle class.</p>
+            <p>One in four UK adults — approximately 13 million people — has less than £100 in savings, a share that has worsened every year since 2020 as the cost-of-living crisis eroded already-thin buffers.<Cite nums={1} /> The household savings rate fell from around 9% in 2010 to 4.2% in 2022, near the lowest level since records began, driven by real wage stagnation and rising housing and childcare costs.<Cite nums={2} /> A COVID surge to 16.3% proved fleeting; by late 2022 the rate had collapsed again. The median savings balance for the bottom quintile of earners is £170 — not enough to cover a month's rent, a car repair, or a boiler replacement.<Cite nums={3} /> The top quintile's median is £89,000: savings inequality in the UK closely tracks income and wealth inequality, both extreme by European standards.</p>
+            <p>The consequences extend beyond individual hardship. The Money and Pensions Service estimates around 9 million people are over-indebted, spending more on debt repayments than they can sustain.<Cite nums={4} /> When an unexpected cost hits a household with no savings, the options narrow rapidly to consumer debt, reduced food spending, or food banks — and none of those options leave people better placed for the next shock. Younger households, renters, and those in low-wage work bear the heaviest burden: they cannot access the homeownership wealth accumulation route that has historically served as the UK's primary savings vehicle for the middle class.</p>
           </div>
         </section>
 
@@ -178,6 +187,10 @@ export default function SavingsCrisisPage() {
             </div>
           </div>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <ScrollReveal>

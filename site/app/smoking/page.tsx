@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Adult Smoking Habits in Great Britain', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandlifeexpectancies/bulletins/adultsmokinghabitsingreatbritain/2023', date: '2023' },
+  { num: 2, name: 'NHS England / DHSC', dataset: 'Health Survey for England — smoking by deprivation', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england', date: '2023' },
+  { num: 3, name: 'Public Health England', dataset: 'Evidence review of e-cigarettes and heated tobacco products', date: '2022' },
+  { num: 4, name: 'HM Government', dataset: 'Tobacco and Vapes Bill', url: 'https://www.gov.uk/government/publications/tobacco-and-vapes-bill', date: '2023' },
+];
 
 export default function SmokingPage() {
   // Adult smoking prevalence 2010–2023 (%)
@@ -73,9 +82,9 @@ export default function SmokingPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Adult smoking prevalence in the UK has fallen from 45% in 1974 to 12.7% in 2023 — a halving in under 50 years that represents one of the most successful public health interventions ever documented. The tools have been consistent: advertising bans, workplace and public place bans (the landmark 2007 smoking ban), plain packaging (2016), tobacco tax rises, and stop-smoking services. By 2023, more adults in England vape (estimated 5.4 million) than smoke cigarettes (4.9 million) — a remarkable inversion. The Tobacco and Vapes Bill, introduced in 2023, will create a rolling generational prohibition: no one born after 2009 will ever be able to legally buy tobacco.</p>
-            <p>But the headline figure conceals a profound inequality. In the most deprived quintile of the population, around 32% of adults smoke. In the least deprived quintile, it is around 8.6%. This 3.7× gap has barely changed in 15 years. Working-class and low-income communities bear a disproportionate share of smoking-related disease — lung cancer, COPD, cardiovascular disease — and their stop-smoking services have faced deep cuts since 2013. Total local authority spending on tobacco control fell by around 40% in real terms between 2013 and 2023.</p>
-            <p>The NHS spends an estimated £2.5 billion a year on treating smoking-related illness. The productivity cost — from premature death and chronic disease — is estimated at a further £12 billion. Against these figures, investment in tobacco control is remarkably cheap: a comprehensive national stop-smoking service costs tens of millions, not billions. The evidence for nicotine replacement therapy and varenicline (Champix/Chantix) is strong; brief advice from GPs doubles quit rates; intensive support programmes produce quit rates of 25–30% at one year.</p>
+            <p>Adult smoking prevalence in the UK has fallen from 45% in 1974 to 12.7% in 2023 — a halving in under 50 years that represents one of the most successful public health interventions ever documented.<Cite nums={1} /> The tools have been consistent: advertising bans, workplace and public place bans (the landmark 2007 smoking ban), plain packaging (2016), tobacco tax rises, and stop-smoking services. By 2023, more adults in England vape (estimated 5.4 million) than smoke cigarettes (4.9 million) — a remarkable inversion.<Cite nums={1} /> The Tobacco and Vapes Bill, introduced in 2023, will create a rolling generational prohibition: no one born after 2009 will ever be able to legally buy tobacco.<Cite nums={4} /></p>
+            <p>But the headline figure conceals a profound inequality. In the most deprived quintile of the population, around 32% of adults smoke. In the least deprived quintile, it is around 8.6%.<Cite nums={2} /> This 3.7x gap has barely changed in 15 years. Working-class and low-income communities bear a disproportionate share of smoking-related disease — lung cancer, COPD, cardiovascular disease — and their stop-smoking services have faced deep cuts since 2013. Total local authority spending on tobacco control fell by around 40% in real terms between 2013 and 2023.</p>
+            <p>The NHS spends an estimated £2.5 billion a year on treating smoking-related illness. The productivity cost — from premature death and chronic disease — is estimated at a further £12 billion.<Cite nums={3} /> Against these figures, investment in tobacco control is remarkably cheap: a comprehensive national stop-smoking service costs tens of millions, not billions. The evidence for nicotine replacement therapy and varenicline (Champix/Chantix) is strong; brief advice from GPs doubles quit rates; intensive support programmes produce quit rates of 25–30% at one year.</p>
           </div>
         </section>
 
@@ -160,6 +169,10 @@ export default function SmokingPage() {
             source="Source: ONS — Adult Smoking Habits 2023; PHE — Evidence review of e-cigarettes and heated tobacco products 2022."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

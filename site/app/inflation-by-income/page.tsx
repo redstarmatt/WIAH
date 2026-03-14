@@ -7,7 +7,15 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Resolution Foundation', dataset: 'Inflation Nation: Putting the Squeeze on Living Standards', url: 'https://www.resolutionfoundation.org', date: '2023' },
+  { num: 2, name: 'ONS', dataset: 'Consumer Price Inflation and Living Costs and Food Survey', url: 'https://www.ons.gov.uk/economy/inflationandpriceindices', date: '2024' },
+  { num: 3, name: 'Trussell Trust', dataset: 'End of Year Statistics — Food Bank Use', url: 'https://www.trusselltrust.org/news-and-blog/latest-stats/', date: '2023' },
+];
 
 interface InflationByIncomeData {
   topic: string
@@ -64,8 +72,8 @@ export default function InflationByIncomePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The inflation surge of 2021–2023 was not experienced equally. Resolution Foundation and ONS analysis found that households in the bottom income quintile faced peak inflation of 12.8% in October 2022, compared to 10.4% for those in the top quintile — a 2.4 percentage point gap. Poorer households spend a higher share of income on food and energy, the categories that rose fastest. The poorest tenth spend over 25% of their budget on domestic energy and food; the wealthiest tenth around 12%. Food price inflation peaked at 19.2% in March 2023 — the highest in 45 years — while Trussell Trust food bank parcels reached 3.1 million in 2022/23. The energy price guarantee capped bills at £2,500 but was a unit price cap rather than a bill cap, giving less absolute support to those in smaller homes with lower consumption.</p>
-            <p>The cumulative price level effect persists long after headline inflation returned to target. A household that saw its food bill rise 25% between 2020 and 2024 does not recover that cost when inflation falls to 2%; prices simply rise more slowly from a permanently higher base. The distributional legacy of the inflation surge is a permanent reduction in real living standards concentrated among those with the least financial resilience — which, by definition, were those on the lowest incomes. Shrinkflation, identified by ONS across hundreds of product categories, represents additional effective inflation not captured in headline figures. The Cost of Living Payments targeted Universal Credit recipients and pensioners but were not calibrated to actual energy expenditure.</p>
+            <p>The inflation surge of 2021–2023 was not experienced equally. Resolution Foundation and ONS analysis found that households in the bottom income quintile faced peak inflation of 12.8% in October 2022, compared to 10.4% for those in the top quintile — a 2.4 percentage point gap.<Cite nums={[1, 2]} /> Poorer households spend a higher share of income on food and energy, the categories that rose fastest. The poorest tenth spend over 25% of their budget on domestic energy and food; the wealthiest tenth around 12%.<Cite nums={2} /> Food price inflation peaked at 19.2% in March 2023 — the highest in 45 years — while Trussell Trust food bank parcels reached 3.1 million in 2022/23.<Cite nums={3} /> The energy price guarantee capped bills at £2,500 but was a unit price cap rather than a bill cap, giving less absolute support to those in smaller homes with lower consumption.</p>
+            <p>The cumulative price level effect persists long after headline inflation returned to target. A household that saw its food bill rise 25% between 2020 and 2024 does not recover that cost when inflation falls to 2%; prices simply rise more slowly from a permanently higher base. The distributional legacy of the inflation surge is a permanent reduction in real living standards concentrated among those with the least financial resilience — which, by definition, were those on the lowest incomes. Shrinkflation, identified by ONS across hundreds of product categories, represents additional effective inflation not captured in headline figures.<Cite nums={2} /> The Cost of Living Payments targeted Universal Credit recipients and pensioners but were not calibrated to actual energy expenditure.</p>
           </div>
         </section>
 
@@ -125,6 +133,10 @@ export default function InflationByIncomePage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

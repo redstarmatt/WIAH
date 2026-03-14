@@ -7,6 +7,15 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DESNZ', dataset: 'CCUS Programme Update', url: 'https://www.gov.uk/government/publications/carbon-capture-usage-and-storage-ccus-programme', date: 'Dec 2024' },
+  { num: 2, name: 'DESNZ', dataset: 'Net Zero Strategy 2021', url: 'https://www.gov.uk/government/publications/net-zero-strategy', date: '2021' },
+  { num: 3, name: 'Climate Change Committee', dataset: '2024 Progress Report to Parliament', url: 'https://www.theccc.org.uk/publication/progress-in-reducing-emissions-2024-report-to-parliament/', date: '2024' },
+  { num: 4, name: 'Global CCS Institute', dataset: 'Global Status of CCS Report 2024', url: 'https://www.globalccsinstitute.com/resources/global-status-report/', date: 'Dec 2024' },
+];
 
 export default function CarbonCaptureProgressPage() {
   // CCS capacity: 0 across entire series — no commercial capture yet
@@ -153,12 +162,16 @@ export default function CarbonCaptureProgressPage() {
           <section id="sec-context" className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on carbon capture progress</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>The UK government's net zero strategy relies substantially on Carbon Capture, Usage and Storage (CCUS) to decarbonise hard-to-abate sectors — steel, cement, chemicals, and blue hydrogen production — with a target of capturing 20–30 million tonnes of CO2 per year by 2030. As of 2026, not a single commercial CCUS plant is operational in the UK. The government's Track-1 industrial clusters — HyNet in the North West and the East Coast Cluster around Teesside and Humberside — were selected in 2021 as priority development sites but have been delayed by protracted commercial negotiations over risk allocation, contract pricing, and CO2 transport and storage tariffs. Track-1 operations are now not expected before 2028–29 at the earliest, more than two years behind the original timetable.</p>
-              <p>The gap between ambition and delivery creates knock-on risks for the overall net zero pathway. If CCS targets are missed, the residual emissions it was supposed to address will need to be offset through additional renewable generation, demand reduction, or expensive international credits. The Climate Change Committee's 2024 Progress Report identified CCUS deployment as one of the areas of greatest concern in the near-term carbon budget. The government has committed £22 billion in public investment, but disbursement lags significantly behind the stated timeline, and the commitment is spread over 25 years rather than representing an upfront capital commitment.</p>
-              <p>The delay risk is primarily commercial and policy rather than technological. CCS technology is proven at scale in Norway (Sleipner, operational since 1996) and other countries — the global fleet now exceeds 50 MtCO2/yr operational capacity. The UK's challenge is constructing the commercial frameworks under which private capital will finance the capture, compression, transport, and storage infrastructure. Until those frameworks are settled, projects remain in planning rather than construction. The longer Track-1 is delayed, the steeper the ramp-up required in the 2030s — and the more expensive it will be to meet carbon budgets through alternative means.</p>
+              <p>The UK government's net zero strategy relies substantially on Carbon Capture, Usage and Storage (CCUS) to decarbonise hard-to-abate sectors — steel, cement, chemicals, and blue hydrogen production — with a target of capturing 20–30 million tonnes of CO2 per year by 2030.<Cite nums={2} /> As of 2026, not a single commercial CCUS plant is operational in the UK.<Cite nums={1} /> The government's Track-1 industrial clusters — HyNet in the North West and the East Coast Cluster around Teesside and Humberside — were selected in 2021 as priority development sites but have been delayed by protracted commercial negotiations over risk allocation, contract pricing, and CO2 transport and storage tariffs. Track-1 operations are now not expected before 2028–29 at the earliest, more than two years behind the original timetable.<Cite nums={1} /></p>
+              <p>The gap between ambition and delivery creates knock-on risks for the overall net zero pathway. If CCS targets are missed, the residual emissions it was supposed to address will need to be offset through additional renewable generation, demand reduction, or expensive international credits. The Climate Change Committee's 2024 Progress Report identified CCUS deployment as one of the areas of greatest concern in the near-term carbon budget.<Cite nums={3} /> The government has committed £22 billion in public investment, but disbursement lags significantly behind the stated timeline, and the commitment is spread over 25 years rather than representing an upfront capital commitment.<Cite nums={1} /></p>
+              <p>The delay risk is primarily commercial and policy rather than technological. CCS technology is proven at scale in Norway (Sleipner, operational since 1996) and other countries — the global fleet now exceeds 50 MtCO2/yr operational capacity.<Cite nums={4} /> The UK's challenge is constructing the commercial frameworks under which private capital will finance the capture, compression, transport, and storage infrastructure. Until those frameworks are settled, projects remain in planning rather than construction. The longer Track-1 is delayed, the steeper the ramp-up required in the 2030s — and the more expensive it will be to meet carbon budgets through alternative means.<Cite nums={3} /></p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

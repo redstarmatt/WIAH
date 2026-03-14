@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Adults seen by NHS dentist (%), 2017/18–2024/25
 const adultAccessValues = [57.3, 56.8, 56.1, 55.4, 35.8, 43.1, 47.2, 49.1];
@@ -60,6 +62,12 @@ const annotations2: Annotation[] = [
   { date: new Date(2024, 3, 1), label: '2024: Dental Recovery Plan launched' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'NHS Dental Statistics for England', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/nhs-dental-statistics', date: '2024/25' },
+  { num: 2, name: 'NHS BSA', dataset: 'Dental Statistics', url: 'https://www.nhsbsa.nhs.uk/statistical-collections/dental-statistics', date: '2025' },
+  { num: 3, name: 'NHS England', dataset: 'Hospital Episode Statistics — Admitted Patient Care', url: 'https://digital.nhs.uk/data-and-information/data-tools-and-services/data-services/hospital-episode-statistics', date: '2024' },
+];
+
 export default function DentalPage() {
   return (
     <>
@@ -74,8 +82,8 @@ export default function DentalPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>NHS dentistry has effectively collapsed for millions. The structural cause is the 2006 NHS dental contract, which replaced fee-per-item payments with Units of Dental Activity (UDAs) that pay a fixed price regardless of treatment complexity — a check-up and a root canal earn a practice almost the same amount. The result was predictable: dentists began limiting NHS work, cherry-picking simpler cases, and leaving the NHS altogether. Between 2015 and 2024, the number of dentists performing NHS work fell by around 1,600 while the number working exclusively privately nearly doubled. The exodus accelerated after COVID-19, when infection control requirements made NHS work even less financially viable.</p>
-            <p>The consequences fall hardest on those who can least afford private care. Coastal towns, rural areas, and deprived communities have become dental deserts — places where no NHS dentist is accepting new patients within a 25-mile radius. The human cost is visible in hospital data: around 35,000–40,000 children a year are admitted for tooth extractions under general anaesthetic — the single most common reason for a child to be hospitalised in England. These are overwhelmingly preventable extractions caused by tooth decay, compounded by the inability to access routine check-ups. A 2024 Dental Recovery Plan has been launched, but the BDA has described the measures as insufficient to reverse structural failure two decades in the making.</p>
+            <p>NHS dentistry has effectively collapsed for millions. The structural cause is the 2006 NHS dental contract, which replaced fee-per-item payments with Units of Dental Activity (UDAs) that pay a fixed price regardless of treatment complexity — a check-up and a root canal earn a practice almost the same amount.<Cite nums={2} /> The result was predictable: dentists began limiting NHS work, cherry-picking simpler cases, and leaving the NHS altogether. Between 2015 and 2024, the number of dentists performing NHS work fell by around 1,600 while the number working exclusively privately nearly doubled.<Cite nums={1} /> The exodus accelerated after COVID-19, when infection control requirements made NHS work even less financially viable.</p>
+            <p>The consequences fall hardest on those who can least afford private care. Coastal towns, rural areas, and deprived communities have become dental deserts — places where no NHS dentist is accepting new patients within a 25-mile radius. The human cost is visible in hospital data: around 35,000–40,000 children a year are admitted for tooth extractions under general anaesthetic — the single most common reason for a child to be hospitalised in England.<Cite nums={3} /> These are overwhelmingly preventable extractions caused by tooth decay, compounded by the inability to access routine check-ups. A 2024 Dental Recovery Plan has been launched, but the BDA has described the measures as insufficient to reverse structural failure two decades in the making.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -154,6 +162,9 @@ export default function DentalPage() {
             source="Source: NHS England — NHS Dental Statistics 2024/25. OHID — Supervised Tooth Brushing Programme 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

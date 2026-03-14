@@ -9,6 +9,16 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+// ── References ──────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Electoral Commission', dataset: 'General Election 2024 turnout data', url: 'https://www.electoralcommission.org.uk/research-reports-and-data', date: '2024' },
+  { num: 2, name: 'House of Commons Library', dataset: 'Voter turnout at UK general elections (CBP 7501)', url: 'https://commonslibrary.parliament.uk/research-briefings/cbp-7501/', date: '2024' },
+  { num: 3, name: 'British Election Study / YouGov', dataset: 'Turnout by age group estimates 2024', url: 'https://www.britishelectionstudy.com/', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -134,9 +144,12 @@ export default function VoterTurnoutPage() {
 
       <section id="sec-context" className="max-w-2xl mx-auto px-4 sm:px-6 py-12">
         <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-          <p>The 2024 general election recorded 59.7% turnout — the lowest since 2001, when 59.4% voted in the shadow of the Iraq War. Despite a record 47.6 million people on the electoral roll and blanket pre-election coverage, 18.6 million registered voters did not cast a ballot. Post-war participation ran consistently between 76% and 83% through the 1950s and 1960s before a structural decline set in. The partial recovery to 65–69% between 2010 and 2019 has now been reversed. England's local elections are starker still: average turnout across English councils stands at around 32%, with some metropolitan wards in Manchester and Birmingham recording figures below 15%.</p>
-          <p>Participation is not falling evenly. YouGov and British Election Study data from 2024 put turnout among 18–24 year olds at around 43%, against 71% for voters aged 65 and over — a 28-percentage-point gap that has widened over successive elections. Young people are more likely to be registered than ever before, but less likely to vote once registered. Deprivation compounds the pattern: the lowest-turnout constituencies are concentrated in post-industrial towns and urban peripheries where trust in politicians is lowest. Edelman Trust Barometer surveys consistently place UK politicians among the least trusted in Europe, a trend that accelerated after the Brexit referendum and the Partygate scandal of 2021–22.</p>
+          <p>The 2024 general election recorded 59.7% turnout — the lowest since 2001, when 59.4% voted in the shadow of the Iraq War. Despite a record 47.6 million people on the electoral roll and blanket pre-election coverage, 18.6 million registered voters did not cast a ballot.<Cite nums={1} /> Post-war participation ran consistently between 76% and 83% through the 1950s and 1960s before a structural decline set in.<Cite nums={2} /> The partial recovery to 65–69% between 2010 and 2019 has now been reversed. England's local elections are starker still: average turnout across English councils stands at around 32%, with some metropolitan wards in Manchester and Birmingham recording figures below 15%.</p>
+          <p>Participation is not falling evenly. YouGov and British Election Study data from 2024 put turnout among 18–24 year olds at around 43%, against 71% for voters aged 65 and over — a 28-percentage-point gap that has widened over successive elections.<Cite nums={3} /> Young people are more likely to be registered than ever before, but less likely to vote once registered. Deprivation compounds the pattern: the lowest-turnout constituencies are concentrated in post-industrial towns and urban peripheries where trust in politicians is lowest. Edelman Trust Barometer surveys consistently place UK politicians among the least trusted in Europe, a trend that accelerated after the Brexit referendum and the Partygate scandal of 2021–22.</p>
             </div>
+          <div className="mt-6">
+            <References items={editorialRefs} />
+          </div>
       </section>
 
       {/* ── Positive callout ──────────────────────────────────────────────────────── */}

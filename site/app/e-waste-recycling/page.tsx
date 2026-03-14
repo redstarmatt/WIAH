@@ -8,6 +8,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DEFRA / Environment Agency', dataset: 'UK WEEE Statistics', url: 'https://www.gov.uk/government/statistical-data-sets/waste-electrical-and-electronic-equipment-weee-in-the-uk', date: '2024' },
+  { num: 2, name: 'Eurostat', dataset: 'WEEE statistics — EU average', url: 'https://ec.europa.eu/eurostat/statistics-explained/index.php/Waste_statistics_-_electrical_and_electronic_equipment', date: '2024' },
+  { num: 3, name: 'Basel Convention / Environment Agency', dataset: 'Illegal export enforcement data', url: 'https://www.basel.int/', date: '2024' },
+];
 
 export default function EWasteRecyclingPage() {
   // E-waste generated (thousand tonnes) — 2015–2024 (10 points)
@@ -169,12 +177,16 @@ export default function EWasteRecyclingPage() {
           <section id="sec-context" className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">What the data shows</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Britain generates more electronic waste per person than any other country in Europe — roughly 23 kilograms per capita annually. Yet the formal collection rate remains at 17%, meaning that the vast majority of discarded phones, laptops, televisions and household appliances do not enter licensed recycling streams. The gap is partly bridged by informal charity and retailer take-back schemes, but a substantial portion is illegally exported to West Africa or ends up in general waste streams.</p>
-              <p>The consequences are both environmental and strategic. E-waste contains significant quantities of gold, silver, palladium, cobalt, and rare earth elements — the same critical minerals that are essential for the clean energy transition and which the UK is attempting to source domestically. The Environment Agency estimates that the UK's annual e-waste stream contains approximately £370 million worth of recoverable precious metals that are currently lost to landfill or exported. This represents a circular economy opportunity of significant scale.</p>
-              <p>The divergence from EU collection rates since Brexit is notable. EU member states now operate under the revised WEEE Directive target of 65% collection, backed by producer responsibility levies and mandatory consumer take-back at point of sale. The UK retained the post-Brexit WEEE Regulations but has not matched the EU's target uplift, and has no equivalent obligation for large retailers to accept all electrical items regardless of purchase origin. This regulatory gap is one of the primary structural reasons for the UK's below-average performance.</p>
+              <p>Britain generates more electronic waste per person than any other country in Europe — roughly 23 kilograms per capita annually.<Cite nums={1} /> Yet the formal collection rate remains at 17%, meaning that the vast majority of discarded phones, laptops, televisions and household appliances do not enter licensed recycling streams.<Cite nums={1} /> The gap is partly bridged by informal charity and retailer take-back schemes, but a substantial portion is illegally exported to West Africa or ends up in general waste streams.<Cite nums={3} /></p>
+              <p>The consequences are both environmental and strategic. E-waste contains significant quantities of gold, silver, palladium, cobalt, and rare earth elements — the same critical minerals that are essential for the clean energy transition and which the UK is attempting to source domestically. The Environment Agency estimates that the UK&apos;s annual e-waste stream contains approximately £370 million worth of recoverable precious metals that are currently lost to landfill or exported.<Cite nums={1} /> This represents a circular economy opportunity of significant scale.</p>
+              <p>The divergence from EU collection rates since Brexit is notable. EU member states now operate under the revised WEEE Directive target of 65% collection, backed by producer responsibility levies and mandatory consumer take-back at point of sale.<Cite nums={2} /> The UK retained the post-Brexit WEEE Regulations but has not matched the EU&apos;s target uplift, and has no equivalent obligation for large retailers to accept all electrical items regardless of purchase origin. This regulatory gap is one of the primary structural reasons for the UK&apos;s below-average performance.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DLUHC', dataset: 'Local Authority Housing Statistics — waiting lists', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-rents-lettings-and-tenancies', date: '2024' },
+  { num: 2, name: 'Shelter', dataset: 'Inadequate Housing Conditions Research', url: 'https://www.shelter.org.uk', date: '2024', note: 'Estimates 4 million people in inadequate housing' },
+  { num: 3, name: 'DLUHC', dataset: 'Live Tables on Social Housing Stock — Right to Buy sales', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-social-housing-sales', date: '2024' },
+  { num: 4, name: 'DLUHC', dataset: 'Local Authority Revenue Expenditure — Temporary Accommodation', url: 'https://www.gov.uk/government/statistical-data-sets/local-authority-revenue-expenditure-and-financing', date: '2024', note: '£2.3 billion spent on temporary accommodation in 2023-24' },
+];
 
 export default function SocialHousingWaitingListsPage() {
   // Chart 1: Social housing waiting list 2010-2024 (millions of households)
@@ -145,12 +154,16 @@ export default function SocialHousingWaitingListsPage() {
           <section id="sec-context" className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on social housing waiting lists</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>England&rsquo;s social housing waiting list stands at 1.29 million households — and that figure undercounts true need. The 2015 reforms allowed councils to remove households assessed as adequately housed from their registers, producing the apparent sharp fall visible in the data. The underlying demand for affordable, secure housing is substantially higher: the charity Shelter estimates around 4 million people are living in inadequate housing conditions who could benefit from social housing but are not on a waiting list.</p>
-              <p>The fundamental problem is stock. England had 6.7 million council homes in 1979; it has around 1.6 million today. Right-to-buy, introduced in 1980 and extended with larger discounts in 2012, has transferred over 2 million homes from the social to private sector. Receipts were not ring-fenced for replacement: councils could keep only a proportion and were subject to restrictions that made building replacement homes difficult. The net effect over four decades has been a loss of approximately 1.4 million social homes relative to the 1979 stock base.</p>
-              <p>In London, the situation is most acute. Average waiting times for social housing in the capital exceed five years, and in some boroughs families wait a decade or more. The consequence of insufficient social housing is not merely inconvenience: it drives homelessness, overspending on temporary accommodation (which councils spent £2.3 billion on in 2023-24), child poverty, and the breakdown of communities as working families are unable to afford to remain in areas where they have established lives. The cost of not building falls entirely on those with the least power to bear it.</p>
+              <p>England&rsquo;s social housing waiting list stands at 1.29 million households — and that figure undercounts true need.<Cite nums={1} /> The 2015 reforms allowed councils to remove households assessed as adequately housed from their registers, producing the apparent sharp fall visible in the data. The underlying demand for affordable, secure housing is substantially higher: the charity Shelter estimates around 4 million people are living in inadequate housing conditions who could benefit from social housing but are not on a waiting list.<Cite nums={2} /></p>
+              <p>The fundamental problem is stock. England had 6.7 million council homes in 1979; it has around 1.6 million today. Right-to-buy, introduced in 1980 and extended with larger discounts in 2012, has transferred over 2 million homes from the social to private sector.<Cite nums={3} /> Receipts were not ring-fenced for replacement: councils could keep only a proportion and were subject to restrictions that made building replacement homes difficult. The net effect over four decades has been a loss of approximately 1.4 million social homes relative to the 1979 stock base.<Cite nums={3} /></p>
+              <p>In London, the situation is most acute. Average waiting times for social housing in the capital exceed five years, and in some boroughs families wait a decade or more. The consequence of insufficient social housing is not merely inconvenience: it drives homelessness, overspending on temporary accommodation (which councils spent £2.3 billion on in 2023-24),<Cite nums={4} /> child poverty, and the breakdown of communities as working families are unable to afford to remain in areas where they have established lives. The cost of not building falls entirely on those with the least power to bear it.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

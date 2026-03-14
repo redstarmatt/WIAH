@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'MHCLG / RTPI', dataset: 'Local authority planning workforce survey', url: 'https://www.rtpi.org.uk/research/', date: '2024' },
+  { num: 2, name: 'MHCLG', dataset: 'Planning Applications in England', url: 'https://www.gov.uk/government/statistics/planning-applications-in-england', date: 'Dec 2024' },
+  { num: 3, name: 'MHCLG', dataset: 'Net additional dwellings — live tables on net supply of housing', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-net-supply-of-housing', date: 'Dec 2025' },
+  { num: 4, name: 'RTPI', dataset: 'Graduate planning course applications data', url: 'https://www.rtpi.org.uk/research/', date: '2024/25' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -166,13 +175,13 @@ export default function LpaCapacityCrisisPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Local planning authorities are the gatekeepers of development in England. Every house, every commercial building, every wind farm, every school extension passes through their hands. In 2010, these departments employed roughly 16,200 full-time equivalent planning officers. By 2023, that figure had fallen to 10,700 — a reduction of 34% over thirteen years. The cuts were not the result of declining demand. Planning application volumes remained broadly stable throughout the period, and the complexity of individual applications increased as environmental assessments, biodiversity net gain requirements, and nutrient neutrality rules were layered on top of existing obligations. The same number of decisions were being asked of a workforce that had shrunk by a third.
+              Local planning authorities are the gatekeepers of development in England. Every house, every commercial building, every wind farm, every school extension passes through their hands. In 2010, these departments employed roughly 16,200 full-time equivalent planning officers. By 2023, that figure had fallen to 10,700 — a reduction of 34% over thirteen years.<Cite nums={1} /> The cuts were not the result of declining demand. Planning application volumes remained broadly stable throughout the period, and the complexity of individual applications increased as environmental assessments, biodiversity net gain requirements, and nutrient neutrality rules were layered on top of existing obligations. The same number of decisions were being asked of a workforce that had shrunk by a third.
             </p>
             <p>
-              The effects are measurable. The proportion of major planning applications decided within the statutory 13-week deadline has fallen from a peak of 88% in 2018 to 75% in 2024. For smaller "non-major" applications — extensions, change of use, single dwellings — the picture is worse in many authorities, with some reporting decision times stretching beyond 20 weeks. Delays cascade: developers face holding costs, housing delivery targets are missed, and local plans fall out of date, triggering speculative applications that communities cannot resist. The government target of 300,000 new homes per year has never been met, and planning capacity is a significant — though not the only — bottleneck. In London, where pressure is most acute, there are just 3.2 planning staff per 1,000 applications, compared to 6.2 in the North East.
+              The effects are measurable. The proportion of major planning applications decided within the statutory 13-week deadline has fallen from a peak of 88% in 2018 to 75% in 2024.<Cite nums={2} /> For smaller "non-major" applications — extensions, change of use, single dwellings — the picture is worse in many authorities, with some reporting decision times stretching beyond 20 weeks. Delays cascade: developers face holding costs, housing delivery targets are missed, and local plans fall out of date, triggering speculative applications that communities cannot resist. The government target of 300,000 new homes per year has never been met, and planning capacity is a significant — though not the only — bottleneck.<Cite nums={3} /> In London, where pressure is most acute, there are just 3.2 planning staff per 1,000 applications, compared to 6.2 in the North East.<Cite nums={1} />
             </p>
             <p>
-              There are early signs of a response. The 2024 planning fee increase — the first above-inflation rise in over a decade — brought an additional £65 million into the system and enabled some authorities to begin recruiting. National planning staff numbers edged up to 10,900 in 2024, the first year-on-year increase since 2010. The Royal Town Planning Institute reports a 15% rise in graduate planning course applications. These are welcome developments, but they are starting from a historically low base. Rebuilding planning capacity to a level that can support the government"s housing and infrastructure ambitions will take sustained investment over several years — not a single fee adjustment. The planning system is not broken because planners are slow; it is broken because there are not enough of them.
+              There are early signs of a response. The 2024 planning fee increase — the first above-inflation rise in over a decade — brought an additional £65 million into the system and enabled some authorities to begin recruiting. National planning staff numbers edged up to 10,900 in 2024, the first year-on-year increase since 2010.<Cite nums={1} /> The Royal Town Planning Institute reports a 15% rise in graduate planning course applications.<Cite nums={4} /> These are welcome developments, but they are starting from a historically low base. Rebuilding planning capacity to a level that can support the government"s housing and infrastructure ambitions will take sustained investment over several years — not a single fee adjustment. The planning system is not broken because planners are slow; it is broken because there are not enough of them.
             </p>
           </div>
         </section>
@@ -345,6 +354,10 @@ export default function LpaCapacityCrisisPage() {
             source="Source: RTPI — Planning workforce survey, 2024. MHCLG — Planning fee schedule, effective April 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* ── Sources & Methodology ──────────────────────────────────────── */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // General election turnout (%), 1992–2024
 const turnoutValues = [77.7, 71.4, 59.4, 61.4, 65.1, 68.8, 69.1, 67.3, 59.9];
@@ -53,6 +55,12 @@ const annotations2: Annotation[] = [
   { date: new Date(2014, 5, 1), label: '2014: Individual Electoral Registration introduced' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Electoral Commission', dataset: 'UK Parliamentary General Election Results', url: 'https://www.electoralcommission.org.uk/who-we-are-and-what-we-do/elections-and-referendums/past-elections-and-referendums', date: '2024' },
+  { num: 2, name: 'Ipsos', dataset: 'Trust in Professions and Institutions Survey', url: 'https://www.ipsos.com/en-uk/trust-polls', date: '2024' },
+  { num: 3, name: 'Electoral Commission', dataset: 'Electoral Registration Statistics', url: 'https://www.electoralcommission.org.uk/research-reports-and-data/electoral-data/electoral-registration-statistics', date: '2024' },
+];
+
 export default function DemocracyPage() {
   return (
     <>
@@ -67,8 +75,8 @@ export default function DemocracyPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The 2024 general election returned 59.9% turnout — the second lowest since women were fully enfranchised in 1928, beaten only by 2001's 59.4%. Labour took 412 seats on 33.7% of the vote; the Conservatives collapsed to 121 seats, their worst showing since 1906. The result laid bare the distortions of first-past-the-post: Reform UK won 14.3% of the national vote but just 5 seats (0.8% of the Commons), while the Liberal Democrats converted 12.2% of the vote into 72 seats. Votes and representation are structurally decoupled. Voter ID, introduced for the 2024 election, resulted in an estimated 50,000–75,000 people being turned away from polling stations.</p>
-            <p>Trust in politicians to tell the truth sits at 17%, according to Ipsos's annual survey running since 1983. That figure is level with the post-expenses-scandal trough of 2009 and only marginally above the 15% recorded after Partygate in 2022. For context, 95% of Britons trust nurses and 91% trust doctors; politicians rank below estate agents at 26%. The 2016 EU referendum — held amid similar distrust — drew 72.2% turnout, suggesting disillusionment with politicians does not automatically suppress participation when the stakes feel direct and personal.</p>
+            <p>The 2024 general election returned 59.9% turnout — the second lowest since women were fully enfranchised in 1928, beaten only by 2001's 59.4%.<Cite nums={1} /> Labour took 412 seats on 33.7% of the vote; the Conservatives collapsed to 121 seats, their worst showing since 1906.<Cite nums={1} /> The result laid bare the distortions of first-past-the-post: Reform UK won 14.3% of the national vote but just 5 seats (0.8% of the Commons), while the Liberal Democrats converted 12.2% of the vote into 72 seats.<Cite nums={1} /> Votes and representation are structurally decoupled. Voter ID, introduced for the 2024 election, resulted in an estimated 50,000–75,000 people being turned away from polling stations.<Cite nums={3} /></p>
+            <p>Trust in politicians to tell the truth sits at 17%, according to Ipsos's annual survey running since 1983.<Cite nums={2} /> That figure is level with the post-expenses-scandal trough of 2009 and only marginally above the 15% recorded after Partygate in 2022.<Cite nums={2} /> For context, 95% of Britons trust nurses and 91% trust doctors; politicians rank below estate agents at 26%.<Cite nums={2} /> The 2016 EU referendum — held amid similar distrust — drew 72.2% turnout, suggesting disillusionment with politicians does not automatically suppress participation when the stakes feel direct and personal.<Cite nums={1} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -147,6 +155,9 @@ export default function DemocracyPage() {
             source="Source: Electoral Commission — UK Electoral Registration Statistics 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

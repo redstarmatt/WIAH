@@ -8,6 +8,8 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // -- Types ------------------------------------------------------------------
 
@@ -24,6 +26,15 @@ interface BenefitSanctionData {
 function yearToDate(y: number): Date {
   return new Date(y, 0, 1)
 }
+
+// -- References -------------------------------------------------------------
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DWP', dataset: 'Benefit Sanctions Statistics', url: 'https://www.gov.uk/government/collections/benefit-sanctions-statistics', date: '2023' },
+  { num: 2, name: 'Trussell Trust', dataset: 'End of Year Statistics', url: 'https://www.trusselltrust.org/news-and-blog/latest-stats/end-year-stats', date: '2023' },
+  { num: 3, name: 'National Audit Office', dataset: 'Benefit Sanctions', url: 'https://www.nao.org.uk/reports/benefit-sanctions', date: '2016' },
+  { num: 4, name: 'DWP', dataset: 'Independent Review of Conditionality (Oakley Report)', url: 'https://www.gov.uk/government/publications/universal-credit-sanctions-independent-review', date: '2023' },
+];
 
 // -- Page -------------------------------------------------------------------
 
@@ -62,8 +73,8 @@ export default function BenefitSanctionImpactPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Benefit sanctions — reductions or suspensions of Universal Credit payments for missing appointments or failing job search requirements — peaked at over a million annually in 2015, collapsed to near zero during the COVID-19 conditionality suspension in 2020, and rebounded sharply to 786,000 in 2023 as Universal Credit rollout continued. The 786,000 figure represents a significant increase on pre-pandemic levels once adjusted for the larger UC caseload; average sanction duration is now 33 days. Around 18% of Trussell Trust food bank referrals cite benefit-related issues — including sanctions and delays — as a primary driver, a link the National Audit Office and independent researchers consider well-established. The NAO found in 2016 that DWP could not demonstrate sanctions were achieving their employment goals, a conclusion broadly unchanged by subsequent reviews.</p>
-            <p>The burden of sanctions falls disproportionately on the most vulnerable claimants: disabled people, those with mental health conditions, and carers are all more likely to miss the appointments that trigger a sanction, and least able to absorb a month without income. UK-specific evidence does not show that sanctions improve sustained employment outcomes; instead, research consistently links them to destitution, food bank use, and rent arrears. The 2023 independent review made partial recommendations on vulnerability safeguards, but critics argue that a conditionality system whose primary tool is income removal is structurally incompatible with protecting claimants who are already struggling.</p>
+            <p>Benefit sanctions — reductions or suspensions of Universal Credit payments for missing appointments or failing job search requirements — peaked at over a million annually in 2015, collapsed to near zero during the COVID-19 conditionality suspension in 2020, and rebounded sharply to 786,000 in 2023 as Universal Credit rollout continued.<Cite nums={1} /> The 786,000 figure represents a significant increase on pre-pandemic levels once adjusted for the larger UC caseload; average sanction duration is now 33 days.<Cite nums={1} /> Around 18% of Trussell Trust food bank referrals cite benefit-related issues — including sanctions and delays — as a primary driver, a link the National Audit Office and independent researchers consider well-established.<Cite nums={[2, 3]} /> The NAO found in 2016 that DWP could not demonstrate sanctions were achieving their employment goals, a conclusion broadly unchanged by subsequent reviews.<Cite nums={3} /></p>
+            <p>The burden of sanctions falls disproportionately on the most vulnerable claimants: disabled people, those with mental health conditions, and carers are all more likely to miss the appointments that trigger a sanction, and least able to absorb a month without income.<Cite nums={4} /> UK-specific evidence does not show that sanctions improve sustained employment outcomes; instead, research consistently links them to destitution, food bank use, and rent arrears.<Cite nums={[2, 3]} /> The 2023 independent review made partial recommendations on vulnerability safeguards, but critics argue that a conditionality system whose primary tool is income removal is structurally incompatible with protecting claimants who are already struggling.<Cite nums={4} /></p>
           </div>
         </section>
 
@@ -123,6 +134,10 @@ export default function BenefitSanctionImpactPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

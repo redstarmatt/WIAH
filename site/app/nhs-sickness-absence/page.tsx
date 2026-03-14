@@ -8,6 +8,8 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
 
 // -- Types ------------------------------------------------------------------
@@ -30,6 +32,12 @@ interface SicknessData {
     topCauses: { timeSeries: CausePoint[] }
   }
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS Digital', dataset: 'NHS Sickness Absence Rates', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/nhs-sickness-absence-rates', date: '2023', note: '5.6% absence rate in 2022/23, highest since records began in 2009; equivalent to 75,000 FTE staff absent daily' },
+  { num: 2, name: 'NHS Employers', dataset: 'Sickness Absence Cost Methodology', date: '2023', note: 'Estimated annual direct cost exceeding £3.3 billion' },
+  { num: 3, name: 'NHS England', dataset: 'NHS Staff Survey', date: '2023', note: '44% of staff reported work-related stress; 33% said their organisation did not take positive action on wellbeing' },
+];
 
 function yearToDate(y: number): Date {
   return new Date(y, 5, 1)
@@ -116,8 +124,8 @@ export default function NHSSicknessAbsencePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The National Health Service employs approximately 1.4 million people in England, making it one of the largest employers in the world. Keeping that workforce healthy and present is fundamental to delivering care. Yet sickness absence in the NHS has been rising steadily for a decade, reaching 5.6% in 2022/23 — the highest rate since consistent records began in 2009. In practical terms, this means the equivalent of around 75,000 full-time staff were absent on any given day. The direct cost to the NHS exceeded £3.3 billion in that year alone, a figure that does not account for the knock-on costs of agency cover, delayed treatments, or the additional burden placed on colleagues who remain at work. The NHS absence rate is roughly 50% higher than the private sector average of 3.4%, a gap that has widened since the pandemic and reflects both the physical demands of healthcare work and systemic workforce pressures.</p>
-            <p>Mental health conditions and stress have overtaken musculoskeletal problems as the leading cause of NHS absence, accounting for approximately 30% of all days lost. Anxiety, depression, and work-related stress are not distributed evenly across the workforce: nursing staff, healthcare assistants, and ambulance paramedics report the highest rates. The 2023 NHS Staff Survey found that 44% of staff reported feeling unwell as a result of work-related stress in the previous 12 months, and 33% said their organisation did not take positive action on health and wellbeing. Staff working in emergency departments, mental health services, and social care interfaces — the parts of the system under greatest operational pressure — consistently show the highest absence rates. The relationship between workforce pressure and absence is self-reinforcing: understaffing increases workload, which increases stress absence, which further reduces available staff.</p>
+            <p>The National Health Service employs approximately 1.4 million people in England, making it one of the largest employers in the world. Keeping that workforce healthy and present is fundamental to delivering care. Yet sickness absence in the NHS has been rising steadily for a decade, reaching 5.6% in 2022/23 — the highest rate since consistent records began in 2009.<Cite nums={1} /> In practical terms, this means the equivalent of around 75,000 full-time staff were absent on any given day. The direct cost to the NHS exceeded £3.3 billion in that year alone, a figure that does not account for the knock-on costs of agency cover, delayed treatments, or the additional burden placed on colleagues who remain at work.<Cite nums={2} /> The NHS absence rate is roughly 50% higher than the private sector average of 3.4%, a gap that has widened since the pandemic and reflects both the physical demands of healthcare work and systemic workforce pressures.</p>
+            <p>Mental health conditions and stress have overtaken musculoskeletal problems as the leading cause of NHS absence, accounting for approximately 30% of all days lost. Anxiety, depression, and work-related stress are not distributed evenly across the workforce: nursing staff, healthcare assistants, and ambulance paramedics report the highest rates. The 2023 NHS Staff Survey found that 44% of staff reported feeling unwell as a result of work-related stress in the previous 12 months, and 33% said their organisation did not take positive action on health and wellbeing.<Cite nums={3} /> Staff working in emergency departments, mental health services, and social care interfaces — the parts of the system under greatest operational pressure — consistently show the highest absence rates. The relationship between workforce pressure and absence is self-reinforcing: understaffing increases workload, which increases stress absence, which further reduces available staff.</p>
             </div>
         </section>
 
@@ -204,6 +212,9 @@ export default function NHSSicknessAbsencePage() {
           />
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">

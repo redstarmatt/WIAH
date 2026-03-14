@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NCVO', dataset: 'Time Well Spent — volunteering survey', url: 'https://www.ncvo.org.uk', date: '2023' },
+  { num: 2, name: 'DCMS', dataset: 'Community Life Survey', url: 'https://www.gov.uk/government/statistics/community-life-survey', date: '2023' },
+  { num: 3, name: 'Trussell Trust', dataset: 'Annual Report — volunteer and network statistics', url: 'https://www.trusselltrust.org', date: '2022' },
+];
 
 interface CivicParticipationData {
   formalVolunteering: Array<{ year: number; percent: number }>
@@ -66,8 +74,8 @@ export default function CivicParticipationPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Formal volunteering — giving unpaid time through an organisation at least once a month — fell from 28% to 24% of adults in England between 2010 and 2023, with the decline concentrated among working-age adults with children, lower-income groups, and those in insecure employment. The pandemic disrupted this long-term trend: spring 2020 saw around 4,000 mutual aid groups form within weeks, informal helping surged to 39% of adults (up from 31% in 2018), and the Trussell Trust food bank network expanded to rely on 39,000 volunteers across 1,300 locations, up from 22,000 in 2015. Informal helping in 2023 stands at 33% — below the COVID peak but above pre-pandemic levels.</p>
-            <p>The drivers of civic participation are structural. Social trust, local belonging, and time availability — the strongest predictors of volunteering — are all unevenly distributed, highest in wealthier areas and lowest in areas of deprivation and social fragmentation. Precarious employment, declining community institutions (libraries, youth centres, pubs), and cuts to community infrastructure funding erode the conditions in which participation flourishes. The organised voluntary sector is simultaneously under financial pressure from reduced public funding while facing rising demand driven by cost-of-living pressures, forcing many organisations to reduce services at the moment need is highest.</p>
+            <p>Formal volunteering — giving unpaid time through an organisation at least once a month — fell from 28% to 24% of adults in England between 2010 and 2023, with the decline concentrated among working-age adults with children, lower-income groups, and those in insecure employment.<Cite nums={1} /> The pandemic disrupted this long-term trend: spring 2020 saw around 4,000 mutual aid groups form within weeks, informal helping surged to 39% of adults (up from 31% in 2018), and the Trussell Trust food bank network expanded to rely on 39,000 volunteers across 1,300 locations, up from 22,000 in 2015.<Cite nums={[2, 3]} /> Informal helping in 2023 stands at 33% — below the COVID peak but above pre-pandemic levels.<Cite nums={2} /></p>
+            <p>The drivers of civic participation are structural. Social trust, local belonging, and time availability — the strongest predictors of volunteering — are all unevenly distributed, highest in wealthier areas and lowest in areas of deprivation and social fragmentation.<Cite nums={1} /> Precarious employment, declining community institutions (libraries, youth centres, pubs), and cuts to community infrastructure funding erode the conditions in which participation flourishes. The organised voluntary sector is simultaneously under financial pressure from reduced public funding while facing rising demand driven by cost-of-living pressures, forcing many organisations to reduce services at the moment need is highest.</p>
           </div>
         </section>
 
@@ -128,6 +136,9 @@ export default function CivicParticipationPage() {
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">

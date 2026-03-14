@@ -7,6 +7,8 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import PositiveCallout from '@/components/PositiveCallout'
 import ScrollReveal from '@/components/ScrollReveal'
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
 
 // ── Types ────────────────────────────────────────────────────────────────────
@@ -26,6 +28,12 @@ interface NHSScreeningData {
   cervicalScreening: ScreeningPoint[]
   byDeprivation: DeprivationItem[]
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS Digital', dataset: 'Cancer Screening Programmes Data', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/cervical-screening-programme', date: '2022', note: 'Cervical screening uptake fell from 79% (2010) to 71% (2022); breast screening from 72% to 65%' },
+  { num: 2, name: 'NHS Digital', dataset: 'Bowel Cancer Screening Programme Statistics', date: '2023', note: 'Bowel screening uptake at 68%, target 75%; 16,000 bowel cancer deaths/year in UK' },
+  { num: 3, name: 'NHS Digital', dataset: 'Cancer Screening — Deprivation Analysis', date: '2022', note: 'Cervical screening: 78% in least deprived vs 63% in most deprived areas' },
+];
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -104,8 +112,8 @@ export default function NHSScreeningPage() {
         {/* Context section */}
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Cancer screening works best when it catches disease early. For cervical cancer, early-stage survival is close to 100%; late-stage survival is around 5%. Yet cervical screening uptake in England has fallen from 79% in 2010 to 71% in 2022 — the lowest since records began — and the 80% target has not been met since 2009. Around 850 women die of cervical cancer each year in England, most in cases where screening either was not taken up or was too late. Breast screening uptake has fallen similarly, from 72% to 65% over the same period. Bowel cancer — the UK's second deadliest cancer at 16,000 deaths a year — remains treatable in 90% of cases if caught early, but bowel screening uptake sits at 68% against a 75% target.</p>
-            <p>Non-participation is not evenly distributed. Across all three programmes, uptake falls sharply with deprivation: cervical screening is taken up by 78% of women in the least deprived areas, but only 63% in the most deprived — the same communities where cancer incidence is already highest. The result is a compounding inequality: those most likely to develop cancer are least likely to be screened. The drivers of non-participation differ by programme — embarrassment and the practicalities of stool sampling suppress bowel screening uptake, while for cervical and breast screening, barriers include distrust of clinical services, difficulty taking time off work, and — for breast screening — lingering public uncertainty following the 2012 Marmot review, which raised questions about the risk of over-diagnosis. The NHS evidence is clear: breast screening reduces breast cancer mortality by 20%.</p>
+            <p>Cancer screening works best when it catches disease early. For cervical cancer, early-stage survival is close to 100%; late-stage survival is around 5%. Yet cervical screening uptake in England has fallen from 79% in 2010 to 71% in 2022 — the lowest since records began — and the 80% target has not been met since 2009.<Cite nums={1} /> Around 850 women die of cervical cancer each year in England, most in cases where screening either was not taken up or was too late. Breast screening uptake has fallen similarly, from 72% to 65% over the same period. Bowel cancer — the UK's second deadliest cancer at 16,000 deaths a year — remains treatable in 90% of cases if caught early, but bowel screening uptake sits at 68% against a 75% target.<Cite nums={2} /></p>
+            <p>Non-participation is not evenly distributed. Across all three programmes, uptake falls sharply with deprivation: cervical screening is taken up by 78% of women in the least deprived areas, but only 63% in the most deprived — the same communities where cancer incidence is already highest.<Cite nums={3} /> The result is a compounding inequality: those most likely to develop cancer are least likely to be screened. The drivers of non-participation differ by programme — embarrassment and the practicalities of stool sampling suppress bowel screening uptake, while for cervical and breast screening, barriers include distrust of clinical services, difficulty taking time off work, and — for breast screening — lingering public uncertainty following the 2012 Marmot review, which raised questions about the risk of over-diagnosis. The NHS evidence is clear: breast screening reduces breast cancer mortality by 20%.</p>
             </div>
         </section>
 
@@ -211,6 +219,9 @@ export default function NHSScreeningPage() {
         />
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
               <RelatedTopics />
       </main>
     </>

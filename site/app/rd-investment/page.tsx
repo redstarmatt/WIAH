@@ -8,6 +8,8 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -31,6 +33,12 @@ interface RdInvestmentData {
 function yearToDate(y: number): Date {
   return new Date(y, 5, 1);
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Gross Domestic Expenditure on Research and Development (GERD)', url: 'https://www.ons.gov.uk/economy/governmentpublicsectorandtaxes/researchanddevelopmentexpenditure/bulletins/ukgrossdomesticexpenditureonresearchanddevelopment/2021', date: '2021' },
+  { num: 2, name: 'OECD', dataset: 'Main Science and Technology Indicators', url: 'https://www.oecd.org/sti/msti.htm', date: '2021' },
+  { num: 3, name: 'European Commission', dataset: 'Horizon Europe Programme', date: '2024', note: 'UK readmitted January 2024' },
+];
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -72,8 +80,8 @@ export default function RdInvestmentPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK spent 1.73% of its GDP on research and development in 2021 — a figure that has barely shifted since 2010. The OECD set a target of 2.4% more than two decades ago; the UK has never come close. The G7 average is 2.66%; the United States invests 3.46%, Germany 3.14%, South Korea 4.93%. Business R&D accounts for roughly two-thirds of the UK total, concentrated in pharmaceuticals, aerospace, and software — while government-funded foundational research, where private markets systematically underinvest, has been squeezed as a share of GDP since the 1980s. The UK was excluded from Horizon Europe — the EU's &euro;95.5 billion research programme — for nearly three years following Brexit, losing collaborations and migrating researchers before readmission in January 2024. Meeting the 2.4% OECD target would require approximately £18 billion in additional investment annually.</p>
-            <p>The underinvestment is partly an explanation for the UK's persistent productivity puzzle: output per worker barely grew in the 2010s despite historically low interest rates and rising employment. Countries that invest more in R&D — Germany, the United States, South Korea — have sustained higher productivity growth. The UK's genuine strengths — four of the world's top twenty universities, internationally competitive AI research in London, Cambridge, and Edinburgh, and a life sciences sector that generated a significant return through the COVID vaccine programme — are more fragile than they appear if the underlying investment infrastructure remains underfunded.</p>
+            <p>The UK spent 1.73% of its GDP on research and development in 2021 — a figure that has barely shifted since 2010.<Cite nums={1} /> The OECD set a target of 2.4% more than two decades ago; the UK has never come close. The G7 average is 2.66%; the United States invests 3.46%, Germany 3.14%, South Korea 4.93%.<Cite nums={2} /> Business R&D accounts for roughly two-thirds of the UK total, concentrated in pharmaceuticals, aerospace, and software — while government-funded foundational research, where private markets systematically underinvest, has been squeezed as a share of GDP since the 1980s.<Cite nums={1} /> The UK was excluded from Horizon Europe — the EU's &euro;95.5 billion research programme — for nearly three years following Brexit, losing collaborations and migrating researchers before readmission in January 2024.<Cite nums={3} /> Meeting the 2.4% OECD target would require approximately £18 billion in additional investment annually.<Cite nums={[1, 2]} /></p>
+            <p>The underinvestment is partly an explanation for the UK's persistent productivity puzzle: output per worker barely grew in the 2010s despite historically low interest rates and rising employment. Countries that invest more in R&D — Germany, the United States, South Korea — have sustained higher productivity growth.<Cite nums={2} /> The UK's genuine strengths — four of the world's top twenty universities, internationally competitive AI research in London, Cambridge, and Edinburgh, and a life sciences sector that generated a significant return through the COVID vaccine programme — are more fragile than they appear if the underlying investment infrastructure remains underfunded.<Cite nums={1} /></p>
           </div>
         </section>
 
@@ -175,6 +183,10 @@ export default function RdInvestmentPage() {
             </div>
           </div>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <ScrollReveal>

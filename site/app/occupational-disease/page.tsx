@@ -9,6 +9,16 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'HSE', dataset: 'Labour Force Survey — Self-reported work-related ill health', url: 'https://www.hse.gov.uk/statistics/lfs/index.htm', date: '2022/23' },
+  { num: 2, name: 'HSE', dataset: 'Costs to Great Britain of workplace injuries and new cases of work-related ill health', url: 'https://www.hse.gov.uk/statistics/cost.htm', date: '2021/22' },
+  { num: 3, name: 'HSE', dataset: 'RIDDOR fatal injuries statistics', url: 'https://www.hse.gov.uk/statistics/fatals.htm', date: '2022/23' },
+  { num: 4, name: 'HSE', dataset: 'Health and Safety Executive budget and staffing data', url: 'https://www.hse.gov.uk/aboutus/reports/', date: '2023' },
+  { num: 5, name: 'Stevenson / Farmer', dataset: 'Thriving at Work — independent review of mental health and employers', url: 'https://www.gov.uk/government/publications/thriving-at-work-a-review-of-mental-health-and-employers', date: '2017' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -189,31 +199,31 @@ export default function OccupationalDiseasePage() {
             <p>
               The scale of occupational ill health in Britain is enormous and growing. In 2022/23,
               an estimated 1.8 million workers reported suffering from a work-related illness — up
-              25% from 1.44 million in 2018/19. The dominant cause is no longer the industrial
+              25% from 1.44 million in 2018/19.<Cite nums={1} /> The dominant cause is no longer the industrial
               diseases of the twentieth century. Stress, depression and anxiety now account for
               approximately 900,000 cases annually, overtaking musculoskeletal disorders as the
-              leading cause in 2017 and accelerating sharply during the pandemic. Health and social
+              leading cause in 2017 and accelerating sharply during the pandemic.<Cite nums={1} /> Health and social
               care workers, teachers and public sector employees face the highest rates. These are
               not minor ailments: the average case of work-related stress results in 19.6 days off
-              work, and many cases become chronic, pushing people out of the labour market entirely.
+              work, and many cases become chronic, pushing people out of the labour market entirely.<Cite nums={1} />
             </p>
             <p>
               The economic cost is staggering. HSE economists estimate that workplace illness and
-              injury cost Britain £20.7 billion in 2021/22 — equivalent to roughly 1% of GDP. This
+              injury cost Britain £20.7 billion in 2021/22 — equivalent to roughly 1% of GDP.<Cite nums={2} /> This
               figure captures lost output, healthcare costs and the human cost of reduced quality of
               life. The largest component is the 35.2 million working days lost each year, a figure
               that peaked at 38.8 million in 2019/20 as the pandemic tore through frontline
-              workforces. Days lost to stress alone account for over half the total. Meanwhile,
+              workforces.<Cite nums={1} /> Days lost to stress alone account for over half the total. Meanwhile,
               physical workplace risks have not disappeared. An average of 135 workers are killed at
               work each year in Great Britain, with construction and agriculture consistently the
-              most dangerous sectors. Non-fatal injuries resulted in a further 561,000 cases in
-              2022/23.
+              most dangerous sectors.<Cite nums={3} /> Non-fatal injuries resulted in a further 561,000 cases in
+              2022/23.<Cite nums={1} />
             </p>
             <p>
               Policy responses remain fragmented. The Health and Safety Executive&apos;s budget was cut
               by 50% in real terms between 2010 and 2020, reducing proactive inspections to a
-              fraction of their former level. The 2017 &ldquo;Thriving at Work&rdquo; review recommended
-              mental health core standards for all employers, but adoption is voluntary and patchy.
+              fraction of their former level.<Cite nums={4} /> The 2017 &ldquo;Thriving at Work&rdquo; review recommended
+              mental health core standards for all employers, but adoption is voluntary and patchy.<Cite nums={5} />
               Occupational health provision — workplace doctors and nurses who can intervene early —
               covers fewer than half of UK workers, with almost no coverage in small businesses and
               the gig economy. The government&apos;s 2023 consultation on an occupational health
@@ -383,6 +393,10 @@ export default function OccupationalDiseasePage() {
             source="Source: HSE — RIDDOR fatal injuries 2022/23. Eurostat — European Statistics on Accidents at Work."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources & Methodology */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

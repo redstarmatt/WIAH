@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // CQC rating: % Good or Outstanding, % Requires Improvement or Inadequate, 2015–2024
 const goodOutstandingData = [75.2, 74.8, 74.1, 73.5, 72.8, 72.0, 71.5, 71.9, 72.3, 72.8];
@@ -57,6 +59,12 @@ const workforceAnnotations: Annotation[] = [
   { date: new Date(2022, 5, 1), label: '2022: International recruitment expanded' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Care Quality Commission', dataset: 'State of Care Annual Report', url: 'https://www.cqc.org.uk/publications/major-report/state-care', date: '2024' },
+  { num: 2, name: 'Skills for Care', dataset: 'State of the Adult Social Care Sector and Workforce', url: 'https://www.skillsforcare.org.uk/Adult-Social-Care-Workforce-Data', date: '2024' },
+  { num: 3, name: 'LaingBuisson', dataset: 'Care Homes for Older People UK Market Report', url: 'https://www.laingbuisson.com/', date: '2024' },
+];
+
 export default function CareHomesPage() {
   return (
     <>
@@ -71,8 +79,8 @@ export default function CareHomesPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Around 410,000 people live in residential and nursing care homes in England — a figure that has remained broadly stable despite an ageing population, as the sector has lost capacity through closures faster than it has added new provision. The Care Quality Commission inspects care homes against five domains: safe, effective, caring, responsive, and well-led. As of 2024, approximately 72% of inspected homes are rated Good or Outstanding. But the remaining 27% — Requiring Improvement or Inadequate — represents over 3,500 homes and tens of thousands of residents receiving care that does not meet the standard. Financial pressure is the primary driver of poor ratings: homes operating on the thinnest margins are least able to invest in staffing, training, and physical environment.</p>
-            <p>The care home market is structurally dependent on self-funders — residents who pay their own fees, typically above the cost of care — to cross-subsidise local authority-funded places that are commissioned at below the true cost of provision. Approximately 48% of residents are self-funders in 2024, up from 44% in 2015, as the capital threshold triggering self-funding (£23,250) has not been uprated with inflation. This creates a two-tier system in which those who can pay receive a wider choice of placement, while council-funded residents are concentrated in homes operating on the narrowest margins. Workforce vacancies of 155,000 — down from a pandemic peak of 172,000 — reflect ongoing difficulty recruiting and retaining staff at current pay rates.</p>
+            <p>Around 410,000 people live in residential and nursing care homes in England — a figure that has remained broadly stable despite an ageing population, as the sector has lost capacity through closures faster than it has added new provision.<Cite nums={[1, 3]} /> The Care Quality Commission inspects care homes against five domains: safe, effective, caring, responsive, and well-led. As of 2024, approximately 72% of inspected homes are rated Good or Outstanding.<Cite nums={1} /> But the remaining 27% — Requiring Improvement or Inadequate — represents over 3,500 homes and tens of thousands of residents receiving care that does not meet the standard.<Cite nums={1} /> Financial pressure is the primary driver of poor ratings: homes operating on the thinnest margins are least able to invest in staffing, training, and physical environment.</p>
+            <p>The care home market is structurally dependent on self-funders — residents who pay their own fees, typically above the cost of care — to cross-subsidise local authority-funded places that are commissioned at below the true cost of provision.<Cite nums={3} /> Approximately 48% of residents are self-funders in 2024, up from 44% in 2015, as the capital threshold triggering self-funding (£23,250) has not been uprated with inflation.<Cite nums={3} /> This creates a two-tier system in which those who can pay receive a wider choice of placement, while council-funded residents are concentrated in homes operating on the narrowest margins. Workforce vacancies of 155,000 — down from a pandemic peak of 172,000 — reflect ongoing difficulty recruiting and retaining staff at current pay rates.<Cite nums={2} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -151,6 +159,10 @@ export default function CareHomesPage() {
             source="Source: CQC — State of Care 2024. Skills for Care — State of the Adult Social Care Workforce 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

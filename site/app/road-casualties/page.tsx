@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Department for Transport', dataset: 'Reported Road Casualties Great Britain — Annual Report', url: 'https://www.gov.uk/government/statistics/reported-road-casualties-great-britain-annual-report-2023', date: '2024' },
+  { num: 2, name: 'DfT', dataset: 'CRASH recording system transition impact', url: 'https://www.gov.uk/government/statistics/reported-road-casualties-great-britain-annual-report-2023', date: '2024', note: 'Reclassified some slight injuries as serious from 2016' },
+  { num: 3, name: 'Transport for London', dataset: 'Cycle Safety Action Plan monitoring', url: 'https://tfl.gov.uk/', date: '2024', note: '65% reduction in casualties on segregated lanes' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -159,13 +167,13 @@ export default function RoadCasualtiesPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              For decades, Britain was a world leader in road safety. Deaths fell from over 3,400 a year in 2000 to under 1,800 by 2010, driven by seatbelt enforcement, drink-driving crackdowns, and vehicle engineering improvements. Then progress stalled. Since 2010 the annual death toll has hovered stubbornly between 1,700 and 1,900 — and after a brief lockdown dip in 2020, it climbed back above 1,700 within two years. The UK still has among the safest roads in Europe in per-capita terms, but the long downward trend that defined the 2000s has flatlined, and in some categories the picture is actively deteriorating.
+              For decades, Britain was a world leader in road safety. Deaths fell from over 3,400 a year in 2000 to under 1,800 by 2010, driven by seatbelt enforcement, drink-driving crackdowns, and vehicle engineering improvements. Then progress stalled. Since 2010 the annual death toll has hovered stubbornly between 1,700 and 1,900 — and after a brief lockdown dip in 2020, it climbed back above 1,700 within two years.<Cite nums={1} /> The UK still has among the safest roads in Europe in per-capita terms, but the long downward trend that defined the 2000s has flatlined, and in some categories the picture is actively deteriorating.
             </p>
             <p>
-              Serious injuries tell an even starker story. The official count rose from around 22,000 in 2013 to over 29,000 by 2023 — a 34% increase. Part of this reflects a change in how police forces record injury severity (the move to the CRASH system from 2016 onward reclassified many "slight" injuries as "serious"), but even adjusting for that, trauma consultants report a real increase in the complexity and volume of road collision cases. The rise in SUV ownership, which correlates with more severe pedestrian injuries, the growth of delivery driving and gig-economy time pressure on the roads, and the persistent problem of smartphone distraction all contribute to a road environment that has become harder to make safe through engineering alone.
+              Serious injuries tell an even starker story. The official count rose from around 22,000 in 2013 to over 29,000 by 2023 — a 34% increase.<Cite nums={1} /> Part of this reflects a change in how police forces record injury severity (the move to the CRASH system from 2016 onward reclassified many "slight" injuries as "serious")<Cite nums={2} />, but even adjusting for that, trauma consultants report a real increase in the complexity and volume of road collision cases. The rise in SUV ownership, which correlates with more severe pedestrian injuries, the growth of delivery driving and gig-economy time pressure on the roads, and the persistent problem of smartphone distraction all contribute to a road environment that has become harder to make safe through engineering alone.
             </p>
             <p>
-              One area of genuine progress is cyclist safety. Despite a surge in cycling during lockdown — which briefly pushed cyclist deaths up sharply — the longer-term trend is downward. Cyclist deaths fell from over 100 a year through most of the 2010s to 78 in 2024, the lowest on record. Protected cycle infrastructure in London, Manchester, and other cities is working: where physical separation exists, deaths and serious injuries fall dramatically. The government has set a target of zero road deaths and serious injuries by 2040 under its road safety framework, but current trends suggest that target is entirely unachievable without a step change in enforcement, infrastructure investment, and vehicle regulation. Roads remain the leading cause of death for people aged 15 to 29 in the UK.
+              One area of genuine progress is cyclist safety. Despite a surge in cycling during lockdown — which briefly pushed cyclist deaths up sharply — the longer-term trend is downward. Cyclist deaths fell from over 100 a year through most of the 2010s to 78 in 2024, the lowest on record.<Cite nums={1} /> Protected cycle infrastructure in London, Manchester, and other cities is working: where physical separation exists, deaths and serious injuries fall dramatically.<Cite nums={3} /> The government has set a target of zero road deaths and serious injuries by 2040 under its road safety framework, but current trends suggest that target is entirely unachievable without a step change in enforcement, infrastructure investment, and vehicle regulation. Roads remain the leading cause of death for people aged 15 to 29 in the UK.
             </p>
           </div>
         </section>
@@ -332,6 +340,10 @@ export default function RoadCasualtiesPage() {
             source="Source: DfT — Reported Road Casualties Great Britain, 2024. Transport for London — Cycle Safety Action Plan monitoring, 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

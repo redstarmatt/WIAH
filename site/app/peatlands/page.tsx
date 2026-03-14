@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'IUCN UK Peatland Programme', dataset: 'UK Peatland Assessment', url: 'https://www.iucn-uk-peatlandprogramme.org/', date: '2024', note: '3.2 billion tonnes of carbon stored; 80% degraded' },
+  { num: 2, name: 'DESNZ', dataset: 'UK Greenhouse Gas Inventory (LULUCF)', date: '2024', note: '23 MtCO2e per year from degraded peatland' },
+  { num: 3, name: 'NatureScot', dataset: 'Peatland ACTION Programme Annual Report', date: '2024' },
+];
 
 interface PeatlandsData {
   national: {
@@ -67,8 +75,8 @@ export default function PeatlandsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Peatlands are the UK's most important carbon store. Formed over thousands of years by the partial decomposition of sphagnum moss and other plants in waterlogged conditions, peat accumulates at roughly one millimetre per year and can be many metres deep. The UK holds approximately 3 million hectares of peatland, covering around 12% of the land area — found predominantly in the Scottish Highlands, Northern and Southern Uplands, the Pennines, Dartmoor, the Somerset Levels, and the Flow Country of Caithness and Sutherland. The IUCN UK Peatland Programme estimates that this peat stores 3.2 billion tonnes of carbon — more than all the forests in the UK, France, and Germany combined. Critically, a healthy, wet peatland is a carbon sink, absorbing CO2 from the atmosphere as new plant material forms. A damaged, drained, or burned peatland reverses this process and becomes a carbon source, releasing millennia of stored carbon into the atmosphere. The UK's 3.2 billion tonne carbon store represents over 230 years of current UK total greenhouse gas emissions — making its protection one of the most important single actions available for UK climate policy.</p>
-            <p>The scale of peatland degradation in the UK is extraordinary. IUCN UK estimates that 80% of UK peatland is in a degraded condition, primarily because of drainage for agriculture, forestry planting from the 1950s to 1980s, atmospheric pollution deposition, and managed burning for grouse shooting. Drainage ditch networks — covering hundreds of thousands of kilometres — lower the water table, allowing the peat to dry out, oxidise, and release CO2. Agricultural conversion has affected significant areas, particularly in lowland England where the East Anglian Fens — once one of Europe's largest wetland complexes — were drained in the 17th century and are now intensively farmed. The Fens alone are estimated to emit 4–5 million tonnes of CO2 per year from peat oxidation. Managed burning on grouse moors — legal in England despite longstanding scientific calls for a ban — damages the sphagnum moss layer that holds peat together, accelerating erosion and carbon loss. The DESNZ national GHG inventory records peatland degradation as contributing approximately 23 million tonnes of CO2-equivalent per year, making it a larger source than the UK's entire aviation sector when measured by direct CO2 alone.</p>
+            <p>Peatlands are the UK's most important carbon store. Formed over thousands of years by the partial decomposition of sphagnum moss and other plants in waterlogged conditions, peat accumulates at roughly one millimetre per year and can be many metres deep. The UK holds approximately 3 million hectares of peatland, covering around 12% of the land area — found predominantly in the Scottish Highlands, Northern and Southern Uplands, the Pennines, Dartmoor, the Somerset Levels, and the Flow Country of Caithness and Sutherland. The IUCN UK Peatland Programme estimates that this peat stores 3.2 billion tonnes of carbon — more than all the forests in the UK, France, and Germany combined.<Cite nums={1} /> Critically, a healthy, wet peatland is a carbon sink, absorbing CO2 from the atmosphere as new plant material forms. A damaged, drained, or burned peatland reverses this process and becomes a carbon source, releasing millennia of stored carbon into the atmosphere. The UK's 3.2 billion tonne carbon store represents over 230 years of current UK total greenhouse gas emissions — making its protection one of the most important single actions available for UK climate policy.</p>
+            <p>The scale of peatland degradation in the UK is extraordinary. IUCN UK estimates that 80% of UK peatland is in a degraded condition, primarily because of drainage for agriculture, forestry planting from the 1950s to 1980s, atmospheric pollution deposition, and managed burning for grouse shooting.<Cite nums={1} /> Drainage ditch networks — covering hundreds of thousands of kilometres — lower the water table, allowing the peat to dry out, oxidise, and release CO2. Agricultural conversion has affected significant areas, particularly in lowland England where the East Anglian Fens — once one of Europe's largest wetland complexes — were drained in the 17th century and are now intensively farmed. The Fens alone are estimated to emit 4–5 million tonnes of CO2 per year from peat oxidation. Managed burning on grouse moors — legal in England despite longstanding scientific calls for a ban — damages the sphagnum moss layer that holds peat together, accelerating erosion and carbon loss. The DESNZ national GHG inventory records peatland degradation as contributing approximately 23 million tonnes of CO2-equivalent per year, making it a larger source than the UK's entire aviation sector when measured by direct CO2 alone.<Cite nums={2} /></p>
             </div>
         </section>
 
@@ -147,6 +155,10 @@ export default function PeatlandsPage() {
             source="Source: UNESCO World Heritage Committee 2023; NatureScot — Peatland ACTION programme annual report."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <ScrollReveal>
           <section className="mt-8 pt-12 border-t border-wiah-border">

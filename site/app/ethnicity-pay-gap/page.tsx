@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Overall ethnicity pay gap (%), 2012–2023 — ONS ASHE
 // Median hourly pay: ethnic minority workers vs White British workers
@@ -47,6 +49,11 @@ const gapAnnotations: Annotation[] = [
   { date: new Date(2017, 0, 1), label: '2017: Race Disparity Audit published' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Annual Survey of Hours and Earnings — ethnicity pay gaps', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/articles/ethnicitypaygapsingreatbritain/2012to2022', date: '2023' },
+  { num: 2, name: 'EHRC', dataset: 'Pay gap reporting tracker', date: '2023' },
+];
+
 export default function EthnicityPayGapPage() {
   return (
     <>
@@ -61,8 +68,8 @@ export default function EthnicityPayGapPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The ethnicity pay gap — the difference in median hourly pay between ethnic minority workers and White British workers — stood at around 9% in 2023, down from 11.8% in 2012. But aggregate figures mask dramatic variation between groups. Indian workers have a positive pay premium of around 8% above the White British median, driven by high representation in financial services and medicine. Pakistani and Bangladeshi workers face a gap of around 20%, reflecting industrial segregation, lower qualification levels (historically), and discrimination. Black African and Caribbean workers have seen the gap narrow from 8% to around 4–5% over the same period, though they remain significantly underrepresented in senior roles.</p>
-            <p>Unlike the gender pay gap, mandatory ethnicity pay gap reporting has not been introduced for UK employers despite repeated consultation and commitment. The government's consultation on mandatory reporting (2018–2019) concluded without legislation. Without mandatory disclosure, the picture is patchy: fewer than 200 companies voluntarily report ethnicity pay data, out of thousands that meet the proposed threshold. The Sewell Commission's 2021 report controversially played down structural racism as a driver of disparities, attributing gaps primarily to other socioeconomic factors. The Ethnicity Pay Gap Campaign and the TUC argue that without mandatory reporting, employer accountability is impossible and progress will be slow.</p>
+            <p>The ethnicity pay gap — the difference in median hourly pay between ethnic minority workers and White British workers — stood at around 9% in 2023, down from 11.8% in 2012.<Cite nums={1} /> But aggregate figures mask dramatic variation between groups. Indian workers have a positive pay premium of around 8% above the White British median, driven by high representation in financial services and medicine.<Cite nums={1} /> Pakistani and Bangladeshi workers face a gap of around 20%, reflecting industrial segregation, lower qualification levels (historically), and discrimination. Black African and Caribbean workers have seen the gap narrow from 8% to around 4–5% over the same period<Cite nums={1} />, though they remain significantly underrepresented in senior roles.</p>
+            <p>Unlike the gender pay gap, mandatory ethnicity pay gap reporting has not been introduced for UK employers despite repeated consultation and commitment. The government's consultation on mandatory reporting (2018–2019) concluded without legislation. Without mandatory disclosure, the picture is patchy: fewer than 200 companies voluntarily report ethnicity pay data<Cite nums={2} />, out of thousands that meet the proposed threshold. The Sewell Commission's 2021 report controversially played down structural racism as a driver of disparities, attributing gaps primarily to other socioeconomic factors. The Ethnicity Pay Gap Campaign and the TUC argue that without mandatory reporting, employer accountability is impossible and progress will be slow.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -140,6 +147,10 @@ export default function EthnicityPayGapPage() {
             source="Source: ONS — Ethnicity pay gaps in Great Britain 2023. Parker Review — FTSE 100 and 250 Board Diversity 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

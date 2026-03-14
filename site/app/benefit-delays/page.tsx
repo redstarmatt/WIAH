@@ -8,6 +8,8 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -35,6 +37,14 @@ interface TopicData {
 function yearToDate(y: number): Date {
   return new Date(y, 5, 1);
 }
+
+// ── References ───────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DWP', dataset: 'Fraud and error in the benefit system', url: 'https://www.gov.uk/government/collections/fraud-and-error-in-the-benefit-system', date: '2024-25' },
+  { num: 2, name: 'DWP', dataset: 'Universal Credit statistics', url: 'https://www.gov.uk/government/collections/universal-credit-statistics', date: '2024' },
+  { num: 3, name: 'DWP', dataset: 'Annual report and accounts 2024-25', url: 'https://www.gov.uk/government/publications/dwp-annual-report-and-accounts-2024-to-2025', date: '2025' },
+];
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -194,6 +204,10 @@ export default function TopicPage() {
             source="Source: DWP — Annual report and accounts, 2024-25."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

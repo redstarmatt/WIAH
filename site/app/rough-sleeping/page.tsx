@@ -5,6 +5,14 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DLUHC', dataset: 'Rough Sleeping Snapshot in England', url: 'https://www.gov.uk/government/collections/homelessness-statistics', date: '2024' },
+  { num: 2, name: 'DLUHC', dataset: 'Statutory Homelessness — Temporary Accommodation', url: 'https://www.gov.uk/government/collections/homelessness-statistics', date: '2024', note: '112,600 households including 145,000 children; £2bn+ annual cost' },
+  { num: 3, name: 'National Audit Office', dataset: 'Homelessness Prevention Funding', url: 'https://www.nao.org.uk/', date: '2024', note: 'Prevention budgets cut ~50% in real terms since 2010' },
+];
 
 export default function RoughSleepingPage() {
   // Rough sleeping count (single night), England, 2010–2024
@@ -121,12 +129,16 @@ export default function RoughSleepingPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">Behind the numbers</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>The official rough sleeping count is a single night snapshot taken each autumn. Local authorities count or estimate the number of people sleeping rough in their area. The true scale is much larger — people cycle in and out of rough sleeping, and many sleep in cars, tents, or other non-street locations that are excluded from the count.</p>
-              <p>Rough sleeping rose steadily through the 2010s as local authority homelessness prevention budgets were cut by around 50% in real terms. The 2020 "Everyone In" emergency programme — which housed almost all rough sleepers at the start of the COVID pandemic — demonstrated that rapid action can work when political will exists. Numbers fell sharply. But the structural causes were never addressed, and rough sleeping has since climbed back toward pre-pandemic peaks.</p>
-              <p>Households in temporary accommodation tell a different story of a system under sustained pressure: 112,600 households — including 145,000 children — are currently placed in temporary accommodation by their council, at an annual cost to the public purse exceeding £2 billion.</p>
+              <p>The official rough sleeping count is a single night snapshot taken each autumn. Local authorities count or estimate the number of people sleeping rough in their area.<Cite nums={1} /> The true scale is much larger — people cycle in and out of rough sleeping, and many sleep in cars, tents, or other non-street locations that are excluded from the count.</p>
+              <p>Rough sleeping rose steadily through the 2010s as local authority homelessness prevention budgets were cut by around 50% in real terms.<Cite nums={3} /> The 2020 "Everyone In" emergency programme — which housed almost all rough sleepers at the start of the COVID pandemic — demonstrated that rapid action can work when political will exists. Numbers fell sharply. But the structural causes were never addressed, and rough sleeping has since climbed back toward pre-pandemic peaks.<Cite nums={1} /></p>
+              <p>Households in temporary accommodation tell a different story of a system under sustained pressure: 112,600 households — including 145,000 children — are currently placed in temporary accommodation by their council, at an annual cost to the public purse exceeding £2 billion.<Cite nums={2} /></p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

@@ -5,6 +5,14 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'The Pensions Regulator', dataset: 'Automatic Enrolment Declaration of Compliance Report', url: 'https://www.thepensionsregulator.gov.uk/en/document-library/research-and-analysis/automatic-enrolment-declaration-of-compliance-report', date: 'Jan 2024' },
+  { num: 2, name: 'ONS / Government Statistical Service', dataset: 'Pension Auto-Enrolment Statistics', date: '2024', note: '88% of eligible workers enrolled; minimum contributions remain below adequate level' },
+];
+
 export default function PensionAutoEnrolmentPage() {
 
   const sparkData = [55,65,72,78,83,86,88];
@@ -107,11 +115,15 @@ export default function PensionAutoEnrolmentPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on Pension Auto-Enrolment</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Pension Auto-Enrolment in the United Kingdom: the numbers show a complex picture. 88% of eligible workers are now enrolled in a workplace pension — up from 55% in 2012. Auto-enrolment is one of the most successful British social policy reforms of recent decades, though minimum contribution rates remain too low for most to retire comfortably. The headline figure — 88 for workers enrolled in workplace pension (%) — up from 55% in 2012 · auto-enrolment transformative.</p>
-              <p>The secondary metric tells an equally important story: workers below adequate savings threshold (%) stands at 37, where down from 52% in 2012 · but minimum contributions still too low. Policy responses have been mixed, and the structural drivers of these trends require sustained attention beyond short-term interventions.</p>
+              <p>Pension Auto-Enrolment in the United Kingdom: the numbers show a complex picture. 88% of eligible workers are now enrolled in a workplace pension — up from 55% in 2012.<Cite nums={1} /> Auto-enrolment is one of the most successful British social policy reforms of recent decades, though minimum contribution rates remain too low for most to retire comfortably. The headline figure — 88 for workers enrolled in workplace pension (%) — up from 55% in 2012 · auto-enrolment transformative.</p>
+              <p>The secondary metric tells an equally important story: workers below adequate savings threshold (%) stands at 37, where down from 52% in 2012 · but minimum contributions still too low.<Cite nums={2} /> Policy responses have been mixed, and the structural drivers of these trends require sustained attention beyond short-term interventions.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

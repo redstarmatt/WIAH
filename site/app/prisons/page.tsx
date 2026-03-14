@@ -8,6 +8,17 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ministry of Justice', dataset: 'Prison Population Statistics', url: 'https://www.gov.uk/government/collections/prison-population-statistics', date: '2024' },
+  { num: 2, name: 'Ministry of Justice', dataset: 'Crown Court Statistics', url: 'https://www.gov.uk/government/statistics/criminal-court-statistics-quarterly', date: '2024' },
+  { num: 3, name: 'Ministry of Justice', dataset: 'End of Custody Supervised Licence Statistics', date: '2024' },
+  { num: 4, name: 'Ministry of Justice', dataset: 'Proven Reoffending Statistics', url: 'https://www.gov.uk/government/statistics/proven-reoffending-statistics-quarterly-bulletin-england-and-wales', date: '2024' },
+  { num: 5, name: 'Howard League for Penal Reform', dataset: 'Reoffending Analysis', url: 'https://howardleague.org/', date: '2024' },
+  { num: 6, name: 'Institute for Fiscal Studies', dataset: 'Short Custodial Sentences and Reoffending Outcomes', date: '2023' },
+];
 
 interface PrisonsData {
   national: {
@@ -116,23 +127,23 @@ export default function PrisonsPage() {
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
               The prison population of England and Wales reached 88,000 in 2024 — the highest ever
-              recorded, exceeding operational capacity of roughly 85,400 certified places. It had dipped to
+              recorded, exceeding operational capacity of roughly 85,400 certified places.<Cite nums={1} /> It had dipped to
               78,000 during COVID in 2020 before surging on the back of tougher sentencing and a Crown Court
               backlog that has pushed remand numbers to 15,000, or 19% of all inmates — double the 2019
-              figure. Defendants now wait two years or more for trial, the longest court delays on record. In
+              figure.<Cite nums={2} /> Defendants now wait two years or more for trial, the longest court delays on record. In
               September 2024, the government introduced an emergency early release scheme, freeing 5,500
               prisoners after serving 40% rather than 50% of their sentences — a measure last used in 1987
-              and 2007.
+              and 2007.<Cite nums={3} />
             </p>
             <p>
               The system struggles to reduce reoffending. The proven reoffending rate within 12 months
               stands at 26% overall, but 38% for those serving sentences of under 12 months — and
-              two-thirds of men reoffend within two years, according to the Howard League. The Ministry of
-              Justice estimates the total cost of reoffending at £18 billion per year. An IFS study
+              two-thirds of men reoffend within two years, according to the Howard League.<Cite nums={[4, 5]} /> The Ministry of
+              Justice estimates the total cost of reoffending at £18 billion per year.<Cite nums={4} /> An IFS study
               found that immediate custodial sentences of under 12 months produce no better reoffending
-              outcomes than community sentences. Intensive Supervision Courts were piloted in 2024 as an
+              outcomes than community sentences.<Cite nums={6} /> Intensive Supervision Courts were piloted in 2024 as an
               alternative for prolific offenders. Women make up 4% of the prison population — 3,800
-              inmates — with 77% serving sentences of under 12 months, often for non-violent offences.
+              inmates — with 77% serving sentences of under 12 months, often for non-violent offences.<Cite nums={1} />
             </p>
             </div>
         </section>
@@ -242,6 +253,10 @@ export default function PrisonsPage() {
             source="Source: HMPPS — Prison Population Bulletin 2024; MOJ — Proven Reoffending Statistics 2022."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <ScrollReveal>
           <div className="border-t border-wiah-border pt-8">

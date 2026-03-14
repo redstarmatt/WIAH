@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'WRAP', dataset: 'Textiles Market Situation Report 2024', url: 'https://wrap.org.uk/resources/report/textiles-market-situation-report-2024', date: '2024' },
+  { num: 2, name: 'Environmental Audit Committee', dataset: 'Fixing Fashion (2019)', url: 'https://publications.parliament.uk/pa/cm201719/cmselect/cmenvaud/1952/1952.pdf', date: '2019' },
+  { num: 3, name: 'Defra', dataset: 'UK Statistics on Waste', url: 'https://www.gov.uk/government/statistics/uk-waste-data', date: '2024' },
+  { num: 4, name: 'Refashion (France)', dataset: 'EPR for Textiles — annual report', url: 'https://refashion.fr/en', date: '2024', note: 'France introduced EPR for textiles in 2007' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -168,23 +177,23 @@ export default function TextileWastePage() {
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
               Britain buys more clothing per person than any other European country — an estimated 3.9 billion
-              items in 2024, or roughly 57 garments for every man, woman, and child. The sheer volume has
+              items in 2024, or roughly 57 garments for every man, woman, and child.<Cite nums={1} /> The sheer volume has
               overwhelmed the systems designed to handle what gets thrown away. Charity shops, once the backbone
               of textile reuse, report that the quality of donated clothing has fallen so sharply that an
               increasing proportion goes straight to rag merchants or incinerators. The average garment is now
               worn just seven times before being discarded, down from an estimated 20 wears two decades ago.
               WRAP estimates that extending the active life of clothing by just nine months would reduce carbon,
-              water, and waste footprints by 20-30%.
+              water, and waste footprints by 20-30%.<Cite nums={1} />
             </p>
             <p>
               The disposal picture tells its own story. In 2010, 62% of textile waste went to landfill. By 2024,
-              that had fallen to 22% — but not because of recycling. Incineration, euphemistically rebranded as
+              that had fallen to 22% — but not because of recycling.<Cite nums={3} /> Incineration, euphemistically rebranded as
               &ldquo;energy from waste,&rdquo; now accounts for 52% of textile disposal, up from 18% in 2010. The
               UK exports another 26% — much of it shipped to countries in West Africa and South Asia where it
               overwhelms local markets and, increasingly, ends up in open dumps and waterways. The 2019
               Environmental Audit Committee report &ldquo;Fixing Fashion&rdquo; called the situation &ldquo;a
               social and environmental emergency&rdquo; and recommended an Extended Producer Responsibility scheme
-              for textiles. Six years on, the scheme remains under consultation. France introduced one in 2007.
+              for textiles.<Cite nums={2} /> Six years on, the scheme remains under consultation. France introduced one in 2007.<Cite nums={4} />
             </p>
             <p>
               The structural driver is economics. A fast fashion garment can retail for less than a sandwich. At
@@ -323,6 +332,10 @@ export default function TextileWastePage() {
             source="Source: Refashion (French EPR body), annual report 2024. WRAP — policy impact modelling, 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources & Methodology */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

@@ -7,7 +7,16 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Home Office', dataset: 'Immigration Statistics — Detention', url: 'https://www.gov.uk/government/statistics/immigration-statistics-year-ending-december-2023', date: '2024', note: '23,900 people entered detention in 2023; median stay 28 days' },
+  { num: 2, name: 'Home Office', dataset: 'Immigration Statistics — Detention Outcomes', url: 'https://www.gov.uk/government/statistics/immigration-statistics-year-ending-december-2023', date: '2024', note: '60% of detainees released without removal' },
+  { num: 3, name: 'Home Office', dataset: 'Windrush Lessons Learned Review', date: '2020', note: 'Systematic failures in assessing lawful status' },
+  { num: 4, name: 'Home Office', dataset: 'Shaw Review of Immigration Detention', date: '2016', note: 'Detention causes significant psychological harm' },
+];
 
 export default function ImmigrationDetentionPage() {
   // Detention entries per year 2010–2023 (thousands)
@@ -68,9 +77,9 @@ export default function ImmigrationDetentionPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK is one of very few countries in the world with no statutory time limit on immigration detention. People can be — and are — held for months or years without charge or trial while the Home Office decides whether to remove them. Around 23,900 people entered detention in 2023, recovering towards pre-pandemic levels. The majority are held in Immigration Removal Centres (IRCs), with the remainder in prisons under immigration powers. Men vastly outnumber women in detention; the largest nationalities detained include Albanian, Indian, Bangladeshi and Vietnamese nationals.</p>
-            <p>The most striking — and least-discussed — figure is the outcome: approximately 60% of people detained are ultimately released back into the community rather than removed. They are detained, in many cases for extended periods, and then let go. This reflects both the complexity of cases (many have strong human rights claims or lack valid travel documents) and the operational failures of the removal system. The Windrush scandal of 2018 — in which British citizens with rights of abode were wrongly detained and in some cases deported — exposed systematic failures in how the Home Office assesses lawful status.</p>
-            <p>The median length of detention was around 28 days in 2023, but averages mask extreme cases: several hundred people each year are held for more than a year. The Shaw Review (2016) and subsequent inspectorate reports have repeatedly found that detention causes significant psychological harm, particularly for people who have experienced trauma or torture. The UK's position — that indefinite detention is legally permissible subject to Hardial Singh principles — is at odds with international human rights standards and with the practice of most comparable countries.</p>
+            <p>The UK is one of very few countries in the world with no statutory time limit on immigration detention. People can be — and are — held for months or years without charge or trial while the Home Office decides whether to remove them. Around 23,900 people entered detention in 2023, recovering towards pre-pandemic levels.<Cite nums={1} /> The majority are held in Immigration Removal Centres (IRCs), with the remainder in prisons under immigration powers. Men vastly outnumber women in detention; the largest nationalities detained include Albanian, Indian, Bangladeshi and Vietnamese nationals.</p>
+            <p>The most striking — and least-discussed — figure is the outcome: approximately 60% of people detained are ultimately released back into the community rather than removed.<Cite nums={2} /> They are detained, in many cases for extended periods, and then let go. This reflects both the complexity of cases (many have strong human rights claims or lack valid travel documents) and the operational failures of the removal system. The Windrush scandal of 2018 — in which British citizens with rights of abode were wrongly detained and in some cases deported — exposed systematic failures in how the Home Office assesses lawful status.<Cite nums={3} /></p>
+            <p>The median length of detention was around 28 days in 2023<Cite nums={1} />, but averages mask extreme cases: several hundred people each year are held for more than a year. The Shaw Review (2016) and subsequent inspectorate reports have repeatedly found that detention causes significant psychological harm<Cite nums={4} />, particularly for people who have experienced trauma or torture. The UK's position — that indefinite detention is legally permissible subject to Hardial Singh principles — is at odds with international human rights standards and with the practice of most comparable countries.</p>
           </div>
         </section>
 
@@ -155,6 +164,10 @@ export default function ImmigrationDetentionPage() {
             source="Source: Home Office — Immigration Enforcement data 2023; HMIP — IRC Inspections 2022–23."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

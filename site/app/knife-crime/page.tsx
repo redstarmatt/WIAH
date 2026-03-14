@@ -5,6 +5,14 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Home Office', dataset: 'Crime Outcomes in England and Wales 2024', url: 'https://www.gov.uk/government/statistics/crime-outcomes-in-england-and-wales-statistics', date: '2024' },
+  { num: 2, name: 'NHS Digital', dataset: 'Hospital Episode Statistics — Admitted Patient Care 2024', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/hospital-admitted-patient-care-activity', date: '2024' },
+  { num: 3, name: 'Home Office', dataset: 'Violence Reduction Units Evaluation', url: 'https://www.gov.uk/government/publications/violence-reduction-units', date: '2023' },
+];
 
 export default function KnifeCrimePage() {
   // Knife crime offences recorded by police, England & Wales, 2014–2024
@@ -121,12 +129,16 @@ export default function KnifeCrimePage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">Understanding the trend</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Knife crime offences recorded by the police have risen sharply since 2014, reaching a record 50,489 in 2023. Part of this increase reflects improved police recording practices introduced after a series of high-profile cases — but the NHS hospital admissions data, which is independent of police recording, has also risen substantially, suggesting the increase in serious violence is real.</p>
+              <p>Knife crime offences recorded by the police have risen sharply since 2014, reaching a record 50,489 in 2023.<Cite nums={1} /> Part of this increase reflects improved police recording practices introduced after a series of high-profile cases — but the NHS hospital admissions data, which is independent of police recording, has also risen substantially, suggesting the increase in serious violence is real.<Cite nums={2} /></p>
               <p>Young men aged 18–24 are both the most likely victims and perpetrators. London and other major metropolitan areas account for a disproportionate share of incidents, though smaller towns have seen faster percentage growth. The geography of knife crime closely tracks areas of concentrated deprivation, gang activity, and drug market competition.</p>
-              <p>Violence Reduction Units — modelled on Glasgow's public health approach — were launched in 18 police force areas in 2019. Early evidence suggests they reduce serious violence in the areas they target, but funding has been uncertain and coverage patchy. The overall national trend has not yet reversed.</p>
+              <p>Violence Reduction Units — modelled on Glasgow's public health approach — were launched in 18 police force areas in 2019.<Cite nums={3} /> Early evidence suggests they reduce serious violence in the areas they target, but funding has been uncertain and coverage patchy. The overall national trend has not yet reversed.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

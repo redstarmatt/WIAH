@@ -8,6 +8,13 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Business Demography — UK Business Survival Rates', url: 'https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/datasets/businessdemographyreferencetable', date: '2025', note: '3-year survival rate 58%, down from 63% in 2017; hospitality 5-year survival 32%' },
+  { num: 2, name: 'British Business Bank', dataset: 'Small Business Finance Markets Report', url: 'https://www.british-business-bank.co.uk/research/small-business-finance-markets', date: '2025', note: '150 active UK unicorn companies; online retail 58% 5-year survival vs 40% physical retail' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -194,6 +201,10 @@ export default function TopicPage() {
             source="Source: ONS Business demography, 2025. British Business Bank, 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

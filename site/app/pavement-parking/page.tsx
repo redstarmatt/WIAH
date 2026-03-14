@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Living Streets', dataset: 'Pedestrian Pound Report', date: '2024', note: 'Estimated 28 million annual pavement parking incidents in England' },
+  { num: 2, name: 'Department for Transport', dataset: 'Pavement Parking Evidence Base', url: 'https://www.gov.uk/government/consultations/managing-pavement-parking', date: '2024' },
+  { num: 3, name: 'Transport (Scotland) Act 2019', dataset: 'National pavement parking ban provisions', date: '2023', note: 'Fixed penalty notices of £100' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -126,10 +134,10 @@ export default function PavementParkingPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Pavement parking is illegal in London under the Greater London Council (General Powers) Act 1974. Across the rest of England, it exists in a grey zone: not illegal by default, but enforceable where councils have specific Traffic Regulation Orders. The result is a postcode lottery in which the same behaviour is a fineable offence in one borough and entirely routine in the next.
+              Pavement parking is illegal in London under the Greater London Council (General Powers) Act 1974. Across the rest of England, it exists in a grey zone: not illegal by default, but enforceable where councils have specific Traffic Regulation Orders.<Cite nums={2} /> The result is a postcode lottery in which the same behaviour is a fineable offence in one borough and entirely routine in the next.
             </p>
             <p>
-              The impact falls disproportionately on disabled people, parents with prams and pushchairs, elderly people with limited mobility, and blind and visually impaired pedestrians. A car parked half on the pavement can reduce usable pavement width below 1.5 metres — the minimum recommended for a wheelchair to pass. Scotland's Transport (Scotland) Act 2019 introduced a national ban enforced through fixed penalty notices. England's DfT ran a consultation in 2020–21 but has yet to legislate nationally.
+              The impact falls disproportionately on disabled people, parents with prams and pushchairs, elderly people with limited mobility, and blind and visually impaired pedestrians.<Cite nums={1} /> A car parked half on the pavement can reduce usable pavement width below 1.5 metres — the minimum recommended for a wheelchair to pass. Scotland's Transport (Scotland) Act 2019 introduced a national ban enforced through fixed penalty notices.<Cite nums={3} /> England's DfT ran a consultation in 2020–21 but has yet to legislate nationally.<Cite nums={2} />
             </p>
           </div>
         </section>
@@ -210,6 +218,10 @@ export default function PavementParkingPage() {
             source="Source: Living Streets — Pedestrian Pound Report, 2024. DfT — Pavement Parking Evidence Base, 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

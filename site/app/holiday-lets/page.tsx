@@ -8,6 +8,8 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -22,6 +24,13 @@ interface HolidayLetsData {
 function yearToDate(y: number): Date {
   return new Date(y, 6, 1)
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS / Inside Airbnb', dataset: 'Short-Term Let Listings in England', date: '2022' },
+  { num: 2, name: 'Affordable Housing Commission', dataset: 'Short-Term Lets as Percentage of Housing Stock', date: '2022' },
+  { num: 3, name: 'ONS', dataset: 'House Price Statistics — Affordability Ratios', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/housing/bulletins/housingaffordabilityinenglandandwales/previousReleases', date: '2022' },
+  { num: 4, name: 'UK Parliament', dataset: 'Levelling Up and Regeneration Act 2023 — Short-Term Lets Provisions', url: 'https://www.legislation.gov.uk/ukpga/2023/55', date: '2023' },
+];
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -73,8 +82,8 @@ export default function HolidayLetsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The number of short-term let listings in England grew from approximately 70,000 in 2015 to 257,000 by 2022 — a near-fourfold increase concentrated in coastal and rural tourist destinations. In Cornwall, 36% of all housing stock is now listed on short-term let platforms at any point in the year; the Lake District sits at 29%, North Devon at 24%. Landlords converting long-term tenancies to holiday lets typically earn two to three times more per year without the regulatory obligations of an assured shorthold tenancy, an economic calculation that overwhelms local housing supply wherever tourist demand is strong. Cornwall&rsquo;s house price-to-earnings ratio rose from 9.1 in 2015 to 15.1 in 2022, making it one of the least affordable places in England relative to local incomes. NHS trusts and schools in tourist areas report persistent recruitment failure because housing is neither available nor affordable for key workers on public-sector salaries.</p>
-            <p>The policy response has been cautious. The Levelling Up and Regeneration Act 2023 created mandatory registration powers for local authorities and a new C5 use class for short-term lets, allowing councils to require planning permission for conversions. Council tax reform removed the 100% business rate relief for properties let fewer than 70 days per year. But authorities cannot yet cap numbers — unlike Amsterdam, which reduced Airbnb listings from 22,000 to 7,800 through a 30-night annual cap — and registration alone will not meaningfully reduce displacement. The burden falls on communities that generate a tourist economy partly through the quality of their public services, which are then undermined by the housing consequences of the tourism they sustain.</p>
+            <p>The number of short-term let listings in England grew from approximately 70,000 in 2015 to 257,000 by 2022 — a near-fourfold increase concentrated in coastal and rural tourist destinations.<Cite nums={1} /> In Cornwall, 36% of all housing stock is now listed on short-term let platforms at any point in the year; the Lake District sits at 29%, North Devon at 24%.<Cite nums={2} /> Landlords converting long-term tenancies to holiday lets typically earn two to three times more per year without the regulatory obligations of an assured shorthold tenancy, an economic calculation that overwhelms local housing supply wherever tourist demand is strong. Cornwall&rsquo;s house price-to-earnings ratio rose from 9.1 in 2015 to 15.1 in 2022, making it one of the least affordable places in England relative to local incomes.<Cite nums={3} /> NHS trusts and schools in tourist areas report persistent recruitment failure because housing is neither available nor affordable for key workers on public-sector salaries.</p>
+            <p>The policy response has been cautious. The Levelling Up and Regeneration Act 2023 created mandatory registration powers for local authorities and a new C5 use class for short-term lets, allowing councils to require planning permission for conversions.<Cite nums={4} /> Council tax reform removed the 100% business rate relief for properties let fewer than 70 days per year. But authorities cannot yet cap numbers — unlike Amsterdam, which reduced Airbnb listings from 22,000 to 7,800 through a 30-night annual cap — and registration alone will not meaningfully reduce displacement. The burden falls on communities that generate a tourist economy partly through the quality of their public services, which are then undermined by the housing consequences of the tourism they sustain.</p>
           </div>
         </section>
 
@@ -176,6 +185,10 @@ export default function HolidayLetsPage() {
           </p>
         </section>
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
               <RelatedTopics />
       </main>
     </>

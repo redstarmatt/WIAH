@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Labour Force Survey: economic inactivity', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/economicinactivity', date: '2023' },
+  { num: 2, name: 'ONS', dataset: 'Sickness absence in the labour market', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/labourproductivity/articles/sicknessabsenceinthelabourmarket/latest', date: '2022' },
+  { num: 3, name: 'OBR', dataset: 'Economic and Fiscal Outlook', date: '2023' },
+  { num: 4, name: 'Resolution Foundation', dataset: 'Health and economic inactivity analysis', date: '2023' },
+];
 
 // Total economic inactivity (millions), 2014–2023 — ONS LFS
 const inactivityValues = [8.6, 8.5, 8.4, 8.4, 8.4, 8.4, 8.4, 8.7, 9.2, 9.4];
@@ -57,8 +66,8 @@ export default function EconomicInactivityPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Economic inactivity among working-age adults rose to 9.4 million by late 2023 — 22% of the working-age population and 800,000 above the pre-pandemic level. The UK is now the only G7 economy whose employment rate has not recovered to pre-COVID levels; the OBR estimates this gap represents a 2% shortfall in potential output. The shift is structural, not cyclical: long-term sickness is the primary driver, with 2.8 million economically inactive due to illness in 2023, up from 2.0 million in 2019. The NHS waiting list of 7.5 million cases is a significant factor — Resolution Foundation modelling suggests eliminating the backlog could return 170,000 people to employment. Mental health accounts for 38% of all long-term sickness inactivity; musculoskeletal conditions 35%.</p>
-            <p>The burden falls unevenly. Women account for 60% of the economically inactive, with caring responsibilities a major driver. Geographic clustering is pronounced: Wales, the North East, and parts of Yorkshire have inactivity rates 4–6 percentage points above the national average — a legacy of deindustrialisation. The 50–64 cohort has driven the post-pandemic increase most sharply, with many leaving the workforce during COVID-19 and not returning. The disability employment gap of around 28 percentage points has narrowed only marginally over a decade.</p>
+            <p>Economic inactivity among working-age adults rose to 9.4 million by late 2023 — 22% of the working-age population and 800,000 above the pre-pandemic level.<Cite nums={[1]} /> The UK is now the only G7 economy whose employment rate has not recovered to pre-COVID levels; the OBR estimates this gap represents a 2% shortfall in potential output.<Cite nums={[3]} /> The shift is structural, not cyclical: long-term sickness is the primary driver, with 2.8 million economically inactive due to illness in 2023, up from 2.0 million in 2019.<Cite nums={[1]} /> The NHS waiting list of 7.5 million cases is a significant factor — Resolution Foundation modelling suggests eliminating the backlog could return 170,000 people to employment.<Cite nums={[4]} /> Mental health accounts for 38% of all long-term sickness inactivity; musculoskeletal conditions 35%.<Cite nums={[1]} /></p>
+            <p>The burden falls unevenly. Women account for 60% of the economically inactive, with caring responsibilities a major driver.<Cite nums={[1]} /> Geographic clustering is pronounced: Wales, the North East, and parts of Yorkshire have inactivity rates 4–6 percentage points above the national average — a legacy of deindustrialisation.<Cite nums={[1]} /> The 50–64 cohort has driven the post-pandemic increase most sharply, with many leaving the workforce during COVID-19 and not returning. The disability employment gap of around 28 percentage points has narrowed only marginally over a decade.<Cite nums={[1]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -136,6 +145,9 @@ export default function EconomicInactivityPage() {
             source="Source: ONS — Labour Force Survey Q4 2023; DWP — Back to Work Plan 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

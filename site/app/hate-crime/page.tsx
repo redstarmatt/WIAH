@@ -9,6 +9,13 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Home Office', dataset: 'Hate Crime Statistics, England and Wales', url: 'https://www.gov.uk/government/statistics/hate-crime-england-and-wales', date: '2023' },
+  { num: 2, name: 'CPS', dataset: 'Hate Crime Report', date: '2022/23' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -184,8 +191,8 @@ export default function HateCrimePage() {
       <section id="sec-context" className="px-6 py-12 bg-white">
         <div className="max-w-2xl mx-auto">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Police-recorded hate crime in England and Wales has more than tripled since 2013, rising from 44,480 offences to 147,000 in 2023. Race hate crime accounts for 70% of the total — 104,000 offences in a single year. Transgender hate crime is the fastest-growing category, reaching 11,000 recorded offences in 2023. Hate crime is acutely sensitive to political climate: a 41% spike followed the Brexit referendum in June 2016, and subsequent peaks tracked terrorist attacks and heightened immigration rhetoric. Online hate crime, measured separately from 2021, now accounts for around a third of all incidents — a channel supercharged by algorithmic amplification and now designated a priority offence under the Online Safety Act 2023.</p>
-            <p>Reporting does not reliably lead to justice. Only 44% of recorded hate crimes result in a prosecution, with victim withdrawal the central bottleneck — victims disengage from proceedings citing fear of repeat harassment and distrust of the justice system. The CPS achieves an 86% conviction rate for cases it does bring, but the gap is before charge. Disability hate crime is the most severely underreported strand: victims are often isolated, frequently dependent on their abusers, and face profound barriers to reporting, while CPS charge rates for the strand are the lowest of any category. Dedicated hate crime units remain rare outside London and a few major cities, meaning most offences are investigated by neighbourhood officers with minimal specialist training.</p>
+            <p>Police-recorded hate crime in England and Wales has more than tripled since 2013, rising from 44,480 offences to 147,000 in 2023.<Cite nums={1} /> Race hate crime accounts for 70% of the total — 104,000 offences in a single year.<Cite nums={1} /> Transgender hate crime is the fastest-growing category, reaching 11,000 recorded offences in 2023.<Cite nums={1} /> Hate crime is acutely sensitive to political climate: a 41% spike followed the Brexit referendum in June 2016, and subsequent peaks tracked terrorist attacks and heightened immigration rhetoric. Online hate crime, measured separately from 2021, now accounts for around a third of all incidents — a channel supercharged by algorithmic amplification and now designated a priority offence under the Online Safety Act 2023.</p>
+            <p>Reporting does not reliably lead to justice. Only 44% of recorded hate crimes result in a prosecution, with victim withdrawal the central bottleneck — victims disengage from proceedings citing fear of repeat harassment and distrust of the justice system.<Cite nums={2} /> The CPS achieves an 86% conviction rate for cases it does bring, but the gap is before charge.<Cite nums={2} /> Disability hate crime is the most severely underreported strand: victims are often isolated, frequently dependent on their abusers, and face profound barriers to reporting, while CPS charge rates for the strand are the lowest of any category. Dedicated hate crime units remain rare outside London and a few major cities, meaning most offences are investigated by neighbourhood officers with minimal specialist training.</p>
           </div>
         </div>
       </section>
@@ -210,6 +217,9 @@ export default function HateCrimePage() {
           { id: 'sec-context', label: 'Context' },
         ]}
       />
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
             <RelatedTopics />
       </main>
   );

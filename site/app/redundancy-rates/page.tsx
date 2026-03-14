@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Labour Force Survey', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/uklabourmarket/latest', date: '2024' },
+  { num: 2, name: 'Insolvency Service', dataset: 'HR1 Collective Redundancy Notifications', date: '2024' },
+  { num: 3, name: 'DWP', dataset: 'Rapid Response Service Annual Report', date: '2024' },
+];
 
 export default function RedundancyRatesPage() {
 
@@ -161,12 +169,16 @@ export default function RedundancyRatesPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on redundancy rates</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Redundancy rates hit a pandemic peak of 14.7 per 1,000 employees in 2020 — far above the pre-pandemic norm of 3–4 per 1,000 — before falling sharply as furlough support wound down and labour markets tightened. By 2023 the rate had returned to 2.9 per 1,000, but 2024 saw a new upturn to around 3.8 per 1,000 following the October 2023 announcement and April 2024 implementation of employer National Insurance contribution increases combined with a significant National Living Wage rise.</p>
-              <p>Retail and hospitality, the two sectors most exposed to rising employer NIC costs and higher minimum wage floors, account for approximately 31% of all 2024 collective redundancy notifications. These are sectors with thin margins, high labour intensity, and limited ability to absorb cost increases through productivity gains or price rises. Collective redundancy notifications — which cover proposed job cuts of 20 or more — reached approximately 175,000 in 2024, the highest since the pandemic.</p>
-              <p>Redundancy is not evenly distributed geographically. Northern England, the Midlands, and coastal communities — where retail, hospitality, and labour-intensive manufacturing form a larger share of local employment — see higher redundancy rates per capita than London and the South East. Approximately 600,000 more people are economically inactive than pre-pandemic trends would predict, concentrated among older workers and those with long-term health conditions; some workers made redundant are re-entering inactivity rather than unemployment, meaning headline unemployment figures understate the true degree of labour market slack.</p>
+              <p>Redundancy rates hit a pandemic peak of 14.7 per 1,000 employees in 2020 — far above the pre-pandemic norm of 3–4 per 1,000 — before falling sharply as furlough support wound down and labour markets tightened.<Cite nums={1} /> By 2023 the rate had returned to 2.9 per 1,000, but 2024 saw a new upturn to around 3.8 per 1,000 following the October 2023 announcement and April 2024 implementation of employer National Insurance contribution increases combined with a significant National Living Wage rise.<Cite nums={1} /></p>
+              <p>Retail and hospitality, the two sectors most exposed to rising employer NIC costs and higher minimum wage floors, account for approximately 31% of all 2024 collective redundancy notifications.<Cite nums={2} /> These are sectors with thin margins, high labour intensity, and limited ability to absorb cost increases through productivity gains or price rises. Collective redundancy notifications — which cover proposed job cuts of 20 or more — reached approximately 175,000 in 2024, the highest since the pandemic.<Cite nums={2} /></p>
+              <p>Redundancy is not evenly distributed geographically. Northern England, the Midlands, and coastal communities — where retail, hospitality, and labour-intensive manufacturing form a larger share of local employment — see higher redundancy rates per capita than London and the South East.<Cite nums={1} /> Approximately 600,000 more people are economically inactive than pre-pandemic trends would predict, concentrated among older workers and those with long-term health conditions; some workers made redundant are re-entering inactivity rather than unemployment, meaning headline unemployment figures understate the true degree of labour market slack.<Cite nums={[1, 3]} /></p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

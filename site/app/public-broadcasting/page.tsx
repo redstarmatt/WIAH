@@ -9,6 +9,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import PositiveCallout from '@/components/PositiveCallout';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -26,6 +28,13 @@ interface PublicBroadcastingData {
 function yearToDate(y: string): Date {
   return new Date(parseInt(y), 6, 1);
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'BBC', dataset: 'Charter Review Evidence', url: 'https://www.gov.uk/government/publications/bbc-charter-and-framework-agreement', date: '2023', note: 'Cumulative real-terms gap estimated at over £1 billion across the settlement period' },
+  { num: 2, name: 'BBC', dataset: 'Annual Report and Accounts 2024', url: 'https://www.bbc.co.uk/corporate2/insidethebbc/reports/reports', date: '2024', note: '1,000 redundancies in 2023; total reduction since 2020 over 1,500 posts' },
+  { num: 3, name: 'Foreign Affairs Select Committee', dataset: 'BBC Foreign Bureau Closures Report', date: '2023', note: 'Reduced ability to report from countries where UK policy interests are directly engaged' },
+  { num: 4, name: 'TV Licensing', dataset: 'Annual Enforcement Report', date: '2024', note: 'Evasion rate approaching 10%; each 1% = £50m lost revenue' },
+];
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -100,10 +109,10 @@ export default function PublicBroadcastingPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The BBC licence fee was frozen at £159 per household per year from April 2022 to March 2024 — a two-year freeze announced by Culture Secretary Nadine Dorries in a move that caught BBC leadership off guard. In a period when CPI inflation reached 11.1%, this amounted to a substantial real-terms cut. The subsequent settlement, reached in early 2024, raised the fee to £169.50 from April 2024 and linked future increases to CPI through to 2027, but this came after two years of significant real-terms erosion. The BBC's own analysis estimated the cumulative real-terms gap between the frozen fee and an inflation-linked fee at over £1 billion across the settlement period. This shortfall required structural savings that materialised as redundancies, closures, and programme cuts across the corporation.
+              The BBC licence fee was frozen at £159 per household per year from April 2022 to March 2024 — a two-year freeze announced by Culture Secretary Nadine Dorries in a move that caught BBC leadership off guard. In a period when CPI inflation reached 11.1%, this amounted to a substantial real-terms cut. The subsequent settlement, reached in early 2024, raised the fee to £169.50 from April 2024 and linked future increases to CPI through to 2027, but this came after two years of significant real-terms erosion. The BBC's own analysis estimated the cumulative real-terms gap between the frozen fee and an inflation-linked fee at over £1 billion across the settlement period.<Cite nums={1} /> This shortfall required structural savings that materialised as redundancies, closures, and programme cuts across the corporation.
             </p>
             <p>
-              The consequences have been concrete and measurable. BBC4, once described as &ldquo;the home of ideas television,&rdquo; ceased broadcasting new content and became a repeats channel from 2022. Twenty-five local radio stations faced significant format changes, with several moving to shared programming, automated music, or networked speech. The BBC's journalism workforce — correspondents, investigators, and foreign bureau staff — has contracted: the Foreign Affairs Select Committee noted in 2023 that BBC foreign bureau closures had reduced the Corporation's ability to report from countries where UK policy interests are directly engaged. The BBC announced 1,000 redundancies in 2023 alone, on top of earlier rounds, bringing the total reduction since 2020 to over 1,500 posts. The corporation has also sought to reduce costs through increased repeats, less original drama, and greater reliance on co-productions.
+              The consequences have been concrete and measurable. BBC4, once described as &ldquo;the home of ideas television,&rdquo; ceased broadcasting new content and became a repeats channel from 2022. Twenty-five local radio stations faced significant format changes, with several moving to shared programming, automated music, or networked speech. The BBC's journalism workforce — correspondents, investigators, and foreign bureau staff — has contracted: the Foreign Affairs Select Committee noted in 2023 that BBC foreign bureau closures had reduced the Corporation's ability to report from countries where UK policy interests are directly engaged.<Cite nums={3} /> The BBC announced 1,000 redundancies in 2023 alone, on top of earlier rounds, bringing the total reduction since 2020 to over 1,500 posts.<Cite nums={2} /> The corporation has also sought to reduce costs through increased repeats, less original drama, and greater reliance on co-productions.
             </p>
             </div>
         </section>
@@ -200,6 +209,10 @@ export default function PublicBroadcastingPage() {
             )}
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="border-t border-wiah-border pt-8 mt-12">
           <h2 className="text-lg font-bold text-wiah-black mb-4">Sources &amp; methodology</h2>

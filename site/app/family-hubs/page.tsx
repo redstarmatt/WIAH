@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Cumulative family hubs open, 2021–2025 (England)
 const hubRollout = [0, 12, 68, 68, 68];
@@ -65,6 +67,12 @@ const deprivationAnnotations: Annotation[] = [
   { date: new Date(2024, 0, 1), label: 'Least deprived' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Department for Education', dataset: 'Family Hubs and Start for Life programme data', url: 'https://www.gov.uk/government/publications/family-hubs-and-start-for-life-programme', date: 'Jan 2025' },
+  { num: 2, name: 'National Centre for Family Hubs', dataset: 'Pathfinder authority evaluation — deprivation analysis', url: 'https://www.ncfh.org.uk', date: '2024' },
+  { num: 3, name: 'Action for Children', dataset: "Children's centre census", url: 'https://www.actionforchildren.org.uk', date: '2024' },
+];
+
 export default function FamilyHubsPage() {
   return (
     <>
@@ -80,8 +88,8 @@ export default function FamilyHubsPage() {
 
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Family hubs were announced in 2021 as a flagship early-years policy — a reimagining of the Sure Start children's centre model, integrating support for families from pregnancy through to age 19. The government allocated £301 million over three years and set a target of 75 hub networks across the most disadvantaged local authorities in England. By early 2025, 68 networks were operational, each typically comprising a central hub and several outreach spokes.</p>
-            <p>The reach figures are more complicated than the rollout headline suggests. Early evaluation data from the National Centre for Family Hubs shows that visits per hub are lowest in the most deprived quintile of areas — the exact communities the programme was designed to prioritise. This inverse relationship between need and take-up has also been observed in evaluations of Sure Start and other early-years interventions: the families under the most pressure are often least able to engage with a new service, particularly where transport, childcare costs and working-hours barriers are significant.</p>
+            <p>Family hubs were announced in 2021 as a flagship early-years policy — a reimagining of the Sure Start children's centre model, integrating support for families from pregnancy through to age 19. The government allocated £301 million over three years and set a target of 75 hub networks across the most disadvantaged local authorities in England.<Cite nums={[1]} /> By early 2025, 68 networks were operational, each typically comprising a central hub and several outreach spokes.<Cite nums={[1]} /></p>
+            <p>The reach figures are more complicated than the rollout headline suggests. Early evaluation data from the National Centre for Family Hubs shows that visits per hub are lowest in the most deprived quintile of areas — the exact communities the programme was designed to prioritise.<Cite nums={[2]} /> This inverse relationship between need and take-up has also been observed in evaluations of Sure Start and other early-years interventions: the families under the most pressure are often least able to engage with a new service, particularly where transport, childcare costs and working-hours barriers are significant.</p>
           </div>
         </section>
 
@@ -179,13 +187,16 @@ export default function FamilyHubsPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">What the data shows</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>The family hubs programme has delivered against its headline rollout target — 68 of 75 planned networks are operating — but the shortfall matters: it is concentrated in the highest-deprivation areas where the programme was most needed. Seven local authority areas that were allocated funding did not proceed to full operation.</p>
+              <p>The family hubs programme has delivered against its headline rollout target — 68 of 75 planned networks are operating — but the shortfall matters: it is concentrated in the highest-deprivation areas where the programme was most needed.<Cite nums={[1]} /> Seven local authority areas that were allocated funding did not proceed to full operation.</p>
               <p>The deprivation paradox in visit rates is not unique to family hubs. It reflects a well-documented pattern in universal services: the most socially isolated, economically stressed, or digitally excluded families are least likely to proactively seek support, even when it is available. The evidence base on Sure Start, which family hubs partially replace, found the clearest impacts on the most disadvantaged families — but only when they were actively recruited into the service, not when they self-referred.</p>
-              <p>The context of children's centre closures is important. England had over 3,600 children's centres at the 2010 peak; there are now approximately 1,850. Family hubs are not a direct replacement: they serve a wider age range (to 19) and a different geographic model (fewer, larger hubs with spokes), but they cover far fewer locations than the network they partially replace. The question of whether 68 hub networks can match the community reach of 3,600 centres has not been answered.</p>
+              <p>The context of children's centre closures is important. England had over 3,600 children's centres at the 2010 peak; there are now approximately 1,850.<Cite nums={[3]} /> Family hubs are not a direct replacement: they serve a wider age range (to 19) and a different geographic model (fewer, larger hubs with spokes), but they cover far fewer locations than the network they partially replace. The question of whether 68 hub networks can match the community reach of 3,600 centres has not been answered.</p>
             </div>
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

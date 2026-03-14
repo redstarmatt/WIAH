@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Drug poisoning deaths, England & Wales, 2012–2024 — ONS
 const drugDeathsValues = [2597, 2955, 3346, 3674, 3744, 4359, 4393, 2822, 3726, 4561, 4907, 4859, 4907];
@@ -47,6 +49,13 @@ const annotations: Annotation[] = [
   { date: new Date(2021, 0, 1), label: '2021: Dame Carol Black review' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Deaths related to drug poisoning in England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/deathsrelatedtodrugpoisoninginenglandandwales/latest', date: '2024' },
+  { num: 2, name: 'OHID', dataset: 'National Drug Treatment Monitoring System (NDTMS)', url: 'https://www.gov.uk/government/collections/statistics-from-the-national-drug-treatment-monitoring-system-ndtms', date: '2024' },
+  { num: 3, name: 'OHID', dataset: 'Public health grant expenditure', date: '2024' },
+  { num: 4, name: 'Dame Carol Black', dataset: 'Independent Review of Drugs', date: '2021' },
+];
+
 export default function AddictionServicesPage() {
   return (
     <>
@@ -61,8 +70,8 @@ export default function AddictionServicesPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England and Wales are in the grip of a drug deaths crisis that has received remarkably little public attention. Drug poisoning deaths have risen almost every year since 2012, reaching 4,907 registered deaths in 2024 — an 89% increase in just over a decade. The victims are disproportionately men aged 40–49, from the most deprived communities. Opioids remain the single largest contributor, involved in roughly half of all drug poisoning deaths. The North East of England has the highest drug death rate in the country at 11.4 per 100,000, nearly three times the rate in London. This is not a crisis distributed evenly; it maps almost perfectly onto deprivation, deindustrialisation, and the withdrawal of public services.</p>
-            <p>The treatment system that should be catching these people was hollowed out during the 2010s. Local authority spending on drug and alcohol services fell by more than 30% per head between 2013 and 2020. The number of people in structured treatment dropped from 338,000 in 2010 to a low of 272,000 in 2020. Dame Carol Black's landmark independent review, published in 2021, described the treatment system as "not fit for purpose" and called for an additional £552 million per year in funding. Treatment numbers have since recovered to around 295,000, still below 2010 levels. Alcohol treatment is a particular gap — only one in five people who are dependent on alcohol are in treatment. Naloxone distribution programmes, which provide overdose-reversal kits, have expanded significantly and are saving lives.</p>
+            <p>England and Wales are in the grip of a drug deaths crisis that has received remarkably little public attention. Drug poisoning deaths have risen almost every year since 2012, reaching 4,907 registered deaths in 2024 — an 89% increase in just over a decade.<Cite nums={1} /> The victims are disproportionately men aged 40–49, from the most deprived communities. Opioids remain the single largest contributor, involved in roughly half of all drug poisoning deaths.<Cite nums={1} /> The North East of England has the highest drug death rate in the country at 11.4 per 100,000, nearly three times the rate in London.<Cite nums={1} /> This is not a crisis distributed evenly; it maps almost perfectly onto deprivation, deindustrialisation, and the withdrawal of public services.</p>
+            <p>The treatment system that should be catching these people was hollowed out during the 2010s. Local authority spending on drug and alcohol services fell by more than 30% per head between 2013 and 2020.<Cite nums={3} /> The number of people in structured treatment dropped from 338,000 in 2010 to a low of 272,000 in 2020.<Cite nums={2} /> Dame Carol Black's landmark independent review, published in 2021, described the treatment system as "not fit for purpose" and called for an additional £552 million per year in funding.<Cite nums={4} /> Treatment numbers have since recovered to around 295,000, still below 2010 levels.<Cite nums={2} /> Alcohol treatment is a particular gap — only one in five people who are dependent on alcohol are in treatment.<Cite nums={2} /> Naloxone distribution programmes, which provide overdose-reversal kits, have expanded significantly and are saving lives.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -141,6 +150,9 @@ export default function AddictionServicesPage() {
             source="Source: OHID — Naloxone provision data 2024. Dame Carol Black — Independent Review of Drugs 2021."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

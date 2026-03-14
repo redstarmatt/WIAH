@@ -7,7 +7,16 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'National Baby Bank Network', dataset: 'Annual Impact Report', url: 'https://www.littlevillagehq.org/', date: '2023' },
+  { num: 2, name: 'First Steps Nutrition Trust', dataset: 'Infant Feeding Survey — Formula Affordability', url: 'https://www.firststepsnutrition.org/', date: '2023' },
+  { num: 3, name: 'OHID', dataset: 'Infant Feeding Statistics', url: 'https://www.gov.uk/government/collections/breastfeeding-statistics', date: '2023' },
+  { num: 4, name: 'NHS England', dataset: 'Healthy Start Scheme', url: 'https://www.healthystart.nhs.uk/', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -63,8 +72,8 @@ export default function InfantFoodPovertyPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Food poverty in infancy causes developmental disadvantage that persists for years: breast milk or formula is the only appropriate food for the first six months of life, making adequate nutrition a non-discretionary necessity. Baby banks — voluntary organisations providing formula, nappies, and weaning food to families in crisis — served over 200,000 families in 2023, up from around 45,000 in 2018, a 344% rise driven by the cost-of-living crisis. Infant formula prices rose from around £8 to over £12 per 800g tin between 2021 and 2023 — more than £50 per month for a formula-fed infant. Research by First Steps Nutrition Trust found parents diluting formula to make it last longer, a practice that is nutritionally dangerous. Healthy Start vouchers provide £4.25 per week to eligible parents — widely considered insufficient and not keeping pace with formula price inflation.</p>
-            <p>The UK has one of the lowest breastfeeding continuation rates in Europe: while around 80% of babies are breastfed at birth, only 48% receive any breast milk at six weeks and fewer than 1% are exclusively breastfed at six months against WHO guidance. Support for breastfeeding — health visitor contact, peer support — has been cut alongside other public health services. 1 in 3 low-income parents report struggling to afford formula. The burden falls disproportionately on lone-parent families, those on Universal Credit, and families in temporary accommodation where feeding routines are hardest to maintain. In a country with a statutory minimum wage and a comprehensive welfare state, the persistence of infant food poverty reflects a structural gap in nutrition policy for the youngest children.</p>
+            <p>Food poverty in infancy causes developmental disadvantage that persists for years: breast milk or formula is the only appropriate food for the first six months of life, making adequate nutrition a non-discretionary necessity. Baby banks — voluntary organisations providing formula, nappies, and weaning food to families in crisis — served over 200,000 families in 2023, up from around 45,000 in 2018, a 344% rise driven by the cost-of-living crisis.<Cite nums={1} /> Infant formula prices rose from around £8 to over £12 per 800g tin between 2021 and 2023 — more than £50 per month for a formula-fed infant. Research by First Steps Nutrition Trust found parents diluting formula to make it last longer, a practice that is nutritionally dangerous.<Cite nums={2} /> Healthy Start vouchers provide £4.25 per week to eligible parents — widely considered insufficient and not keeping pace with formula price inflation.<Cite nums={4} /></p>
+            <p>The UK has one of the lowest breastfeeding continuation rates in Europe: while around 80% of babies are breastfed at birth, only 48% receive any breast milk at six weeks and fewer than 1% are exclusively breastfed at six months against WHO guidance.<Cite nums={3} /> Support for breastfeeding — health visitor contact, peer support — has been cut alongside other public health services. 1 in 3 low-income parents report struggling to afford formula.<Cite nums={2} /> The burden falls disproportionately on lone-parent families, those on Universal Credit, and families in temporary accommodation where feeding routines are hardest to maintain. In a country with a statutory minimum wage and a comprehensive welfare state, the persistence of infant food poverty reflects a structural gap in nutrition policy for the youngest children.</p>
           </div>
         </section>
 
@@ -124,6 +133,10 @@ export default function InfantFoodPovertyPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

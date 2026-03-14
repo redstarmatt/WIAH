@@ -10,6 +10,17 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Student Loans Company', dataset: 'Student Loans in England, Financial Year 2024-25', url: 'https://www.gov.uk/government/collections/student-loans-company-statistics', date: '2025' },
+  { num: 2, name: 'House of Commons Library', dataset: 'Student loan statistics', url: 'https://commonslibrary.parliament.uk/research-briefings/sn01079/', date: 'March 2025' },
+  { num: 3, name: 'Department for Education', dataset: 'Graduate Outcomes (LEO), 2022/23', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/graduate-outcomes-leo', date: '2024' },
+  { num: 4, name: 'Office for Students', dataset: 'Non-continuation summary data, 2023/24', url: 'https://www.officeforstudents.org.uk/data-and-analysis/', date: '2024' },
+  { num: 5, name: 'HESA / Jisc', dataset: 'Higher Education Student Statistics UK, 2023/24', url: 'https://www.hesa.ac.uk/data-and-analysis/students/whos-in-he', date: '2024' },
+  { num: 6, name: 'HESA / Jisc', dataset: 'Degree classifications by provider and subject, 2023/24', url: 'https://www.hesa.ac.uk/data-and-analysis/students/outcomes', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -358,21 +369,21 @@ export default function UniversitiesPage() {
             <p>
               England's university funding model is built on a paradox. Students borrow an average
               of £44,940 to fund their degrees, yet only 23% of Plan 2 borrowers are expected to
-              repay in full before their loans are written off after 30 years. The total student loan
+              repay in full before their loans are written off after 30 years.<Cite nums={1} /> The total student loan
               book now exceeds £268 billion — a figure that grows by roughly £20 billion
               each year — and the government bears the cost of unrepaid debt as a long-term fiscal
-              liability. Meanwhile, the £9,250 fee cap was frozen for eight years until 2025,
-              eroding its real value by around 17% through inflation. Universities have become
-              increasingly dependent on international student fees to close the gap.
+              liability.<Cite nums={1} /> Meanwhile, the £9,250 fee cap was frozen for eight years until 2025,
+              eroding its real value by around 17% through inflation.<Cite nums={2} /> Universities have become
+              increasingly dependent on international student fees to close the gap.<Cite nums={5} />
             </p>
             <p>
               The graduate earnings premium remains real: median graduate earnings are £12,500 per
-              year higher than for non-graduates, a gap that has widened over the past decade. But this
+              year higher than for non-graduates, a gap that has widened over the past decade.<Cite nums={3} /> But this
               average conceals stark variation. Medicine and economics graduates earn more than double
-              those in creative arts five years after graduation. For some subjects and institutions,
+              those in creative arts five years after graduation.<Cite nums={3} /> For some subjects and institutions,
               the financial return on a degree is genuinely questionable — especially once
               accumulated interest is factored in. The Office for Students now publishes outcome data
-              by course, forcing a long-overdue reckoning with which degrees deliver value.
+              by course, forcing a long-overdue reckoning with which degrees deliver value.<Cite nums={4} />
             </p>
             </div>
         </section>
@@ -467,9 +478,9 @@ export default function UniversitiesPage() {
               </h2>
               <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
                 Total outstanding student debt has grown from £47 billion in 2012 to £269
-                billion in 2025 — expanding by roughly £20 billion each year. Most of this
+                billion in 2025 — expanding by roughly £20 billion each year.<Cite nums={1} /> Most of this
                 will never be repaid: the government's own forecasts suggest 77% of Plan 2
-                borrowers will have their remaining balance written off after 30 years.
+                borrowers will have their remaining balance written off after 30 years.<Cite nums={1} />
               </p>
             </div>
           </ScrollReveal>
@@ -579,8 +590,8 @@ export default function UniversitiesPage() {
               </h2>
               <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
                 On average, graduates earn significantly more than non-graduates — and the gap
-                has been widening. But the average conceals enormous variation by subject. Medicine
-                graduates earn more than double those in creative arts five years after graduation.
+                has been widening.<Cite nums={3} /> But the average conceals enormous variation by subject. Medicine
+                graduates earn more than double those in creative arts five years after graduation.<Cite nums={3} />
               </p>
             </div>
           </ScrollReveal>
@@ -687,9 +698,9 @@ export default function UniversitiesPage() {
               </h2>
               <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
                 In 1995, a first-class degree was rare — just 7% of graduates achieved one.
-                By 2021, the figure had reached 36%, propelled by COVID-era no-detriment policies.
+                By 2021, the figure had reached 36%, propelled by COVID-era no-detriment policies.<Cite nums={6} />
                 It has since eased to 31%, but the long-term trend is unmistakable: top grades have
-                become the norm, not the exception.
+                become the norm, not the exception.<Cite nums={6} />
               </p>
             </div>
           </ScrollReveal>
@@ -776,10 +787,10 @@ export default function UniversitiesPage() {
                 The international student boom — and bust
               </h2>
               <p className="text-base text-wiah-black leading-[1.7] max-w-2xl">
-                International student numbers nearly doubled between 2019 and 2023, reaching 762,000.
+                International student numbers nearly doubled between 2019 and 2023, reaching 762,000.<Cite nums={5} />
                 Universities became heavily dependent on the fees they paid — often two to three
                 times the domestic rate. Then came the January 2024 visa restrictions. Enrollment fell
-                sharply, and several universities now face serious financial pressure.
+                sharply, and several universities now face serious financial pressure.<Cite nums={5} />
               </p>
             </div>
           </ScrollReveal>
@@ -880,6 +891,8 @@ export default function UniversitiesPage() {
           source="Source: DfE — LEO Graduate and Postgraduate Outcomes, 2022/23."
         />
         </ScrollReveal>
+
+        <div className="mt-6"><References items={editorialRefs} /></div>
 
         {/* Sources */}
         <section className="border-t border-wiah-border pt-8">

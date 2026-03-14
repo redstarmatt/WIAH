@@ -9,6 +9,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import PositiveCallout from '@/components/PositiveCallout';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ministry of Justice', dataset: 'Serious Further Offence Review Statistics', url: 'https://www.gov.uk/government/statistics/serious-further-offence-review-statistics', date: '2023' },
+  { num: 2, name: 'HM Inspectorate of Probation', dataset: 'Annual Report 2023', url: 'https://www.justiceinspectorates.gov.uk/hmiprobation/', date: '2023' },
+  { num: 3, name: 'HMPPS', dataset: 'Workforce Statistics', url: 'https://www.gov.uk/government/statistics/her-majestys-prison-and-probation-service-workforce-statistics', date: '2023' },
+  { num: 4, name: 'National Audit Office', dataset: 'Transforming Rehabilitation', url: 'https://www.nao.org.uk/', date: '2019' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -83,10 +92,10 @@ export default function ProbationPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The 2014 Transforming Rehabilitation reforms split the probation service into a National Probation Service (NPS) handling high-risk offenders and 21 Community Rehabilitation Companies (CRCs) handling low and medium-risk offenders. The CRCs were contracted to private and third-sector providers including Sodexo, Interserve, and Working Links. By 2018, every major inspection of the CRCs had found them to be failing: caseloads were too high, staff lacked experience, supervision was inadequate, and rehabilitation programmes were inconsistently delivered. Three CRCs went into administration. The promised rehabilitation revolution — in which private providers would reduce reoffending and be paid by results — did not materialise; reoffending rates remained stubbornly around 53%. The government terminated the CRC contracts early and reunified probation under public control in 2021.
+              The 2014 Transforming Rehabilitation reforms split the probation service into a National Probation Service (NPS) handling high-risk offenders and 21 Community Rehabilitation Companies (CRCs) handling low and medium-risk offenders.<Cite nums={4} /> The CRCs were contracted to private and third-sector providers including Sodexo, Interserve, and Working Links. By 2018, every major inspection of the CRCs had found them to be failing: caseloads were too high, staff lacked experience, supervision was inadequate, and rehabilitation programmes were inconsistently delivered.<Cite nums={2} /> Three CRCs went into administration. The promised rehabilitation revolution — in which private providers would reduce reoffending and be paid by results — did not materialise; reoffending rates remained stubbornly around 53%.<Cite nums={4} /> The government terminated the CRC contracts early and reunified probation under public control in 2021.
             </p>
             <p>
-              The human cost of the privatisation experiment is most visible in the Serious Further Offence statistics. An SFO occurs when a person under probation supervision commits a specified serious crime — typically murder, rape, serious assault, or robbery — resulting in conviction. The MoJ publishes annual statistics: in 2014/15, before the CRC contracts came into force, there were approximately 470 SFOs. By 2022/23, the figure had risen to 820 — a 74% increase. HM Inspectorate of Probation reviews of individual SFOs have repeatedly found that the preceding supervision was inadequate: missed appointments not followed up, risk assessments not updated, warning signs not escalated. Inspectors have noted cases where officers carried caseloads of 80 or more, more than double the recommended maximum of 35, making meaningful supervision impossible.
+              The human cost of the privatisation experiment is most visible in the Serious Further Offence statistics. An SFO occurs when a person under probation supervision commits a specified serious crime — typically murder, rape, serious assault, or robbery — resulting in conviction. The MoJ publishes annual statistics: in 2014/15, before the CRC contracts came into force, there were approximately 470 SFOs. By 2022/23, the figure had risen to 820 — a 74% increase.<Cite nums={1} /> HM Inspectorate of Probation reviews of individual SFOs have repeatedly found that the preceding supervision was inadequate: missed appointments not followed up, risk assessments not updated, warning signs not escalated.<Cite nums={2} /> Inspectors have noted cases where officers carried caseloads of 80 or more, more than double the recommended maximum of 35, making meaningful supervision impossible.<Cite nums={3} />
             </p>
             </div>
         </section>
@@ -183,6 +192,10 @@ export default function ProbationPage() {
             )}
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="border-t border-wiah-border pt-8 mt-12">
           <h2 className="text-lg font-bold text-wiah-black mb-4">Sources &amp; methodology</h2>

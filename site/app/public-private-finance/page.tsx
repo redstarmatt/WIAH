@@ -8,6 +8,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'HM Treasury', dataset: 'PFI and PF2 Annual Data', url: 'https://www.gov.uk/government/collections/private-finance-initiative-and-private-finance-2-projects-data', date: '2025', note: 'PFI committed £42bn in repayments on projects originally worth £13bn; 3.2x multiplier' },
+  { num: 2, name: 'HM Treasury', dataset: 'PFI Programme Closure', date: '2018', note: 'Treasury formally ended PFI and PF2 programme in 2018; no new contracts signed' },
+  { num: 3, name: 'NHS England', dataset: 'NHS PFI Trust Analysis', date: '2024', note: '118 NHS trusts still in PFI contracts; down from 127 in 2018' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -194,6 +202,10 @@ export default function TopicPage() {
             source="Source: HMT — PFI and PF2 annual data, 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

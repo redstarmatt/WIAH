@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Coram Family and Childcare', dataset: 'Childcare Survey', url: 'https://www.coram.org.uk/our-work/coram-family-and-childcare/childcare-survey', date: '2024' },
+  { num: 2, name: 'OECD', dataset: 'Family Database — net childcare costs', url: 'https://www.oecd.org/els/family/database.htm', date: '2024' },
+  { num: 3, name: 'Pregnant Then Screwed', dataset: 'Cost of Childcare Survey', date: '2024' },
+  { num: 4, name: 'Ofsted', dataset: 'Childcare provider statistics', date: '2024' },
+];
 
 export default function ChildcareCostBarrierPage() {
   const annualCostData = [8200, 8600, 9000, 9500, 10000, 10500, 11000, 11500, 12000, 12800, 13400, 14000, 14300, 14600, 14800];
@@ -146,13 +155,16 @@ export default function ChildcareCostBarrierPage() {
           <section id="sec-context" className="max-w-2xl mb-12 mt-8">
             <h2 className="text-xl font-bold text-wiah-black mb-4">Why is UK childcare so expensive?</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>The UK has some of the most expensive childcare in the developed world — a product of high staff-to-child ratios required by regulation, low government subsidy relative to other OECD countries historically, and rising property and operational costs. For a dual-income family with two children under three, full-time childcare costs can exceed the entire net salary of the lower-paid partner, making work financially irrational. The average annual cost of full-time nursery for a toddler in England is now £14,000 — up 70% in real terms since 2010.</p>
-              <p>The consequences fall disproportionately on women. Pregnant Then Screwed's 2024 survey found that 26% of mothers had reduced their working hours or left employment entirely because of childcare costs, compared with 13% of fathers. This interruption creates compounding lifetime earnings penalties — the "motherhood penalty" — that feed into the gender pay gap, pension savings gaps, and career progression inequalities. Women in lower-paid work face the sharpest trade-offs: if childcare costs more than you earn, you stop working.</p>
-              <p>Approximately 4,500 childcare providers closed between 2019 and 2023, often in the areas of greatest need. The low wages paid to the early years workforce — averaging £11.40 per hour in 2024 — mean providers struggle to recruit and retain qualified staff. The sector is simultaneously too expensive for families and financially precarious for providers. The 2024 expansion of funded hours is the largest policy response in a generation, but its success depends on the hourly government reimbursement rate covering providers' actual costs.</p>
+              <p>The UK has some of the most expensive childcare in the developed world — a product of high staff-to-child ratios required by regulation, low government subsidy relative to other OECD countries historically, and rising property and operational costs.<Cite nums={2} /> For a dual-income family with two children under three, full-time childcare costs can exceed the entire net salary of the lower-paid partner, making work financially irrational. The average annual cost of full-time nursery for a toddler in England is now £14,000 — up 70% in real terms since 2010.<Cite nums={1} /></p>
+              <p>The consequences fall disproportionately on women. Pregnant Then Screwed's 2024 survey found that 26% of mothers had reduced their working hours or left employment entirely because of childcare costs, compared with 13% of fathers.<Cite nums={3} /> This interruption creates compounding lifetime earnings penalties — the "motherhood penalty" — that feed into the gender pay gap, pension savings gaps, and career progression inequalities. Women in lower-paid work face the sharpest trade-offs: if childcare costs more than you earn, you stop working.</p>
+              <p>Approximately 4,500 childcare providers closed between 2019 and 2023, often in the areas of greatest need.<Cite nums={4} /> The low wages paid to the early years workforce — averaging £11.40 per hour in 2024 — mean providers struggle to recruit and retain qualified staff.<Cite nums={1} /> The sector is simultaneously too expensive for families and financially precarious for providers. The 2024 expansion of funded hours is the largest policy response in a generation, but its success depends on the hourly government reimbursement rate covering providers' actual costs.</p>
             </div>
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">

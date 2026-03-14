@@ -8,6 +8,13 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Home Office', dataset: 'Immigration Statistics — Detention', url: 'https://www.gov.uk/government/statistics/immigration-statistics-year-ending-december-2024', date: '2025', note: '26,297 people entered detention in 2024; average stay 38 days; 24% held over 28 days' },
+  { num: 2, name: 'Home Office', dataset: 'Immigration Enforcement Data', date: '2025', note: '6,000 on Home Detention Curfew in 2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -194,6 +201,10 @@ export default function TopicPage() {
             source="Source: Home Office Immigration statistics, 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

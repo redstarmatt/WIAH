@@ -8,6 +8,15 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Environment Agency', dataset: 'River Basin Management Plans — Ecological Status', url: 'https://www.gov.uk/government/organisations/environment-agency', date: '2022' },
+  { num: 2, name: 'Environment Agency', dataset: 'Event Duration Monitoring — Sewage Overflows', url: 'https://environment.data.gov.uk/', date: '2022', note: '3.6 million hours of sewage overflow' },
+  { num: 3, name: 'Environment Agency', dataset: 'Bathing Water Quality Classifications', url: 'https://environment.data.gov.uk/bwq/profiles/', date: '2023' },
+  { num: 4, name: 'Surfers Against Sewage', dataset: 'Bathing Water Quality Reports', url: 'https://www.sas.org.uk/water-quality/bathing-water-quality-results/', date: '2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -83,8 +92,8 @@ export default function RiverBathingPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England entered the EU Water Framework Directive in 2000 with a commitment to get 60% of rivers to good ecological status by 2015. By 2022 the figure stood at 14%, and the Environment Agency's own modelling suggests England will not reach 60% in the foreseeable future. The causes are well-understood: water companies recorded 3.6 million hours of sewage overflow in 2022; agricultural run-off contributes severe phosphate and nitrate pollution (the River Wye is now covered in algae for much of the summer from intensive chicken farming upstream); and abstraction leaves some chalk streams — globally rare habitats — dry in summer. Designated river bathing sites grew from 8 in 2015 to 70 by 2023, creating monitoring accountability where none previously existed, but many sites still fail good or excellent standards. Environment Agency enforcement capacity has been reduced by budget cuts over the same period that water quality has deteriorated.</p>
-            <p>The communities most affected are those who rely on rivers and coastal water for recreation and wellbeing — a constituency that has widened rapidly as open-water swimming grew into a mass participation activity. Bathing water failures fall disproportionately on communities near combined sewer outfalls and intensive agriculture, and the people least able to travel to safer sites have fewest alternatives. Ofwat's fines on water companies have been too small to change behaviour, and the regulator has been slow to act on clear violations — meaning the cost of decades of underinvestment in infrastructure is paid by river users, not shareholders.</p>
+            <p>England entered the EU Water Framework Directive in 2000 with a commitment to get 60% of rivers to good ecological status by 2015. By 2022 the figure stood at 14%, and the Environment Agency's own modelling suggests England will not reach 60% in the foreseeable future.<Cite nums={1} /> The causes are well-understood: water companies recorded 3.6 million hours of sewage overflow in 2022<Cite nums={2} />; agricultural run-off contributes severe phosphate and nitrate pollution (the River Wye is now covered in algae for much of the summer from intensive chicken farming upstream); and abstraction leaves some chalk streams — globally rare habitats — dry in summer. Designated river bathing sites grew from 8 in 2015 to 70 by 2023, creating monitoring accountability where none previously existed, but many sites still fail good or excellent standards.<Cite nums={3} /> Environment Agency enforcement capacity has been reduced by budget cuts over the same period that water quality has deteriorated.</p>
+            <p>The communities most affected are those who rely on rivers and coastal water for recreation and wellbeing — a constituency that has widened rapidly as open-water swimming grew into a mass participation activity. Bathing water failures fall disproportionately on communities near combined sewer outfalls and intensive agriculture, and the people least able to travel to safer sites have fewest alternatives.<Cite nums={4} /> Ofwat's fines on water companies have been too small to change behaviour, and the regulator has been slow to act on clear violations — meaning the cost of decades of underinvestment in infrastructure is paid by river users, not shareholders.</p>
           </div>
         </section>
 
@@ -179,6 +188,10 @@ export default function RiverBathingPage() {
             </div>
           </div>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <ScrollReveal>

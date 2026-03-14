@@ -8,6 +8,8 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // -- Types ------------------------------------------------------------------
 
@@ -26,6 +28,12 @@ function yearToDate(y: number): Date {
 }
 
 // -- Page -------------------------------------------------------------------
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Disability Pay Gaps in the UK', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/articles/disabilitypaygapsintheuk', date: '2023' },
+  { num: 2, name: 'DWP', dataset: 'Employment of Disabled People', url: 'https://www.gov.uk/government/statistics/the-employment-of-disabled-people-2023', date: '2023' },
+  { num: 3, name: 'Scope', dataset: 'Disability and the Poverty Premium', url: 'https://www.scope.org.uk/research/disability-poverty', date: '2023' },
+];
 
 export default function DisabilityPayGapPage() {
   const [data, setData] = useState<DisabilityPayGapData | null>(null)
@@ -74,8 +82,8 @@ export default function DisabilityPayGapPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The disability pay gap — the difference in median hourly pay between disabled and non-disabled workers — stands at 17.2%, a figure essentially unchanged since 2015. The gap reflects occupational segregation (disabled workers concentrated in lower-paid roles), higher rates of part-time working, and discrimination in hiring and progression. The employment gap, at 28.4 percentage points (52% vs 81%), has improved modestly from 33.2 points in 2015 but at a pace slow relative to the scale of the challenge; the government's 2017 target to get one million more disabled people into work was met, but the employment rate gap has not closed proportionally because overall employment levels also rose. Reasonable adjustments under the Equality Act are inconsistently applied: many disabled employees are reluctant to disclose their condition for fear of stigma, and many employers lack the knowledge or capacity to implement adjustments effectively.</p>
-            <p>People with progressive neurological conditions and severe mental health conditions face the largest labour market penalties, with employment rates for those with learning disabilities or autism running at 26–32% against a national average for disabled people of 52%. Remote and hybrid working, widespread from 2020, removed physical and logistical barriers that had excluded some disabled people from professional employment — but return-to-office pressure from large employers risks reversing these gains, and the disabled workers who benefited most from remote work are least well placed to resist that pressure. Disability is concentrated in lower-income and social tenancy populations, compounding the pay and employment gaps with housing disadvantage that employment and social policy address in silos rather than together.</p>
+            <p>The disability pay gap — the difference in median hourly pay between disabled and non-disabled workers — stands at 17.2%, a figure essentially unchanged since 2015.<Cite nums={1} /> The gap reflects occupational segregation (disabled workers concentrated in lower-paid roles), higher rates of part-time working, and discrimination in hiring and progression. The employment gap, at 28.4 percentage points (52% vs 81%), has improved modestly from 33.2 points in 2015 but at a pace slow relative to the scale of the challenge;<Cite nums={2} /> the government's 2017 target to get one million more disabled people into work was met, but the employment rate gap has not closed proportionally because overall employment levels also rose. Reasonable adjustments under the Equality Act are inconsistently applied: many disabled employees are reluctant to disclose their condition for fear of stigma, and many employers lack the knowledge or capacity to implement adjustments effectively.</p>
+            <p>People with progressive neurological conditions and severe mental health conditions face the largest labour market penalties, with employment rates for those with learning disabilities or autism running at 26–32% against a national average for disabled people of 52%.<Cite nums={2} /> Remote and hybrid working, widespread from 2020, removed physical and logistical barriers that had excluded some disabled people from professional employment — but return-to-office pressure from large employers risks reversing these gains, and the disabled workers who benefited most from remote work are least well placed to resist that pressure. Disability is concentrated in lower-income and social tenancy populations, compounding the pay and employment gaps with housing disadvantage that employment and social policy address in silos rather than together.<Cite nums={3} /></p>
           </div>
         </section>
 
@@ -136,6 +144,9 @@ export default function DisabilityPayGapPage() {
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">

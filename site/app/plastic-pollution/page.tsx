@@ -7,7 +7,17 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Defra', dataset: 'UK Statistics on Waste', url: 'https://www.gov.uk/government/statistics/uk-waste-data', date: '2024' },
+  { num: 2, name: 'Defra', dataset: 'Packaging Waste Statistics', url: 'https://www.gov.uk/government/statistics/packaging-waste-statistics', date: '2023' },
+  { num: 3, name: 'Eunomia / WWF', dataset: 'Plastic Waste Flows — UK Assessment', date: '2023' },
+  { num: 4, name: 'Greenpeace', dataset: 'UK Plastic Waste Exports Investigation', date: '2023' },
+  { num: 5, name: 'Defra', dataset: 'Extended Producer Responsibility for Packaging', url: 'https://www.gov.uk/government/consultations/packaging-and-packaging-waste-introducing-extended-producer-responsibility', date: '2024' },
+];
 
 interface PlasticData {
   national: {
@@ -62,8 +72,8 @@ export default function PlasticPollutionPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK produces approximately 5.6 million tonnes of plastic waste per year, equivalent to roughly 84 kilograms per person — the second highest per capita rate in the world, behind only the United States. Of this, around 2.5 million tonnes is packaging. DEFRA's 2024 statistics show that 44% of plastic packaging waste is collected for recycling, a figure that has barely changed since 2014. The total municipal recycling rate for England — all materials, not just plastics — was 44.1% in 2022/23, well below the government's 65% target for 2035 and the EU average of 48%. The UK incinerates 12 million tonnes of waste annually, and landfilling, while declining, still receives millions of tonnes. Plastic waste that is not recycled, incinerated, or landfilled enters the environment — an estimated 500,000 tonnes per year, according to a 2023 Eunomia report commissioned by WWF.</p>
-            <p>The recycling system itself is deeply flawed. Around 46% of plastic collected for recycling in 2023 was exported, primarily to Turkey, Malaysia, and Indonesia, where environmental oversight is variable and contamination rates are high. Greenpeace investigations have documented UK plastic bales dumped at roadside sites in Turkey. Domestic reprocessing capacity remains limited: the UK has only 26 plastics reprocessing plants capable of handling post-consumer waste. The Plastic Packaging Tax, introduced in April 2022 at £210.82 per tonne, applies to packaging containing less than 30% recycled content but has not yet demonstrably shifted production patterns. Extended Producer Responsibility (EPR), which was due in 2024 but delayed to 2025, will require producers to cover the full net cost of collecting, sorting, and recycling packaging — a significant policy shift expected to generate £1.4 billion per year for local authorities.</p>
+            <p>The UK produces approximately 5.6 million tonnes of plastic waste per year, equivalent to roughly 84 kilograms per person — the second highest per capita rate in the world, behind only the United States.<Cite nums={1} /> Of this, around 2.5 million tonnes is packaging. DEFRA's 2024 statistics show that 44% of plastic packaging waste is collected for recycling, a figure that has barely changed since 2014.<Cite nums={2} /> The total municipal recycling rate for England — all materials, not just plastics — was 44.1% in 2022/23, well below the government's 65% target for 2035 and the EU average of 48%.<Cite nums={1} /> The UK incinerates 12 million tonnes of waste annually, and landfilling, while declining, still receives millions of tonnes. Plastic waste that is not recycled, incinerated, or landfilled enters the environment — an estimated 500,000 tonnes per year, according to a 2023 Eunomia report commissioned by WWF.<Cite nums={3} /></p>
+            <p>The recycling system itself is deeply flawed. Around 46% of plastic collected for recycling in 2023 was exported, primarily to Turkey, Malaysia, and Indonesia, where environmental oversight is variable and contamination rates are high.<Cite nums={2} /> Greenpeace investigations have documented UK plastic bales dumped at roadside sites in Turkey.<Cite nums={4} /> Domestic reprocessing capacity remains limited: the UK has only 26 plastics reprocessing plants capable of handling post-consumer waste. The Plastic Packaging Tax, introduced in April 2022 at £210.82 per tonne, applies to packaging containing less than 30% recycled content but has not yet demonstrably shifted production patterns. Extended Producer Responsibility (EPR), which was due in 2024 but delayed to 2025, will require producers to cover the full net cost of collecting, sorting, and recycling packaging — a significant policy shift expected to generate £1.4 billion per year for local authorities.<Cite nums={5} /></p>
             </div>
         </section>
 
@@ -132,6 +142,9 @@ export default function PlasticPollutionPage() {
             />
           </section>
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
               <RelatedTopics />
       </main>
     </>

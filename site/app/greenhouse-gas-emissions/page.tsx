@@ -8,6 +8,13 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DESNZ', dataset: 'UK Greenhouse Gas Emissions National Statistics', url: 'https://www.gov.uk/government/statistics/final-uk-greenhouse-gas-emissions-national-statistics', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'UK Environmental Accounts', url: 'https://www.ons.gov.uk/economy/environmentalaccounts', date: '2024' },
+];
 
 export default function GreenhouseGasEmissionsPage() {
   // UK territorial greenhouse gas emissions 1990–2023 (MtCO2e)
@@ -100,8 +107,8 @@ export default function GreenhouseGasEmissionsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK has cut its territorial greenhouse gas emissions by 50% since 1990 — from around 798 MtCO2e to 312 MtCO2e in 2023 — and leads the G7 in the pace of its reduction. The headline is real, but it flatters the picture. Much of the early decline came from replacing coal with gas in power generation through the 1990s, and then with renewables from the 2010s. Deindustrialisation shifted carbon-intensive manufacturing offshore. When you count consumption-based emissions — the carbon embedded in everything the UK imports — the reduction is only 27%, from around 830 MtCO2e to around 605 MtCO2e.</p>
-            <p>The remaining challenge is structurally different from what came before. Transport (dominated by petrol and diesel cars) and buildings (gas boilers) are now the two largest sectors and have barely moved. Agriculture, the fifth-largest sector, has been almost flat for 30 years. These are diffuse, behavioural, and politically sensitive — unlike power generation, where a handful of utility decisions could flip the dial. The Climate Change Committee has repeatedly warned that current policy is insufficient to meet the UK's own legally binding carbon budgets beyond the fourth.</p>
+            <p>The UK has cut its territorial greenhouse gas emissions by 50% since 1990 — from around 798 MtCO2e to 312 MtCO2e in 2023 — and leads the G7 in the pace of its reduction.<Cite nums={1} /> The headline is real, but it flatters the picture. Much of the early decline came from replacing coal with gas in power generation through the 1990s, and then with renewables from the 2010s. Deindustrialisation shifted carbon-intensive manufacturing offshore. When you count consumption-based emissions — the carbon embedded in everything the UK imports — the reduction is only 27%, from around 830 MtCO2e to around 605 MtCO2e.<Cite nums={2} /></p>
+            <p>The remaining challenge is structurally different from what came before. Transport (dominated by petrol and diesel cars) and buildings (gas boilers) are now the two largest sectors and have barely moved. Agriculture, the fifth-largest sector, has been almost flat for 30 years.<Cite nums={1} /> These are diffuse, behavioural, and politically sensitive — unlike power generation, where a handful of utility decisions could flip the dial. The Climate Change Committee has repeatedly warned that current policy is insufficient to meet the UK's own legally binding carbon budgets beyond the fourth.</p>
             <p>The gap between territorial and consumption emissions is the most important number that rarely appears in political debate. It means that UK consumers still drive significant global emissions — they have simply moved them abroad.</p>
           </div>
         </section>
@@ -188,6 +195,9 @@ export default function GreenhouseGasEmissionsPage() {
           />
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">

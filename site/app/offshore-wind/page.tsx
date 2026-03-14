@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DESNZ', dataset: 'Renewable Energy Planning Database & Energy Trends', url: 'https://www.gov.uk/government/organisations/department-for-energy-security-and-net-zero', date: '2024' },
+  { num: 2, name: 'DESNZ', dataset: 'Contracts for Difference Allocation Round 5 Results', url: 'https://www.gov.uk/government/publications/contracts-for-difference-cfd-allocation-round-5-results', date: '2023' },
+  { num: 3, name: 'Wind Europe', dataset: 'Offshore Wind in Europe — key trends and statistics', url: 'https://windeurope.org/', date: '2024' },
+  { num: 4, name: 'Crown Estate', dataset: 'Offshore Wind Leasing Round 4', url: 'https://www.thecrownestate.co.uk/', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -62,8 +71,8 @@ export default function OffshoreWindPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>In 2000 there was no commercial offshore wind in Britain. By 2024, 14.7 GW of installed capacity makes the UK the world's second largest offshore wind market behind China. This was achieved through the Contracts for Difference auction, which provided long-term revenue certainty to developers, driving costs from around £150 per megawatt-hour in 2015 to below £45 in 2022. The government's 50 GW by 2030 target, announced in the 2022 British Energy Security Strategy, would require roughly 6 GW commissioned annually against a historical average of 1.5 GW. The 2023 CfD Round 5 produced the most significant policy setback in the industry's history — zero offshore wind awarded because the strike price ceiling was set below viable project costs amid materials inflation. Round 6 in 2024 recovered with 5.5 GW, but the gap leaves the 2030 target requiring delivery at an unprecedented pace. Industry analysis puts an achievable 2030 outcome at 35–40 GW, with grid connection the primary constraint: transmission infrastructure takes 10–15 years to build.</p>
-            <p>The distribution of economic benefit is contested. Most projects use turbines from Denmark (Vestas) or Germany (Siemens Gamesa); despite freeport investments at Humberside and Teesside, the UK domestic supply chain remains limited. GB Energy, the publicly owned clean investment company, is intended to ensure public returns from public risk. Floating offshore wind — to which the UK has committed 5 GW by 2030 — opens North Atlantic and Scottish west coast waters and is at early commercial stage; the Kincardine farm off Scotland is currently the world's largest at 50 MW. The technology's cost curve has further to fall, and its resource potential is enormous.</p>
+            <p>In 2000 there was no commercial offshore wind in Britain. By 2024, 14.7 GW of installed capacity makes the UK the world's second largest offshore wind market behind China.<Cite nums={[1, 3]} /> This was achieved through the Contracts for Difference auction, which provided long-term revenue certainty to developers, driving costs from around £150 per megawatt-hour in 2015 to below £45 in 2022.<Cite nums={1} /> The government's 50 GW by 2030 target, announced in the 2022 British Energy Security Strategy, would require roughly 6 GW commissioned annually against a historical average of 1.5 GW. The 2023 CfD Round 5 produced the most significant policy setback in the industry's history — zero offshore wind awarded because the strike price ceiling was set below viable project costs amid materials inflation.<Cite nums={2} /> Round 6 in 2024 recovered with 5.5 GW, but the gap leaves the 2030 target requiring delivery at an unprecedented pace. Industry analysis puts an achievable 2030 outcome at 35–40 GW, with grid connection the primary constraint: transmission infrastructure takes 10–15 years to build.<Cite nums={4} /></p>
+            <p>The distribution of economic benefit is contested. Most projects use turbines from Denmark (Vestas) or Germany (Siemens Gamesa); despite freeport investments at Humberside and Teesside, the UK domestic supply chain remains limited. GB Energy, the publicly owned clean investment company, is intended to ensure public returns from public risk. Floating offshore wind — to which the UK has committed 5 GW by 2030 — opens North Atlantic and Scottish west coast waters and is at early commercial stage; the Kincardine farm off Scotland is currently the world's largest at 50 MW.<Cite nums={3} /> The technology's cost curve has further to fall, and its resource potential is enormous.</p>
           </div>
         </section>
 
@@ -164,6 +173,11 @@ export default function OffshoreWindPage() {
           </p>
         </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
               <RelatedTopics />
       </main>
     </>

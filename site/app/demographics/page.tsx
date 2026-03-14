@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Total fertility rate, 2000–2024
 const fertilityValues = [1.65, 1.63, 1.65, 1.72, 1.77, 1.78, 1.84, 1.87, 1.91, 1.94, 1.92, 1.91, 1.89, 1.85, 1.81, 1.76, 1.72, 1.67, 1.70, 1.62, 1.58, 1.56, 1.49, 1.45, 1.41];
@@ -45,6 +47,12 @@ const annotations2: Annotation[] = [
 
 const targetLine = { value: 2.1, label: 'Replacement level 2.1' };
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Mid-year Population Estimates', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Vital Statistics: Births — Total Fertility Rate', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/livebirths/datasets/birthsummarytables', date: '2024' },
+  { num: 3, name: 'ONS', dataset: 'Long-term International Migration', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/bulletins/longterminternationalmigration', date: '2024' },
+];
+
 export default function DemographicsPage() {
   return (
     <>
@@ -59,8 +67,8 @@ export default function DemographicsPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Britain's 68.9 million population rests on a demographic model that has fundamentally changed. Since 2001, the country added 9.8 million people — but natural increase (births minus deaths) contributed just 1.3 million. Migration delivered the other 8.5 million. The total fertility rate has fallen to 1.41 children per woman, a record low and far below the 2.1 replacement threshold. Without net inward migration, the population would now be shrinking. One in five residents is over 65, up from one in six in 2001. The UK no longer grows itself; it imports growth — and even that lever has proved volatile.</p>
-            <p>The fertility collapse is structural, not cyclical. Average house prices exceed eight times median earnings. Full-time childcare costs £14,000–£15,000 a year per child. Women delay first births into their thirties, compressing the window for larger families. These forces push the TFR further below replacement with each cohort. Migration filled the gap — net arrivals hit a record 906,000 in 2023, driven by post-Brexit visa schemes and humanitarian routes — but the political backlash was swift. By 2024, tighter rules cut net migration to 204,000, a 78% drop in a single year. That whiplash exposes the tension at the core of UK demography: the economy needs working-age migrants, but policy treats migration as a tap to be turned on and off.</p>
+            <p>Britain's 68.9 million population rests on a demographic model that has fundamentally changed.<Cite nums={1} /> Since 2001, the country added 9.8 million people — but natural increase (births minus deaths) contributed just 1.3 million. Migration delivered the other 8.5 million.<Cite nums={3} /> The total fertility rate has fallen to 1.41 children per woman, a record low and far below the 2.1 replacement threshold.<Cite nums={2} /> Without net inward migration, the population would now be shrinking. One in five residents is over 65, up from one in six in 2001.<Cite nums={1} /> The UK no longer grows itself; it imports growth — and even that lever has proved volatile.</p>
+            <p>The fertility collapse is structural, not cyclical. Average house prices exceed eight times median earnings. Full-time childcare costs £14,000–£15,000 a year per child. Women delay first births into their thirties, compressing the window for larger families. These forces push the TFR further below replacement with each cohort.<Cite nums={2} /> Migration filled the gap — net arrivals hit a record 906,000 in 2023, driven by post-Brexit visa schemes and humanitarian routes — but the political backlash was swift. By 2024, tighter rules cut net migration to 204,000, a 78% drop in a single year.<Cite nums={3} /> That whiplash exposes the tension at the core of UK demography: the economy needs working-age migrants, but policy treats migration as a tap to be turned on and off.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -140,6 +148,9 @@ export default function DemographicsPage() {
             source="Source: ONS — National Life Tables 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

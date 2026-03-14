@@ -8,6 +8,15 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+// ── References ───────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Electoral Commission', dataset: 'Electoral data — local election turnout', url: 'https://www.electoralcommission.org.uk/who-we-are-and-what-we-do/elections-and-referendums/past-elections-and-referendums', date: '2025' },
+  { num: 2, name: 'Electoral Commission', dataset: 'Mayoral and combined authority election results', url: 'https://www.electoralcommission.org.uk/', date: '2025' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -194,6 +203,10 @@ export default function TopicPage() {
             source="Source: Electoral Commission — Electoral data files, 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

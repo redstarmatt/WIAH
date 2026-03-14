@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DWP', dataset: 'Pension Credit Take-Up Statistics', url: 'https://www.gov.uk/government/statistics/pension-credit-take-up', date: '2024', note: '850,000 eligible non-claimants; £1.7bn unclaimed annually' },
+  { num: 2, name: 'DWP', dataset: 'Pension Credit Statistics — quarterly bulletin', url: 'https://www.gov.uk/government/collections/pension-credit-statistics', date: '2024' },
+  { num: 3, name: 'DWP', dataset: 'Households Below Average Income (HBAI)', url: 'https://www.gov.uk/government/statistics/households-below-average-income-hbai', date: '2024', note: 'Single female pensioner poverty rate 24%' },
+];
 
 export default function PensionCreditTakeUpPage() {
   const takeUpRateData = [62, 62, 63, 63, 63, 63, 63, 62, 62, 63, 63, 63, 63, 63, 63];
@@ -143,12 +151,16 @@ export default function PensionCreditTakeUpPage() {
           <section id="sec-context" className="max-w-2xl mb-12 mt-8">
             <h2 className="text-xl font-bold text-wiah-black mb-4">Why £1.7 billion goes unclaimed every year</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Pension Credit provides a minimum weekly income guarantee — £218.15 for single pensioners and £332.95 for couples in 2024/25 — and acts as a gateway benefit for Housing Benefit, Council Tax Reduction, free NHS dental treatment, and, since winter 2024/25, the Winter Fuel Payment. Yet around 850,000 eligible households — 37% of those entitled — do not claim it, leaving an estimated £1.7 billion unclaimed annually. The 63% take-up rate is one of the lowest for any major means-tested benefit and has barely moved despite repeated government awareness campaigns over more than a decade.</p>
-              <p>Non-take-up concentrates heavily among the hardest-to-reach groups. The very old — particularly those aged over 80 who were not accustomed to claiming benefits during their working lives — have strong stigma against means-testing. Those without internet access cannot use the online application portal; the telephone application process can take over an hour and require documents many older people struggle to locate. Single female pensioners are most exposed: they face a 24% poverty rate versus 16% for all pensioners, combining income vulnerability with the least likelihood of having a partner or family member to assist with a complex application.</p>
-              <p>Rural and coastal areas with high concentrations of older people show the weakest claim rates, compounding geographic isolation with financial deprivation. The benefit is worth on average £3,900 per year — more than enough to prevent poverty for most eligible households — but complexity, stigma, and lack of awareness together keep a third of those entitled from ever claiming it. The linking of Winter Fuel Payment to Pension Credit from autumn 2024 raised the stakes: non-claimants now lose an additional £300 per year in heating support.</p>
+              <p>Pension Credit provides a minimum weekly income guarantee — £218.15 for single pensioners and £332.95 for couples in 2024/25 — and acts as a gateway benefit for Housing Benefit, Council Tax Reduction, free NHS dental treatment, and, since winter 2024/25, the Winter Fuel Payment. Yet around 850,000 eligible households — 37% of those entitled — do not claim it, leaving an estimated £1.7 billion unclaimed annually.<Cite nums={1} /> The 63% take-up rate is one of the lowest for any major means-tested benefit and has barely moved despite repeated government awareness campaigns over more than a decade.</p>
+              <p>Non-take-up concentrates heavily among the hardest-to-reach groups. The very old — particularly those aged over 80 who were not accustomed to claiming benefits during their working lives — have strong stigma against means-testing. Those without internet access cannot use the online application portal; the telephone application process can take over an hour and require documents many older people struggle to locate.<Cite nums={2} /> Single female pensioners are most exposed: they face a 24% poverty rate versus 16% for all pensioners, combining income vulnerability with the least likelihood of having a partner or family member to assist with a complex application.<Cite nums={3} /></p>
+              <p>Rural and coastal areas with high concentrations of older people show the weakest claim rates, compounding geographic isolation with financial deprivation. The benefit is worth on average £3,900 per year — more than enough to prevent poverty for most eligible households — but complexity, stigma, and lack of awareness together keep a third of those entitled from ever claiming it.<Cite nums={1} /> The linking of Winter Fuel Payment to Pension Credit from autumn 2024 raised the stakes: non-claimants now lose an additional £300 per year in heating support.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

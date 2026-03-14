@@ -8,6 +8,13 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'NHS 111 Statistical Release', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/urgent-and-emergency-care/nhs-111-minimum-data-set/', date: '2024' },
+  { num: 2, name: 'NHS England', dataset: 'NHS Long Term Plan — Integrated Urgent Care', url: 'https://www.longtermplan.nhs.uk/', date: '2019' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -74,8 +81,8 @@ export default function Nhs111PressuresPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>NHS 111 launched in 2013 as a single triage point for non-emergency medical advice; call volumes grew from 12.1 million in 2015 to 26.3 million in 2023 — a 117% rise. The surge reflects not popularity but a structural shift: as GP appointment availability has tightened and A&amp;E waiting time targets were abandoned in 2020, 111 has become the default first port of call for a growing range of conditions previously handled in primary care. The strain is visible in the abandonment rate: 8.2% of callers hung up before being answered in 2015; by 2023 that had risen to 15.2% — one in seven. Around 8% of all 111 calls result in a recommendation to attend A&amp;E, translating to over 2 million additional emergency department referrals annually layered on top of self-referred demand. The Clinical Advisor model, routing higher-risk callers to nurses and paramedics, improves safety but increases call handling time, reducing throughput and lengthening the queue that drives abandonment further.</p>
-            <p>Callers who abandon the line do not reliably seek care elsewhere. A significant proportion make no subsequent contact with the health system that day; some subsequently present at A&amp;E in a more acute state. The integrated urgent care model — embedding 111 call handlers alongside out-of-hours GP services and urgent treatment centres to enable direct booking — has shown promise where fully implemented but rollout remains uneven, with substantial regional variation. Call handler retention is poor given the emotional labour of handling medical anxiety and crisis calls; the NHS Long Term Plan's ambition for 111 to evolve into a direct GP and urgent treatment booking platform has proceeded more slowly than planned due to incomplete GP system integration.</p>
+            <p>NHS 111 launched in 2013 as a single triage point for non-emergency medical advice; call volumes grew from 12.1 million in 2015 to 26.3 million in 2023 — a 117% rise.<Cite nums={1} /> The surge reflects not popularity but a structural shift: as GP appointment availability has tightened and A&amp;E waiting time targets were abandoned in 2020, 111 has become the default first port of call for a growing range of conditions previously handled in primary care. The strain is visible in the abandonment rate: 8.2% of callers hung up before being answered in 2015; by 2023 that had risen to 15.2% — one in seven.<Cite nums={1} /> Around 8% of all 111 calls result in a recommendation to attend A&amp;E, translating to over 2 million additional emergency department referrals annually layered on top of self-referred demand.<Cite nums={1} /> The Clinical Advisor model, routing higher-risk callers to nurses and paramedics, improves safety but increases call handling time, reducing throughput and lengthening the queue that drives abandonment further.</p>
+            <p>Callers who abandon the line do not reliably seek care elsewhere. A significant proportion make no subsequent contact with the health system that day; some subsequently present at A&amp;E in a more acute state. The integrated urgent care model — embedding 111 call handlers alongside out-of-hours GP services and urgent treatment centres to enable direct booking — has shown promise where fully implemented but rollout remains uneven, with substantial regional variation. Call handler retention is poor given the emotional labour of handling medical anxiety and crisis calls; the NHS Long Term Plan's ambition for 111 to evolve into a direct GP and urgent treatment booking platform has proceeded more slowly than planned due to incomplete GP system integration.<Cite nums={2} /></p>
           </div>
         </section>
 
@@ -135,6 +142,10 @@ export default function Nhs111PressuresPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

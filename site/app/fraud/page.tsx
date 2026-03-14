@@ -8,6 +8,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Crime Survey for England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice', date: '2024' },
+  { num: 2, name: 'HMICFRS', dataset: 'Fraud inspection report', url: 'https://www.justiceinspectorates.gov.uk/hmicfrs/', date: '2019' },
+  { num: 3, name: 'Home Office', dataset: 'Crime Outcomes in England and Wales', url: 'https://www.gov.uk/government/statistics/crime-outcomes-in-england-and-wales-statistics', date: '2024' },
+  { num: 4, name: 'UK Finance', dataset: 'Annual Fraud Report 2024' },
+];
 
 // Estimated fraud offences (millions), 2015–2024
 const fraudOffencesM = [2.5, 3.2, 3.4, 3.6, 3.8, 4.1, 4.5, 3.7, 3.5, 3.8];
@@ -63,8 +72,8 @@ export default function FraudPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Crime Survey for England and Wales estimates 3.8 million fraud and computer misuse offences annually — more than burglary, robbery, vehicle crime, and violent crime combined. Yet fraud remains the least-policed crime in the country. Of the roughly 900,000 cases reported to Action Fraud each year, around 80,000 are referred to police forces for investigation. Fewer than 8,000 result in charges. The conviction rate, measured against reported cases, hovers at approximately 1%. For most victims, reporting fraud is an exercise in documentation rather than an entry point to justice.</p>
-            <p>Action Fraud, run by the City of London Police on behalf of all 43 forces in England and Wales, was established in 2009 to centralise fraud reporting. In practice it operates as a call centre and data repository, not an investigative body. An HMICFRS inspection in 2019 found the system not fit for purpose, with victims receiving little or no follow-up. A replacement system, originally promised for 2024, has been repeatedly delayed. The Serious Fraud Office, responsible for the most complex cases, has seen its budget cut by a third in real terms since 2012 and has faced a string of high-profile case collapses.</p>
+            <p>The Crime Survey for England and Wales estimates 3.8 million fraud and computer misuse offences annually — more than burglary, robbery, vehicle crime, and violent crime combined.<Cite nums={[1]} /> Yet fraud remains the least-policed crime in the country. Of the roughly 900,000 cases reported to Action Fraud each year, around 80,000 are referred to police forces for investigation. Fewer than 8,000 result in charges.<Cite nums={[3]} /> The conviction rate, measured against reported cases, hovers at approximately 1%.<Cite nums={[3]} /> For most victims, reporting fraud is an exercise in documentation rather than an entry point to justice.</p>
+            <p>Action Fraud, run by the City of London Police on behalf of all 43 forces in England and Wales, was established in 2009 to centralise fraud reporting. In practice it operates as a call centre and data repository, not an investigative body. An HMICFRS inspection in 2019 found the system not fit for purpose, with victims receiving little or no follow-up.<Cite nums={[2]} /> A replacement system, originally promised for 2024, has been repeatedly delayed. The Serious Fraud Office, responsible for the most complex cases, has seen its budget cut by a third in real terms since 2012 and has faced a string of high-profile case collapses.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -143,6 +152,9 @@ export default function FraudPage() {
             source="Source: PSR — APP scam reimbursement data 2024; Home Office — Fraud Strategy progress report 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

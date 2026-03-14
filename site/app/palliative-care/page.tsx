@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Hospice UK', dataset: 'Hospice accounts and funding data', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Deaths registered by place of occurrence, England', date: '2024' },
+  { num: 3, name: 'NHS England', dataset: 'Palliative and end of life care profiles (OHID Fingertips)', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -91,8 +99,12 @@ export default function PalliativeCarePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Around 600,000 people die in England each year, the majority from expected conditions including cancer, heart failure, and dementia. England's approximately 200 hospices care for over 200,000 people annually, but the NHS contributes just 27% of hospice income — down from 32% a decade ago — leaving the remaining 73% to donations, charity shops, and fundraising. Hospice UK estimates a collective sector deficit of £77 million per year, with some hospices at risk of closure. Specialist palliative care referrals have risen from 188,000 in 2014 to 274,000 in 2024 as the population ages, but the workforce is not keeping pace: there are only around 600 palliative medicine consultants in England and specialist nursing vacancies are high.</p>
-            <p>Access is unequal in ways that compound existing NHS inequalities. People dying from heart failure, COPD, or dementia receive specialist palliative care far less often than cancer patients, despite comparable symptom burden. Black and Asian patients are significantly less likely to be referred to hospice services. The proportion dying in their usual place of residence — the outcome most people say they want — peaked at 52% during COVID and has since fallen back to around 48%. Some ICBs commission 24/7 community palliative care; others have no out-of-hours provision, meaning those who become acutely unwell at night frequently end in A&amp;E — the place most people say they least want to die.</p>
+            <p>Around 600,000 people die in England each year, the majority from expected conditions including cancer, heart failure, and dementia. England's approximately 200 hospices care for over 200,000 people annually, but the NHS contributes just 27% of hospice income — down from 32% a decade ago — leaving the remaining 73% to donations, charity shops, and fundraising.<Cite nums={1} /> Hospice UK estimates a collective sector deficit of £77 million per year, with some hospices at risk of closure. Specialist palliative care referrals have risen from 188,000 in 2014 to 274,000 in 2024 as the population ages<Cite nums={3} />, but the workforce is not keeping pace: there are only around 600 palliative medicine consultants in England and specialist nursing vacancies are high.</p>
+            <p>Access is unequal in ways that compound existing NHS inequalities. People dying from heart failure, COPD, or dementia receive specialist palliative care far less often than cancer patients, despite comparable symptom burden. Black and Asian patients are significantly less likely to be referred to hospice services. The proportion dying in their usual place of residence — the outcome most people say they want — peaked at 52% during COVID and has since fallen back to around 48%.<Cite nums={2} /> Some ICBs commission 24/7 community palliative care; others have no out-of-hours provision, meaning those who become acutely unwell at night frequently end in A&amp;E — the place most people say they least want to die.</p>
+          </div>
+
+          <div className="mt-6">
+            <References items={editorialRefs} />
           </div>
         </section>
 

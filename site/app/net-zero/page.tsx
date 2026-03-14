@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DESNZ', dataset: 'UK Greenhouse Gas Emissions — provisional figures', url: 'https://www.gov.uk/government/collections/final-uk-greenhouse-gas-emissions-national-statistics', date: '2024' },
+  { num: 2, name: 'DESNZ', dataset: 'Energy Trends — renewable electricity', url: 'https://www.gov.uk/government/collections/energy-trends', date: '2024' },
+  { num: 3, name: 'Climate Change Committee', dataset: 'Progress in reducing emissions — 2023 Report to Parliament', url: 'https://www.theccc.org.uk/publication/2023-progress-report-to-parliament/', date: '2023' },
+  { num: 4, name: 'National Grid ESO', dataset: 'Future Energy Scenarios', url: 'https://www.nationalgrideso.com/future-energy/future-energy-scenarios', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -86,8 +95,8 @@ export default function NetZeroPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>UK greenhouse gas emissions fell 49% between 1990 and 2022 — one of the fastest reductions among major economies. Almost all of it came from two sectors: electricity generation and heavy industry. The electricity story is a genuine success. Coal supplied 40% of UK power in 2012; by 2024 it had been phased out entirely. Renewables now account for 47% of electricity generation, led by offshore wind, where the UK has built the world's largest fleet at 14.7 GW. The cost of offshore wind has fallen 70% since 2015. These were the achievable wins. The hard sectors remain largely untouched.</p>
-            <p>Transport produces 26% of UK emissions; 92% of cars on the road are still petrol or diesel. Buildings account for 17%; 24 million homes are heated by gas boilers, and only 60,000 heat pumps were installed in 2023 against the 600,000 per year needed by the mid-2020s to stay on track. Agriculture, at 11% of emissions, has seen almost no reduction in thirty years. The Climate Change Committee — the statutory body that advises government — found in its 2023 annual progress report that the UK was &ldquo;off track&rdquo; for a majority of its near-term 2030 milestones. The legally binding target is a 68% reduction by 2030, relative to 1990.</p>
+            <p>UK greenhouse gas emissions fell 49% between 1990 and 2022 — one of the fastest reductions among major economies.<Cite nums={1} /> Almost all of it came from two sectors: electricity generation and heavy industry. The electricity story is a genuine success. Coal supplied 40% of UK power in 2012; by 2024 it had been phased out entirely. Renewables now account for 47% of electricity generation, led by offshore wind, where the UK has built the world's largest fleet at 14.7 GW.<Cite nums={[2, 4]} /> The cost of offshore wind has fallen 70% since 2015. These were the achievable wins. The hard sectors remain largely untouched.</p>
+            <p>Transport produces 26% of UK emissions; 92% of cars on the road are still petrol or diesel.<Cite nums={1} /> Buildings account for 17%; 24 million homes are heated by gas boilers, and only 60,000 heat pumps were installed in 2023 against the 600,000 per year needed by the mid-2020s to stay on track. Agriculture, at 11% of emissions, has seen almost no reduction in thirty years. The Climate Change Committee — the statutory body that advises government — found in its 2023 annual progress report that the UK was &ldquo;off track&rdquo; for a majority of its near-term 2030 milestones.<Cite nums={3} /> The legally binding target is a 68% reduction by 2030, relative to 1990.</p>
             </div>
         </section>
 
@@ -199,6 +208,10 @@ export default function NetZeroPage() {
           source="National Grid ESO · Data Explorer; UK Government · Energy White Paper"
         />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
               <RelatedTopics />
       </main>
     </>

@@ -13,6 +13,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import { formatDate } from '@/lib/format';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'House price to workplace-based earnings ratio', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/housing/datasets/ratioofhousepricetoworkplacebasedearningslowerquartileandmedian', date: '2024' },
+  { num: 2, name: 'ONS / Land Registry', dataset: 'UK House Price Index', url: 'https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/housepriceindex/latest', date: '2024' },
+  { num: 3, name: 'DLUHC', dataset: 'Live Table 104: Dwelling stock', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-dwelling-stock-including-vacants', date: '2024' },
+  { num: 4, name: 'ONS', dataset: 'Index of Private Housing Rental Prices (IPHRP)', url: 'https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/indexofprivatehousingrentalprices/latest', date: '2025' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -573,23 +582,26 @@ export default function HousingPage() {
             <p>
               In 1997, the average house in England cost 3.5 times the median salary. By
               2024 the ratio had reached 7.7&times; — and in London it peaks above
-              11&times;, meaning a typical home costs more than a decade's gross pay.
+              11&times;, meaning a typical home costs more than a decade's gross pay.<Cite nums={1} />
               The raw numbers are stark: house prices have risen roughly 390% since 1997
-              while earnings have risen about 90%. In the North East the ratio sits closer
+              while earnings have risen about 90%.<Cite nums={2} /> In the North East the ratio sits closer
               to 5&times;, but even that would have been considered unaffordable a generation
               ago. First-time buyers now face an average entry price of £245,000, and social
-              housing stock has been declining for decades, narrowing the alternatives.
+              housing stock has been declining for decades, narrowing the alternatives.<Cite nums={3} />
             </p>
             <p>
               For the growing share of the population who rent, the squeeze has intensified
               sharply. Average monthly rent in England reached £1,380 in 2025 — up 78%
               since 2005. In London it exceeds £2,200. Private renters now spend more than
-              a third of their income on rent; in London, over 40%. The ONS private rent
+              a third of their income on rent; in London, over 40%.<Cite nums={4} /> The ONS private rent
               index (IPHRP) shows rents rising at close to 10% a year in 2024 — the
-              fastest pace since records began in 2011, with London at 11%. A post-pandemic
+              fastest pace since records began in 2011, with London at 11%.<Cite nums={4} /> A post-pandemic
               surge that began in 2021 shows no sign of abating.
             </p>
             </div>
+          <div className="mt-6">
+            <References items={editorialRefs} />
+          </div>
         </section>
 
         <SectionNav sections={[

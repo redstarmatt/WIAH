@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // UK goods exports (£bn), 2015–2024 — ONS
 const goodsExportValues = [230, 235, 240, 248, 252, 248, 224, 290, 310, 285];
@@ -47,6 +49,14 @@ const exportAnnotations: Annotation[] = [
   { date: new Date(2021, 0, 1), label: '2021: Brexit — new trade barriers' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'UK trade in services', url: 'https://www.ons.gov.uk/economy/nationalaccounts/balanceofpayments/bulletins/uktrade/latest', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'UK trade in goods', url: 'https://www.ons.gov.uk/economy/nationalaccounts/balanceofpayments/bulletins/uktrade/latest', date: '2024' },
+  { num: 3, name: 'ONS', dataset: 'UK national accounts', url: 'https://www.ons.gov.uk/economy/grossdomesticproductgdp', date: '2024' },
+  { num: 4, name: 'Bank of England / Resolution Foundation', dataset: 'Analysis of Brexit impact on UK goods exports', date: '2023' },
+  { num: 5, name: 'DCMS', dataset: 'Creative Industries Sector Vision', date: '2023' },
+];
+
 export default function ExportGoodsServicesPage() {
   return (
     <>
@@ -61,8 +71,8 @@ export default function ExportGoodsServicesPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>UK exports tell two very different stories. Services exports — financial services, professional and legal services, creative industries, education, and tourism — have grown strongly and reached a record £340 billion in 2024. The UK has the second-largest services trade surplus in the world after the United States, reflecting London's position as the leading global financial centre and the UK's comparative advantage in knowledge-intensive services. Services now account for a higher share of UK exports than goods for the first time — a structural shift that Brexit has, in some cases, accelerated by prompting financial firms to expand EU operations while maintaining UK headquarters.</p>
-            <p>Goods exports, by contrast, have stagnated. The total value of goods exports was approximately £285 billion in 2024 — roughly flat since 2015 in nominal terms, meaning significant real decline. Brexit created new non-tariff barriers with the EU, the UK's largest goods trading partner, increasing customs checks, rules of origin requirements, and regulatory divergence that have particularly affected smaller exporters and the food and drink sector. Several studies — including analysis by the Bank of England and Resolution Foundation — found that UK goods exports to the EU were 15–20% lower in the years following Brexit than they would have been had the UK remained in the single market. The government's Trade and Cooperation Agreement with the EU provides tariff-free trade for goods meeting rules of origin, but non-tariff barriers remain significant.</p>
+            <p>UK exports tell two very different stories. Services exports — financial services, professional and legal services, creative industries, education, and tourism — have grown strongly and reached a record £340 billion in 2024.<Cite nums={[1]} /> The UK has the second-largest services trade surplus in the world after the United States, reflecting London's position as the leading global financial centre and the UK's comparative advantage in knowledge-intensive services.<Cite nums={[1]} /> Services now account for a higher share of UK exports than goods for the first time — a structural shift that Brexit has, in some cases, accelerated by prompting financial firms to expand EU operations while maintaining UK headquarters.</p>
+            <p>Goods exports, by contrast, have stagnated. The total value of goods exports was approximately £285 billion in 2024 — roughly flat since 2015 in nominal terms, meaning significant real decline.<Cite nums={[2]} /> Brexit created new non-tariff barriers with the EU, the UK's largest goods trading partner, increasing customs checks, rules of origin requirements, and regulatory divergence that have particularly affected smaller exporters and the food and drink sector. Several studies — including analysis by the Bank of England and Resolution Foundation — found that UK goods exports to the EU were 15–20% lower in the years following Brexit than they would have been had the UK remained in the single market.<Cite nums={[4]} /> The government's Trade and Cooperation Agreement with the EU provides tariff-free trade for goods meeting rules of origin, but non-tariff barriers remain significant.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -140,6 +150,9 @@ export default function ExportGoodsServicesPage() {
             source="Source: DCMS — Creative Industries Sector Vision 2023. ONS — UK trade in services 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

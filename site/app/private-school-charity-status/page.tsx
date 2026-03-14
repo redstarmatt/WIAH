@@ -8,6 +8,15 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Charity Commission', dataset: 'Independent School Charitable Accounts', date: '2024' },
+  { num: 2, name: 'Independent Schools Council', dataset: 'ISC Annual Census 2024', url: 'https://www.isc.co.uk/research/', date: '2024' },
+  { num: 3, name: 'DfE', dataset: 'Schools, Pupils and Their Characteristics', url: 'https://explore-education-statistics.service.gov.uk/', date: '2024' },
+  { num: 4, name: 'Sutton Trust', dataset: 'Elitist Britain 2024', url: 'https://www.suttontrust.com/', date: '2024' },
+];
 
 interface PrivateSchoolDataPoint {
   year: number
@@ -59,8 +68,8 @@ export default function PrivateSchoolCharityStatusPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Independent schools in England have operated under charitable status, entitling them to significant tax advantages including 80% mandatory relief on business rates, Gift Aid on donations, and exemption from corporation tax on surpluses, with an estimated annual value of approximately £522 million per year. The VAT exemption on school fees — a long-standing anomaly in UK tax law — was removed from January 2025, with the government applying the standard 20% VAT rate. The measure was Labour's flagship education policy in the 2024 general election, projected to raise approximately £1.6 billion per year for reinvestment in state school provision including teacher recruitment and SEND support. Initial data from early 2025 showed smaller pupil number reductions than independent school associations had predicted.</p>
-            <p>Despite educating 7% of pupils, independent school alumni disproportionately occupy positions of power: 65% of senior judges, 55% of senior civil servants, 52% of Foreign Office ambassadors, and 44% of newspaper columnists attended independent schools. State school funding stood at approximately £7,700 per pupil in 2024, compared to an average independent school fee of £18,000 per year for day schools. The spending difference is visible in class sizes, facilities, extracurricular provision, and teacher staffing — advantages that are not replicated in state schools and that compound the inequality of outcome that selective private education perpetuates.</p>
+            <p>Independent schools in England have operated under charitable status, entitling them to significant tax advantages including 80% mandatory relief on business rates, Gift Aid on donations, and exemption from corporation tax on surpluses, with an estimated annual value of approximately £522 million per year.<Cite nums={1} /> The VAT exemption on school fees — a long-standing anomaly in UK tax law — was removed from January 2025, with the government applying the standard 20% VAT rate. The measure was Labour's flagship education policy in the 2024 general election, projected to raise approximately £1.6 billion per year for reinvestment in state school provision including teacher recruitment and SEND support. Initial data from early 2025 showed smaller pupil number reductions than independent school associations had predicted.<Cite nums={2} /></p>
+            <p>Despite educating 7% of pupils, independent school alumni disproportionately occupy positions of power: 65% of senior judges, 55% of senior civil servants, 52% of Foreign Office ambassadors, and 44% of newspaper columnists attended independent schools.<Cite nums={4} /> State school funding stood at approximately £7,700 per pupil in 2024, compared to an average independent school fee of £18,000 per year for day schools.<Cite nums={[2, 3]} /> The spending difference is visible in class sizes, facilities, extracurricular provision, and teacher staffing — advantages that are not replicated in state schools and that compound the inequality of outcome that selective private education perpetuates.</p>
           </div>
         </section>
 
@@ -113,6 +122,10 @@ export default function PrivateSchoolCharityStatusPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

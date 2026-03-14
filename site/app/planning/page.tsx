@@ -8,7 +8,16 @@ import LineChart, { Series, Annotation, TargetLine } from '@/components/charts/L
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DLUHC', dataset: 'House Building: New Build Dwellings, England', url: 'https://www.gov.uk/government/collections/house-building-statistics', date: '2024' },
+  { num: 2, name: 'MHCLG', dataset: 'Planning Applications Statistics', url: 'https://www.gov.uk/government/collections/planning-applications-statistics', date: '2024' },
+  { num: 3, name: 'Planning Advisory Service / LGA', dataset: 'LPA Staffing Survey', url: 'https://www.local.gov.uk/pas', date: '2024' },
+  { num: 4, name: 'ONS', dataset: 'House Price to Workplace-Based Earnings Ratio', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/housing/datasets/ratioofhousepricetoworkplacebasedearningslowerquartileandmedian', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -117,10 +126,10 @@ export default function PlanningPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              England has not built 300,000 homes in any year since at least 1970. The best recent effort — 182,000 net additional dwellings in 2022 — fell 40% short of that target. By 2024, output had dropped further to 160,400 as higher construction costs and elevated mortgage rates squeezed developer viability. Household formation runs at 240,000–260,000 per year, so net supply has been persistently below demand for over a decade. Various housing bodies estimate the accumulated shortfall at 1.4–2.0 million homes, a deficit that widens by roughly 100,000 every year that building falls short.
+              England has not built 300,000 homes in any year since at least 1970. The best recent effort — 182,000 net additional dwellings in 2022 — fell 40% short of that target.<Cite nums={1} /> By 2024, output had dropped further to 160,400 as higher construction costs and elevated mortgage rates squeezed developer viability.<Cite nums={1} /> Household formation runs at 240,000–260,000 per year, so net supply has been persistently below demand for over a decade. Various housing bodies estimate the accumulated shortfall at 1.4–2.0 million homes, a deficit that widens by roughly 100,000 every year that building falls short.
             </p>
             <p>
-              The planning system that controls this pipeline has been stripped of capacity. Local authority planning departments employed 9,500 officers in 2010; by 2024 that had fallen to 6,100 — a 36% cut. Contested major applications now average over 30 weeks to decide against a statutory target of 13. The total volume of major applications decided fell from 18,300 in 2017 to 14,200 in 2024, even as the grant rate held at 73%. Over 1 million permissions have been granted but remain unbuilt, reflecting both developer &ldquo;land banking&rdquo; and genuine viability constraints. Labour's 2025 Planning and Infrastructure Bill proposes zonal planning, binding local targets, and a new infrastructure levy to break the logjam.
+              The planning system that controls this pipeline has been stripped of capacity. Local authority planning departments employed 9,500 officers in 2010; by 2024 that had fallen to 6,100 — a 36% cut.<Cite nums={3} /> Contested major applications now average over 30 weeks to decide against a statutory target of 13.<Cite nums={2} /> The total volume of major applications decided fell from 18,300 in 2017 to 14,200 in 2024, even as the grant rate held at 73%.<Cite nums={2} /> Over 1 million permissions have been granted but remain unbuilt, reflecting both developer &ldquo;land banking&rdquo; and genuine viability constraints. Labour's 2025 Planning and Infrastructure Bill proposes zonal planning, binding local targets, and a new infrastructure levy to break the logjam.
             </p>
             </div>
         </section>
@@ -201,6 +210,10 @@ export default function PlanningPage() {
           source="Source: MHCLG — Planning applications statistics 2024."
         />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

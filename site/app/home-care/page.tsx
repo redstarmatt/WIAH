@@ -9,6 +9,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import PositiveCallout from '@/components/PositiveCallout';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -27,6 +29,12 @@ interface HomeCareData {
 function yearToDate(y: string): Date {
   return new Date(parseInt(y), 5, 1);
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England / DHSC', dataset: 'Community Health Services & Adult Social Care Statistics', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/community-health-services/', date: '2023' },
+  { num: 2, name: 'Skills for Care', dataset: 'State of the Adult Social Care Sector', url: 'https://www.skillsforcare.org.uk/adult-social-care-workforce-data/', date: '2023' },
+  { num: 3, name: 'CQC / UKHCA', dataset: 'State of Care & Provider Market Analysis', url: 'https://www.cqc.org.uk/publications/major-report/state-of-care', date: '2023' },
+];
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -77,10 +85,10 @@ export default function HomeCarePage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Home care — also called domiciliary care — enables older and disabled people to live independently by providing support with washing, dressing, cooking, medication, and personal care in their own homes. It is the largest component of adult social care by volume: around 870,000 people in England receive some form of home care support, making it far larger than residential care. Yet the system is under severe strain. An estimated 500,000 people are waiting for a care needs assessment or have been assessed but are still awaiting a care package to start — a figure that has roughly doubled since 2016 as demand from an ageing population outstrips the sector's capacity to respond.
+              Home care — also called domiciliary care — enables older and disabled people to live independently by providing support with washing, dressing, cooking, medication, and personal care in their own homes. It is the largest component of adult social care by volume: around 870,000 people in England receive some form of home care support, making it far larger than residential care.<Cite nums={1} /> Yet the system is under severe strain. An estimated 500,000 people are waiting for a care needs assessment or have been assessed but are still awaiting a care package to start — a figure that has roughly doubled since 2016 as demand from an ageing population outstrips the sector's capacity to respond.<Cite nums={1} />
             </p>
             <p>
-              The workforce crisis is the immediate constraint. Skills for Care estimates that the social care sector has 132,000 vacant posts — a vacancy rate of 9.9%, compared with 3.8% across the whole economy. Turnover in home care is 38% annually, meaning providers must replace more than a third of their staff every year simply to stand still. Pay is the primary driver: the median home care worker earns £10.80 per hour, barely above the national living wage, and significantly less than NHS equivalents doing comparable work. The sector lost an estimated 50,000 European workers following the end of free movement in 2021, and while international recruitment has partially filled the gap — 70,000 overseas care workers entered the sector in 2022 and 2023 — visa restrictions tightened in early 2024 may reverse these gains.
+              The workforce crisis is the immediate constraint. Skills for Care estimates that the social care sector has 132,000 vacant posts — a vacancy rate of 9.9%, compared with 3.8% across the whole economy.<Cite nums={2} /> Turnover in home care is 38% annually, meaning providers must replace more than a third of their staff every year simply to stand still.<Cite nums={2} /> Pay is the primary driver: the median home care worker earns £10.80 per hour, barely above the national living wage, and significantly less than NHS equivalents doing comparable work.<Cite nums={2} /> The sector lost an estimated 50,000 European workers following the end of free movement in 2021, and while international recruitment has partially filled the gap — 70,000 overseas care workers entered the sector in 2022 and 2023 — visa restrictions tightened in early 2024 may reverse these gains.<Cite nums={3} />
             </p>
             </div>
         </section>
@@ -178,6 +186,10 @@ export default function HomeCarePage() {
             source="DLUHC / DHSC · Disabled Facilities Grant 2024 · Better Care Fund 2024"
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="border-t border-wiah-border pt-8 mt-12">
           <h2 className="text-lg font-bold text-wiah-black mb-4">Sources &amp; methodology</h2>

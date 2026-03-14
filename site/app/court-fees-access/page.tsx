@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Civil court fee income £M, 2015–2024 (HMCTS)
 const feeIncomeValues = [520, 570, 610, 650, 690, 700, 640, 680, 730, 780];
@@ -53,6 +55,12 @@ const annotations2: Annotation[] = [
   { date: new Date(2020, 5, 1), label: '2020: COVID-19 court closures' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'HMCTS', dataset: 'Annual Report and Accounts', url: 'https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service', date: '2024' },
+  { num: 2, name: 'HMCTS', dataset: 'Court Statistics Quarterly', url: 'https://www.gov.uk/government/collections/court-statistics-quarterly', date: '2024' },
+  { num: 3, name: 'Supreme Court', dataset: 'R (UNISON) v Lord Chancellor [2017] UKSC 51', date: '2017' },
+];
+
 export default function CourtFeesAccessPage() {
   return (
     <>
@@ -67,8 +75,8 @@ export default function CourtFeesAccessPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>HMCTS is expected to be financially sustainable through fee recovery — a policy that has fundamentally reshaped who can access civil justice. Fees for high-value claims exceed £10,000 at issue alone, and multiple hearing fees can add substantially to that. Employment tribunal fees — introduced in 2013 and struck down by the Supreme Court in 2017 as an unlawful restriction on access to justice — caused a 70% collapse in claims during their four-year existence. That case established a precedent: fees at a level that prevents ordinary people from exercising their legal rights are unconstitutional. Civil claims issued annually have fallen from 2.2 million in 2010 to 1.3 million in 2024 — a 40% decline against a backdrop of population growth and rising disputes.</p>
-            <p>Legal aid reforms under LASPO 2012 simultaneously removed eligibility for most civil legal advice, meaning many people face court costs without representation. The Help with Fees scheme (EX160) provides remissions for those on qualifying benefits or low incomes, with 600,000 remissions granted in 2024. But the income thresholds have not been uprated with inflation, and the majority of working people who cannot afford court fees do not qualify for help. The justice gap is widest for employment, housing, family, and debt disputes affecting working and middle-income households — the groups who are too rich for legal aid and too poor for solicitors.</p>
+            <p>HMCTS is expected to be financially sustainable through fee recovery — a policy that has fundamentally reshaped who can access civil justice.<Cite nums={1} /> Fees for high-value claims exceed £10,000 at issue alone, and multiple hearing fees can add substantially to that. Employment tribunal fees — introduced in 2013 and struck down by the Supreme Court in 2017 as an unlawful restriction on access to justice — caused a 70% collapse in claims during their four-year existence.<Cite nums={3} /> Civil claims issued annually have fallen from 2.2 million in 2010 to 1.3 million in 2024 — a 40% decline against a backdrop of population growth and rising disputes.<Cite nums={2} /></p>
+            <p>Legal aid reforms under LASPO 2012 simultaneously removed eligibility for most civil legal advice, meaning many people face court costs without representation. The Help with Fees scheme (EX160) provides remissions for those on qualifying benefits or low incomes, with 600,000 remissions granted in 2024.<Cite nums={2} /> But the income thresholds have not been uprated with inflation, and the majority of working people who cannot afford court fees do not qualify for help. The justice gap is widest for employment, housing, family, and debt disputes affecting working and middle-income households — the groups who are too rich for legal aid and too poor for solicitors.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -147,6 +155,9 @@ export default function CourtFeesAccessPage() {
             source="Source: HMCTS — Online Civil Money Claims statistics 2024. Access to Justice Foundation — Annual report 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

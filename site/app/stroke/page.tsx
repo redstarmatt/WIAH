@@ -9,6 +9,14 @@ import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'SSNAP', dataset: 'Sentinel Stroke National Audit Programme', url: 'https://www.strokeaudit.org/', date: '2023', note: 'Thrombolysis rate 11%, unchanged for 5 years; thrombectomy 3.8%; stroke unit admission declined to 78%' },
+  { num: 2, name: 'ONS', dataset: 'Death Registrations — Cerebrovascular Diseases', date: '2023', note: 'Age-standardised mortality 40.2 per 100K, down from 47 in 2012; improvement flattening' },
+  { num: 3, name: 'Stroke Association', dataset: 'State of the Nation Report', url: 'https://www.stroke.org.uk/', date: '2023', note: '~100K strokes/year; 35K deaths; £8.9bn annual economic cost; 24 thrombectomy centres' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -98,8 +106,8 @@ export default function StrokePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Stroke is the fourth leading cause of death in England and the single largest cause of adult disability, with around 100,000 strokes each year killing approximately 35,000 people and leaving twice as many with significant disability. For ischaemic stroke — 85% of cases — two treatments are transformative when delivered within hours: thrombolysis within 4.5 hours and thrombectomy within 24 hours. The evidence is unambiguous, yet England&rsquo;s thrombolysis rate sits at just 11%, unchanged for five years, and the thrombectomy rate is 3.8% — far below the estimated 10–12% of patients who could benefit. Stroke unit admission, which reduces mortality by approximately 20%, has also declined from 84% in 2016 to 78%, driven by bed pressures. Age-standardised stroke mortality fell from 47 per 100,000 in 2012 to 40 in 2023, but improvement has flattened, and 45% of stroke survivors do not receive the six-month review recommended by national guidelines.</p>
-            <p>The bottleneck is infrastructure and geography. England has 24 thrombectomy-capable centres, but only a handful provide round-the-clock services — a patient having a stroke at 3am in rural Cornwall faces fundamentally different odds to one in central London. The NHS Long-Term Plan committed to increasing thrombectomy to 10% of stroke patients, and the NHS Stroke Improvement Programme has set targets, but progress has been slow and uneven. The Stroke Association estimates the annual economic cost to the NHS and social care at £8.9 billion, a figure that will only fall with faster pre-hospital pathways and sustained investment in thrombectomy capacity.</p>
+            <p>Stroke is the fourth leading cause of death in England and the single largest cause of adult disability, with around 100,000 strokes each year killing approximately 35,000 people and leaving twice as many with significant disability.<Cite nums={3} /> For ischaemic stroke — 85% of cases — two treatments are transformative when delivered within hours: thrombolysis within 4.5 hours and thrombectomy within 24 hours. The evidence is unambiguous, yet England&rsquo;s thrombolysis rate sits at just 11%, unchanged for five years, and the thrombectomy rate is 3.8% — far below the estimated 10–12% of patients who could benefit.<Cite nums={1} /> Stroke unit admission, which reduces mortality by approximately 20%, has also declined from 84% in 2016 to 78%, driven by bed pressures.<Cite nums={1} /> Age-standardised stroke mortality fell from 47 per 100,000 in 2012 to 40 in 2023, but improvement has flattened, and 45% of stroke survivors do not receive the six-month review recommended by national guidelines.<Cite nums={2} /></p>
+            <p>The bottleneck is infrastructure and geography. England has 24 thrombectomy-capable centres, but only a handful provide round-the-clock services — a patient having a stroke at 3am in rural Cornwall faces fundamentally different odds to one in central London.<Cite nums={3} /> The NHS Long-Term Plan committed to increasing thrombectomy to 10% of stroke patients, and the NHS Stroke Improvement Programme has set targets, but progress has been slow and uneven. The Stroke Association estimates the annual economic cost to the NHS and social care at £8.9 billion, a figure that will only fall with faster pre-hospital pathways and sustained investment in thrombectomy capacity.<Cite nums={3} /></p>
           </div>
         </section>
 
@@ -184,6 +192,10 @@ export default function StrokePage() {
             source="Source: British Heart Foundation Statistical Compendium; ONS Death Registrations; Cardiovascular Research (2022)."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

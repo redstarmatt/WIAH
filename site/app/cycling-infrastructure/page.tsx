@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import PositiveCallout from '@/components/PositiveCallout';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Cycling modal share (% of all trips), 2015–2024
 const modalShareValues = [1.8, 1.9, 2.0, 2.1, 2.2, 2.5, 2.3, 2.2, 2.2, 2.2];
@@ -46,6 +48,12 @@ const annotations2: Annotation[] = [
 
 const targetLine = { value: 10, label: '2030 target: 10%', colour: '#2A9D8F' };
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Department for Transport', dataset: 'National Travel Survey: England', url: 'https://www.gov.uk/government/collections/national-travel-survey-statistics', date: '2024' },
+  { num: 2, name: 'Active Travel England', dataset: 'Cycling and Walking Investment Strategy Annual Report', url: 'https://www.gov.uk/government/publications/cycling-and-walking-investment-strategy', date: '2024' },
+  { num: 3, name: 'Department for Transport', dataset: 'Reported Road Casualties Great Britain', url: 'https://www.gov.uk/government/statistics/reported-road-casualties-great-britain-annual-report-2023', date: '2023' },
+];
+
 export default function CyclingInfrastructurePage() {
   return (
     <>
@@ -60,8 +68,8 @@ export default function CyclingInfrastructurePage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The United Kingdom has cycled through — and abandoned — cycling strategies at regular intervals since the 1990s without achieving the step-change in modal shift that has transformed transport in comparable European countries. The government's Cycling and Walking Investment Strategy, published in 2017, set a target for cycling to account for 10% of all journeys by 2025 — a target that is now, in 2026, clearly missed, with the modal share stubbornly at 2.2%. The strategy was backed by a promise of £3 billion in active travel investment through to 2025. In the 2024 Autumn Budget, the active travel budget was halved to approximately £1.5 billion.</p>
-            <p>The infrastructure gap between England and the cycling nations of northern Europe is vast and structural. The Netherlands has 35,000 kilometres of protected cycling infrastructure, built over 50 years of consistent investment. England has approximately 680 miles (1,100 kilometres) of protected cycle lanes — nationally. The distinction between protected and unprotected infrastructure is critical: paint alone does not protect cyclists from vehicle collisions. Studies consistently show that cycling rates on streets with physical segregation are 4–6 times higher than on equivalent streets with only painted lanes. More than 60% of English cycling infrastructure consists of shared footways, advisory cycle lanes, or painted lanes without physical barriers — facilities that many experienced cyclists regard as worse than usable because they encourage close passes from motorists.</p>
+            <p>The United Kingdom has cycled through — and abandoned — cycling strategies at regular intervals since the 1990s without achieving the step-change in modal shift that has transformed transport in comparable European countries. The government's Cycling and Walking Investment Strategy, published in 2017, set a target for cycling to account for 10% of all journeys by 2025 — a target that is now, in 2026, clearly missed, with the modal share stubbornly at 2.2%.<Cite nums={1} /> The strategy was backed by a promise of £3 billion in active travel investment through to 2025. In the 2024 Autumn Budget, the active travel budget was halved to approximately £1.5 billion.<Cite nums={2} /></p>
+            <p>The infrastructure gap between England and the cycling nations of northern Europe is vast and structural. The Netherlands has 35,000 kilometres of protected cycling infrastructure, built over 50 years of consistent investment. England has approximately 680 miles (1,100 kilometres) of protected cycle lanes — nationally.<Cite nums={2} /> The distinction between protected and unprotected infrastructure is critical: paint alone does not protect cyclists from vehicle collisions. Studies consistently show that cycling rates on streets with physical segregation are 4–6 times higher than on equivalent streets with only painted lanes. More than 60% of English cycling infrastructure consists of shared footways, advisory cycle lanes, or painted lanes without physical barriers — facilities that many experienced cyclists regard as worse than usable because they encourage close passes from motorists.<Cite nums={2} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -141,6 +149,9 @@ export default function CyclingInfrastructurePage() {
             source="Source: TfL — Cycling Data 2024. Cycling UK — NHS Savings Analysis 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

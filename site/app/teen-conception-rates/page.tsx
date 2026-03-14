@@ -9,6 +9,14 @@ import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Conceptions in England and Wales 2022', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/conceptionandfertilityrates/bulletins/conceptionstatisticsenglandandwales/', date: '2024' },
+  { num: 2, name: 'Social Exclusion Unit', dataset: 'Teenage Pregnancy Strategy (1999)', url: 'https://www.gov.uk/government/publications/teenage-pregnancy-strategy', date: '1999', note: 'Drove the decline through targets, coordinators, sex education and contraception access' },
+  { num: 3, name: 'ONS', dataset: 'Conceptions by deprivation decile 2022', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/conceptionandfertilityrates', date: '2024', note: 'Most deprived 32 per 1,000 vs least deprived 9.8 per 1,000' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -67,8 +75,8 @@ export default function TeenConceptionRatesPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The under-18 conception rate in England has fallen from 47 per 1,000 in 1999 to 13.1 per 1,000 in 2022 — a decline of 72% in a single generation and one of the most significant public health achievements of the era. The Teenage Pregnancy Strategy (1999) drove the change through explicit national targets, dedicated local authority coordinators, investment in school-based sex education, and improved access to long-acting reversible contraception. England went from one of the highest teenage pregnancy rates in Western Europe to a rate now comparable with Germany and France. The approach was evidence-based, sustained, and adequately funded — and it worked.</p>
-            <p>The deprivation gradient remains stark. In the most deprived areas, the under-18 conception rate is 32 per 1,000 — more than three times the 9.8 per 1,000 in the least deprived areas — and this gap has not narrowed as the overall rate has fallen. Cuts to local authority public health budgets since 2015 have eroded some of the infrastructure that produced the decline: youth contraception clinics have closed in some areas, and sexual health services have been reduced. The risk is that hard-won gains begin to reverse in precisely those communities where the safety net has been most depleted.</p>
+            <p>The under-18 conception rate in England has fallen from 47 per 1,000 in 1999 to 13.1 per 1,000 in 2022 — a decline of 72% in a single generation and one of the most significant public health achievements of the era.<Cite nums={1} /> The Teenage Pregnancy Strategy (1999) drove the change through explicit national targets, dedicated local authority coordinators, investment in school-based sex education, and improved access to long-acting reversible contraception.<Cite nums={2} /> England went from one of the highest teenage pregnancy rates in Western Europe to a rate now comparable with Germany and France. The approach was evidence-based, sustained, and adequately funded — and it worked.</p>
+            <p>The deprivation gradient remains stark. In the most deprived areas, the under-18 conception rate is 32 per 1,000 — more than three times the 9.8 per 1,000 in the least deprived areas — and this gap has not narrowed as the overall rate has fallen.<Cite nums={3} /> Cuts to local authority public health budgets since 2015 have eroded some of the infrastructure that produced the decline: youth contraception clinics have closed in some areas, and sexual health services have been reduced. The risk is that hard-won gains begin to reverse in precisely those communities where the safety net has been most depleted.</p>
           </div>
         </section>
 
@@ -141,6 +149,10 @@ export default function TeenConceptionRatesPage() {
             />
           </div>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

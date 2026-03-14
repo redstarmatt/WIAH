@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Hours lost to handover delays (millions), 2018–2024 — NHS England AQI
 const hoursLostValues = [0.42, 0.51, 0.63, 1.12, 1.82, 1.58, 1.64];
@@ -48,6 +50,12 @@ const annotations: Annotation[] = [
   { date: new Date(2023, 0, 1), label: '2023: NHS ambulance recovery plan launched' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Ambulance Quality Indicators', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/ambulance-quality-indicators/', date: '2024' },
+  { num: 2, name: 'Association of Ambulance Chief Executives', dataset: 'Handover delay mortality estimates', date: '2023' },
+  { num: 3, name: 'NHS England', dataset: 'Urgent and Emergency Care Recovery Plan', date: '2023' },
+];
+
 export default function AmbulanceHandoversPage() {
   return (
     <>
@@ -62,8 +70,8 @@ export default function AmbulanceHandoversPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>When an ambulance arrives at a hospital emergency department, the crew should hand over their patient within 15 minutes and return to the road. This standard exists because every minute an ambulance spends queuing outside a hospital is a minute it cannot respond to the next 999 call. In 2022/23, this handover process consumed 1.82 million hours across England — more than quadruple the 420,000 hours lost in 2017/18. The practical consequence is stark: ambulances that should be reaching heart attack and stroke patients within minutes are instead parked in hospital corridors. The Association of Ambulance Chief Executives estimates that handover delays directly contribute to between 300 and 500 avoidable deaths per year. Category 2 calls — which include strokes, chest pain, and severe breathing difficulties — saw average response times reach 52 minutes in 2022/23, against a target of 18 minutes.</p>
-            <p>The root cause lies not with ambulance services but with hospital capacity. When emergency departments are full — because admitted patients cannot be moved to wards, and ward patients cannot be discharged because social care placements are unavailable — the entire system backs up to the hospital front door. Ambulance crews cannot hand over because there are no cubicles, trolleys, or staff available to accept their patients. During the winter of 2022/23, some hospitals reported queues of 20 or more ambulances at peak times. NHS England's ambulance recovery plan, launched in January 2023, combined hospital discharge acceleration and cohorting areas at hospital front doors. By late 2023, handover delays had fallen significantly from their peak — but remain far above pre-pandemic levels, and the underlying capacity constraints have not been resolved.</p>
+            <p>When an ambulance arrives at a hospital emergency department, the crew should hand over their patient within 15 minutes and return to the road. This standard exists because every minute an ambulance spends queuing outside a hospital is a minute it cannot respond to the next 999 call. In 2022/23, this handover process consumed 1.82 million hours across England — more than quadruple the 420,000 hours lost in 2017/18.<Cite nums={1} /> The practical consequence is stark: ambulances that should be reaching heart attack and stroke patients within minutes are instead parked in hospital corridors. The Association of Ambulance Chief Executives estimates that handover delays directly contribute to between 300 and 500 avoidable deaths per year.<Cite nums={2} /> Category 2 calls — which include strokes, chest pain, and severe breathing difficulties — saw average response times reach 52 minutes in 2022/23, against a target of 18 minutes.<Cite nums={1} /></p>
+            <p>The root cause lies not with ambulance services but with hospital capacity. When emergency departments are full — because admitted patients cannot be moved to wards, and ward patients cannot be discharged because social care placements are unavailable — the entire system backs up to the hospital front door. Ambulance crews cannot hand over because there are no cubicles, trolleys, or staff available to accept their patients. During the winter of 2022/23, some hospitals reported queues of 20 or more ambulances at peak times. NHS England's ambulance recovery plan, launched in January 2023, combined hospital discharge acceleration and cohorting areas at hospital front doors.<Cite nums={3} /> By late 2023, handover delays had fallen significantly from their peak — but remain far above pre-pandemic levels, and the underlying capacity constraints have not been resolved.<Cite nums={1} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -142,6 +150,9 @@ export default function AmbulanceHandoversPage() {
             source="Source: NHS England — Urgent and Emergency Care Recovery Plan 2023 progress report. AACE — Ambulance benchmarking data 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

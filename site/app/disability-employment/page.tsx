@@ -9,6 +9,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -42,6 +44,12 @@ function yearToDate(y: number): Date {
 }
 
 // ── Page ─────────────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Labour Force Survey — Disability and Employment', date: '2023' },
+  { num: 2, name: 'DWP', dataset: 'PIP Statistics', date: '2023' },
+  { num: 3, name: 'ONS', dataset: 'Economic Inactivity by Reason', date: '2023' },
+];
 
 export default function DisabilityEmploymentPage() {
   const [data, setData] = useState<DisabilityEmploymentData | null>(null);
@@ -104,8 +112,8 @@ export default function DisabilityEmploymentPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Some 14.6 million people in the United Kingdom meet the Equality Act 2010 definition of disability — roughly one in five of the working-age population. Of these, 53.7% are in employment, against 82.1% of non-disabled people: a gap of 28.4 percentage points. Meanwhile 2.5 million people are economically inactive due to long-term sickness, up from 2.0 million before the pandemic. Personal Independence Payment claimants have risen to 3.6 million, and the annual disability benefits bill reached £64 billion in 2023/24. Musculoskeletal conditions are the single largest cause of health-related inactivity, followed by mental health disorders, with Long COVID still affecting an estimated 900,000 people unable to work at full capacity.</p>
-            <p>Structural barriers keep disabled people out of work even when they want it. Around 300,000 disabled adults actively seek employment but cannot find it. Disabled workers earn 13.8% less than non-disabled colleagues on average, and employment tribunals for disability discrimination rose 26% in 2023. The benefits system creates its own disincentives: PIP recipients face an effective cliff-edge, losing support after earning just £23.70 a week above the work allowance. Employment rates vary sharply by condition — 26% for people with learning disabilities, 32% for those with autism or ADHD, 46% for mental health conditions. The pandemic added roughly 400,000 people to the long-term sick count, and that number has not fallen back.</p>
+            <p>Some 14.6 million people in the United Kingdom meet the Equality Act 2010 definition of disability — roughly one in five of the working-age population.<Cite nums={1} /> Of these, 53.7% are in employment, against 82.1% of non-disabled people: a gap of 28.4 percentage points.<Cite nums={1} /> Meanwhile 2.5 million people are economically inactive due to long-term sickness, up from 2.0 million before the pandemic.<Cite nums={3} /> Personal Independence Payment claimants have risen to 3.6 million, and the annual disability benefits bill reached £64 billion in 2023/24.<Cite nums={2} /> Musculoskeletal conditions are the single largest cause of health-related inactivity, followed by mental health disorders, with Long COVID still affecting an estimated 900,000 people unable to work at full capacity.<Cite nums={3} /></p>
+            <p>Structural barriers keep disabled people out of work even when they want it. Around 300,000 disabled adults actively seek employment but cannot find it.<Cite nums={1} /> Disabled workers earn 13.8% less than non-disabled colleagues on average, and employment tribunals for disability discrimination rose 26% in 2023.<Cite nums={1} /> The benefits system creates its own disincentives: PIP recipients face an effective cliff-edge, losing support after earning just £23.70 a week above the work allowance.<Cite nums={2} /> Employment rates vary sharply by condition — 26% for people with learning disabilities, 32% for those with autism or ADHD, 46% for mental health conditions.<Cite nums={1} /> The pandemic added roughly 400,000 people to the long-term sick count, and that number has not fallen back.<Cite nums={3} /></p>
             </div>
         </section>
 
@@ -213,6 +221,9 @@ export default function DisabilityEmploymentPage() {
           />
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">

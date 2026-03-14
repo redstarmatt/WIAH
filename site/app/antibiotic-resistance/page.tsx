@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // UK deaths attributable to AMR, 2016–2024 — UKHSA / Global Burden of Disease
 const amrDeathsValues = [5200, 5500, 5800, 6100, 6400, 6700, 6500, 6800, 7000];
@@ -47,6 +49,13 @@ const annotations: Annotation[] = [
   { date: new Date(2020, 0, 1), label: '2020: COVID-19 — prescribing falls further' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'UKHSA', dataset: 'UK Antimicrobial Resistance Annual Report', url: 'https://www.gov.uk/government/collections/uk-antimicrobial-resistance-amr-annual-report', date: '2024' },
+  { num: 2, name: 'Global Burden of Disease', dataset: 'Global mortality from bacterial AMR', date: '2019' },
+  { num: 3, name: "O'Neill Review", dataset: 'Tackling Drug-Resistant Infections Globally', date: '2016' },
+  { num: 4, name: 'NHS England', dataset: 'Primary Care Prescribing Analysis', url: 'https://www.england.nhs.uk/publication/primary-care-prescribing-data/', date: '2024' },
+];
+
 export default function AntibioticResistancePage() {
   return (
     <>
@@ -61,8 +70,8 @@ export default function AntibioticResistancePage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Antimicrobial resistance (AMR) kills an estimated 7,000 people in the UK every year and was directly responsible for 1.27 million deaths globally in 2019 — more than HIV or malaria. Without concerted action, the O'Neill Review projects that figure will reach 10 million per year by 2050. The mechanism is evolutionary: bacteria exposed to antibiotics that do not kill them develop resistance over generations. In England, the scale is already visible in routine surveillance data. Of all E. coli bloodstream infections — the most common bloodstream infection in the country — 46% are now resistant to third-generation cephalosporins, up from 38% in 2016. When first-line antibiotics fail, patients must be treated with broader-spectrum drugs that are more expensive, have more side effects, and themselves drive further resistance in a worsening spiral. MRSA rates fell sharply from their mid-2000s peak but have begun rising again.</p>
-            <p>The drivers of resistance span three interconnected systems. In human medicine, antibiotics have historically been overprescribed — for viral infections they cannot treat, or as a precaution rather than a diagnosis. Primary care prescribing in England has fallen significantly — from 47 million items in 2014 to around 35 million in 2024, one of the sharpest reductions in the developed world. But this progress is being outpaced by global overuse, particularly in agriculture, where an estimated 60% of global antibiotic use occurs in livestock. In the environment, pharmaceutical manufacturing waste contaminates rivers with antibiotic residues, creating reservoirs of resistant bacteria. The pipeline has meanwhile run dry: no new antibiotic class has been successfully commercialised since the 1980s, because antibiotics are cheap, used sparingly by design, and rapidly rendered obsolete — making them among the least attractive investments in the pharmaceutical sector.</p>
+            <p>Antimicrobial resistance (AMR) kills an estimated 7,000 people in the UK every year and was directly responsible for 1.27 million deaths globally in 2019 — more than HIV or malaria.<Cite nums={[1, 2]} /> Without concerted action, the O'Neill Review projects that figure will reach 10 million per year by 2050.<Cite nums={3} /> The mechanism is evolutionary: bacteria exposed to antibiotics that do not kill them develop resistance over generations. In England, the scale is already visible in routine surveillance data. Of all E. coli bloodstream infections — the most common bloodstream infection in the country — 46% are now resistant to third-generation cephalosporins, up from 38% in 2016.<Cite nums={1} /> When first-line antibiotics fail, patients must be treated with broader-spectrum drugs that are more expensive, have more side effects, and themselves drive further resistance in a worsening spiral. MRSA rates fell sharply from their mid-2000s peak but have begun rising again.<Cite nums={1} /></p>
+            <p>The drivers of resistance span three interconnected systems. In human medicine, antibiotics have historically been overprescribed — for viral infections they cannot treat, or as a precaution rather than a diagnosis. Primary care prescribing in England has fallen significantly — from 47 million items in 2014 to around 35 million in 2024, one of the sharpest reductions in the developed world.<Cite nums={4} /> But this progress is being outpaced by global overuse, particularly in agriculture, where an estimated 60% of global antibiotic use occurs in livestock. In the environment, pharmaceutical manufacturing waste contaminates rivers with antibiotic residues, creating reservoirs of resistant bacteria. The pipeline has meanwhile run dry: no new antibiotic class has been successfully commercialised since the 1980s, because antibiotics are cheap, used sparingly by design, and rapidly rendered obsolete — making them among the least attractive investments in the pharmaceutical sector.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -141,6 +150,9 @@ export default function AntibioticResistancePage() {
             source="Source: NHS England — Primary Care Prescribing Analysis 2024. DHSC — Antimicrobial Resistance National Action Plan 2024 progress report."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

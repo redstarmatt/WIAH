@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Drug poisoning deaths England & Wales, 2004–2023 — ONS
 const drugDeathValues = [1843, 1845, 1954, 2282, 2182, 2248, 2379, 2652, 2732, 2952, 3346, 3744, 3756, 4359, 4393, 4561, 4859, 4907, 4800, 4907];
@@ -54,6 +56,12 @@ const alcoholAnnotations: Annotation[] = [
   { date: new Date(2020, 5, 1), label: '2020: COVID surge' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Deaths related to drug poisoning in England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/deathsrelatedtodrugpoisoningenglandandwales/latest', date: '2022' },
+  { num: 2, name: 'ONS', dataset: 'Alcohol-specific deaths in the UK', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/causesofdeath/bulletins/alcoholspecificdeathsintheunitedkingdom/latest', date: '2023' },
+  { num: 3, name: 'OHID / NDTMS', dataset: 'Adult substance misuse treatment statistics', url: 'https://www.ndtms.net/', date: '2023/24' },
+];
+
 export default function DrugsPage() {
   return (
     <>
@@ -68,8 +76,8 @@ export default function DrugsPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Drug poisoning deaths in England and Wales hit 4,907 in 2022 — more than double the 2004 level. Opioids account for roughly 48% of all drug deaths: heroin and morphine alone killed over 2,200 people, and synthetic opioids including fentanyl and nitazenes are rising fast. Scotland recorded 1,051 deaths in 2022, a rate approximately 3.7 times the England and Wales figure per capita and the highest in Europe. The age profile is telling: most deaths occur among people aged 35–54, not the young — a cohort effect tracing back to the 1980s heroin wave, now compounded by decades of poverty, poor health, and polydrug use. Alcohol-specific deaths reached 10,048 across the UK in 2023 — a record — driven by the pandemic surge in heavy drinking among people with reduced healthcare contact.</p>
-            <p>Treatment infrastructure was hollowed out between 2013 and 2020: Public Health England estimated a 40% real-terms funding cut, and many specialist units closed. NICE estimates around 800,000 people have severe drug or alcohol problems; only about 300,000 are in treatment. The government's 2021 strategy, From Harm to Hope, committed £780 million over three years, and treatment numbers have begun climbing: 298,700 adults were in structured treatment in 2023/24. Naloxone became available without prescription from pharmacies in 2023 — a measure that could prevent thousands of deaths annually if distribution reaches people most at risk.</p>
+            <p>Drug poisoning deaths in England and Wales hit 4,907 in 2022 — more than double the 2004 level.<Cite nums={1} /> Opioids account for roughly 48% of all drug deaths: heroin and morphine alone killed over 2,200 people, and synthetic opioids including fentanyl and nitazenes are rising fast.<Cite nums={1} /> Scotland recorded 1,051 deaths in 2022, a rate approximately 3.7 times the England and Wales figure per capita and the highest in Europe. The age profile is telling: most deaths occur among people aged 35-54, not the young — a cohort effect tracing back to the 1980s heroin wave, now compounded by decades of poverty, poor health, and polydrug use. Alcohol-specific deaths reached 10,048 across the UK in 2023 — a record — driven by the pandemic surge in heavy drinking among people with reduced healthcare contact.<Cite nums={2} /></p>
+            <p>Treatment infrastructure was hollowed out between 2013 and 2020: Public Health England estimated a 40% real-terms funding cut, and many specialist units closed. NICE estimates around 800,000 people have severe drug or alcohol problems; only about 300,000 are in treatment.<Cite nums={3} /> The government&apos;s 2021 strategy, From Harm to Hope, committed £780 million over three years, and treatment numbers have begun climbing: 298,700 adults were in structured treatment in 2023/24.<Cite nums={3} /> Naloxone became available without prescription from pharmacies in 2023 — a measure that could prevent thousands of deaths annually if distribution reaches people most at risk.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -148,6 +156,10 @@ export default function DrugsPage() {
             source="Source: OHID — National Drug Treatment Monitoring System (NDTMS) 2023/24."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

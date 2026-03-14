@@ -8,6 +8,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Population Estimates', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates', date: '2025', note: 'UK population grew by 906,000 in 2023; 98% from net migration' },
+  { num: 2, name: 'ONS', dataset: 'Long-term International Migration', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration', date: '2025', note: 'Natural population change near zero; UK fertility rate 1.41' },
+  { num: 3, name: 'OBR', dataset: 'Fiscal Sustainability Report', date: '2024', note: 'Migration keeping dependency ratio lower than it would otherwise be' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -194,6 +202,10 @@ export default function TopicPage() {
             source="Source: ONS Population estimates, 2025. OBR Fiscal Sustainability Report, 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

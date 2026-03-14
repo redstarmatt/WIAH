@@ -8,6 +8,16 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DfE', dataset: 'GCSE and equivalent results, Explore Education Statistics', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-4-performance', date: '2024' },
+  { num: 2, name: 'DfE', dataset: 'National Tutoring Programme: year 1', url: 'https://www.gov.uk/government/publications/national-tutoring-programme-year-1', date: '2022', note: 'Only a third of allocated tutoring hours taken up in year one' },
+  { num: 3, name: 'Education Endowment Foundation', dataset: 'Attainment gap report', url: 'https://educationendowmentfoundation.org.uk/education-evidence/evidence-reviews', date: '2023' },
+  { num: 4, name: 'DfE', dataset: 'School Workforce Census', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/school-workforce-in-england', date: '2024' },
+  { num: 5, name: 'DfE', dataset: 'Pupil absence in schools in England', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/pupil-absence-in-schools-in-england', date: '2023/24' },
+];
 
 // Attainment gap (FSM vs non-FSM Attainment 8 score), 2016–2024 — DfE
 const fsm = [35.2, 35.8, 36.1, 35.9, 35.7, null, 35.9, 36.2, 36.5];
@@ -81,8 +91,11 @@ export default function EducationPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The GCSE attainment gap between pupils eligible for Free School Meals (FSM) and their better-off peers has remained stubbornly wide throughout the past decade, closing only marginally despite sustained investment through the Pupil Premium. In 2024, FSM pupils averaged an Attainment 8 score of 36.5 against 55.7 for their non-FSM peers — a gap of 19.2 points. The COVID pandemic erased much of the modest progress made between 2016 and 2019, and catch-up funding distributed from 2021 through the National Tutoring Programme delivered mixed results: only a third of allocated tutoring hours were taken up in the first year. The Education Endowment Foundation estimates that, at current rates, it would take over 500 years for the attainment gap to close entirely.</p>
-            <p>Teacher shortages have intensified throughout the decade. The vacancy rate tripled from 0.5% in 2016 to 1.8% in 2022, concentrated in STEM subjects, modern languages, and schools in deprived areas. Secondary schools in the most deprived fifth of areas are twice as likely to be taught by an out-of-subject teacher as those in the least deprived fifth. Persistent absence — defined as missing 10% or more of possible sessions — reached 22.5% in 2022/23, more than double the pre-pandemic rate of 10.9%, affecting over 1.6 million pupils. Children in the highest absence decile accumulate on average a 12-month learning deficit versus their peers over the course of their schooling.</p>
+            <p>The GCSE attainment gap between pupils eligible for Free School Meals (FSM) and their better-off peers has remained stubbornly wide throughout the past decade, closing only marginally despite sustained investment through the Pupil Premium. In 2024, FSM pupils averaged an Attainment 8 score of 36.5 against 55.7 for their non-FSM peers — a gap of 19.2 points.<Cite nums={1} /> The COVID pandemic erased much of the modest progress made between 2016 and 2019, and catch-up funding distributed from 2021 through the National Tutoring Programme delivered mixed results: only a third of allocated tutoring hours were taken up in the first year.<Cite nums={2} /> The Education Endowment Foundation estimates that, at current rates, it would take over 500 years for the attainment gap to close entirely.<Cite nums={3} /></p>
+            <p>Teacher shortages have intensified throughout the decade. The vacancy rate tripled from 0.5% in 2016 to 1.8% in 2022, concentrated in STEM subjects, modern languages, and schools in deprived areas. Secondary schools in the most deprived fifth of areas are twice as likely to be taught by an out-of-subject teacher as those in the least deprived fifth.<Cite nums={4} /> Persistent absence — defined as missing 10% or more of possible sessions — reached 22.5% in 2022/23, more than double the pre-pandemic rate of 10.9%, affecting over 1.6 million pupils. Children in the highest absence decile accumulate on average a 12-month learning deficit versus their peers over the course of their schooling.<Cite nums={5} /></p>
+          </div>
+          <div className="mt-6">
+            <References items={editorialRefs} />
           </div>
         </section>
         <SectionNav sections={[

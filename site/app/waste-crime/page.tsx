@@ -8,6 +8,16 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+// ── References ──────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Environment Agency', dataset: 'Waste Crime Report 2024', url: 'https://www.gov.uk/government/publications/waste-crime-report', date: '2024' },
+  { num: 2, name: 'Environment Agency', dataset: 'Enforcement and sanctions activity data', url: 'https://www.gov.uk/government/publications/environment-agency-enforcement-and-sanctions-policy', date: '2024' },
+  { num: 3, name: 'Environment Agency', dataset: 'Digital waste tracking implementation', url: 'https://www.gov.uk/guidance/digital-waste-tracking', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -195,6 +205,10 @@ export default function TopicPage() {
             source="Source: EA — Digital waste tracking implementation, 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

@@ -8,6 +8,15 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DLUHC', dataset: 'English Housing Survey 2024', url: 'https://www.gov.uk/government/collections/english-housing-survey', date: '2024' },
+  { num: 2, name: 'MOJ', dataset: 'Mortgage and Landlord Possession Statistics', url: 'https://www.gov.uk/government/statistics/mortgage-and-landlord-possession-statistics-quarterly-england-and-wales', date: '2024' },
+  { num: 3, name: 'Citizens Advice', dataset: 'Rent arrears advice data 2021–2023', url: 'https://www.citizensadvice.org.uk/', date: '2023', note: '42% increase in people seeking help; average arrears up from £1,200 to £2,100' },
+  { num: 4, name: 'ONS', dataset: 'Index of Private Housing Rental Prices', url: 'https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/indexofprivatehousingrentalprices/latest', date: '2024', note: '30% average rent increase since 2020' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -78,10 +87,10 @@ export default function RentArrearsPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The scale of rent arrears in England is at its highest recorded level. The English Housing Survey estimates that 14.1% of renters — private and social combined — were in arrears in 2024, up from 8.5% in 2015. In absolute terms, this represents approximately 1.3 million renting households falling behind on payments. The crisis is driven by the collision of two forces: rents have risen by an average of 30% since 2020 (with London and the South East seeing even steeper increases), while wages and benefits have not kept pace. The Local Housing Allowance (LHA), which sets the maximum Housing Benefit for private renters, was frozen from 2020 to 2024 at the 30th percentile of local rents, meaning it progressively covered a smaller share of actual rent.
+              The scale of rent arrears in England is at its highest recorded level. The English Housing Survey estimates that 14.1% of renters — private and social combined — were in arrears in 2024, up from 8.5% in 2015.<Cite nums={1} /> In absolute terms, this represents approximately 1.3 million renting households falling behind on payments. The crisis is driven by the collision of two forces: rents have risen by an average of 30% since 2020 (with London and the South East seeing even steeper increases)<Cite nums={4} />, while wages and benefits have not kept pace. The Local Housing Allowance (LHA), which sets the maximum Housing Benefit for private renters, was frozen from 2020 to 2024 at the 30th percentile of local rents, meaning it progressively covered a smaller share of actual rent.
             </p>
             <p>
-              The court system tells the story of what happens next. Landlord possession claims — the legal step that precedes eviction — fell to 72,400 in 2020 due to the eviction ban introduced during the pandemic, then surged as courts reopened and cleared the backlog. By 2024, claims reached 164,200, exceeding the pre-pandemic level for the first time. Section 21 &ldquo;no-fault&rdquo; evictions, where landlords can evict tenants without giving a reason, account for approximately 32% of all possession claims — the Renters Reform Bill, introduced in 2023, proposed abolishing Section 21 but at the time of writing had not yet become law. Section 8 claims for rent arrears have also risen sharply, reflecting genuine affordability pressures. Citizens Advice reported a 42% increase in people seeking help with rent arrears between 2021 and 2023, with the average arrears amount rising from £1,200 to £2,100.
+              The court system tells the story of what happens next. Landlord possession claims — the legal step that precedes eviction — fell to 72,400 in 2020 due to the eviction ban introduced during the pandemic, then surged as courts reopened and cleared the backlog. By 2024, claims reached 164,200, exceeding the pre-pandemic level for the first time.<Cite nums={2} /> Section 21 &ldquo;no-fault&rdquo; evictions, where landlords can evict tenants without giving a reason, account for approximately 32% of all possession claims — the Renters Reform Bill, introduced in 2023, proposed abolishing Section 21 but at the time of writing had not yet become law. Section 8 claims for rent arrears have also risen sharply, reflecting genuine affordability pressures. Citizens Advice reported a 42% increase in people seeking help with rent arrears between 2021 and 2023, with the average arrears amount rising from £1,200 to £2,100.<Cite nums={3} />
             </p>
             </div>
         </section>
@@ -168,6 +177,10 @@ export default function RentArrearsPage() {
             )}
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="border-t border-wiah-border pt-8 mt-12">

@@ -9,6 +9,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -57,6 +59,13 @@ function yearToDate(y: number): Date {
 function sparkFrom(arr: number[], n = 10) {
   return arr.slice(-n);
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Environment Agency', dataset: 'Bathing water quality classifications', url: 'https://environment.data.gov.uk/bwq/profiles/', date: '2025' },
+  { num: 2, name: 'Environment Agency', dataset: 'Event Duration Monitoring data', url: 'https://environment.data.gov.uk/dataset/21e15f12-0df8-4bfc-b763-45226c16a8ac', date: '2025' },
+  { num: 3, name: 'Environment Agency', dataset: 'Water Framework Directive river classifications', url: 'https://environment.data.gov.uk/catchment-planning/', date: '2024' },
+  { num: 4, name: 'Defra', dataset: 'Storm Overflows Discharge Reduction Plan', url: 'https://www.gov.uk/government/publications/storm-overflows-discharge-reduction-plan', date: '2022' },
+];
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -169,9 +178,9 @@ export default function BathingWaterQualityPage() {
               England&apos;s bathing waters have been declining for over a decade. In 2010,
               more than three-quarters of designated bathing sites achieved the
               Environment Agency&apos;s &apos;excellent&apos; classification; by 2025, that
-              figure had fallen to just 52%. At the same time, the proportion rated
+              figure had fallen to just 52%.<Cite nums={1} /> At the same time, the proportion rated
               &apos;poor&apos; -- failing to meet even minimum microbiological standards -- has
-              risen from 3% to over 15%. The trend is being driven by a combination
+              risen from 3% to over 15%.<Cite nums={1} /> The trend is being driven by a combination
               of ageing sewage infrastructure, population growth in coastal catchment
               areas, and increasingly intense rainfall events linked to climate change.
             </p>
@@ -181,16 +190,16 @@ export default function BathingWaterQualityPage() {
               untreated sewage into rivers and the sea during heavy rainfall. Event
               Duration Monitoring data -- mandatory for all CSOs since 2023 -- shows
               that discharge events have more than tripled since 2010, reaching
-              464,000 events and over 4.1 million hours of spilling in 2025. Water
+              464,000 events and over 4.1 million hours of spilling in 2025.<Cite nums={2} /> Water
               companies have faced record fines, and public anger has driven
               significant policy commitments: the Storm Overflows Discharge Reduction
               Plan requires near-elimination of harmful discharges at designated
-              bathing waters by 2035, and at all sites by 2050.
+              bathing waters by 2035, and at all sites by 2050.<Cite nums={4} />
             </p>
             <p>
               England&apos;s rivers tell a similar story. Only 14% of river water bodies
               currently meet &apos;good ecological status&apos; under Water Framework Directive
-              criteria -- down from 27% in 2010. Agricultural run-off, sewage
+              criteria -- down from 27% in 2010.<Cite nums={3} /> Agricultural run-off, sewage
               pollution, and road drainage all contribute. The data below tracks
               these trends across bathing water quality, sewage discharges, and river
               health, with a breakdown by water company.
@@ -402,6 +411,9 @@ export default function BathingWaterQualityPage() {
 
         <RelatedTopics />
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         {/* Sources & methodology */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">

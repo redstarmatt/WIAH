@@ -7,7 +7,15 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DLUHC', dataset: 'House Building: New Build Dwellings', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-house-building', date: '2023', note: '234,000 completions in 2022/23 vs 300,000 target' },
+  { num: 2, name: 'DLUHC', dataset: 'Affordable Housing Supply Statistics', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-affordable-housing-supply', date: '2023', note: '9,000 social rent homes; 55,000 by housing associations' },
+  { num: 3, name: 'DLUHC', dataset: 'Planning and Infrastructure Bill 2025 Impact Assessment', date: '2025', note: 'Labour manifesto: 1.5 million homes over five years' },
+];
 
 const completionsData = [135, 142, 155, 163, 183, 195, 213, 244, 211, 232, 234, 238, 241, 239];
 const affordableData = [56, 58, 62, 66, 71, 75, 79, 85, 70, 72, 73, 74, 75, 74];
@@ -140,9 +148,9 @@ export default function HousebuildingPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on housebuilding</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>England completed 234,000 new homes in 2022/23, against a government target of 300,000 per year that has not been met since the 1960s. The gap between aspiration and delivery is structural: planning permissions granted for residential development fell sharply in the early 2020s, and the planning system, a skills shortage of around 100,000 construction vacancies, and developer viability arguments have blocked every previous government from closing the gap.</p>
-              <p>Affordable and social housing completions tell an even starker story. Local authorities built over 100,000 homes per year in the 1970s; today they build around 9,000 social rent homes annually. Housing associations build approximately 55,000 homes per year, far short of what is needed to replace what was sold under Right to Buy. Meanwhile Britain's largest housebuilders hold planning permissions for an estimated 1.3 million plots they have not yet built on — a consequence of business models calibrated to managed supply rather than volume.</p>
-              <p>Labour's 2024 manifesto committed to 1.5 million homes over five years. The Planning and Infrastructure Bill (2025) reinstates mandatory local planning targets and introduces a new "grey belt" category to release low-quality green belt land. Whether delivery will follow ambition is a question British housing policy has failed to answer for six decades.</p>
+              <p>England completed 234,000 new homes in 2022/23, against a government target of 300,000 per year that has not been met since the 1960s.<Cite nums={1} /> The gap between aspiration and delivery is structural: planning permissions granted for residential development fell sharply in the early 2020s, and the planning system, a skills shortage of around 100,000 construction vacancies, and developer viability arguments have blocked every previous government from closing the gap.</p>
+              <p>Affordable and social housing completions tell an even starker story. Local authorities built over 100,000 homes per year in the 1970s; today they build around 9,000 social rent homes annually.<Cite nums={2} /> Housing associations build approximately 55,000 homes per year, far short of what is needed to replace what was sold under Right to Buy. Meanwhile Britain's largest housebuilders hold planning permissions for an estimated 1.3 million plots they have not yet built on — a consequence of business models calibrated to managed supply rather than volume.</p>
+              <p>Labour's 2024 manifesto committed to 1.5 million homes over five years.<Cite nums={3} /> The Planning and Infrastructure Bill (2025) reinstates mandatory local planning targets and introduces a new "grey belt" category to release low-quality green belt land. Whether delivery will follow ambition is a question British housing policy has failed to answer for six decades.</p>
             </div>
           </section>
         </ScrollReveal>
@@ -156,6 +164,10 @@ export default function HousebuildingPage() {
             source="Source: DLUHC — House Building Statistics 2022/23; Planning and Infrastructure Bill 2025 Impact Assessment."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Total fly-tipping incidents (thousands), 2015–2024
 const totalIncidents = [900, 920, 930, 950, 990, 980, 1010, 1050, 1030, 1070];
@@ -57,6 +59,10 @@ const annotations2: Annotation[] = [
   { date: new Date(2019, 0, 1), label: '2019: Maximum FPN raised to £400' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DEFRA', dataset: 'Fly-tipping incidents and actions taken in England', url: 'https://www.gov.uk/government/statistics/fly-tipping-in-england', date: '2024' },
+];
+
 export default function FlyTippingPage() {
   return (
     <>
@@ -71,8 +77,8 @@ export default function FlyTippingPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Fly-tipping in England has grown persistently for a decade, with local authorities recording 1.07 million incidents in 2023–24. Highway verges and footpaths account for the largest share of reported sites, while private land incidents — cleared at the landowner's expense — are not systematically captured at all, meaning the true scale is significantly higher. The cost to councils of clearing fly-tips reached £57.7 million in 2023–24, paid for by council taxpayers. The connection between bulky waste charging policies and fly-tipping volumes is well established: councils that introduced or increased charges for bulky waste collection have seen corresponding rises in local tipping rates.</p>
-            <p>The enforcement picture is changing shape rather than improving. Fixed penalty notices have grown as councils shift toward faster, cheaper enforcement, but prosecutions have nearly halved since 2015 as legal capacity has been eroded. The result is that persistent, organised fly-tipping — often commercial in nature — faces diminishing deterrence. The Environment Agency handles the most serious cases, including hazardous and construction waste dumping, but its own enforcement resource has been substantially reduced. The gap between the number of incidents and the number of meaningful enforcement actions has widened every year.</p>
+            <p>Fly-tipping in England has grown persistently for a decade, with local authorities recording 1.07 million incidents in 2023–24<Cite nums={1} />. Highway verges and footpaths account for the largest share of reported sites, while private land incidents — cleared at the landowner's expense — are not systematically captured at all, meaning the true scale is significantly higher. The cost to councils of clearing fly-tips reached £57.7 million in 2023–24<Cite nums={1} />, paid for by council taxpayers. The connection between bulky waste charging policies and fly-tipping volumes is well established: councils that introduced or increased charges for bulky waste collection have seen corresponding rises in local tipping rates.</p>
+            <p>The enforcement picture is changing shape rather than improving. Fixed penalty notices have grown as councils shift toward faster, cheaper enforcement, but prosecutions have nearly halved since 2015 as legal capacity has been eroded<Cite nums={1} />. The result is that persistent, organised fly-tipping — often commercial in nature — faces diminishing deterrence. The Environment Agency handles the most serious cases, including hazardous and construction waste dumping, but its own enforcement resource has been substantially reduced. The gap between the number of incidents and the number of meaningful enforcement actions has widened every year.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -151,6 +157,9 @@ export default function FlyTippingPage() {
             source="Source: DEFRA — Fly-tipping statistics for England 2023–24."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

@@ -8,6 +8,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Household Income Inequality — Gini Coefficient', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth', date: '2025', note: 'Gini coefficient 0.33; higher than Germany (0.29), France (0.31)' },
+  { num: 2, name: 'ONS', dataset: 'Effects of Taxes and Benefits on Household Income', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/bulletins/theeffectsoftaxesandbenefitsonhouseholdincome', date: '2025', note: 'Top 10% earn 9x bottom 10%' },
+  { num: 3, name: 'BEIS', dataset: 'National Living Wage Uprating', date: '2025', note: 'NLW rose from £7.20 in 2016 to £12.21 in 2025' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -195,6 +203,10 @@ export default function TopicPage() {
             source="Source: BEIS — National Living Wage uprating, 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

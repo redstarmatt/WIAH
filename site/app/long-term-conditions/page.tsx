@@ -8,6 +8,16 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+// -- References -------------------------------------------------------------
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Long Term Plan — multimorbidity prevalence and projections', url: 'https://www.longtermplan.nhs.uk/', date: '2021' },
+  { num: 2, name: 'NHS Digital', dataset: 'Quality and Outcomes Framework (QOF) — disease registers', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/quality-and-outcomes-framework-achievement-prevalence-and-exceptions-data', date: '2023' },
+  { num: 3, name: 'The Health Foundation', dataset: 'Multimorbidity: understanding the challenge', url: 'https://www.health.org.uk/', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -76,8 +86,8 @@ export default function LongTermConditionsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>15.4 million people in England now live with two or more long-term conditions — almost double the 8.2 million in 2000 — accounting for 77% of all NHS spending, approximately £120 billion a year. The most common conditions are hypertension (12.4 million), depression (8.1 million), asthma (5.4 million), diabetes (4.4 million), COPD (1.2 million), and heart failure (0.9 million), and they frequently co-occur in the same patient. Multimorbidity rises steeply with age: 14% of under-45s, over 60% of those aged 65 and over, and over 80% of those aged 75 and over. England's ageing population means 17.9 million people are projected to have two or more long-term conditions by 2035, a 16% increase in 14 years. The NHS Long Term Plan invested in the NHS Diabetes Prevention Programme and social prescribing, but prevention is slow; the people who will be 75 in 2035 are already in their 60s today.</p>
-            <p>The NHS was designed around single-condition specialities — cardiac, respiratory, endocrine — and the organisation of care has struggled to adapt to a patient population typically managing three, four, or five conditions simultaneously. Integrated Care Systems, introduced in 2022, are intended to align primary, community, mental health, and hospital care around population need rather than organisational silos. Whether they will prove equal to the challenge of 17.9 million people with complex multimorbidity by 2035 is the defining question in NHS sustainability — and the burden falls disproportionately on deprived communities where multiple conditions onset earlier, cluster more severely, and where prevention infrastructure is weakest.</p>
+            <p>15.4 million people in England now live with two or more long-term conditions — almost double the 8.2 million in 2000 — accounting for 77% of all NHS spending, approximately £120 billion a year.<Cite nums={1} /> The most common conditions are hypertension (12.4 million), depression (8.1 million), asthma (5.4 million), diabetes (4.4 million), COPD (1.2 million), and heart failure (0.9 million), and they frequently co-occur in the same patient.<Cite nums={2} /> Multimorbidity rises steeply with age: 14% of under-45s, over 60% of those aged 65 and over, and over 80% of those aged 75 and over.<Cite nums={3} /> England's ageing population means 17.9 million people are projected to have two or more long-term conditions by 2035, a 16% increase in 14 years.<Cite nums={1} /> The NHS Long Term Plan invested in the NHS Diabetes Prevention Programme and social prescribing, but prevention is slow; the people who will be 75 in 2035 are already in their 60s today.</p>
+            <p>The NHS was designed around single-condition specialities — cardiac, respiratory, endocrine — and the organisation of care has struggled to adapt to a patient population typically managing three, four, or five conditions simultaneously. Integrated Care Systems, introduced in 2022, are intended to align primary, community, mental health, and hospital care around population need rather than organisational silos. Whether they will prove equal to the challenge of 17.9 million people with complex multimorbidity by 2035 is the defining question in NHS sustainability — and the burden falls disproportionately on deprived communities where multiple conditions onset earlier, cluster more severely, and where prevention infrastructure is weakest.<Cite nums={3} /></p>
           </div>
         </section>
 
@@ -165,6 +175,10 @@ export default function LongTermConditionsPage() {
             <p className="font-mono text-xs text-wiah-mid mt-4">Source: NHS England — Quality and Outcomes Framework (QOF) disease registers, 2022/23</p>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

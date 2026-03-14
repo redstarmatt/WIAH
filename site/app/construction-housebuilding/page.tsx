@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Net dwelling additions England, 2015–2023 (DLUHC)
 const netAdditionsValues = [170990, 189650, 217350, 222190, 241130, 215920, 221070, 232820, 234400];
@@ -52,6 +54,13 @@ const annotations2: Annotation[] = [
   { date: new Date(2024, 0, 1), label: '2024: Planning reform — mandatory targets' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DLUHC', dataset: 'Housing Supply: Net Additional Dwellings England', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-net-supply-of-housing', date: '2023' },
+  { num: 2, name: 'DLUHC', dataset: 'Planning Permission Statistics', url: 'https://www.gov.uk/government/collections/planning-permissions-england', date: '2023' },
+  { num: 3, name: 'Homes England', dataset: 'Affordable Homes Programme Data', url: 'https://www.homesengland.org.uk/research/data-and-research/', date: '2023' },
+  { num: 4, name: 'DLUHC', dataset: 'National Planning Policy Framework consultation 2024', url: 'https://www.gov.uk/government/consultations/reforms-to-national-planning-policy', date: '2024' },
+];
+
 export default function ConstructionHousebuildingPage() {
   return (
     <>
@@ -66,8 +75,8 @@ export default function ConstructionHousebuildingPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England added 234,400 net new dwellings in 2022/23 — 65,600 short of the government's 300,000-a-year target, which has never been met in the post-war era. The closest was 2019/20 at 241,130, before the pandemic disrupted construction. Cumulative under-supply runs into millions of units and is widely regarded as the primary driver of England's housing affordability crisis. Planning permissions fell 18% year-on-year, with nutrient neutrality rulings alone halting an estimated 160,000 homes in the pipeline. Social and affordable housing completions were approximately 30,000 in 2022/23 — a fraction of assessed need. The 2024 government reforms aim to mandate rather than merely target local housebuilding by reintroducing mandatory housing targets into local plans.</p>
-            <p>The shortfall is geographically concentrated. London, the South East, and the commuter belt face the most acute need, with high land costs and viability constraints making development difficult. Labour shortages, materials cost inflation, and the economics of high-density development constrain builders independently of planning policy. Private rents have risen sharply as supply remains constrained, and affordable housing grant funding has been eroded in real terms by construction cost inflation, meaning the same budget now delivers fewer homes than in 2019.</p>
+            <p>England added 234,400 net new dwellings in 2022/23 — 65,600 short of the government's 300,000-a-year target, which has never been met in the post-war era.<Cite nums={1} /> The closest was 2019/20 at 241,130, before the pandemic disrupted construction.<Cite nums={1} /> Planning permissions fell 18% year-on-year, with nutrient neutrality rulings alone halting an estimated 160,000 homes in the pipeline.<Cite nums={2} /> Social and affordable housing completions were approximately 30,000 in 2022/23 — a fraction of assessed need.<Cite nums={3} /> The 2024 government reforms aim to mandate rather than merely target local housebuilding by reintroducing mandatory housing targets into local plans.<Cite nums={4} /></p>
+            <p>The shortfall is geographically concentrated. London, the South East, and the commuter belt face the most acute need, with high land costs and viability constraints making development difficult.<Cite nums={1} /> Private rents have risen sharply as supply remains constrained, and affordable housing grant funding has been eroded in real terms by construction cost inflation, meaning the same budget now delivers fewer homes than in 2019.<Cite nums={3} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -146,6 +155,9 @@ export default function ConstructionHousebuildingPage() {
             source="Source: DLUHC — National Planning Policy Framework consultation 2024. Centre for Cities — Housing supply modelling, 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

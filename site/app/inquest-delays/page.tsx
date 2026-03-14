@@ -8,7 +8,15 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ministry of Justice', dataset: 'Coroners Statistics Annual', url: 'https://www.gov.uk/government/statistics/coroners-statistics', date: '2024' },
+  { num: 2, name: 'Chief Coroner', dataset: 'Annual Report to the Lord Chancellor', url: 'https://www.judiciary.uk/related-offices-and-bodies/office-chief-coroner/', date: '2024' },
+  { num: 3, name: 'NHS England', dataset: 'Medical Examiner Programme', url: 'https://www.england.nhs.uk/establishing-medical-examiner-system-nhs/', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -131,8 +139,8 @@ export default function InquestDelaysPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>When someone dies unexpectedly, violently, or in state custody, the law requires a coroner to investigate. In England and Wales, more than 30,000 inquests are opened every year — each one representing a family waiting for answers about how and why their loved one died. In 2014, that wait averaged around 20 weeks. By 2024, it had tripled to 57 weeks. Behind that statistic are families who cannot obtain a death certificate, cannot settle an estate, and cannot begin to move forward. The system designed to provide answers has become a source of prolonged distress. The causes are structural and compounding. Many of the 98 coroner areas in England and Wales are served by part-time coroners who juggle inquests alongside other legal work. Post-mortem pathologist numbers have fallen sharply: some areas now have a single pathologist covering three or more jurisdictions, creating bottlenecks before an inquest can even be opened. Courtroom availability is limited, and complex inquests — particularly those involving deaths in custody, psychiatric settings, or hospitals — routinely take two years or more. Article 2 inquests, where the state may bear responsibility for a death, are especially delayed, with legal aid constraints making it harder for families to participate meaningfully.</p>
-            <p>COVID-19 did not create this crisis, but it accelerated it dramatically. The pandemic caused a surge in deaths referred to coroners in 2020 — nearly 39,000 inquests were opened that year, while concluded cases fell to just 28,400 as courts closed and pathologists were redirected. That single year created a backlog that the system has never absorbed. By 2024, one in three inquests took over a year to conclude, up from fewer than one in twelve a decade earlier. Funding is a fundamental problem: coroner services are funded by local authorities, not central government, creating a postcode lottery in which well-resourced areas can process cases months faster than underfunded ones. The Chief Coroner has flagged the crisis repeatedly in annual reports, calling for national funding, mandatory full-time senior coroners, and investment in pathology services. The Medical Examiner system, fully rolled out across England in 2024, should reduce the number of unnecessary referrals to coroners by scrutinising all non-coronial deaths, but it addresses only the front door — not the growing queue inside. Until coroner capacity matches demand, families will continue to wait in a system that was never designed for the volume or complexity of cases it now faces.</p>
+            <p>When someone dies unexpectedly, violently, or in state custody, the law requires a coroner to investigate. In England and Wales, more than 30,000 inquests are opened every year — each one representing a family waiting for answers about how and why their loved one died. In 2014, that wait averaged around 20 weeks. By 2024, it had tripled to 57 weeks.<Cite nums={1} /> Behind that statistic are families who cannot obtain a death certificate, cannot settle an estate, and cannot begin to move forward. The system designed to provide answers has become a source of prolonged distress. The causes are structural and compounding. Many of the 98 coroner areas in England and Wales are served by part-time coroners who juggle inquests alongside other legal work.<Cite nums={2} /> Post-mortem pathologist numbers have fallen sharply: some areas now have a single pathologist covering three or more jurisdictions, creating bottlenecks before an inquest can even be opened. Courtroom availability is limited, and complex inquests — particularly those involving deaths in custody, psychiatric settings, or hospitals — routinely take two years or more. Article 2 inquests, where the state may bear responsibility for a death, are especially delayed, with legal aid constraints making it harder for families to participate meaningfully.</p>
+            <p>COVID-19 did not create this crisis, but it accelerated it dramatically. The pandemic caused a surge in deaths referred to coroners in 2020 — nearly 39,000 inquests were opened that year, while concluded cases fell to just 28,400 as courts closed and pathologists were redirected.<Cite nums={1} /> That single year created a backlog that the system has never absorbed. By 2024, one in three inquests took over a year to conclude, up from fewer than one in twelve a decade earlier.<Cite nums={1} /> Funding is a fundamental problem: coroner services are funded by local authorities, not central government, creating a postcode lottery in which well-resourced areas can process cases months faster than underfunded ones. The Chief Coroner has flagged the crisis repeatedly in annual reports, calling for national funding, mandatory full-time senior coroners, and investment in pathology services.<Cite nums={2} /> The Medical Examiner system, fully rolled out across England in 2024, should reduce the number of unnecessary referrals to coroners by scrutinising all non-coronial deaths, but it addresses only the front door — not the growing queue inside.<Cite nums={3} /> Until coroner capacity matches demand, families will continue to wait in a system that was never designed for the volume or complexity of cases it now faces.</p>
           </div>
         </section>
 
@@ -261,6 +269,10 @@ export default function InquestDelaysPage() {
             source="Source: Chief Coroner — Annual Report 2024. NHS England — Medical Examiner Programme."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <RelatedTopics />
       </main>

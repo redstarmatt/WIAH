@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DfE', dataset: 'Pupil Premium Allocations', url: 'https://www.gov.uk/government/publications/pupil-premium', date: '2024', note: '£1,480 per primary-aged pupil; total spend grown from £0.6bn in 2012 to £2.9bn in 2024' },
+  { num: 2, name: 'DfE', dataset: 'Key Stage 4 Attainment Statistics', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-4-performance', date: '2023', note: 'Attainment gap narrowed from 19.4pp in 2011 to 17.1pp in 2019; widened again post-COVID to 18.0pp' },
+  { num: 3, name: 'Education Endowment Foundation', dataset: 'Teaching and Learning Toolkit', url: 'https://educationendowmentfoundation.org.uk', date: '2024', note: 'Evidence-based interventions including structured tutoring and targeted reading programmes' },
+];
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -79,7 +87,7 @@ export default function PupilPremiumPage() {
               every pupil who has been eligible for free school meals at any point in the past
               six years. The current rate is £1,480 per primary-aged pupil and £1,050 per
               secondary-aged pupil. The total spend has grown from £0.6 billion in 2012 to
-              £2.9 billion in 2024. It is the largest targeted education intervention in
+              £2.9 billion in 2024.<Cite nums={1} /> It is the largest targeted education intervention in
               England's history, designed specifically to close the gap between disadvantaged
               children and their better-off peers.
             </p>
@@ -87,10 +95,10 @@ export default function PupilPremiumPage() {
               In the years before COVID-19, the intervention showed real results. The
               attainment gap at GCSE — measured as the difference in point scores between
               pupils eligible for free school meals and all other pupils — narrowed from
-              19.4 percentage points in 2011 to 17.1 in 2019. That is genuine progress,
+              19.4 percentage points in 2011 to 17.1 in 2019.<Cite nums={2} /> That is genuine progress,
               attributable in part to evidence-based interventions like structured tutoring,
               high-quality early language work, and targeted reading programmes identified
-              by the Education Endowment Foundation (EEF).
+              by the Education Endowment Foundation (EEF).<Cite nums={3} />
             </p>
             </div>
         </section>
@@ -162,6 +170,10 @@ export default function PupilPremiumPage() {
             </p>
           </div>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <ScrollReveal>
           <div id="sec-sources" className="border-t border-wiah-border pt-8 mt-8">

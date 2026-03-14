@@ -8,6 +8,13 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Diagnostics Waiting Times and Activity', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/diagnostics-waiting-times-and-activity/', date: '2024' },
+  { num: 2, name: 'Royal College of Radiologists', dataset: 'Clinical Radiology Workforce Census', url: 'https://www.rcr.ac.uk/clinical-radiology/being-consultant/rcr-consultant-census/', date: '2024' },
+];
 
 export default function DiagnosticImagingWaitsPage() {
   // Chart 1: Diagnostic imaging waiting list 2015-2024 (millions)
@@ -139,13 +146,16 @@ export default function DiagnosticImagingWaitsPage() {
           <section id="sec-context" className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on diagnostic imaging waits</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>England has fewer MRI scanners per capita than the OECD average, and fewer trained radiologists to read the scans that are produced. Even before the pandemic, the diagnostic waiting list was growing — from 1.4 million in 2015 to 1.8 million by 2019. COVID-19 suspension of routine diagnostics drove the waiting list to 4.5 million and pushed the proportion waiting beyond six weeks to 18.7%. Recovery has been real but incomplete: by early 2024, the list stood at 4.2 million and 5.9% were waiting more than six weeks — still roughly three times the pre-pandemic rate.</p>
-              <p>The consequences for cancer pathways are direct. Earlier diagnosis of cancer is one of the most powerful determinants of survival. MRI and CT delays mean more patients are diagnosed at advanced stage, requiring more intensive treatment with worse outcomes. The Royal College of Radiologists estimates a shortage of around 1,900 consultant radiologists — a gap that cannot be filled quickly given the seven-year training pipeline from medical school graduation. Endoscopy capacity is similarly strained, with bowel cancer screening programmes competing with symptomatic referrals for limited colonoscopy slots.</p>
-              <p>Regional variation is substantial. Trusts in London and the South East generally perform closer to the six-week standard; trusts in parts of the North and Midlands routinely see MRI waits of 13 weeks or more. The Community Diagnostic Centres programme has added useful capacity but has not yet eliminated the backlog or the geographic inequity within it.</p>
+              <p>England has fewer MRI scanners per capita than the OECD average, and fewer trained radiologists to read the scans that are produced.<Cite nums={2} /> Even before the pandemic, the diagnostic waiting list was growing — from 1.4 million in 2015 to 1.8 million by 2019.<Cite nums={1} /> COVID-19 suspension of routine diagnostics drove the waiting list to 4.5 million and pushed the proportion waiting beyond six weeks to 18.7%.<Cite nums={1} /> Recovery has been real but incomplete: by early 2024, the list stood at 4.2 million and 5.9% were waiting more than six weeks — still roughly three times the pre-pandemic rate.<Cite nums={1} /></p>
+              <p>The consequences for cancer pathways are direct. Earlier diagnosis of cancer is one of the most powerful determinants of survival. MRI and CT delays mean more patients are diagnosed at advanced stage, requiring more intensive treatment with worse outcomes. The Royal College of Radiologists estimates a shortage of around 1,900 consultant radiologists — a gap that cannot be filled quickly given the seven-year training pipeline from medical school graduation.<Cite nums={2} /> Endoscopy capacity is similarly strained, with bowel cancer screening programmes competing with symptomatic referrals for limited colonoscopy slots.</p>
+              <p>Regional variation is substantial. Trusts in London and the South East generally perform closer to the six-week standard; trusts in parts of the North and Midlands routinely see MRI waits of 13 weeks or more.<Cite nums={1} /> The Community Diagnostic Centres programme has added useful capacity but has not yet eliminated the backlog or the geographic inequity within it.</p>
             </div>
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">

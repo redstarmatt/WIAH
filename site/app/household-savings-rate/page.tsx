@@ -8,7 +8,15 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'United Kingdom Economic Accounts', url: 'https://www.ons.gov.uk/economy/grossdomesticproductgdp/datasets/unitedkingdomeconomicaccounts', date: 'Q4 2025', note: 'Savings ratio 25.9% COVID peak; 8.4% in 2025' },
+  { num: 2, name: 'Bank of England', dataset: 'Household Deposit Statistics', url: 'https://www.bankofengland.co.uk/statistics/money-and-credit', date: 'Q4 2025', note: 'Median savings balance fell from £6,100 to £4,100' },
+  { num: 3, name: 'FCA', dataset: 'Financial Lives Survey', url: 'https://www.fca.org.uk/publications/research/financial-lives', date: '2025', note: '24% of households with less than £100 in savings' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -136,9 +144,9 @@ export default function HouseholdSavingsRatePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK household savings ratio tells a story of two pandemics: one viral, one financial. When the first lockdown hit in March 2020, household spending collapsed overnight while incomes were largely protected by furlough payments. The result was an involuntary savings boom that pushed the ratio to 25.9% -- the highest level since records began. But that number was always misleading. The windfall was overwhelmingly concentrated among higher-income households who simply could not spend on holidays, restaurants, and commuting. For the bottom income quintile, the pandemic often meant drawing down what little savings they had.</p>
-            <p>The unwinding has been relentless. As restrictions lifted, pent-up demand met rising prices. The energy price guarantee cushioned the worst of the 2022-23 shock, but household budgets were squeezed from every direction: mortgage rates tripling, food inflation running above 15%, council tax rising, and real wages falling for the longest sustained period since the Napoleonic Wars. By 2025, the savings ratio had fallen back to 8.4%, still above the pre-2008 norm of around 5% but firmly on a downward trajectory. The median household savings balance -- the amount a typical household actually has accessible in a bank account -- fell from a post-COVID peak of £6,100 to £4,100, a decline of 33% in just five years and back to levels last seen before the pandemic.</p>
-            <p>The distributional picture is where the real damage lies. 24% of UK households now report having less than £100 in accessible savings, up from 20% in 2019. These are families one boiler breakdown, one car repair, one redundancy notice away from hardship. The FCA Financial Lives Survey consistently finds that savings resilience tracks income almost perfectly: among households earning below £20,000, more than half have no meaningful savings buffer. The aggregate savings ratio, which counts pension contributions and mortgage overpayments alongside current account balances, flatters to deceive. For millions of households, the question is not what percentage of income they are saving but whether they can cover an unexpected £300 bill without borrowing.</p>
+            <p>The UK household savings ratio tells a story of two pandemics: one viral, one financial. When the first lockdown hit in March 2020, household spending collapsed overnight while incomes were largely protected by furlough payments. The result was an involuntary savings boom that pushed the ratio to 25.9% -- the highest level since records began.<Cite nums={1} /> But that number was always misleading. The windfall was overwhelmingly concentrated among higher-income households who simply could not spend on holidays, restaurants, and commuting. For the bottom income quintile, the pandemic often meant drawing down what little savings they had.</p>
+            <p>The unwinding has been relentless. As restrictions lifted, pent-up demand met rising prices. The energy price guarantee cushioned the worst of the 2022-23 shock, but household budgets were squeezed from every direction: mortgage rates tripling, food inflation running above 15%, council tax rising, and real wages falling for the longest sustained period since the Napoleonic Wars. By 2025, the savings ratio had fallen back to 8.4%, still above the pre-2008 norm of around 5% but firmly on a downward trajectory.<Cite nums={1} /> The median household savings balance -- the amount a typical household actually has accessible in a bank account -- fell from a post-COVID peak of £6,100 to £4,100, a decline of 33% in just five years<Cite nums={2} /> and back to levels last seen before the pandemic.</p>
+            <p>The distributional picture is where the real damage lies. 24% of UK households now report having less than £100 in accessible savings, up from 20% in 2019.<Cite nums={3} /> These are families one boiler breakdown, one car repair, one redundancy notice away from hardship. The FCA Financial Lives Survey consistently finds that savings resilience tracks income almost perfectly: among households earning below £20,000, more than half have no meaningful savings buffer.<Cite nums={3} /> The aggregate savings ratio, which counts pension contributions and mortgage overpayments alongside current account balances, flatters to deceive. For millions of households, the question is not what percentage of income they are saving but whether they can cover an unexpected £300 bill without borrowing.</p>
           </div>
         </section>
 
@@ -273,6 +281,10 @@ export default function HouseholdSavingsRatePage() {
             source="Source: The Pensions Regulator — Automatic Enrolment Commentary and Analysis, 2025. DWP — Workplace Pension Participation and Saving Trends, 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <RelatedTopics />
       </main>

@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Total breaches and cyber breaches, 2015–2024
 const totalBreachValues = [1100, 1400, 1800, 2159, 2400, 2750, 2900, 3100, 3250, 3520];
@@ -57,6 +59,12 @@ const annotations2: Annotation[] = [
   { date: new Date(2023, 5, 1), label: '2023: NHS ransomware attacks' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ICO', dataset: 'Data Security Incident Trends', url: 'https://ico.org.uk/action-weve-taken/data-security-incident-trends', date: '2024' },
+  { num: 2, name: 'NCSC', dataset: 'Annual Review', url: 'https://www.ncsc.gov.uk/annual-review', date: '2024' },
+  { num: 3, name: 'ICO', dataset: 'Enforcement Actions', url: 'https://ico.org.uk/action-weve-taken/enforcement', date: '2024' },
+];
+
 export default function DataBreachVolumePage() {
   return (
     <>
@@ -71,8 +79,8 @@ export default function DataBreachVolumePage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK's data breach landscape has been transformed by two forces: the introduction of GDPR mandatory reporting in 2018 — which requires organisations to notify the ICO within 72 hours of a qualifying breach — and the explosion of cyber attacks targeting organisations of all sizes. Total breach reports to the ICO have grown from 1,100 in 2015 to 3,520 in 2024, though much of the jump between 2017 and 2018 reflects mandatory reporting rather than a genuine increase in incidents. The share attributable to cyber attacks has grown from 24% to 39%, driven by ransomware, phishing, and supply chain compromises. The NHS was hit by a significant ransomware attack in 2023 that disrupted services at multiple trusts and exposed patient records.</p>
-            <p>Health records and financial data are the most sensitive categories exposed. Health sector organisations reported 780 breaches in 2024 — the highest of any sector — reflecting both the high value of medical records on criminal markets and the sector's historically underinvested IT infrastructure. Financial services reported 540 breaches, with account takeover and identity fraud the dominant outcomes. The ICO's enforcement record has strengthened since GDPR: fines against British Airways (£20 million) and Marriott (£18.4 million) established that board-level accountability for data security is not optional. But fines remain a small fraction of the economic damage caused by breaches to individuals whose data is exposed.</p>
+            <p>The UK's data breach landscape has been transformed by two forces: the introduction of GDPR mandatory reporting in 2018 — which requires organisations to notify the ICO within 72 hours of a qualifying breach — and the explosion of cyber attacks targeting organisations of all sizes. Total breach reports to the ICO have grown from 1,100 in 2015 to 3,520 in 2024, though much of the jump between 2017 and 2018 reflects mandatory reporting rather than a genuine increase in incidents.<Cite nums={1} /> The share attributable to cyber attacks has grown from 24% to 39%, driven by ransomware, phishing, and supply chain compromises.<Cite nums={1} /> The NHS was hit by a significant ransomware attack in 2023 that disrupted services at multiple trusts and exposed patient records.<Cite nums={2} /></p>
+            <p>Health records and financial data are the most sensitive categories exposed. Health sector organisations reported 780 breaches in 2024 — the highest of any sector — reflecting both the high value of medical records on criminal markets and the sector's historically underinvested IT infrastructure.<Cite nums={1} /> Financial services reported 540 breaches, with account takeover and identity fraud the dominant outcomes.<Cite nums={1} /> The ICO's enforcement record has strengthened since GDPR: fines against British Airways (£20 million) and Marriott (£18.4 million) established that board-level accountability for data security is not optional.<Cite nums={3} /> But fines remain a small fraction of the economic damage caused by breaches to individuals whose data is exposed.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -151,6 +159,9 @@ export default function DataBreachVolumePage() {
             source="Source: ICO — Data Security Incident Trends 2024. NCSC — Annual Review 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

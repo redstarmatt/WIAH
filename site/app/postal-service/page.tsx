@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ofcom', dataset: 'Annual Monitoring Report on the Postal Market', url: 'https://www.ofcom.org.uk/research-and-data/post-research', date: '2025', note: 'Letter volumes fell from 15.1bn in 2010 to 5.9bn; first-class next-day delivery rate around 84-85%' },
+  { num: 2, name: 'Ofcom', dataset: 'Quality of Service Report', url: 'https://www.ofcom.org.uk/research-and-data/post-research', date: '2025', note: '93% first-class target missed every quarter since 2022; £5.6m fine in 2023' },
+  { num: 3, name: 'Royal Mail', dataset: 'Annual Report and Financial Statements', date: '2024', note: 'Workforce shrunk from 160,000 to ~115,000; delivery offices from 1,200 to ~1,008' },
+  { num: 4, name: 'Ofcom', dataset: 'Review of Postal Regulation — Universal Service Consultation', date: '2024', note: 'Six-day letter delivery obligation under review; proposals to reduce to five or three days' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -140,10 +149,10 @@ export default function PostalServicePage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Royal Mail&apos;s Universal Service Obligation requires it to deliver letters six days a week and parcels five days a week to every address in the UK — roughly 32 million delivery points. It is a commitment that dates back centuries and underpins the country&apos;s basic infrastructure. But the economics of that obligation have deteriorated sharply. Letter volumes peaked at 15.1 billion items in 2010 and have since fallen to around 5.9 billion, a decline of more than 60% driven by the shift to email, digital billing, and online communication. Parcel volumes have grown by about 50% over the same period, boosted by e-commerce, but Royal Mail faces fierce competition from Amazon Logistics, DPD, Evri, and other carriers who cherry-pick profitable urban routes. The result: Royal Mail delivers roughly 75,000 fewer items per day than a decade ago, with a workforce that has shrunk from 160,000 to around 115,000 employees. Ofcom fined the company &pound;5.6 million in 2023 for persistently missing its quality-of-service targets — the first-class next-day delivery rate, which should be 93%, has hovered around 84&ndash;85%, while the second-class three-day target of 98.5% has been missed every quarter since 2022.
+              Royal Mail&apos;s Universal Service Obligation requires it to deliver letters six days a week and parcels five days a week to every address in the UK — roughly 32 million delivery points. It is a commitment that dates back centuries and underpins the country&apos;s basic infrastructure. But the economics of that obligation have deteriorated sharply. Letter volumes peaked at 15.1 billion items in 2010 and have since fallen to around 5.9 billion, a decline of more than 60% driven by the shift to email, digital billing, and online communication.<Cite nums={1} /> Parcel volumes have grown by about 50% over the same period, boosted by e-commerce, but Royal Mail faces fierce competition from Amazon Logistics, DPD, Evri, and other carriers who cherry-pick profitable urban routes. The result: Royal Mail delivers roughly 75,000 fewer items per day than a decade ago, with a workforce that has shrunk from 160,000 to around 115,000 employees.<Cite nums={3} /> Ofcom fined the company &pound;5.6 million in 2023 for persistently missing its quality-of-service targets — the first-class next-day delivery rate, which should be 93%, has hovered around 84&ndash;85%, while the second-class three-day target of 98.5% has been missed every quarter since 2022.<Cite nums={2} />
             </p>
             <p>
-              The ownership question now looms over every strategic decision. The takeover by Czech billionaire Daniel K&rcaron;et&iacute;nsk&yacute;&apos;s EP Group, completed in 2024 through International Distributions Services, has raised concerns about whether the new owners will invest in automation and modernisation or prioritise extraction. Royal Mail&apos;s six-day letter delivery obligation is formally under review by Ofcom, with proposals on the table to reduce it to five days or even three — a change that would disproportionately affect rural communities, elderly residents, and small businesses that still depend on physical mail. Meanwhile, delivery office closures are accelerating: the network has shrunk from over 1,200 offices in 2015 to around 1,008 in 2025, with consolidations concentrating sorting capacity in larger regional hubs and lengthening last-mile routes in rural areas. The 18 days of CWU strike action in late 2022 disrupted Christmas deliveries and exposed the fragility of a service stretched between declining revenues, regulatory obligations, and workforce pressures. Whether the universal service can survive in its current form — or whether the UK is heading toward a two-tier postal system where cities get daily delivery and rural areas get something less — is the central question facing the postal service today.
+              The ownership question now looms over every strategic decision. The takeover by Czech billionaire Daniel K&rcaron;et&iacute;nsk&yacute;&apos;s EP Group, completed in 2024 through International Distributions Services, has raised concerns about whether the new owners will invest in automation and modernisation or prioritise extraction. Royal Mail&apos;s six-day letter delivery obligation is formally under review by Ofcom, with proposals on the table to reduce it to five days or even three — a change that would disproportionately affect rural communities, elderly residents, and small businesses that still depend on physical mail.<Cite nums={4} /> Meanwhile, delivery office closures are accelerating: the network has shrunk from over 1,200 offices in 2015 to around 1,008 in 2025, with consolidations concentrating sorting capacity in larger regional hubs and lengthening last-mile routes in rural areas.<Cite nums={3} /> The 18 days of CWU strike action in late 2022 disrupted Christmas deliveries and exposed the fragility of a service stretched between declining revenues, regulatory obligations, and workforce pressures. Whether the universal service can survive in its current form — or whether the UK is heading toward a two-tier postal system where cities get daily delivery and rural areas get something less — is the central question facing the postal service today.
             </p>
           </div>
         </section>
@@ -258,6 +267,10 @@ export default function PostalServicePage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <RelatedTopics />
       </main>

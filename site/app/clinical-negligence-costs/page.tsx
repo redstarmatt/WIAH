@@ -8,6 +8,8 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // -- Types ------------------------------------------------------------------
 
@@ -26,6 +28,15 @@ interface ClinicalNegligenceCostsData {
 function yearToDate(y: number): Date {
   return new Date(y, 0, 1)
 }
+
+// -- References -------------------------------------------------------------
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS Resolution', dataset: 'Annual Report and Accounts 2023/24', url: 'https://resolution.nhs.uk/resources/nhsr-annual-report-and-accounts/', date: '2024' },
+  { num: 2, name: 'NHS Resolution', dataset: 'Maternity Claims Data', date: '2024' },
+  { num: 3, name: 'Donna Ockenden', dataset: 'Independent Review of Maternity Services at Shrewsbury and Telford NHS Trust', date: '2022' },
+  { num: 4, name: 'UK Parliament', dataset: 'Health and Social Care Act 2022 — Duty of Candour', date: '2022' },
+];
 
 // -- Page -------------------------------------------------------------------
 
@@ -70,8 +81,8 @@ export default function ClinicalNegligenceCostsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>NHS Resolution's outstanding clinical negligence liability reached £86.1 billion in 2024 — exceeding the NHS's entire annual budget — while annual payments hit £2.8 billion in 2023/24, up from £1.1 billion a decade earlier. Obstetric claims dominate: birth injury cases represent around 63% of total claim value despite being a small fraction by volume, as a single case of birth-related brain damage can generate a claim of £20–30 million for lifetime care. The Donna Ockenden review into Shrewsbury and Telford NHS Trust found systematic and repeated maternity failures over two decades that could have been avoided. Annual payments consume resources that would otherwise fund clinical services and have more than doubled in a decade.</p>
-            <p>The adversarial claims process requires families to pursue litigation for years before receiving compensation, is traumatic for claimants, expensive for the NHS, and generates limited learning. A significant share of claims is settled without admission of liability. The duty of candour introduced by the Health and Social Care Act 2022 and the Rapid Resolution and Redress scheme for maternity cases are partial responses. The liability figure is ultimately a measure of preventable harm: hospitals where staff are reluctant to report near misses or speak up about safety concerns generate the incidents that, years later, appear as liability on Resolution's balance sheet.</p>
+            <p>NHS Resolution's outstanding clinical negligence liability reached £86.1 billion in 2024 — exceeding the NHS's entire annual budget — while annual payments hit £2.8 billion in 2023/24, up from £1.1 billion a decade earlier.<Cite nums={1} /> Obstetric claims dominate: birth injury cases represent around 63% of total claim value despite being a small fraction by volume, as a single case of birth-related brain damage can generate a claim of £20–30 million for lifetime care.<Cite nums={2} /> The Donna Ockenden review into Shrewsbury and Telford NHS Trust found systematic and repeated maternity failures over two decades that could have been avoided.<Cite nums={3} /> Annual payments consume resources that would otherwise fund clinical services and have more than doubled in a decade.<Cite nums={1} /></p>
+            <p>The adversarial claims process requires families to pursue litigation for years before receiving compensation, is traumatic for claimants, expensive for the NHS, and generates limited learning. A significant share of claims is settled without admission of liability.<Cite nums={1} /> The duty of candour introduced by the Health and Social Care Act 2022 and the Rapid Resolution and Redress scheme for maternity cases are partial responses.<Cite nums={4} /> The liability figure is ultimately a measure of preventable harm: hospitals where staff are reluctant to report near misses or speak up about safety concerns generate the incidents that, years later, appear as liability on Resolution's balance sheet.<Cite nums={1} /></p>
           </div>
         </section>
 
@@ -131,6 +142,10 @@ export default function ClinicalNegligenceCostsPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

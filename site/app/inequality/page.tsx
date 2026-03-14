@@ -7,7 +7,15 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Effects of Taxes and Benefits on Household Income', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/bulletins/theeffectsoftaxesandbenefitsonhouseholdincome', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Wealth and Assets Survey', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/bulletins/totalwealthingreatbritain', date: '2022' },
+  { num: 3, name: 'Resolution Foundation', dataset: 'Wealth Commission', url: 'https://www.resolutionfoundation.org/advanced/wealth/', date: '2023' },
+];
 
 const giniData = [0.369, 0.371, 0.358, 0.356, 0.357, 0.358, 0.351, 0.357, 0.361, 0.363, 0.362, 0.361, 0.362, 0.363, 0.361, 0.360, 0.362, 0.362, 0.360, 0.358, 0.361, 0.362, 0.363, 0.360, 0.361];
 const giniAnnotations: Annotation[] = [
@@ -143,9 +151,9 @@ export default function InequalityPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on inequality</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>The UK's Gini coefficient — the standard measure of income inequality — has hovered stubbornly around 0.36 for over twenty years. This places the UK among the more unequal developed economies: more unequal than France (0.29), Germany (0.31), and Denmark (0.28), though less unequal than the United States (0.39). The tax and benefits system compresses inequality significantly — the Gini before tax and benefits is around 0.52 — but the post-redistribution Gini has remained largely unmoved since the late 1990s despite significant changes in policy.</p>
-              <p>Wealth inequality is far more extreme than income inequality, and has worsened since 2010. The top 10% of households hold 43% of all net household wealth; the bottom 50% hold just 9%. The principal driver of widening wealth inequality is house prices: between 2010 and 2023, average UK house prices rose 60% in real terms, dramatically increasing the wealth of homeowners relative to renters. The pandemic accelerated this: asset prices rose sharply while lower-income households, who are less likely to hold assets, were more exposed to job loss and income reduction.</p>
-              <p>The Resolution Foundation's Wealth Commission found that Britain's wealth inequality is now more extreme than income inequality by any measure, and that inheritance — which passes on accumulated housing wealth — is playing an increasingly determinative role in lifetime economic outcomes. Children of homeowners are dramatically more likely to become homeowners themselves; children of renters are not.</p>
+              <p>The UK's Gini coefficient — the standard measure of income inequality — has hovered stubbornly around 0.36 for over twenty years. This places the UK among the more unequal developed economies: more unequal than France (0.29), Germany (0.31), and Denmark (0.28), though less unequal than the United States (0.39).<Cite nums={1} /> The tax and benefits system compresses inequality significantly — the Gini before tax and benefits is around 0.52 — but the post-redistribution Gini has remained largely unmoved since the late 1990s despite significant changes in policy.</p>
+              <p>Wealth inequality is far more extreme than income inequality, and has worsened since 2010. The top 10% of households hold 43% of all net household wealth; the bottom 50% hold just 9%.<Cite nums={2} /> The principal driver of widening wealth inequality is house prices: between 2010 and 2023, average UK house prices rose 60% in real terms, dramatically increasing the wealth of homeowners relative to renters. The pandemic accelerated this: asset prices rose sharply while lower-income households, who are less likely to hold assets, were more exposed to job loss and income reduction.</p>
+              <p>The Resolution Foundation's Wealth Commission found that Britain's wealth inequality is now more extreme than income inequality by any measure, and that inheritance — which passes on accumulated housing wealth — is playing an increasingly determinative role in lifetime economic outcomes.<Cite nums={3} /> Children of homeowners are dramatically more likely to become homeowners themselves; children of renters are not.</p>
             </div>
           </section>
         </ScrollReveal>
@@ -159,6 +167,10 @@ export default function InequalityPage() {
             source="Source: ONS — Effects of taxes and benefits on household income 2023/24; ONS — Wealth and Assets Survey 2022."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

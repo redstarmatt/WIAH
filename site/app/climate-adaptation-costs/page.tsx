@@ -9,6 +9,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -61,6 +63,15 @@ interface ClimateAdaptationData {
 function yearToDate(y: number): Date {
   return new Date(y, 5, 1);
 }
+
+// ── References ───────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Climate Change Committee', dataset: 'UK Climate Risk Assessment 2022', url: 'https://www.theccc.org.uk/publication/independent-assessment-of-uk-climate-risk/', date: '2022' },
+  { num: 2, name: 'Environment Agency', dataset: 'Flood Risk Assessments & Long-term Investment Scenarios', url: 'https://www.gov.uk/government/publications/flood-and-coastal-risk-management-national-report', date: '2024' },
+  { num: 3, name: 'Flood Re', dataset: 'Transition Plan and Annual Report', url: 'https://www.floodre.co.uk/', date: '2024' },
+  { num: 4, name: 'Defra', dataset: 'Third National Adaptation Programme (NAP3)', url: 'https://www.gov.uk/government/publications/third-national-adaptation-programme-nap3', date: '2023' },
+];
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -151,10 +162,10 @@ export default function ClimateAdaptationPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The UK Climate Risk Assessment 2022 set out in stark terms what inadequate adaptation will cost. The Climate Change Committee estimates that by 2050, at 2&deg;C of global warming, the UK will face £78 billion per year in adaptation costs — covering flood and coastal erosion defence, heat-related public health, water scarcity, food system resilience and infrastructure hardening. Current government spending on adaptation is estimated at £800 million per year — less than 1% of the sum needed. There is no consolidated adaptation budget; the figure is estimated by aggregating spending across the Environment Agency flood programme, NHS heat resilience, agriculture support, and planning system costs.
+              The UK Climate Risk Assessment 2022 set out in stark terms what inadequate adaptation will cost. The Climate Change Committee estimates that by 2050, at 2&deg;C of global warming, the UK will face £78 billion per year in adaptation costs — covering flood and coastal erosion defence, heat-related public health, water scarcity, food system resilience and infrastructure hardening.<Cite nums={1} /> Current government spending on adaptation is estimated at £800 million per year — less than 1% of the sum needed.<Cite nums={1} /> There is no consolidated adaptation budget; the figure is estimated by aggregating spending across the Environment Agency flood programme, NHS heat resilience, agriculture support, and planning system costs.<Cite nums={2} />
             </p>
             <p>
-              Flood risk concentrates the consequences of inaction. The Environment Agency estimates 6.3 million homes in England are at risk of flooding from rivers, sea or surface water. Record flood insurance payouts of £1.2 billion in 2024 reflect a trend of more frequent, more severe flood events. But 1.4 million households in flood risk zones have no flood insurance — either because insurers have priced them out or withdrawn coverage entirely. Flood Re, the government-backed reinsurance scheme, provides affordable flood cover for 300,000 homes. That leaves around a million flood-risk households unprotected and potentially uninsurable. As the climate warms, insurers will continue to reprice or exit, turning a current insurance problem into a property value and mortgage crisis.
+              Flood risk concentrates the consequences of inaction. The Environment Agency estimates 6.3 million homes in England are at risk of flooding from rivers, sea or surface water.<Cite nums={2} /> Record flood insurance payouts of £1.2 billion in 2024 reflect a trend of more frequent, more severe flood events.<Cite nums={2} /> But 1.4 million households in flood risk zones have no flood insurance — either because insurers have priced them out or withdrawn coverage entirely.<Cite nums={[2, 3]} /> Flood Re, the government-backed reinsurance scheme, provides affordable flood cover for 300,000 homes.<Cite nums={3} /> That leaves around a million flood-risk households unprotected and potentially uninsurable. As the climate warms, insurers will continue to reprice or exit, turning a current insurance problem into a property value and mortgage crisis.<Cite nums={1} />
             </p>
           </div>
         </section>
@@ -237,6 +248,10 @@ export default function ClimateAdaptationPage() {
             source="Source: Environment Agency — Long-term investment scenarios. Climate Change Committee — Progress in adapting to climate change 2023."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

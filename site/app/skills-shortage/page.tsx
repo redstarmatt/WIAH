@@ -9,6 +9,16 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DfE', dataset: 'Employer Skills Survey', url: 'https://www.gov.uk/government/collections/employer-skills-survey', date: '2022' },
+  { num: 2, name: 'CIPD', dataset: 'Labour Market Outlook — quarterly survey', url: 'https://www.cipd.org/uk/knowledge/reports/labour-market-outlook/', date: 'Q4 2024' },
+  { num: 3, name: 'ONS', dataset: 'Vacancy Survey', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/jobsandvacanciesintheuk/latest', date: '2024' },
+  { num: 4, name: 'British Chambers of Commerce', dataset: 'Digital Skills Gap Report', url: 'https://www.britishchambers.org.uk/', date: '2024' },
+  { num: 5, name: 'NHS England', dataset: 'NHS Vacancy Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/nhs-vacancies-survey', date: '2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -144,8 +154,8 @@ export default function SkillsShortagesPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The United Kingdom's skills shortage is among the most significant structural constraints on economic growth and public service delivery. The Department for Education's biennial Employer Skills Survey, the most comprehensive data source on the subject, has consistently found that skills gaps and skills shortage vacancies cost employers approximately £6.6 billion per year in additional recruitment, training, and temporary staffing costs. Hard-to-fill vacancies — those remaining open for more than three months where employers report difficulty attracting suitably skilled applicants — reached approximately 2.4 million by 2024. The post-pandemic labour market surge of 2021–22, combined with reduced EU worker availability following Brexit, created the tightest labour market in a generation, with total ONS vacancies peaking at a record 1.3 million in mid-2022. Although total vacancies have since eased as economic activity slowed, the structural component of the shortage — jobs that cannot be filled because the skills simply do not exist in sufficient quantity in the domestic workforce — has not resolved. The CIPD's quarterly Labour Market Outlook surveys found that over 80% of employers reported difficulty filling at least one vacancy in 2023–24, a figure that has remained stubbornly elevated even as the overall labour market has loosened.</p>
-            <p>The sectoral pattern of skills shortages reveals where economic and social consequences are most acute. Health and social care faces a structural crisis: the NHS has approximately 112,000 vacancies and adult social care had over 160,000 vacancies in 2023, representing nearly 10% of the total workforce. These shortages directly affect patient care, discharge times, and waiting lists. The construction industry requires approximately 250,000 additional workers by 2027 to deliver the government's housebuilding targets, with shortages most acute in bricklaying, carpentry, and groundwork. Digital and IT skills shortages are estimated to cost the UK economy £63 billion per year in lost productivity according to the British Chambers of Commerce, with cybersecurity, data science, and software development the most critically under-resourced areas. Engineering skills shortages — particularly in electrical engineering, civil engineering, and mechanical engineering — constrain the UK's capacity to deliver infrastructure investment and the green energy transition. The common thread across these sectors is that training and qualification cycles take years, meaning that the pipeline of new workers is structurally insufficient to meet near-term demand even when training investment is increased.</p>
+            <p>The United Kingdom's skills shortage is among the most significant structural constraints on economic growth and public service delivery. The Department for Education's biennial Employer Skills Survey, the most comprehensive data source on the subject, has consistently found that skills gaps and skills shortage vacancies cost employers approximately £6.6 billion per year in additional recruitment, training, and temporary staffing costs.<Cite nums={1} /> Hard-to-fill vacancies — those remaining open for more than three months where employers report difficulty attracting suitably skilled applicants — reached approximately 2.4 million by 2024.<Cite nums={1} /> The post-pandemic labour market surge of 2021–22, combined with reduced EU worker availability following Brexit, created the tightest labour market in a generation, with total ONS vacancies peaking at a record 1.3 million in mid-2022.<Cite nums={3} /> Although total vacancies have since eased as economic activity slowed, the structural component of the shortage — jobs that cannot be filled because the skills simply do not exist in sufficient quantity in the domestic workforce — has not resolved. The CIPD's quarterly Labour Market Outlook surveys found that over 80% of employers reported difficulty filling at least one vacancy in 2023–24, a figure that has remained stubbornly elevated even as the overall labour market has loosened.<Cite nums={2} /></p>
+            <p>The sectoral pattern of skills shortages reveals where economic and social consequences are most acute. Health and social care faces a structural crisis: the NHS has approximately 112,000 vacancies and adult social care had over 160,000 vacancies in 2023, representing nearly 10% of the total workforce.<Cite nums={5} /> These shortages directly affect patient care, discharge times, and waiting lists. The construction industry requires approximately 250,000 additional workers by 2027 to deliver the government's housebuilding targets, with shortages most acute in bricklaying, carpentry, and groundwork.<Cite nums={1} /> Digital and IT skills shortages are estimated to cost the UK economy £63 billion per year in lost productivity according to the British Chambers of Commerce, with cybersecurity, data science, and software development the most critically under-resourced areas.<Cite nums={4} /> Engineering skills shortages — particularly in electrical engineering, civil engineering, and mechanical engineering — constrain the UK's capacity to deliver infrastructure investment and the green energy transition.<Cite nums={1} /> The common thread across these sectors is that training and qualification cycles take years, meaning that the pipeline of new workers is structurally insufficient to meet near-term demand even when training investment is increased.</p>
             </div>
         </section>
 
@@ -227,6 +237,10 @@ export default function SkillsShortagesPage() {
             source="Source: DfE — Employer Skills Survey 2022; CIPD — Labour Market Outlook Q4 2024; ONS — Vacancy Survey 2024; British Chambers of Commerce — Digital Skills Gap Report 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

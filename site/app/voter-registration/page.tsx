@@ -9,6 +9,16 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+// ── References ──────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Electoral Commission', dataset: 'Accuracy and completeness of the electoral registers', url: 'https://www.electoralcommission.org.uk/research-reports-and-data', date: '2025' },
+  { num: 2, name: 'Electoral Commission', dataset: 'Voter identification monitoring — 2023 local elections', url: 'https://www.electoralcommission.org.uk/research-reports-and-data', date: '2023' },
+  { num: 3, name: 'Electoral Commission', dataset: '2024 General Election monitoring report', url: 'https://www.electoralcommission.org.uk/research-reports-and-data', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -161,14 +171,17 @@ export default function VoterRegistrationPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The electoral register is the gateway to democratic participation. If you are not on it, you cannot vote. An estimated 8.3 million eligible adults in Great Britain are missing from the register — a number that has remained stubbornly stable for a decade despite successive registration drives. The shift to Individual Electoral Registration in 2014, which replaced household registration with a requirement for each person to register individually, permanently reduced completeness from around 91% to 83–86%, with the sharpest falls among young adults, private renters, and ethnic minority communities.
+              The electoral register is the gateway to democratic participation. If you are not on it, you cannot vote. An estimated 8.3 million eligible adults in Great Britain are missing from the register — a number that has remained stubbornly stable for a decade despite successive registration drives. The shift to Individual Electoral Registration in 2014, which replaced household registration with a requirement for each person to register individually, permanently reduced completeness from around 91% to 83–86%, with the sharpest falls among young adults, private renters, and ethnic minority communities.<Cite nums={1} />
             </p>
             <p>
-              The introduction of mandatory photo ID for voting in 2023 added a second barrier. Electoral Commission monitoring found that 0.7% of voters at the May 2023 local elections were initially turned away without valid ID, with higher rates among younger and older voters and those from ethnic minority backgrounds. At the July 2024 general election, the figure fell to 0.3%, but the Commission noted this captures only those who attended — not those who stayed home because they lacked or believed they lacked valid identification.
+              The introduction of mandatory photo ID for voting in 2023 added a second barrier. Electoral Commission monitoring found that 0.7% of voters at the May 2023 local elections were initially turned away without valid ID, with higher rates among younger and older voters and those from ethnic minority backgrounds.<Cite nums={2} /> At the July 2024 general election, the figure fell to 0.3%, but the Commission noted this captures only those who attended<Cite nums={3} /> — not those who stayed home because they lacked or believed they lacked valid identification.
             </p>
             <p>
-              The pattern is structural, not accidental. Under-registration maps onto disadvantage: the groups least likely to be registered — young renters, recent movers, people in Houses of Multiple Occupation, ethnic minority communities — are also those whose policy interests are least represented. A register that systematically under-counts certain groups does not just reduce turnout; it shapes which voices political parties choose to hear.
+              The pattern is structural, not accidental. Under-registration maps onto disadvantage: the groups least likely to be registered — young renters, recent movers, people in Houses of Multiple Occupation, ethnic minority communities — are also those whose policy interests are least represented. A register that systematically under-counts certain groups does not just reduce turnout; it shapes which voices political parties choose to hear.<Cite nums={1} />
             </p>
+          </div>
+          <div className="mt-6">
+            <References items={editorialRefs} />
           </div>
         </section>
 

@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'HESA', dataset: 'Higher Education Student Statistics 2022-23', url: 'https://www.hesa.ac.uk/data-and-analysis/students', date: '2024', note: 'Non-continuation rates for UK-domiciled full-time first-degree students' },
+  { num: 2, name: 'Office for Students', dataset: 'Access and Participation data', url: 'https://www.officeforstudents.org.uk/data-and-analysis/', date: '2024', note: 'Continuation rates by POLAR4 deprivation quintile' },
+  { num: 3, name: 'NUS', dataset: 'Estimated student living costs', url: 'https://www.nus.org.uk', date: '2024' },
+];
 
 interface UniversityDropoutDataPoint {
   year: number
@@ -65,8 +73,8 @@ export default function UniversityDropoutRatesPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>HESA data for 2022–23 shows a non-continuation rate (students not returning after year one) of 6.3% across UK higher education — up from 5.1% in 2019 — with 32,000 students withdrawing in 2023 compared to around 24,000 pre-pandemic. The cost of living crisis is directly implicated: the maximum maintenance loan for students outside London (£10,227) falls below the NUS estimated living cost of £12,600 per year, and students from lower-income backgrounds are most likely to receive the maximum loan with least family support to bridge the gap. Post-1992 institutions, where disadvantaged students are concentrated, have higher dropout rates than pre-1992 universities. The OfS's B conditions on continuation, retention and completion now require institutional accountability for dropout rates.</p>
-            <p>The deprivation gap is stark and widening. Students from the most deprived quintile have a non-continuation rate of 12% — nearly three times the 4.5% for those from the least deprived areas. First-generation university attenders have non-continuation rates approximately double those of students whose parents also attended. Working part-time while studying — common among lower-income students bridging the maintenance gap — constrains study time and correlates with worse academic outcomes and higher withdrawal rates. The financial structure of the system creates a compounding disadvantage: the students most likely to leave without graduating are also those who entered with the greatest financial burden.</p>
+            <p>HESA data for 2022–23 shows a non-continuation rate (students not returning after year one) of 6.3% across UK higher education — up from 5.1% in 2019 — with 32,000 students withdrawing in 2023 compared to around 24,000 pre-pandemic.<Cite nums={1} /> The cost of living crisis is directly implicated: the maximum maintenance loan for students outside London (£10,227) falls below the NUS estimated living cost of £12,600 per year, and students from lower-income backgrounds are most likely to receive the maximum loan with least family support to bridge the gap.<Cite nums={3} /> Post-1992 institutions, where disadvantaged students are concentrated, have higher dropout rates than pre-1992 universities. The OfS's B conditions on continuation, retention and completion now require institutional accountability for dropout rates.<Cite nums={2} /></p>
+            <p>The deprivation gap is stark and widening. Students from the most deprived quintile have a non-continuation rate of 12% — nearly three times the 4.5% for those from the least deprived areas.<Cite nums={2} /> First-generation university attenders have non-continuation rates approximately double those of students whose parents also attended. Working part-time while studying — common among lower-income students bridging the maintenance gap — constrains study time and correlates with worse academic outcomes and higher withdrawal rates. The financial structure of the system creates a compounding disadvantage: the students most likely to leave without graduating are also those who entered with the greatest financial burden.</p>
           </div>
         </section>
 

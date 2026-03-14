@@ -9,6 +9,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -43,6 +45,14 @@ function yearToDate(y: number): Date {
 function sparkFrom(arr: number[], n = 10) {
   return arr.slice(-n);
 }
+
+// ── References ───────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Sport England', dataset: 'Active Lives Adult Survey', url: 'https://www.sportengland.org/research-and-data/data/active-lives', date: 'December 2024' },
+  { num: 2, name: 'DCMS', dataset: 'Local authority revenue expenditure and financing', url: 'https://www.gov.uk/government/statistics/local-authority-revenue-expenditure-and-financing', date: 'December 2024' },
+  { num: 3, name: 'Activity Alliance', dataset: 'Annual Disability and Activity Survey', url: 'https://www.activityalliance.org.uk/how-we-help/research', date: 'December 2024' },
+];
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -151,13 +161,13 @@ export default function DisabilitySportGapPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The 2012 London Paralympics were supposed to transform disabled sport in Britain. Twelve years on, the participation gap tells a different story. While inactivity among disabled adults has fallen from 52% to 43% since 2012, the gap between disabled and non-disabled participation has narrowed by less than five percentage points in the same period. The structural barriers that prevent disabled people from being active — inaccessible facilities, unaffordable adapted equipment, a shortage of inclusive coaching, and the sheer exhaustion of navigating a world not designed for you — have proved far more resistant to change than the post-Paralympic optimism suggested.
+              The 2012 London Paralympics were supposed to transform disabled sport in Britain. Twelve years on, the participation gap tells a different story. While inactivity among disabled adults has fallen from 52% to 43% since 2012, the gap between disabled and non-disabled participation has narrowed by less than five percentage points in the same period.<Cite nums={1} /> The structural barriers that prevent disabled people from being active — inaccessible facilities, unaffordable adapted equipment, a shortage of inclusive coaching, and the sheer exhaustion of navigating a world not designed for you — have proved far more resistant to change than the post-Paralympic optimism suggested.
             </p>
             <p>
-              The funding picture helps explain why progress has stalled. Local authority spending on accessible sport and leisure infrastructure peaked in 2012 at around £142 million and has since fallen to £103 million — a 27% real-terms decline that coincides with the broader collapse in local government funding since 2010. Many of the facilities upgraded for the Paralympics have since deteriorated. Community pools with hoists have closed. Specialist coaching programmes have lost funding. For disabled people outside London, the legacy has often been a new velodrome they cannot reach rather than a local leisure centre they can use.
+              The funding picture helps explain why progress has stalled. Local authority spending on accessible sport and leisure infrastructure peaked in 2012 at around £142 million and has since fallen to £103 million — a 27% real-terms decline that coincides with the broader collapse in local government funding since 2010.<Cite nums={2} /> Many of the facilities upgraded for the Paralympics have since deteriorated. Community pools with hoists have closed. Specialist coaching programmes have lost funding. For disabled people outside London, the legacy has often been a new velodrome they cannot reach rather than a local leisure centre they can use.
             </p>
             <p>
-              The gap is not simply about individual motivation. Activity Alliance research consistently shows that disabled people want to be more active at the same rate as non-disabled people. The difference is opportunity. Transport is the single most cited barrier: 40% of disabled adults say getting to a facility is the main reason they do not participate. Cost is second — adapted equipment and personal assistance add significantly to the expense. And the social dimension matters too: 28% of disabled people say they would be more active if they could find inclusive sessions where they felt welcome, not singled out. Closing this gap requires sustained infrastructure investment, not short-term inspiration.
+              The gap is not simply about individual motivation. Activity Alliance research consistently shows that disabled people want to be more active at the same rate as non-disabled people.<Cite nums={3} /> The difference is opportunity. Transport is the single most cited barrier: 40% of disabled adults say getting to a facility is the main reason they do not participate.<Cite nums={3} /> Cost is second — adapted equipment and personal assistance add significantly to the expense. And the social dimension matters too: 28% of disabled people say they would be more active if they could find inclusive sessions where they felt welcome, not singled out.<Cite nums={3} /> Closing this gap requires sustained infrastructure investment, not short-term inspiration.
             </p>
           </div>
         </section>
@@ -290,6 +300,10 @@ export default function DisabilitySportGapPage() {
             source="Source: Activity Alliance — Get Out Get Active evaluation, 2024. Sport England — Uniting the Movement investment programme, 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources & Methodology */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

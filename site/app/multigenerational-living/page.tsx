@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Census 2021 — Household and Family Characteristics', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/families', date: '2023' },
+  { num: 2, name: 'ONS', dataset: 'Labour Force Survey — Young Adults Living with Parents', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/families/datasets/youngadultslivingwithparents', date: '2024' },
+  { num: 3, name: 'DWP', dataset: 'Family Resources Survey', url: 'https://www.gov.uk/government/collections/family-resources-survey--2', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -68,7 +76,7 @@ export default function MultigenerationalLivingPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Multigenerational households in England and Wales rose from 1.35 million in 2001 to 1.8 million by 2023 — a 33% increase. The dominant driver is economic: average rents now consume 36% of median earnings in England and over 50% in London, while first-time buyer deposits require three to five years of post-tax savings for a median earner. 3.7 million people aged 25–34 — one in four — now live in the parental home, a record, up from 2.4 million in 2001. 72% of multigenerational families cite housing costs as the primary reason. Around 18% are driven by care needs — ageing parents requiring support, or grandparents providing childcare — a growing invisible care economy that has expanded as adult social care funding has been repeatedly cut in real terms.</p>
+            <p>Multigenerational households in England and Wales rose from 1.35 million in 2001 to 1.8 million by 2023 — a 33% increase.<Cite nums={1} /> The dominant driver is economic: average rents now consume 36% of median earnings in England and over 50% in London, while first-time buyer deposits require three to five years of post-tax savings for a median earner. 3.7 million people aged 25–34 — one in four — now live in the parental home, a record, up from 2.4 million in 2001.<Cite nums={2} /> 72% of multigenerational families cite housing costs as the primary reason.<Cite nums={3} /> Around 18% are driven by care needs — ageing parents requiring support, or grandparents providing childcare — a growing invisible care economy that has expanded as adult social care funding has been repeatedly cut in real terms.<Cite nums={3} /></p>
             <p>The 1.8 million multigenerational households mask suppressed demand, not reduced need. Young adults locked into co-residency represent households that would separate if affordable options existed; when housing supply eventually increases or inheritance creates capital, that latent demand will release rapidly. The burden of enforced co-residency falls hardest on those with no parental home to return to — care leavers, those whose parents are in private rented accommodation themselves, and those from communities with smaller or no family housing wealth — who have no safety net when the housing market locks them out.</p>
           </div>
         </section>
@@ -129,6 +137,10 @@ export default function MultigenerationalLivingPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

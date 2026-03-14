@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ministry of Justice', dataset: 'Criminal Court Statistics', url: 'https://www.gov.uk/government/collections/criminal-court-statistics', date: 'Jan 2024' },
+  { num: 2, name: 'Ministry of Justice', dataset: 'Criminal Justice Journey Statistics', url: 'https://www.gov.uk/government/statistics/criminal-justice-statistics-quarterly', date: 'Jan 2024' },
+  { num: 3, name: 'Ministry of Justice', dataset: 'Prison Population Statistics', url: 'https://www.gov.uk/government/collections/prison-population-statistics', date: '2024' },
+  { num: 4, name: 'Law Society', dataset: 'Criminal Legal Aid Statistics', date: '2024' },
+];
 
 export default function CourtBacklogPage() {
   const colour = '#6B7280';
@@ -148,13 +157,16 @@ export default function CourtBacklogPage() {
           <section className="max-w-2xl mb-12 mt-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">What the data shows</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>England's Crown Courts had 73,000 cases outstanding at end of 2024 — a record — up from 41,000 before the pandemic. The government's 53,000-case target has not been met since 2020. COVID-19 shuttered courts entirely in spring 2020 and kept them at reduced capacity for eighteen months; recovery was then derailed by the criminal Bar strike of autumn 2022, when barristers walked out for more than thirty days over legal aid rates. Jury trial complexity is rising, sentencing guidelines have lengthened average hearings, and the magistrates' courts carry their own backlog of over 350,000 cases.</p>
-              <p>Criminal legal aid rates were last substantially raised in 1994; by 2024 their real-terms value had fallen roughly 40%, according to the Law Society. In 2023 alone, 82 solicitor firms exited criminal legal aid work, creating advice deserts across swathes of England and Wales. The consequences land on defendants: 16,400 people — 24% of the prison population — are held on remand awaiting trial, a record. Some have waited more than two years, testing human rights conventions on reasonable detention.</p>
-              <p>Victims bear the heaviest cost. For sexual offences, the average wait from offence to Crown Court completion exceeds 1,000 days, leaving complainants in legal limbo for nearly three years. Around 30% of victims of serious offences withdraw from proceedings citing unbearable delays. Operation Nightingale — temporary courts in hotels, racecourses, and civic venues — heard more than 100,000 cases between 2020 and 2023 but has since wound down. The 2024 Sentencing Bill proposes mandatory minimum sentences that, if enacted, would extend average disposal times further still.</p>
+              <p>England's Crown Courts had 73,000 cases outstanding at end of 2024 — a record — up from 41,000 before the pandemic.<Cite nums={1} /> The government's 53,000-case target has not been met since 2020.<Cite nums={1} /> COVID-19 shuttered courts entirely in spring 2020 and kept them at reduced capacity for eighteen months; recovery was then derailed by the criminal Bar strike of autumn 2022, when barristers walked out for more than thirty days over legal aid rates. Jury trial complexity is rising, sentencing guidelines have lengthened average hearings, and the magistrates' courts carry their own backlog of over 350,000 cases.<Cite nums={1} /></p>
+              <p>Criminal legal aid rates were last substantially raised in 1994; by 2024 their real-terms value had fallen roughly 40%, according to the Law Society.<Cite nums={4} /> In 2023 alone, 82 solicitor firms exited criminal legal aid work, creating advice deserts across swathes of England and Wales.<Cite nums={4} /> The consequences land on defendants: 16,400 people — 24% of the prison population — are held on remand awaiting trial, a record.<Cite nums={3} /> Some have waited more than two years, testing human rights conventions on reasonable detention.</p>
+              <p>Victims bear the heaviest cost. For sexual offences, the average wait from offence to Crown Court completion exceeds 1,000 days, leaving complainants in legal limbo for nearly three years.<Cite nums={2} /> Around 30% of victims of serious offences withdraw from proceedings citing unbearable delays.<Cite nums={2} /> Operation Nightingale — temporary courts in hotels, racecourses, and civic venues — heard more than 100,000 cases between 2020 and 2023 but has since wound down.<Cite nums={1} /></p>
             </div>
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">

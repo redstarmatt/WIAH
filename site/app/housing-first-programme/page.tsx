@@ -7,7 +7,16 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Crisis / ICH', dataset: 'Housing First Evaluation — UK Pilot Programmes', url: 'https://www.crisis.org.uk/ending-homelessness/homelessness-knowledge-hub/housing-models-and-access/housing-first/', date: '2022', note: '85-87% housing retention vs 47-49% for traditional routes' },
+  { num: 2, name: 'Housing First England / Homeless Link', dataset: 'Annual Survey of Programmes', url: 'https://www.housingfirstengland.org/', date: '2024', note: '2,300 participants; 1% of homelessness funding' },
+  { num: 3, name: 'Manchester Housing First Evaluation', dataset: 'Cost-Benefit Analysis', date: '2022', note: 'Cost saving £5,000-£15,000 per person per year' },
+  { num: 4, name: 'DLUHC', dataset: 'Temporary Accommodation Statistics', date: '2024', note: '£1.7bn annual bill for local authorities on emergency shelters' },
+];
 
 export default function HousingFirstProgrammePage() {
   // Housing First participants in UK 2018–2024 (thousands)
@@ -65,8 +74,8 @@ export default function HousingFirstProgrammePage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>Housing First is a model of homelessness support developed in New York in the 1990s and now extensively evidenced across North America and Northern Europe. Its core principle inverts the traditional "staircase" approach: instead of requiring people to demonstrate sobriety, engagement with treatment, or compliance with shelter rules before being housed, Housing First provides a stable, unconditional tenancy immediately, with wraparound support provided alongside rather than as a precondition of housing. The evidence — from Finland, Denmark, Canada, and now the UK — is consistently strong.</p>
-            <p>In the UK, three pilot programmes launched in Glasgow, Manchester and Liverpool in 2019, funded by the Scottish and UK governments and evaluated independently. The evaluations found housing retention rates of around 85–87%, compared to 47–49% for people going through traditional shelter and supported accommodation routes. Participants showed significant improvements in mental health, substance use outcomes, physical health, and engagement with services. The cost saving per person through reduced use of emergency services (A&amp;E, police, courts, hospitals) is estimated at £5,000–£15,000 per year depending on the severity of need.</p>
-            <p>Despite this evidence, Housing First receives around 1% of total homelessness funding in England. The dominant model remains emergency shelters and temporary accommodation — a £1.7bn annual bill for local authorities, much of it spent on B&amp;Bs and hostels where outcomes are poor. The main constraint on Housing First expansion is not evidence or even cost: it is the shortage of social housing. Without an adequate supply of dispersed, affordable tenancies, the model cannot scale. England has lost 1.3 million social homes since 1980 through Right to Buy, and replacement rates have been less than a quarter of losses.</p>
+            <p>In the UK, three pilot programmes launched in Glasgow, Manchester and Liverpool in 2019, funded by the Scottish and UK governments and evaluated independently. The evaluations found housing retention rates of around 85–87%, compared to 47–49% for people going through traditional shelter and supported accommodation routes.<Cite nums={1} /> Participants showed significant improvements in mental health, substance use outcomes, physical health, and engagement with services. The cost saving per person through reduced use of emergency services (A&amp;E, police, courts, hospitals) is estimated at £5,000–£15,000 per year depending on the severity of need.<Cite nums={3} /></p>
+            <p>Despite this evidence, Housing First receives around 1% of total homelessness funding in England.<Cite nums={2} /> The dominant model remains emergency shelters and temporary accommodation — a £1.7bn annual bill for local authorities<Cite nums={4} />, much of it spent on B&amp;Bs and hostels where outcomes are poor. The main constraint on Housing First expansion is not evidence or even cost: it is the shortage of social housing. Without an adequate supply of dispersed, affordable tenancies, the model cannot scale. England has lost 1.3 million social homes since 1980 through Right to Buy, and replacement rates have been less than a quarter of losses.</p>
           </div>
         </section>
 
@@ -151,6 +160,10 @@ export default function HousingFirstProgrammePage() {
             source="Source: Y-Foundation (Finland) — Housing First in Finland 2024; Crisis — Homelessness Monitor England 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

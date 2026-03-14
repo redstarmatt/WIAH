@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ADASS', dataset: 'Autumn Survey of Adult Social Care Directors', url: 'https://www.adass.org.uk/adass-autumn-survey', date: '2024' },
+  { num: 2, name: 'Age UK', dataset: 'Later Life in the United Kingdom — unmet need modelling', url: 'https://www.ageuk.org.uk/', date: '2024' },
+  { num: 3, name: 'NHS England', dataset: 'Discharge Statistics', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/discharge-delays/', date: '2024' },
+  { num: 4, name: 'King\'s Fund / Health Foundation', dataset: 'Social care funding gap analysis', url: 'https://www.kingsfund.org.uk/', date: '2024' },
+];
 
 export default function SocialCareWaitingPage() {
 
@@ -140,12 +149,16 @@ export default function SocialCareWaitingPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on social care waiting</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>An estimated 400,000 people in England are currently waiting for either a social care needs assessment or for a service to begin following a completed assessment — up from 250,000 in 2014, with a sharp pandemic-driven acceleration that has never been fully cleared. One in three has been waiting more than six months: six months without personal care means family members leaving paid work to care informally, older people unable to wash or leave home, and conditions deteriorating until far more expensive residential care becomes unavoidable.</p>
-              <p>The 400,000 waiting substantially understates the true scale of need. An estimated 500,000 people need care but are not receiving it and are not in any assessment queue — people who were assessed as ineligible under the Care Act 2014's 'substantial' needs threshold, who self-funded until their assets ran out, or who have not sought help. The median wait for an assessment has risen from 8 weeks before the pandemic to 16 weeks in 2024, with some local authorities reporting waits of over a year.</p>
-              <p>The assessment backlog is driven by workforce shortages: local authority assessment teams have been cut as council budgets contracted under a decade of real-terms funding reductions. Multiple reform commitments — including the 2021 Health and Social Care Levy funds, initially intended partly for social care — have been diverted to NHS recovery rather than community services. ADASS, the King's Fund, and the Health Foundation estimate that addressing the assessment backlog alone would require an additional £7 billion in annual funding.</p>
+              <p>An estimated 400,000 people in England are currently waiting for either a social care needs assessment or for a service to begin following a completed assessment — up from 250,000 in 2014, with a sharp pandemic-driven acceleration that has never been fully cleared.<Cite nums={1} /> One in three has been waiting more than six months: six months without personal care means family members leaving paid work to care informally, older people unable to wash or leave home, and conditions deteriorating until far more expensive residential care becomes unavoidable.</p>
+              <p>The 400,000 waiting substantially understates the true scale of need. An estimated 500,000 people need care but are not receiving it and are not in any assessment queue — people who were assessed as ineligible under the Care Act 2014's 'substantial' needs threshold, who self-funded until their assets ran out, or who have not sought help.<Cite nums={2} /> The median wait for an assessment has risen from 8 weeks before the pandemic to 16 weeks in 2024, with some local authorities reporting waits of over a year.<Cite nums={1} /></p>
+              <p>The assessment backlog is driven by workforce shortages: local authority assessment teams have been cut as council budgets contracted under a decade of real-terms funding reductions. Multiple reform commitments — including the 2021 Health and Social Care Levy funds, initially intended partly for social care — have been diverted to NHS recovery rather than community services. ADASS, the King's Fund, and the Health Foundation estimate that addressing the assessment backlog alone would require an additional £7 billion in annual funding.<Cite nums={[1, 4]} /></p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

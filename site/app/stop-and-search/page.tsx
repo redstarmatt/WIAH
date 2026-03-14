@@ -8,6 +8,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Home Office', dataset: 'Stop and Search Statistics, England and Wales', url: 'https://www.gov.uk/government/statistics/police-powers-and-procedures-stop-and-search-and-arrests-england-and-wales', date: '2024', note: 'Black people 52 per 1,000; 6.5x white rate; 1.29M total searches in 2023/24' },
+  { num: 2, name: 'HMICFRS', dataset: 'PEEL Inspection — Stop and Search', url: 'https://www.justiceinspectorates.gov.uk/hmicfrs/', date: '2021', note: '28% of searches not based on reasonable grounds; arrest rate ~17%' },
+  { num: 3, name: 'College of Policing', dataset: 'Stop and Search Evidence Review', url: 'https://www.college.police.uk/', date: '2021', note: 'No consistent relationship between stop and search intensity and crime rates' },
+];
 
 const blackRateData = [38, 36, 34, 31, 29, 27, 26, 29, 35, 42, 52];
 const whiteRateData = [7, 6, 6, 5, 5, 4, 4, 5, 6, 7, 8];
@@ -141,8 +149,8 @@ export default function StopAndSearchPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on stop and search</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Black people in England and Wales are subjected to 52 stop and searches per 1,000 people per year — 6.5 times the rate for white people. This disparity has widened since 2019, when the government extended police stop and search powers and the overall use of the power increased sharply. In 2023/24, there were 1.29 million stop and searches — up 74% from the 2018/19 low of 740,000.</p>
-              <p>The evidence base for the effectiveness of stop and search in reducing crime is weak. A 2021 HMICFRS inspection found that 28% of searches were not based on reasonable grounds as required by law. The arrest rate following a stop and search is around 17%, meaning the vast majority of people searched are innocent. Research by the College of Policing found no consistent relationship between stop and search intensity and crime rates across different force areas.</p>
+              <p>Black people in England and Wales are subjected to 52 stop and searches per 1,000 people per year — 6.5 times the rate for white people.<Cite nums={1} /> This disparity has widened since 2019, when the government extended police stop and search powers and the overall use of the power increased sharply. In 2023/24, there were 1.29 million stop and searches — up 74% from the 2018/19 low of 740,000.<Cite nums={1} /></p>
+              <p>The evidence base for the effectiveness of stop and search in reducing crime is weak. A 2021 HMICFRS inspection found that 28% of searches were not based on reasonable grounds as required by law.<Cite nums={2} /> The arrest rate following a stop and search is around 17%, meaning the vast majority of people searched are innocent. Research by the College of Policing found no consistent relationship between stop and search intensity and crime rates across different force areas.<Cite nums={3} /></p>
               <p>The Macpherson Report (1999) made reducing racial disparity in stop and search a central recommendation. Twenty-five years later, the gap is wider than when the report was written. Black communities experience stop and search as both individually distressing and collectively corrosive to trust in the police — an effect that undermines the cooperation policing depends on to detect and prevent crime.</p>
             </div>
           </section>
@@ -157,6 +165,10 @@ export default function StopAndSearchPage() {
             source="Source: Home Office — Stop and Search Statistics 2023/24; HMICFRS — PEEL inspection 2021; College of Policing — Stop and Search evidence review."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

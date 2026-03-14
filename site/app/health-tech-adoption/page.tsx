@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Digital Maturity Assessment', date: '2025' },
+  { num: 2, name: 'NHS Digital', dataset: 'Appointments in General Practice', date: '2025' },
+  { num: 3, name: 'NHSX / NHS AI Lab', dataset: 'AI Programme Dashboard', date: '2025' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -128,10 +136,10 @@ export default function HealthTechAdoptionPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The NHS has undergone a quiet revolution in how it handles patient information, clinical decisions, and access to care. A decade ago, most trusts relied on paper records, fax machines, and fragmented IT systems that could not talk to each other. Today, 68% of acute trusts have fully implemented electronic patient records that meet NHS England minimum standards, and the NHS App has reached 40 million registered users. The COVID-19 pandemic compressed what might have been a decade of change into 18 months: GP online consultations surged from 1% to over 30% of all appointments between 2019 and 2021, though that figure has since settled to around 28% as in-person care resumed.
+              The NHS has undergone a quiet revolution in how it handles patient information, clinical decisions, and access to care. A decade ago, most trusts relied on paper records, fax machines, and fragmented IT systems that could not talk to each other. Today, 68% of acute trusts have fully implemented electronic patient records that meet NHS England minimum standards, and the NHS App has reached 40 million registered users.<Cite nums={1} /> The COVID-19 pandemic compressed what might have been a decade of change into 18 months: GP online consultations surged from 1% to over 30% of all appointments between 2019 and 2021, though that figure has since settled to around 28% as in-person care resumed.<Cite nums={2} />
             </p>
             <p>
-              AI-powered diagnostic tools represent the next frontier. From radiology image analysis to sepsis early warning systems, 112 NHS trusts now have at least one NICE-approved or MHRA-registered AI tool in clinical use, up from just 3 in 2018. Early evidence suggests these tools can reduce diagnostic errors in breast screening by up to 20% and cut reporting times for chest X-rays from hours to minutes. However, adoption is concentrated in larger, better-funded trusts. Smaller district general hospitals, particularly in rural areas, often lack the infrastructure, data governance frameworks, and specialist staff needed to deploy and maintain these systems.
+              AI-powered diagnostic tools represent the next frontier. From radiology image analysis to sepsis early warning systems, 112 NHS trusts now have at least one NICE-approved or MHRA-registered AI tool in clinical use, up from just 3 in 2018.<Cite nums={3} /> Early evidence suggests these tools can reduce diagnostic errors in breast screening by up to 20% and cut reporting times for chest X-rays from hours to minutes. However, adoption is concentrated in larger, better-funded trusts. Smaller district general hospitals, particularly in rural areas, often lack the infrastructure, data governance frameworks, and specialist staff needed to deploy and maintain these systems.
             </p>
             <p>
               The risk is clear: without deliberate investment in lagging regions, digital health will become another axis of the inverse care law, where the areas with the greatest health needs have the least access to modern tools. The 2025 Watt Review of NHS Digital Infrastructure recommended ring-fenced capital funding for EPR completion in the remaining 32% of trusts, a national AI deployment support service, and mandatory interoperability standards to ensure systems can share data across trust boundaries.
@@ -298,6 +306,9 @@ export default function HealthTechAdoptionPage() {
           />
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">

@@ -8,6 +8,16 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+// ── References ──────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'HMRC', dataset: 'National Minimum Wage Enforcement Statistics 2024', url: 'https://www.gov.uk/government/collections/national-minimum-wage-statistics', date: '2024' },
+  { num: 2, name: 'Resolution Foundation / TUC', dataset: 'Estimated scale of wage theft in the UK', url: 'https://www.resolutionfoundation.org/', date: '2024' },
+  { num: 3, name: 'BEIS', dataset: 'Employment Rights Bill Impact Assessment', url: 'https://www.gov.uk/government/publications/employment-rights-bill-impact-assessments', date: '2024' },
+];
 
 export default function WageTheftPage() {
 
@@ -148,9 +158,12 @@ export default function WageTheftPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on wage theft</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Wage theft — the non-payment or underpayment of wages legally owed — is one of the most pervasive and least prosecuted economic crimes in the UK. HMRC estimates approximately 355,000 workers are paid below the National Living Wage at any point, with total underpayment running at an estimated £3 billion per year, concentrated in hospitality, social care, retail, and agriculture. Enforcement is strikingly weak: HMRC identified just £26 million in arrears in 2023/24 — roughly 1% of the estimated annual theft — and criminal prosecutions average fewer than 10 per year.</p>
+              <p>Wage theft — the non-payment or underpayment of wages legally owed — is one of the most pervasive and least prosecuted economic crimes in the UK. HMRC estimates approximately 355,000 workers are paid below the National Living Wage at any point, with total underpayment running at an estimated £3 billion per year, concentrated in hospitality, social care, retail, and agriculture.<Cite nums={[1, 2]} /> Enforcement is strikingly weak: HMRC identified just £26 million in arrears in 2023/24<Cite nums={1} /> — roughly 1% of the estimated annual theft — and criminal prosecutions average fewer than 10 per year.</p>
               <p>The problem extends beyond minimum wage violations to unpaid pre-shift time, unlawful deductions for uniforms and breakages, and worker misclassification as self-employed to avoid holiday pay, sick pay, and pension obligations. The most affected workers — those on zero-hours or agency contracts in hospitality and care — are also those with the least power to complain, least access to union representation, and most fear of losing future work.</p>
-              <p>Redress is structurally inaccessible. Bringing a tribunal claim is complex and intimidating, and legal aid cuts since 2013 have reduced support for low-income claimants. The ratio of workers at risk to enforcement officers is estimated at over 50,000:1 — making deterrence through prosecution a statistical impossibility. The 2024 Employment Rights Bill's extended time limits and additional enforcement resource are welcome, but enforcement advocates argue proactive sector-based inspection — as used in Australia and the US — is the only model that can approach the true scale of non-compliance.</p>
+              <p>Redress is structurally inaccessible. Bringing a tribunal claim is complex and intimidating, and legal aid cuts since 2013 have reduced support for low-income claimants. The ratio of workers at risk to enforcement officers is estimated at over 50,000:1 — making deterrence through prosecution a statistical impossibility. The 2024 Employment Rights Bill's extended time limits and additional enforcement resource are welcome, but enforcement advocates argue proactive sector-based inspection — as used in Australia and the US — is the only model that can approach the true scale of non-compliance.<Cite nums={3} /></p>
+            </div>
+            <div className="mt-6">
+              <References items={editorialRefs} />
             </div>
           </section>
         </ScrollReveal>

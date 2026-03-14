@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Skills for Care', dataset: 'State of the Adult Social Care Sector and Workforce in England', url: 'https://www.skillsforcare.org.uk/adult-social-care-workforce-data/Workforce-intelligence/publications/national-information/The-state-of-the-adult-social-care-sector-and-workforce-in-England.aspx', date: '2023' },
+  { num: 2, name: 'Home Office', dataset: 'Health and Care Worker visa statistics', url: 'https://www.gov.uk/government/collections/immigration-statistics-quarterly-release', date: '2023' },
+  { num: 3, name: 'HM Government', dataset: 'Dependant visa restrictions for care workers', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -73,8 +81,8 @@ export default function SocialCareWorkforceCrisisPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England&rsquo;s social care workforce of approximately 1.52 million is characterised by low pay, chronic vacancies, and a turnover rate of around 28% per year — structural features that have worsened over a decade of local authority funding constraint suppressing the rates paid to providers and, in turn, to workers. The vacancy rate peaked at 10.6% in 2022, more than double the economy-wide rate, before falling to 9.9% in 2023 following the introduction of international recruitment routes for care workers — approximately 70,000 overseas workers entered the sector by 2023. Even so, 152,000 posts remain unfilled, representing delayed visits, shortened care calls, missed medication, and continuity of care destroyed for some of the country&rsquo;s most vulnerable people. Pay is the primary driver: at around £11 per hour, care workers earn above the National Living Wage but below the Real Living Wage and significantly below comparable NHS roles, and the sector cannot raise wages without increases in local authority commissioning rates that council budgets cannot accommodate.</p>
-            <p>The 28% annual turnover rate compounds every other problem. Social care is a relational occupation where quality depends on continuity: a worker who has supported someone for years delivers qualitatively different care from a new joiner. A sector that replaces more than a quarter of its workforce each year cannot sustain those relationships, and investment in training is repeatedly lost. International recruitment has partially filled the gap but at ethical cost — documented concerns include fees charged to workers in source countries and visa tie-in arrangements exploiting sponsored workers. The government&rsquo;s 2024 restriction on dependant visas for care workers reduced some risks while tightening an already scarce labour supply, leaving the sector with no credible domestic workforce pipeline to replace it.</p>
+            <p>England&rsquo;s social care workforce of approximately 1.52 million is characterised by low pay, chronic vacancies, and a turnover rate of around 28% per year — structural features that have worsened over a decade of local authority funding constraint suppressing the rates paid to providers and, in turn, to workers.<Cite nums={1} /> The vacancy rate peaked at 10.6% in 2022, more than double the economy-wide rate, before falling to 9.9% in 2023 following the introduction of international recruitment routes for care workers — approximately 70,000 overseas workers entered the sector by 2023.<Cite nums={2} /> Even so, 152,000 posts remain unfilled, representing delayed visits, shortened care calls, missed medication, and continuity of care destroyed for some of the country&rsquo;s most vulnerable people.<Cite nums={1} /> Pay is the primary driver: at around £11 per hour, care workers earn above the National Living Wage but below the Real Living Wage and significantly below comparable NHS roles, and the sector cannot raise wages without increases in local authority commissioning rates that council budgets cannot accommodate.</p>
+            <p>The 28% annual turnover rate compounds every other problem.<Cite nums={1} /> Social care is a relational occupation where quality depends on continuity: a worker who has supported someone for years delivers qualitatively different care from a new joiner. A sector that replaces more than a quarter of its workforce each year cannot sustain those relationships, and investment in training is repeatedly lost. International recruitment has partially filled the gap but at ethical cost — documented concerns include fees charged to workers in source countries and visa tie-in arrangements exploiting sponsored workers.<Cite nums={2} /> The government&rsquo;s 2024 restriction on dependant visas for care workers reduced some risks while tightening an already scarce labour supply, leaving the sector with no credible domestic workforce pipeline to replace it.<Cite nums={3} /></p>
           </div>
         </section>
 
@@ -134,6 +142,10 @@ export default function SocialCareWorkforceCrisisPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

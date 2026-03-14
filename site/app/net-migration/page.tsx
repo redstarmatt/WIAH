@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Long-term international migration, UK', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration', date: '2023' },
+  { num: 2, name: 'Home Office', dataset: 'Immigration Statistics year ending December 2023', url: 'https://www.gov.uk/government/statistics/immigration-statistics-year-ending-december-2023', date: '2023' },
+  { num: 3, name: 'ONS', dataset: 'Revised migration estimates methodology 2023', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration', date: '2023' },
+];
 
 export default function NetMigrationPage() {
   // UK net migration 2010–2023 (thousands)
@@ -84,9 +92,9 @@ export default function NetMigrationPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>UK net migration — the difference between people arriving and people leaving — reached 764,000 in 2022, more than triple the level of most years during the 2010s. The headline number has dominated political debate since the 1990s, when successive governments committed to reducing it to the "tens of thousands." No government has come close. Under the Conservative administrations of 2010–2024, net migration was below 200,000 for only two years (2020–21, during COVID).</p>
-            <p>The composition has changed dramatically. Before 2016, EU citizens accounted for a large share of inflows; since Brexit and the end of free movement, non-EU migration has driven the increase. Three groups dominate: international students (and their dependants), skilled workers recruited to fill NHS and care sector gaps, and people arriving under humanitarian routes (Ukraine, Hong Kong, Afghanistan). These are overwhelmingly legal, visa-based arrivals — not the irregular crossings that dominate news coverage. The small-boats crisis added around 45,000–50,000 people in 2022, a real challenge but a fraction of total net migration.</p>
-            <p>Emigration — people leaving the UK — has also risen, but more slowly. Many of those arriving on study visas leave within five years; others settle permanently. The ONS revised its migration estimates upwards in 2023, acknowledging systematic undercounting. The government's 2023 measures — restricting students from bringing dependants, raising salary thresholds for skilled workers — are expected to reduce annual inflows by 100,000–200,000 from 2024.</p>
+            <p>UK net migration — the difference between people arriving and people leaving — reached 764,000 in 2022, more than triple the level of most years during the 2010s.<Cite nums={1} /> The headline number has dominated political debate since the 1990s, when successive governments committed to reducing it to the "tens of thousands." No government has come close. Under the Conservative administrations of 2010–2024, net migration was below 200,000 for only two years (2020–21, during COVID).<Cite nums={1} /></p>
+            <p>The composition has changed dramatically. Before 2016, EU citizens accounted for a large share of inflows; since Brexit and the end of free movement, non-EU migration has driven the increase. Three groups dominate: international students (and their dependants), skilled workers recruited to fill NHS and care sector gaps, and people arriving under humanitarian routes (Ukraine, Hong Kong, Afghanistan).<Cite nums={2} /> These are overwhelmingly legal, visa-based arrivals — not the irregular crossings that dominate news coverage. The small-boats crisis added around 45,000–50,000 people in 2022, a real challenge but a fraction of total net migration.<Cite nums={2} /></p>
+            <p>Emigration — people leaving the UK — has also risen, but more slowly. Many of those arriving on study visas leave within five years; others settle permanently. The ONS revised its migration estimates upwards in 2023, acknowledging systematic undercounting.<Cite nums={3} /> The government's 2023 measures — restricting students from bringing dependants, raising salary thresholds for skilled workers — are expected to reduce annual inflows by 100,000–200,000 from 2024.<Cite nums={2} /></p>
           </div>
         </section>
 
@@ -171,6 +179,10 @@ export default function NetMigrationPage() {
             source="Source: ONS — Long-term international migration 2023; Home Office — Irregular arrivals data 2023."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

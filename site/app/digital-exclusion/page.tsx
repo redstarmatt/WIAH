@@ -9,6 +9,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -30,6 +32,12 @@ function yearToDate(y: number): Date {
 }
 
 // ── Component ────────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Lloyds Bank', dataset: 'UK Consumer Digital Index', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Internet Users Survey', url: 'https://www.ons.gov.uk/businessindustryandtrade/itandinternetindustry/bulletins/internetusers', date: '2024' },
+  { num: 3, name: 'Ofcom', dataset: 'Adults\' Media Literacy Tracker', date: '2024' },
+];
 
 export default function DigitalExclusionPage() {
   const [data, setData] = useState<DigitalExclusionData | null>(null);
@@ -79,8 +87,8 @@ export default function DigitalExclusionPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Between 8 and 10 million adults in the UK lack basic digital skills, according to the Lloyds Bank Digital Index; around 1.5 million households have no broadband or mobile internet access at all. Digital exclusion clusters around age — around half of people over 75 lack the skills to carry out basic online tasks — but disability, low income, low educational attainment, and rural location are all independent predictors. The practical cost of being offline has risen sharply as GP appointment booking, Universal Credit management, HMRC self-assessment, and banking have all migrated predominantly online: more than 6,000 bank branches have closed since 2015. Libraries serve as de facto digital access infrastructure for many excluded groups, but the library network has contracted significantly since 2010, with around 800 closed. The UK's digital inclusion strategy dates from 2014 and has not been substantively updated since; provision has been left largely to third-sector organisations.</p>
-            <p>Digital exclusion is not primarily an elderly issue. Working-age adults with learning disabilities, cognitive impairments, or low literacy — an estimated 7.1 million in England — face barriers that are structural rather than generational. The NHS App illustrates the tension directly: for the digitally confident it offers improved access to records and services; for those without smartphones, reliable data, or the skills to navigate it, it risks becoming another point at which the health service becomes harder to reach. The same people already facing health inequality, poverty, and limited public service access are disproportionately the population for whom digital migration compounds disadvantage rather than reducing it.</p>
+            <p>Between 8 and 10 million adults in the UK lack basic digital skills, according to the Lloyds Bank Digital Index;<Cite nums={1} /> around 1.5 million households have no broadband or mobile internet access at all.<Cite nums={3} /> Digital exclusion clusters around age — around half of people over 75 lack the skills to carry out basic online tasks — but disability, low income, low educational attainment, and rural location are all independent predictors.<Cite nums={2} /> The practical cost of being offline has risen sharply as GP appointment booking, Universal Credit management, HMRC self-assessment, and banking have all migrated predominantly online: more than 6,000 bank branches have closed since 2015. Libraries serve as de facto digital access infrastructure for many excluded groups, but the library network has contracted significantly since 2010, with around 800 closed. The UK's digital inclusion strategy dates from 2014 and has not been substantively updated since; provision has been left largely to third-sector organisations.</p>
+            <p>Digital exclusion is not primarily an elderly issue. Working-age adults with learning disabilities, cognitive impairments, or low literacy — an estimated 7.1 million in England — face barriers that are structural rather than generational.<Cite nums={1} /> The NHS App illustrates the tension directly: for the digitally confident it offers improved access to records and services; for those without smartphones, reliable data, or the skills to navigate it, it risks becoming another point at which the health service becomes harder to reach. The same people already facing health inequality, poverty, and limited public service access are disproportionately the population for whom digital migration compounds disadvantage rather than reducing it.</p>
           </div>
         </section>
 
@@ -185,6 +193,9 @@ export default function DigitalExclusionPage() {
           />
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">

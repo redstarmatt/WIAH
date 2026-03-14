@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DLUHC', dataset: 'Council Taxbase statistics — Table CTSOP4.0', date: '2024' },
+  { num: 2, name: 'Action on Empty Homes', dataset: 'Empty Homes in England', date: '2024' },
+  { num: 3, name: 'DLUHC', dataset: 'Levelling Up and Regeneration Act 2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -128,13 +136,13 @@ export default function EmptyHomesPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The paradox is stark: England has over a million empty homes while roughly 130,000 households are trapped in temporary accommodation and the social housing waiting list stands at 1.29 million. Not all empty homes are the same — some are between tenancies, undergoing renovation, or caught in probate. But a significant and growing share are long-term empty: 309,856 properties have been vacant for six months or more, many held as investment assets or second homes in areas where local people cannot afford to buy. In coastal and rural communities, second-home ownership has hollowed out villages, closing schools and pubs and pricing out the workers that tourism depends on. Cornwall, Northumberland, and parts of North Wales have become flashpoints, with some parishes reporting 30-40% of housing stock used as holiday lets or standing empty for most of the year.
+              The paradox is stark: England has over a million empty homes while roughly 130,000 households are trapped in temporary accommodation and the social housing waiting list stands at 1.29 million.<Cite nums={[1]} /> Not all empty homes are the same — some are between tenancies, undergoing renovation, or caught in probate. But a significant and growing share are long-term empty: 309,856 properties have been vacant for six months or more, many held as investment assets or second homes in areas where local people cannot afford to buy.<Cite nums={[1]} /> In coastal and rural communities, second-home ownership has hollowed out villages, closing schools and pubs and pricing out the workers that tourism depends on. Cornwall, Northumberland, and parts of North Wales have become flashpoints, with some parishes reporting 30-40% of housing stock used as holiday lets or standing empty for most of the year.<Cite nums={[2]} />
             </p>
             <p>
-              Councils now have the power to charge council tax premiums of up to 100% on properties empty for one year, rising to 200% after five years and 300% after ten. The Levelling Up and Regeneration Act 2023 extended this further, allowing premiums on second homes from April 2025. These premiums are working: 152,932 properties now attract a premium charge, and councils that have adopted aggressive premium policies — such as Durham, which charges 200% after two years — report measurable reductions in long-term vacancies. But premiums alone will not solve the problem. Empty Dwelling Management Orders (EDMOs) allow councils to take over properties that have been empty for two or more years and bring them back into use, yet uptake remains low: fewer than 100 EDMOs have been issued nationally since 2006, largely because councils lack the staff and legal resources to pursue them. The Community Right to Contest, introduced in 2014, gives citizens the right to ask councils to investigate empty properties and consider compulsory sale — a power that remains almost entirely unused.
+              Councils now have the power to charge council tax premiums of up to 100% on properties empty for one year, rising to 200% after five years and 300% after ten.<Cite nums={[3]} /> The Levelling Up and Regeneration Act 2023 extended this further, allowing premiums on second homes from April 2025. These premiums are working: 152,932 properties now attract a premium charge, and councils that have adopted aggressive premium policies — such as Durham, which charges 200% after two years — report measurable reductions in long-term vacancies.<Cite nums={[1]} /> But premiums alone will not solve the problem. Empty Dwelling Management Orders (EDMOs) allow councils to take over properties that have been empty for two or more years and bring them back into use, yet uptake remains low: fewer than 100 EDMOs have been issued nationally since 2006, largely because councils lack the staff and legal resources to pursue them.<Cite nums={[2]} /> The Community Right to Contest, introduced in 2014, gives citizens the right to ask councils to investigate empty properties and consider compulsory sale — a power that remains almost entirely unused.
             </p>
             <p>
-              Regional variation is significant. The North West and North East have the highest rates of empty homes per thousand dwellings, reflecting long-standing issues of low housing demand in some areas alongside speculation in others. London, despite its acute housing crisis, has a lower empty-home rate because market pressure rapidly fills vacancies — but that figure masks thousands of high-value properties held empty as investment vehicles in prime central boroughs. The number of empty homes officers — council staff dedicated to identifying and returning vacant properties to use — has declined as local authority budgets have been cut. Community-led housing organisations, including community land trusts, are beginning to fill the gap, acquiring and renovating empty properties for affordable local housing. But scale remains the challenge: voluntary effort cannot substitute for systematic policy enforcement across a stock of over a million vacant dwellings.
+              Regional variation is significant. The North West and North East have the highest rates of empty homes per thousand dwellings, reflecting long-standing issues of low housing demand in some areas alongside speculation in others.<Cite nums={[1]} /> London, despite its acute housing crisis, has a lower empty-home rate because market pressure rapidly fills vacancies — but that figure masks thousands of high-value properties held empty as investment vehicles in prime central boroughs. The number of empty homes officers — council staff dedicated to identifying and returning vacant properties to use — has declined as local authority budgets have been cut.<Cite nums={[2]} /> Community-led housing organisations, including community land trusts, are beginning to fill the gap, acquiring and renovating empty properties for affordable local housing. But scale remains the challenge: voluntary effort cannot substitute for systematic policy enforcement across a stock of over a million vacant dwellings.
             </p>
           </div>
         </section>
@@ -281,6 +289,9 @@ export default function EmptyHomesPage() {
             source="Source: DLUHC — Council Taxbase statistics, 2024. Action on Empty Homes — Empty Homes in England 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <RelatedTopics />
       </main>
     </>

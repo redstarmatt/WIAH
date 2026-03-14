@@ -8,6 +8,16 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ministry of Justice', dataset: 'Prison Population Statistics', url: 'https://www.gov.uk/government/collections/prison-population-statistics', date: '2024' },
+  { num: 2, name: 'HM Inspectorate of Prisons', dataset: 'Annual Report 2023/24', url: 'https://www.justiceinspectorates.gov.uk/hmiprisons/', date: '2024' },
+  { num: 3, name: 'Prison Officers\' Association', dataset: 'Safe Operating Capacity Guidance', date: '2023' },
+  { num: 4, name: 'Ministry of Justice', dataset: 'End of Custody Supervised Licence Statistics', url: 'https://www.gov.uk/government/collections/prison-population-statistics', date: '2024' },
+  { num: 5, name: 'Ministry of Justice', dataset: 'Proven Reoffending Statistics', url: 'https://www.gov.uk/government/statistics/proven-reoffending-statistics-quarterly-bulletin-england-and-wales', date: '2024' },
+];
 
 export default function PrisonOvercrowdingPage() {
   const colour = '#E63946';
@@ -163,12 +173,16 @@ export default function PrisonOvercrowdingPage() {
           <section className="max-w-2xl mb-12 mt-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">What the data shows</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>England and Wales hold 88,728 prisoners in an estate built for around 89,600 usable places — but usable capacity is a ceiling, not a comfortable operating level. The Prison Officers' Association and HM Inspectorate of Prisons both consider 90% occupancy to be safe; at 99%, double-bunking in cells designed for one person is routine, rehabilitation programmes are cancelled through lack of space, and violence rates rise sharply. In 2023, the government activated the End of Custody Supervised Licence scheme for the first time since 2010, releasing prisoners up to 18 days before their scheduled date.</p>
-              <p>The overcrowding crisis is most severe in Category C training and resettlement prisons, which are running at 115% of certified normal accommodation. These are the prisons where most sentenced adults serve most of their time — the overcrowding directly undermines rehabilitation. Category A high-security prisons sit at 99% capacity, which is itself unprecedented: these establishments were historically held below 90% to maintain the separation of dangerous prisoners. The remand population — prisoners awaiting trial rather than serving sentences — hit a record 16,400 in 2024, a direct consequence of the Crown Court backlog.</p>
-              <p>New prison construction is the government's primary response, but building a prison takes a decade. The six new prisons currently in planning and construction will add approximately 10,000 places by the late 2020s at the earliest. In the interim, the Ministry of Justice has expanded use of police cells under Operation Safeguard, temporarily held prisoners in court-custody suites, and cancelled planned maintenance programmes. The reoffending rate — 60% within two years for those serving sentences under twelve months — means the system keeps refilling.</p>
+              <p>England and Wales hold 88,728 prisoners in an estate built for around 89,600 usable places — but usable capacity is a ceiling, not a comfortable operating level.<Cite nums={1} /> The Prison Officers' Association and HM Inspectorate of Prisons both consider 90% occupancy to be safe;<Cite nums={[2, 3]} /> at 99%, double-bunking in cells designed for one person is routine, rehabilitation programmes are cancelled through lack of space, and violence rates rise sharply. In 2023, the government activated the End of Custody Supervised Licence scheme for the first time since 2010, releasing prisoners up to 18 days before their scheduled date.<Cite nums={4} /></p>
+              <p>The overcrowding crisis is most severe in Category C training and resettlement prisons, which are running at 115% of certified normal accommodation.<Cite nums={1} /> These are the prisons where most sentenced adults serve most of their time — the overcrowding directly undermines rehabilitation. Category A high-security prisons sit at 99% capacity, which is itself unprecedented: these establishments were historically held below 90% to maintain the separation of dangerous prisoners.<Cite nums={2} /> The remand population — prisoners awaiting trial rather than serving sentences — hit a record 16,400 in 2024, a direct consequence of the Crown Court backlog.<Cite nums={1} /></p>
+              <p>New prison construction is the government's primary response, but building a prison takes a decade. The six new prisons currently in planning and construction will add approximately 10,000 places by the late 2020s at the earliest.<Cite nums={1} /> In the interim, the Ministry of Justice has expanded use of police cells under Operation Safeguard, temporarily held prisoners in court-custody suites, and cancelled planned maintenance programmes. The reoffending rate — 60% within two years for those serving sentences under twelve months — means the system keeps refilling.<Cite nums={5} /></p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

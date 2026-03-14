@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Bus passenger journeys outside London (billions), 2010–2024
 const outsideLondonData = [3.30, 3.25, 3.22, 3.18, 3.14, 3.10, 3.06, 3.00, 2.95, 2.90, 1.85, 2.50, 2.65, 2.68, 2.60];
@@ -61,6 +63,12 @@ const subsidyAnnotations: Annotation[] = [
   { date: new Date(2017, 0, 1), label: '2017: Bus Services Act' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Department for Transport', dataset: 'Bus Statistics England', url: 'https://www.gov.uk/government/collections/bus-statistics', date: '2024' },
+  { num: 2, name: 'Campaign for Better Transport', dataset: 'Bus Route Cuts report', url: 'https://bettertransport.org.uk/research/buses/', date: 'March 2026' },
+  { num: 3, name: 'DfT', dataset: 'Bus Back Better: National Bus Strategy', url: 'https://www.gov.uk/government/publications/bus-back-better', date: 'March 2026' },
+];
+
 export default function BusServicesPage() {
   return (
     <>
@@ -75,8 +83,8 @@ export default function BusServicesPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Bus services outside London have been in structural decline for over a decade, driven by a sustained reduction in local authority subsidies following the 2010 spending review. Real-terms LA spending on bus support fell from £1.12 billion in 2010 to £660 million by 2019 — a 41% cut — resulting in over 3,000 subsidised routes being withdrawn or significantly reduced. In London, where Transport for London controls and funds bus services directly, the network has remained broadly stable. But the contrast between London's relatively comprehensive bus coverage and the sparse, erratic provision in many English cities, towns, and rural areas is stark. Areas with no regular bus service have risen steadily as marginal routes were withdrawn.</p>
-            <p>The pandemic caused a catastrophic collapse in ridership — journeys outside London fell from 2.9 billion in 2019 to 1.85 billion in 2020. Emergency government funding kept services running, but recovery has been partial. By 2024, journeys outside London stood at around 2.6 billion, still 11% below pre-pandemic levels, and significantly below the 3.3 billion of 2010. The government's £3 billion Bus Back Better programme, combined with new franchising powers available to Combined Authorities, has stabilised networks in Greater Manchester and West Yorkshire but has not yet reversed the long-run decline in most of England. The question for the next decade is whether re-regulation — taking routes back into public control as Manchester has done — can rebuild the reliable, affordable networks that make public transport a genuine alternative to the car.</p>
+            <p>Bus services outside London have been in structural decline for over a decade, driven by a sustained reduction in local authority subsidies following the 2010 spending review. Real-terms LA spending on bus support fell from £1.12 billion in 2010 to £660 million by 2019 — a 41% cut — resulting in over 3,000 subsidised routes being withdrawn or significantly reduced.<Cite nums={[1, 2]} /> In London, where Transport for London controls and funds bus services directly, the network has remained broadly stable. But the contrast between London's relatively comprehensive bus coverage and the sparse, erratic provision in many English cities, towns, and rural areas is stark. Areas with no regular bus service have risen steadily as marginal routes were withdrawn.</p>
+            <p>The pandemic caused a catastrophic collapse in ridership — journeys outside London fell from 2.9 billion in 2019 to 1.85 billion in 2020.<Cite nums={1} /> Emergency government funding kept services running, but recovery has been partial. By 2024, journeys outside London stood at around 2.6 billion, still 11% below pre-pandemic levels, and significantly below the 3.3 billion of 2010.<Cite nums={1} /> The government's £3 billion Bus Back Better programme, combined with new franchising powers available to Combined Authorities, has stabilised networks in Greater Manchester and West Yorkshire but has not yet reversed the long-run decline in most of England.<Cite nums={3} /> The question for the next decade is whether re-regulation — taking routes back into public control as Manchester has done — can rebuild the reliable, affordable networks that make public transport a genuine alternative to the car.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -155,6 +163,9 @@ export default function BusServicesPage() {
             source="Source: DfT — Bus Back Better programme data 2025. Transport for Greater Manchester — Bee Network Annual Report 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

@@ -9,6 +9,16 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Gambling Commission', dataset: 'Industry Statistics', url: 'https://www.gamblingcommission.gov.uk/statistics-and-research/publication/industry-statistics', date: '2025' },
+  { num: 2, name: 'Gambling Commission', dataset: 'Statistics on Participation and Problem Gambling', url: 'https://www.gamblingcommission.gov.uk/statistics-and-research/publication/statistics-on-participation-and-problem-gambling', date: '2025' },
+  { num: 3, name: 'NHS Digital', dataset: 'Health Survey for England — Gambling chapter', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england', date: '2025' },
+  { num: 4, name: 'DHSC', dataset: 'Gambling Act White Paper', url: 'https://www.gov.uk/government/white-papers/high-stakes-gambling-reform-for-the-digital-age', date: '2023' },
+  { num: 5, name: 'NHS England', dataset: 'National Gambling Treatment Service', date: '2024/25' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -149,35 +159,39 @@ export default function OnlineGamblingGrowthPage() {
             <p>
               The UK online gambling market has undergone a structural transformation. In 2014, online operators
               generated around £3.1 billion in gross gambling yield. By 2025, that figure reached £7.7 billion — a 148%
-              increase that far outstrips inflation, wage growth, or the expansion of any comparable consumer market.
+              increase that far outstrips inflation, wage growth, or the expansion of any comparable consumer market.<Cite nums={1} />
               Online gambling now accounts for roughly 46% of total UK gambling revenue, up from around 30% a decade
-              ago. This is not a gradual evolution; it is a wholesale migration of gambling activity from high streets
+              ago.<Cite nums={1} /> This is not a gradual evolution; it is a wholesale migration of gambling activity from high streets
               to smartphones. When the government cut the maximum stake on fixed-odds betting terminals from £100 to £2
               in April 2019, bookmakers closed nearly 4,700 shops within two years. But the money did not leave the
               gambling system — it moved online, where the regulatory environment was looser, the products were faster,
-              and the operators had already built highly personalised digital platforms.
+              and the operators had already built highly personalised digital platforms.<Cite nums={1} />
             </p>
             <p>
               The human cost of this expansion is measured in the Gambling Commission's participation surveys and the
-              NHS Health Survey for England. An estimated 450,000 adults in Great Britain now meet the clinical threshold
+              NHS Health Survey for England.<Cite nums={[2, 3]} /> An estimated 450,000 adults in Great Britain now meet the clinical threshold
               for problem gambling — people who have lost control of their gambling to the point where it causes serious
               harm to themselves and their families. A further 940,000 are classified as moderate-risk gamblers, one
-              life event away from tipping into problem territory. Online slots — fast, repetitive, and algorithmically
+              life event away from tipping into problem territory.<Cite nums={2} /> Online slots — fast, repetitive, and algorithmically
               designed to maximise time-on-device — are the product category most strongly associated with harm. Around
-              1.4 million people play online slots at high intensity, defined as four or more days per week. These are
+              1.4 million people play online slots at high intensity, defined as four or more days per week.<Cite nums={1} /> These are
               not recreational gamblers having an occasional flutter; they are engaged in a pattern of behaviour that
               clinical evidence links to depression, relationship breakdown, debt crisis, and suicide.
             </p>
             <p>
               The 2023 Gambling Act white paper acknowledged the scale of the problem and proposed stake limits for
               online slots, mandatory affordability checks, and a statutory levy on operators to fund research,
-              prevention, and treatment. Implementation has been slow. The NHS National Gambling Clinic in London and
+              prevention, and treatment.<Cite nums={4} /> Implementation has been slow. The NHS National Gambling Clinic in London and
               regional clinics now treat over 3,000 patients per year, but the treatment system reaches less than 2%
-              of those estimated to need help. Meanwhile, gambling operators spend over £1.5 billion annually on
+              of those estimated to need help.<Cite nums={5} /> Meanwhile, gambling operators spend over £1.5 billion annually on
               advertising and marketing, much of it targeted through social media algorithms at young men aged 18–34 —
-              the demographic with the highest rates of problem gambling. The data is unambiguous: the market is growing,
+              the demographic with the highest rates of problem gambling.<Cite nums={[1, 2]} /> The data is unambiguous: the market is growing,
               the harm is growing, and the regulatory response has not yet caught up with either.
             </p>
+          </div>
+
+          <div className="mt-6">
+            <References items={editorialRefs} />
           </div>
         </section>
 

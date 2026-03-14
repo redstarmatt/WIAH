@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Renewable share of electricity generation (%), 2010–2024 — DESNZ
 const renewableShareValues = [7, 10, 12, 15, 19, 25, 25, 30, 33, 37, 40, 37, 39, 42, 45];
@@ -54,6 +56,13 @@ const priceAnnotations: Annotation[] = [
   { date: new Date(2022, 0, 1), label: '2022: Russia invades Ukraine — gas price spike' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DESNZ', dataset: 'Energy Trends: UK electricity', url: 'https://www.gov.uk/government/statistics/electricity-section-5-energy-trends', date: '2024' },
+  { num: 2, name: 'DESNZ', dataset: 'Annual Fuel Poverty Statistics', url: 'https://www.gov.uk/government/collections/fuel-poverty-statistics', date: '2024' },
+  { num: 3, name: 'ONS', dataset: 'Consumer Price Inflation (MM22)', url: 'https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/consumerpriceinflation', date: '2024' },
+  { num: 4, name: 'Climate Change Committee', dataset: 'Progress Report to Parliament', date: '2024' },
+];
+
 export default function EnergyPage() {
   return (
     <>
@@ -68,8 +77,8 @@ export default function EnergyPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK's electricity system has undergone a structural transformation over the past fifteen years. Renewables — primarily wind (onshore and offshore) and solar — generated 45% of all electricity in 2024, up from just 7% in 2010. The UK now has the largest installed offshore wind capacity in the world. Coal, which contributed 40% of electricity in 2010, has been virtually eliminated: the last coal power station closed in September 2024. This is among the fastest fossil fuel phase-outs of any major economy. The Climate Change Committee has assessed the UK as on track to decarbonise electricity by 2035, though grid infrastructure investment and planning reform are bottlenecks.</p>
-            <p>Despite this structural progress, household energy prices doubled over the 2022–23 cost-of-living crisis, driven by the UK's heavy remaining dependence on gas — both for direct heating and for setting the marginal price of electricity. The fuel poverty rate rose from around 11% in 2019 to a peak of 19% in 2022, before falling as the government's Energy Price Guarantee capped bills. The structural problem remains: an electricity market tied to gas prices means consumers cannot yet benefit financially from the cheapness of wind and solar. Market reform proposals — including decoupling electricity prices from gas — remain under consultation. Insulating the 25 million homes still dependent on gas heating is the central challenge of the 2030s.</p>
+            <p>The UK's electricity system has undergone a structural transformation over the past fifteen years. Renewables — primarily wind (onshore and offshore) and solar — generated 45% of all electricity in 2024, up from just 7% in 2010.<Cite nums={1} /> The UK now has the largest installed offshore wind capacity in the world. Coal, which contributed 40% of electricity in 2010, has been virtually eliminated: the last coal power station closed in September 2024.<Cite nums={1} /> This is among the fastest fossil fuel phase-outs of any major economy. The Climate Change Committee has assessed the UK as on track to decarbonise electricity by 2035, though grid infrastructure investment and planning reform are bottlenecks.<Cite nums={4} /></p>
+            <p>Despite this structural progress, household energy prices doubled over the 2022–23 cost-of-living crisis<Cite nums={3} />, driven by the UK's heavy remaining dependence on gas — both for direct heating and for setting the marginal price of electricity. The fuel poverty rate rose from around 11% in 2019 to a peak of 19% in 2022<Cite nums={2} />, before falling as the government's Energy Price Guarantee capped bills. The structural problem remains: an electricity market tied to gas prices means consumers cannot yet benefit financially from the cheapness of wind and solar. Market reform proposals — including decoupling electricity prices from gas — remain under consultation. Insulating the 25 million homes still dependent on gas heating is the central challenge of the 2030s.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -147,6 +156,10 @@ export default function EnergyPage() {
             source="Source: DESNZ — Energy Trends 2024. RenewableUK — Wind Energy Statistics 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

@@ -8,6 +8,15 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Home Office', dataset: '999 Call Handling Statistics', url: 'https://www.gov.uk/government/collections/999-call-handling-statistics', date: '2025', note: '10-second target missed in 14 of last 24 months; average answer time above 13 seconds' },
+  { num: 2, name: 'HMICFRS', dataset: 'PEEL Assessments', url: 'https://hmicfrs.justiceinspectorates.gov.uk/peel-assessments', date: '2024', note: 'Grade 1 target met 85% of the time; down from 92% a decade ago' },
+  { num: 3, name: 'Home Office', dataset: 'Police Workforce Statistics', url: 'https://www.gov.uk/government/collections/police-workforce-england-and-wales', date: '2024', note: '8,500 PCSOs lost since 2010; roughly half the total' },
+  { num: 4, name: 'ONS', dataset: 'Crime Survey for England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice', date: '2024', note: 'Public confidence in policing at lowest recorded level' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -108,8 +117,8 @@ export default function PoliceResponseTimesPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The 999 service-level target — answer within 10 seconds — has been missed in 14 of the last 24 reporting months. Average answer times have drifted above 13 seconds nationally, with some forces recording waits of over 20 seconds during peak periods. The 101 non-emergency line is worse: average waits now exceed 7 minutes, and in several forces callers routinely abandon before connection. Demand has not simply risen — it has shifted. Total police-recorded crime has fallen modestly since 2015, but the composition has changed dramatically. Domestic abuse referrals have surged as reporting barriers have lowered. Online fraud and cybercrime now account for a substantial share of offending. Mental health-related calls consume a growing proportion of patrol capacity, with officers frequently waiting hours at A&amp;E with detained individuals. Each of these categories demands more investigative time per incident than the volume acquisitive crime they have partially displaced, meaning that falling headline numbers mask rising operational pressure.</p>
-            <p>Neighbourhood policing — the visible, relationship-based presence that underpins public confidence — has been hollowed out. England and Wales have lost over 8,500 Police Community Support Officers since 2010, a reduction of roughly half the total. The 20,000-officer uplift programme restored some sworn officer numbers, but the new recruits overwhelmingly filled response and investigation roles, not neighbourhood beats. Grade 1 emergency responses — the blue-light calls where life is at risk — are now met within target approximately 85% of the time, down from 92% a decade ago. Grade 2 priority responses, where attendance is expected within an hour, are frequently delayed well beyond that window. Some forces have adopted explicit policies of non-attendance for categories of crime judged low-harm, including some thefts, criminal damage, and vehicle offences. Public confidence in policing has fallen to its lowest recorded level in the Crime Survey for England and Wales, with satisfaction particularly low among younger adults and ethnic minority communities. The Peelian principle — policing by consent — depends on a contract of responsiveness that is under visible strain.</p>
+            <p>The 999 service-level target — answer within 10 seconds — has been missed in 14 of the last 24 reporting months.<Cite nums={1} /> Average answer times have drifted above 13 seconds nationally, with some forces recording waits of over 20 seconds during peak periods. The 101 non-emergency line is worse: average waits now exceed 7 minutes, and in several forces callers routinely abandon before connection. Demand has not simply risen — it has shifted. Total police-recorded crime has fallen modestly since 2015, but the composition has changed dramatically. Domestic abuse referrals have surged as reporting barriers have lowered. Online fraud and cybercrime now account for a substantial share of offending. Mental health-related calls consume a growing proportion of patrol capacity, with officers frequently waiting hours at A&amp;E with detained individuals. Each of these categories demands more investigative time per incident than the volume acquisitive crime they have partially displaced, meaning that falling headline numbers mask rising operational pressure.</p>
+            <p>Neighbourhood policing — the visible, relationship-based presence that underpins public confidence — has been hollowed out. England and Wales have lost over 8,500 Police Community Support Officers since 2010, a reduction of roughly half the total.<Cite nums={3} /> The 20,000-officer uplift programme restored some sworn officer numbers, but the new recruits overwhelmingly filled response and investigation roles, not neighbourhood beats. Grade 1 emergency responses — the blue-light calls where life is at risk — are now met within target approximately 85% of the time, down from 92% a decade ago.<Cite nums={2} /> Grade 2 priority responses, where attendance is expected within an hour, are frequently delayed well beyond that window. Some forces have adopted explicit policies of non-attendance for categories of crime judged low-harm, including some thefts, criminal damage, and vehicle offences. Public confidence in policing has fallen to its lowest recorded level in the Crime Survey for England and Wales, with satisfaction particularly low among younger adults and ethnic minority communities.<Cite nums={4} /> The Peelian principle — policing by consent — depends on a contract of responsiveness that is under visible strain.</p>
           </div>
         </section>
 
@@ -212,6 +221,10 @@ export default function PoliceResponseTimesPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

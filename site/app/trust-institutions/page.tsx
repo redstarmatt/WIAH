@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ipsos', dataset: 'Veracity Index — Trust in Professions 2023', url: 'https://www.ipsos.com/en-uk/trust-in-professions-veracity-index', date: '2023' },
+  { num: 2, name: 'NatCen', dataset: 'British Social Attitudes Survey — NHS satisfaction', url: 'https://natcen.ac.uk/our-research/research/british-social-attitudes', date: '2023' },
+  { num: 3, name: 'Edelman', dataset: 'Trust Barometer — UK findings', url: 'https://www.edelman.com/trust/trust-barometer', date: '2023' },
+];
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -85,7 +93,7 @@ export default function TrustInstitutionsPage() {
               The Ipsos Veracity Index, which has tracked public trust in professions
               and institutions since 1983, recorded in 2023 that just 12% of the British
               public trusted politicians to tell the truth — a record low since the survey
-              began. This is not a product of a single scandal: it reflects cumulative
+              began.<Cite nums={1} /> This is not a product of a single scandal: it reflects cumulative
               disillusionment with a political class that has, in the public's perception,
               consistently failed to deliver on commitments, prioritised party over country,
               and been found to have misled the public on matters ranging from Brexit
@@ -95,13 +103,13 @@ export default function TrustInstitutionsPage() {
             </p>
             <p>
               NHS institutional trust presents a more complicated picture. The British Social
-              Attitudes survey has tracked trust in the NHS as an institution for decades.
+              Attitudes survey has tracked trust in the NHS as an institution for decades.<Cite nums={2} />
               In 2010, around 72% of the public expressed satisfaction with the NHS.
               By 2023, that figure had fallen to 51% — the lowest since the survey began.
               This decline is specifically about the institution — waiting times, access,
               funding adequacy — not about individual care. Nurses and doctors remain among
               the most trusted professionals in the world: the Veracity Index puts nurses
-              at 94% and doctors at 91%, figures that have been stable for decades.
+              at 94% and doctors at 91%, figures that have been stable for decades.<Cite nums={1} />
               People trust the staff but not the system.
             </p>
             </div>
@@ -184,6 +192,10 @@ export default function TrustInstitutionsPage() {
             </p>
           </div>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <ScrollReveal>
           <div id="sec-sources" className="border-t border-wiah-border pt-8 mt-8">

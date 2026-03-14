@@ -9,6 +9,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -42,6 +44,16 @@ function yearToDate(y: number): Date {
 function sparkFrom(arr: number[], n = 10) {
   return arr.slice(-n);
 }
+
+// ── References ──────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Births in England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/livebirths', date: '2024' },
+  { num: 2, name: 'ONS', dataset: "Births by mothers' age", url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/livebirths', date: '2024' },
+  { num: 3, name: 'ONS', dataset: 'House price to earnings ratio', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/housing/bulletins/housingaffordabilityinenglandandwales/latest', date: '2024' },
+  { num: 4, name: 'DfE', dataset: 'Childcare entitlements expansion', url: 'https://www.gov.uk/government/publications/childcare-entitlements-expansion', date: '2024' },
+  { num: 5, name: 'OECD', dataset: 'Family Database — childcare costs', url: 'https://www.oecd.org/els/family/database.htm', date: '2024' },
+];
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -114,9 +126,9 @@ export default function BirthRateDeclinePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Britain's birth rate has been falling steadily for over a decade, but the pace of decline since 2020 has been striking. The total fertility rate (TFR) — the average number of children a woman would have over her lifetime at current rates — dropped to 1.41 in 2024, a record low for England and Wales. This is not a blip caused by the pandemic: the TFR was already sliding before Covid, falling from 1.96 in 2008 to 1.65 by 2019. What the pandemic did was accelerate an existing trend. The number of live births has fallen by over 220,000 per year compared to the 2012 peak of 813,000, a decline of 27%. Every region of England and Wales has experienced falling birth rates, though the sharpest drops have been in London and the South East, where the cost of housing and childcare is highest.</p>
-            <p>The causes are structural, not simply a matter of personal preference. Housing costs are the single largest barrier: the average house price to earnings ratio in England stands at 8.3, meaning a typical home costs more than eight years of gross salary. For couples in their late twenties and early thirties — peak childbearing years — the prospect of starting a family in insecure rented accommodation with no spare bedroom is a powerful deterrent. Childcare costs compound the problem. The UK has some of the most expensive childcare in the OECD; a full-time nursery place for a child under two costs an average of 14,000 pounds per year, absorbing a third or more of a second earner's take-home pay. The average age at which women have their first child has risen from 27.1 in 2000 to 31.0 in 2024, a shift that mechanically reduces completed family size because later starts leave less biological time for second and third children. Internationally, the UK's trajectory mirrors that of other high-income nations — South Korea's TFR has fallen to 0.72, Italy's to 1.20, and Japan's to 1.20 — but the UK's decline has been steeper than France (1.68) or the Scandinavian countries, which maintain higher rates through generous parental leave and subsidised childcare.</p>
-            <p>The consequences are long-term and consequential. A sustained TFR below replacement means a shrinking working-age population relative to retirees, placing increasing pressure on the state pension system, the NHS workforce, and the tax base. Net migration has partially offset the demographic shortfall — without immigration, the UK population would already be shrinking — but this creates its own political tensions. Regional variation matters too: areas with younger populations and lower housing costs, such as parts of the North East and Yorkshire, have seen smaller declines, while the sharpest falls are concentrated in London boroughs where the cost of raising a child has become prohibitive for all but the highest earners. The government's extension of free childcare entitlements in 2024 is a step in the right direction, but demographers note that reversing fertility decline requires sustained, multi-generational investment in housing, childcare infrastructure, and parental support — not a single policy intervention.</p>
+            <p>Britain's birth rate has been falling steadily for over a decade, but the pace of decline since 2020 has been striking. The total fertility rate (TFR) — the average number of children a woman would have over her lifetime at current rates — dropped to 1.41 in 2024, a record low for England and Wales.<Cite nums={1} /> This is not a blip caused by the pandemic: the TFR was already sliding before Covid, falling from 1.96 in 2008 to 1.65 by 2019.<Cite nums={1} /> What the pandemic did was accelerate an existing trend. The number of live births has fallen by over 220,000 per year compared to the 2012 peak of 813,000, a decline of 27%.<Cite nums={1} /> Every region of England and Wales has experienced falling birth rates, though the sharpest drops have been in London and the South East, where the cost of housing and childcare is highest.<Cite nums={1} /></p>
+            <p>The causes are structural, not simply a matter of personal preference. Housing costs are the single largest barrier: the average house price to earnings ratio in England stands at 8.3, meaning a typical home costs more than eight years of gross salary.<Cite nums={3} /> For couples in their late twenties and early thirties — peak childbearing years — the prospect of starting a family in insecure rented accommodation with no spare bedroom is a powerful deterrent. Childcare costs compound the problem. The UK has some of the most expensive childcare in the OECD; a full-time nursery place for a child under two costs an average of 14,000 pounds per year, absorbing a third or more of a second earner's take-home pay.<Cite nums={5} /> The average age at which women have their first child has risen from 27.1 in 2000 to 31.0 in 2024, a shift that mechanically reduces completed family size because later starts leave less biological time for second and third children.<Cite nums={2} /> Internationally, the UK's trajectory mirrors that of other high-income nations — South Korea's TFR has fallen to 0.72, Italy's to 1.20, and Japan's to 1.20 — but the UK's decline has been steeper than France (1.68) or the Scandinavian countries, which maintain higher rates through generous parental leave and subsidised childcare.<Cite nums={5} /></p>
+            <p>The consequences are long-term and consequential. A sustained TFR below replacement means a shrinking working-age population relative to retirees, placing increasing pressure on the state pension system, the NHS workforce, and the tax base. Net migration has partially offset the demographic shortfall — without immigration, the UK population would already be shrinking — but this creates its own political tensions. Regional variation matters too: areas with younger populations and lower housing costs, such as parts of the North East and Yorkshire, have seen smaller declines, while the sharpest falls are concentrated in London boroughs where the cost of raising a child has become prohibitive for all but the highest earners.<Cite nums={1} /> The government's extension of free childcare entitlements in 2024 is a step in the right direction, but demographers note that reversing fertility decline requires sustained, multi-generational investment in housing, childcare infrastructure, and parental support — not a single policy intervention.<Cite nums={4} /></p>
           </div>
         </section>
 
@@ -239,6 +251,10 @@ export default function BirthRateDeclinePage() {
             source="Source: Department for Education — Childcare entitlements expansion, 2024. ONS — Births in England and Wales, 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
               <RelatedTopics />
       </main>
     </>

@@ -9,6 +9,16 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+// ── References ──────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DCMS', dataset: 'Community Life Survey 2023-24', url: 'https://www.gov.uk/government/statistics/community-life-survey-202324', date: '2024' },
+  { num: 2, name: 'NCVO', dataset: 'Time Well Spent: Volunteering and the Pandemic', url: 'https://www.ncvo.org.uk/news-and-insights/news-index/time-well-spent/', date: '2023' },
+  { num: 3, name: 'DCMS', dataset: 'Community Life Survey — Volunteering by Age Group', url: 'https://www.gov.uk/government/statistics/community-life-survey-202324', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -141,14 +151,17 @@ export default function VolunteeringRatesPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              England&apos;s volunteering infrastructure is quietly hollowing out. The Community Life Survey shows that 39% of adults volunteered formally at least once in 2023-24, down {formalDrop} percentage points from a decade earlier. Informal volunteering \u2014 the everyday help given to neighbours, friends, and strangers \u2014 fell further still, from 63% to 51%. The sharpest losses are among 25\u201344 year olds, the age group most likely to be balancing childcare, insecure work, and rising housing costs. COVID accelerated the decline: face-to-face volunteering collapsed in 2020, and while a surge of mutual aid filled some gaps, the organisational base \u2014 community centres, youth clubs, local charities \u2014 has not fully recovered.
+              England&apos;s volunteering infrastructure is quietly hollowing out. The Community Life Survey shows that 39% of adults volunteered formally at least once in 2023-24, down {formalDrop} percentage points from a decade earlier.<Cite nums={1} /> Informal volunteering \u2014 the everyday help given to neighbours, friends, and strangers \u2014 fell further still, from 63% to 51%. The sharpest losses are among 25\u201344 year olds, the age group most likely to be balancing childcare, insecure work, and rising housing costs. COVID accelerated the decline: face-to-face volunteering collapsed in 2020, and while a surge of mutual aid filled some gaps, the organisational base \u2014 community centres, youth clubs, local charities \u2014 has not fully recovered.<Cite nums={2} />
             </p>
             <p>
-              The pattern is not uniform. Over-65s have returned close to pre-pandemic levels, and environmental volunteering is the only category to have grown over the decade. But the broader trend is clear: fewer people are giving their time through formal channels. This matters because volunteering is not just a nice thing to do \u2014 it is load-bearing social infrastructure. Foodbanks, citizens advice bureaux, hospital visiting, school reading programmes, and sports clubs all depend on volunteers. When volunteering declines, the gaps fall disproportionately on the communities that can least afford to fill them with paid provision.
+              The pattern is not uniform. Over-65s have returned close to pre-pandemic levels, and environmental volunteering is the only category to have grown over the decade. But the broader trend is clear: fewer people are giving their time through formal channels. This matters because volunteering is not just a nice thing to do \u2014 it is load-bearing social infrastructure. Foodbanks, citizens advice bureaux, hospital visiting, school reading programmes, and sports clubs all depend on volunteers. When volunteering declines, the gaps fall disproportionately on the communities that can least afford to fill them with paid provision.<Cite nums={1} />
             </p>
             <p>
-              The data below tracks these trends across a decade, breaking them down by type, age group, and frequency. All figures are drawn from the DCMS Community Life Survey and NCVO research.
+              The data below tracks these trends across a decade, breaking them down by type, age group, and frequency. All figures are drawn from the DCMS Community Life Survey and NCVO research.<Cite nums={[1, 2]} />
             </p>
+          </div>
+          <div className="mt-6">
+            <References items={editorialRefs} />
           </div>
         </section>
 

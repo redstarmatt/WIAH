@@ -8,6 +8,16 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'MOD', dataset: 'UK Armed Forces Statistics — Quarterly Manning Report', url: 'https://www.gov.uk/government/collections/uk-armed-forces-statistics', date: '2023' },
+  { num: 2, name: 'House of Commons Defence Committee', dataset: 'Recruitment and Retention in the Armed Forces', url: 'https://committees.parliament.uk/work/6807/recruitment-and-retention-in-the-armed-forces/', date: '2023' },
+  { num: 3, name: 'National Audit Office', dataset: 'Recruitment into the Armed Forces', url: 'https://www.nao.org.uk/reports/recruitment-into-the-armed-forces/', date: '2022' },
+  { num: 4, name: 'MOD', dataset: 'UK Armed Forces Biannual Diversity Statistics', url: 'https://www.gov.uk/government/statistics/uk-armed-forces-biannual-diversity-statistics', date: '2023' },
+  { num: 5, name: 'Armed Forces Continuous Attitude Survey', dataset: 'AFCAS Results 2023', url: 'https://www.gov.uk/government/statistics/armed-forces-continuous-attitude-survey-2023', date: '2023' },
+];
 
 interface MilitaryRecruitmentData {
   armyStrength: Array<{ year: number; trained: number }>
@@ -60,8 +70,8 @@ export default function MilitaryRecruitmentPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The British Army's trained strength of 72,520 in 2023 is the lowest since the Napoleonic era in relative terms, below even the contested 73,000 target set in the 2021 Integrated Review — itself the lowest on record, down from 152,000 at the Cold War peak. All three services are below establishment: the Royal Navy has 32,910 against a target of 33,450; the Royal Air Force 31,380 against 31,750. A record 94,000 applications were received in 2023, but only 9,200 people joined — a conversion rate failure driven by medical rejections, fitness failures, background check delays, and a recruitment process so slow it loses candidates to private employers. The National Audit Office found the Capita-managed recruitment contract failed to deliver required numbers in every year of its 2012–2022 operation. Russia's full-scale invasion of Ukraine in 2022 sharpened the strategic stakes, prompting the UK's 2024 commitment to reach 2.5% of GDP on defence, but headcount needs to grow alongside equipment investment to be credible.</p>
-            <p>Retention compounds recruitment failure. Military pay has fallen behind private sector equivalents in comparable roles, and the Service Family Accommodation estate has thousands of properties in poor condition, eroding the implicit compact with serving personnel. The effective deployable fighting strength — not the headline trained count — is significantly lower than official numbers suggest; defence analysts have questioned whether the UK could currently sustain a brigade-level deployment without drawing down from other commitments. The shortfalls fall disproportionately on combat arms and technical trades where competition from defence and technology companies is fiercest, creating structural hollowness in exactly the capabilities most needed.</p>
+            <p>The British Army's trained strength of 72,520 in 2023 is the lowest since the Napoleonic era in relative terms, below even the contested 73,000 target set in the 2021 Integrated Review — itself the lowest on record, down from 152,000 at the Cold War peak.<Cite nums={1} /> All three services are below establishment: the Royal Navy has 32,910 against a target of 33,450; the Royal Air Force 31,380 against 31,750.<Cite nums={1} /> A record 94,000 applications were received in 2023, but only 9,200 people joined — a conversion rate failure driven by medical rejections, fitness failures, background check delays, and a recruitment process so slow it loses candidates to private employers.<Cite nums={4} /> The National Audit Office found the Capita-managed recruitment contract failed to deliver required numbers in every year of its 2012–2022 operation.<Cite nums={3} /> Russia's full-scale invasion of Ukraine in 2022 sharpened the strategic stakes, prompting the UK's 2024 commitment to reach 2.5% of GDP on defence, but headcount needs to grow alongside equipment investment to be credible.</p>
+            <p>Retention compounds recruitment failure. Military pay has fallen behind private sector equivalents in comparable roles, and the Service Family Accommodation estate has thousands of properties in poor condition, eroding the implicit compact with serving personnel.<Cite nums={5} /> The effective deployable fighting strength — not the headline trained count — is significantly lower than official numbers suggest; defence analysts have questioned whether the UK could currently sustain a brigade-level deployment without drawing down from other commitments.<Cite nums={2} /> The shortfalls fall disproportionately on combat arms and technical trades where competition from defence and technology companies is fiercest, creating structural hollowness in exactly the capabilities most needed.<Cite nums={2} /></p>
           </div>
         </section>
 
@@ -122,6 +132,10 @@ export default function MilitaryRecruitmentPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

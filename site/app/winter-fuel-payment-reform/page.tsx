@@ -7,6 +7,15 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DWP', dataset: 'Winter Fuel Payment Statistics 2024', url: 'https://www.gov.uk/government/collections/winter-fuel-payments', date: '2024' },
+  { num: 2, name: 'DWP', dataset: 'Pension Credit non-take-up estimates', url: 'https://www.gov.uk/government/statistics/income-related-benefits-estimates-of-take-up', date: '2024', note: '850,000 eligible households not claiming' },
+  { num: 3, name: 'JRF / IFS', dataset: 'WFP reform poverty impact projections', url: 'https://www.jrf.org.uk', date: '2024' },
+  { num: 4, name: 'DESNZ', dataset: 'Fuel Poverty Statistics — England', url: 'https://www.gov.uk/government/collections/fuel-poverty-statistics', date: '2024' },
+];
 
 export default function WinterFuelPaymentReformPage() {
   // Chart 1: Winter Fuel Payment recipients 2020–2024 (millions)
@@ -135,12 +144,16 @@ export default function WinterFuelPaymentReformPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on Winter Fuel Payment reform</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>The Winter Fuel Payment was introduced in 1997 as a universal £200–300 annual payment to all households with a member aged 66 or over. In July 2024, the government means-tested it from winter 2024–25, restricting eligibility to pensioners receiving Pension Credit. The change removed the benefit from approximately 10 million households — reducing recipients from 11.4 million to 1.5 million — saving an estimated £1.5 billion per year.</p>
-              <p>The reform's core vulnerability is Pension Credit non-take-up. The benefit is worth around £3,900 a year to eligible pensioners, but approximately 850,000 eligible households do not claim it — often older people unaware of their entitlement or unable to navigate digital applications. These pensioners are genuinely poor but fall outside the means-test, leaving them without the Winter Fuel Payment. The JRF, IFS, and Age UK all estimated the reform would push between 100,000 and 300,000 additional pensioners below the poverty line.</p>
-              <p>Pensioner fuel poverty was already elevated by the 2022–23 energy price shock — rising from around 8% in 2019 to over 13% in 2022 before partial recovery. The removal of Winter Fuel Payment for those not on Pension Credit is projected to increase fuel poverty among pensioners in 2024–25 before any effect on take-up is seen. The actual poverty and mortality impact will only be fully assessable once winter 2024–25 data becomes available.</p>
+              <p>The Winter Fuel Payment was introduced in 1997 as a universal £200–300 annual payment to all households with a member aged 66 or over. In July 2024, the government means-tested it from winter 2024–25, restricting eligibility to pensioners receiving Pension Credit. The change removed the benefit from approximately 10 million households — reducing recipients from 11.4 million to 1.5 million — saving an estimated £1.5 billion per year.<Cite nums={1} /></p>
+              <p>The reform's core vulnerability is Pension Credit non-take-up. The benefit is worth around £3,900 a year to eligible pensioners, but approximately 850,000 eligible households do not claim it — often older people unaware of their entitlement or unable to navigate digital applications.<Cite nums={2} /> These pensioners are genuinely poor but fall outside the means-test, leaving them without the Winter Fuel Payment. The JRF, IFS, and Age UK all estimated the reform would push between 100,000 and 300,000 additional pensioners below the poverty line.<Cite nums={3} /></p>
+              <p>Pensioner fuel poverty was already elevated by the 2022–23 energy price shock — rising from around 8% in 2019 to over 13% in 2022 before partial recovery.<Cite nums={4} /> The removal of Winter Fuel Payment for those not on Pension Credit is projected to increase fuel poverty among pensioners in 2024–25 before any effect on take-up is seen. The actual poverty and mortality impact will only be fully assessable once winter 2024–25 data becomes available.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

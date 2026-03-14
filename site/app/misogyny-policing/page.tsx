@@ -8,6 +8,16 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Crown Prosecution Service', dataset: 'Violence Against Women and Girls Report', url: 'https://www.cps.gov.uk/publication/cps-violence-against-women-and-girls-report', date: '2023' },
+  { num: 2, name: 'ONS', dataset: 'Sexual Offences in England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/bulletins/sexualoffencesinenglandandwales/latest', date: '2023' },
+  { num: 3, name: 'HMICFRS', dataset: 'Rape Monitoring Group Digests', url: 'https://www.justiceinspectorates.gov.uk/hmicfrs/our-work/article/rape-monitoring-group/', date: '2023' },
+  { num: 4, name: 'HMCTS', dataset: 'Criminal Court Statistics', url: 'https://www.gov.uk/government/statistics/criminal-court-statistics-quarterly', date: '2023' },
+  { num: 5, name: 'Home Office', dataset: 'Operation Soteria Evaluation', url: 'https://www.gov.uk/government/publications/operation-soteria', date: '2023' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -76,8 +86,8 @@ export default function MisogynyPolicingPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The rape charge rate in England and Wales fell from 6.2% in 2015 to 3.3% in 2023, even as the number of reports more than doubled from around 34,000 to over 72,000 annually. For every 30 women who reported a rape, only one saw a charge brought. Many cases close before charge because complainants withdraw — the investigation process is frequently experienced as traumatic and protracted — with the average time from report to first Crown Court hearing reaching 42 months in 2023. HMICFRS inspections have found that some forces pursue early closure before investigations are complete and make disproportionate demands for complainants' mobile phone data, deterring reporting. Operation Soteria, embedding CPS prosecutors in joint investigation teams focused on suspect behaviour rather than complainant credibility, has shown modest early improvements in charge rates.</p>
-            <p>Cases that reach court face further attrition. Conviction rates in tried rape cases run at around 68%, below the overall Crown Court conviction rate of approximately 80%, with rape myths — false beliefs about how genuine victims behave — continuing to influence jury outcomes despite judge-directed education. The system's failures fall almost entirely on women: disproportionately those who are young, those who know their attacker (the majority of rape cases), and those in communities with historically fraught relationships with police who are least likely to report at all.</p>
+            <p>The rape charge rate in England and Wales fell from 6.2% in 2015 to 3.3% in 2023, even as the number of reports more than doubled from around 34,000 to over 72,000 annually.<Cite nums={1} /> For every 30 women who reported a rape, only one saw a charge brought. Many cases close before charge because complainants withdraw — the investigation process is frequently experienced as traumatic and protracted — with the average time from report to first Crown Court hearing reaching 42 months in 2023.<Cite nums={4} /> HMICFRS inspections have found that some forces pursue early closure before investigations are complete and make disproportionate demands for complainants' mobile phone data, deterring reporting.<Cite nums={3} /> Operation Soteria, embedding CPS prosecutors in joint investigation teams focused on suspect behaviour rather than complainant credibility, has shown modest early improvements in charge rates.<Cite nums={5} /></p>
+            <p>Cases that reach court face further attrition. Conviction rates in tried rape cases run at around 68%, below the overall Crown Court conviction rate of approximately 80%, with rape myths — false beliefs about how genuine victims behave — continuing to influence jury outcomes despite judge-directed education.<Cite nums={1} /> The system's failures fall almost entirely on women: disproportionately those who are young, those who know their attacker (the majority of rape cases), and those in communities with historically fraught relationships with police who are least likely to report at all.<Cite nums={2} /></p>
           </div>
         </section>
 
@@ -137,6 +147,10 @@ export default function MisogynyPolicingPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

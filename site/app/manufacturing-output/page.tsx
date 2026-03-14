@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Index of Production', url: 'https://www.ons.gov.uk/economy/economicoutputandproductivity/output/bulletins/indexofproduction/latestrelease', date: 'Feb 2026' },
+  { num: 2, name: 'ONS', dataset: 'GDP output approach — low-level aggregates', url: 'https://www.ons.gov.uk/economy/grossdomesticproductgdp/datasets/ukgdpolowlevelaggregates', date: 'Feb 2026' },
+  { num: 3, name: 'ONS', dataset: 'Workforce Jobs by Industry', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/datasets/workforcejobsbyindustryjobs02', date: 'Feb 2026' },
+  { num: 4, name: 'HM Government', dataset: 'Advanced Manufacturing Plan', date: 'Oct 2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -146,31 +155,31 @@ export default function ManufacturingOutputPage() {
             <p>
               British manufacturing never fully recovered from the pandemic. The ONS Index of Production
               stood at 95.7 in late 2025, still 4.3% below its 2019 baseline and well below the 2017
-              peak of 103.0. This is not a story of sudden collapse but of slow erosion: the sector
+              peak of 103.0.<Cite nums={1} /> This is not a story of sudden collapse but of slow erosion: the sector
               grew modestly through the mid-2010s, was knocked sideways by Brexit uncertainty from 2016
               onwards, then hit by the COVID supply-chain shock, and has since been weighed down by
               energy costs that remain roughly 40% above pre-crisis levels. UK industrial electricity
               prices are among the highest in the G7, a structural disadvantage that has pushed
               energy-intensive production — steel, glass, ceramics — offshore. The result is a sector
               that accounts for just 8.6% of GDP, down from 10.4% in 2010 and roughly 25% in the
-              early 1970s.
+              early 1970s.<Cite nums={2} />
             </p>
             <p>
               The picture beneath the headline is uneven. Pharmaceuticals output has grown 8.3% since
               2019, driven by vaccine production and the UK's strong life-sciences base. Aerospace and
               defence manufacturing is up 5.6%, buoyed by export orders and government procurement.
-              But motor vehicle production has fallen 14.2% since 2019, hit by the global shift to
+              But motor vehicle production has fallen 14.2% since 2019<Cite nums={1} />, hit by the global shift to
               electric vehicles — a transition in which UK gigafactory investment has lagged behind
               continental Europe. Textiles and clothing manufacturing has contracted 18.4%, a
               continuation of decades-long offshoring. The employment figures tell a parallel story:
-              2.42 million people worked in manufacturing in 2025, down from 2.62 million in 2019.
+              2.42 million people worked in manufacturing in 2025, down from 2.62 million in 2019.<Cite nums={3} />
               Many of these are skilled jobs in regions where alternatives are scarce — the West
               Midlands, North East, and South Wales are disproportionately affected.
             </p>
             <p>
               There are reasons for cautious optimism. The government's Advanced Manufacturing Plan,
               announced in late 2024, channels investment into clean energy supply chains, battery
-              production, and semiconductor fabrication. The UK retains genuine strengths in high-value
+              production, and semiconductor fabrication.<Cite nums={4} /> The UK retains genuine strengths in high-value
               manufacturing — jet engines, pharmaceuticals, specialty chemicals — where output per
               worker is among the highest in Europe. The question is whether targeted industrial
               policy can arrest a structural decline that has been running for half a century, and
@@ -368,6 +377,10 @@ export default function ManufacturingOutputPage() {
             source="Source: ONS — Index of Production, subsector indices, Feb 2026. HM Government — Advanced Manufacturing Plan, Oct 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <RelatedTopics />
 

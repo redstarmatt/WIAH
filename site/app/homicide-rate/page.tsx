@@ -9,6 +9,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -58,6 +60,11 @@ function yearToDate(y: number): Date {
 function sparkFrom(arr: number[], n = 10) {
   return arr.slice(-n);
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Homicide in England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/articles/homicideinenglandandwales/latest', date: 'Nov 2025' },
+  { num: 2, name: 'Home Office', dataset: 'Homicide Index — Method of Killing', url: 'https://www.gov.uk/government/statistics/homicide-in-england-and-wales', date: 'Nov 2025' },
+];
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -174,13 +181,13 @@ export default function HomicideRatePage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Britain is a substantially less lethal country than it was two decades ago. In the year ending March 2003, 1,047 homicides were recorded in England and Wales — a rate of nearly 20 per million people. By 2014, that figure had fallen to 534, a reduction of almost half, driven by improvements in trauma care, CCTV expansion, a decline in alcohol-fuelled violence following the Licensing Act 2003, and broader demographic shifts. The 2024 figure of 590 sits roughly in line with the post-2014 average, well below the levels that defined the early 2000s. In international context, England and Wales has one of the lowest homicide rates in the world — roughly a fifth of the US rate and lower than most comparable European nations.
+              Britain is a substantially less lethal country than it was two decades ago. In the year ending March 2003, 1,047 homicides were recorded in England and Wales — a rate of nearly 20 per million people.<Cite nums={1} /> By 2014, that figure had fallen to 534, a reduction of almost half, driven by improvements in trauma care, CCTV expansion, a decline in alcohol-fuelled violence following the Licensing Act 2003, and broader demographic shifts.<Cite nums={1} /> The 2024 figure of 590 sits roughly in line with the post-2014 average, well below the levels that defined the early 2000s. In international context, England and Wales has one of the lowest homicide rates in the world — roughly a fifth of the US rate and lower than most comparable European nations.
             </p>
             <p>
-              But the method of killing has changed markedly. Knife and sharp instrument homicides rose from 186 in 2014 to a peak of 264 in 2017, settling at 231 in 2024. This shift reflects the growth of county lines drug networks, which expanded rapidly from 2014 onward and brought systematic violence to new areas. Firearms homicides, by contrast, have fallen consistently — from 41 in 2010 to 22 in 2024 — a success largely attributable to the post-Dunblane firearms legislation and sustained police intelligence operations. The typical homicide victim is male, aged 25-34, and disproportionately from a deprived area. Roughly half of all homicide victims knew their killer. Domestic homicide accounts for around a third of cases, a proportion that has remained stubbornly consistent for decades.
+              But the method of killing has changed markedly. Knife and sharp instrument homicides rose from 186 in 2014 to a peak of 264 in 2017, settling at 231 in 2024.<Cite nums={2} /> This shift reflects the growth of county lines drug networks, which expanded rapidly from 2014 onward and brought systematic violence to new areas. Firearms homicides, by contrast, have fallen consistently — from 41 in 2010 to 22 in 2024 — a success largely attributable to the post-Dunblane firearms legislation and sustained police intelligence operations.<Cite nums={2} /> The typical homicide victim is male, aged 25-34, and disproportionately from a deprived area. Roughly half of all homicide victims knew their killer. Domestic homicide accounts for around a third of cases, a proportion that has remained stubbornly consistent for decades.<Cite nums={1} />
             </p>
             <p>
-              The 2016 and 2017 totals require careful reading. The 2016 figure includes 96 Hillsborough disaster victims reclassified as unlawful killings following the inquest conclusion, and the 2017 figure includes 31 victims of the Manchester Arena and London Bridge terror attacks. Stripping these out, the underlying trend from 2015 to 2019 shows a modest rise of around 15%, followed by the COVID dip in 2020 and a subsequent stabilisation. The latest data suggests the homicide rate is now gently declining again, though one-year movements in relatively small numbers should be interpreted with caution.
+              The 2016 and 2017 totals require careful reading. The 2016 figure includes 96 Hillsborough disaster victims reclassified as unlawful killings following the inquest conclusion, and the 2017 figure includes 31 victims of the Manchester Arena and London Bridge terror attacks.<Cite nums={1} /> Stripping these out, the underlying trend from 2015 to 2019 shows a modest rise of around 15%, followed by the COVID dip in 2020 and a subsequent stabilisation. The latest data suggests the homicide rate is now gently declining again, though one-year movements in relatively small numbers should be interpreted with caution.
             </p>
           </div>
         </section>
@@ -355,6 +362,10 @@ export default function HomicideRatePage() {
             source="Source: Home Office — Homicide Index, Nov 2025. ONS — Homicide in England and Wales."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* ── Sources & Methodology ──────────────────────────────────────── */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

@@ -9,6 +9,8 @@ import PositiveCallout from '@/components/PositiveCallout'
 import ScrollReveal from '@/components/ScrollReveal'
 import SourceAttribution from '@/components/SourceAttribution'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 interface VacancyPoint {
   year: string
@@ -79,6 +81,13 @@ function quarterToDate(q: string): Date {
 function yearToDate(y: number): Date {
   return new Date(y, 5, 1)
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Local Data Company', dataset: 'UK Retail Vacancy Rates', url: 'https://www.localdatacompany.com/research', date: 'Q3 2024' },
+  { num: 2, name: 'ONS', dataset: 'Retail Sales — Internet Sales as Percentage of Total', url: 'https://www.ons.gov.uk/businessindustryandtrade/retailindustry/bulletins/retailsales/latest', date: '2024' },
+  { num: 3, name: 'PwC / Local Data Company', dataset: 'Annual Retail Census — Net Store Closures', url: 'https://www.localdatacompany.com/research', date: '2024' },
+  { num: 4, name: 'Springboard', dataset: 'UK Retail Footfall Monitor', url: 'https://www.spring-board.info/', date: '2024' },
+];
 
 export default function HighStreetsPage() {
   const [data, setData] = useState<HighStreetsData | null>(null)
@@ -264,17 +273,17 @@ export default function HighStreetsPage() {
             <h2 className="text-2xl font-bold text-wiah-black mb-6">The picture</h2>
             <div className="space-y-4 text-wiah-black leading-relaxed">
               <p>
-                Britain has the highest retail vacancy rate in Europe: 14%, against an EU average of roughly 8%. More
+                Britain has the highest retail vacancy rate in Europe: 14%, against an EU average of roughly 8%.<Cite nums={1} /> More
                 than 50,000 stores have closed on a net basis since 2015, with every single year recording more
-                shuttered shopfronts than new openings. The worst year was 2020, when 9,092 net closures were logged
-                in a single twelve-month period; 2024 still saw 5,234. The carnage of 2019 was emblematic—Debenhams
+                shuttered shopfronts than new openings.<Cite nums={3} /> The worst year was 2020, when 9,092 net closures were logged
+                in a single twelve-month period; 2024 still saw 5,234.<Cite nums={3} /> The carnage of 2019 was emblematic—Debenhams
                 (2,500 jobs), Arcadia (13,000 jobs), Bonmarch&eacute;, Thomas Cook, and Mothercare all collapsed within
                 months of each other. Footfall has stabilised at 86% of its 2019 level, but the composition has
-                shifted: more leisure visits, fewer shopping trips, shorter dwell times.
+                shifted: more leisure visits, fewer shopping trips, shorter dwell times.<Cite nums={4} />
               </p>
               <p>
                 The structural driver is digital migration. Online retail accounted for 6.4% of total sales in 2010;
-                by 2024 it was 27.3%—the highest penetration of any major European economy. The pandemic compressed
+                by 2024 it was 27.3%—the highest penetration of any major European economy.<Cite nums={2} /> The pandemic compressed
                 years of adoption into months, and the shift proved largely irreversible. Meanwhile, the tax system
                 actively penalises physical presence. Retailers pay roughly £7bn a year in business rates,
                 calculated on 2015 rateable values until a belated 2022 revaluation. Online competitors face a
@@ -303,6 +312,10 @@ export default function HighStreetsPage() {
             source="Source: Springboard — UK Retail Footfall Monitor 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <ScrollReveal>
           <section className="mt-16 pt-8 border-t border-wiah-border">

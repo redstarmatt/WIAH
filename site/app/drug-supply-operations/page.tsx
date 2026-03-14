@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // County lines disrupted, 2017–2024 — NCA / Home Office
 const countyLinesValues = [1100, 1400, 2100, 3000, 4200, 5500, 6240, 6500];
@@ -43,6 +45,11 @@ const annotations: Annotation[] = [
   { date: new Date(2020, 0, 1), label: '2020: COVID lockdown surge' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Home Office / NCA', dataset: 'County Lines Data and Trends', url: 'https://www.gov.uk/government/publications/county-lines-data-and-trends', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Deaths related to drug poisoning in England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/deathsrelatedtodrugpoisoningenglandandwales/latest', date: '2024' },
+];
+
 export default function DrugSupplyOperationsPage() {
   return (
     <>
@@ -57,7 +64,7 @@ export default function DrugSupplyOperationsPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The National Crime Agency's county lines disruption programme ramped from around 1,100 line disruptions in 2017 to 6,500 in 2024. By any operational measure, enforcement activity has increased substantially. By the most important outcome measure — drug deaths — the picture is far less encouraging: drug poisoning deaths rose from 3,744 in 2017 to a peak of 4,907 in 2022, before falling slightly to 4,700 in 2024. Drug deaths remain at near-record levels. The disconnect reflects a well-documented feature of drug markets: supply is elastic and resilient. When a county line is disrupted, demand does not disappear; within weeks or months, a new supply line typically emerges. Disruption removes individual exploiters and prevents specific harm to children used as runners, but does not reduce aggregate supply or demand at the population level.</p>
+            <p>The National Crime Agency&apos;s county lines disruption programme ramped from around 1,100 line disruptions in 2017 to 6,500 in 2024.<Cite nums={1} /> By any operational measure, enforcement activity has increased substantially. By the most important outcome measure — drug deaths — the picture is far less encouraging: drug poisoning deaths rose from 3,744 in 2017 to a peak of 4,907 in 2022, before falling slightly to 4,700 in 2024.<Cite nums={2} /> Drug deaths remain at near-record levels. The disconnect reflects a well-documented feature of drug markets: supply is elastic and resilient. When a county line is disrupted, demand does not disappear; within weeks or months, a new supply line typically emerges. Disruption removes individual exploiters and prevents specific harm to children used as runners, but does not reduce aggregate supply or demand at the population level.</p>
             <p>Synthetic opioids — particularly fentanyl and nitazenes — are now appearing with increasing frequency in the UK drug supply; both are far more potent than heroin and difficult to detect without drug testing, raising overdose risk substantially. Treatment services offer the strongest evidence base for reducing drug-related harm. The honest assessment is that enforcement-led responses at current levels have not demonstrably reduced drug deaths; the political obstacles to harm reduction, not its effectiveness, represent the primary barrier to better outcomes.</p>
           </div>
         </section>
@@ -136,6 +143,10 @@ export default function DrugSupplyOperationsPage() {
             source="Source: Home Office — From Harm to Hope: 10-year drug strategy, 2021."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

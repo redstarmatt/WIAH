@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Computer misuse offences (millions), 2015–2024 (CSEW)
 const offenceValues = [1.10, 1.34, 1.48, 1.58, 1.70, 2.10, 1.89, 1.62, 1.74, 1.90];
@@ -42,6 +44,12 @@ const annotations2: Annotation[] = [
   { date: new Date(2020, 2, 1), label: '2020: Court backlogs suppress prosecution numbers' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Crime Survey for England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/datasets/computermisuse', date: '2024' },
+  { num: 2, name: 'NCSC', dataset: 'Annual Review', url: 'https://www.ncsc.gov.uk/annual-review', date: '2024' },
+  { num: 3, name: 'CPS', dataset: 'Annual Report — Computer Misuse', url: 'https://www.cps.gov.uk/publication/cps-annual-report-and-accounts', date: '2024' },
+];
+
 export default function CybercrimePage() {
   return (
     <>
@@ -56,8 +64,8 @@ export default function CybercrimePage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Cybercrime is the fastest-growing category of crime in the UK, yet it remains one of the least-policed. The Crime Survey for England and Wales estimates approximately 1.9 million computer misuse offences per year, including hacking, malware attacks, and denial-of-service incidents. This figure excludes the substantial volume of cyber-enabled fraud, which is counted separately. The National Cyber Security Centre handled 1,957 significant cyber incidents in 2023 — a record. Ransomware attacks on the NHS, local councils, Royal Mail, and the British Library have made the threat tangible to the public, but the vast majority of cybercrime targets individuals and small businesses who receive little or no support from law enforcement.</p>
-            <p>The enforcement gap is stark. Fewer than 900 prosecutions for computer misuse offences were brought in 2024, down from 1,240 in 2015. The Computer Misuse Act 1990 — drafted before the world wide web existed — remains the primary legislative tool, and has been widely criticised as outdated and difficult to apply to modern attack vectors. The National Crime Agency's National Cyber Crime Unit is the lead enforcement body, but its capacity is limited relative to the scale of the threat. Most of the 43 police forces in England and Wales have cyber teams typically consisting of fewer than ten officers, many of whom lack specialist digital forensics training.</p>
+            <p>Cybercrime is the fastest-growing category of crime in the UK, yet it remains one of the least-policed. The Crime Survey for England and Wales estimates approximately 1.9 million computer misuse offences per year, including hacking, malware attacks, and denial-of-service incidents.<Cite nums={1} /> This figure excludes the substantial volume of cyber-enabled fraud, which is counted separately. The National Cyber Security Centre handled 1,957 significant cyber incidents in 2023 — a record.<Cite nums={2} /> Ransomware attacks on the NHS, local councils, Royal Mail, and the British Library have made the threat tangible to the public, but the vast majority of cybercrime targets individuals and small businesses who receive little or no support from law enforcement.</p>
+            <p>The enforcement gap is stark. Fewer than 900 prosecutions for computer misuse offences were brought in 2024, down from 1,240 in 2015.<Cite nums={3} /> The Computer Misuse Act 1990 — drafted before the world wide web existed — remains the primary legislative tool, and has been widely criticised as outdated and difficult to apply to modern attack vectors. The National Crime Agency's National Cyber Crime Unit is the lead enforcement body, but its capacity is limited relative to the scale of the threat. Most of the 43 police forces in England and Wales have cyber teams typically consisting of fewer than ten officers, many of whom lack specialist digital forensics training.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -136,6 +144,9 @@ export default function CybercrimePage() {
             source="Source: NCSC — Annual Review 2023. Home Office — Computer Misuse Act reform consultation 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

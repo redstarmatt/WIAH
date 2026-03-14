@@ -8,6 +8,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS Blood and Transplant', dataset: 'Organ Donation and Transplantation Activity Report', date: '2024' },
+  { num: 2, name: 'NHSBT', dataset: 'Potential Donor Audit — Family consent rates', date: '2024' },
+  { num: 3, name: 'NHSBT', dataset: 'Organ Donation — Ethnicity and waiting times analysis', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -102,8 +110,12 @@ export default function OrganDonationPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>In May 2020, England moved to an opt-out system for organ donation — Max and Keira&rsquo;s Law — under which adults are assumed willing donors unless they have specifically opted out. Wales adopted opt-out in 2015; Scotland in 2021. The family consent rate — the proportion of families agreeing to donation when approached — rose from 58–67% before opt-out to 73% by 2024; each percentage point increase translates to dozens of additional transplants per year. Despite this, transplant numbers have not recovered to their pre-COVID peak: 4,891 performed in 2024 versus 5,090 in 2018, following a 27% drop in 2020–2021 when intensive care capacity was diverted and immunosuppressed recipients were at extreme risk. Over 6,300 patients remain on the waiting list, down from a peak of over 7,000 in 2020, with around 350 dying each year before a transplant becomes available and a further 700 removed for becoming too unwell.</p>
-            <p>Ethnicity is the starkest dimension of inequality. Black, Asian, and minority ethnic patients wait on average twice as long for a kidney transplant as white patients, because organ matching depends partly on tissue type and the donor pool does not reflect the ethnic composition of those in need. Consent rates among Black African and Black Caribbean families remain significantly below average; addressing this requires culturally specific engagement, not just legislative change. The potential donor pool is also constrained by factors the law cannot change: the number of deaths occurring in circumstances suitable for donation, the condition of those organs, and the logistical challenge of retrieval and matching.</p>
+            <p>In May 2020, England moved to an opt-out system for organ donation — Max and Keira&rsquo;s Law — under which adults are assumed willing donors unless they have specifically opted out. Wales adopted opt-out in 2015; Scotland in 2021. The family consent rate — the proportion of families agreeing to donation when approached — rose from 58–67% before opt-out to 73% by 2024<Cite nums={2} />; each percentage point increase translates to dozens of additional transplants per year. Despite this, transplant numbers have not recovered to their pre-COVID peak: 4,891 performed in 2024 versus 5,090 in 2018<Cite nums={1} />, following a 27% drop in 2020–2021 when intensive care capacity was diverted and immunosuppressed recipients were at extreme risk. Over 6,300 patients remain on the waiting list, down from a peak of over 7,000 in 2020, with around 350 dying each year<Cite nums={1} /> before a transplant becomes available and a further 700 removed for becoming too unwell.</p>
+            <p>Ethnicity is the starkest dimension of inequality. Black, Asian, and minority ethnic patients wait on average twice as long for a kidney transplant as white patients<Cite nums={3} />, because organ matching depends partly on tissue type and the donor pool does not reflect the ethnic composition of those in need. Consent rates among Black African and Black Caribbean families remain significantly below average;<Cite nums={[2, 3]} /> addressing this requires culturally specific engagement, not just legislative change. The potential donor pool is also constrained by factors the law cannot change: the number of deaths occurring in circumstances suitable for donation, the condition of those organs, and the logistical challenge of retrieval and matching.</p>
+          </div>
+
+          <div className="mt-6">
+            <References items={editorialRefs} />
           </div>
         </section>
 

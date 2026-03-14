@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Stillbirth rate per 1,000 births, England & Wales, 2013–2023 — MBRRACE-UK
 const stillbirthRateValues = [4.2, 4.1, 4.1, 3.9, 3.8, 3.7, 3.6, 3.5, 3.4, 3.4, 3.3];
@@ -61,6 +63,14 @@ const annotations2: Annotation[] = [
   { date: new Date(2022, 0, 1), label: '2022: NHS England bereavement support fund' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'MBRRACE-UK', dataset: 'Perinatal Mortality Surveillance Report', url: 'https://www.npeu.ox.ac.uk/mbrrace-uk/reports', date: '2024' },
+  { num: 2, name: 'NHS England', dataset: "Saving Babies' Lives Care Bundle Version 3", date: '2023' },
+  { num: 3, name: 'Sands', dataset: 'Bereavement Care Survey', url: 'https://www.sands.org.uk/professionals/sands-professionals/bereavement-care-audit', date: '2024' },
+  { num: 4, name: 'National Bereavement Care Pathway', dataset: 'National Standards', url: 'https://nbcpathway.org.uk/', date: '2021' },
+  { num: 5, name: 'Miscarriage Association', dataset: 'Pregnancy Loss Statistics', url: 'https://www.miscarriageassociation.org.uk/', date: '2024' },
+];
+
 export default function BabyLossSupportPage() {
   return (
     <>
@@ -75,8 +85,8 @@ export default function BabyLossSupportPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Approximately 250,000 pregnancy losses occur each year in the UK, the vast majority of them miscarriages in the first trimester. The stillbirth rate has fallen significantly since 2013 — from 4.2 to 3.3 per 1,000 births — driven by the NHS Saving Babies' Lives Care Bundle, now in its second version, which promotes better fetal monitoring, reduces smoking in pregnancy, and improves the management of growth restriction. The neonatal death rate has similarly declined. The NHS Long Term Plan committed to halving rates of stillbirth, neonatal death, and maternal death by 2025, against 2010 baselines. While significant progress has been made, the 50% reduction target will not be fully met by 2025 — a shortfall that conceals hundreds of preventable deaths each year.</p>
-            <p>Improvements in mortality rates do not automatically translate to better support for bereaved families. Whether a parent receives compassionate specialist care following a pregnancy or neonatal loss depends largely on which trust they happen to attend. Only 55% of NHS maternity trusts have a dedicated bereavement midwife — a role shown by research to significantly reduce long-term psychological harm in bereaved parents, including complicated grief, post-traumatic stress disorder, and anxiety in subsequent pregnancies. The National Bereavement Care Pathway, published in 2018, provides national standards for care following any pregnancy loss. The Pregnancy Loss Review, commissioned by the government in 2020, recommended that all women experiencing pregnancy loss should have access to specialist support and a named contact. Implementation has been slow and uneven. The inequality in provision means that a grieving parent's experience depends more on their postcode than on any national standard.</p>
+            <p>Approximately 250,000 pregnancy losses occur each year in the UK, the vast majority of them miscarriages in the first trimester.<Cite nums={5} /> The stillbirth rate has fallen significantly since 2013 — from 4.2 to 3.3 per 1,000 births — driven by the NHS Saving Babies' Lives Care Bundle, now in its second version, which promotes better fetal monitoring, reduces smoking in pregnancy, and improves the management of growth restriction.<Cite nums={[1, 2]} /> The neonatal death rate has similarly declined.<Cite nums={1} /> The NHS Long Term Plan committed to halving rates of stillbirth, neonatal death, and maternal death by 2025, against 2010 baselines. While significant progress has been made, the 50% reduction target will not be fully met by 2025 — a shortfall that conceals hundreds of preventable deaths each year.<Cite nums={1} /></p>
+            <p>Improvements in mortality rates do not automatically translate to better support for bereaved families. Whether a parent receives compassionate specialist care following a pregnancy or neonatal loss depends largely on which trust they happen to attend. Only 55% of NHS maternity trusts have a dedicated bereavement midwife — a role shown by research to significantly reduce long-term psychological harm in bereaved parents, including complicated grief, post-traumatic stress disorder, and anxiety in subsequent pregnancies.<Cite nums={3} /> The National Bereavement Care Pathway, published in 2018, provides national standards for care following any pregnancy loss.<Cite nums={4} /> The Pregnancy Loss Review, commissioned by the government in 2020, recommended that all women experiencing pregnancy loss should have access to specialist support and a named contact. Implementation has been slow and uneven. The inequality in provision means that a grieving parent's experience depends more on their postcode than on any national standard.<Cite nums={3} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -155,6 +165,9 @@ export default function BabyLossSupportPage() {
             source="Source: NHS England — Saving Babies' Lives Care Bundle Version 3, 2023. National Bereavement Care Pathway — Standards 2021. MBRRACE-UK — Perinatal Mortality Report 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

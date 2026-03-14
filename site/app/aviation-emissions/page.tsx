@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // UK aviation CO2 emissions (MtCO2), 2010–2024 — DESNZ
 const emissionsValues = [31.2, 32.4, 33.1, 33.8, 34.2, 34.9, 35.2, 35.8, 36.1, 36.4, 12.8, 17.2, 29.4, 33.8, 35.0];
@@ -42,6 +44,14 @@ const annotations: Annotation[] = [
   { date: new Date(2022, 0, 1), label: '2022: Jet Zero Strategy published' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DESNZ', dataset: 'UK Greenhouse Gas National Statistics', url: 'https://www.gov.uk/government/collections/uk-greenhouse-gas-emissions-statistics', date: '2024' },
+  { num: 2, name: 'Civil Aviation Authority', dataset: 'UK Aviation Activity Statistics', url: 'https://www.caa.co.uk/data-and-analysis/uk-aviation-market/airports/', date: '2024' },
+  { num: 3, name: 'HMRC', dataset: 'Tax Expenditures and Ready Reckoners', url: 'https://www.gov.uk/government/collections/tax-expenditures-and-ready-reckoners', date: '2024' },
+  { num: 4, name: 'Climate Change Committee', dataset: 'Progress Report to Parliament', url: 'https://www.theccc.org.uk/publications/', date: '2024' },
+  { num: 5, name: 'DfT', dataset: 'Jet Zero Strategy', url: 'https://www.gov.uk/government/publications/jet-zero-strategy-delivering-net-zero-aviation-by-2050', date: '2022' },
+];
+
 export default function AviationEmissionsPage() {
   return (
     <>
@@ -56,8 +66,8 @@ export default function AviationEmissionsPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Aviation is one of the hardest sectors to decarbonise and one of the fastest-growing sources of UK emissions. Direct CO2 from UK aviation amounts to around 35 million tonnes annually — roughly equivalent to all UK car emissions for four months. But CO2 is only part of the story: contrails, water vapour, and nitrogen oxides emitted at altitude have a warming effect estimated at 2–4 times the CO2 figure, meaning aviation's total climate impact is equivalent to perhaps 80–140 million tonnes of CO2-equivalent. Only around half the UK population flies in any given year, and the most frequent fliers — roughly 15% of adults — account for an estimated 70% of all flights. Aviation has recovered fully from COVID: 266 million passengers used UK airports in 2024, above the 2019 pre-pandemic record.</p>
-            <p>Aviation enjoys extraordinary fiscal privilege. Aviation kerosene carries no fuel duty — a 1944 Chicago Convention provision never updated for the climate era. International flights are zero-rated for VAT. HMRC analysis suggests the combined value of these exemptions is around £7 billion per year. The only aviation tax, Air Passenger Duty, raised £3.7 billion in 2023/24 — well below the estimated cost of exemptions. By comparison, a litre of petrol attracts 52.95p in fuel duty plus 20% VAT. The Climate Change Committee has consistently recommended reforming APD to better reflect climate costs, and proposed a frequent flier levy and higher rates for long-haul flights. The government has instead frozen or reduced APD rates in recent years. The Jet Zero Strategy (2022) set a target of net zero aviation by 2050, primarily relying on Sustainable Aviation Fuel — but the CCC has cautioned that SAF supply is deeply uncertain and that demand management will also be necessary.</p>
+            <p>Aviation is one of the hardest sectors to decarbonise and one of the fastest-growing sources of UK emissions. Direct CO2 from UK aviation amounts to around 35 million tonnes annually — roughly equivalent to all UK car emissions for four months.<Cite nums={1} /> But CO2 is only part of the story: contrails, water vapour, and nitrogen oxides emitted at altitude have a warming effect estimated at 2–4 times the CO2 figure, meaning aviation's total climate impact is equivalent to perhaps 80–140 million tonnes of CO2-equivalent.<Cite nums={1} /> Only around half the UK population flies in any given year, and the most frequent fliers — roughly 15% of adults — account for an estimated 70% of all flights.<Cite nums={4} /> Aviation has recovered fully from COVID: 266 million passengers used UK airports in 2024, above the 2019 pre-pandemic record.<Cite nums={2} /></p>
+            <p>Aviation enjoys extraordinary fiscal privilege. Aviation kerosene carries no fuel duty — a 1944 Chicago Convention provision never updated for the climate era. International flights are zero-rated for VAT. HMRC analysis suggests the combined value of these exemptions is around £7 billion per year.<Cite nums={3} /> The only aviation tax, Air Passenger Duty, raised £3.7 billion in 2023/24 — well below the estimated cost of exemptions.<Cite nums={3} /> By comparison, a litre of petrol attracts 52.95p in fuel duty plus 20% VAT. The Climate Change Committee has consistently recommended reforming APD to better reflect climate costs, and proposed a frequent flier levy and higher rates for long-haul flights.<Cite nums={4} /> The government has instead frozen or reduced APD rates in recent years. The Jet Zero Strategy (2022) set a target of net zero aviation by 2050, primarily relying on Sustainable Aviation Fuel — but the CCC has cautioned that SAF supply is deeply uncertain and that demand management will also be necessary.<Cite nums={[4, 5]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -136,6 +146,9 @@ export default function AviationEmissionsPage() {
             source="Source: DfT — Jet Zero Strategy 2022. Climate Change Committee — Progress Report to Parliament 2024. Rolls-Royce — Hydrogen engine test results 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

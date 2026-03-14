@@ -8,6 +8,13 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Gender Dysphoria Clinic Waiting Times', url: 'https://www.england.nhs.uk/mental-health/gender-dysphoria/', date: '2023' },
+  { num: 2, name: 'The Cass Review', dataset: 'Independent Review of Gender Identity Services for Children and Young People', url: 'https://cass.independent-review.uk/', date: '2024' },
+];
 
 // Gender identity clinic waiting list (total), 2016–2023
 const waitingList = [3500, 5000, 7500, 10000, 14000, 18000, 22000, 26000];
@@ -72,8 +79,8 @@ export default function GenderClinicPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The NHS has provided specialist gender dysphoria services since the 1960s, but never built capacity in proportion to demand. For most of that period, the Gender Identity Development Service (GIDS) at the Tavistock and Portman NHS Foundation Trust was the sole referral point for young people under 18 in England. Referral numbers were broadly stable through the 1990s and 2000s but rose rapidly from around 2012, accelerating further after 2016. By 2022, GIDS was receiving over 5,000 new referrals annually — more than tenfold the 2012 figure. NHS capacity did not remotely keep pace, producing a waiting list that grew from around 3,500 people in 2016 to over 26,000 by 2023.</p>
-            <p>The consequences of waiting five to seven years for a first appointment are severe. Untreated gender dysphoria is associated with significantly elevated rates of depression, anxiety, self-harm, and suicidal ideation. Many patients on NHS waiting lists pursue private care in parallel, at costs of £200–£500 per consultation, creating a two-tier system where those with financial resources can access timely care while those without cannot. The Cass Review's 2024 final report acknowledged the clinical harm caused by these delays and recommended a fundamental redesign of services. NHS England commissioned seven new regional gender clinics in 2022 to replace the centralised model, with services beginning to operate from 2023–24.</p>
+            <p>The NHS has provided specialist gender dysphoria services since the 1960s, but never built capacity in proportion to demand. For most of that period, the Gender Identity Development Service (GIDS) at the Tavistock and Portman NHS Foundation Trust was the sole referral point for young people under 18 in England. Referral numbers were broadly stable through the 1990s and 2000s but rose rapidly from around 2012, accelerating further after 2016. By 2022, GIDS was receiving over 5,000 new referrals annually — more than tenfold the 2012 figure.<Cite nums={[1]} /> NHS capacity did not remotely keep pace, producing a waiting list that grew from around 3,500 people in 2016 to over 26,000 by 2023.<Cite nums={[1]} /></p>
+            <p>The consequences of waiting five to seven years for a first appointment are severe. Untreated gender dysphoria is associated with significantly elevated rates of depression, anxiety, self-harm, and suicidal ideation. Many patients on NHS waiting lists pursue private care in parallel, at costs of £200–£500 per consultation, creating a two-tier system where those with financial resources can access timely care while those without cannot. The Cass Review's 2024 final report acknowledged the clinical harm caused by these delays and recommended a fundamental redesign of services.<Cite nums={[2]} /> NHS England commissioned seven new regional gender clinics in 2022 to replace the centralised model, with services beginning to operate from 2023–24.<Cite nums={[1]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -152,6 +159,10 @@ export default function GenderClinicPage() {
             source="Source: NHS England — Gender Dysphoria Programme, Service Specification 2023. Cass Review — Final Report, April 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

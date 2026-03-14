@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Trussell Trust', dataset: 'End of year food bank statistics', url: 'https://www.trusselltrust.org/news-and-blog/latest-stats/', date: 'Apr 2024' },
+  { num: 2, name: 'Independent Food Aid Network', dataset: 'State of the Nation report', url: 'https://www.foodaidnetwork.org.uk', date: '2024' },
+  { num: 3, name: 'DWP', dataset: 'Universal Credit uplift impact research', date: '2022' },
+  { num: 4, name: 'Institute for Fiscal Studies', dataset: 'Two-child limit poverty impact analysis', date: '2024' },
+];
 
 export default function FoodBanksPage() {
   const colour = '#E63946';
@@ -157,13 +166,16 @@ export default function FoodBanksPage() {
           <section className="max-w-2xl mb-12 mt-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">What the data shows</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Trussell Trust food banks distributed 3.1 million emergency food parcels in 2023/24 — the highest figure since the network began collecting data. Each parcel contains three days of food for one person. The Trussell Trust network is the largest in the UK, but the Independent Food Aid Network estimates there are approximately 2,800 additional food banks outside the Trussell Trust structure, suggesting total usage is significantly higher than the headline figures capture. Food bank usage has increased in every year since 2013, through periods of economic growth as well as recession.</p>
-              <p>The most significant trend of recent years is the rise of in-work food bank users. In 2018, 14% of Trussell Trust referrals came from working households; by 2024 this had risen to 25%. This reflects the UK's persistent in-work poverty problem: around 3.7 million working people live below the poverty line, in jobs that do not pay enough to cover basic costs, or on zero-hours contracts that provide insufficient hours. The removal of the £20 per week Universal Credit uplift in October 2021 coincided with a sharp increase in food parcel distribution — DWP's own research found it pushed 500,000 people into destitution.</p>
-              <p>Children account for 36% of all Trussell Trust food parcels — 1.1 million parcels per year. The UK is one of a small number of wealthy nations where child poverty has increased over the past decade. The two-child benefit limit, introduced in 2017, prevents families from claiming the child element of Universal Credit or Child Tax Credit for a third or subsequent child, affecting approximately 1.5 million families. The Institute for Fiscal Studies estimates this single policy keeps 250,000 children in poverty who would otherwise not be. Food banks are the symptom; income inadequacy is the cause.</p>
+              <p>Trussell Trust food banks distributed 3.1 million emergency food parcels in 2023/24 — the highest figure since the network began collecting data<Cite nums={1} />. Each parcel contains three days of food for one person. The Trussell Trust network is the largest in the UK, but the Independent Food Aid Network estimates there are approximately 2,800 additional food banks outside the Trussell Trust structure<Cite nums={2} />, suggesting total usage is significantly higher than the headline figures capture. Food bank usage has increased in every year since 2013, through periods of economic growth as well as recession.</p>
+              <p>The most significant trend of recent years is the rise of in-work food bank users. In 2018, 14% of Trussell Trust referrals came from working households; by 2024 this had risen to 25%<Cite nums={1} />. This reflects the UK's persistent in-work poverty problem: around 3.7 million working people live below the poverty line, in jobs that do not pay enough to cover basic costs, or on zero-hours contracts that provide insufficient hours. The removal of the £20 per week Universal Credit uplift in October 2021 coincided with a sharp increase in food parcel distribution — DWP's own research found it pushed 500,000 people into destitution<Cite nums={3} />.</p>
+              <p>Children account for 36% of all Trussell Trust food parcels — 1.1 million parcels per year<Cite nums={1} />. The UK is one of a small number of wealthy nations where child poverty has increased over the past decade. The two-child benefit limit, introduced in 2017, prevents families from claiming the child element of Universal Credit or Child Tax Credit for a third or subsequent child, affecting approximately 1.5 million families. The Institute for Fiscal Studies estimates this single policy keeps 250,000 children in poverty who would otherwise not be<Cite nums={4} />. Food banks are the symptom; income inadequacy is the cause.</p>
             </div>
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">

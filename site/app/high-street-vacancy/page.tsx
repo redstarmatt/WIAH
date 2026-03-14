@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Local Data Company', dataset: 'Retail Vacancy Monitor', url: 'https://www.localdatacompany.com', date: 'Q4 2024' },
+  { num: 2, name: 'ONS', dataset: 'Retail Sales Index — Internet Sales', url: 'https://www.ons.gov.uk/businessindustryandtrade/retailindustry/bulletins/retailsales/previousReleases', date: '2024' },
+  { num: 3, name: 'Local Data Company / PwC', dataset: 'GB Retail and Leisure Opening and Closing', url: 'https://www.localdatacompany.com', date: '2024' },
+];
 
 export default function HighStreetVacancyPage() {
   // Chart 1: High street vacancy rate 2010-2024 (%)
@@ -145,12 +153,16 @@ export default function HighStreetVacancyPage() {
           <section id="sec-context" className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on high street vacancy</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>High street vacancy reached 14.5% across Great Britain in 2024 — roughly one in seven units empty. The figure masks considerable variation: prime city centres tend to have lower vacancy rates as footfall and rents remain attractive to remaining retailers; market towns, former mining and industrial communities, and secondary shopping centres face rates of 20-30% or more. For these places, vacancy is not a commercial inconvenience but a hollowing-out of the civic and social fabric around which community life organises.</p>
-              <p>The structural shift is driven primarily by the growth of online retail, which now accounts for 27% of all retail sales — up from 6% in 2010. This is not a temporary cyclical phenomenon. Business rates, which are calculated on physical property values rather than sales, create a structural disadvantage for physical retailers relative to online operations that warehouse goods in low-cost locations. The Confederation of British Industry and British Retail Consortium have consistently argued for business rates reform as the most impactful single change to support high streets.</p>
-              <p>COVID-19 accelerated what was already occurring. The pandemic drove vacancy from 12% to 15% as non-essential retail closed for extended periods; subsequent recovery has been partial. Major chains — Debenhams, Topshop, BHS, Wilko — have exited the high street entirely, leaving anchor units that are difficult to re-let and that suppress surrounding footfall when empty. The economic function of the high street is shifting: more food, leisure and services; less comparison retail. Whether that shift can sustain the investment needed to maintain town centre environments is the central question many councils now face.</p>
+              <p>High street vacancy reached 14.5% across Great Britain in 2024 — roughly one in seven units empty.<Cite nums={1} /> The figure masks considerable variation: prime city centres tend to have lower vacancy rates as footfall and rents remain attractive to remaining retailers; market towns, former mining and industrial communities, and secondary shopping centres face rates of 20-30% or more.<Cite nums={1} /> For these places, vacancy is not a commercial inconvenience but a hollowing-out of the civic and social fabric around which community life organises.</p>
+              <p>The structural shift is driven primarily by the growth of online retail, which now accounts for 27% of all retail sales — up from 6% in 2010.<Cite nums={2} /> This is not a temporary cyclical phenomenon. Business rates, which are calculated on physical property values rather than sales, create a structural disadvantage for physical retailers relative to online operations that warehouse goods in low-cost locations. The Confederation of British Industry and British Retail Consortium have consistently argued for business rates reform as the most impactful single change to support high streets.</p>
+              <p>COVID-19 accelerated what was already occurring. The pandemic drove vacancy from 12% to 15% as non-essential retail closed for extended periods; subsequent recovery has been partial.<Cite nums={1} /> Major chains — Debenhams, Topshop, BHS, Wilko — have exited the high street entirely, leaving anchor units that are difficult to re-let and that suppress surrounding footfall when empty.<Cite nums={3} /> The economic function of the high street is shifting: more food, leisure and services; less comparison retail. Whether that shift can sustain the investment needed to maintain town centre environments is the central question many councils now face.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

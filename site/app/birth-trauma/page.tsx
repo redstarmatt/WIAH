@@ -9,6 +9,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -57,6 +59,15 @@ interface BirthTraumaData {
 function yearToDate(y: number): Date {
   return new Date(y, 5, 1);
 }
+
+// ── References ──────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Perinatal Mental Health MHMDS', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-services-monthly-statistics', date: '2024' },
+  { num: 2, name: 'Birth Trauma Association', dataset: 'Birth Trauma Inquiry Evidence', url: 'https://www.birthtraumaassociation.org.uk/', date: '2024' },
+  { num: 3, name: 'NICE', dataset: 'NG201 — Antenatal and postnatal mental health', url: 'https://www.nice.org.uk/guidance/ng201', date: '2021' },
+  { num: 4, name: 'APPG on Birth Trauma', dataset: 'Birth Trauma Inquiry Report', url: 'https://www.birthtraumainquiry.org/', date: '2024' },
+];
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -136,10 +147,10 @@ export default function BirthTraumaPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Birth trauma is a poorly-understood and significantly underdiagnosed condition. Around 3–4% of women who give birth develop post-traumatic stress disorder; many more experience significant distress that does not meet the diagnostic threshold. The causes include emergency procedures, pain that was inadequately managed, feeling out of control or not listened to, and experiencing the death or serious illness of a baby.
+              Birth trauma is a poorly-understood and significantly underdiagnosed condition. Around 3–4% of women who give birth develop post-traumatic stress disorder; many more experience significant distress that does not meet the diagnostic threshold.<Cite nums={2} /> The causes include emergency procedures, pain that was inadequately managed, feeling out of control or not listened to, and experiencing the death or serious illness of a baby.
             </p>
             <p>
-              Despite this scale, dedicated support is scarce. Only 22% of NHS maternity trusts have a birth trauma or birth reflections clinic. Many women who seek help are told to wait for generic IAPT (talking therapies) services, which often have no specialist perinatal training. The 2024 Birth Trauma Inquiry, commissioned by the All-Party Parliamentary Group, documented systemic failures and called for dedicated funding for birth trauma services in every trust.
+              Despite this scale, dedicated support is scarce. Only 22% of NHS maternity trusts have a birth trauma or birth reflections clinic.<Cite nums={4} /> Many women who seek help are told to wait for generic IAPT (talking therapies) services, which often have no specialist perinatal training.<Cite nums={1} /> The 2024 Birth Trauma Inquiry, commissioned by the All-Party Parliamentary Group, documented systemic failures and called for dedicated funding for birth trauma services in every trust.<Cite nums={4} />
             </p>
           </div>
         </section>
@@ -220,6 +231,10 @@ export default function BirthTraumaPage() {
             source="Source: NHS England — Perinatal Mental Health MHMDS, 2024. Birth Trauma Association — Inquiry Evidence, 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

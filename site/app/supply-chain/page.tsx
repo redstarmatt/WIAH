@@ -8,6 +8,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DEFRA', dataset: 'Food Statistics Pocketbook — Food Security Indicators', url: 'https://www.gov.uk/government/statistics/food-statistics-pocketbook', date: '2022', note: 'UK imports 46% of food (up from 37% in 2000); one of highest in G7' },
+  { num: 2, name: 'ONS', dataset: 'UK Trade Statistics', url: 'https://www.ons.gov.uk/economy/nationalaccounts/balanceofpayments', date: '2023', note: 'Goods trade deficit £186bn (2022 record); £162bn in 2023; 42% of exports to EU' },
+  { num: 3, name: 'House of Lords', dataset: 'Science and Technology Committee — Medicine Supply Chain Report', date: '2021', note: 'NHS relies on imports for ~86% of active pharmaceutical ingredients, predominantly India and China' },
+];
 
 interface SupplyChainData {
   foodImportDependency: Array<{ year: number; percent: number }>
@@ -60,8 +68,8 @@ export default function SupplyChainPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK imports approximately 46% of its total food supply — up from 37% in 2000, and one of the highest food import ratios in the G7. The goods trade deficit reached £186 billion in 2022, a record driven partly by Russia's invasion of Ukraine pushing up energy import costs, before falling to £162 billion in 2023. The NHS relies on imports for approximately 86% of its active pharmaceutical ingredients, predominantly from India and China — a concentration identified by the Lords Science and Technology Committee in 2021 as a strategic vulnerability. The government's Critical Imports and Supply Chains Strategy (2023) identified over 50 categories of concern, and the 2023 vegetable shortages — empty shelves for tomatoes and peppers — illustrated the real-world consequences of food import dependency.</p>
-            <p>The supply chain vulnerabilities exposed since 2020 fall hardest on communities with limited substitution options. Brexit added administrative friction that disproportionately affects SMEs and perishable goods exporters, while medicine shortages — ADHD medication, antibiotics, HRT — cluster in conditions where alternatives are limited. The structural goods deficit reflects decades of deindustrialisation and is partially offset by a services surplus, but services surpluses cannot compensate when physical goods fail to arrive. Investment in domestic renewable energy reduces fossil fuel import exposure over time; the gap between strategic risk identification and funded mitigation at the required scale remains wide.</p>
+            <p>The UK imports approximately 46% of its total food supply — up from 37% in 2000, and one of the highest food import ratios in the G7.<Cite nums={1} /> The goods trade deficit reached £186 billion in 2022, a record driven partly by Russia's invasion of Ukraine pushing up energy import costs, before falling to £162 billion in 2023.<Cite nums={2} /> The NHS relies on imports for approximately 86% of its active pharmaceutical ingredients, predominantly from India and China — a concentration identified by the Lords Science and Technology Committee in 2021 as a strategic vulnerability.<Cite nums={3} /> The government's Critical Imports and Supply Chains Strategy (2023) identified over 50 categories of concern, and the 2023 vegetable shortages — empty shelves for tomatoes and peppers — illustrated the real-world consequences of food import dependency.</p>
+            <p>The supply chain vulnerabilities exposed since 2020 fall hardest on communities with limited substitution options. Brexit added administrative friction that disproportionately affects SMEs and perishable goods exporters, while medicine shortages — ADHD medication, antibiotics, HRT — cluster in conditions where alternatives are limited.<Cite nums={3} /> The structural goods deficit reflects decades of deindustrialisation and is partially offset by a services surplus, but services surpluses cannot compensate when physical goods fail to arrive. Investment in domestic renewable energy reduces fossil fuel import exposure over time; the gap between strategic risk identification and funded mitigation at the required scale remains wide.</p>
           </div>
         </section>
 
@@ -122,6 +130,10 @@ export default function SupplyChainPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

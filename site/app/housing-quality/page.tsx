@@ -8,7 +8,16 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DLUHC', dataset: 'English Housing Survey 2022/23', url: 'https://www.gov.uk/government/collections/english-housing-survey', date: '2023', note: '4.3 million homes (17%) fail Decent Homes Standard; 24% of private rented non-decent' },
+  { num: 2, name: 'BRE', dataset: 'The Cost of Poor Housing in England', date: '2023', note: 'Cold and damp housing costs NHS £1.4 billion per year; children in damp homes 3x more likely to develop asthma' },
+  { num: 3, name: 'Social Housing (Regulation) Act 2023', dataset: "Awaab's Law provisions", date: '2023', note: 'Requires social landlords to investigate damp within 14 days' },
+  { num: 4, name: 'DLUHC', dataset: 'Building Safety Programme Statistics', date: '2026', note: '11,000 buildings not yet completed cladding remediation assessment' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -96,8 +105,8 @@ export default function HousingQualityPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Some 4.3 million homes in England — 17% of all housing stock — fail the Decent Homes Standard, which requires properties to be structurally sound, free from serious hazards, and above a minimum thermal standard. The private rented sector is worst placed: 24% of privately rented homes are non-decent, compared with 11% of social housing. Around one million homes have damp or mould, directly linked to respiratory and cardiovascular illness; children in persistently damp homes are three times more likely to develop asthma. Cold and damp housing costs the NHS an estimated £1.4 billion per year. The Awaab Ishak case — a two-year-old who died from black mould in a Rochdale social housing flat in 2020 — exposed a culture of deference over enforcement, leading to Awaab's Law (Social Housing (Regulation) Act 2023), which requires social landlords to investigate damp within 14 days. More than 11,000 buildings had not yet completed cladding remediation assessment by early 2026.</p>
-            <p>The harms of poor housing fall disproportionately on children, ethnic minorities, and low-income households. Overcrowding affects 320,000 households; children in temporary accommodation — a record 145,000 in 2023 — face measurably worse developmental outcomes. Black and Asian households are disproportionately concentrated in the worst private rented conditions, shaped by discrimination in lettings markets and geographic concentration in areas with older, poorly maintained stock. The number of non-decent homes has fallen from 7.5 million in 2010 to 4.3 million in 2022, and the Renters' Rights Act will extend the Decent Homes Standard to the private sector for the first time.</p>
+            <p>Some 4.3 million homes in England — 17% of all housing stock — fail the Decent Homes Standard, which requires properties to be structurally sound, free from serious hazards, and above a minimum thermal standard. The private rented sector is worst placed: 24% of privately rented homes are non-decent, compared with 11% of social housing.<Cite nums={1} /> Around one million homes have damp or mould, directly linked to respiratory and cardiovascular illness; children in persistently damp homes are three times more likely to develop asthma. Cold and damp housing costs the NHS an estimated £1.4 billion per year.<Cite nums={2} /> The Awaab Ishak case — a two-year-old who died from black mould in a Rochdale social housing flat in 2020 — exposed a culture of deference over enforcement, leading to Awaab's Law (Social Housing (Regulation) Act 2023), which requires social landlords to investigate damp within 14 days.<Cite nums={3} /> More than 11,000 buildings had not yet completed cladding remediation assessment by early 2026.<Cite nums={4} /></p>
+            <p>The harms of poor housing fall disproportionately on children, ethnic minorities, and low-income households. Overcrowding affects 320,000 households; children in temporary accommodation — a record 145,000 in 2023 — face measurably worse developmental outcomes. Black and Asian households are disproportionately concentrated in the worst private rented conditions, shaped by discrimination in lettings markets and geographic concentration in areas with older, poorly maintained stock. The number of non-decent homes has fallen from 7.5 million in 2010 to 4.3 million in 2022, and the Renters' Rights Act will extend the Decent Homes Standard to the private sector for the first time.<Cite nums={1} /></p>
           </div>
         </section>
 
@@ -201,6 +210,10 @@ export default function HousingQualityPage() {
             source="Source: DLUHC — English Housing Survey 2022/23; BRE — The Cost of Poor Housing in England 2023."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

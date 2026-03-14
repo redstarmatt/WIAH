@@ -8,7 +8,15 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Hospital Car Parking Report 2022/23', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/estates-returns-information-collection/', date: '2023', note: '£214 million revenue; 80% of trusts still charging qualifying patients' },
+  { num: 2, name: 'NHS England', dataset: 'NHS Long Term Plan — Parking Pledge', date: '2019', note: 'Free parking commitment for qualifying patients' },
+  { num: 3, name: 'NHS England', dataset: 'Car Parking Policy Guidance', date: '2023', note: 'Average hourly charge £2.20; 22% increase since 2019' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -137,10 +145,10 @@ export default function HospitalParkingPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              NHS hospital car parking charges generated £214 million in revenue in 2022/23, up from £175 million pre-pandemic and continuing to rise as trusts face financial pressure to maximise all income streams. The charges fall disproportionately on people with chronic conditions who attend frequently — the very patients for whom the 2019 government pledge was made. Free parking was meant to be provided for disabled badge holders, people with frequent appointments (defined as more than three visits in 30 days), parents of children who are in-patients, and NHS staff working night shifts. In practice, 80% of trusts are still charging at least some of these qualifying patients.
+              NHS hospital car parking charges generated £214 million in revenue in 2022/23, up from £175 million pre-pandemic and continuing to rise as trusts face financial pressure to maximise all income streams.<Cite nums={1} /> The charges fall disproportionately on people with chronic conditions who attend frequently — the very patients for whom the 2019 government pledge was made. Free parking was meant to be provided for disabled badge holders, people with frequent appointments (defined as more than three visits in 30 days), parents of children who are in-patients, and NHS staff working night shifts. In practice, 80% of trusts are still charging at least some of these qualifying patients.<Cite nums={[1,2]} />
             </p>
             <p>
-              The contrast with the rest of the UK is stark. Scotland, Wales, and Northern Ireland all provide free hospital parking as standard policy, recognising that charging patients to access healthcare is fundamentally inconsistent with the NHS principle of care free at the point of need. In England, average hourly charges have risen to £2.20 — a 22% increase since 2019. A patient attending for chemotherapy three times a week at two hours per visit would face £13.20 per week in parking charges, or nearly £700 per year, from parking alone. The revenue generated flows to trust operating budgets, but critics argue it represents a regressive tax on illness.
+              The contrast with the rest of the UK is stark. Scotland, Wales, and Northern Ireland all provide free hospital parking as standard policy, recognising that charging patients to access healthcare is fundamentally inconsistent with the NHS principle of care free at the point of need. In England, average hourly charges have risen to £2.20 — a 22% increase since 2019.<Cite nums={3} /> A patient attending for chemotherapy three times a week at two hours per visit would face £13.20 per week in parking charges, or nearly £700 per year, from parking alone. The revenue generated flows to trust operating budgets, but critics argue it represents a regressive tax on illness.
             </p>
           </div>
         </section>
@@ -258,6 +266,10 @@ export default function HospitalParkingPage() {
             source="Source: NHS England Hospital Car Parking Report 2022/23 · NHS England Car Parking Policy Guidance."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

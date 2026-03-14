@@ -8,6 +8,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Gambling Commission', dataset: 'Industry Statistics', url: 'https://www.gamblingcommission.gov.uk/statistics-and-research/publication/industry-statistics', date: '2023' },
+  { num: 2, name: 'NHS / Gambling Commission', dataset: 'Health Survey for England / Gambling participation survey', url: 'https://www.gamblingcommission.gov.uk/statistics-and-research/publication/gambling-behaviour-in-great-britain', date: '2023' },
+  { num: 3, name: 'DCMS', dataset: 'High Stakes: Gambling Reform White Paper', url: 'https://www.gov.uk/government/publications/high-stakes-gambling-reform-for-the-digital-age', date: '2023' },
+];
 
 // Online gambling gross yield (£bn), 2016–2023
 const onlineYieldBn = [3.2, 3.8, 4.2, 4.7, 5.0, 5.5, 6.0, 7.1];
@@ -71,8 +79,8 @@ export default function GamblingPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Gambling Act 2005, drafted in the pre-smartphone era, permitted remote gambling and allowed fixed-odds betting terminals with stakes up to £100 per spin. Online gambling gross yield has since risen from £3.2 billion in 2016–17 to £7.1 billion in 2022–23 — a 121% increase — and now accounts for 51% of all gambling revenue. Some 430,000 people in England meet the clinical threshold for problem gambling, with a further 1.3 million at moderate risk. The suicide rate among problem gamblers is 15 times the national average, and 80% of the most severely affected gamble primarily online. FOBT stake limits cut from £100 to £2 in April 2019 drove roughly 1,400 betting shop closures, with total shop numbers falling from over 9,000 in 2013 to 6,700 by 2023; online slots largely replaced that demand.</p>
-            <p>The Gambling Act White Paper of April 2023 — the first major reform in 18 years — introduced online slot stake limits of £2 for under-25s and £5 for adults, and replaced voluntary industry contributions of £10 million with a mandatory £100 million statutory levy for treatment and research. Affordability checks for high-spending customers, the most contested proposal, remain delayed following industry lobbying. Gambling harm does not affect the population equally: problem gambling rates are roughly three times higher in the most deprived neighbourhoods, and betting shops are approximately three times more numerous per capita in the poorest areas. An estimated 60% of gross gambling yield derives from just 5% of customers — those already at risk — meaning the commercial model is structurally dependent on problem gamblers.</p>
+            <p>The Gambling Act 2005, drafted in the pre-smartphone era, permitted remote gambling and allowed fixed-odds betting terminals with stakes up to £100 per spin. Online gambling gross yield has since risen from £3.2 billion in 2016–17 to £7.1 billion in 2022–23 — a 121% increase — and now accounts for 51% of all gambling revenue.<Cite nums={[1]} /> Some 430,000 people in England meet the clinical threshold for problem gambling, with a further 1.3 million at moderate risk.<Cite nums={[2]} /> The suicide rate among problem gamblers is 15 times the national average, and 80% of the most severely affected gamble primarily online.<Cite nums={[2]} /> FOBT stake limits cut from £100 to £2 in April 2019 drove roughly 1,400 betting shop closures, with total shop numbers falling from over 9,000 in 2013 to 6,700 by 2023; online slots largely replaced that demand.<Cite nums={[1]} /></p>
+            <p>The Gambling Act White Paper of April 2023 — the first major reform in 18 years — introduced online slot stake limits of £2 for under-25s and £5 for adults, and replaced voluntary industry contributions of £10 million with a mandatory £100 million statutory levy for treatment and research.<Cite nums={[3]} /> Affordability checks for high-spending customers, the most contested proposal, remain delayed following industry lobbying. Gambling harm does not affect the population equally: problem gambling rates are roughly three times higher in the most deprived neighbourhoods, and betting shops are approximately three times more numerous per capita in the poorest areas.<Cite nums={[2]} /> An estimated 60% of gross gambling yield derives from just 5% of customers — those already at risk — meaning the commercial model is structurally dependent on problem gamblers.<Cite nums={[1]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -151,6 +159,10 @@ export default function GamblingPage() {
             source="Source: Gambling Commission — Industry Statistics 2023. DCMS — High Stakes: Gambling Reform White Paper 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

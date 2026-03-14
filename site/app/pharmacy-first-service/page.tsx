@@ -8,7 +8,15 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Pharmacy First Service Dashboard', url: 'https://www.england.nhs.uk/primary-care/pharmacy/pharmacy-first/', date: '2024' },
+  { num: 2, name: 'NHS England', dataset: 'Pharmacy First Evaluation Report', url: 'https://www.england.nhs.uk/publications/pharmacy-first-evaluation/', date: '2024' },
+  { num: 3, name: 'NHS Digital', dataset: 'Appointments in General Practice', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/appointments-in-general-practice', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -71,8 +79,8 @@ export default function PharmacyFirstServicePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Pharmacy First launched in January 2024, enabling community pharmacists to assess and treat seven common conditions without GP referral: UTIs in women, sinusitis, sore throat, infected insect bites, impetigo, shingles, and earache in children. In its first year, 1.4 million consultations took place, with 89% of cases resolved without GP involvement — the most significant expansion of pharmacy clinical services in NHS history. Pharmacists can prescribe antibiotics under a patient group direction and refer to a GP or A&amp;E for complex presentations. The scheme delivers same-day access compared to an average 2.4-day wait for a routine GP appointment, and early signals suggest GP practices in high-utilisation areas are seeing modest reductions in appointment demand for covered conditions.</p>
-            <p>Access is not uniform. Independent pharmacies, which serve a disproportionately high share of deprived communities, have been slower to enrol due to IT system requirements and administrative burden. Rural areas with few pharmacies derive limited benefit from the scheme. The payment per consultation of £15 is considered by many owners to be below cost after staff time, consumables, and administration — creating a financial sustainability problem that threatens expansion to additional conditions including skin conditions, minor injuries, and respiratory infections. Deprived communities, who would benefit most from accessible same-day care, are currently least well served by a scheme whose commercial structure disadvantages the pharmacies that reach them.</p>
+            <p>Pharmacy First launched in January 2024, enabling community pharmacists to assess and treat seven common conditions without GP referral: UTIs in women, sinusitis, sore throat, infected insect bites, impetigo, shingles, and earache in children.<Cite nums={1} /> In its first year, 1.4 million consultations took place, with 89% of cases resolved without GP involvement — the most significant expansion of pharmacy clinical services in NHS history.<Cite nums={[1, 2]} /> Pharmacists can prescribe antibiotics under a patient group direction and refer to a GP or A&amp;E for complex presentations. The scheme delivers same-day access compared to an average 2.4-day wait for a routine GP appointment, and early signals suggest GP practices in high-utilisation areas are seeing modest reductions in appointment demand for covered conditions.<Cite nums={3} /></p>
+            <p>Access is not uniform. Independent pharmacies, which serve a disproportionately high share of deprived communities, have been slower to enrol due to IT system requirements and administrative burden.<Cite nums={2} /> Rural areas with few pharmacies derive limited benefit from the scheme. The payment per consultation of £15 is considered by many owners to be below cost after staff time, consumables, and administration — creating a financial sustainability problem that threatens expansion to additional conditions including skin conditions, minor injuries, and respiratory infections.<Cite nums={2} /> Deprived communities, who would benefit most from accessible same-day care, are currently least well served by a scheme whose commercial structure disadvantages the pharmacies that reach them.</p>
           </div>
         </section>
 
@@ -145,6 +153,10 @@ export default function PharmacyFirstServicePage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

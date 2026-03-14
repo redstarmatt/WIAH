@@ -8,6 +8,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DfE', dataset: 'Suspensions and Permanent Exclusions in England', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/suspensions-and-permanent-exclusions-in-england', date: '2023' },
+  { num: 2, name: 'Education Policy Institute', dataset: 'Unexplained pupil exits — off-rolling estimates', url: 'https://epi.org.uk', date: '2023' },
+  { num: 3, name: 'Ministry of Justice', dataset: 'Data linkage — school exclusion and custody', url: 'https://www.gov.uk/government/organisations/ministry-of-justice', date: '2022' },
+  { num: 4, name: 'DfE', dataset: 'Timpson Review of School Exclusion', url: 'https://www.gov.uk/government/publications/timpson-review-of-school-exclusion', date: '2019' },
+];
 
 const permExclusionsData = [5170, 5795, 6685, 7720, 7900, 6619, 5620, 9160, 9440, 9780];
 const fixedExclusionsData = [410, 438, 476, 506, 432, 325, 390, 787, 810, 840];
@@ -138,9 +147,9 @@ export default function SchoolExclusionsPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on school exclusions</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>England recorded 9,160 permanent exclusions in 2022/23, up 77% from 5,170 in 2014/15 and the highest figure since comparable records began. A further 787,000 fixed-period suspensions were issued — also a record — equivalent to more than five million school days lost. Boys account for 75% of permanent exclusions, and pupils with special educational needs and disabilities make up 40% despite representing just 17% of the school population.</p>
-              <p>The ethnic disparity is stark and persistent. Black Caribbean pupils face exclusion at three times the rate of white British pupils. Gypsy, Roma and Irish Traveller children have the highest exclusion rate of any ethnic group. This gap has not meaningfully narrowed since 2010. Research by the Education Policy Institute suggests between 40,000 and 49,000 additional pupils per year leave school rolls through informal off-rolling — meaning official figures understate the true scale.</p>
-              <p>The Ministry of Justice's 2022 data linkage study found that 63% of young people in custody had been permanently excluded from school, and 89% had been suspended at least once. Each permanent exclusion is estimated to cost the state £300,000 over a lifetime. Labour's 2024 manifesto committed to reducing exclusions through mandatory inclusion plans and strengthened local authority oversight.</p>
+              <p>England recorded 9,160 permanent exclusions in 2022/23, up 77% from 5,170 in 2014/15 and the highest figure since comparable records began.<Cite nums={1} /> A further 787,000 fixed-period suspensions were issued — also a record — equivalent to more than five million school days lost. Boys account for 75% of permanent exclusions, and pupils with special educational needs and disabilities make up 40% despite representing just 17% of the school population.</p>
+              <p>The ethnic disparity is stark and persistent. Black Caribbean pupils face exclusion at three times the rate of white British pupils. Gypsy, Roma and Irish Traveller children have the highest exclusion rate of any ethnic group. This gap has not meaningfully narrowed since 2010. Research by the Education Policy Institute suggests between 40,000 and 49,000 additional pupils per year leave school rolls through informal off-rolling — meaning official figures understate the true scale.<Cite nums={2} /></p>
+              <p>The Ministry of Justice's 2022 data linkage study found that 63% of young people in custody had been permanently excluded from school, and 89% had been suspended at least once.<Cite nums={3} /> Each permanent exclusion is estimated to cost the state £300,000 over a lifetime. Labour's 2024 manifesto committed to reducing exclusions through mandatory inclusion plans and strengthened local authority oversight.</p>
             </div>
           </section>
         </ScrollReveal>
@@ -150,10 +159,14 @@ export default function SchoolExclusionsPage() {
             title="The Alternative Provision challenge"
             value="£300,000"
             unit="estimated lifetime cost to the state of each permanent exclusion"
-            description="Excluded pupils enter Alternative Provision — pupil referral units, AP academies, and independent special schools — at a cost of £22,000 per pupil per year, versus £6,000 in mainstream. Just 4% of AP pupils achieve five good GCSEs. The Timpson Review (2019) found exclusion decisions were inconsistently applied and recommended schools retain accountability for excluded pupils' outcomes. The SEND Review (2022) called for exclusion to be a last resort for pupils with special needs."
+            description="Excluded pupils enter Alternative Provision — pupil referral units, AP academies, and independent special schools — at a cost of £22,000 per pupil per year, versus £6,000 in mainstream. Just 4% of AP pupils achieve five good GCSEs. The Timpson Review (2019) found exclusion decisions were inconsistently applied and recommended schools retain accountability for excluded pupils' outcomes.<Cite nums={4} /> The SEND Review (2022) called for exclusion to be a last resort for pupils with special needs."
             source="Source: DfE — Suspensions and Permanent Exclusions 2022/23; IPPR — Making the Difference."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

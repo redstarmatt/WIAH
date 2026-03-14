@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics'
+import Cite from '@/components/Cite'
+import References, { Reference } from '@/components/References'
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS Digital', dataset: 'Data on Written Complaints in the NHS 2023/24', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/data-on-written-complaints-in-the-nhs', date: '2024' },
+  { num: 2, name: 'CQC', dataset: 'Complainant Survey 2023/24', url: 'https://www.cqc.org.uk/publications/surveys', date: '2024' },
+  { num: 3, name: 'PHSO', dataset: 'Annual Report and Accounts 2023/24', url: 'https://www.ombudsman.org.uk/publications', date: '2024' },
+  { num: 4, name: 'NHS England', dataset: 'Patient Safety Incident Response Framework (PSIRF)', url: 'https://www.england.nhs.uk/patient-safety/incident-response-framework/', date: '2023' },
+]
 
 // -- Types ------------------------------------------------------------------
 
@@ -103,8 +112,8 @@ export default function NhsComplaintsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The NHS receives roughly 250,000 written complaints each year across hospitals, GP practices, dental services, and ambulance trusts. Clinical treatment accounts for 40% of all complaints, followed by communication and information failures (20%) and concerns about staff values and behaviours (15%). These figures have risen steadily over the past decade, reflecting both growing pressure on services and greater awareness of complaint mechanisms. Yet the volume almost certainly understates the true scale of dissatisfaction &mdash; NHS England itself acknowledges that formal complaints represent &ldquo;the tip of the iceberg,&rdquo; with many patients deterred by complex processes, fear of repercussions for ongoing care, or simply exhaustion. Average response times have worsened significantly: many trusts now take 40 or more working days to respond, well beyond the 25-working-day target. Only 30% of complainants in CQC surveys report feeling their concern was adequately addressed, a figure that has deteriorated year on year since 2015.</p>
-            <p>When local resolution fails, patients can escalate to the Parliamentary and Health Service Ombudsman (PHSO), which currently faces a backlog of more than 5,000 cases. Average investigation times stretch to 12&ndash;18 months, and even then the PHSO upholds approximately 45% of the cases it fully investigates &mdash; suggesting that a substantial proportion of complaints dismissed at trust level had genuine merit. Maternity complaints have doubled in recent years, driven in part by the Ockenden and Kirkup reviews which exposed systematic failures at multiple trusts that went uncorrected for years. The introduction of the Patient Safety Incident Response Framework (PSIRF) in 2023, replacing the Serious Incident Framework, represents a deliberate cultural shift away from individual blame toward systems-level learning. Staff fear of blame culture has long deterred incident reporting &mdash; PSIRF aims to change that by requiring trusts to treat complaints and safety incidents as opportunities for systemic improvement rather than exercises in individual accountability.</p>
+            <p>The NHS receives roughly 250,000 written complaints each year across hospitals, GP practices, dental services, and ambulance trusts.<Cite nums={1} /> Clinical treatment accounts for 40% of all complaints, followed by communication and information failures (20%) and concerns about staff values and behaviours (15%).<Cite nums={1} /> These figures have risen steadily over the past decade, reflecting both growing pressure on services and greater awareness of complaint mechanisms. Yet the volume almost certainly understates the true scale of dissatisfaction &mdash; NHS England itself acknowledges that formal complaints represent &ldquo;the tip of the iceberg,&rdquo; with many patients deterred by complex processes, fear of repercussions for ongoing care, or simply exhaustion. Average response times have worsened significantly: many trusts now take 40 or more working days to respond, well beyond the 25-working-day target. Only 30% of complainants in CQC surveys report feeling their concern was adequately addressed, a figure that has deteriorated year on year since 2015.<Cite nums={2} /></p>
+            <p>When local resolution fails, patients can escalate to the Parliamentary and Health Service Ombudsman (PHSO), which currently faces a backlog of more than 5,000 cases.<Cite nums={3} /> Average investigation times stretch to 12&ndash;18 months, and even then the PHSO upholds approximately 45% of the cases it fully investigates &mdash; suggesting that a substantial proportion of complaints dismissed at trust level had genuine merit.<Cite nums={3} /> Maternity complaints have doubled in recent years, driven in part by the Ockenden and Kirkup reviews which exposed systematic failures at multiple trusts that went uncorrected for years. The introduction of the Patient Safety Incident Response Framework (PSIRF) in 2023, replacing the Serious Incident Framework, represents a deliberate cultural shift away from individual blame toward systems-level learning.<Cite nums={4} /> Staff fear of blame culture has long deterred incident reporting &mdash; PSIRF aims to change that by requiring trusts to treat complaints and safety incidents as opportunities for systemic improvement rather than exercises in individual accountability.</p>
           </div>
         </section>
 
@@ -240,6 +249,10 @@ export default function NhsComplaintsPage() {
         </ScrollReveal>
 
         {/* Sources */}
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">

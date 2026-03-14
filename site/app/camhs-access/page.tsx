@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // CAMHS total referrals (thousands), 2016–2024
 const referralsData = [280, 306, 332, 356, 334, 412, 438, 460, 481];
@@ -51,6 +53,11 @@ const waitAnnotations: Annotation[] = [
   { date: new Date(2020, 0, 1), label: '2020: Backlog accumulates' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Mental Health Services Monthly Statistics — CAMHS', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/mental-health-statistics/', date: '2024' },
+  { num: 2, name: 'NHS Digital', dataset: 'Children and Young People\'s Mental Health Services', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-services-monthly-statistics', date: 'March 2026' },
+];
+
 export default function CamhsAccessPage() {
   return (
     <>
@@ -65,8 +72,8 @@ export default function CamhsAccessPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Child and Adolescent Mental Health Services received 481,000 referrals in 2024 — a 72% increase on the 280,000 referred in 2016, reflecting a well-documented deterioration in children's mental health driven by the pandemic, social media, and family economic stress. Of those referrals, approximately 128,000 — 27% — were rejected before assessment, not because clinicians believed these children did not need help, but because capacity is insufficient and thresholds have been raised accordingly. For those who do gain access, 49% wait more than 18 weeks from referral to treatment; for adolescents with eating disorders, where early intervention significantly improves outcomes, such delays carry clinical risk. NHS England's Long Term Plan target of seeing an additional 345,000 children and young people per year has been partially met, but the number needing help has grown faster than service expansion.</p>
-            <p>Access is deeply unequal by geography and income. Children in rural and coastal communities face longer waits and higher rejection rates because specialist services are concentrated in cities and sub-threshold community provision is thinner in deprived areas. Children from lower-income families are more likely to be referred but less likely to have parents who can navigate a rejected referral or fund private alternatives. CAMHS accounts for a smaller share of the mental health budget than adult mental health, despite established evidence that early childhood intervention prevents far more costly crises in adulthood. A young person who fails to receive timely CAMHS support at age 14 is significantly more likely to need crisis services at 18.</p>
+            <p>Child and Adolescent Mental Health Services received 481,000 referrals in 2024 — a 72% increase on the 280,000 referred in 2016, reflecting a well-documented deterioration in children's mental health driven by the pandemic, social media, and family economic stress.<Cite nums={1} /> Of those referrals, approximately 128,000 — 27% — were rejected before assessment, not because clinicians believed these children did not need help, but because capacity is insufficient and thresholds have been raised accordingly.<Cite nums={1} /> For those who do gain access, 49% wait more than 18 weeks from referral to treatment; for adolescents with eating disorders, where early intervention significantly improves outcomes, such delays carry clinical risk.<Cite nums={1} /> NHS England's Long Term Plan target of seeing an additional 345,000 children and young people per year has been partially met, but the number needing help has grown faster than service expansion.</p>
+            <p>Access is deeply unequal by geography and income. Children in rural and coastal communities face longer waits and higher rejection rates because specialist services are concentrated in cities and sub-threshold community provision is thinner in deprived areas.<Cite nums={2} /> Children from lower-income families are more likely to be referred but less likely to have parents who can navigate a rejected referral or fund private alternatives. CAMHS accounts for a smaller share of the mental health budget than adult mental health, despite established evidence that early childhood intervention prevents far more costly crises in adulthood. A young person who fails to receive timely CAMHS support at age 14 is significantly more likely to need crisis services at 18.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -145,6 +152,9 @@ export default function CamhsAccessPage() {
             source="Source: NHS England — Mental Health Support Teams in Schools and Colleges progress report 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

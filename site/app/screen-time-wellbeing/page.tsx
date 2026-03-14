@@ -8,6 +8,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ofcom', dataset: 'Children and Parents: Media Use and Attitudes Report', url: 'https://www.ofcom.org.uk/research-and-data/telecoms-research/data-dashboards', date: '2024', note: 'Teens spending 5+ hrs/day on social media rose from 18% (2015) to 45% (2024)' },
+  { num: 2, name: 'NHS Digital', dataset: 'Mental Health of Children and Young People in England', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-of-children-and-young-people-in-england', date: '2024', note: 'Teens reporting poor mental wellbeing rose from 22% to 37%; SDQ clinical threshold' },
+  { num: 3, name: 'Ofcom', dataset: 'Online Nation', url: 'https://www.ofcom.org.uk/research-and-data/internet-and-on-demand-research/online-nation', date: '2024', note: 'Average daily screen time 6.2 hrs (age 16-19); down from peak 7.1 hrs in 2020; diary-based self-report' },
+  { num: 4, name: 'Nature Mental Health', dataset: 'Meta-analysis of social media and self-harm in adolescent girls', date: '2023', note: 'Consistent association between heavy social media use and self-harm; passive consumption most strongly linked' },
+];
 
 export default function ScreenTimeWellbeingPage() {
   // Teen social media 5+ hrs/day (%) and poor wellbeing (%) — 2015–2024
@@ -167,12 +176,16 @@ export default function ScreenTimeWellbeingPage() {
           <section id="sec-context" className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">What the data shows</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Between 2015 and 2024, the share of teenagers spending five or more hours daily on social media more than doubled — from 18% to 45%. Over the same period, the proportion reporting poor mental wellbeing rose from 22% to 37%. This correlation does not establish causation: young people with pre-existing mental health difficulties may use social media more, and broader social and economic pressures have intensified during the same period. But the scale and consistency of the relationship across multiple datasets is striking.</p>
-              <p>The COVID-19 pandemic created a sharp interruption in 2020 — school closures drove screen time to its highest recorded levels, and poor wellbeing rates jumped simultaneously. While average screen time has partially recovered toward pre-pandemic levels for most age groups, it has not returned to 2019 baselines, and the wellbeing trajectory has not recovered at all. The post-pandemic period has been harder for young people than the pre-pandemic data would have predicted.</p>
-              <p>Screen time itself is an imprecise measure. Forty minutes of video calling grandparents is not equivalent to forty minutes of passive scrolling on an algorithmically-curated feed. Research consistently identifies passive consumption — particularly of appearance-related and social comparison content — as most strongly associated with negative outcomes, especially for girls aged 11 to 16. The incoming Ofcom children's safety codes focus precisely on limiting this category of content recommendation.</p>
+              <p>Between 2015 and 2024, the share of teenagers spending five or more hours daily on social media more than doubled — from 18% to 45%.<Cite nums={1} /> Over the same period, the proportion reporting poor mental wellbeing rose from 22% to 37%.<Cite nums={2} /> This correlation does not establish causation: young people with pre-existing mental health difficulties may use social media more, and broader social and economic pressures have intensified during the same period. But the scale and consistency of the relationship across multiple datasets is striking.</p>
+              <p>The COVID-19 pandemic created a sharp interruption in 2020 — school closures drove screen time to its highest recorded levels, and poor wellbeing rates jumped simultaneously.<Cite nums={3} /> While average screen time has partially recovered toward pre-pandemic levels for most age groups, it has not returned to 2019 baselines, and the wellbeing trajectory has not recovered at all. The post-pandemic period has been harder for young people than the pre-pandemic data would have predicted.</p>
+              <p>Screen time itself is an imprecise measure. Forty minutes of video calling grandparents is not equivalent to forty minutes of passive scrolling on an algorithmically-curated feed. Research consistently identifies passive consumption — particularly of appearance-related and social comparison content — as most strongly associated with negative outcomes, especially for girls aged 11 to 16.<Cite nums={4} /> The incoming Ofcom children's safety codes focus precisely on limiting this category of content recommendation.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // One-year cancer survival (%), 2001–2023
 const survivalData = [59.8, 60.5, 61.2, 62.0, 62.8, 63.5, 64.3, 65.1, 65.9, 66.6, 67.4, 68.1, 68.8, 69.5, 70.2, 70.8, 71.4, 71.9, 72.4, 72.9, 71.5, 72.8, 73.7];
@@ -60,6 +62,12 @@ const screeningAnnotations: Annotation[] = [
   { date: new Date(2020, 2, 1), label: '2020: COVID-19 screening pause' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Cancer survival in England — adults diagnosed', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/datasets/cancersurvivalratescancersurvivalinenglandadultsdiagnosed', date: '2023' },
+  { num: 2, name: 'NHS Digital', dataset: 'Cancer screening programme statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/cancer-screening', date: '2023' },
+  { num: 3, name: 'NHS England', dataset: 'Cancer Waiting Times and staging data', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/cancer-waiting-times/', date: 'March 2026' },
+];
+
 export default function CancerOneYearSurvivalPage() {
   return (
     <>
@@ -74,8 +82,8 @@ export default function CancerOneYearSurvivalPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>In 2001, fewer than six in ten adults diagnosed with cancer in England survived a full year. By 2023, that figure had climbed to 73.7% — a testament to better treatments, faster diagnostic pathways, and the quiet expansion of screening programmes that catch disease before symptoms appear. The gains have been uneven across cancer types: breast and prostate one-year survival now exceeds 95%, while lung cancer — still the biggest killer — has seen its one-year survival rise from under 30% to 44.6%, the steepest absolute improvement of any major cancer. Immunotherapy and targeted treatments introduced since 2016 have been a key driver of that shift.</p>
-            <p>Yet the story is complicated by persistent weaknesses in early detection. Nearly a quarter of all cancers are still diagnosed at stage 3 or 4, when treatment options narrow and survival rates drop sharply. The pandemic made things worse: screening programmes were paused for months in 2020, and the resulting diagnostic backlog pushed late-stage diagnoses up to 26.8% that year. Screening uptake has since recovered but remains below pre-pandemic levels for breast and cervical programmes. International comparisons remain uncomfortable — the UK consistently ranks in the bottom third of comparable European countries for one-year cancer survival, behind Denmark, the Netherlands, Norway, and Australia. The gap is not explained by treatment quality but by how late cancer is found.</p>
+            <p>In 2001, fewer than six in ten adults diagnosed with cancer in England survived a full year. By 2023, that figure had climbed to 73.7%.<Cite nums={1} /> The gains have been uneven across cancer types: breast and prostate one-year survival now exceeds 95%, while lung cancer — still the biggest killer — has seen its one-year survival rise from under 30% to 44.6%, the steepest absolute improvement of any major cancer.<Cite nums={1} /> Immunotherapy and targeted treatments introduced since 2016 have been a key driver of that shift.</p>
+            <p>Yet the story is complicated by persistent weaknesses in early detection. Nearly a quarter of all cancers are still diagnosed at stage 3 or 4, when treatment options narrow and survival rates drop sharply.<Cite nums={3} /> The pandemic made things worse: screening programmes were paused for months in 2020, and the resulting diagnostic backlog pushed late-stage diagnoses up to 26.8% that year.<Cite nums={3} /> Screening uptake has since recovered but remains below pre-pandemic levels for breast and cervical programmes.<Cite nums={2} /> International comparisons remain uncomfortable — the UK consistently ranks in the bottom third of comparable European countries for one-year cancer survival, behind Denmark, the Netherlands, Norway, and Australia. The gap is not explained by treatment quality but by how late cancer is found.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -155,6 +163,9 @@ export default function CancerOneYearSurvivalPage() {
             source="Source: ONS — Cancer survival in England 2023. NHS England — Targeted Lung Health Check interim evaluation 2025."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

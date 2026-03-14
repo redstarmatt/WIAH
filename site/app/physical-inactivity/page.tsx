@@ -8,7 +8,15 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import PositiveCallout from '@/components/PositiveCallout'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Sport England', dataset: 'Active Lives Survey', url: 'https://www.sportengland.org/research-and-data/data/active-lives', date: '2022' },
+  { num: 2, name: 'Sport England', dataset: 'Sport England Insight — NHS Cost of Physical Inactivity', url: 'https://www.sportengland.org/research-and-data', date: '2023' },
+  { num: 3, name: 'Sport England', dataset: 'Active Lives Children and Young People Survey', url: 'https://www.sportengland.org/research-and-data/data/active-lives', date: '2022' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -150,8 +158,8 @@ export default function PhysicalInactivityPage() {
         <section id="sec-context" className="py-12 border-t border-wiah-border">
           <h2 className="text-xl font-bold text-wiah-black mb-6">Context</h2>
           <div className="max-w-2xl text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Around 38% of adults in England — approximately 20 million people — do not meet the Chief Medical Officers' guideline of 150 minutes of moderate activity per week. Physical inactivity costs the NHS £7.4 billion annually and is attributed to roughly 1 in 6 UK deaths, a burden comparable to smoking. Unlike smoking, activity levels have remained stubbornly flat for most of the past decade, with a COVID-related dip in 2020 from which recovery has been only partial. Children's activity is a particular concern: only 47% of 5–16 year olds currently meet the 60-minutes-daily guideline, a decline that predates COVID, reflecting reduced PE time in schools, screen-based leisure, and contraction of free outdoor play.</p>
-            <p>The social gradient in physical activity is pronounced and drives long-term health inequality. Adults in the least deprived quintile meet activity guidelines at 67%; in the most deprived, that falls to 56%. Black and South Asian adults are less likely to be sufficiently active (52% and 54% respectively, versus 63% for white adults), reflecting structural factors including built environment quality, cultural programming in sport provision, and income. Women are less likely to meet guidelines than men across all age groups. Inactive children are more likely to become inactive adults; the compounding NHS demand effect is significant. The most effective interventions — parkrun, This Girl Can, street design that enables walking — share the feature of removing structural barriers rather than exhorting individual behaviour change.</p>
+            <p>Around 38% of adults in England — approximately 20 million people — do not meet the Chief Medical Officers' guideline of 150 minutes of moderate activity per week.<Cite nums={1} /> Physical inactivity costs the NHS £7.4 billion annually and is attributed to roughly 1 in 6 UK deaths, a burden comparable to smoking.<Cite nums={2} /> Unlike smoking, activity levels have remained stubbornly flat for most of the past decade, with a COVID-related dip in 2020 from which recovery has been only partial. Children's activity is a particular concern: only 47% of 5–16 year olds currently meet the 60-minutes-daily guideline, a decline that predates COVID, reflecting reduced PE time in schools, screen-based leisure, and contraction of free outdoor play.<Cite nums={3} /></p>
+            <p>The social gradient in physical activity is pronounced and drives long-term health inequality. Adults in the least deprived quintile meet activity guidelines at 67%; in the most deprived, that falls to 56%.<Cite nums={1} /> Black and South Asian adults are less likely to be sufficiently active (52% and 54% respectively, versus 63% for white adults), reflecting structural factors including built environment quality, cultural programming in sport provision, and income.<Cite nums={1} /> Women are less likely to meet guidelines than men across all age groups. Inactive children are more likely to become inactive adults; the compounding NHS demand effect is significant.<Cite nums={2} /> The most effective interventions — parkrun, This Girl Can, street design that enables walking — share the feature of removing structural barriers rather than exhorting individual behaviour change.</p>
           </div>
         </section>
 
@@ -234,6 +242,10 @@ export default function PhysicalInactivityPage() {
             source="Source: Sport England — Active Lives Survey; Parkrun — Research Evidence."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section id="sec-sources" className="border-t border-wiah-border pt-8">

@@ -8,6 +8,13 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Annual Survey of Hours and Earnings', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/annualsurveyofhoursandearnings/latest', date: '2025' },
+  { num: 2, name: 'Low Pay Commission', dataset: 'National Living Wage rates and recommendations', url: 'https://www.gov.uk/government/organisations/low-pay-commission', date: '2024' },
+];
 
 // Public vs private sector real wage index (2015 = 100), 2015–2025 — ONS ASHE
 const publicSectorIndex = [100, 99, 98, 97, 96, 97, 98, 94, 91, 92, 94];
@@ -70,8 +77,8 @@ export default function EarningsBySectorPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Real wages in the UK experienced one of the longest sustained squeezes since the Industrial Revolution following the 2008 financial crisis. By 2022, the public sector was worse off in real terms than in 2010 — a 12% real-terms cut driven by extended pay freezes and high inflation. The private sector fared better overall, but outcomes varied enormously: financial services workers recovered to their 2008 peak, while retail, hospitality, and social care workers remained significantly below. The National Living Wage, introduced in 2016, provided meaningful support for the lowest-paid but could not compensate for the structural compression of real wages across the economy.</p>
-            <p>The 2022 inflation surge — peaking at 11% — compressed real wages across all sectors. Public sector workers, already behind, suffered a further real-terms cut; many sectors saw the largest annual falls in real pay in a generation. Strikes across the NHS, railways, education, and civil service reflected the tension between pay caps and rising living costs. From late 2023, nominal pay growth exceeded inflation and real wages turned positive for most workers — but few had recovered the ground lost since 2010. Workers on the National Living Wage benefited from the April 2024 rise to £11.44 per hour.</p>
+            <p>Real wages in the UK experienced one of the longest sustained squeezes since the Industrial Revolution following the 2008 financial crisis. By 2022, the public sector was worse off in real terms than in 2010 — a 12% real-terms cut driven by extended pay freezes and high inflation.<Cite nums={[1]} /> The private sector fared better overall, but outcomes varied enormously: financial services workers recovered to their 2008 peak, while retail, hospitality, and social care workers remained significantly below.<Cite nums={[1]} /> The National Living Wage, introduced in 2016, provided meaningful support for the lowest-paid but could not compensate for the structural compression of real wages across the economy.<Cite nums={[2]} /></p>
+            <p>The 2022 inflation surge — peaking at 11% — compressed real wages across all sectors.<Cite nums={[1]} /> Public sector workers, already behind, suffered a further real-terms cut; many sectors saw the largest annual falls in real pay in a generation. Strikes across the NHS, railways, education, and civil service reflected the tension between pay caps and rising living costs. From late 2023, nominal pay growth exceeded inflation and real wages turned positive for most workers — but few had recovered the ground lost since 2010.<Cite nums={[1]} /> Workers on the National Living Wage benefited from the April 2024 rise to £11.44 per hour.<Cite nums={[2]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -150,6 +157,9 @@ export default function EarningsBySectorPage() {
             source="Source: ONS — Annual Survey of Hours and Earnings 2025. Low Pay Commission — NLW recommendations 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

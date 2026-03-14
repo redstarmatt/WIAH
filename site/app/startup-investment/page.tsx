@@ -9,6 +9,14 @@ import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Beauhurst', dataset: 'UK Startup and Venture Capital Data', url: 'https://www.beauhurst.com', date: '2024' },
+  { num: 2, name: 'DCMS', dataset: 'Tech Nation Report', url: 'https://technation.io/report', date: '2024' },
+  { num: 3, name: 'British Business Bank', dataset: 'Small Business Finance Markets Report', url: 'https://www.british-business-bank.co.uk', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -64,8 +72,8 @@ export default function StartupInvestmentPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK&rsquo;s venture capital market surged to £29.4 billion in 2021, driven by record-low interest rates, pandemic-era digital acceleration, and deep institutional capital flows. That peak was not sustainable. As central banks raised rates sharply from 2022, valuation multiples collapsed and VC investment fell to £13.2 billion in 2023 before recovering toward £15.1 billion in 2024. Despite the downturn, the UK continued adding unicorn companies — privately held startups valued at over $1 billion — reaching 154 by 2024, third globally behind the United States and China. On a per-capita basis, the UK creates unicorns faster than any country except the US, reflecting strong advantages in talent density, world-class university spinouts (more than any European country), and a sophisticated financial services sector willing to back early-stage companies. Fintech remains the largest investment category, with deep tech including quantum computing, synthetic biology, and defence technology growing rapidly since the 2021 Integrated Review.</p>
-            <p>London accounts for 62% of UK startup investment — a concentration creating both strength and fragility. Manchester, Cambridge, Oxford, and Edinburgh have genuine ecosystems but funding available outside London remains a fraction of equivalent US cities. UK pension funds have historically been reluctant to invest in domestic venture capital at the scale seen in Australia or Canada, depriving the ecosystem of patient capital. The Mansion House reforms (2023) aimed to redirect pension assets toward productive finance but implementation has been slow. The exit environment also constrains the cycle: London market IPOs have fallen and several high-profile UK startups have listed in the United States, raising questions about whether the UK retains the companies it creates.</p>
+            <p>The UK&rsquo;s venture capital market surged to £29.4 billion in 2021, driven by record-low interest rates, pandemic-era digital acceleration, and deep institutional capital flows.<Cite nums={1} /> That peak was not sustainable. As central banks raised rates sharply from 2022, valuation multiples collapsed and VC investment fell to £13.2 billion in 2023 before recovering toward £15.1 billion in 2024.<Cite nums={1} /> Despite the downturn, the UK continued adding unicorn companies — privately held startups valued at over $1 billion — reaching 154 by 2024, third globally behind the United States and China.<Cite nums={[1, 2]} /> On a per-capita basis, the UK creates unicorns faster than any country except the US, reflecting strong advantages in talent density, world-class university spinouts (more than any European country), and a sophisticated financial services sector willing to back early-stage companies.<Cite nums={2} /> Fintech remains the largest investment category, with deep tech including quantum computing, synthetic biology, and defence technology growing rapidly since the 2021 Integrated Review.</p>
+            <p>London accounts for 62% of UK startup investment — a concentration creating both strength and fragility.<Cite nums={1} /> Manchester, Cambridge, Oxford, and Edinburgh have genuine ecosystems but funding available outside London remains a fraction of equivalent US cities.<Cite nums={1} /> UK pension funds have historically been reluctant to invest in domestic venture capital at the scale seen in Australia or Canada, depriving the ecosystem of patient capital.<Cite nums={3} /> The Mansion House reforms (2023) aimed to redirect pension assets toward productive finance but implementation has been slow. The exit environment also constrains the cycle: London market IPOs have fallen and several high-profile UK startups have listed in the United States, raising questions about whether the UK retains the companies it creates.</p>
           </div>
         </section>
 
@@ -138,6 +146,10 @@ export default function StartupInvestmentPage() {
             />
           </div>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

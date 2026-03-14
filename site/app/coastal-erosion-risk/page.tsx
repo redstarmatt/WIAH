@@ -8,6 +8,8 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // -- Types ------------------------------------------------------------------
 
@@ -27,6 +29,14 @@ interface CoastalErosionData {
 function yearToDate(y: number): Date {
   return new Date(y, 0, 1)
 }
+
+// -- References -------------------------------------------------------------
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Environment Agency', dataset: 'National Flood and Coastal Erosion Risk Management Strategy', url: 'https://www.gov.uk/government/publications/national-flood-and-coastal-erosion-risk-management-strategy-for-england--2', date: '2024' },
+  { num: 2, name: 'Environment Agency', dataset: 'Shoreline Management Plans', url: 'https://flood.data.gov.uk', date: '2024' },
+  { num: 3, name: 'Defra', dataset: 'Coastal Erosion Risk Management Guidance', url: 'https://www.gov.uk/guidance/coastal-erosion-risk-management', date: '2024' },
+];
 
 // -- Page -------------------------------------------------------------------
 
@@ -68,8 +78,8 @@ export default function CoastalErosionRiskPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Coastal erosion is happening now, not in the future. The Holderness coast of East Yorkshire retreats at an average of 1.7 metres per year — among the fastest rates in Europe — and entire streets have been lost within living memory. The Environment Agency identifies around 100,000 properties at significant risk from erosion over the next 50 years, a figure projected to rise to 156,000 by 2050 as sea levels rise and storm frequency increases. Shoreline Management Plans classify some stretches of coast as &ldquo;no active intervention&rdquo;, meaning public funds will not be spent to defend them — a deliberate managed retreat from communities where people live. There is no compensation scheme for properties lost to coastal erosion, and homeowners in at-risk areas increasingly cannot obtain affordable building insurance or sell their properties as banks factor erosion risk into mortgage lending decisions.</p>
-            <p>The consequences fall on individuals rather than the state: trapped owners cannot recoup investment in their homes, cannot insure them adequately, and often cannot sell. Eighteen major managed realignment projects in England have deliberately breached sea walls to allow farmland to become saltmarsh, creating coastal habitat and reducing storm surge pressure — a genuine success where the affected land is agricultural. Extending the same logic to inhabited communities is politically and morally far harder, and the absence of a compensation framework means that homeowners in declining coastal areas bear costs that are, in effect, a public policy choice.</p>
+            <p>Coastal erosion is happening now, not in the future. The Holderness coast of East Yorkshire retreats at an average of 1.7 metres per year — among the fastest rates in Europe — and entire streets have been lost within living memory.<Cite nums={2} /> The Environment Agency identifies around 100,000 properties at significant risk from erosion over the next 50 years, a figure projected to rise to 156,000 by 2050 as sea levels rise and storm frequency increases.<Cite nums={1} /> Shoreline Management Plans classify some stretches of coast as &ldquo;no active intervention&rdquo;, meaning public funds will not be spent to defend them — a deliberate managed retreat from communities where people live.<Cite nums={2} /> There is no compensation scheme for properties lost to coastal erosion, and homeowners in at-risk areas increasingly cannot obtain affordable building insurance or sell their properties as banks factor erosion risk into mortgage lending decisions.<Cite nums={3} /></p>
+            <p>The consequences fall on individuals rather than the state: trapped owners cannot recoup investment in their homes, cannot insure them adequately, and often cannot sell. Eighteen major managed realignment projects in England have deliberately breached sea walls to allow farmland to become saltmarsh, creating coastal habitat and reducing storm surge pressure — a genuine success where the affected land is agricultural.<Cite nums={3} /> Extending the same logic to inhabited communities is politically and morally far harder, and the absence of a compensation framework means that homeowners in declining coastal areas bear costs that are, in effect, a public policy choice.<Cite nums={[1, 3]} /></p>
           </div>
         </section>
 
@@ -129,6 +139,10 @@ export default function CoastalErosionRiskPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

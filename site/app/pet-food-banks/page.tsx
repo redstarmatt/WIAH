@@ -8,7 +8,15 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'PDSA', dataset: 'Animal Wellbeing (PAW) Report', url: 'https://www.pdsa.org.uk/what-we-do/pdsa-animal-wellbeing-report', date: '2024' },
+  { num: 2, name: 'RSPCA', dataset: 'Annual Cruelty Statistics', url: 'https://www.rspca.org.uk/whatwedo/latest/facts', date: '2024' },
+  { num: 3, name: 'Dogs Trust / Cats Protection / Blue Cross', dataset: 'Pet Surrender and Rehoming Statistics', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -127,10 +135,10 @@ export default function PetFoodBanksPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The cost of living crisis has created a hidden animal welfare emergency. Pet food banks — a concept almost unknown five years ago — now number 280 across the UK. They reflect the arithmetic of poverty: for a family choosing between their electricity bill and their cat's food, the cat's food loses. The same families often acquired pets during the 2020 lockdown surge, when millions of people adopted dogs and cats. Those animals are now being surrendered to rescues at record rates.
+              The cost of living crisis has created a hidden animal welfare emergency. Pet food banks — a concept almost unknown five years ago — now number 280 across the UK. They reflect the arithmetic of poverty: for a family choosing between their electricity bill and their cat's food, the cat's food loses. The same families often acquired pets during the 2020 lockdown surge, when millions of people adopted dogs and cats. Those animals are now being surrendered to rescues at record rates.<Cite nums={3} />
             </p>
             <p>
-              The PDSA's Annual Wellbeing Report estimates 2.1 million pet owners cannot afford veterinary care for their animals — up from 1.5 million in 2020. Pets are not registered with vets, so there is no equivalent of the NHS to catch animals whose owners are struggling. The PDSA and RSPCA provide subsidised and free care for qualifying owners, but capacity is far below demand. Many animals are surrendered to shelters not because owners have stopped caring, but because keeping them has become financially impossible.
+              The PDSA's Annual Wellbeing Report estimates 2.1 million pet owners cannot afford veterinary care for their animals — up from 1.5 million in 2020.<Cite nums={1} /> Pets are not registered with vets, so there is no equivalent of the NHS to catch animals whose owners are struggling. The PDSA and RSPCA provide subsidised and free care for qualifying owners, but capacity is far below demand.<Cite nums={[1, 2]} /> Many animals are surrendered to shelters not because owners have stopped caring, but because keeping them has become financially impossible.<Cite nums={3} />
             </p>
           </div>
         </section>
@@ -211,6 +219,10 @@ export default function PetFoodBanksPage() {
             source="Source: PDSA — Animal Wellbeing (PAW) Report, 2024. RSPCA — Annual Statistics, 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

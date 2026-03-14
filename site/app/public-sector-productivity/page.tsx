@@ -8,6 +8,13 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Public Sector Productivity', url: 'https://www.ons.gov.uk/economy/economicoutputandproductivity/publicservicesproductivity', date: '2025', note: 'Public sector productivity 6% below pre-pandemic levels; NHS productivity 10% below 2019' },
+  { num: 2, name: 'NHS England', dataset: 'Operational Productivity Analysis', date: '2025', note: 'NHS productivity improved by 5 percentage points in 2023-24; agency staff costs spiked in 2022' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -194,6 +201,10 @@ export default function TopicPage() {
             source="Source: ONS — Public sector productivity, 2025. NHS England — Operational productivity analysis, 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

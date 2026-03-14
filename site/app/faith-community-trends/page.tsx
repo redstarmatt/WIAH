@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // No religion (%), 2011–2022 — ONS Census
 const noReligionValues = [25, 28, 31, 34, 37, 37, 37, 37, 38, 38, 39, 37];
@@ -47,6 +49,12 @@ const religionAnnotations: Annotation[] = [
   { date: new Date(2021, 0, 1), label: '2021 Census: No religion majority for first time' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Religion, England and Wales Census 2021', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/religion/bulletins/religionenglandandwales/census2021', date: '2021' },
+  { num: 2, name: 'NatCen', dataset: 'British Social Attitudes Survey', url: 'https://www.bsa.natcen.ac.uk/', date: '2022' },
+  { num: 3, name: 'Church of England', dataset: 'Statistics for Mission', date: '2023' },
+];
+
 export default function FaithCommunityTrendsPage() {
   return (
     <>
@@ -61,8 +69,8 @@ export default function FaithCommunityTrendsPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The 2021 Census marked a historic shift: for the first time in a Census question about religion, fewer than half of respondents in England and Wales identified as Christian (46.2%), while 37.2% reported no religious affiliation. This represents a dramatic generational transformation. In 1983, 66% of British adults identified as Christian; by 2022, British Social Attitudes surveys showed this had fallen to around 46%, with the youngest cohorts (18–24) most likely to have no religion (70%+). The decline is driven by replacement — older generations with higher religious affiliation dying, and younger generations with lower affiliation succeeding them — rather than by significant conversion away from faith.</p>
-            <p>Islam is now the second-largest religion in England and Wales at 6.5% of the population — up from 4.8% in 2011 — reflecting both demographic growth and migration. Hinduism (1.7%) and Sikhism (0.9%) have also grown. The practical implications of this secularisation include declining Church of England attendance (now around 700,000 weekly worshippers, down from 1.5 million in 1968), school admissions pressure on faith schools, the role of Bishops in the House of Lords, and the management of religious assets. The Census results have renewed debate about the appropriateness of the Church of England's established status and the place of religion in public life.</p>
+            <p>The 2021 Census marked a historic shift: for the first time in a Census question about religion, fewer than half of respondents in England and Wales identified as Christian (46.2%), while 37.2% reported no religious affiliation.<Cite nums={[1]} /> This represents a dramatic generational transformation. In 1983, 66% of British adults identified as Christian; by 2022, British Social Attitudes surveys showed this had fallen to around 46%, with the youngest cohorts (18–24) most likely to have no religion (70%+).<Cite nums={[2]} /> The decline is driven by replacement — older generations with higher religious affiliation dying, and younger generations with lower affiliation succeeding them — rather than by significant conversion away from faith.</p>
+            <p>Islam is now the second-largest religion in England and Wales at 6.5% of the population — up from 4.8% in 2011 — reflecting both demographic growth and migration.<Cite nums={[1]} /> Hinduism (1.7%) and Sikhism (0.9%) have also grown.<Cite nums={[1]} /> The practical implications of this secularisation include declining Church of England attendance (now around 700,000 weekly worshippers, down from 1.5 million in 1968), school admissions pressure on faith schools, the role of Bishops in the House of Lords, and the management of religious assets.<Cite nums={[3]} /> The Census results have renewed debate about the appropriateness of the Church of England's established status and the place of religion in public life.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -140,6 +148,9 @@ export default function FaithCommunityTrendsPage() {
             source="Source: CLES — Counting the Cost of Cuts to Local Services 2016. Church of England — Statistics for Mission 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

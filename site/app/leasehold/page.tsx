@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DLUHC / HM Land Registry', dataset: 'Leasehold Dwellings in England 2024', url: 'https://www.gov.uk/government/statistics/leasehold-dwellings', date: '2024' },
+  { num: 2, name: 'CMA', dataset: 'Leasehold housing investigation', url: 'https://www.gov.uk/cma-cases/leasehold', date: '2020', note: 'Undertakings from Aviva, Countryside Properties, and Taylor Wimpey' },
+  { num: 3, name: 'First-Tier Tribunal (Property Chamber)', dataset: 'Annual Statistics', url: 'https://www.gov.uk/government/collections/tribunals-statistics', date: '2024' },
+  { num: 4, name: 'Leasehold Reform (Ground Rent) Act 2022', dataset: 'Legislation.gov.uk', url: 'https://www.legislation.gov.uk/ukpga/2022/1/contents/enacted', date: '2022' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -89,8 +98,8 @@ export default function LeaseholdPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Approximately 4.98 million residential properties in England and Wales are held on a leasehold basis, representing roughly one in five homes. The system dates to medieval English land law and was originally designed for flats in shared buildings where freehold ownership of individual units was impractical. However, from the mid-2000s, major housebuilders began selling new-build houses on leasehold terms — a practice that allowed them to sell the freehold to investment companies, which then charged escalating ground rents and service charges. By 2017, an estimated 100,000 leasehold houses had been sold with doubling ground rent clauses, meaning rents that would increase from £250 per year to £8,000 within 50 years. The Competition and Markets Authority investigated the sector and concluded that certain practices were unfair, leading to undertakings from Aviva, Countryside Properties, and Taylor Wimpey.</p>
-            <p>Ground rents are the defining grievance. Before 2022, developers routinely inserted clauses requiring ground rent to double every 10 or 25 years, creating obligations that rapidly outpaced inflation and rendered properties unsaleable — mortgage lenders will not lend on properties where ground rent exceeds 0.1% of property value. The Leasehold Reform (Ground Rent) Act 2022 capped ground rent on new leases at a peppercorn (effectively zero), but this applies only to leases granted after 30 June 2022 and does nothing for the millions of existing leaseholders with onerous terms. Beyond ground rent, leaseholders face permission fees for alterations (typically £250–£500 per request), administration charges for routine correspondence, insurance commissions where freeholders mark up buildings insurance by 30–50%, and the ever-present threat of forfeiture — the legal right of the freeholder to reclaim the property for unpaid ground rent, with the threshold set at just £350 in arrears.</p>
+            <p>Approximately 4.98 million residential properties in England and Wales are held on a leasehold basis, representing roughly one in five homes.<Cite nums={1} /> The system dates to medieval English land law and was originally designed for flats in shared buildings where freehold ownership of individual units was impractical. However, from the mid-2000s, major housebuilders began selling new-build houses on leasehold terms — a practice that allowed them to sell the freehold to investment companies, which then charged escalating ground rents and service charges. By 2017, an estimated 100,000 leasehold houses had been sold with doubling ground rent clauses, meaning rents that would increase from £250 per year to £8,000 within 50 years. The Competition and Markets Authority investigated the sector and concluded that certain practices were unfair, leading to undertakings from Aviva, Countryside Properties, and Taylor Wimpey.<Cite nums={2} /></p>
+            <p>Ground rents are the defining grievance. Before 2022, developers routinely inserted clauses requiring ground rent to double every 10 or 25 years, creating obligations that rapidly outpaced inflation and rendered properties unsaleable — mortgage lenders will not lend on properties where ground rent exceeds 0.1% of property value. The Leasehold Reform (Ground Rent) Act 2022 capped ground rent on new leases at a peppercorn (effectively zero), but this applies only to leases granted after 30 June 2022 and does nothing for the millions of existing leaseholders with onerous terms.<Cite nums={4} /> Beyond ground rent, leaseholders face permission fees for alterations (typically £250–£500 per request), administration charges for routine correspondence, insurance commissions where freeholders mark up buildings insurance by 30–50%, and the ever-present threat of forfeiture — the legal right of the freeholder to reclaim the property for unpaid ground rent, with the threshold set at just £350 in arrears.<Cite nums={3} /></p>
             </div>
         </section>
 
@@ -172,6 +181,10 @@ export default function LeaseholdPage() {
             source="Source: DLUHC — Leasehold Dwellings 2024; HM Land Registry — Title Registrations; First-Tier Tribunal (Property Chamber)."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

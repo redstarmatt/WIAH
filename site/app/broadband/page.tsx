@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Median download speed (Mbps), 2013–2024
 const speedData = [15, 18, 22, 28, 36, 46, 64, 80, 80, 95, 112, 126];
@@ -73,6 +75,12 @@ const coverageAnnotations: Annotation[] = [
   { date: new Date(2023, 0, 1), label: '2023: Openreach full-fibre target raised' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ofcom', dataset: 'Connected Nations — annual broadband coverage report', url: 'https://www.ofcom.org.uk/research-and-data/telecoms-research/connected-nations', date: 'March 2026' },
+  { num: 2, name: 'Ofcom', dataset: 'Home Broadband Performance', url: 'https://www.ofcom.org.uk/research-and-data/telecoms-research/broadband-research/broadband-speeds', date: '2024' },
+  { num: 3, name: 'ONS', dataset: 'Internet users, Great Britain', url: 'https://www.ons.gov.uk/businessindustryandtrade/itandinternetindustry/bulletins/internetusers', date: 'March 2026' },
+];
+
 export default function BroadbandPage() {
   return (
     <>
@@ -87,8 +95,8 @@ export default function BroadbandPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Full fibre broadband reached approximately 68% of UK premises by 2024, up from just 2% in 2017, driven by BT Openreach, Virgin Media O2, and a wave of altnet operators. On the government's original target of national full fibre by 2025, the programme is running two to three years behind; Spain, France, and Sweden each surpassed 75% FTTP coverage by 2022. The government's £5 billion Project Gigabit programme targets the 20% of premises the market will not reach commercially, but procurement has been slow. An estimated 685,000 premises remain below the Universal Service Obligation of 10 Mbps. Social tariffs for Universal Credit claimants are available at £10–£20 per month, but only around 30% of the 4.2 million eligible households have taken one up.</p>
-            <p>The rural–urban gap is the defining inequality. Full fibre reaches 73% of urban premises but only 37% of rural ones; 6.5% of rural homes cannot receive the 30 Mbps "decent broadband" standard, six times the urban rate of 1%. Rural households on legacy ADSL connections face download speeds of 5–10 Mbps and upload speeds below 1 Mbps, making remote work and video consultation unreliable. Starlink satellite provides a £75-per-month alternative for around 150,000 rural subscribers — at triple the cost of urban full fibre, a connectivity premium paid by those already at a geographic disadvantage.</p>
+            <p>Full fibre broadband reached approximately 68% of UK premises by 2024, up from just 2% in 2017, driven by BT Openreach, Virgin Media O2, and a wave of altnet operators.<Cite nums={1} /> On the government's original target of national full fibre by 2025, the programme is running two to three years behind; Spain, France, and Sweden each surpassed 75% FTTP coverage by 2022. The government's £5 billion Project Gigabit programme targets the 20% of premises the market will not reach commercially, but procurement has been slow. An estimated 685,000 premises remain below the Universal Service Obligation of 10 Mbps.<Cite nums={1} /> Social tariffs for Universal Credit claimants are available at £10–£20 per month, but only around 30% of the 4.2 million eligible households have taken one up.<Cite nums={3} /></p>
+            <p>The rural–urban gap is the defining inequality. Full fibre reaches 73% of urban premises but only 37% of rural ones; 6.5% of rural homes cannot receive the 30 Mbps "decent broadband" standard, six times the urban rate of 1%.<Cite nums={1} /> Rural households on legacy ADSL connections face download speeds of 5–10 Mbps and upload speeds below 1 Mbps, making remote work and video consultation unreliable.<Cite nums={2} /> Starlink satellite provides a £75-per-month alternative for around 150,000 rural subscribers — at triple the cost of urban full fibre, a connectivity premium paid by those already at a geographic disadvantage.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -168,6 +176,9 @@ export default function BroadbandPage() {
             source="Source: Ofcom Connected Nations 2024. ONS Internet users 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

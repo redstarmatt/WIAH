@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Alzheimer\'s Research UK', dataset: 'Dementia Statistics — prevalence and projections', url: 'https://www.alzheimersresearchuk.org/dementia-statistics/', date: '2024' },
+  { num: 2, name: 'NHS England', dataset: 'Dementia diagnosis rate — monthly data', url: 'https://www.england.nhs.uk/mental-health/dementia/', date: '2024' },
+  { num: 3, name: 'Alzheimer\'s Society', dataset: 'Dementia UK Report — economic cost and unpaid carer analysis', url: 'https://www.alzheimers.org.uk/about-us/policy-and-influencing/dementia-uk-report', date: '2024' },
+];
 
 export default function DementiaPage() {
   const prevalence     = [670, 700, 720, 740, 760, 790, 820, 850, 876, 900, 920, 940, 944];
@@ -154,13 +162,16 @@ export default function DementiaPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on dementia</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Dementia is the leading cause of death in England and Wales and the condition that people over 65 most fear. Around 944,000 people in the UK currently have dementia, a number that will grow to an estimated 1.4 million by 2040 as the population ages. The Alzheimer's Society estimates the total cost of dementia to the UK economy at £42bn per year — of which only £4.3bn falls on the NHS. The rest is borne by social care systems (£15.7bn) and unpaid family carers (£18.5bn). Families, disproportionately women, provide the bulk of dementia care without payment, training, or respite.</p>
-              <p>The UK diagnosis rate — the share of estimated dementia cases that have a recorded formal diagnosis — has improved from around 42% in 2012 to just below the 66.7% NHS Long Term Plan target. This matters enormously: people with a diagnosis can access post-diagnostic support services, plan their care, and (where applicable) access treatments. People without a diagnosis receive none of this. The diagnosis rate fell sharply during the Covid pandemic as memory clinics closed and GP consultations became harder to access for complex assessments, and has been slowly recovering since.</p>
-              <p>Research funding for dementia has historically lagged far behind its burden. Cancer research in the UK receives approximately four times as much public and charitable funding per death as dementia. The gap has narrowed since the 2012 G8 Dementia Summit and subsequent UK government commitments, but remains large. The promising clinical pipeline for disease-modifying treatments — drugs that slow or halt the disease rather than just manage symptoms — makes this funding shortfall increasingly costly.</p>
+              <p>Dementia is the leading cause of death in England and Wales and the condition that people over 65 most fear. Around 944,000 people in the UK currently have dementia, a number that will grow to an estimated 1.4 million by 2040 as the population ages.<Cite nums={1} /> The Alzheimer's Society estimates the total cost of dementia to the UK economy at £42bn per year — of which only £4.3bn falls on the NHS. The rest is borne by social care systems (£15.7bn) and unpaid family carers (£18.5bn).<Cite nums={3} /> Families, disproportionately women, provide the bulk of dementia care without payment, training, or respite.</p>
+              <p>The UK diagnosis rate — the share of estimated dementia cases that have a recorded formal diagnosis — has improved from around 42% in 2012 to just below the 66.7% NHS Long Term Plan target.<Cite nums={2} /> This matters enormously: people with a diagnosis can access post-diagnostic support services, plan their care, and (where applicable) access treatments. People without a diagnosis receive none of this. The diagnosis rate fell sharply during the Covid pandemic as memory clinics closed and GP consultations became harder to access for complex assessments, and has been slowly recovering since.<Cite nums={2} /></p>
+              <p>Research funding for dementia has historically lagged far behind its burden. Cancer research in the UK receives approximately four times as much public and charitable funding per death as dementia.<Cite nums={1} /> The gap has narrowed since the 2012 G8 Dementia Summit and subsequent UK government commitments, but remains large. The promising clinical pipeline for disease-modifying treatments — drugs that slow or halt the disease rather than just manage symptoms — makes this funding shortfall increasingly costly.</p>
             </div>
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">

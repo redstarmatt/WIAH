@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'COMEAP', dataset: 'Mortality effects of long-term exposure to particulate air pollution in the UK', url: 'https://www.gov.uk/government/publications/comeap-mortality-effects-of-long-term-exposure-to-particulate-air-pollution-in-the-uk', date: '2024' },
+  { num: 2, name: 'DEFRA', dataset: 'UK Air Quality Archive — PM2.5 and NO2 monitoring data', url: 'https://uk-air.defra.gov.uk/', date: '2024' },
+  { num: 3, name: 'WHO', dataset: 'Global Air Quality Guidelines 2021', url: 'https://www.who.int/publications/i/item/9789240034228', date: '2021' },
+  { num: 4, name: 'DEFRA', dataset: 'Air Quality Economic Analysis programme', date: '2023' },
+];
 
 export default function AirQualityPage() {
   const pm25National  = [12.1, 11.8, 11.5, 11.2, 11.0, 10.8, 10.5, 10.3, 10.1, 9.9, 9.7, 9.5, 9.3, 9.1];
@@ -162,13 +171,16 @@ export default function AirQualityPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on air quality</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Air pollution is the largest environmental health risk in the UK. The Committee on the Medical Effects of Air Pollutants (COMEAP) estimates that between 28,000 and 36,000 deaths per year are attributable to long-term exposure to fine particulate matter (PM2.5) and nitrogen dioxide. These are not dramatic acute events — they are the cumulative toll of years of breathing degraded air: shortened lives, worsening cardiovascular disease, accelerated dementia, more severe asthma, and higher cancer rates.</p>
-              <p>Air quality has improved significantly over the past three decades, largely because of the decline of coal-burning industry rather than deliberate clean air policy. But the pace of improvement has slowed, and the 2021 WHO guidelines — which tightened the PM2.5 limit from 10 μg/m³ to 5 μg/m³ — revealed how far the UK still has to travel. Almost no UK monitoring station records annual mean PM2.5 below 5 μg/m³. The UK's legal limit remains at 20 μg/m³ for PM2.5 — four times the WHO guideline.</p>
-              <p>The distribution of harm is not equal. Children in the most deprived fifth of areas are exposed to significantly worse air than those in the least deprived fifth. Schools near busy roads — disproportionately in lower-income areas — expose children to elevated NO2 during critical development periods. Ethnic minority communities are more likely to live near major roads and industrial sources. Pollution is not just a public health crisis; it is an equality crisis.</p>
+              <p>Air pollution is the largest environmental health risk in the UK. The Committee on the Medical Effects of Air Pollutants (COMEAP) estimates that between 28,000 and 36,000 deaths per year are attributable to long-term exposure to fine particulate matter (PM2.5) and nitrogen dioxide.<Cite nums={1} /> These are not dramatic acute events — they are the cumulative toll of years of breathing degraded air: shortened lives, worsening cardiovascular disease, accelerated dementia, more severe asthma, and higher cancer rates.</p>
+              <p>Air quality has improved significantly over the past three decades, largely because of the decline of coal-burning industry rather than deliberate clean air policy. But the pace of improvement has slowed, and the 2021 WHO guidelines — which tightened the PM2.5 limit from 10 μg/m³ to 5 μg/m³ — revealed how far the UK still has to travel.<Cite nums={3} /> Almost no UK monitoring station records annual mean PM2.5 below 5 μg/m³.<Cite nums={2} /> The UK's legal limit remains at 20 μg/m³ for PM2.5 — four times the WHO guideline.<Cite nums={3} /></p>
+              <p>The distribution of harm is not equal. Children in the most deprived fifth of areas are exposed to significantly worse air than those in the least deprived fifth. Schools near busy roads — disproportionately in lower-income areas — expose children to elevated NO2 during critical development periods. Ethnic minority communities are more likely to live near major roads and industrial sources. Pollution is not just a public health crisis; it is an equality crisis.<Cite nums={2} /></p>
             </div>
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">

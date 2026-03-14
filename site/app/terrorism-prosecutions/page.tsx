@@ -9,6 +9,15 @@ import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Home Office', dataset: 'Operation of police powers under the Terrorism Act 2000', url: 'https://www.gov.uk/government/collections/operation-of-police-powers-under-the-terrorism-act-2000-quarterly-updates', date: '2024' },
+  { num: 2, name: 'Crown Prosecution Service', dataset: 'CPS data summary — terrorism prosecutions', url: 'https://www.cps.gov.uk/publication/cps-data-summary', date: '2024', note: '74% conviction rate at trial' },
+  { num: 3, name: 'HMPPS', dataset: 'Offender management caseload statistics', url: 'https://www.gov.uk/government/collections/offender-management-statistics-quarterly', date: '2024', note: '220 people on terrorism-related licence in 2024' },
+  { num: 4, name: 'HM Government', dataset: 'Counter-Terrorism and Sentencing Act 2021', url: 'https://www.legislation.gov.uk/ukpga/2021/11/contents/enacted', date: '2021' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -77,7 +86,7 @@ export default function TerrorismProsecutionsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Counter Terrorism Policing made 350 terrorism-related arrests in 2023, a figure that reflects both the ongoing threat level and the intelligence-led posture developed since the 2005 London bombings. Of cases that reach trial, the conviction rate was 74% — stable over the past decade — reflecting the thoroughness of specialist CPS case preparation and the use of intelligence-derived evidence in admissible form. The threat picture has shifted: right-wing terrorism now accounts for around 25% of arrests, up from a marginal category in 2015, while Islamist terrorism remains the largest category. Around 220 people were on terrorism-related licence in 2024, subject to supervision conditions under a framework tightened by the Counter-Terrorism and Sentencing Act 2021 following the Fishmongers' Hall attack.</p>
+            <p>Counter Terrorism Policing made 350 terrorism-related arrests in 2023, a figure that reflects both the ongoing threat level and the intelligence-led posture developed since the 2005 London bombings.<Cite nums={1} /> Of cases that reach trial, the conviction rate was 74% — stable over the past decade — reflecting the thoroughness of specialist CPS case preparation and the use of intelligence-derived evidence in admissible form.<Cite nums={2} /> The threat picture has shifted: right-wing terrorism now accounts for around 25% of arrests, up from a marginal category in 2015, while Islamist terrorism remains the largest category.<Cite nums={1} /> Around 220 people were on terrorism-related licence in 2024, subject to supervision conditions under a framework tightened by the Counter-Terrorism and Sentencing Act 2021 following the Fishmongers' Hall attack.<Cite nums={[3, 4]} /></p>
             <p>The consequences of terrorism prosecutions fall along predictable demographic lines. Muslim communities have borne a disproportionate share of Terrorism Act stop and search powers and Prevent referrals — referrals number tens of thousands annually — raising sustained civil liberties concerns about proportionality and the broad UK definition of terrorism, which is wide enough to capture some politically motivated but non-violent activity. The legal architecture of terrorism prosecution is among the most extensive in any democracy, including pre-charge detention of up to 14 days in exceptional cases and Special Immigration Appeals Commission proceedings for non-citizens; independent review of these powers' necessity and proportionality remains contested.</p>
           </div>
         </section>
@@ -147,6 +156,10 @@ export default function TerrorismProsecutionsPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

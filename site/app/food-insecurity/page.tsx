@@ -8,6 +8,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Trussell Trust', dataset: 'Annual food bank statistics', url: 'https://www.trusselltrust.org/news-and-blog/latest-stats/', date: '2024' },
+  { num: 2, name: 'Action for Children', dataset: 'Child Food Poverty Tracker 2024', url: 'https://foodfoundation.org.uk', date: '2024' },
+  { num: 3, name: 'ONS', dataset: 'Understanding Society household longitudinal study', date: 'January 2023' },
+  { num: 4, name: 'Department for Education', dataset: 'Free school meals eligibility expansion', date: '2023' },
+];
 
 // Trussell Trust parcels (millions), 2012–2024
 const foodBankParcels = [0.13, 0.35, 0.91, 1.08, 1.11, 1.18, 1.33, 1.60, 2.03, 2.50, 2.99, 2.92, 2.90];
@@ -64,8 +73,8 @@ export default function FoodInsecurityPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Trussell Trust distributed 128,697 food parcels in 2012. By 2023 that figure had reached 2.99 million — a 24-fold increase in a decade. More than one million of those parcels went to children. The Trussell Trust network accounts for roughly 60% of food bank provision; including independent operations, there are an estimated 2,800 or more food bank locations across the UK. That number did not exist in any meaningful sense before 2010. The Trussell Trust itself says it should not be a permanent feature of the welfare state.</p>
-            <p>The benefits system is the single largest driver. Between 27% and 28% of food bank referrals cite benefit delays or changes as the primary reason. The five-week wait at the start of a Universal Credit claim leaves newly unemployed households without income precisely when they are most vulnerable. Benefit levels have also failed to keep pace with food costs: UK food prices rose 19.1% in the year to March 2023, the sharpest annual increase in 45 years. Lower-income households spend a disproportionately high share of income on food, and are more exposed to these price shocks than wealthier ones who can absorb them through savings or substitution.</p>
+            <p>The Trussell Trust distributed 128,697 food parcels in 2012. By 2023 that figure had reached 2.99 million — a 24-fold increase in a decade.<Cite nums={[1]} /> More than one million of those parcels went to children.<Cite nums={[1]} /> The Trussell Trust network accounts for roughly 60% of food bank provision; including independent operations, there are an estimated 2,800 or more food bank locations across the UK.<Cite nums={[1]} /> That number did not exist in any meaningful sense before 2010. The Trussell Trust itself says it should not be a permanent feature of the welfare state.</p>
+            <p>The benefits system is the single largest driver. Between 27% and 28% of food bank referrals cite benefit delays or changes as the primary reason.<Cite nums={[1]} /> The five-week wait at the start of a Universal Credit claim leaves newly unemployed households without income precisely when they are most vulnerable. Benefit levels have also failed to keep pace with food costs: UK food prices rose 19.1% in the year to March 2023, the sharpest annual increase in 45 years.<Cite nums={[3]} /> Lower-income households spend a disproportionately high share of income on food, and are more exposed to these price shocks than wealthier ones who can absorb them through savings or substitution.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -144,6 +153,9 @@ export default function FoodInsecurityPage() {
             source="Source: Department for Education, 2023. Food Foundation — School Food Matters 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

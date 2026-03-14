@@ -8,6 +8,15 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'LeDeR Programme', dataset: 'Learning from Lives and Deaths Annual Report 2023', url: 'https://www.england.nhs.uk/publication/leder-annual-report/', date: '2023' },
+  { num: 2, name: 'NHS Digital', dataset: 'Assuring Transformation Data', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/learning-disability-services-statistics', date: '2024' },
+  { num: 3, name: 'NHS Digital', dataset: 'Health and Care of People with Learning Disabilities', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/health-and-care-of-people-with-learning-disabilities', date: '2024' },
+  { num: 4, name: 'CQC', dataset: 'COVID-19 DNACPR decisions investigation', url: 'https://www.cqc.org.uk/', date: '2021', note: 'Documented blanket DNACPR orders applied without individual assessment' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -102,8 +111,8 @@ export default function LearningDisabilitiesPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Approximately 1.5 million people in England have a learning disability. The LeDeR programme — Learning from Lives and Deaths — found the median age at death is 23 years lower than the general population: 61 for men, 59 for women. During COVID, people with learning disabilities died at 3.7 times the rate of the general population, driven by congregate living and — as the CQC documented — the application of blanket DNACPR orders without individual assessment or family consultation. The Winterbourne View scandal in 2012 prompted the Transforming Care programme, which set a target of reducing inpatient numbers by 50% from the 2015 baseline of 3,000; ten years later, approximately 1,960 remain. Annual health check uptake has improved from 37% in 2015 to 69% in 2024, but nearly a third of people on LD registers still receive no check.</p>
-            <p>The consequences of systemic failure fall on some of the most marginalised people in England. Those in inpatient settings are often placed hundreds of miles from their families, with average stays exceeding five years. LeDeR reviews consistently document diagnostic overshadowing — symptoms attributed to the learning disability rather than investigated as separate conditions — inadequate reasonable adjustments, and failure to apply the Mental Capacity Act correctly. These findings have been repeated in inquiry after inquiry for decades; the gap between what was promised and what has been delivered is wide, persistent, and consequential.</p>
+            <p>Approximately 1.5 million people in England have a learning disability. The LeDeR programme — Learning from Lives and Deaths — found the median age at death is 23 years lower than the general population: 61 for men, 59 for women.<Cite nums={1} /> During COVID, people with learning disabilities died at 3.7 times the rate of the general population, driven by congregate living and — as the CQC documented — the application of blanket DNACPR orders without individual assessment or family consultation.<Cite nums={4} /> The Winterbourne View scandal in 2012 prompted the Transforming Care programme, which set a target of reducing inpatient numbers by 50% from the 2015 baseline of 3,000; ten years later, approximately 1,960 remain.<Cite nums={2} /> Annual health check uptake has improved from 37% in 2015 to 69% in 2024, but nearly a third of people on LD registers still receive no check.<Cite nums={3} /></p>
+            <p>The consequences of systemic failure fall on some of the most marginalised people in England. Those in inpatient settings are often placed hundreds of miles from their families, with average stays exceeding five years.<Cite nums={2} /> LeDeR reviews consistently document diagnostic overshadowing — symptoms attributed to the learning disability rather than investigated as separate conditions — inadequate reasonable adjustments, and failure to apply the Mental Capacity Act correctly.<Cite nums={1} /> These findings have been repeated in inquiry after inquiry for decades; the gap between what was promised and what has been delivered is wide, persistent, and consequential.</p>
           </div>
         </section>
 
@@ -195,6 +204,10 @@ export default function LearningDisabilitiesPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

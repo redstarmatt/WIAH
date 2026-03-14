@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Homeworking in the UK labour market 2024', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/articles/ishybridworkingheretostay/2022-05-23', date: '2024' },
+  { num: 2, name: 'CIPD', dataset: 'Flexible and hybrid working practices survey 2024', url: 'https://www.cipd.org/uk/knowledge/reports/flexible-hybrid-working-2024/', date: '2024' },
+  { num: 3, name: 'TUC', dataset: 'Commuting costs analysis', url: 'https://www.tuc.org.uk/', date: '2024', note: 'Average £3,200/year for London commuters' },
+  { num: 4, name: 'Employment Rights Act 2024', dataset: 'Day-one right to request flexible working', url: 'https://www.legislation.gov.uk/ukpga/2024', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -127,10 +136,10 @@ export default function RemoteWorkAccessPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The pandemic created what economists call a &lsquo;bifurcated&rsquo; labour market: those whose work can be done from a laptop, and those whose work cannot. A warehouse operative, a nurse, a delivery driver, a care worker, a chef — none of these roles is compatible with homeworking. A management consultant, a software engineer, a policy analyst, a finance professional — all can be done from anywhere with good broadband. The income correlation is stark: 68% of workers in the top income quintile worked from home at least once a week in 2024, compared with just 12% in the bottom quintile.
+              The pandemic created what economists call a &lsquo;bifurcated&rsquo; labour market: those whose work can be done from a laptop, and those whose work cannot. A warehouse operative, a nurse, a delivery driver, a care worker, a chef — none of these roles is compatible with homeworking. A management consultant, a software engineer, a policy analyst, a finance professional — all can be done from anywhere with good broadband. The income correlation is stark: 68% of workers in the top income quintile worked from home at least once a week in 2024, compared with just 12% in the bottom quintile.<Cite nums={1} />
             </p>
             <p>
-              This is not simply an inconvenience gap. Remote working has compounding economic advantages: eliminated commuting costs (averaging £3,200 per year for London commuters), greater control over working hours, lower incidence of workplace illness, and access to the wider national job market rather than only local roles. Office workers who can negotiate hybrid working gain all of these benefits; workers in face-to-face roles receive none. The regional dimension reinforces the inequality: London gained disproportionately from the homeworking revolution because its high-skilled, high-pay workforce is the most homeworking-compatible, widening its productivity gap over other English regions.
+              This is not simply an inconvenience gap. Remote working has compounding economic advantages: eliminated commuting costs (averaging £3,200 per year for London commuters)<Cite nums={3} />, greater control over working hours, lower incidence of workplace illness, and access to the wider national job market rather than only local roles. Office workers who can negotiate hybrid working gain all of these benefits; workers in face-to-face roles receive none.<Cite nums={2} /> The regional dimension reinforces the inequality: London gained disproportionately from the homeworking revolution because its high-skilled, high-pay workforce is the most homeworking-compatible, widening its productivity gap over other English regions.<Cite nums={1} />
             </p>
           </div>
         </section>
@@ -212,6 +221,10 @@ export default function RemoteWorkAccessPage() {
             source="Source: ONS — Homeworking in the UK 2024; CIPD — Flexible and hybrid working practices 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

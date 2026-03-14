@@ -9,6 +9,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -35,6 +37,13 @@ interface DigitalInclusionData {
 }
 
 // ── Component ────────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Lloyds Bank / Good Things Foundation', dataset: 'Essential Digital Skills Framework', date: '2023' },
+  { num: 2, name: 'ONS', dataset: 'Internet Access Survey', date: '2023' },
+  { num: 3, name: 'Ofcom', dataset: 'Connected Nations Report', date: '2023' },
+  { num: 4, name: 'Good Things Foundation', dataset: 'Digital Poverty Premium Research', date: '2023' },
+];
 
 export default function DigitalInclusionPage() {
   const [data, setData] = useState<DigitalInclusionData | null>(null);
@@ -97,8 +106,8 @@ export default function DigitalInclusionPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Around 8 million UK adults — 15% of the adult population — lack the five essential digital skills defined by the Lloyds/Good Things Foundation framework: communicating, handling information, transacting, problem-solving, and creating online. Exclusion is not uniformly distributed: 51% of adults aged 75 and over lack basic digital skills, compared with 3% of 16–24 year olds. Around 1.5 million households have no internet access at all. Disability is a stronger predictor than age: adults with a disability or long-term health condition are three times more likely to be offline than those without. Those in social housing, with no qualifications, and in the lowest income quintile are most affected.</p>
-            <p>Being offline carries a measurable financial penalty. The Good Things Foundation estimates the &ldquo;digital poverty premium&rdquo; at £1,064 a year — the extra cost of buying energy, banking, and shopping through non-online channels. Online-only tariffs for broadband, energy, and insurance are typically 10–30% cheaper. The infrastructure picture has improved sharply: median UK broadband speeds reached 114 Mbps in 2023, up from 27 Mbps in 2018, as full-fibre (FTTP) coverage expanded from 8% of premises in 2019 to 60% in 2024, driven by commercial rollout and the government's Project Gigabit subsidy scheme. But 155,000 rural premises remain without decent broadband of 10 Mbps, and mobile not-spots still cover 3% of UK landmass.</p>
+            <p>Around 8 million UK adults — 15% of the adult population — lack the five essential digital skills defined by the Lloyds/Good Things Foundation framework: communicating, handling information, transacting, problem-solving, and creating online.<Cite nums={1} /> Exclusion is not uniformly distributed: 51% of adults aged 75 and over lack basic digital skills, compared with 3% of 16–24 year olds.<Cite nums={1} /> Around 1.5 million households have no internet access at all.<Cite nums={2} /> Disability is a stronger predictor than age: adults with a disability or long-term health condition are three times more likely to be offline than those without.<Cite nums={1} /> Those in social housing, with no qualifications, and in the lowest income quintile are most affected.</p>
+            <p>Being offline carries a measurable financial penalty. The Good Things Foundation estimates the &ldquo;digital poverty premium&rdquo; at £1,064 a year — the extra cost of buying energy, banking, and shopping through non-online channels.<Cite nums={4} /> Online-only tariffs for broadband, energy, and insurance are typically 10–30% cheaper. The infrastructure picture has improved sharply: median UK broadband speeds reached 114 Mbps in 2023, up from 27 Mbps in 2018, as full-fibre (FTTP) coverage expanded from 8% of premises in 2019 to 60% in 2024, driven by commercial rollout and the government's Project Gigabit subsidy scheme.<Cite nums={3} /> But 155,000 rural premises remain without decent broadband of 10 Mbps, and mobile not-spots still cover 3% of UK landmass.<Cite nums={3} /></p>
             </div>
         </section>
 
@@ -207,6 +216,9 @@ export default function DigitalInclusionPage() {
           />
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid space-y-3 font-mono">

@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DWP', dataset: 'State Pension Rates and Triple Lock', url: 'https://www.gov.uk/government/publications/state-pension-rates', date: '2025/26', note: '£221.20/week; 127% increase since 2010' },
+  { num: 2, name: 'DWP', dataset: 'Automatic Enrolment Statistics', date: '2023', note: '22.6 million workers enrolled; 88% of eligible' },
+  { num: 3, name: 'DWP', dataset: 'Households Below Average Income (HBAI)', url: 'https://www.gov.uk/government/statistics/households-below-average-income-hbai', date: '2023', note: '2.1 million pensioners in poverty AHC' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -137,10 +145,10 @@ export default function PensionsPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The triple lock has made the state pension one of the fastest-growing items in public spending. Weekly payments rose from £97.65 in 2010 to £221.20 in 2025/26 — a 127% cash increase — driven by a formula that uprates each year by the highest of earnings growth, CPI inflation, or 2.5%. The mechanism now costs the Exchequer £124 billion annually, the single largest welfare line item. Its fiscal sustainability is increasingly contested: the share of the UK population aged 65 and over is projected to rise from 19% to 25% by 2050. Hunt and Sunak suspended the earnings component in 2021/22 when a COVID wages anomaly would have triggered an 8% rise, signalling the lock's political fragility.
+              The triple lock has made the state pension one of the fastest-growing items in public spending. Weekly payments rose from £97.65 in 2010 to £221.20 in 2025/26 — a 127% cash increase — driven by a formula that uprates each year by the highest of earnings growth, CPI inflation, or 2.5%.<Cite nums={1} /> The mechanism now costs the Exchequer £124 billion annually, the single largest welfare line item. Its fiscal sustainability is increasingly contested: the share of the UK population aged 65 and over is projected to rise from 19% to 25% by 2050. Hunt and Sunak suspended the earnings component in 2021/22 when a COVID wages anomaly would have triggered an 8% rise, signalling the lock's political fragility.
             </p>
             <p>
-              Automatic enrolment, launched in 2012, reversed decades of declining private pension coverage. Before the policy, just 47% of private-sector workers had any workplace pension. By 2023, 22.6 million workers — 88% of those eligible — were enrolled, up from 0.9 million at launch. Total contributions now run at £133 billion a year, with a minimum 8% of qualifying earnings split between employer (3%) and employee (5%). The reform disproportionately benefited lower-paid and part-time workers, groups that previously had almost no pension saving.
+              Automatic enrolment, launched in 2012, reversed decades of declining private pension coverage. Before the policy, just 47% of private-sector workers had any workplace pension. By 2023, 22.6 million workers — 88% of those eligible — were enrolled, up from 0.9 million at launch.<Cite nums={2} /> Total contributions now run at £133 billion a year, with a minimum 8% of qualifying earnings split between employer (3%) and employee (5%). The reform disproportionately benefited lower-paid and part-time workers, groups that previously had almost no pension saving.
             </p>
             </div>
         </section>
@@ -231,6 +239,10 @@ export default function PensionsPage() {
           source="Source: DWP — Automatic enrolment statistics 2023."
         />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

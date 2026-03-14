@@ -8,6 +8,8 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // -- Types ------------------------------------------------------------------
 
@@ -27,6 +29,12 @@ interface YouthWagesData {
 function yearToDate(y: number): Date {
   return new Date(y, 0, 1)
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Annual Survey of Hours and Earnings (ASHE)', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/annualsurveyofhoursandearnings', date: '2023', note: 'Youth median gross annual wage £19,200 vs £33,000 all-worker median' },
+  { num: 2, name: 'Low Pay Commission', dataset: 'National Minimum Wage and National Living Wage Rates', url: 'https://www.gov.uk/national-minimum-wage-rates', date: '2024', note: 'Full NLW extended to workers aged 21+ from October 2024' },
+  { num: 3, name: 'ONS', dataset: 'Labour Force Survey — EMP17 (Zero-hours contracts)', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/datasets/emp17peopleinemploymentonzerohourscontracts', date: '2024', note: 'Around 40% of zero-hours contract workers are under 25' },
+];
 
 // -- Page -------------------------------------------------------------------
 
@@ -77,8 +85,8 @@ export default function YouthWagesPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Young workers in Britain have experienced a decade of stagnating real wages. In 2023, the youth median gross annual wage stood at approximately £19,200 — compared to £33,000 for the full workforce median, a 42% gap that has barely shifted since 2010 when it stood at 43%. In real terms, youth wages in 2023 are roughly 7.3% below their 2010 level, meaning the young worker of 2024 starts on a lower real wage than their equivalent 14 years ago, yet faces significantly higher housing costs, energy bills, and transport fares. The gap is partly structural: younger workers disproportionately occupy lower-wage roles in hospitality, retail, and social care where career progression is limited. Age-differentiated minimum wage rates historically allowed workers under 23 to be paid less than older colleagues for identical work; the October 2024 extension of the full National Living Wage to workers aged 21 and over closed part of this gap, but those aged 18–20 remain on a lower statutory rate.</p>
-            <p>Around 40% of zero-hours contract workers are under 25, compounding wage insecurity with income uncertainty, limited sick pay, and no employer pension contributions. The headline wage gap therefore understates the full earnings disadvantage faced by many young workers. Policy debate centres on whether age-differentiated minimum wage rates are justified: proponents argue younger workers have lower productivity, but the evidence for this is weak, and economists and campaigners have called for full equalisation from age 18 as the next step in narrowing a gap that has stubbornly resisted two decades of policy attention.</p>
+            <p>Young workers in Britain have experienced a decade of stagnating real wages. In 2023, the youth median gross annual wage stood at approximately £19,200 — compared to £33,000 for the full workforce median, a 42% gap that has barely shifted since 2010 when it stood at 43%.<Cite nums={1} /> In real terms, youth wages in 2023 are roughly 7.3% below their 2010 level, meaning the young worker of 2024 starts on a lower real wage than their equivalent 14 years ago, yet faces significantly higher housing costs, energy bills, and transport fares. The gap is partly structural: younger workers disproportionately occupy lower-wage roles in hospitality, retail, and social care where career progression is limited. Age-differentiated minimum wage rates historically allowed workers under 23 to be paid less than older colleagues for identical work; the October 2024 extension of the full National Living Wage to workers aged 21 and over closed part of this gap, but those aged 18–20 remain on a lower statutory rate.<Cite nums={2} /></p>
+            <p>Around 40% of zero-hours contract workers are under 25, compounding wage insecurity with income uncertainty, limited sick pay, and no employer pension contributions.<Cite nums={3} /> The headline wage gap therefore understates the full earnings disadvantage faced by many young workers. Policy debate centres on whether age-differentiated minimum wage rates are justified: proponents argue younger workers have lower productivity, but the evidence for this is weak, and economists and campaigners have called for full equalisation from age 18 as the next step in narrowing a gap that has stubbornly resisted two decades of policy attention.</p>
           </div>
         </section>
 
@@ -138,6 +146,10 @@ export default function YouthWagesPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

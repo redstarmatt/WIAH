@@ -8,6 +8,15 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Carers UK', dataset: 'State of Caring Survey', url: 'https://www.carersuk.org/research-and-policy/state-of-caring-report/', date: '2024' },
+  { num: 2, name: 'DWP / Census', dataset: 'Unpaid carer estimates', url: 'https://www.gov.uk/government/statistics', date: '2024', note: '5.8 million unpaid carers; replacement value £162bn' },
+  { num: 3, name: 'NHS England', dataset: 'Adult Social Care Activity and Finance Report', url: 'https://www.england.nhs.uk/publication/adult-social-care-activity-and-finance-report/', date: '2024' },
+  { num: 4, name: 'Care Act 2014', dataset: 'Carer assessment and support rights', url: 'https://www.legislation.gov.uk/ukpga/2014/23/contents', date: '2014' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -66,8 +75,8 @@ export default function RespiteCareShortage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England has approximately 5.8 million unpaid carers whose replacement value — the cost of equivalent professional care — is estimated at £162 billion annually, exceeding total NHS acute spending. Yet the share of carers who can access respite when they need it has fallen from 56% in 2015 to 41% in 2024, driven by local authority budget cuts, care sector workforce shortages, and increased complexity of need. The Care Act 2014 gave carers a legal right to an assessment and eligible support, including short breaks, but eligibility thresholds have tightened sharply as council budgets contracted — the number of carers receiving direct payments for short breaks has fallen despite rising carer numbers. Day centres, particularly vital for carers of people with dementia, were hard hit: many closed permanently during COVID and did not reopen.</p>
-            <p>The consequences fall most heavily on those providing the most intensive care — typically women in middle age caring for a spouse or parent with dementia. Without reliable respite, burnout accelerates and care breakdown leads to emergency hospital admissions and care home placements that cost far more than preventive support would have. Research consistently shows respite care delays care home admission and reduces unplanned NHS usage, but funding sits with local authorities rather than the NHS, and no sustained national uplift specifically for carer short breaks has been delivered.</p>
+            <p>England has approximately 5.8 million unpaid carers whose replacement value — the cost of equivalent professional care — is estimated at £162 billion annually, exceeding total NHS acute spending.<Cite nums={2} /> Yet the share of carers who can access respite when they need it has fallen from 56% in 2015 to 41% in 2024, driven by local authority budget cuts, care sector workforce shortages, and increased complexity of need.<Cite nums={1} /> The Care Act 2014 gave carers a legal right to an assessment and eligible support, including short breaks, but eligibility thresholds have tightened sharply as council budgets contracted — the number of carers receiving direct payments for short breaks has fallen despite rising carer numbers.<Cite nums={[3, 4]} /> Day centres, particularly vital for carers of people with dementia, were hard hit: many closed permanently during COVID and did not reopen.</p>
+            <p>The consequences fall most heavily on those providing the most intensive care — typically women in middle age caring for a spouse or parent with dementia. Without reliable respite, burnout accelerates and care breakdown leads to emergency hospital admissions and care home placements that cost far more than preventive support would have.<Cite nums={1} /> Research consistently shows respite care delays care home admission and reduces unplanned NHS usage, but funding sits with local authorities rather than the NHS, and no sustained national uplift specifically for carer short breaks has been delivered.<Cite nums={3} /></p>
           </div>
         </section>
 
@@ -127,6 +136,10 @@ export default function RespiteCareShortage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

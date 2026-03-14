@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Section 21 possession claims (thousands), 2015–2024 — MOJ
 const s21ClaimsValues = [38, 41, 44, 46, 48, 44, 12, 28, 38, 44];
@@ -47,6 +49,12 @@ const evictionAnnotations: Annotation[] = [
   { date: new Date(2021, 5, 1), label: '2021: Ban lifted' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'MOJ', dataset: 'Mortgage and landlord possession statistics', url: 'https://www.gov.uk/government/collections/mortgage-and-landlord-possession-statistics', date: '2024' },
+  { num: 2, name: 'DLUHC', dataset: 'Statutory homelessness in England', url: 'https://www.gov.uk/government/collections/homelessness-statistics', date: '2024' },
+  { num: 3, name: 'LGA', dataset: 'Local government finance analysis', date: '2024' },
+];
+
 export default function EvictionsPage() {
   return (
     <>
@@ -61,8 +69,8 @@ export default function EvictionsPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Section 21 'no-fault' evictions — where landlords can repossess property without giving a reason, provided notice requirements are met — have been a central controversy in English housing law for a decade. Claims reached their pre-COVID peak of around 48,000 per year in 2019, fell sharply during the pandemic eviction ban, and then rebounded as the ban lifted in mid-2021. By 2024, Section 21 claims were running at approximately 44,000 per year, close to pre-pandemic levels. The government announced plans to abolish Section 21 in 2019 under Theresa May, but legislation was repeatedly delayed; the Renters Rights Bill — which would abolish Section 21 and replace fixed-term tenancies with periodic ones — reached the House of Lords in 2024.</p>
-            <p>The downstream effect of evictions on homelessness is substantial. The number of households in temporary accommodation — placed there by local authorities after becoming homeless, often following an eviction — has risen steadily to around 84,000 in 2024. This includes approximately 130,000 children living in bed and breakfast hotels, hostels, and overcrowded temporary placements. The cost to local authorities is enormous: temporary accommodation costs councils approximately £1.7 billion per year, contributing to the financial pressures that have driven multiple section 114 (effective bankruptcy) notices. Every 1,000 Section 21 evictions generates an estimated £50 million in downstream homelessness costs.</p>
+            <p>Section 21 'no-fault' evictions — where landlords can repossess property without giving a reason, provided notice requirements are met — have been a central controversy in English housing law for a decade. Claims reached their pre-COVID peak of around 48,000 per year in 2019, fell sharply during the pandemic eviction ban, and then rebounded as the ban lifted in mid-2021. By 2024, Section 21 claims were running at approximately 44,000 per year, close to pre-pandemic levels.<Cite nums={1} /> The government announced plans to abolish Section 21 in 2019 under Theresa May, but legislation was repeatedly delayed; the Renters Rights Bill — which would abolish Section 21 and replace fixed-term tenancies with periodic ones — reached the House of Lords in 2024.</p>
+            <p>The downstream effect of evictions on homelessness is substantial. The number of households in temporary accommodation — placed there by local authorities after becoming homeless, often following an eviction — has risen steadily to around 84,000 in 2024.<Cite nums={2} /> This includes approximately 130,000 children living in bed and breakfast hotels, hostels, and overcrowded temporary placements.<Cite nums={2} /> The cost to local authorities is enormous: temporary accommodation costs councils approximately £1.7 billion per year<Cite nums={3} />, contributing to the financial pressures that have driven multiple section 114 (effective bankruptcy) notices. Every 1,000 Section 21 evictions generates an estimated £50 million in downstream homelessness costs.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -140,6 +148,10 @@ export default function EvictionsPage() {
             source="Source: DLUHC — Renters Rights Bill impact assessment 2024. Generation Rent — Analysis of Section 21 eviction trends."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

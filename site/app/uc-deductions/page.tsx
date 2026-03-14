@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DWP', dataset: 'Universal Credit statistics — deduction rates and amounts', url: 'https://www.gov.uk/government/statistics/universal-credit-statistics-29-april-2013-to-11-january-2024', date: 'January 2025' },
+  { num: 2, name: 'Work and Pensions Select Committee', dataset: 'Universal Credit: the wait for a first payment', url: 'https://committees.parliament.uk/work/6784/universal-credit-the-wait-for-a-first-payment/', date: '2024' },
+  { num: 3, name: 'DWP', dataset: 'Deduction cap policy — reduction from 40% to 25%', url: 'https://www.gov.uk/government/publications/universal-credit-deductions', date: '2021' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -162,9 +170,9 @@ export default function UcDeductionsPage() {
         {/* ── Editorial context ──────────────────────────────────────────── */}
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Universal Credit was designed to simplify the benefits system — rolling six legacy benefits into one monthly payment. But built into its architecture is a feature that routinely leaves the poorest households with less than the minimum the government itself says they need to live on. Deductions are automatic reductions taken from a claimant{"'"}s monthly payment before it reaches their bank account. They cover advance loan repayments, third-party debts like council tax arrears, and fraud penalties. In 2025, 44% of all UC claimants — roughly 2.2 million people — have at least one deduction applied. The average amount deducted is \u00A363 per month, up from \u00A352 when records began in 2017.</p>
-            <p>The single largest cause is advance loan repayments, which account for 28 percentage points of the total. Advances exist because UC has a mandatory five-week wait before the first payment. Claimants who cannot survive five weeks without income — the vast majority — are offered a loan, repaid through monthly deductions over up to 24 months. The system therefore builds debt into the moment of first contact. DWP data shows that claimants with deductions are significantly more likely to be referred to food banks, fall behind on rent, and accumulate further debt. The deduction cap has been reduced from 40% of the standard allowance to 25% since 2019, and repayment periods have been extended, but these adjustments have not eliminated the fundamental problem: millions of people receive less than the assessed minimum each month.</p>
-            <p>Third-party deductions — money taken for council tax arrears, utility debts, or rent arrears — affect a further 10% of claimants and have remained stubbornly stable. These deductions are often imposed without meaningful consent and can persist for years. The Work and Pensions Select Committee has repeatedly called for reform, noting that deductions interact with the cost-of-living crisis to create a "poverty premium" where those with the least income pay the most for essentials. The data reveals a system that, whatever its original intent, systematically reduces payments below subsistence level for nearly half of all recipients.</p>
+            <p>Universal Credit was designed to simplify the benefits system — rolling six legacy benefits into one monthly payment. But built into its architecture is a feature that routinely leaves the poorest households with less than the minimum the government itself says they need to live on. Deductions are automatic reductions taken from a claimant{"'"}s monthly payment before it reaches their bank account. They cover advance loan repayments, third-party debts like council tax arrears, and fraud penalties. In 2025, 44% of all UC claimants — roughly 2.2 million people — have at least one deduction applied. The average amount deducted is \u00A363 per month, up from \u00A352 when records began in 2017.<Cite nums={1} /></p>
+            <p>The single largest cause is advance loan repayments, which account for 28 percentage points of the total. Advances exist because UC has a mandatory five-week wait before the first payment. Claimants who cannot survive five weeks without income — the vast majority — are offered a loan, repaid through monthly deductions over up to 24 months.<Cite nums={1} /> The system therefore builds debt into the moment of first contact. DWP data shows that claimants with deductions are significantly more likely to be referred to food banks, fall behind on rent, and accumulate further debt. The deduction cap has been reduced from 40% of the standard allowance to 25% since 2019, and repayment periods have been extended, but these adjustments have not eliminated the fundamental problem: millions of people receive less than the assessed minimum each month.<Cite nums={3} /></p>
+            <p>Third-party deductions — money taken for council tax arrears, utility debts, or rent arrears — affect a further 10% of claimants and have remained stubbornly stable. These deductions are often imposed without meaningful consent and can persist for years. The Work and Pensions Select Committee has repeatedly called for reform, noting that deductions interact with the cost-of-living crisis to create a "poverty premium" where those with the least income pay the most for essentials.<Cite nums={2} /> The data reveals a system that, whatever its original intent, systematically reduces payments below subsistence level for nearly half of all recipients.</p>
           </div>
         </section>
 
@@ -296,6 +304,10 @@ export default function UcDeductionsPage() {
             source="Source: DWP — Universal Credit statistics, 2025. Work and Pensions Select Committee — Universal Credit: the wait for a first payment, 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* ── Sources ────────────────────────────────────────────────────── */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

@@ -8,6 +8,8 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // -- Types ------------------------------------------------------------------
 
@@ -25,6 +27,14 @@ interface DisabledChildrenCareData {
 function yearToDate(y: number): Date {
   return new Date(y, 0, 1)
 }
+
+// -- References -------------------------------------------------------------
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DfE', dataset: 'SEND and AP Insights', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/education-health-and-care-plans', date: '2024' },
+  { num: 2, name: 'NHS Digital', dataset: 'Children and Young People\'s Mental Health Services', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-of-children-and-young-people-in-england', date: '2024' },
+  { num: 3, name: 'Contact', dataset: 'Research and policy on disabled children and families', url: 'https://contact.org.uk/research-and-policy/', date: '2024' },
+];
 
 // -- Page -------------------------------------------------------------------
 
@@ -75,7 +85,7 @@ export default function DisabledChildrenCarePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Around 240,000 disabled children in England are estimated to need some level of social care support, yet only around 89,000 are receiving it — a gap that has widened over the past decade as demand has grown faster than local authority funding. The Education, Health and Care Plan (EHCP) system, introduced by the Children and Families Act 2014 to integrate support across education, health, and social care, has failed to keep pace: the average wait from request to final EHCP has grown from 19 weeks in 2015 to 28 weeks in 2024, well beyond the statutory 20-week limit. In 2024, over 60% of EHCPs were issued outside the legal timeframe. Tribunal challenges by families have reached record levels, with the SEND Tribunal upholding the majority of parental appeals. NHS children's therapy services — speech and language, occupational therapy, physiotherapy — have become the primary bottleneck, with NHS delays the most frequently cited reason for missed EHCP deadlines. The SEND Review (2023) acknowledged systemic failure and set out a reform programme, but early implementation has been patchy.</p>
+            <p>Around 240,000 disabled children in England are estimated to need some level of social care support, yet only around 89,000 are receiving it — a gap that has widened over the past decade as demand has grown faster than local authority funding.<Cite nums={[1, 3]} /> The Education, Health and Care Plan (EHCP) system, introduced by the Children and Families Act 2014 to integrate support across education, health, and social care, has failed to keep pace: the average wait from request to final EHCP has grown from 19 weeks in 2015 to 28 weeks in 2024, well beyond the statutory 20-week limit.<Cite nums={1} /> In 2024, over 60% of EHCPs were issued outside the legal timeframe.<Cite nums={1} /> Tribunal challenges by families have reached record levels, with the SEND Tribunal upholding the majority of parental appeals. NHS children&apos;s therapy services — speech and language, occupational therapy, physiotherapy — have become the primary bottleneck, with NHS delays the most frequently cited reason for missed EHCP deadlines.<Cite nums={2} /> The SEND Review (2023) acknowledged systemic failure and set out a reform programme, but early implementation has been patchy.</p>
             <p>The consequences of unmet need accumulate across childhood and into adult life. Children with significant disabilities who do not receive timely support are more likely to experience educational exclusion, mental health crises, and family breakdown. Their parents — disproportionately mothers — are more likely to reduce or leave employment to fill the gap the system fails to supply, compounding financial hardship that the system does not account for in its costing of inadequate provision. Without significant new investment in both local authority children's services and NHS therapy capacity, the structural conditions driving the gap between need and support are unlikely to change.</p>
           </div>
         </section>
@@ -136,6 +146,10 @@ export default function DisabledChildrenCarePage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Labour Force Survey — Economic Inactivity by Age', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/economicinactivity', date: '2024' },
+  { num: 2, name: 'DWP', dataset: 'Returnership Programme Evaluation', url: 'https://www.gov.uk/government/publications', date: '2024', note: '15,000 placements against 100,000 target' },
+  { num: 3, name: 'Bank of England / OBR', dataset: 'Labour supply and economic inactivity analysis', url: 'https://www.bankofengland.co.uk/', date: '2024' },
+  { num: 4, name: 'ONS', dataset: 'Prevalence of long COVID', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases', date: '2024', note: 'Approx 1.8 million people affected' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -134,10 +143,10 @@ export default function ReturnershipsPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Economic inactivity among people aged 50–64 rose sharply during the pandemic and has not fully recovered. The stock of inactive 50–64 year olds grew from 3.2 million pre-pandemic to 3.8 million at peak — a rise of 600,000. By 2024, it had fallen to 3.5 million, still 300,000 above the 2019 level. The Bank of England and OBR have consistently identified this cohort as a key constraint on labour supply, contributing to elevated wage growth and persistent inflation.
+              Economic inactivity among people aged 50–64 rose sharply during the pandemic and has not fully recovered. The stock of inactive 50–64 year olds grew from 3.2 million pre-pandemic to 3.8 million at peak — a rise of 600,000. By 2024, it had fallen to 3.5 million, still 300,000 above the 2019 level.<Cite nums={1} /> The Bank of England and OBR have consistently identified this cohort as a key constraint on labour supply, contributing to elevated wage growth and persistent inflation.<Cite nums={3} />
             </p>
             <p>
-              The drivers are primarily health rather than preference. The percentage of inactive 50–64 year olds citing long-term illness or disability as their main reason rose from 34% in 2019 to 45% in 2024 — reflecting both the direct health impacts of COVID-19 (including long COVID, which affects approximately 1.8 million people) and a deterioration in NHS access that has prolonged recovery times. The government's Returnership scheme — launched in Spring 2023 and combining apprenticeships, Skills Bootcamps, and Sector-based Work Academy Programmes targeted at over-50s — had supported 15,000 placements by 2024, against a stated ambition of 100,000. The gap between rhetoric and delivery reflects both the scheme's modest scale and the fundamental barrier that many non-returners face: health problems that paid work cannot easily accommodate.
+              The drivers are primarily health rather than preference. The percentage of inactive 50–64 year olds citing long-term illness or disability as their main reason rose from 34% in 2019 to 45% in 2024<Cite nums={1} /> — reflecting both the direct health impacts of COVID-19 (including long COVID, which affects approximately 1.8 million people)<Cite nums={4} /> and a deterioration in NHS access that has prolonged recovery times. The government's Returnership scheme — launched in Spring 2023 and combining apprenticeships, Skills Bootcamps, and Sector-based Work Academy Programmes targeted at over-50s — had supported 15,000 placements by 2024, against a stated ambition of 100,000.<Cite nums={2} /> The gap between rhetoric and delivery reflects both the scheme's modest scale and the fundamental barrier that many non-returners face: health problems that paid work cannot easily accommodate.
             </p>
           </div>
         </section>
@@ -232,6 +241,10 @@ export default function ReturnershipsPage() {
             source="Source: DWP Returnership programme evaluation 2024 · ONS Labour Force Survey Q4 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

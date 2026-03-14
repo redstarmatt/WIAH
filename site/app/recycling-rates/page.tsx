@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Defra', dataset: 'Local authority collected waste management statistics, England', url: 'https://www.gov.uk/government/statistical-data-sets/env18-local-authority-collected-waste-headline-results', date: '2024' },
+  { num: 2, name: 'Eurostat', dataset: 'Municipal waste statistics', url: 'https://ec.europa.eu/eurostat/web/waste/key-waste-stream/municipal-waste', date: '2024' },
+  { num: 3, name: 'Defra', dataset: 'Resources and Waste Strategy / Environment Act 2021', date: '2021' },
+];
 
 export default function RecyclingRatesPage() {
   const englandRate = [40.4, 41.1, 42.0, 43.9, 44.0, 43.9, 44.3, 43.0, 43.5, 43.8, 43.2, 43.1, 43.0, 42.8];
@@ -166,12 +174,16 @@ export default function RecyclingRatesPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on recycling rates</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>England's household recycling rate rose rapidly in the early 2000s and reached around 44% by 2014 — then stopped. In the decade since, it has fluctuated between 42% and 44% and has made no progress. The 50% recycling target set for 2020 was missed by seven percentage points. The current statutory target under the Environment Act 2021 — 65% by 2035 — would require the fastest sustained improvement England has ever achieved.</p>
-              <p>The stagnation reflects a combination of structural and political failures. The collection system is fragmented: different councils collect different materials, meaning residents in adjacent areas face incompatible rules. Contamination rates are high — materials rejected by recyclers because they are mixed with non-recyclable waste represent a significant share of what is collected. There has been no consistent national communication campaign since the early 2000s. And crucially, there has been no deposit return scheme — a mechanism that consistently delivers 85-95% return rates for bottles and cans wherever it is used.</p>
-              <p>The international comparison is striking. Germany recycles 67% of household waste, using a combination of producer responsibility, deposits, and mandatory waste separation. The Netherlands achieves 55%. Even the EU average now exceeds England's rate. The UK's recycling performance was broadly average within the EU before 2014; it has since fallen behind as other countries continued improving while England stalled.</p>
+              <p>England's household recycling rate rose rapidly in the early 2000s and reached around 44% by 2014 — then stopped.<Cite nums={1} /> In the decade since, it has fluctuated between 42% and 44% and has made no progress. The 50% recycling target set for 2020 was missed by seven percentage points.<Cite nums={1} /> The current statutory target under the Environment Act 2021 — 65% by 2035 — would require the fastest sustained improvement England has ever achieved.<Cite nums={3} /></p>
+              <p>The stagnation reflects a combination of structural and political failures. The collection system is fragmented: different councils collect different materials, meaning residents in adjacent areas face incompatible rules. Contamination rates are high — materials rejected by recyclers because they are mixed with non-recyclable waste represent a significant share of what is collected.<Cite nums={1} /> There has been no consistent national communication campaign since the early 2000s. And crucially, there has been no deposit return scheme — a mechanism that consistently delivers 85-95% return rates for bottles and cans wherever it is used.</p>
+              <p>The international comparison is striking. Germany recycles 67% of household waste, using a combination of producer responsibility, deposits, and mandatory waste separation. The Netherlands achieves 55%.<Cite nums={2} /> Even the EU average now exceeds England's rate. The UK's recycling performance was broadly average within the EU before 2014; it has since fallen behind as other countries continued improving while England stalled.<Cite nums={[1, 2]} /></p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

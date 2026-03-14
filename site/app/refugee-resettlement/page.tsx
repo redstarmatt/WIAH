@@ -8,6 +8,8 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -35,6 +37,12 @@ interface TopicData {
 function yearToDate(y: number): Date {
   return new Date(y, 5, 1);
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Home Office', dataset: 'Immigration Statistics — Resettlement', url: 'https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables', date: '2025' },
+  { num: 2, name: 'DLUHC', dataset: 'Homes for Ukraine Scheme Statistics', url: 'https://www.gov.uk/guidance/homes-for-ukraine-scheme', date: '2025' },
+  { num: 3, name: 'UNHCR', dataset: 'Global Trends: Forced Displacement', url: 'https://www.unhcr.org/global-trends', date: '2024' },
+];
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -194,6 +202,10 @@ export default function TopicPage() {
             source="Source: Home Office — Resettlement statistics, 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

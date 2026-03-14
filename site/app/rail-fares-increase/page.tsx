@@ -8,6 +8,13 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ORR', dataset: 'Rail Fares Statistics', url: 'https://dataportal.orr.gov.uk/statistics/finance/rail-fares/', date: '2025', note: 'Real fares increase of 94% since 1995; wages rose 50% over same period' },
+  { num: 2, name: 'DfT', dataset: 'Williams-Shapps Plan for Rail', date: '2022', note: 'Great British Railways committed to simplifying fares system' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -194,6 +201,10 @@ export default function TopicPage() {
             source="Source: ORR — Rail fares statistics, 2025. DfT — Williams-Shapps Plan for Rail, 2022."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

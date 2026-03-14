@@ -8,6 +8,8 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // -- Types ------------------------------------------------------------------
 
@@ -25,6 +27,15 @@ interface BereavementSupportData {
 function yearToDate(y: number): Date {
   return new Date(y, 0, 1)
 }
+
+// -- References -------------------------------------------------------------
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Death registrations summary tables', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths', date: '2024' },
+  { num: 2, name: 'Cruse Bereavement Support', dataset: 'Annual Report', url: 'https://www.cruse.org.uk/about-us/annual-report/', date: '2024' },
+  { num: 3, name: 'NHS England', dataset: 'Talking Therapies (IAPT) annual report', url: 'https://www.england.nhs.uk/mental-health/adults/iapt/', date: '2024' },
+  { num: 4, name: 'Marie Curie', dataset: 'Understanding Grief in the UK', url: 'https://www.mariecurie.org.uk', date: '2023' },
+];
 
 // -- Page -------------------------------------------------------------------
 
@@ -75,8 +86,8 @@ export default function BereavementSupportPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Around 600,000 people die in England each year, leaving an estimated 3 million people newly bereaved annually. Clinical estimates suggest 10–15% will need specialist support for complicated grief, prolonged grief disorder, or grief-associated depression — yet fewer than 10% currently access it. Cruse Bereavement Support, the largest national charity, handles over 80,000 contacts per year but is funded primarily through donations rather than NHS contract. Average referral-to-assessment wait times rose sharply during the COVID-19 pandemic, reaching 11 weeks in 2024 — more than twice the 2015 figure of 7 weeks. NHS Talking Therapies services are theoretically accessible for grief-related conditions, but limited grief-specific training and clinical thresholds leave many bereaved people unserved.</p>
-            <p>Children and people without workplace protections bear a disproportionate share of the support gap. School-based bereavement provision is inconsistent and dependent on individual pastoral capacity; specialist therapy for under-18s is limited in most areas, despite evidence that unaddressed childhood bereavement significantly raises the risk of adult mental health problems. Statutory bereavement leave in England is three days for the death of a dependant — with no entitlement for the loss of a partner, parent, or sibling — leaving many workers in acute grief with no protected time and no access to support.</p>
+            <p>Around 600,000 people die in England each year, leaving an estimated 3 million people newly bereaved annually.<Cite nums={1} /> Clinical estimates suggest 10–15% will need specialist support for complicated grief, prolonged grief disorder, or grief-associated depression — yet fewer than 10% currently access it.<Cite nums={[2, 4]} /> Cruse Bereavement Support, the largest national charity, handles over 80,000 contacts per year but is funded primarily through donations rather than NHS contract.<Cite nums={2} /> Average referral-to-assessment wait times rose sharply during the COVID-19 pandemic, reaching 11 weeks in 2024 — more than twice the 2015 figure of 7 weeks.<Cite nums={2} /> NHS Talking Therapies services are theoretically accessible for grief-related conditions, but limited grief-specific training and clinical thresholds leave many bereaved people unserved.<Cite nums={3} /></p>
+            <p>Children and people without workplace protections bear a disproportionate share of the support gap. School-based bereavement provision is inconsistent and dependent on individual pastoral capacity; specialist therapy for under-18s is limited in most areas, despite evidence that unaddressed childhood bereavement significantly raises the risk of adult mental health problems.<Cite nums={4} /> Statutory bereavement leave in England is three days for the death of a dependant — with no entitlement for the loss of a partner, parent, or sibling — leaving many workers in acute grief with no protected time and no access to support.</p>
           </div>
         </section>
 
@@ -136,6 +147,10 @@ export default function BereavementSupportPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

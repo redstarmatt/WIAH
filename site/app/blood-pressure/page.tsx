@@ -8,6 +8,8 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // -- Types ------------------------------------------------------------------
 
@@ -28,6 +30,15 @@ interface BloodPressureData {
 function yearToDate(y: number): Date {
   return new Date(y, 5, 1)
 }
+
+// -- References -------------------------------------------------------------
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS Digital / QOF', dataset: 'Quality and Outcomes Framework — hypertension indicators', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/quality-and-outcomes-framework-achievement-prevalence-and-exceptions-data', date: '2024' },
+  { num: 2, name: 'NICE / BHF', dataset: 'Hypertension prevalence modelling', url: 'https://www.bhf.org.uk/informationsupport/risk-factors/high-blood-pressure', date: '2024' },
+  { num: 3, name: 'OHID', dataset: 'NHS Health Check programme data', url: 'https://www.gov.uk/government/publications/nhs-health-check-programme-data', date: '2024' },
+  { num: 4, name: 'British Heart Foundation', dataset: 'CVD Statistics Compendium', url: 'https://www.bhf.org.uk/what-we-do/our-research/heart-and-circulatory-diseases-in-numbers', date: '2024' },
+];
 
 // -- Page -------------------------------------------------------------------
 
@@ -110,8 +121,8 @@ export default function BloodPressurePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>An estimated 15.2 million adults in England have blood pressure above the clinical threshold of 140/90 mmHg, making hypertension the most common chronic condition after chronic pain. It causes no symptoms until it causes a heart attack, stroke, kidney failure, or vascular dementia — and is entirely treatable with medications costing less than £2 per month. Yet approximately 7.4 million people remain undiagnosed. Of the 7.8 million on GP registers, only 60% have their blood pressure controlled to the NICE target — down from 64% in 2016, with control rates dropping sharply during COVID when face-to-face reviews were paused. The NHS Health Check programme delivered 1.48 million cardiovascular risk assessments in 2024, still below the 1.61 million achieved before the pandemic, with uptake ranging from 30% to 75% across local authorities.</p>
-            <p>The consequences are quantifiable and avoidable. The British Heart Foundation estimates high blood pressure contributes to approximately 75,000 deaths per year through strokes, heart attacks, and kidney disease; NICE modelling suggests matching the best-performing countries would prevent 14,000 cardiovascular events annually. The detection gap is deepest in the most deprived communities, where hypertension prevalence is highest but NHS Health Check uptake is lowest — a pattern that concentrates preventable cardiovascular harm among those least able to manage its consequences.</p>
+            <p>An estimated 15.2 million adults in England have blood pressure above the clinical threshold of 140/90 mmHg, making hypertension the most common chronic condition after chronic pain.<Cite nums={2} /> It causes no symptoms until it causes a heart attack, stroke, kidney failure, or vascular dementia — and is entirely treatable with medications costing less than £2 per month. Yet approximately 7.4 million people remain undiagnosed.<Cite nums={2} /> Of the 7.8 million on GP registers, only 60% have their blood pressure controlled to the NICE target — down from 64% in 2016, with control rates dropping sharply during COVID when face-to-face reviews were paused.<Cite nums={1} /> The NHS Health Check programme delivered 1.48 million cardiovascular risk assessments in 2024, still below the 1.61 million achieved before the pandemic, with uptake ranging from 30% to 75% across local authorities.<Cite nums={3} /></p>
+            <p>The consequences are quantifiable and avoidable. The British Heart Foundation estimates high blood pressure contributes to approximately 75,000 deaths per year through strokes, heart attacks, and kidney disease; NICE modelling suggests matching the best-performing countries would prevent 14,000 cardiovascular events annually.<Cite nums={4} /> The detection gap is deepest in the most deprived communities, where hypertension prevalence is highest but NHS Health Check uptake is lowest — a pattern that concentrates preventable cardiovascular harm among those least able to manage its consequences.<Cite nums={3} /></p>
           </div>
         </section>
 
@@ -204,6 +215,10 @@ export default function BloodPressurePage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

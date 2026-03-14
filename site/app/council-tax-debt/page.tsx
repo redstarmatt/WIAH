@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DLUHC', dataset: 'Local Authority Revenue Outturn Statistics', url: 'https://www.gov.uk/government/collections/local-authority-revenue-expenditure-and-financing', date: '2024' },
+  { num: 2, name: 'StepChange / Citizens Advice', dataset: 'Council Tax Debt Statistics', date: '2024' },
+  { num: 3, name: 'CDER Network / Citizens Advice', dataset: 'Enforcement Statistics', date: '2024' },
+  { num: 4, name: 'IFS', dataset: 'Council Tax Reform Analysis', url: 'https://ifs.org.uk', date: '2023' },
+];
 
 export default function CouncilTaxDebtPage() {
 
@@ -135,13 +144,16 @@ export default function CouncilTaxDebtPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on council tax debt</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Outstanding council tax debt in England reached £6 billion in 2024 — a near-doubling since 2015, driven primarily by the cost-of-living crisis and pandemic-related payment difficulties never fully cleared. The abolition of Council Tax Benefit in 2013 and its replacement with inconsistent local council tax support schemes left many councils requiring working-age claimants to pay 20–30% of their bill regardless of income — generating the arrears from which the enforcement cascade follows.</p>
-              <p>Approximately 255,000 bailiff visits were made for council tax in 2024, up 25% since 2021. The standard bailiff fee structure adds approximately £235 per debt where an enforcement notice is served, creating situations where enforcement costs exceed the original arrears for small debts — trapping households in a deepening spiral.</p>
-              <p>Council tax bands are based on 1991 property valuations, meaning that properties in areas of high house price growth pay the same band as in 1991 despite enormous value increases. The IFS has recommended replacing council tax with a proportional property tax levied as a percentage of current value, which would be both more economically rational and more progressive. No government has attempted comprehensive reform since the poll tax in the early 1990s.</p>
+              <p>Outstanding council tax debt in England reached £6 billion in 2024 — a near-doubling since 2015, driven primarily by the cost-of-living crisis and pandemic-related payment difficulties never fully cleared.<Cite nums={1} /> The abolition of Council Tax Benefit in 2013 and its replacement with inconsistent local council tax support schemes left many councils requiring working-age claimants to pay 20–30% of their bill regardless of income — generating the arrears from which the enforcement cascade follows.<Cite nums={2} /></p>
+              <p>Approximately 255,000 bailiff visits were made for council tax in 2024, up 25% since 2021.<Cite nums={3} /> The standard bailiff fee structure adds approximately £235 per debt where an enforcement notice is served, creating situations where enforcement costs exceed the original arrears for small debts — trapping households in a deepening spiral.<Cite nums={3} /></p>
+              <p>Council tax bands are based on 1991 property valuations, meaning that properties in areas of high house price growth pay the same band as in 1991 despite enormous value increases. The IFS has recommended replacing council tax with a proportional property tax levied as a percentage of current value, which would be both more economically rational and more progressive.<Cite nums={4} /> No government has attempted comprehensive reform since the poll tax in the early 1990s.</p>
             </div>
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">

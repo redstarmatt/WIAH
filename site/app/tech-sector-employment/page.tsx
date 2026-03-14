@@ -8,6 +8,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Tech Nation', dataset: 'UK Tech Ecosystem Report 2024', url: 'https://technation.io/report/', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Business Register and Employment Survey', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/businessregisterandemploymentsurveybresprovisionalresults/latest', date: '2024' },
+  { num: 3, name: 'ONS', dataset: 'Labour market statistics — tech sector redundancies', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/redundancies', date: '2024', note: '2023 downturn brought over 50,000 redundancies' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -195,6 +203,10 @@ export default function TopicPage() {
             source="Source: Technation — UK Tech Nation Report, 2025. ONS — Business Register and Employment Survey, 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

@@ -5,6 +5,13 @@ import TopicHeader from '@/components/TopicHeader';
 import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DESNZ', dataset: 'Fuel poverty statistics, England', url: 'https://www.gov.uk/government/collections/fuel-poverty-statistics', date: '2024' },
+  { num: 2, name: 'Ofgem / Citizens Advice', dataset: 'Energy bill arrears analysis', date: '2024' },
+];
 
 export default function FuelPovertyPage() {
   // Fuel poor households in England (millions) 2012–2024
@@ -140,13 +147,16 @@ export default function FuelPovertyPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The energy cost crisis</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Fuel poverty in England is measured using the Low Income High Costs definition: a household is fuel poor if its energy costs are above the median and, were it to spend that amount, it would be left with income below the poverty line. On this measure, 3.2 million households — 13% of all homes — were fuel poor in 2024.</p>
-              <p>The energy price crisis of 2022–23, triggered by the Russian invasion of Ukraine, pushed energy prices to levels that drove approximately 1 million additional households into fuel poverty. Government support through the Energy Price Guarantee and bill relief schemes cushioned the worst impacts, but did not prevent a step-change in the scale of the problem.</p>
-              <p>Private renters are most exposed: over 22% of private rented households are fuel poor, compared to around 8.5% of owner-occupiers. This reflects the lower energy efficiency of private rented stock and the limited leverage tenants have to insist on improvements. Despite successive retrofit schemes, progress on improving the worst-rated homes has been slow, and around 13% of English homes remain at energy efficiency rating E, F, or G.</p>
+              <p>Fuel poverty in England is measured using the Low Income High Costs definition: a household is fuel poor if its energy costs are above the median and, were it to spend that amount, it would be left with income below the poverty line. On this measure, 3.2 million households — 13% of all homes — were fuel poor in 2024.<Cite nums={[1]} /></p>
+              <p>The energy price crisis of 2022–23, triggered by the Russian invasion of Ukraine, pushed energy prices to levels that drove approximately 1 million additional households into fuel poverty.<Cite nums={[1]} /> Government support through the Energy Price Guarantee and bill relief schemes cushioned the worst impacts, but did not prevent a step-change in the scale of the problem.</p>
+              <p>Private renters are most exposed: over 22% of private rented households are fuel poor, compared to around 8.5% of owner-occupiers.<Cite nums={[1]} /> This reflects the lower energy efficiency of private rented stock and the limited leverage tenants have to insist on improvements. Despite successive retrofit schemes, progress on improving the worst-rated homes has been slow, and around 13% of English homes remain at energy efficiency rating E, F, or G.<Cite nums={[1]} /></p>
             </div>
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">

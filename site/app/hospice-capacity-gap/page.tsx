@@ -8,6 +8,8 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // -- Types ------------------------------------------------------------------
 
@@ -25,6 +27,12 @@ interface HospiceCapacityGapData {
 function yearToDate(y: number): Date {
   return new Date(y, 0, 1)
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Hospice UK', dataset: 'Annual Monitoring Data', url: 'https://www.hospiceuk.org/information-and-resources/facts-and-figures', date: '2024' },
+  { num: 2, name: 'NHS England', dataset: 'Palliative and End of Life Care Statistics', url: 'https://www.england.nhs.uk/eolc/', date: '2024' },
+  { num: 3, name: 'Public Health England', dataset: 'National End of Life Care Intelligence Network (NELIC)', url: 'https://www.gov.uk/guidance/national-end-of-life-care-intelligence-network', date: '2024' },
+];
 
 // -- Page -------------------------------------------------------------------
 
@@ -75,8 +83,8 @@ export default function HospiceCapacityGapPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England has approximately 3,300 specialist palliative care inpatient beds — down slightly from around 3,450 in 2015 — against a projected need requiring roughly 1,200 more. The majority are operated by the charitable hospice movement rather than directly by the NHS, and NHS block grant funding has not kept pace with cost inflation, with the shortfall filled by donations, legacies, and commercial income. Following the COVID-19 disruption to fundraising and subsequent energy and staffing cost rises, a significant number of hospices reduced bed capacity, closed day services, or suspended community programmes. An estimated 25% of people who die each year in England do so without adequate palliative care support, often experiencing preventable pain and distress, up from 20% in 2015. Hospital remains the most common place of death for around 44% of people, despite surveys consistently showing that most people prefer to die at home or in a hospice.</p>
-            <p>Access to good palliative care is deeply unequal. People in deprived areas, those from ethnic minority backgrounds, and those with non-cancer diagnoses — heart failure, COPD, dementia — are significantly less likely to access specialist services. Hospices historically developed in more affluent areas and the geographic distribution of beds has never been systematically planned against need. Closing the gap between preferred and actual place of death requires investment primarily in community nursing capacity and 24-hour carer support rather than inpatient beds alone, but NHS England&rsquo;s ambition for 90% of people to have a personalised care plan in their last year of life remains far from achieved, with primary care coding and cross-provider coordination identified as the persistent barriers.</p>
+            <p>England has approximately 3,300 specialist palliative care inpatient beds — down slightly from around 3,450 in 2015 — against a projected need requiring roughly 1,200 more.<Cite nums={1} /> The majority are operated by the charitable hospice movement rather than directly by the NHS, and NHS block grant funding has not kept pace with cost inflation, with the shortfall filled by donations, legacies, and commercial income. Following the COVID-19 disruption to fundraising and subsequent energy and staffing cost rises, a significant number of hospices reduced bed capacity, closed day services, or suspended community programmes. An estimated 25% of people who die each year in England do so without adequate palliative care support, often experiencing preventable pain and distress, up from 20% in 2015.<Cite nums={3} /> Hospital remains the most common place of death for around 44% of people, despite surveys consistently showing that most people prefer to die at home or in a hospice.<Cite nums={3} /></p>
+            <p>Access to good palliative care is deeply unequal. People in deprived areas, those from ethnic minority backgrounds, and those with non-cancer diagnoses — heart failure, COPD, dementia — are significantly less likely to access specialist services.<Cite nums={[1, 3]} /> Hospices historically developed in more affluent areas and the geographic distribution of beds has never been systematically planned against need. Closing the gap between preferred and actual place of death requires investment primarily in community nursing capacity and 24-hour carer support rather than inpatient beds alone, but NHS England&rsquo;s ambition for 90% of people to have a personalised care plan in their last year of life remains far from achieved, with primary care coding and cross-provider coordination identified as the persistent barriers.<Cite nums={2} /></p>
           </div>
         </section>
 
@@ -136,6 +144,10 @@ export default function HospiceCapacityGapPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Mental Health Services Dataset — CYPMHS statistics', url: 'https://www.england.nhs.uk/mental-health/cyp/', date: '2024' },
+  { num: 2, name: 'DfE', dataset: 'Senior Mental Health Leads programme data', url: 'https://www.gov.uk/guidance/senior-mental-health-leads-in-schools-and-colleges', date: '2024' },
+  { num: 3, name: 'NHS Digital', dataset: 'Mental Health of Children and Young People — prevalence survey', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-of-children-and-young-people-in-england', date: '2023' },
+  { num: 4, name: 'NHS Benchmarking Network', dataset: 'CAMHS regional waiting time data', url: 'https://www.nhsbenchmarking.nhs.uk', date: '2024' },
+];
 
 export default function SchoolMentalHealthSupportPage() {
   // Chart 1: CAMHS referrals vs seen within 18 weeks 2015-2024
@@ -153,12 +162,16 @@ export default function SchoolMentalHealthSupportPage() {
           <section id="sec-context" className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on school mental health support</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>One in five children and young people has a probable mental health disorder — a figure that has risen substantially since 2017, when the NHS first began large-scale prevalence tracking. Half of all lifelong mental health problems emerge before the age of 14. Schools are therefore the most logical place to identify, support and intervene early, yet only a third of schools have a trained Senior Mental Health Lead, and only 35% are covered by a Mental Health Support Team. Most children who need support must wait for CAMHS — a service so overwhelmed that the average wait nationally is 18 weeks and some areas report waits of 18 months or more.</p>
-              <p>CAMHS referrals reached 630,000 in 2024 — more than double the 2015 figure — driven by rising prevalence of anxiety, depression, eating disorders and self-harm, particularly among girls. Around 255,000 children are waiting for CAMHS at any given time. The impact is not merely on those children: teachers report spending growing proportions of their time managing mental health crises, and persistent absence — itself strongly correlated with mental health difficulties — has reached levels unseen since comparable records began.</p>
+              <p>One in five children and young people has a probable mental health disorder — a figure that has risen substantially since 2017, when the NHS first began large-scale prevalence tracking.<Cite nums={3} /> Half of all lifelong mental health problems emerge before the age of 14. Schools are therefore the most logical place to identify, support and intervene early, yet only a third of schools have a trained Senior Mental Health Lead, and only 35% are covered by a Mental Health Support Team.<Cite nums={2} /> Most children who need support must wait for CAMHS — a service so overwhelmed that the average wait nationally is 18 weeks and some areas report waits of 18 months or more.</p>
+              <p>CAMHS referrals reached 630,000 in 2024 — more than double the 2015 figure — driven by rising prevalence of anxiety, depression, eating disorders and self-harm, particularly among girls.<Cite nums={1} /> Around 255,000 children are waiting for CAMHS at any given time.<Cite nums={4} /> The impact is not merely on those children: teachers report spending growing proportions of their time managing mental health crises, and persistent absence — itself strongly correlated with mental health difficulties — has reached levels unseen since comparable records began.</p>
               <p>The systemic gap is between the language of early intervention and the funding reality that delivers it. Early intervention requires investment in school-based support, educational psychologists, and community teams working below the CAMHS threshold. These services have been cut substantially since 2010. Children wait until they are in crisis, enter CAMHS at a more acute and harder-to-treat stage, and emerge from a system that cannot adequately hold them without school-based support to land safely back into. The cycle is expensive and avoidable.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

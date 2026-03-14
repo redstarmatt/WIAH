@@ -7,7 +7,15 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'The Insolvency Service', dataset: 'Insolvency Statistics — England and Wales', url: 'https://www.gov.uk/government/statistics/insolvency-statistics', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Business Demography', url: 'https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/bulletins/businessdemography', date: '2024' },
+  { num: 3, name: 'British Business Bank', dataset: 'CBILS and BBLS Repayment Data', url: 'https://www.british-business-bank.co.uk/', date: '2023' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -59,7 +67,7 @@ export default function InsolvenciesPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Company insolvencies in England and Wales reached 25,158 in 2023 — the highest total since 1993 and 50% above the pre-pandemic average of around 16,500 per year. The pandemic year of 2020 paradoxically saw insolvencies fall to 12,557 as furlough, CBILS, BBLS, and VAT deferrals kept businesses alive artificially; the crisis became apparent when those supports were withdrawn. CBILS and BBLS repayments coming due in 2022 and 2023 coincided with the fastest interest rate tightening cycle in 30 years, from near-zero to 5.25%, making pandemic-era debt burdens fatal for &ldquo;zombie companies.&rdquo; Construction (4,214 insolvencies) faced fixed-price contracts signed before the 2021–2022 inflation spike and a housebuilding slowdown; hospitality (3,891) faced post-pandemic debt, energy costs, and consumers cutting discretionary spending. Personal insolvencies remain elevated at 99,825 in 2023, with the debt advice sector reporting record demand since 2022.</p>
+            <p>Company insolvencies in England and Wales reached 25,158 in 2023 — the highest total since 1993 and 50% above the pre-pandemic average of around 16,500 per year.<Cite nums={1} /> The pandemic year of 2020 paradoxically saw insolvencies fall to 12,557 as furlough, CBILS, BBLS, and VAT deferrals kept businesses alive artificially; the crisis became apparent when those supports were withdrawn.<Cite nums={3} /> CBILS and BBLS repayments coming due in 2022 and 2023 coincided with the fastest interest rate tightening cycle in 30 years, from near-zero to 5.25%, making pandemic-era debt burdens fatal for &ldquo;zombie companies.&rdquo; Construction (4,214 insolvencies) faced fixed-price contracts signed before the 2021–2022 inflation spike and a housebuilding slowdown; hospitality (3,891) faced post-pandemic debt, energy costs, and consumers cutting discretionary spending.<Cite nums={1} /> Personal insolvencies remain elevated at 99,825 in 2023, with the debt advice sector reporting record demand since 2022.<Cite nums={1} /></p>
             <p>For workers, company insolvency means immediate uncertainty: redundancy pay, unpaid wages (up to eight weeks), and holiday pay can be claimed from the National Insurance Fund but are capped, and workers sit at the bottom of the creditor queue for outstanding wage claims and pension contributions. The cost-of-living crisis — falling real wages, high energy costs, rising mortgage rates, and depleted savings — has created a pipeline of personal debt problems that are a lagging indicator of financial distress. Households typically exhaust credit cards, overdrafts, and family borrowing before entering formal insolvency, meaning the full impact of the cost-of-living squeeze may still be working through the data.</p>
           </div>
         </section>
@@ -148,6 +156,10 @@ export default function InsolvenciesPage() {
             <p className="font-mono text-xs text-wiah-mid mt-4">Source: The Insolvency Service — Insolvency Statistics Q4 2023</p>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

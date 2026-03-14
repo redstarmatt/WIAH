@@ -8,6 +8,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Natural England', dataset: 'Biodiversity Net Gain Statistics', url: 'https://www.gov.uk/government/collections/biodiversity-net-gain', date: 'Q4 2025' },
+  { num: 2, name: 'DEFRA', dataset: 'Biodiversity Metric Outcomes Monitoring', url: 'https://www.gov.uk/guidance/biodiversity-net-gain', date: '2025' },
+  { num: 3, name: 'Environment Bank', dataset: 'Market transaction data', url: 'https://www.environmentbank.com', date: '2025' },
+];
 
 // Planning permissions with BNG conditions (cumulative), 2019–2025
 const bngPermissions = [120, 380, 820, 1900, 4200, 8700, 12400];
@@ -66,8 +74,8 @@ export default function HabitatNetGainPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England's biodiversity net gain policy is one of the most ambitious attempts anywhere in the world to price nature into the development process. Since February 2024, every major planning application in England must demonstrate that it will leave biodiversity in a measurably better state than before development began — a minimum 10% net gain measured using the DEFRA biodiversity metric. Small sites followed in February 2025. The result is a new market: developers who cannot achieve the 10% gain on-site can purchase biodiversity units from landowners who create or restore habitat elsewhere. Over 38,000 biodiversity units have now been traded, habitat banks are emerging across the country, and a statutory register administered by Natural England tracks obligations and outcomes.</p>
-            <p>The scale of uptake is genuinely encouraging — over 12,400 planning permissions have applied mandatory BNG conditions, and 8,450 hectares of new or restored habitat are now under 30-year management plans. Land managers in marginal agricultural areas are finding that biodiversity credits, at a median price of £42,000 per unit, can offer more reliable income than conventional farming. But serious structural challenges remain. Local planning authorities are struggling to assess BNG applications competently after a decade of austerity stripped ecological expertise from councils. Quality of offsite credits is contested: ecologists warn that newly planted hedgerows cannot compensate for loss of ancient woodland. And BNG addresses only development-related biodiversity loss — it does nothing about agricultural intensification or water pollution, which together account for the vast majority of nature decline.</p>
+            <p>England's biodiversity net gain policy is one of the most ambitious attempts anywhere in the world to price nature into the development process. Since February 2024, every major planning application in England must demonstrate that it will leave biodiversity in a measurably better state than before development began — a minimum 10% net gain measured using the DEFRA biodiversity metric. Small sites followed in February 2025. The result is a new market: developers who cannot achieve the 10% gain on-site can purchase biodiversity units from landowners who create or restore habitat elsewhere. Over 38,000 biodiversity units have now been traded, habitat banks are emerging across the country, and a statutory register administered by Natural England tracks obligations and outcomes.<Cite nums={[1, 3]} /></p>
+            <p>The scale of uptake is genuinely encouraging — over 12,400 planning permissions have applied mandatory BNG conditions, and 8,450 hectares of new or restored habitat are now under 30-year management plans.<Cite nums={[1, 2]} /> Land managers in marginal agricultural areas are finding that biodiversity credits, at a median price of £42,000 per unit, can offer more reliable income than conventional farming.<Cite nums={3} /> But serious structural challenges remain. Local planning authorities are struggling to assess BNG applications competently after a decade of austerity stripped ecological expertise from councils. Quality of offsite credits is contested: ecologists warn that newly planted hedgerows cannot compensate for loss of ancient woodland. And BNG addresses only development-related biodiversity loss — it does nothing about agricultural intensification or water pollution, which together account for the vast majority of nature decline.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -146,6 +154,9 @@ export default function HabitatNetGainPage() {
             source="Source: Natural England — BNG Register Q4 2025. DEFRA — Biodiversity Metric Outcomes Monitoring 2025. Environment Bank market data 2025."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

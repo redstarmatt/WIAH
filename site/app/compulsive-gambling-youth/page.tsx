@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Problem gambling prevalence 11-16 year olds %, 2018–2024 (Gambling Commission)
 const prevalenceValues = [0.9, 1.0, 1.0, 1.1, 1.4, 1.3, 1.4];
@@ -52,6 +54,12 @@ const annotations2: Annotation[] = [
   { date: new Date(2023, 5, 1), label: '2023: Online slot stake limit £5' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Gambling Commission', dataset: 'Young People and Gambling Survey', url: 'https://www.gamblingcommission.gov.uk/statistics-and-research/publication/young-people-and-gambling-survey', date: '2024' },
+  { num: 2, name: 'Gambling Commission', dataset: 'Gambling Participation Survey', url: 'https://www.gamblingcommission.gov.uk/statistics-and-research/publication/gambling-participation-survey', date: '2024' },
+  { num: 3, name: 'NHS', dataset: 'National Problem Gambling Clinic', url: 'https://www.cnwl.nhs.uk/services/mental-health/addictions/national-problem-gambling-clinic', date: '2024' },
+];
+
 export default function YouthGamblingPage() {
   return (
     <>
@@ -66,8 +74,8 @@ export default function YouthGamblingPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Children and young people are being exposed to gambling at unprecedented levels. Video game mechanics — particularly loot boxes — normalise chance-based spending. Gambling advertising saturates live sport, with over 95% of Premier League clubs carrying gambling sponsors. Online gambling is accessible via smartphones at all hours with minimal age verification. The Gambling Commission's Young People and Gambling Survey consistently finds around 70% of 11–16 year olds have gambled in some form in the past year, and 1.4% — around 55,000 children — meet the clinical threshold for problem gambling using the DSM-IV scale. The lockdowns of 2020–21 accelerated online gambling among the 16–24 age group, with participation rates doubling from 14% to 28% between 2018 and 2024.</p>
-            <p>The treatment infrastructure for young people with gambling problems is essentially non-existent at scale. NHS treatment services are adult-focused; only the National Problem Gambling Clinic accepts under-18 referrals, and it is a single London-based service. The 900 children treated in 2024 represents a small fraction of the estimated 55,000 with a problem. Waiting times for those who do access help are long, and GPs rarely recognise or ask about gambling harm in young people. The Gambling Act Review 2023 introduced a £5 maximum stake for online slots and mandatory affordability checks for high-spending customers, but experts warn these measures are insufficient to address the scale of the problem.</p>
+            <p>Children and young people are being exposed to gambling at unprecedented levels. Video game mechanics — particularly loot boxes — normalise chance-based spending. Gambling advertising saturates live sport, with over 95% of Premier League clubs carrying gambling sponsors. Online gambling is accessible via smartphones at all hours with minimal age verification. The Gambling Commission's Young People and Gambling Survey consistently finds around 70% of 11–16 year olds have gambled in some form in the past year, and 1.4% — around 55,000 children — meet the clinical threshold for problem gambling using the DSM-IV scale.<Cite nums={1} /> The lockdowns of 2020–21 accelerated online gambling among the 16–24 age group, with participation rates doubling from 14% to 28% between 2018 and 2024.<Cite nums={2} /></p>
+            <p>The treatment infrastructure for young people with gambling problems is essentially non-existent at scale. NHS treatment services are adult-focused; only the National Problem Gambling Clinic accepts under-18 referrals, and it is a single London-based service.<Cite nums={3} /> The 900 children treated in 2024 represents a small fraction of the estimated 55,000 with a problem.<Cite nums={[1, 3]} /> Waiting times for those who do access help are long, and GPs rarely recognise or ask about gambling harm in young people. The Gambling Act Review 2023 introduced a £5 maximum stake for online slots and mandatory affordability checks for high-spending customers, but experts warn these measures are insufficient to address the scale of the problem.<Cite nums={2} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -146,6 +154,10 @@ export default function YouthGamblingPage() {
             source="Source: Gambling Commission — Young People and Gambling Survey, 2024. NHS National Problem Gambling Clinic, 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

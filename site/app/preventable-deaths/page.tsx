@@ -9,6 +9,14 @@ import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Avoidable Mortality in the UK', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/causesofdeath/bulletins/avoidablemortalityinenglandandwales', date: '2021', note: 'Avoidable mortality fell 27% since 2010 from 293 to 218 per 100,000' },
+  { num: 2, name: 'ONS', dataset: 'Avoidable Mortality — Regional Breakdown', date: '2021', note: 'North East (276/100k) is 66% higher than London (166/100k)' },
+  { num: 3, name: 'ONS', dataset: 'Deaths Related to Drug Poisoning', date: '2023', note: 'Drug misuse deaths more than doubled since 2012; smoking kills 74,600/yr' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -59,8 +67,8 @@ export default function PreventableDeathsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Avoidable mortality — deaths preventable through timely healthcare or public health action — has fallen 27% in England since 2010, from 293 to 218 per 100,000, one of the NHS&rsquo;s most sustained improvements. The primary driver has been cardiovascular disease: sharply lower deaths from ischaemic heart disease and stroke, driven by better statin prescribing, improved hypertension management, the smoking ban, and advances in acute cardiac treatment. Cancer survival improvements, particularly for breast, bowel, and prostate cancer, contributed further. COVID-19 interrupted the trend — avoidable mortality rose to 243 in 2020 before falling to 218 in 2021 — and whether the pre-pandemic trajectory resumes remains uncertain. Smoking still kills 74,600 people a year, drug misuse deaths have more than doubled since 2012, and obesity-related conditions are growing as cardiovascular gains plateau.</p>
-            <p>The regional picture is troubling and has not improved. Avoidable mortality in the North East (276 per 100,000) is 66% higher than in London (166) — a gap reflecting accumulated disadvantage in deprivation, industrial legacy, healthcare access, and smoking and obesity rates. The North East, Yorkshire, and North West all sit substantially above the England average. These are not primarily NHS failures: they require coordinated action across housing, employment, welfare, and public health infrastructure — areas where investment has been cut most sharply in the regions where health need is greatest.</p>
+            <p>Avoidable mortality — deaths preventable through timely healthcare or public health action — has fallen 27% in England since 2010, from 293 to 218 per 100,000, one of the NHS&rsquo;s most sustained improvements.<Cite nums={1} /> The primary driver has been cardiovascular disease: sharply lower deaths from ischaemic heart disease and stroke, driven by better statin prescribing, improved hypertension management, the smoking ban, and advances in acute cardiac treatment. Cancer survival improvements, particularly for breast, bowel, and prostate cancer, contributed further. COVID-19 interrupted the trend — avoidable mortality rose to 243 in 2020 before falling to 218 in 2021 — and whether the pre-pandemic trajectory resumes remains uncertain. Smoking still kills 74,600 people a year, drug misuse deaths have more than doubled since 2012, and obesity-related conditions are growing as cardiovascular gains plateau.<Cite nums={3} /></p>
+            <p>The regional picture is troubling and has not improved. Avoidable mortality in the North East (276 per 100,000) is 66% higher than in London (166) — a gap reflecting accumulated disadvantage in deprivation, industrial legacy, healthcare access, and smoking and obesity rates.<Cite nums={2} /> The North East, Yorkshire, and North West all sit substantially above the England average. These are not primarily NHS failures: they require coordinated action across housing, employment, welfare, and public health infrastructure — areas where investment has been cut most sharply in the regions where health need is greatest.</p>
           </div>
         </section>
 
@@ -158,6 +166,10 @@ export default function PreventableDeathsPage() {
             <p className="font-mono text-xs text-wiah-mid mt-4">Source: ONS — Avoidable Mortality in the UK, 2021 release</p>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

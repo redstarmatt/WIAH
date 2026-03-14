@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Buildings with unsafe cladding awaiting remediation (thousands), 2018–2024 — DLUHC
 const unsafeCladdingValues = [0, 4.5, 6.0, 7.5, 8.0, 7.2, 6.8];
@@ -41,6 +43,12 @@ const claddingAnnotations: Annotation[] = [
   { date: new Date(2022, 0, 1), label: '2022: Building Safety Act' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DLUHC', dataset: 'Building safety remediation statistics', url: 'https://www.gov.uk/government/collections/building-safety-programme', date: '2024' },
+  { num: 2, name: 'DLUHC / NFCC', dataset: 'Building Safety Programme costs', url: 'https://www.gov.uk/government/collections/building-safety-programme', date: '2024' },
+  { num: 3, name: 'HSE', dataset: 'Building Safety Regulator annual report', url: 'https://www.hse.gov.uk/building-safety/', date: '2024' },
+];
+
 export default function FireSafetyBuildingsPage() {
   return (
     <>
@@ -55,8 +63,8 @@ export default function FireSafetyBuildingsPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Grenfell Tower fire of June 2017 — which killed 72 people and revealed systemic failures in building safety, regulation, and oversight — triggered the largest remediation programme in UK building history. Investigations revealed that hundreds of thousands of homes across the country had been clad with aluminium composite material (ACM) or other flammable materials as part of cost-cutting refurbishments, often approved under building regulations despite clear fire safety risks. Seven years on, an estimated 6,800 residential buildings still have unsafe cladding awaiting remediation — though the true number may be higher, as many buildings have not been assessed.</p>
-            <p>In the interim, the cost of fire safety measures has fallen heavily on leaseholders — precisely the people who had no role in the unsafe construction. 'Waking watch' patrols — guards who walk buildings continuously to provide early warning of fire — became widespread, costing leaseholders on average £300–400 per month each. Cumulative waking watch costs have exceeded £830 million nationally. The Building Safety Act 2022 gave leaseholders legal protections against being charged for remediation costs attributable to construction defects — but implementation has been slow and contested. The government's developer levy and building safety fund cover some costs, but significant gaps remain for orphaned buildings where the original developer no longer exists.</p>
+            <p>The Grenfell Tower fire of June 2017 — which killed 72 people and revealed systemic failures in building safety, regulation, and oversight — triggered the largest remediation programme in UK building history. Investigations revealed that hundreds of thousands of homes across the country had been clad with aluminium composite material (ACM) or other flammable materials as part of cost-cutting refurbishments, often approved under building regulations despite clear fire safety risks. Seven years on, an estimated 6,800 residential buildings still have unsafe cladding awaiting remediation — though the true number may be higher, as many buildings have not been assessed.<Cite nums={[1]} /></p>
+            <p>In the interim, the cost of fire safety measures has fallen heavily on leaseholders — precisely the people who had no role in the unsafe construction. 'Waking watch' patrols — guards who walk buildings continuously to provide early warning of fire — became widespread, costing leaseholders on average £300–400 per month each. Cumulative waking watch costs have exceeded £830 million nationally.<Cite nums={[2]} /> The Building Safety Act 2022 gave leaseholders legal protections against being charged for remediation costs attributable to construction defects — but implementation has been slow and contested.<Cite nums={[3]} /> The government's developer levy and building safety fund cover some costs, but significant gaps remain for orphaned buildings where the original developer no longer exists.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -134,6 +142,9 @@ export default function FireSafetyBuildingsPage() {
             source="Source: DLUHC — Building safety programme statistics 2024. HSE — Building Safety Regulator annual report 2023/24."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

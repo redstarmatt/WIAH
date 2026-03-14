@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Estimated active county lines, 2017–2024 (NCA)
 const activeLinesValues = [1500, 2000, 1800, 1500, 1300, 900, 750, 700];
@@ -42,6 +44,12 @@ const annotations2: Annotation[] = [
   { date: new Date(2020, 2, 1), label: '2020: COVID — exploitation shifts online' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NCA', dataset: 'County Lines Strategic Assessment', url: 'https://www.nationalcrimeagency.gov.uk/what-we-do/crime-threats/drug-trafficking/county-lines', date: '2024' },
+  { num: 2, name: 'Home Office', dataset: 'National Referral Mechanism Statistics', url: 'https://www.gov.uk/government/collections/national-referral-mechanism-statistics', date: '2024' },
+  { num: 3, name: 'Contextual Safeguarding Network', dataset: 'National Evaluation of Contextual Safeguarding Pilots', date: '2024' },
+];
+
 export default function CountyLinesPage() {
   return (
     <>
@@ -56,8 +64,8 @@ export default function CountyLinesPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>County lines is a model of drug distribution in which urban gangs establish dealing networks in smaller towns and rural areas, exploiting children and vulnerable adults as couriers, dealers, and custodians of cash and drugs. The National Crime Agency estimated around 2,000 lines at peak; Operation Orochi and successor operations have closed over 3,000 lines since 2019, with approximately 700 estimated as still active. NRM referrals of children exploited through criminal activity have risen from around 4,000 in 2017 to over 10,200 in 2024. Gangs target children as young as 10 — particularly those excluded from school, in care, or with unstable housing — grooming them before escalating to coercion and violence. Cuckooing of vulnerable adults' homes as local bases remains widespread.</p>
-            <p>Black and mixed-heritage boys are disproportionately represented among identified victims, and children in care are three times more likely to be identified as county lines victims. Rural and coastal towns — Margate, Hastings, Grimsby, Blackpool — are hotspots, but networks operate in virtually every county. Girls are increasingly identified as victims, often exploited through sexual violence alongside drug running. Contextual safeguarding — assessing risk in a child's wider environment rather than the family alone — has been adopted by some councils but remains unevenly implemented nationally. The rise in NRM referrals partly reflects improved identification, but also genuine growth in exploitation.</p>
+            <p>County lines is a model of drug distribution in which urban gangs establish dealing networks in smaller towns and rural areas, exploiting children and vulnerable adults as couriers, dealers, and custodians of cash and drugs. The National Crime Agency estimated around 2,000 lines at peak; Operation Orochi and successor operations have closed over 3,000 lines since 2019, with approximately 700 estimated as still active.<Cite nums={1} /> NRM referrals of children exploited through criminal activity have risen from around 4,000 in 2017 to over 10,200 in 2024.<Cite nums={2} /> Gangs target children as young as 10 — particularly those excluded from school, in care, or with unstable housing — grooming them before escalating to coercion and violence.</p>
+            <p>Black and mixed-heritage boys are disproportionately represented among identified victims, and children in care are three times more likely to be identified as county lines victims.<Cite nums={2} /> Rural and coastal towns — Margate, Hastings, Grimsby, Blackpool — are hotspots, but networks operate in virtually every county.<Cite nums={1} /> Girls are increasingly identified as victims, often exploited through sexual violence alongside drug running. Contextual safeguarding — assessing risk in a child's wider environment rather than the family alone — has been adopted by some councils but remains unevenly implemented nationally.<Cite nums={3} /> The rise in NRM referrals partly reflects improved identification, but also genuine growth in exploitation.<Cite nums={2} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -136,6 +144,9 @@ export default function CountyLinesPage() {
             source="Source: Contextual Safeguarding Network — National evaluation, 2024. Child Safeguarding Practice Review Panel — Annual report 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

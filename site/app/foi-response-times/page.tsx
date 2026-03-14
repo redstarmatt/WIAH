@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Overall compliance (%), 2015–2025
 const overallCompliance = [73, 71, 68, 65, 62, 55, 50, 45, 42, 39, 37];
@@ -57,6 +59,11 @@ const chart2Annotations: Annotation[] = [
   { date: new Date(2022, 5, 1), label: '2022: Record FOI requests received' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Cabinet Office', dataset: 'Freedom of Information statistics', url: 'https://www.gov.uk/government/collections/government-foi-statistics', date: '2025' },
+  { num: 2, name: 'ICO', dataset: 'Annual report and accounts', url: 'https://ico.org.uk', date: '2025' },
+];
+
 export default function TopicPage() {
   return (
     <>
@@ -71,8 +78,8 @@ export default function TopicPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Freedom of Information Act 2000 gives the public the right to request information from public authorities, which are required to respond within 20 working days. In 2015, central government complied with this deadline 73% of the time. By 2024 that figure had fallen to 37% — meaning nearly two-thirds of requests now miss the legal deadline. The Cabinet Office, which handles politically sensitive requests about the operation of government itself, had compliance of just 18% in 2024. The Information Commissioner's Office has issued repeated practice recommendations and enforcement notices, but compliance has continued to fall.</p>
-            <p>Alongside rising non-compliance, the rate at which requests are refused has climbed from 28% to 38% over the same period. Public interest exemptions — intended for genuinely sensitive material — have been increasingly applied to routine operational information. The volume of requests has also grown, rising from around 52,000 in 2015 to 76,000 in 2024, driven partly by investigative journalists and civil society organisations using FOI as a tool for accountability. The combination of more requests and less capacity to respond has created a widening gap between the law as written and the law as practised.</p>
+            <p>The Freedom of Information Act 2000 gives the public the right to request information from public authorities, which are required to respond within 20 working days. In 2015, central government complied with this deadline 73% of the time. By 2024 that figure had fallen to 37%<Cite nums={1} /> — meaning nearly two-thirds of requests now miss the legal deadline. The Cabinet Office, which handles politically sensitive requests about the operation of government itself, had compliance of just 18% in 2024<Cite nums={1} />. The Information Commissioner's Office has issued repeated practice recommendations and enforcement notices, but compliance has continued to fall.</p>
+            <p>Alongside rising non-compliance, the rate at which requests are refused has climbed from 28% to 38% over the same period<Cite nums={1} />. Public interest exemptions — intended for genuinely sensitive material — have been increasingly applied to routine operational information. The volume of requests has also grown, rising from around 52,000 in 2015 to 76,000 in 2024<Cite nums={1} />, driven partly by investigative journalists and civil society organisations using FOI as a tool for accountability. The combination of more requests and less capacity to respond has created a widening gap between the law as written and the law as practised.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -151,6 +158,9 @@ export default function TopicPage() {
             source="Source: ICO — Annual report and accounts, 2025."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

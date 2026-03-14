@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Institute for Fiscal Studies', dataset: 'Education Spending — per-pupil funding data', url: 'https://ifs.org.uk/education-spending', date: '2023' },
+  { num: 2, name: 'ADCS / IFS', dataset: 'SEND Funding Survey — council deficit estimates', url: 'https://adcs.org.uk', date: '2023' },
+  { num: 3, name: 'IFS', dataset: 'School Spending — 16-18 funding analysis', url: 'https://ifs.org.uk/education-spending', date: '2023' },
+];
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -75,15 +83,15 @@ export default function SchoolFundingPage() {
             <p>
               English schools entered the 2010s on the back of significant real-terms investment,
               then faced nearly a decade of cuts. Per-pupil funding in real terms fell from around
-              £6,500 in 2009 to £5,600 in 2017 — a drop of nearly 14%. Nominal spending has since
+              £6,500 in 2009 to £5,600 in 2017 — a drop of nearly 14%.<Cite nums={1} /> Nominal spending has since
               recovered, but when adjusted for inflation and rising costs, the 2023 figure of around
-              £5,915 remains 9% below the 2009 peak. The gap is not evenly distributed: schools in
+              £5,915 remains 9% below the 2009 peak.<Cite nums={1} /> The gap is not evenly distributed: schools in
               the most deprived areas, which rely heavily on deprivation-weighted funding, have
               experienced the deepest sustained pressure.
             </p>
             <p>
               The cuts fell hardest on the areas least visible in headline results. Teaching
-              assistant numbers dropped by over 15% between 2014 and 2021. Music, art, and
+              assistant numbers dropped by over 15% between 2014 and 2021.<Cite nums={[1, 2]} /> Music, art, and
               drama provision was scaled back. Pastoral and mental health support staff were
               reduced or eliminated entirely. These are the inputs that matter most for
               disadvantaged pupils who lack the family resources to compensate, yet they are
@@ -160,6 +168,10 @@ export default function SchoolFundingPage() {
             </p>
           </div>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <ScrollReveal>
           <div id="sec-sources" className="border-t border-wiah-border pt-8 mt-8">

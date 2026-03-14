@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Businesses rated 4 or 5 (%), 2015–2024
 const highRatedPct = [71, 73, 74, 75, 76, 72, 68, 65, 65, 65];
@@ -45,6 +47,12 @@ const inspectorAnnotations: Annotation[] = [
   { date: new Date(2021, 5, 1), label: '2021: LA recruitment drive' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Food Standards Agency', dataset: 'Annual report on foodborne illness', date: '2024' },
+  { num: 2, name: 'Food Standards Agency', dataset: 'Food Hygiene Rating Scheme statistics', url: 'https://www.food.gov.uk/safety-hygiene/food-hygiene-rating-scheme', date: '2024' },
+  { num: 3, name: 'Food Standards Agency', dataset: 'Local authority enforcement monitoring', url: 'https://www.food.gov.uk/business-guidance/local-authority-enforcement', date: '2024' },
+];
+
 export default function FoodHygieneCompliancePage() {
   return (
     <>
@@ -59,8 +67,8 @@ export default function FoodHygieneCompliancePage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Food Standards Agency estimates 2.4 million cases of foodborne illness every year in England, causing approximately 180 deaths and 23,000 hospital admissions. Most of this burden is preventable: the primary vectors are Campylobacter (mainly in poultry), Listeria (chilled ready-to-eat foods), and Salmonella (eggs and meat). The hygiene rating system — the green sticker in takeaway windows and restaurant doors — is the public's main proxy for food safety standards. Since its 2019 peak, the proportion of businesses achieving the highest ratings has fallen from 76% to 65%.</p>
-            <p>The structural cause is inspector capacity. Since 2010, local authority food safety officer numbers have fallen by a third — from 4,800 to around 3,200 — as councils absorbed successive funding reductions. Post-pandemic pressure — cost of living squeezing margins, high staff turnover, supply chain substitutions — has hit compliance precisely when regulatory oversight capacity is weakest. The FSA's risk-based inspection framework means that low-risk businesses may go uninspected for years, and even high-risk establishments such as care home kitchens are not always inspected on schedule due to officer shortfalls.</p>
+            <p>The Food Standards Agency estimates 2.4 million cases of foodborne illness every year in England, causing approximately 180 deaths and 23,000 hospital admissions<Cite nums={1} />. Most of this burden is preventable: the primary vectors are Campylobacter (mainly in poultry), Listeria (chilled ready-to-eat foods), and Salmonella (eggs and meat). The hygiene rating system — the green sticker in takeaway windows and restaurant doors — is the public's main proxy for food safety standards. Since its 2019 peak, the proportion of businesses achieving the highest ratings has fallen from 76% to 65%<Cite nums={2} />.</p>
+            <p>The structural cause is inspector capacity. Since 2010, local authority food safety officer numbers have fallen by a third — from 4,800 to around 3,200<Cite nums={3} /> — as councils absorbed successive funding reductions. Post-pandemic pressure — cost of living squeezing margins, high staff turnover, supply chain substitutions — has hit compliance precisely when regulatory oversight capacity is weakest. The FSA's risk-based inspection framework means that low-risk businesses may go uninspected for years, and even high-risk establishments such as care home kitchens are not always inspected on schedule due to officer shortfalls.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -139,6 +147,9 @@ export default function FoodHygieneCompliancePage() {
             source="Source: FSA — Food hygiene rating scheme statistics 2024; FSA Regulating Our Future programme update."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

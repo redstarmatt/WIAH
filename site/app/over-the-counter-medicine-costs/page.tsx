@@ -8,6 +8,15 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'PAGB / ONS', dataset: 'OTC Medicine Price Tracker / Consumer Price Index health sub-components', date: '2024' },
+  { num: 2, name: 'Healthwatch England', dataset: 'Access to medicines survey — affordability analysis', date: '2024' },
+  { num: 3, name: 'NHS BSA', dataset: 'NHS Prescription Charge schedule and exemption statistics', date: '2024' },
+  { num: 4, name: 'NHS England', dataset: 'Pharmacy First scheme — primary care statistics', date: '2024' },
+];
 
 interface OTCMedicineData {
   topic: string
@@ -57,8 +66,12 @@ export default function OverTheCounterMedicineCostsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Common over-the-counter medicines rose 40–70% in price between January 2021 and January 2024, with paracetamol and ibuprofen — the most widely used analgesics — up 60–80% in some retail channels. The NHS encourages OTC self-management for minor conditions, and the 2019 prescribing guidance was intended to shift costs away from the system. But that strategy is undermined when people cannot afford OTC treatment: 4.2 million people are estimated to be going without medicines they need. The NHS prescription charge in England is £9.90 per item, but 90% of prescriptions are dispensed free — meaning that for exempt patients, the GP route is now cheaper than buying OTC. The Pharmacy First scheme launched in January 2024, allowing pharmacists to treat seven minor conditions without a GP referral, but does not address the underlying affordability gap.</p>
-            <p>The burden falls hardest on those with least. People in the bottom income quintile — already spending over 90% of income on necessities — are most likely to go untreated when OTC prices rise. Research by Healthwatch and the Health Foundation consistently finds that lower-income households are less likely to self-medicate and more likely to leave conditions untreated, with downstream consequences for both individual health and NHS demand. Many eligible for prescription charge exemptions through the Low Income Scheme do not claim them, leaving a gap that higher OTC prices have widened.</p>
+            <p>Common over-the-counter medicines rose 40–70% in price between January 2021 and January 2024, with paracetamol and ibuprofen — the most widely used analgesics — up 60–80% in some retail channels.<Cite nums={1} /> The NHS encourages OTC self-management for minor conditions, and the 2019 prescribing guidance was intended to shift costs away from the system. But that strategy is undermined when people cannot afford OTC treatment: 4.2 million people are estimated to be going without medicines they need.<Cite nums={2} /> The NHS prescription charge in England is £9.90 per item, but 90% of prescriptions are dispensed free<Cite nums={3} /> — meaning that for exempt patients, the GP route is now cheaper than buying OTC. The Pharmacy First scheme launched in January 2024, allowing pharmacists to treat seven minor conditions without a GP referral, but does not address the underlying affordability gap.<Cite nums={4} /></p>
+            <p>The burden falls hardest on those with least. People in the bottom income quintile — already spending over 90% of income on necessities — are most likely to go untreated when OTC prices rise. Research by Healthwatch and the Health Foundation consistently finds that lower-income households are less likely to self-medicate and more likely to leave conditions untreated, with downstream consequences for both individual health and NHS demand. Many eligible for prescription charge exemptions through the Low Income Scheme do not claim them, leaving a gap that higher OTC prices have widened.<Cite nums={[2, 3]} /></p>
+          </div>
+
+          <div className="mt-6">
+            <References items={editorialRefs} />
           </div>
         </section>
 

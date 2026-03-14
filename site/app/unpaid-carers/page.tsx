@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Census 2021 — Unpaid Care, England and Wales', url: 'https://www.ons.gov.uk/releases/unpaidcareinengland2021', date: '2023' },
+  { num: 2, name: 'Carers UK', dataset: 'Valuing Carers 2024', url: 'https://www.carersuk.org/policy-and-research/valuing-carers/', date: '2024' },
+  { num: 3, name: 'Carers UK', dataset: 'State of Caring Survey 2023', url: 'https://www.carersuk.org/policy-and-research/state-of-caring/', date: '2023' },
+  { num: 4, name: 'DWP', dataset: "Carer's Allowance Rates 2023/24", url: 'https://www.gov.uk/carers-allowance', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -112,10 +121,10 @@ export default function UnpaidCarersPage() {
         <section className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The 2021 Census recorded 10.6 million unpaid carers in England and Wales — 18% of the population — though academic estimates suggest the true figure is 40–50% higher, since many do not self-identify. Their collective contribution is valued at £162 billion a year, comparable to total NHS expenditure. Some 58% are women, with peak caring ages between 50 and 64; one in four people will care for a family member at some point. Roughly 1.3 million provide 50 or more hours of care per week — a full-time job without pay, legal protection, or guaranteed respite. Among them are 600,000 young carers under 18, representing 4.5% of all children, with significant under-identification meaning the real number is almost certainly higher.
+              The 2021 Census recorded 10.6 million unpaid carers in England and Wales — 18% of the population — though academic estimates suggest the true figure is 40–50% higher, since many do not self-identify.<Cite nums={1} /> Their collective contribution is valued at £162 billion a year, comparable to total NHS expenditure.<Cite nums={2} /> Some 58% are women, with peak caring ages between 50 and 64; one in four people will care for a family member at some point. Roughly 1.3 million provide 50 or more hours of care per week — a full-time job without pay, legal protection, or guaranteed respite. Among them are 600,000 young carers under 18, representing 4.5% of all children, with significant under-identification meaning the real number is almost certainly higher.<Cite nums={1} />
             </p>
             <p>
-              The personal cost is severe. Carers UK's State of Caring survey, drawing on 13,000 respondents, consistently finds that 72% of carers report deteriorating mental health and 61% worsening physical health. Some 44% have reduced their paid working hours; 35% have given up work entirely, creating a &ldquo;caring penalty&rdquo; in lifetime earnings and pension entitlement. The main financial support — Carer's Allowance at £81.90 per week in 2023/24 — is paid only to those caring 35 or more hours and earning no more than £151 per week. That earnings limit acts as a trap: carers cannot work enough to earn meaningfully without losing the allowance entirely. Young carers face measurable educational disadvantage, attending school less regularly and achieving lower grades than peers from equivalent socioeconomic backgrounds.
+              The personal cost is severe. Carers UK's State of Caring survey, drawing on 13,000 respondents, consistently finds that 72% of carers report deteriorating mental health and 61% worsening physical health.<Cite nums={3} /> Some 44% have reduced their paid working hours; 35% have given up work entirely, creating a &ldquo;caring penalty&rdquo; in lifetime earnings and pension entitlement.<Cite nums={3} /> The main financial support — Carer's Allowance at £81.90 per week in 2023/24 — is paid only to those caring 35 or more hours and earning no more than £151 per week.<Cite nums={4} /> That earnings limit acts as a trap: carers cannot work enough to earn meaningfully without losing the allowance entirely. Young carers face measurable educational disadvantage, attending school less regularly and achieving lower grades than peers from equivalent socioeconomic backgrounds.
             </p>
             </div>
         </section>
@@ -242,6 +251,10 @@ export default function UnpaidCarersPage() {
           source="Source: ONS — Census 2021 Unpaid Care; Carers UK — State of Caring 2023; DWP — Benefit Rates."
         />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="border-t border-wiah-border pt-8 mt-12">

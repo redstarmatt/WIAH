@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Live facial recognition deployments by police, UK, 2018–2024 — Big Brother Watch
 const deploymentValues = [2, 5, 8, 6, 12, 25, 45];
@@ -47,6 +49,12 @@ const deploymentAnnotations: Annotation[] = [
   { date: new Date(2022, 0, 1), label: '2022: Metropolitan Police expands LFR' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Big Brother Watch', dataset: 'Police facial recognition tracker', url: 'https://bigbrotherwatch.org.uk/campaigns/face-off/', date: '2024' },
+  { num: 2, name: 'Biometrics and Surveillance Camera Commissioner', dataset: 'Annual report on surveillance camera use', url: 'https://www.gov.uk/government/organisations/biometrics-and-surveillance-camera-commissioner', date: '2024' },
+  { num: 3, name: 'Home Office', dataset: 'Surveillance camera regulation', date: '2024' },
+];
+
 export default function FacialRecognitionPolicingPage() {
   return (
     <>
@@ -61,8 +69,8 @@ export default function FacialRecognitionPolicingPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Live facial recognition technology — which scans faces in public against watchlists in real time — has been deployed by UK police forces with growing frequency since 2018. The Metropolitan Police, South Wales Police, and several other forces have conducted deployments at events, in shopping centres, and on busy streets, with no requirement to notify the public beyond generic signage. The number of deployments grew from approximately 2 in 2018 to over 45 in 2024, with 8 forces now using the technology. There is no primary legislation governing live facial recognition policing in the UK — forces operate under general surveillance and public order powers combined with internal codes of practice.</p>
-            <p>The accuracy of LFR systems in operational conditions remains contested. Big Brother Watch analysis of early Metropolitan Police deployments found that approximately 92% of alerts were not confirmed as genuine matches — meaning the vast majority of people stopped for investigation were innocent. Accuracy has improved as systems and watchlists have been refined, but the 'false alert' rate remains around 80% in most reported deployments. The Court of Appeal ruled in 2020 that South Wales Police's use of LFR was unlawful due to insufficient legal basis and inadequate equality impact assessments, but the technology has continued to be used elsewhere. The UK government has indicated it does not intend to introduce primary legislation, preferring a code of practice approach through the National Police Chiefs' Council.</p>
+            <p>Live facial recognition technology — which scans faces in public against watchlists in real time — has been deployed by UK police forces with growing frequency since 2018. The Metropolitan Police, South Wales Police, and several other forces have conducted deployments at events, in shopping centres, and on busy streets, with no requirement to notify the public beyond generic signage. The number of deployments grew from approximately 2 in 2018 to over 45 in 2024, with 8 forces now using the technology.<Cite nums={[1]} /> There is no primary legislation governing live facial recognition policing in the UK — forces operate under general surveillance and public order powers combined with internal codes of practice.<Cite nums={[3]} /></p>
+            <p>The accuracy of LFR systems in operational conditions remains contested. Big Brother Watch analysis of early Metropolitan Police deployments found that approximately 92% of alerts were not confirmed as genuine matches — meaning the vast majority of people stopped for investigation were innocent.<Cite nums={[1]} /> Accuracy has improved as systems and watchlists have been refined, but the 'false alert' rate remains around 80% in most reported deployments.<Cite nums={[1]} /> The Court of Appeal ruled in 2020 that South Wales Police's use of LFR was unlawful due to insufficient legal basis and inadequate equality impact assessments, but the technology has continued to be used elsewhere. The UK government has indicated it does not intend to introduce primary legislation, preferring a code of practice approach through the National Police Chiefs' Council.<Cite nums={[2]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -140,6 +148,9 @@ export default function FacialRecognitionPolicingPage() {
             source="Source: NPCC — Live Facial Recognition Technology: Operational Requirements and Standards 2023. Ada Lovelace Institute — Countermeasures 2022."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

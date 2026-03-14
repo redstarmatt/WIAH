@@ -10,6 +10,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Environment Agency', dataset: 'Event Duration Monitoring — Storm Overflows Annual Return', url: 'https://environment.data.gov.uk/portalstg/home/item.html?id=045af51b3be545b79b0c219811a47ea4', date: '2024' },
+  { num: 2, name: 'Environment Agency', dataset: 'Water Framework Directive — classification status', url: 'https://environment.data.gov.uk/catchment-planning/', date: '2019', note: 'Last full reclassification was in 2019; legal deadline is 2027' },
+  { num: 3, name: 'Environment Agency', dataset: 'Bathing water classifications', url: 'https://environment.data.gov.uk/bwq/profiles/', date: '2025' },
+  { num: 4, name: 'Ofwat', dataset: 'Financial performance and expenditure — historic dividends since privatisation', url: 'https://www.ofwat.gov.uk/regulated-companies/company-obligations/outcomes/', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -437,26 +446,29 @@ export default function WaterPage() {
             <p>
               The 3.6 million hours of sewage discharge recorded in 2024 demand careful reading.
               Monitor coverage expanded from 862 overflows in 2016 to 14,182 (100%) in 2024, so much
-              of the headline increase reflects better measurement. The more telling metric — average
+              of the headline increase reflects better measurement.<Cite nums={1} /> The more telling metric — average
               spills per overflow — peaked at 35 in 2019 and sat at around 32 in 2024. Each overflow
-              still discharges, on average, once every 11 days. These were designed as emergency valves;
+              still discharges, on average, once every 11 days.<Cite nums={1} /> These were designed as emergency valves;
               they operate routinely. Only 16% of English surface waters meet good ecological status,
               down from 26% in 2009, and no full reclassification has been done since 2019 despite a
-              legal 2027 deadline. Over 83% of rivers now fail nitrate standards, driven largely by
-              agricultural run-off that fuels algal blooms and depletes oxygen.
+              legal 2027 deadline.<Cite nums={2} /> Over 83% of rivers now fail nitrate standards, driven largely by
+              agricultural run-off that fuels algal blooms and depletes oxygen.<Cite nums={2} />
             </p>
             <p>
               Bathing water tells a similar story. Sites rated &ldquo;excellent&rdquo; peaked at 72% in
               2022 but fell to 66% by 2025, while &ldquo;poor&rdquo; sites nearly doubled from 3.8% to
-              7.1%. Heavier rainfall from climate change is part of the explanation, but the financial
+              7.1%.<Cite nums={3} /> Heavier rainfall from climate change is part of the explanation, but the financial
               data points to something structural: water companies have paid £52.8 billion in dividends
-              since privatisation in 1989 while infrastructure deteriorated. Ofwat has approved record
+              since privatisation in 1989 while infrastructure deteriorated.<Cite nums={4} /> Ofwat has approved record
               investment for 2025–2030, but the gap between shareholder returns and capital spending
               over three decades is difficult to overlook. One genuine success: tap water quality
               compliance remains at 99.9% or above every year — a testament to treatment
               infrastructure, even as the rivers and coasts tell a different story.
             </p>
             </div>
+          <div className="mt-6">
+            <References items={editorialRefs} />
+          </div>
         </section>
 
         <SectionNav sections={[

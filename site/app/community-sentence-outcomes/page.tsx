@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // One-year reoffending rates %, 2015–2023 (Ministry of Justice)
 const communityReoffendingValues = [34, 33, 33, 33, 32, 32, 32, 32, 32];
@@ -49,6 +51,11 @@ const annotations2: Annotation[] = [
   { date: new Date(2021, 0, 1), label: '2021: Probation service reunified' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ministry of Justice', dataset: 'Proven Reoffending Statistics', url: 'https://www.gov.uk/government/collections/proven-reoffending-statistics', date: '2023' },
+  { num: 2, name: 'HMPPS', dataset: 'Community Performance Annual Digest', url: 'https://www.gov.uk/government/organisations/her-majestys-prison-and-probation-service', date: '2023' },
+];
+
 export default function CommunitySentenceOutcomesPage() {
   return (
     <>
@@ -63,8 +70,8 @@ export default function CommunitySentenceOutcomesPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Ministry of Justice proven reoffending data shows consistently that one-year reoffending rates for community orders average around 32%, compared with approximately 45% for sentences under 12 months in custody — a 13 percentage-point gap that has been stable since 2015. Short prison sentences are too brief to deliver rehabilitation but long enough to sever employment, housing, and family ties that protect against reoffending, leaving people in a worse position on release. Community orders can attach conditions — unpaid work, drug treatment, alcohol monitoring, mental health treatment — while preserving those protective social ties. Completion rates improved to 68% in 2023, despite probation vacancy rates exceeding 20% in some regions.</p>
-            <p>Despite the reoffending evidence, sentencing trends have moved against community orders over the past decade. Mandatory minimums, knife possession thresholds, and political pressure to appear tough on crime have all pushed toward longer custodial sentences. The 2017 revision of magistrates' sentencing guidelines moved custody to the default for certain offences where community-first had previously applied. The evidence for community sentences is strongest for low-level acquisitive crime driven by drug dependence; drug rehabilitation requirement completion is associated with significant reoffending reductions. The gap between what the evidence supports and what sentencing policy delivers continues to widen.</p>
+            <p>Ministry of Justice proven reoffending data shows consistently that one-year reoffending rates for community orders average around 32%, compared with approximately 45% for sentences under 12 months in custody — a 13 percentage-point gap that has been stable since 2015.<Cite nums={1} /> Short prison sentences are too brief to deliver rehabilitation but long enough to sever employment, housing, and family ties that protect against reoffending, leaving people in a worse position on release. Community orders can attach conditions — unpaid work, drug treatment, alcohol monitoring, mental health treatment — while preserving those protective social ties. Completion rates improved to 68% in 2023, despite probation vacancy rates exceeding 20% in some regions.<Cite nums={2} /></p>
+            <p>Despite the reoffending evidence, sentencing trends have moved against community orders over the past decade. Mandatory minimums, knife possession thresholds, and political pressure to appear tough on crime have all pushed toward longer custodial sentences. The 2017 revision of magistrates' sentencing guidelines moved custody to the default for certain offences where community-first had previously applied. The evidence for community sentences is strongest for low-level acquisitive crime driven by drug dependence; drug rehabilitation requirement completion is associated with significant reoffending reductions.<Cite nums={1} /> The gap between what the evidence supports and what sentencing policy delivers continues to widen.<Cite nums={[1, 2]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -143,6 +150,10 @@ export default function CommunitySentenceOutcomesPage() {
             source="Source: Ministry of Justice — Proven Reoffending Statistics 2023. HMPPS — Community Performance Annual Digest 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

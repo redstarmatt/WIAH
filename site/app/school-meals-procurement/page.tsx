@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'LACA', dataset: 'School Food Survey — market value and contract data', url: 'https://laca.co.uk', date: '2024' },
+  { num: 2, name: 'DfE', dataset: 'Free School Meals guidance — UIFSM reimbursement rate', url: 'https://www.gov.uk/government/publications/universal-infant-free-school-meals', date: '2024' },
+  { num: 3, name: 'Henry Dimbleby', dataset: 'National Food Strategy — Independent Review', url: 'https://www.nationalfoodstrategy.org', date: '2021' },
+  { num: 4, name: 'Scottish Government', dataset: 'Good Food Nation (Scotland) Act 2022', url: 'https://www.legislation.gov.uk/asp/2022/5', date: '2022' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -137,10 +146,10 @@ export default function SchoolMealsProcurementPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The £1.2 billion school meals market is one of the least-scrutinised public procurement sectors in England. Three large contract catering companies — Compass Group, Sodexo, and ISS — hold a substantial share of the market, though precise figures are not published as official statistics. The average school meal costs £2.65 to produce in 2024, but the Universal Infant Free School Meals statutory reimbursement rate remained at £2.53 until recently — a gap that councils and schools had to absorb through cross-subsidy or reduced nutritional quality.
+              The £1.2 billion school meals market is one of the least-scrutinised public procurement sectors in England.<Cite nums={1} /> Three large contract catering companies — Compass Group, Sodexo, and ISS — hold a substantial share of the market, though precise figures are not published as official statistics. The average school meal costs £2.65 to produce in 2024, but the Universal Infant Free School Meals statutory reimbursement rate remained at £2.53 until recently — a gap that councils and schools had to absorb through cross-subsidy or reduced nutritional quality.<Cite nums={2} />
             </p>
             <p>
-              Local and sustainable sourcing lags far behind stated ambitions. Henry Dimbleby's 2021 National Food Strategy recommended extending free school meals to all primary pupils and creating a School Food Review to improve quality and provenance standards. Only 7% of school meal contracts in England specify locally sourced food requirements. Scotland's Good Food Nation (Scotland) Act 2022 has created binding obligations on public bodies including schools to support local supply chains, a model England has not adopted. The consequence is that school meal contracts prioritise lowest-cost delivery at scale, concentrating economic benefits in large catering corporates rather than local food producers and processors.
+              Local and sustainable sourcing lags far behind stated ambitions. Henry Dimbleby's 2021 National Food Strategy recommended extending free school meals to all primary pupils and creating a School Food Review to improve quality and provenance standards.<Cite nums={3} /> Only 7% of school meal contracts in England specify locally sourced food requirements. Scotland's Good Food Nation (Scotland) Act 2022 has created binding obligations on public bodies including schools to support local supply chains, a model England has not adopted.<Cite nums={4} /> The consequence is that school meal contracts prioritise lowest-cost delivery at scale, concentrating economic benefits in large catering corporates rather than local food producers and processors.
             </p>
           </div>
         </section>
@@ -235,6 +244,10 @@ export default function SchoolMealsProcurementPage() {
             source="Source: LACA School Food Survey 2024 · DfE Free School Meals guidance · Scottish Government Good Food Nation Act."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

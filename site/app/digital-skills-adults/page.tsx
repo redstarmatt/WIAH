@@ -8,6 +8,8 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -37,6 +39,12 @@ function yearToDate(y: number): Date {
 }
 
 // ── Page ─────────────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Lloyds Bank', dataset: 'UK Consumer Digital Index', date: '2024' },
+  { num: 2, name: 'DCMS', dataset: 'UK Digital Strategy', date: '2025' },
+  { num: 3, name: 'DfE', dataset: 'Further Education: outcome-based success measures', date: '2025' },
+];
 
 export default function TopicPage() {
   const [data, setData] = useState<TopicData | null>(null);
@@ -196,6 +204,9 @@ export default function TopicPage() {
           />
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

@@ -8,6 +8,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Annual Survey of Hours and Earnings (ASHE)', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/genderpaygapintheuk/2024', date: '2024' },
+  { num: 2, name: 'Gov.uk', dataset: 'Gender Pay Gap Service', url: 'https://gender-pay-gap.service.gov.uk/', date: '2024' },
+  { num: 3, name: 'IFS', dataset: 'The Motherhood Penalty research', date: '2024' },
+];
 
 // Full-time gender pay gap (%), 2015–2025
 const fullTimeGap = [10.0, 9.4, 9.0, 8.6, 8.3, 7.9, 7.9, 7.7, 7.7, 7.8, 7.7];
@@ -72,8 +80,8 @@ export default function GenderPayGapReportPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The headline gender pay gap figure for full-time workers — 7.7% in 2024 — tells a story of slow progress. Down from 10% in 2015, it represents genuine narrowing driven by legislation, transparency, and generational shifts in women's workforce participation. But this figure flatters reality. When all employees are counted — including the millions of women in part-time roles — the gap sits at 13.9%. Women are far more likely to work part-time than men, and part-time work pays less per hour than full-time work even for equivalent roles. This is the part-time penalty, and it remains one of the largest structural drivers of pay inequality in the UK.</p>
-            <p>The motherhood penalty lies beneath the part-time gap. Research from the Institute for Fiscal Studies shows that by the time a first child reaches age 20, women earn roughly 30% less per hour than similarly-qualified men who became fathers at the same time. Sector segregation compounds the picture: women are concentrated in lower-paying sectors — care, retail, education — while construction and finance, where pay is highest, remain overwhelmingly male. The financial services sector pay gap has barely moved in a decade, remaining at 23% despite mandatory reporting. Since 2017, over 10,000 employers report their gender pay gap annually. The regime has brought visibility, but the data show that visibility alone is insufficient to close structural gaps.</p>
+            <p>The headline gender pay gap figure for full-time workers — 7.7% in 2024 — tells a story of slow progress.<Cite nums={[1]} /> Down from 10% in 2015, it represents genuine narrowing driven by legislation, transparency, and generational shifts in women's workforce participation. But this figure flatters reality. When all employees are counted — including the millions of women in part-time roles — the gap sits at 13.9%.<Cite nums={[1]} /> Women are far more likely to work part-time than men, and part-time work pays less per hour than full-time work even for equivalent roles. This is the part-time penalty, and it remains one of the largest structural drivers of pay inequality in the UK.</p>
+            <p>The motherhood penalty lies beneath the part-time gap. Research from the Institute for Fiscal Studies shows that by the time a first child reaches age 20, women earn roughly 30% less per hour than similarly-qualified men who became fathers at the same time.<Cite nums={[3]} /> Sector segregation compounds the picture: women are concentrated in lower-paying sectors — care, retail, education — while construction and finance, where pay is highest, remain overwhelmingly male. The financial services sector pay gap has barely moved in a decade, remaining at 23% despite mandatory reporting.<Cite nums={[1]} /> Since 2017, over 10,000 employers report their gender pay gap annually.<Cite nums={[2]} /> The regime has brought visibility, but the data show that visibility alone is insufficient to close structural gaps.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -152,6 +160,10 @@ export default function GenderPayGapReportPage() {
             source="Source: EHRC — Gender pay gap reporting data 2025. Gov.uk Gender Pay Gap Service 2025."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

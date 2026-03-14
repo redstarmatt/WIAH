@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Climate Change Committee', dataset: 'Land Use: Policies for a Net Zero UK', url: 'https://www.theccc.org.uk/publication/land-use-policies-for-a-net-zero-uk/', date: '2023' },
+  { num: 2, name: 'Natural England / DESNZ', dataset: 'Peatland Action Programme', url: 'https://www.gov.uk/government/publications/peatland-grant-scheme', date: '2024' },
+  { num: 3, name: 'Forestry Commission', dataset: 'Woodland Creation Statistics', url: 'https://www.forestresearch.gov.uk/tools-and-resources/statistics/statistics-by-topic/woodland-statistics/', date: '2024' },
+  { num: 4, name: 'Defra', dataset: 'England Tree Strategy 2021', url: 'https://www.gov.uk/government/publications/england-trees-action-plan-2021-to-2024', date: '2021' },
+];
 
 export default function NatureBasedSolutionsPage() {
   // Tree planting rate 2015–2024 (million trees/year)
@@ -158,12 +167,16 @@ export default function NatureBasedSolutionsPage() {
           <section id="sec-context" className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on nature-based climate solutions</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>The Climate Change Committee estimates that nature-based solutions — peatland restoration, woodland creation, wetland recovery, and sustainable soil management — could contribute approximately 12–15% of the UK's required greenhouse gas reductions by 2035. Peatland is the highest-priority intervention: the UK holds 13% of the world's blanket bog, storing 3.2 billion tonnes of carbon, but 3 million hectares of degraded peat currently emits approximately 23 million tonnes of CO2 equivalent per year. Rewetting degraded peatland prevents CO2 release and, over time, rebuilds the carbon storage function. By 2024, 62,000 hectares were under active restoration — a 340% increase from 2019 — funded through the Peatland Action programme, the Nature for Climate Grant Scheme, and the Sustainable Farming Incentive.</p>
-              <p>Woodland creation is falling far short of targets. England planted approximately 11.8 million trees in 2024 — an improvement on recent years but still less than 25% of the trajectory needed to reach 50 million trees per year by 2030. The England Tree Strategy 2021 set a target of 30,000 hectares of new woodland per year by 2025 — current rates are running at roughly 11,000 hectares. Land competition with food production, planning delays, and the long time horizon before new trees provide meaningful carbon sequestration (20–30 years) make woodland creation both politically and economically challenging without sustained long-term payment schemes.</p>
-              <p>Nature-based solutions and biodiversity recovery are largely complementary — carbon-rich habitats typically support high biodiversity, and many interventions deliver both outcomes simultaneously. Funding has grown substantially since 2019, reaching an estimated £750 million per year across government schemes, but it remains fragmented across the Sustainable Farming Incentive, the Countryside Stewardship scheme, and multiple competitive grants, creating high transaction costs for landowners and limiting the scale of individual projects. A more joined-up land use strategy, with coherent signals across planning, agriculture, and nature policy, would be the most significant accelerant available.</p>
+              <p>The Climate Change Committee estimates that nature-based solutions — peatland restoration, woodland creation, wetland recovery, and sustainable soil management — could contribute approximately 12–15% of the UK's required greenhouse gas reductions by 2035.<Cite nums={1} /> Peatland is the highest-priority intervention: the UK holds 13% of the world's blanket bog, storing 3.2 billion tonnes of carbon, but 3 million hectares of degraded peat currently emits approximately 23 million tonnes of CO2 equivalent per year.<Cite nums={2} /> Rewetting degraded peatland prevents CO2 release and, over time, rebuilds the carbon storage function. By 2024, 62,000 hectares were under active restoration — a 340% increase from 2019 — funded through the Peatland Action programme, the Nature for Climate Grant Scheme, and the Sustainable Farming Incentive.<Cite nums={2} /></p>
+              <p>Woodland creation is falling far short of targets. England planted approximately 11.8 million trees in 2024 — an improvement on recent years but still less than 25% of the trajectory needed to reach 50 million trees per year by 2030.<Cite nums={3} /> The England Tree Strategy 2021 set a target of 30,000 hectares of new woodland per year by 2025 — current rates are running at roughly 11,000 hectares.<Cite nums={4} /> Land competition with food production, planning delays, and the long time horizon before new trees provide meaningful carbon sequestration (20–30 years) make woodland creation both politically and economically challenging without sustained long-term payment schemes.</p>
+              <p>Nature-based solutions and biodiversity recovery are largely complementary — carbon-rich habitats typically support high biodiversity, and many interventions deliver both outcomes simultaneously. Funding has grown substantially since 2019, reaching an estimated £750 million per year across government schemes, but it remains fragmented across the Sustainable Farming Incentive, the Countryside Stewardship scheme, and multiple competitive grants, creating high transaction costs for landowners and limiting the scale of individual projects.<Cite nums={1} /> A more joined-up land use strategy, with coherent signals across planning, agriculture, and nature policy, would be the most significant accelerant available.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

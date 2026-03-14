@@ -7,6 +7,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'STRB', dataset: 'School Teachers Pay Review Body — Annual Report', url: 'https://www.gov.uk/government/collections/school-teachers-review-body-strb-reports', date: '2024', note: 'Experienced teacher real pay down ~15% since 2010; England ranked 21st of 28 OECD countries' },
+  { num: 2, name: 'DfE', dataset: 'School Workforce in England', url: 'https://www.gov.uk/government/collections/statistics-school-workforce', date: '2024', note: 'Vacancies tripled from ~600 FTE to 2,000+; unfilled posts 1,300; ~40% of new teachers leave within 5 years' },
+  { num: 3, name: 'OECD', dataset: 'Education at a Glance — Teacher Pay Indicators', url: 'https://www.oecd.org/education/education-at-a-glance/', date: '2023', note: 'UK teacher pay relative to other graduates below OECD average and falling' },
+];
 
 export default function TeacherRealPayPage() {
   // Chart 1: Teacher real pay indexed to 2010=100, 2010–2024
@@ -153,12 +161,16 @@ export default function TeacherRealPayPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on teacher pay</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Between 2010 and 2023, experienced teacher pay fell approximately 15% in real terms — while the median graduate salary across all professions rose, creating an 18% gap. England ranked 21st of 28 OECD countries for teacher pay relative to other graduates in 2023, below the OECD average and falling. ITT recruitment targets have been missed consistently since 2016 in maths, physics, computing, chemistry, and modern foreign languages — precisely the subjects where private sector alternatives pay most.</p>
-              <p>Teacher vacancies have grown from around 600 FTE in 2015 to over 2,000 in 2024. Unfilled posts — where schools have been unable to appoint at all — have risen in parallel. The consequences fall hardest on pupils in shortage subjects and deprived areas. Schools facing vacancies reach for supply teachers, merge classes, or reduce options. Roughly 40% of new teachers leave within five years, a retention rate that represents significant wasted investment in training.</p>
-              <p>Starting salaries have improved in recent years, with NQT pay reaching £30,000 in 2023. But the compressed gap between entry and progression pay reduces the financial incentive to stay beyond the early career period. Countries consistently outperforming England in pupil attainment — Finland, South Korea, Singapore — treat teaching as a high-status, well-compensated profession. The link between teacher pay, status, and pupil outcomes is well-established in comparative research.</p>
+              <p>Between 2010 and 2023, experienced teacher pay fell approximately 15% in real terms — while the median graduate salary across all professions rose, creating an 18% gap.<Cite nums={1} /> England ranked 21st of 28 OECD countries for teacher pay relative to other graduates in 2023, below the OECD average and falling.<Cite nums={3} /> ITT recruitment targets have been missed consistently since 2016 in maths, physics, computing, chemistry, and modern foreign languages — precisely the subjects where private sector alternatives pay most.</p>
+              <p>Teacher vacancies have grown from around 600 FTE in 2015 to over 2,000 in 2024. Unfilled posts — where schools have been unable to appoint at all — have risen in parallel.<Cite nums={2} /> The consequences fall hardest on pupils in shortage subjects and deprived areas. Schools facing vacancies reach for supply teachers, merge classes, or reduce options. Roughly 40% of new teachers leave within five years, a retention rate that represents significant wasted investment in training.<Cite nums={2} /></p>
+              <p>Starting salaries have improved in recent years, with NQT pay reaching £30,000 in 2023. But the compressed gap between entry and progression pay reduces the financial incentive to stay beyond the early career period. Countries consistently outperforming England in pupil attainment — Finland, South Korea, Singapore — treat teaching as a high-status, well-compensated profession.<Cite nums={3} /> The link between teacher pay, status, and pupil outcomes is well-established in comparative research.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

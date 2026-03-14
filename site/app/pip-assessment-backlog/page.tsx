@@ -7,7 +7,16 @@ import MetricCard from '@/components/MetricCard'
 import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DWP', dataset: 'Personal Independence Payment Statistics', url: 'https://www.gov.uk/government/collections/personal-independence-payment-statistics', date: '2024' },
+  { num: 2, name: 'HMCTS', dataset: 'Tribunal Statistics Quarterly', url: 'https://www.gov.uk/government/collections/tribunals-statistics', date: '2024' },
+  { num: 3, name: 'National Audit Office', dataset: 'Personal Independence Payment', url: 'https://www.nao.org.uk', date: '2023' },
+  { num: 4, name: 'Citizens Advice', dataset: 'PIP Assessment Quality Monitoring', url: 'https://www.citizensadvice.org.uk', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -72,8 +81,8 @@ export default function PipAssessmentBacklogPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Personal Independence Payment is the main working-age disability benefit in the UK, replacing Disability Living Allowance from 2013. Average waiting times for a PIP decision rose from 14 weeks in 2015 to a peak of 26 weeks in 2023, before falling slightly to 24 weeks in 2024 — still effectively a six-month wait for people managing health conditions, often without income, while rent, utilities, and care costs continue. The appeal overturn rate is the most damning single figure in the system: 71% of independent tribunal decisions in 2024 found in the claimant&rsquo;s favour, overturning the DWP&rsquo;s original ruling. A backlog of 216,000 undecided cases sits alongside a proposed 2024 reform to restrict access to the daily living component, paused following parliamentary concern but signalling sustained pressure on eligibility.</p>
-            <p>The burden of a malfunctioning assessment system falls entirely on claimants. Those refused PIP or awarded a lower rate face a mandatory reconsideration process before they can appeal to a tribunal — adding months to an already lengthy process, during which they receive no benefit. Disabled people in the most deprived areas are least able to afford advice services, travel to assessments, or manage the administrative burden of appeals. The assessment contractors (Capita and Maximus) have faced consistent criticism for assessors with no specialist knowledge of the conditions they are assessing, and criteria that judge what claimants can do on their best day rather than their typical day — a design flaw acknowledged by the Green Paper of 2023 but not yet structurally reformed.</p>
+            <p>Personal Independence Payment is the main working-age disability benefit in the UK, replacing Disability Living Allowance from 2013. Average waiting times for a PIP decision rose from 14 weeks in 2015 to a peak of 26 weeks in 2023, before falling slightly to 24 weeks in 2024 — still effectively a six-month wait for people managing health conditions, often without income, while rent, utilities, and care costs continue.<Cite nums={1} /> The appeal overturn rate is the most damning single figure in the system: 71% of independent tribunal decisions in 2024 found in the claimant&rsquo;s favour, overturning the DWP&rsquo;s original ruling.<Cite nums={2} /> A backlog of 216,000 undecided cases sits alongside a proposed 2024 reform to restrict access to the daily living component, paused following parliamentary concern but signalling sustained pressure on eligibility.<Cite nums={1} /></p>
+            <p>The burden of a malfunctioning assessment system falls entirely on claimants. Those refused PIP or awarded a lower rate face a mandatory reconsideration process before they can appeal to a tribunal — adding months to an already lengthy process, during which they receive no benefit.<Cite nums={[1, 4]} /> Disabled people in the most deprived areas are least able to afford advice services, travel to assessments, or manage the administrative burden of appeals. The assessment contractors (Capita and Maximus) have faced consistent criticism for assessors with no specialist knowledge of the conditions they are assessing, and criteria that judge what claimants can do on their best day rather than their typical day — a design flaw acknowledged by the Green Paper of 2023 but not yet structurally reformed.<Cite nums={[3, 4]} /></p>
           </div>
         </section>
 
@@ -133,6 +142,10 @@ export default function PipAssessmentBacklogPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

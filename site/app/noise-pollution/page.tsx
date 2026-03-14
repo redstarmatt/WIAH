@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DEFRA', dataset: 'Strategic Noise Mapping', url: 'https://www.gov.uk/government/collections/noise-and-nuisance-statistics', date: '2024' },
+  { num: 2, name: 'WHO', dataset: 'Environmental Noise Guidelines for the European Region', url: 'https://www.who.int/europe/publications/i/item/9789289053563', date: '2018' },
+  { num: 3, name: 'EEA', dataset: 'Environmental Noise in Europe', url: 'https://www.eea.europa.eu/publications/environmental-noise-in-europe', date: '2022' },
+  { num: 4, name: 'DEFRA', dataset: 'Noise Nuisance Statistics — Local Authority Returns', url: 'https://www.gov.uk/government/collections/noise-and-nuisance-statistics', date: '2024' },
+];
 
 export default function NoisePollutionPage() {
 
@@ -140,12 +149,16 @@ export default function NoisePollutionPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on noise pollution</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Environmental noise is the second most harmful environmental health risk in Europe after air pollution, according to the World Health Organization. In England, DEFRA's strategic noise mapping estimates that around 40% of the population is exposed to road traffic noise above 55 dB Lden — the WHO Environmental Noise Guidelines threshold above which adverse health effects become significant. An additional 2 million are exposed to harmful noise from railways, and 680,000 from major airports.</p>
-              <p>The WHO estimates that environmental noise causes around 3,000 premature deaths in England annually — primarily through cardiovascular disease — along with 48,000 new cases of ischaemic heart disease across Europe each year. Sleep disturbance is the primary health pathway: the WHO recommends night-time noise levels below 40 dB Lnight, but DEFRA mapping shows that 2.9 million people in England are exposed to road traffic noise above 50 dB Lnight.</p>
-              <p>Noise complaints to local authorities peaked at 435,000 in 2021, driven by changed working patterns during the pandemic that made daytime neighbourhood noise more intrusive. By 2024, complaints had moderated to around 375,000 but remained well above the 2012 baseline of 330,000. Construction noise complaints have risen sharply in London and other major cities where housebuilding activity is increasing.</p>
+              <p>Environmental noise is the second most harmful environmental health risk in Europe after air pollution, according to the World Health Organization.<Cite nums={2} /> In England, DEFRA's strategic noise mapping estimates that around 40% of the population is exposed to road traffic noise above 55 dB Lden — the WHO Environmental Noise Guidelines threshold above which adverse health effects become significant.<Cite nums={1} /> An additional 2 million are exposed to harmful noise from railways, and 680,000 from major airports.<Cite nums={1} /></p>
+              <p>The WHO estimates that environmental noise causes around 3,000 premature deaths in England annually — primarily through cardiovascular disease — along with 48,000 new cases of ischaemic heart disease across Europe each year.<Cite nums={[2, 3]} /> Sleep disturbance is the primary health pathway: the WHO recommends night-time noise levels below 40 dB Lnight, but DEFRA mapping shows that 2.9 million people in England are exposed to road traffic noise above 50 dB Lnight.<Cite nums={1} /></p>
+              <p>Noise complaints to local authorities peaked at 435,000 in 2021, driven by changed working patterns during the pandemic that made daytime neighbourhood noise more intrusive.<Cite nums={4} /> By 2024, complaints had moderated to around 375,000 but remained well above the 2012 baseline of 330,000.<Cite nums={4} /> Construction noise complaints have risen sharply in London and other major cities where housebuilding activity is increasing.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

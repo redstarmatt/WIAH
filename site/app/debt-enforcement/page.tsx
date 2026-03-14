@@ -8,6 +8,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // CCJs issued (thousands), 2015–2024
 const ccjValues = [532, 540, 555, 570, 581, 532, 400, 570, 598, 706];
@@ -59,6 +61,12 @@ const annotations2: Annotation[] = [
   { date: new Date(2022, 5, 1), label: '2022: Cost-of-living crisis drives arrears' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Registry Trust', dataset: 'County Court Judgment Statistics', url: 'https://www.registrytrust.org.uk', date: '2024' },
+  { num: 2, name: 'Ministry of Justice', dataset: 'Enforcement Statistics Quarterly', url: 'https://www.gov.uk/government/collections/enforcement-statistics-quarterly', date: '2024' },
+  { num: 3, name: 'FCA', dataset: 'Consumer Credit Market Study', url: 'https://www.fca.org.uk', date: '2024' },
+];
+
 export default function DebtEnforcementPage() {
   return (
     <>
@@ -73,8 +81,8 @@ export default function DebtEnforcementPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>When people fall behind on bills, the enforcement system can transform a manageable debt into an unmanageable one. County Court Judgments — issued when a creditor applies to court for repayment — affect credit ratings and can trigger bailiff action. CCJs fell during COVID-era payment holidays but have surged since 2021, reaching 706,000 in 2024 with an average debt of £1,442. Council tax remains the most aggressively enforced debt in England, with 2.8 million enforcement actions in 2024. Unlike credit card arrears, a missed council tax payment can fast-track to a bailiff visit within weeks, adding £310 in statutory fees — fees that make the debt harder, not easier, to clear.</p>
-            <p>The 3.1 million adults currently using high-cost credit — payday loans, rent-to-own, doorstep lending — are predominantly those with no access to affordable alternatives. Credit unions cover only 3% of the UK adult population compared to 75% in Ireland. Without access to fair credit, a car repair, a broken boiler, or an unexpected bill can spiral into a debt enforcement cycle. The Breathing Space scheme, launched in 2021, provides 60 days of protection from enforcement while people seek debt advice — but uptake at 117,000 people in 2024 reaches only a fraction of those who could benefit.</p>
+            <p>When people fall behind on bills, the enforcement system can transform a manageable debt into an unmanageable one. County Court Judgments — issued when a creditor applies to court for repayment — affect credit ratings and can trigger bailiff action. CCJs fell during COVID-era payment holidays but have surged since 2021, reaching 706,000 in 2024 with an average debt of £1,442.<Cite nums={1} /> Council tax remains the most aggressively enforced debt in England, with 2.8 million enforcement actions in 2024.<Cite nums={2} /> Unlike credit card arrears, a missed council tax payment can fast-track to a bailiff visit within weeks, adding £310 in statutory fees — fees that make the debt harder, not easier, to clear.</p>
+            <p>The 3.1 million adults currently using high-cost credit — payday loans, rent-to-own, doorstep lending — are predominantly those with no access to affordable alternatives.<Cite nums={3} /> Credit unions cover only 3% of the UK adult population compared to 75% in Ireland. Without access to fair credit, a car repair, a broken boiler, or an unexpected bill can spiral into a debt enforcement cycle. The Breathing Space scheme, launched in 2021, provides 60 days of protection from enforcement while people seek debt advice — but uptake at 117,000 people in 2024 reaches only a fraction of those who could benefit.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -153,6 +161,9 @@ export default function DebtEnforcementPage() {
             source="Source: Insolvency Service — Breathing Space Statistics 2024. StepChange — Debt Statistics Yearbook 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

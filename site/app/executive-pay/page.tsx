@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // FTSE 100 median CEO pay (£m), 2015–2023 — CIPD / High Pay Centre
 const ceoPayValues = [3.5, 3.7, 3.9, 3.8, 4.0, 3.2, 3.8, 4.1, 4.4];
@@ -41,6 +43,12 @@ const payAnnotations: Annotation[] = [
   { date: new Date(2019, 0, 1), label: '2019: Pay ratio reporting begins' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'High Pay Centre', dataset: 'FTSE 100 CEO pay analysis', url: 'https://highpaycentre.org/ftse-100-ceo-pay-analysis/', date: '2023' },
+  { num: 2, name: 'High Pay Centre / CIPD', dataset: 'Executive pay and the workforce', url: 'https://highpaycentre.org/', date: '2023' },
+  { num: 3, name: 'Investment Association', dataset: 'Shareholder voting analysis', date: '2023' },
+];
+
 export default function ExecutivePayPage() {
   return (
     <>
@@ -55,8 +63,8 @@ export default function ExecutivePayPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The median total remuneration package for a FTSE 100 chief executive reached £4.4 million in 2023 — the highest since records began, and 139 times the median UK full-time worker's pay. This ratio — measured across all FTSE 100 companies since mandatory pay ratio reporting was introduced in 2019 — has risen every year since the COVID-19 dip in 2020, when some executives voluntarily cut their pay. Long-term incentive plans (LTIPs) dominate executive pay: basic salary typically accounts for only 20–30% of total remuneration, with the remainder made up of bonuses, LTIPs, and pension contributions. LTIP vesting is tied to share price and earnings metrics, meaning pay packages are sensitive to stock market cycles rather than operational performance relative to workers.</p>
-            <p>The High Pay Centre's analysis consistently shows that most FTSE 100 CEOs are not recruited from a competitive global market — the vast majority are UK or European nationals, contradicting the 'global talent war' justification for high packages. Shareholder advisory votes against executive pay resolutions have risen from 7% in 2015 to 16% in 2023, suggesting growing investor discomfort. The Investment Association maintains a public register of companies receiving 20% or more votes against pay resolutions. But advisory votes are non-binding, and the Remuneration Committee members who set pay are typically drawn from the same executive networks. The Investment Association register shows the same companies appearing repeatedly without significant change.</p>
+            <p>The median total remuneration package for a FTSE 100 chief executive reached £4.4 million in 2023 — the highest since records began, and 139 times the median UK full-time worker's pay.<Cite nums={1} /> This ratio — measured across all FTSE 100 companies since mandatory pay ratio reporting was introduced in 2019 — has risen every year since the COVID-19 dip in 2020<Cite nums={2} />, when some executives voluntarily cut their pay. Long-term incentive plans (LTIPs) dominate executive pay: basic salary typically accounts for only 20–30% of total remuneration, with the remainder made up of bonuses, LTIPs, and pension contributions.<Cite nums={1} /> LTIP vesting is tied to share price and earnings metrics, meaning pay packages are sensitive to stock market cycles rather than operational performance relative to workers.</p>
+            <p>The High Pay Centre's analysis consistently shows that most FTSE 100 CEOs are not recruited from a competitive global market — the vast majority are UK or European nationals, contradicting the 'global talent war' justification for high packages.<Cite nums={1} /> Shareholder advisory votes against executive pay resolutions have risen from 7% in 2015 to 16% in 2023<Cite nums={3} />, suggesting growing investor discomfort. The Investment Association maintains a public register of companies receiving 20% or more votes against pay resolutions. But advisory votes are non-binding, and the Remuneration Committee members who set pay are typically drawn from the same executive networks. The Investment Association register shows the same companies appearing repeatedly without significant change.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -134,6 +142,10 @@ export default function ExecutivePayPage() {
             source="Source: High Pay Centre — FTSE 100 CEO Pay 2023. CIPD — Executive Pay and the Workforce 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

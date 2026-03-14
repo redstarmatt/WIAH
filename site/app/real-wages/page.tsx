@@ -8,6 +8,8 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -31,6 +33,12 @@ interface RealWagesData {
 function yearToDate(y: number): Date {
   return new Date(y, 5, 1);
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Annual Survey of Hours and Earnings (ASHE)', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/annualsurveyofhoursandearnings/2024', date: '2024' },
+  { num: 2, name: 'Resolution Foundation', dataset: 'Earnings Tracker', url: 'https://www.resolutionfoundation.org/data/earnings-tracker/', date: '2024' },
+  { num: 3, name: 'ONS', dataset: 'Consumer Price Inflation', date: '2022', note: 'CPI peaked at 11.1% in October 2022' },
+];
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -73,8 +81,8 @@ export default function RealWagesPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>By 2024, the average worker's pay, adjusted for inflation, remained roughly 1% below where it was in 2008 — no comparable G7 economy has experienced such a prolonged stagnation. After a modest recovery between 2014 and 2019, the 2022 inflation shock delivered a second body blow: CPI peaked at 11.1% in October 2022, and nominal pay rises could not keep pace, with real wages falling at their sharpest rate since records began. The Resolution Foundation estimates the cumulative loss at around £10,000 per worker relative to the pre-2008 trend. CPI excludes housing costs; for workers renting privately or carrying large mortgages, the actual squeeze on living standards has been considerably worse than headline figures suggest, with younger and lower-income households most exposed to rental inflation and mortgage rate rises.</p>
-            <p>The stagnation is not uniform. Workers in the bottom 20% saw real wages grow by around 5.1% between 2008 and 2024, boosted by successive National Living Wage increases — a genuine policy success — while median workers saw wages fall slightly in real terms. The UK has underperformed every other G7 economy over this period; Germany, France, Canada, and the United States have all seen meaningful real wage growth since 2008. The divergence reflects a productivity puzzle in the UK that low investment, weak management quality, and a hard-to-automate services-heavy economy only partially explain.</p>
+            <p>By 2024, the average worker's pay, adjusted for inflation, remained roughly 1% below where it was in 2008 — no comparable G7 economy has experienced such a prolonged stagnation.<Cite nums={1} /> After a modest recovery between 2014 and 2019, the 2022 inflation shock delivered a second body blow: CPI peaked at 11.1% in October 2022, and nominal pay rises could not keep pace, with real wages falling at their sharpest rate since records began.<Cite nums={3} /> The Resolution Foundation estimates the cumulative loss at around £10,000 per worker relative to the pre-2008 trend.<Cite nums={2} /> CPI excludes housing costs; for workers renting privately or carrying large mortgages, the actual squeeze on living standards has been considerably worse than headline figures suggest, with younger and lower-income households most exposed to rental inflation and mortgage rate rises.</p>
+            <p>The stagnation is not uniform. Workers in the bottom 20% saw real wages grow by around 5.1% between 2008 and 2024, boosted by successive National Living Wage increases — a genuine policy success — while median workers saw wages fall slightly in real terms.<Cite nums={2} /> The UK has underperformed every other G7 economy over this period; Germany, France, Canada, and the United States have all seen meaningful real wage growth since 2008.<Cite nums={1} /> The divergence reflects a productivity puzzle in the UK that low investment, weak management quality, and a hard-to-automate services-heavy economy only partially explain.</p>
           </div>
         </section>
 
@@ -176,6 +184,10 @@ export default function RealWagesPage() {
             </div>
           </div>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <ScrollReveal>

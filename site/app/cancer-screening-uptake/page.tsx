@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Cancer screening uptake by programme (%), England, 2015–2023
 const cervicalData = [74.2, 73.1, 72.0, 71.4, 70.1, 69.5, 65.0, 68.3, 68.5];
@@ -74,6 +76,12 @@ const deprivationAnnotations: Annotation[] = [
   { date: new Date(2020, 2, 1), label: '2020: COVID widens gap temporarily' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS Digital', dataset: 'Cervical Screening Programme Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/cervical-screening-programme', date: 'March 2026' },
+  { num: 2, name: 'NHS Digital', dataset: 'Breast Screening Programme Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/breast-screening-programme', date: 'March 2026' },
+  { num: 3, name: 'NHS Digital', dataset: 'Bowel Cancer Screening Programme', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/bowel-cancer-screening-programme', date: 'March 2026' },
+];
+
 export default function CancerScreeningUptakePage() {
   return (
     <>
@@ -88,8 +96,8 @@ export default function CancerScreeningUptakePage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England runs three national cancer screening programmes — cervical, breast, and bowel — but none is meeting its uptake target. Cervical screening coverage fell from 74.2% in 2015 to 68.5% in 2023, with a sharp pandemic dip that has not fully recovered; the 80% population-level effectiveness threshold has not been met for over a decade. Breast screening stands at 74.4% against an 80% target; the 2018 disclosure that around 450,000 women were not invited for screening between 2009 and 2018 — with PHE estimating 135–270 may have died earlier as a result — damaged trust in the programme. Bowel screening, improved by home-testing kits, has risen from 58.4% to 66.4% since 2015 but remains below its 75% target. NHS England estimates improving bowel uptake to 75% would prevent approximately 2,500 cancer deaths per year.</p>
-            <p>Access gaps are systematic and persistent. Women from deprived areas are consistently less likely to attend all three programmes; Black and Asian women are significantly underrepresented relative to their population share, reflecting language barriers, cultural factors, practical obstacles, and historical distrust of health services. Young women aged 25–34 are the least likely group to attend cervical screening — the age at which early detection has the greatest potential impact. The deprivation gap in cervical screening alone stands at roughly 18 percentage points between the most and least deprived quintiles. Targeted outreach and community partnerships have shown results in pilots but have not been deployed at national scale, meaning preventable deaths continue to accumulate along predictable socioeconomic lines.</p>
+            <p>England runs three national cancer screening programmes — cervical, breast, and bowel — but none is meeting its uptake target. Cervical screening coverage fell from 74.2% in 2015 to 68.5% in 2023, with a sharp pandemic dip that has not fully recovered; the 80% population-level effectiveness threshold has not been met for over a decade.<Cite nums={1} /> Breast screening stands at 74.4% against an 80% target; the 2018 disclosure that around 450,000 women were not invited for screening between 2009 and 2018 — with PHE estimating 135–270 may have died earlier as a result — damaged trust in the programme.<Cite nums={2} /> Bowel screening, improved by home-testing kits, has risen from 58.4% to 66.4% since 2015 but remains below its 75% target.<Cite nums={3} /> NHS England estimates improving bowel uptake to 75% would prevent approximately 2,500 cancer deaths per year.</p>
+            <p>Access gaps are systematic and persistent. Women from deprived areas are consistently less likely to attend all three programmes; Black and Asian women are significantly underrepresented relative to their population share, reflecting language barriers, cultural factors, practical obstacles, and historical distrust of health services. Young women aged 25–34 are the least likely group to attend cervical screening — the age at which early detection has the greatest potential impact.<Cite nums={1} /> The deprivation gap in cervical screening alone stands at roughly 18 percentage points between the most and least deprived quintiles.<Cite nums={1} /> Targeted outreach and community partnerships have shown results in pilots but have not been deployed at national scale, meaning preventable deaths continue to accumulate along predictable socioeconomic lines.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -169,6 +177,9 @@ export default function CancerScreeningUptakePage() {
             source="Source: NHS England — Cervical Screening self-sampling pilot evaluation 2024. NHS Digital — Bowel Cancer Screening Programme statistics 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

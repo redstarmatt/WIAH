@@ -10,6 +10,15 @@ import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NICE', dataset: 'Technology Appraisal TA875 — Semaglutide for obesity', url: 'https://www.nice.org.uk/guidance/ta875', date: '2023' },
+  { num: 2, name: 'NHS BSA', dataset: 'Prescription Cost Analysis — GLP-1 prescriptions', url: 'https://www.nhsbsa.nhs.uk/statistical-collections/prescription-cost-analysis', date: '2024' },
+  { num: 3, name: 'NHS England', dataset: 'Specialist weight management services capacity', url: 'https://www.england.nhs.uk/publication/clinical-commissioning-policy-statement-tirzepatide/', date: '2024' },
+  { num: 4, name: 'NHS England', dataset: 'Obesity-related NHS cost estimates', url: 'https://www.england.nhs.uk/', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -111,8 +120,8 @@ export default function WeightLossDrugAccessPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>GLP-1 receptor agonists — semaglutide (Wegovy, Ozempic) and tirzepatide (Mounjaro) — represent the most significant advance in obesity treatment in a generation. Clinical trials demonstrated average body weight reductions of 15–22%, durable over two years, with parallel reductions in cardiovascular events, sleep apnoea, and type 2 diabetes incidence. NICE approved semaglutide for obesity treatment in 2023 under Technology Appraisal TA875, and tirzepatide followed in 2024. The eligible population — adults with a BMI of 35 or above plus at least one weight-related condition — is estimated at 3.4 million in England. Around 420,000 GLP-1 prescriptions were dispensed through NHS channels in 2024, but the majority cover established diabetes patients; only an estimated 35,000 — roughly 1% of those NICE has deemed eligible — are receiving them specifically for obesity. Access through NHS specialist weight management services is severely constrained: only around 60 such services exist in England, and global supply shortages driven by US demand have periodically restricted new NHS prescribing of semaglutide.</p>
-            <p>The economic case for broader access is compelling: obesity-related conditions cost the NHS an estimated £6.5 billion annually, and independent modelling suggests NHS-wide roll-out at current drug costs would fall within NICE's cost-effectiveness threshold. Those who cannot access the drugs on the NHS pay £200–400 a month privately — an option unavailable to the low-income patients with the highest obesity burden. The gap between NICE approval and meaningful NHS access is, in practice, a rationing decision dressed as an infrastructure constraint, and its costs will compound as obesity-related ill-health continues to grow.</p>
+            <p>GLP-1 receptor agonists — semaglutide (Wegovy, Ozempic) and tirzepatide (Mounjaro) — represent the most significant advance in obesity treatment in a generation. Clinical trials demonstrated average body weight reductions of 15–22%, durable over two years, with parallel reductions in cardiovascular events, sleep apnoea, and type 2 diabetes incidence. NICE approved semaglutide for obesity treatment in 2023 under Technology Appraisal TA875, and tirzepatide followed in 2024.<Cite nums={1} /> The eligible population — adults with a BMI of 35 or above plus at least one weight-related condition — is estimated at 3.4 million in England. Around 420,000 GLP-1 prescriptions were dispensed through NHS channels in 2024, but the majority cover established diabetes patients; only an estimated 35,000 — roughly 1% of those NICE has deemed eligible — are receiving them specifically for obesity.<Cite nums={2} /> Access through NHS specialist weight management services is severely constrained: only around 60 such services exist in England, and global supply shortages driven by US demand have periodically restricted new NHS prescribing of semaglutide.<Cite nums={3} /></p>
+            <p>The economic case for broader access is compelling: obesity-related conditions cost the NHS an estimated £6.5 billion annually, and independent modelling suggests NHS-wide roll-out at current drug costs would fall within NICE's cost-effectiveness threshold.<Cite nums={4} /> Those who cannot access the drugs on the NHS pay £200–400 a month privately — an option unavailable to the low-income patients with the highest obesity burden. The gap between NICE approval and meaningful NHS access is, in practice, a rationing decision dressed as an infrastructure constraint, and its costs will compound as obesity-related ill-health continues to grow.</p>
           </div>
         </section>
 
@@ -188,6 +197,10 @@ export default function WeightLossDrugAccessPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

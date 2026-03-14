@@ -9,6 +9,17 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+// ── References ──────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS Protect / NHSBSA', dataset: 'Reported Physical Assaults on NHS Staff', date: '2024', note: 'Annual; covers all NHS trusts in England' },
+  { num: 2, name: 'NHS England', dataset: 'NHS Staff Survey', url: 'https://www.nhsstaffsurveys.com/', date: '2024', note: 'Under-reporting estimated at 40-60%' },
+  { num: 3, name: 'NHS Protect / NHSBSA', dataset: 'Reported Physical Assaults by Trust Type', date: '2024' },
+  { num: 4, name: 'NHS England', dataset: 'Violence Prevention and Reduction Programme evaluation', date: '2025' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -147,10 +158,11 @@ export default function ViolenceAgainstNhsStaffPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Violence against NHS staff is not new, but its scale has reached a level that is now affecting recruitment, retention and the quality of care itself. In 2024, trusts across England reported 87,200 physical assaults on staff — an average of 239 per day. These range from punches thrown in A&E waiting rooms to sustained attacks on mental health nurses by patients in crisis. Behind the headline figure sits a much larger volume of verbal abuse, threats and intimidation: over 210,000 reported incidents in 2024, and the true number is almost certainly higher. Staff Survey data consistently shows that 40-60% of incidents go unreported, often because staff see it as "part of the job" or doubt that reporting will lead to any consequence.</p>
+            <p>Violence against NHS staff is not new, but its scale has reached a level that is now affecting recruitment, retention and the quality of care itself. In 2024, trusts across England reported 87,200 physical assaults on staff — an average of 239 per day.<Cite nums={1} /> These range from punches thrown in A&E waiting rooms to sustained attacks on mental health nurses by patients in crisis. Behind the headline figure sits a much larger volume of verbal abuse, threats and intimidation: over 210,000 reported incidents in 2024, and the true number is almost certainly higher.<Cite nums={2} /> Staff Survey data consistently shows that 40-60% of incidents go unreported, often because staff see it as "part of the job" or doubt that reporting will lead to any consequence.<Cite nums={2} /></p>
             <p>The drivers are structural. Emergency departments are overcrowded, with patients waiting 12 hours or more in corridors. Mental health wards are running at over 100% occupancy. Community services have been cut, meaning people in crisis arrive at hospitals as a last resort, more agitated and more unwell than they would have been with earlier intervention. Alcohol and substance use are factors in roughly a third of A&E-related assaults. Staff shortages mean fewer people managing more patients, reducing the capacity for de-escalation. The result is a vicious cycle: violence drives staff out, shortages increase pressure, and pressure breeds more violence.</p>
-            <p>Mental health trusts bear the heaviest burden by far, with 127 reported assaults per thousand staff — more than three times the rate in acute hospitals and nearly seven times the rate in primary care. Ambulance staff face the second-highest rate. These are not statistics that can be explained away by the nature of the patient population alone; they reflect a system under sustained pressure, where the conditions that generate violence are themselves a product of underfunding and understaffing.</p>
+            <p>Mental health trusts bear the heaviest burden by far, with 127 reported assaults per thousand staff — more than three times the rate in acute hospitals and nearly seven times the rate in primary care.<Cite nums={3} /> Ambulance staff face the second-highest rate. These are not statistics that can be explained away by the nature of the patient population alone; they reflect a system under sustained pressure, where the conditions that generate violence are themselves a product of underfunding and understaffing.</p>
           </div>
+          <div className="mt-6"><References items={editorialRefs} /></div>
         </section>
 
         <SectionNav sections={[

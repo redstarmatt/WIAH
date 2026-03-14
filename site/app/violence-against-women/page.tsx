@@ -8,6 +8,17 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+// -- References -------------------------------------------------------------
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Crown Prosecution Service', dataset: 'Violence Against Women and Girls Report', url: 'https://www.cps.gov.uk/statistics', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Crime Survey for England and Wales — Police Recorded Crime', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice', date: '2024' },
+  { num: 3, name: 'Home Office', dataset: 'Rape Review Action Plan Progress Updates', url: 'https://www.gov.uk/government/publications/rape-review-action-plan', date: '2024' },
+  { num: 4, name: 'UK Parliament', dataset: 'Victims and Prisoners Act 2024', url: 'https://www.legislation.gov.uk/ukpga/2024', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -87,9 +98,10 @@ export default function ViolenceAgainstWomenPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The rape charge rate — 10.4% in 2015 — had fallen to just 3.2% by 2023, even as reports nearly doubled to 74,000 per year. The absolute number of charges, around 3,100 in 2024, has remained roughly flat while the volume of cases has grown enormously. The average time from offence to charging decision extended from 274 days in 2015 to 574 days in 2023: length itself drives attrition, as complainants withdraw, evidence degrades, and investigators close cases with no further action. Digital forensics — now a standard part of rape investigations — are a major source of delay, as forces lack capacity to process phones rapidly while complainants are required to surrender devices containing their entire personal history. A complainant reporting rape in England in 2024 can expect to wait three years or more from reporting to verdict.</p>
-            <p>The conviction rate once cases reach court is around 68–70%, confirming the problem lies not in court but in the pipeline. The Crime Survey consistently finds only 15–20% of rape victims report to police, meaning the 74,000 annual reports represent a fraction of true prevalence; estimated total annual rapes exceed 400,000, of which fewer than 3,100 result in a charge. The 2021 End-to-End Rape Review set targets for doubling charge rates; the Victims and Prisoners Act 2024 introduced new complainant rights. But without sustained investment in specialist investigators, digital forensics, and Crown Court capacity, the charge rate will not improve at scale.</p>
+            <p>The rape charge rate — 10.4% in 2015 — had fallen to just 3.2% by 2023, even as reports nearly doubled to 74,000 per year.<Cite nums={1} /> The absolute number of charges, around 3,100 in 2024, has remained roughly flat while the volume of cases has grown enormously. The average time from offence to charging decision extended from 274 days in 2015 to 574 days in 2023:<Cite nums={3} /> length itself drives attrition, as complainants withdraw, evidence degrades, and investigators close cases with no further action. Digital forensics — now a standard part of rape investigations — are a major source of delay, as forces lack capacity to process phones rapidly while complainants are required to surrender devices containing their entire personal history. A complainant reporting rape in England in 2024 can expect to wait three years or more from reporting to verdict.</p>
+            <p>The conviction rate once cases reach court is around 68–70%, confirming the problem lies not in court but in the pipeline.<Cite nums={1} /> The Crime Survey consistently finds only 15–20% of rape victims report to police, meaning the 74,000 annual reports represent a fraction of true prevalence; estimated total annual rapes exceed 400,000, of which fewer than 3,100 result in a charge.<Cite nums={2} /> The 2021 End-to-End Rape Review set targets for doubling charge rates; the Victims and Prisoners Act 2024 introduced new complainant rights.<Cite nums={[3, 4]} /> But without sustained investment in specialist investigators, digital forensics, and Crown Court capacity, the charge rate will not improve at scale.</p>
           </div>
+          <div className="mt-6"><References items={editorialRefs} /></div>
         </section>
 
         <SectionNav sections={[

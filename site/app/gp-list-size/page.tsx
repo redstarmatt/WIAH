@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS Digital', dataset: 'General Practice Workforce Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/general-and-personal-medical-services', date: '2024' },
+  { num: 2, name: 'NHS Digital', dataset: 'Patients Registered at a GP Practice — deprivation analysis', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/patients-registered-at-a-gp-practice', date: '2024' },
+  { num: 3, name: 'BMA', dataset: 'GP Workload Survey / General Practitioners Committee guidance', date: '2024' },
+];
 
 export default function GpListSizePage() {
   // Chart 1: Average GP list size 2015-2024 (patients per FTE GP)
@@ -151,12 +159,16 @@ export default function GpListSizePage() {
           <section id="sec-context" className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on GP list sizes</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>The average GP in England now looks after 2,275 patients — 15% more than in 2015. The BMA recommends a maximum of 1,500 patients per GP, a threshold that most practices in England substantially exceed. In the most deprived areas, average list sizes approach 2,710 — 40% above the national average and nearly double the recommended maximum. This is the inverse care law in action: those with the greatest health needs, highest morbidity, and most complex circumstances receive primary care from the most stretched doctors.</p>
-              <p>The government committed in 2019 to recruit 6,000 additional GPs by 2024. That target was not met. GP numbers in full-time equivalent terms have remained roughly flat while the patient population has grown. Around 40% of the current GP workforce is over 50, and younger entrants to general practice are more likely to work part-time. Burnout rates are high: BMA surveys find over 40% of GPs report feeling at risk of or already experiencing burnout, and the average number of daily consultations — around 38 — significantly exceeds the 25-contact safety threshold referenced in GMC guidance.</p>
+              <p>The average GP in England now looks after 2,275 patients — 15% more than in 2015.<Cite nums={[1]} /> The BMA recommends a maximum of 1,500 patients per GP, a threshold that most practices in England substantially exceed.<Cite nums={[3]} /> In the most deprived areas, average list sizes approach 2,710 — 40% above the national average and nearly double the recommended maximum.<Cite nums={[2]} /> This is the inverse care law in action: those with the greatest health needs, highest morbidity, and most complex circumstances receive primary care from the most stretched doctors.</p>
+              <p>The government committed in 2019 to recruit 6,000 additional GPs by 2024. That target was not met. GP numbers in full-time equivalent terms have remained roughly flat while the patient population has grown.<Cite nums={[1]} /> Around 40% of the current GP workforce is over 50, and younger entrants to general practice are more likely to work part-time. Burnout rates are high: BMA surveys find over 40% of GPs report feeling at risk of or already experiencing burnout, and the average number of daily consultations — around 38 — significantly exceeds the 25-contact safety threshold referenced in GMC guidance.<Cite nums={[3]} /></p>
               <p>Large list sizes have measurable consequences. BMJ research associates list sizes above 2,000 with higher rates of missed diagnoses, more unplanned hospital admissions, and lower patient satisfaction. The system is self-reinforcing: high workloads drive early retirement and career changes, leaving remaining colleagues with larger lists still. International recruitment has added some GPs but has not bridged the gap, and cannot on its own address the structural mismatch between the size of the patient population and the primary care workforce available to serve it.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

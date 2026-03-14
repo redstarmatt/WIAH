@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Superfast (30Mbps+) and full fibre coverage, 2015–2025
 const superfastData = [91.0, 92.2, 93.4, 94.5, 95.5, 96.2, 96.8, 97.1, 97.4, 97.6, 97.8];
@@ -56,6 +58,12 @@ const annotations2: Annotation[] = [
   { date: new Date(2020, 0, 1), label: '2020: Universal Service Obligation introduced' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ofcom', dataset: 'Connected Nations — annual broadband coverage report', url: 'https://www.ofcom.org.uk/research-and-data/telecoms-research/connected-nations', date: '2025' },
+  { num: 2, name: 'DSIT', dataset: 'Project Gigabit programme statistics', url: 'https://www.gov.uk/government/collections/project-gigabit', date: '2025' },
+  { num: 3, name: 'Ofcom', dataset: 'Universal Service Obligation', url: 'https://www.ofcom.org.uk/home/consumer-rights/broadband-usc', date: '2025' },
+];
+
 export default function BroadbandCoveragePage() {
   return (
     <>
@@ -70,8 +78,8 @@ export default function BroadbandCoveragePage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK's broadband infrastructure has undergone rapid transformation since 2017. Superfast broadband — capable of 30 Mbps or more — now reaches 97.8% of UK premises, up from 91% in 2015. Full-fibre gigabit-capable broadband, once a luxury available to fewer than 2% of homes, reached 70% by 2025 on the back of a massive commercial rollout by BT Openreach and a wave of independent altnet providers. The government's £5 billion Project Gigabit programme aims to extend this further to the hardest-to-reach 20% of premises that the market will not serve commercially, with a target of 99% gigabit coverage by 2030.</p>
-            <p>Despite these gains, 3.5 million premises — predominantly in rural areas — remain below the 10 Mbps Universal Service Obligation standard. Rural superfast coverage stands at 88%, compared with 99.4% in urban areas. For households in these areas, slow and unreliable connectivity translates directly into disadvantage: remote working is unreliable, streaming is impossible, and digital public services are inaccessible. The cost of catching up is also falling disproportionately on rural communities: Starlink satellite broadband, the main alternative for the hardest-to-reach premises, costs around £75 per month — three to four times the price of urban full-fibre packages.</p>
+            <p>The UK's broadband infrastructure has undergone rapid transformation since 2017. Superfast broadband — capable of 30 Mbps or more — now reaches 97.8% of UK premises, up from 91% in 2015.<Cite nums={1} /> Full-fibre gigabit-capable broadband, once a luxury available to fewer than 2% of homes, reached 70% by 2025 on the back of a massive commercial rollout by BT Openreach and a wave of independent altnet providers.<Cite nums={1} /> The government's £5 billion Project Gigabit programme aims to extend this further to the hardest-to-reach 20% of premises that the market will not serve commercially, with a target of 99% gigabit coverage by 2030.<Cite nums={2} /></p>
+            <p>Despite these gains, 3.5 million premises — predominantly in rural areas — remain below the 10 Mbps Universal Service Obligation standard.<Cite nums={3} /> Rural superfast coverage stands at 88%, compared with 99.4% in urban areas.<Cite nums={1} /> For households in these areas, slow and unreliable connectivity translates directly into disadvantage: remote working is unreliable, streaming is impossible, and digital public services are inaccessible. The cost of catching up is also falling disproportionately on rural communities: Starlink satellite broadband, the main alternative for the hardest-to-reach premises, costs around £75 per month — three to four times the price of urban full-fibre packages.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -150,6 +158,10 @@ export default function BroadbandCoveragePage() {
             source="Source: DSIT — Project Gigabit programme statistics 2025. Ofcom — Connected Nations 2025."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

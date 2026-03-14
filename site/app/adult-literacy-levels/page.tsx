@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Below Level 1 literacy (millions), 2011–2024 — OECD PIAAC / DfE Skills for Life
 const literacyValues = [7.1, 7.0, 7.1, 7.1, 7.1, 7.0, 7.0, 7.1, 7.1, 7.0, 7.1, 7.1, 7.1, 7.1];
@@ -47,6 +49,12 @@ const annotations: Annotation[] = [
   { date: new Date(2022, 0, 1), label: '2022: Multiply numeracy programme launched' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'OECD', dataset: 'PIAAC Survey of Adult Skills', url: 'https://www.oecd.org/skills/piaac/', date: '2024' },
+  { num: 2, name: 'DfE', dataset: 'Skills for Life Survey', url: 'https://www.gov.uk/government/statistics/skills-for-life-survey', date: '2024' },
+  { num: 3, name: 'ESFA / Learning and Work Institute', dataset: 'Adult Education Budget allocations (real terms)', url: 'https://learningandwork.org.uk', date: '2024' },
+];
+
 export default function AdultLiteracyLevelsPage() {
   return (
     <>
@@ -61,8 +69,8 @@ export default function AdultLiteracyLevelsPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>In the sixth-largest economy in the world, 7.1 million adults — one in nine of the working-age population — have literacy skills at or below Level 1, broadly equivalent to the expectation for an 11-year-old: able to read simple texts but struggling with medication instructions, utility bills, or benefit claim forms. The numeracy picture is starker still: 16.8 million adults, roughly half the working-age population, have numeracy skills below Level 2, unable to reliably compare loan offers, read payslips, or follow a budget. The OECD's PIAAC survey ranked the UK 24th out of 27 participating EU nations for adult numeracy, a position that has not materially improved since 2011. The Centre for Economics and Business Research estimates low literacy and numeracy costs the UK economy £81 billion per year in reduced productivity, higher welfare dependency, and increased public service costs.</p>
-            <p>Those with low skills are disproportionately concentrated in deprived communities, among older workers, and in the post-industrial towns and cities of northern England, Wales, and the Midlands. Workers with low literacy earn significantly less, face higher unemployment, and are more likely to be in insecure employment. They are also more likely to have children who themselves struggle — a cycle the adult education system, cut by 35% in real terms since 2010, is increasingly unable to break. The previous government's £560 million Multiply numeracy programme was widely criticised for targeting the wrong population and failing to demonstrate impact; the current government has not yet articulated a specific strategy for basic skills in the existing workforce.</p>
+            <p>In the sixth-largest economy in the world, 7.1 million adults — one in nine of the working-age population — have literacy skills at or below Level 1, broadly equivalent to the expectation for an 11-year-old: able to read simple texts but struggling with medication instructions, utility bills, or benefit claim forms.<Cite nums={[1, 2]} /> The numeracy picture is starker still: 16.8 million adults, roughly half the working-age population, have numeracy skills below Level 2, unable to reliably compare loan offers, read payslips, or follow a budget.<Cite nums={1} /> The OECD's PIAAC survey ranked the UK 24th out of 27 participating EU nations for adult numeracy, a position that has not materially improved since 2011.<Cite nums={1} /> The Centre for Economics and Business Research estimates low literacy and numeracy costs the UK economy £81 billion per year in reduced productivity, higher welfare dependency, and increased public service costs.</p>
+            <p>Those with low skills are disproportionately concentrated in deprived communities, among older workers, and in the post-industrial towns and cities of northern England, Wales, and the Midlands.<Cite nums={1} /> Workers with low literacy earn significantly less, face higher unemployment, and are more likely to be in insecure employment. They are also more likely to have children who themselves struggle — a cycle the adult education system, cut by 35% in real terms since 2010, is increasingly unable to break.<Cite nums={3} /> The previous government's £560 million Multiply numeracy programme was widely criticised for targeting the wrong population and failing to demonstrate impact; the current government has not yet articulated a specific strategy for basic skills in the existing workforce.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -141,6 +149,9 @@ export default function AdultLiteracyLevelsPage() {
             source="Source: National Numeracy — Annual Impact Report 2024. DfE — Skills Bootcamps outcomes data 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

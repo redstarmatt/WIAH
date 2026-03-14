@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Estimated adults experiencing domestic abuse (millions), 2012–2024 — ONS CSEW
 const prevalenceValues = [3.1, 3.2, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.1, 3.9, 3.8, 3.7, 3.8];
@@ -38,6 +40,12 @@ const annotations: Annotation[] = [
   { date: new Date(2021, 5, 1), label: '2021: Domestic Abuse Act' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Crime Survey for England and Wales — Domestic Abuse', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/bulletins/domesticabuseinenglandandwalesoverview/latest', date: '2024' },
+  { num: 2, name: 'Home Office', dataset: 'Crime Outcomes in England and Wales', url: 'https://www.gov.uk/government/collections/crime-outcomes-in-england-and-wales-statistics', date: '2024' },
+  { num: 3, name: "Women's Aid", dataset: 'Annual Audit of Domestic Abuse Services', url: 'https://www.womensaid.org.uk/what-we-do/research-and-publications/annual-audit/', date: '2023/24' },
+];
+
 export default function DomesticAbuseViolencePage() {
   return (
     <>
@@ -52,8 +60,8 @@ export default function DomesticAbuseViolencePage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Domestic abuse is the most widespread violent crime in England and Wales, yet it remains the least visible. The Crime Survey for England and Wales estimates that 3.8 million adults experienced some form of domestic abuse in the year to March 2024 — around 7.8% of the adult population. An estimated 81% of victims never contact the police. Among those who do, the journey from report to justice is vanishingly narrow: just 4.9% of police-recorded domestic abuse offences resulted in a charge in 2023/24, down from 12.2% a decade earlier. The collapse in charge rates reflects systemic failures — overwhelmed police domestic abuse units, delays in digital evidence processing, and high victim withdrawal rates driven by fear, coercion, and loss of confidence in the system.</p>
-            <p>The Domestic Abuse Act 2021 created the first statutory definition of domestic abuse, recognising coercive control, economic abuse, and psychological manipulation alongside physical violence. It established the office of the Domestic Abuse Commissioner, placed duties on local authorities to fund safe accommodation, and banned perpetrators from cross-examining victims in family courts. However, implementation has been uneven. Refuge provision remains in crisis — Women's Aid reports that 64% of referrals are turned away, primarily due to a shortage of bed spaces. Specialist services for Black and minoritised women, disabled women, and LGBT+ survivors are especially scarce.</p>
+            <p>Domestic abuse is the most widespread violent crime in England and Wales, yet it remains the least visible. The Crime Survey for England and Wales estimates that 3.8 million adults experienced some form of domestic abuse in the year to March 2024 — around 7.8% of the adult population.<Cite nums={1} /> An estimated 81% of victims never contact the police.<Cite nums={1} /> Among those who do, the journey from report to justice is vanishingly narrow: just 4.9% of police-recorded domestic abuse offences resulted in a charge in 2023/24, down from 12.2% a decade earlier.<Cite nums={2} /> The collapse in charge rates reflects systemic failures — overwhelmed police domestic abuse units, delays in digital evidence processing, and high victim withdrawal rates driven by fear, coercion, and loss of confidence in the system.</p>
+            <p>The Domestic Abuse Act 2021 created the first statutory definition of domestic abuse, recognising coercive control, economic abuse, and psychological manipulation alongside physical violence. It established the office of the Domestic Abuse Commissioner, placed duties on local authorities to fund safe accommodation, and banned perpetrators from cross-examining victims in family courts. However, implementation has been uneven. Refuge provision remains in crisis — Women&apos;s Aid reports that 64% of referrals are turned away, primarily due to a shortage of bed spaces.<Cite nums={3} /> Specialist services for Black and minoritised women, disabled women, and LGBT+ survivors are especially scarce.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -131,6 +139,10 @@ export default function DomesticAbuseViolencePage() {
             source="Source: Home Office — Domestic Abuse Act 2021. Ask for ANI — Home Office / Hestia, 2021–present."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

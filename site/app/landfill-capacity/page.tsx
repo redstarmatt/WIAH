@@ -8,6 +8,13 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Environment Agency', dataset: 'Remaining Landfill Capacity — England', url: 'https://www.gov.uk/government/statistical-data-sets/env23-uk-waste-data-and-management', date: '2024' },
+  { num: 2, name: 'Defra', dataset: 'Resources and Waste Strategy 2024 Update', url: 'https://www.gov.uk/government/publications/resources-and-waste-strategy-for-england', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -194,6 +201,10 @@ export default function TopicPage() {
             source="Source: Defra — Resources and Waste Strategy, 2024 update."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

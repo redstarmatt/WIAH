@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Community belonging %, 2016–2024 (MHCLG Community Life Survey)
 const belongingValues = [65, 64, 64, 65, 63, 62, 60, 59, 59];
@@ -55,6 +57,11 @@ const annotations1: Annotation[] = [
 
 const annotations2: Annotation[] = [];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'MHCLG', dataset: 'Community Life Survey', url: 'https://www.gov.uk/government/collections/community-life-survey', date: '2024' },
+  { num: 2, name: 'IPPR', dataset: 'Divided and Connected: Community Cohesion in Britain', url: 'https://ippr.org/research/publications', date: '2023' },
+];
+
 export default function CommunityCohesionSurveyPage() {
   return (
     <>
@@ -69,8 +76,8 @@ export default function CommunityCohesionSurveyPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Community belonging — the sense that people in an area belong together — has fallen from 65% of adults in 2016 to 59% in 2024, with a sharp dip during and after the pandemic. The deprivation gradient is stark: in the wealthiest local authority areas, belonging typically registers at 70% or above; in the most deprived areas it falls to around 55%, a 15 percentage-point gap. Deprivation predicts low cohesion more strongly than diversity or population density, because it correlates with reduced social trust, high residential turnover, and weaker civic infrastructure. Trust between people of different backgrounds has remained relatively stable at around 74%, but is substantially lower in areas where different groups have limited everyday contact.</p>
-            <p>Political polarisation — Brexit, immigration, and cost-of-living debates — has sustained high-temperature public discourse that affects willingness to engage across difference in shared spaces. Cohesion programmes run by local authorities and voluntary organisations are typically underfunded, short-term, and difficult to evaluate. The Levelling Up agenda included cohesion rhetoric without sustained investment in the libraries, youth centres, parks, and civic spaces that cohesion actually depends on. Where community infrastructure has been cut most deeply — disproportionately in deprived areas — the conditions under which belonging is built have eroded furthest.</p>
+            <p>Community belonging — the sense that people in an area belong together — has fallen from 65% of adults in 2016 to 59% in 2024, with a sharp dip during and after the pandemic.<Cite nums={1} /> The deprivation gradient is stark: in the wealthiest local authority areas, belonging typically registers at 70% or above; in the most deprived areas it falls to around 55%, a 15 percentage-point gap.<Cite nums={1} /> Deprivation predicts low cohesion more strongly than diversity or population density, because it correlates with reduced social trust, high residential turnover, and weaker civic infrastructure.<Cite nums={2} /> Trust between people of different backgrounds has remained relatively stable at around 74%, but is substantially lower in areas where different groups have limited everyday contact.<Cite nums={1} /></p>
+            <p>Political polarisation — Brexit, immigration, and cost-of-living debates — has sustained high-temperature public discourse that affects willingness to engage across difference in shared spaces.<Cite nums={2} /> Cohesion programmes run by local authorities and voluntary organisations are typically underfunded, short-term, and difficult to evaluate. The Levelling Up agenda included cohesion rhetoric without sustained investment in the libraries, youth centres, parks, and civic spaces that cohesion actually depends on.<Cite nums={2} /> Where community infrastructure has been cut most deeply — disproportionately in deprived areas — the conditions under which belonging is built have eroded furthest.<Cite nums={[1, 2]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -149,6 +156,10 @@ export default function CommunityCohesionSurveyPage() {
             source="Source: MHCLG — Community Life Survey 2024. IPPR — Divided and Connected, 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

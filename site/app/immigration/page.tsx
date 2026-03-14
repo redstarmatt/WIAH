@@ -8,7 +8,16 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Long-term International Migration Estimates', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration', date: '2024' },
+  { num: 2, name: 'Home Office', dataset: 'Immigration Statistics — Visas', url: 'https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables', date: '2024' },
+  { num: 3, name: 'Home Office', dataset: 'Asylum and Protection Statistics', url: 'https://www.gov.uk/government/statistical-data-sets/asylum-and-resettlement-datasets', date: '2024' },
+  { num: 4, name: 'OBR', dataset: 'Fiscal Risks and Sustainability Report', url: 'https://obr.uk/frs/fiscal-risks-and-sustainability-2023/', date: '2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -102,8 +111,8 @@ export default function ImmigrationPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Net migration to the UK peaked at 745,000 in the year to December 2022 — the highest figure since records began and nearly three times the pre-Brexit average of around 250,000 — before falling to an estimated 685,000 in 2023 as Home Office restrictions took effect. The ONS substantially revised earlier estimates upward in 2023 after incorporating HMRC and DWP administrative data. Work visas accounted for 286,000 grants in 2022/23, with health and care workers the largest skilled-worker group; student visas reached 486,000, triple the 2019 figure, before dependent-visa rules were tightened in January 2024. The asylum backlog grew from 24,000 in 2017 to a peak of 133,000 in 2023; the Home Office processed 112,000 claims in 2023 to cut the queue, though the Rwanda removal scheme was blocked by the Supreme Court in November 2023 and small-boat arrivals fell from 45,000 in 2022 to 29,000 in 2023.</p>
-            <p>The OBR's 2023 Fiscal Risks report calculated that higher net migration would reduce public debt by around 0.5% of GDP by 2027–28, because working-age migrants pay tax immediately while drawing less on pension and social care spending. Evidence of aggregate wage displacement for British workers is limited, though some studies find downward pressure in specific low-wage sectors. Emigration has also risen — 508,000 people left the UK in 2023, up from around 310,000 pre-Brexit. The political gap between the &ldquo;tens of thousands&rdquo; target and the six-figure reality became a defining feature of Brexit politics; critics argue high numbers reflect genuine labour market demand in NHS, social care, and construction that the domestic workforce cannot fill.</p>
+            <p>Net migration to the UK peaked at 745,000 in the year to December 2022 — the highest figure since records began and nearly three times the pre-Brexit average of around 250,000 — before falling to an estimated 685,000 in 2023 as Home Office restrictions took effect.<Cite nums={1} /> The ONS substantially revised earlier estimates upward in 2023 after incorporating HMRC and DWP administrative data. Work visas accounted for 286,000 grants in 2022/23, with health and care workers the largest skilled-worker group; student visas reached 486,000, triple the 2019 figure, before dependent-visa rules were tightened in January 2024.<Cite nums={2} /> The asylum backlog grew from 24,000 in 2017 to a peak of 133,000 in 2023; the Home Office processed 112,000 claims in 2023 to cut the queue, though the Rwanda removal scheme was blocked by the Supreme Court in November 2023 and small-boat arrivals fell from 45,000 in 2022 to 29,000 in 2023.<Cite nums={3} /></p>
+            <p>The OBR's 2023 Fiscal Risks report calculated that higher net migration would reduce public debt by around 0.5% of GDP by 2027–28, because working-age migrants pay tax immediately while drawing less on pension and social care spending.<Cite nums={4} /> Evidence of aggregate wage displacement for British workers is limited, though some studies find downward pressure in specific low-wage sectors. Emigration has also risen — 508,000 people left the UK in 2023, up from around 310,000 pre-Brexit.<Cite nums={1} /> The political gap between the &ldquo;tens of thousands&rdquo; target and the six-figure reality became a defining feature of Brexit politics; critics argue high numbers reflect genuine labour market demand in NHS, social care, and construction that the domestic workforce cannot fill.</p>
           </div>
         </section>
 
@@ -207,6 +216,10 @@ export default function ImmigrationPage() {
             source="Source: ONS — Migration Statistics 2023; Home Office — Immigration Statistics 2023."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

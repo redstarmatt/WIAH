@@ -8,6 +8,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DESNZ', dataset: 'Renewable Energy Planning Database (REPD)', url: 'https://www.gov.uk/government/collections/renewable-energy-planning-data', date: '2024' },
+  { num: 2, name: 'NESO', dataset: 'Clean Power 2030 Analysis', url: 'https://www.nationalgrideso.com/future-energy/clean-power-2030', date: '2024' },
+  { num: 3, name: 'NESO', dataset: 'Electricity Market Report', url: 'https://www.nationalgrideso.com/data-portal', date: '2024' },
+];
 
 // Grid-scale battery capacity (GW), 2017–2024
 const capacityGW = [0.6, 0.9, 1.1, 1.5, 2.0, 2.9, 4.2, 5.1];
@@ -72,8 +80,8 @@ export default function GridBatteryStoragePage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK's grid-scale battery fleet grew from less than 1 GW in 2017 to 5.1 GW by end-2024 — more than a sevenfold increase driven by falling lithium-ion costs, frequency response revenues, and relatively fast planning consents. But National Energy System Operator modelling for a net zero grid by 2035 requires approximately 50 GW of storage capacity, roughly ten times current levels. On the current growth trajectory, the UK reaches 12–15 GW by 2035 — a substantial shortfall at exactly the moment the grid will be most dependent on intermittent wind and solar. In 2023, 2.1 TWh of renewable energy was curtailed — switched off and wasted — with the cost of constraint payments falling on bill payers rather than on the systems that failed to build enough storage.</p>
-            <p>The economics of battery storage are evolving in ways that complicate the build-out. Frequency response revenues — the primary income stream for current 1–2 hour batteries — are falling as more assets compete for the same market. Longer-duration storage (8–24 hours) is needed to unlock arbitrage value as renewable intermittency increases, but the technology choices between flow batteries, compressed air, gravity, and hydrogen are not yet settled. The government's cap-and-floor support mechanism for long-duration projects has been slow to reach commercial scale. A 30+ GW pipeline exists in planning, but converting consented capacity to construction requires revenue certainty the current policy framework has not yet provided.</p>
+            <p>The UK's grid-scale battery fleet grew from less than 1 GW in 2017 to 5.1 GW by end-2024 — more than a sevenfold increase driven by falling lithium-ion costs, frequency response revenues, and relatively fast planning consents.<Cite nums={1} /> But National Energy System Operator modelling for a net zero grid by 2035 requires approximately 50 GW of storage capacity, roughly ten times current levels.<Cite nums={2} /> On the current growth trajectory, the UK reaches 12–15 GW by 2035 — a substantial shortfall at exactly the moment the grid will be most dependent on intermittent wind and solar. In 2023, 2.1 TWh of renewable energy was curtailed — switched off and wasted — with the cost of constraint payments falling on bill payers rather than on the systems that failed to build enough storage.<Cite nums={3} /></p>
+            <p>The economics of battery storage are evolving in ways that complicate the build-out. Frequency response revenues — the primary income stream for current 1–2 hour batteries — are falling as more assets compete for the same market. Longer-duration storage (8–24 hours) is needed to unlock arbitrage value as renewable intermittency increases, but the technology choices between flow batteries, compressed air, gravity, and hydrogen are not yet settled. The government's cap-and-floor support mechanism for long-duration projects has been slow to reach commercial scale. A 30+ GW pipeline exists in planning, but converting consented capacity to construction requires revenue certainty the current policy framework has not yet provided.<Cite nums={1} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -152,6 +160,9 @@ export default function GridBatteryStoragePage() {
             source="Source: NESO — Clean Power 2030 Analysis 2024. DESNZ — Renewable Energy Planning Database 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

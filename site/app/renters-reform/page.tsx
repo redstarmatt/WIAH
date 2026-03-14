@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'MOJ', dataset: 'Court Statistics Quarterly — Possession Claims', url: 'https://www.gov.uk/government/collections/court-statistics-quarterly', date: '2023' },
+  { num: 2, name: 'DLUHC', dataset: 'Homelessness Statistics — Statutory Homelessness', url: 'https://www.gov.uk/government/collections/homelessness-statistics', date: '2023' },
+  { num: 3, name: 'ONS', dataset: 'Index of Private Housing Rental Prices', url: 'https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/indexofprivatehousingrentalprices/latest', date: '2023', note: '8.9% largest annual increase on record' },
+  { num: 4, name: 'Renters Rights Act 2024', dataset: 'Royal Assent — abolishing Section 21', url: 'https://www.legislation.gov.uk/', date: '2025' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -74,8 +83,8 @@ export default function RentersReformPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Section 21 of the Housing Act 1988 gave landlords the right to evict assured shorthold tenants without stating any reason, with two months' notice. By 2022/23, over 26,000 Section 21 notices were being served annually, and the end of a private sector tenancy was the single largest cause of homelessness presentations to local authorities — around 22,000 households per year. The commitment to abolish Section 21 was made in April 2019; six years later, the Renters Rights Act received Royal Assent in spring 2025, having been delayed by sustained landlord lobbying. The Act goes further than abolishing Section 21: it converts all assured shorthold tenancies to periodic (rolling monthly) agreements, introduces a Decent Homes Standard for the private rented sector, creates a mandatory landlord PRS Database, and establishes a new Ombudsman for redress.</p>
-            <p>Significant gaps remain. The Act contains no in-tenancy rent control — landlords can raise rents annually to market rate, meaning the 8.9% increases recorded in 2023 remain fully permissible. Its effectiveness on homelessness will depend on how courts interpret the new possession grounds and whether legal aid is adequately funded for tenants contesting proceedings. The Act addresses security of tenure; it does not address affordability, which for many private renters is the more acute immediate problem given rents rising faster than wages since 2020.</p>
+            <p>Section 21 of the Housing Act 1988 gave landlords the right to evict assured shorthold tenants without stating any reason, with two months' notice. By 2022/23, over 26,000 Section 21 notices were being served annually<Cite nums={1} />, and the end of a private sector tenancy was the single largest cause of homelessness presentations to local authorities — around 22,000 households per year.<Cite nums={2} /> The commitment to abolish Section 21 was made in April 2019; six years later, the Renters Rights Act received Royal Assent in spring 2025, having been delayed by sustained landlord lobbying.<Cite nums={4} /> The Act goes further than abolishing Section 21: it converts all assured shorthold tenancies to periodic (rolling monthly) agreements, introduces a Decent Homes Standard for the private rented sector, creates a mandatory landlord PRS Database, and establishes a new Ombudsman for redress.</p>
+            <p>Significant gaps remain. The Act contains no in-tenancy rent control — landlords can raise rents annually to market rate, meaning the 8.9% increases recorded in 2023 remain fully permissible.<Cite nums={3} /> Its effectiveness on homelessness will depend on how courts interpret the new possession grounds and whether legal aid is adequately funded for tenants contesting proceedings. The Act addresses security of tenure; it does not address affordability, which for many private renters is the more acute immediate problem given rents rising faster than wages since 2020.</p>
           </div>
         </section>
 
@@ -166,6 +175,10 @@ export default function RentersReformPage() {
           </p>
         </section>
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
               <RelatedTopics />
       </main>
     </>

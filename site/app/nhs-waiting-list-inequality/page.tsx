@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Referral to Treatment Waiting Times Statistics', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/rtt-waiting-times/', date: '2024' },
+  { num: 2, name: 'NHS England', dataset: 'CORE20PLUS5 Dashboard', url: 'https://www.england.nhs.uk/about/equality/equality-hub/national-healthcare-inequalities-improvement-programme/core20plus5/', date: '2025' },
+  { num: 3, name: 'ONS', dataset: 'Index of Multiple Deprivation — health deprivation domain', url: 'https://www.gov.uk/government/statistics/english-indices-of-deprivation-2019', date: '2019' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -128,10 +136,10 @@ export default function WaitingInequalityPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The NHS waiting list headline — 7.4 million people waiting for elective treatment — conceals a significant inequality. Patients living in the most deprived areas wait, on average, 4.2 weeks longer for the same procedure than those in the least deprived areas. The gap has doubled since 2019. It is not random: people in deprived areas are more likely to have complex conditions requiring longer pathways, are more likely to miss appointments due to transport costs or caring responsibilities, and are more likely to be seen in under-resourced trusts in areas with multiple deprivation.
+              The NHS waiting list headline — 7.4 million people waiting for elective treatment — conceals a significant inequality.<Cite nums={1} /> Patients living in the most deprived areas wait, on average, 4.2 weeks longer for the same procedure than those in the least deprived areas.<Cite nums={1} /> The gap has doubled since 2019. It is not random: people in deprived areas are more likely to have complex conditions requiring longer pathways, are more likely to miss appointments due to transport costs or caring responsibilities, and are more likely to be seen in under-resourced trusts in areas with multiple deprivation.<Cite nums={3} />
             </p>
             <p>
-              The consequence is that inequality in health outcomes is compounded by inequality in access to treatment. A diabetic patient in a deprived area who waits longer for ophthalmology is more likely to progress to sight loss. A hip replacement delayed for a working-age person in poverty has different consequences to the same delay for a retired person with private means. NHS England's CORE20PLUS5 programme explicitly targets the five clinical areas where this inequality is largest, but progress is slow.
+              The consequence is that inequality in health outcomes is compounded by inequality in access to treatment. A diabetic patient in a deprived area who waits longer for ophthalmology is more likely to progress to sight loss. A hip replacement delayed for a working-age person in poverty has different consequences to the same delay for a retired person with private means. NHS England's CORE20PLUS5 programme explicitly targets the five clinical areas where this inequality is largest, but progress is slow.<Cite nums={2} />
             </p>
           </div>
         </section>
@@ -212,6 +220,10 @@ export default function WaitingInequalityPage() {
             source="Source: NHS England — RTT Waiting Times Statistics, 2024. NHS England — CORE20PLUS5 Dashboard, 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

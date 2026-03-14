@@ -9,6 +9,14 @@ import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DESNZ', dataset: 'UK Greenhouse Gas Inventory — annual emissions', url: 'https://www.gov.uk/government/collections/uk-greenhouse-gas-inventory', date: '2024' },
+  { num: 2, name: 'Climate Change Committee', dataset: 'Progress in reducing UK emissions — Carbon Budget assessment', url: 'https://www.theccc.org.uk/publication/progress-in-reducing-uk-emissions', date: '2024' },
+  { num: 3, name: 'Carbon Brief', dataset: 'UK electricity generation and coal phase-out analysis', url: 'https://www.carbonbrief.org', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -74,8 +82,8 @@ export default function UkCarbonBudgetPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>UK emissions have fallen from approximately 800 MtCO2e in 1990 to 415 MtCO2e in 2023 — a 53% reduction, faster than any other G7 nation. The primary driver has been the near-elimination of coal from electricity generation: coal accounted for 80% of electricity in 1990 and under 1% by 2023, with wind, solar and nuclear now providing over 50%. The Fourth Carbon Budget (2023–2027) sets a limit of 965 MtCO2e and current trajectories are broadly on track, but the Fifth Carbon Budget (2028–2032) requires average annual reductions of around 8% from today's level — significantly more demanding. The Climate Change Committee has warned progress in buildings, transport and agriculture is insufficient to meet CB5 comfortably.</p>
-            <p>The remaining emissions are concentrated in structurally harder sectors. Transport is now the largest emitting sector at around 28% of domestic emissions: EV sales reached 17% of new cars in 2023 but the existing fleet turns over slowly and rural charging infrastructure lags. Heating is the largest remaining challenge — 29 million homes, mostly gas boilers, with heat pump deployment around 60,000 per year against a target trajectory requiring hundreds of thousands. Agriculture contributes approximately 11% through livestock methane and fertiliser nitrous oxide, and has proved stubbornly resistant to reduction. The burden of transition falls most heavily on rural households dependent on oil heating and older vehicles — the least connected to the policy levers driving decarbonisation.</p>
+            <p>UK emissions have fallen from approximately 800 MtCO2e in 1990 to 415 MtCO2e in 2023 — a 53% reduction, faster than any other G7 nation. The primary driver has been the near-elimination of coal from electricity generation: coal accounted for 80% of electricity in 1990 and under 1% by 2023, with wind, solar and nuclear now providing over 50%.<Cite nums={[1,3]} /> The Fourth Carbon Budget (2023–2027) sets a limit of 965 MtCO2e and current trajectories are broadly on track, but the Fifth Carbon Budget (2028–2032) requires average annual reductions of around 8% from today's level — significantly more demanding. The Climate Change Committee has warned progress in buildings, transport and agriculture is insufficient to meet CB5 comfortably.<Cite nums={2} /></p>
+            <p>The remaining emissions are concentrated in structurally harder sectors. Transport is now the largest emitting sector at around 28% of domestic emissions: EV sales reached 17% of new cars in 2023 but the existing fleet turns over slowly and rural charging infrastructure lags. Heating is the largest remaining challenge — 29 million homes, mostly gas boilers, with heat pump deployment around 60,000 per year against a target trajectory requiring hundreds of thousands. Agriculture contributes approximately 11% through livestock methane and fertiliser nitrous oxide, and has proved stubbornly resistant to reduction. The burden of transition falls most heavily on rural households dependent on oil heating and older vehicles — the least connected to the policy levers driving decarbonisation.<Cite nums={1} /></p>
           </div>
         </section>
 
@@ -148,6 +156,10 @@ export default function UkCarbonBudgetPage() {
             />
           </div>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

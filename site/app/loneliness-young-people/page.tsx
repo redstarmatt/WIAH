@@ -8,6 +8,17 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+// ── References ───────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS / DCMS', dataset: 'Community Life Survey — loneliness indicators by age group', url: 'https://www.gov.uk/government/collections/community-life-survey--2', date: '2024' },
+  { num: 2, name: 'UKHLS', dataset: 'Understanding Society — social contact hours', url: 'https://www.understandingsociety.ac.uk/', date: '2024' },
+  { num: 3, name: 'Ofcom', dataset: 'Online Nation report — social media hours by age', url: 'https://www.ofcom.org.uk/research-and-data/internet-and-on-demand-research/online-nation', date: '2024' },
+  { num: 4, name: 'Oxford Internet Institute', dataset: 'Research on passive social media consumption and wellbeing', url: 'https://www.oii.ox.ac.uk/', date: '2024' },
+];
 
 export default function LonelinessYoungPeoplePage() {
   // Loneliness rates by age group 2016-2024
@@ -169,12 +180,16 @@ export default function LonelinessYoungPeoplePage() {
           <section id="sec-context" className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data in context</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>The conventional picture of loneliness as an older person's problem is wrong. The data consistently shows that 16–24 year olds report the highest rates of chronic loneliness of any age group in the UK. One in four young adults now say they feel lonely often or always — nearly double the rate reported by adults over 65. This is not a new finding: surveys conducted before the COVID-19 pandemic already showed young people's loneliness rising, with lockdowns dramatically accelerating an existing trend.</p>
-              <p>The connection between declining in-person social contact and rising social media use does not prove causation, but the correlation is striking. In 2010, a typical 16–24 year old spent over 14 hours per week in face-to-face social contact and barely an hour a day on social media. By 2024, in-person contact had fallen to around 10 hours weekly while social media use had risen to 7.6 hours per day. Research from the Oxford Internet Institute and others suggests that passive social media consumption — scrolling rather than messaging — is most strongly associated with loneliness and reduced wellbeing.</p>
+              <p>The conventional picture of loneliness as an older person's problem is wrong. The data consistently shows that 16–24 year olds report the highest rates of chronic loneliness of any age group in the UK. One in four young adults now say they feel lonely often or always — nearly double the rate reported by adults over 65.<Cite nums={1} /> This is not a new finding: surveys conducted before the COVID-19 pandemic already showed young people's loneliness rising, with lockdowns dramatically accelerating an existing trend.</p>
+              <p>The connection between declining in-person social contact and rising social media use does not prove causation, but the correlation is striking. In 2010, a typical 16–24 year old spent over 14 hours per week in face-to-face social contact and barely an hour a day on social media. By 2024, in-person contact had fallen to around 10 hours weekly while social media use had risen to 7.6 hours per day.<Cite nums={[2, 3]} /> Research from the Oxford Internet Institute and others suggests that passive social media consumption — scrolling rather than messaging — is most strongly associated with loneliness and reduced wellbeing.<Cite nums={4} /></p>
               <p>The structural drivers are also important: young people are more likely to be in precarious employment, more likely to live far from family networks, and face housing costs that force them into shared or transient accommodation without stable community ties. The university-to-work transition, in particular, has become one of the most socially isolating periods in young people's lives. Policy solutions that focus solely on digital use miss the underlying material and structural conditions that make young people vulnerable to disconnection.</p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

@@ -9,6 +9,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -57,6 +59,12 @@ function fyToDate(fy: string): Date {
 function sparkFrom(arr: number[], n = 12): number[] {
   return arr.slice(-n);
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Public Sector Finances', url: 'https://www.ons.gov.uk/economy/governmentpublicsectorandtaxes/publicsectorfinance', date: '2024', note: 'UK public sector net debt reached £2.65 trillion — 97.1% of GDP — in 2023/24' },
+  { num: 2, name: 'ONS', dataset: 'Public Sector Finances — Interest Payments', url: 'https://www.ons.gov.uk/economy/governmentpublicsectorandtaxes/publicsectorfinance', date: '2024', note: 'Annual debt interest payments reached £116bn in 2022/23; 25% of gilt debt is index-linked to RPI' },
+  { num: 3, name: 'OBR', dataset: 'Economic and Fiscal Outlook', url: 'https://obr.uk/efo/economic-and-fiscal-outlook-march-2024/', date: 'March 2024', note: 'Debt projected to peak at 98.8% of GDP in 2025/26; age-related spending to add 10% of GDP by 2070' },
+];
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -167,13 +175,13 @@ export default function PublicDebtPage() {
         {/* Context */}
         <div className="mb-12 text-wiah-black leading-relaxed space-y-4">
           <ScrollReveal>
-            <p>UK public sector net debt hit £2.65 trillion in 2023/24 — 97.1% of GDP — the highest ratio since the early 1960s. In 2007/08 debt stood at just 35% of GDP; it has nearly trebled in sixteen years. The trajectory reflects three distinct shocks: the 2008–09 financial crisis, during which deficit spending and bank bailouts added roughly 30 percentage points; a decade of austerity that reduced annual borrowing but never reversed the accumulated stock; and COVID-19, which added another 13 percentage points as the government borrowed £300 billion in a single year. Unlike most peer economies, UK debt is not predominantly held domestically: the Bank of England (via quantitative easing) and overseas investors hold roughly half between them. The average maturity of the gilt stock — around 15 years — is longer than most EU peers, providing some insulation from short-term rate rises.</p>
+            <p>UK public sector net debt hit £2.65 trillion in 2023/24 — 97.1% of GDP — the highest ratio since the early 1960s.<Cite nums={1} /> In 2007/08 debt stood at just 35% of GDP; it has nearly trebled in sixteen years. The trajectory reflects three distinct shocks: the 2008–09 financial crisis, during which deficit spending and bank bailouts added roughly 30 percentage points; a decade of austerity that reduced annual borrowing but never reversed the accumulated stock; and COVID-19, which added another 13 percentage points as the government borrowed £300 billion in a single year. Unlike most peer economies, UK debt is not predominantly held domestically: the Bank of England (via quantitative easing) and overseas investors hold roughly half between them. The average maturity of the gilt stock — around 15 years — is longer than most EU peers, providing some insulation from short-term rate rises.</p>
           </ScrollReveal>
           <ScrollReveal>
-            <p>Annual debt interest payments reached £116 billion in 2022/23 — the highest in the post-war era — before falling slightly to £111 billion in 2023/24 as inflation retreated. That represents 4.2% of GDP: more than the defence budget, more than total transport investment, and more than the entire overseas aid budget. The culprit is a structural vulnerability unique among developed economies: 25% of UK gilt debt is index-linked to RPI inflation, so the inflationary surge of 2021–23 was extraordinarily costly. The Bank of England's quantitative tightening programme — selling gilts back into the market at a loss — imposes additional costs borne directly by HM Treasury. Debt service now absorbs approximately 12% of total tax revenues, historically high but not yet at crisis levels.</p>
+            <p>Annual debt interest payments reached £116 billion in 2022/23 — the highest in the post-war era — before falling slightly to £111 billion in 2023/24 as inflation retreated.<Cite nums={2} /> That represents 4.2% of GDP: more than the defence budget, more than total transport investment, and more than the entire overseas aid budget. The culprit is a structural vulnerability unique among developed economies: 25% of UK gilt debt is index-linked to RPI inflation, so the inflationary surge of 2021–23 was extraordinarily costly. The Bank of England's quantitative tightening programme — selling gilts back into the market at a loss — imposes additional costs borne directly by HM Treasury. Debt service now absorbs approximately 12% of total tax revenues, historically high but not yet at crisis levels.</p>
           </ScrollReveal>
           <ScrollReveal>
-            <p>Labour's fiscal rules, set at the Autumn Budget 2024, require public sector net financial liabilities to be falling as a share of GDP by the fifth year of the forecast and current spending to be covered by taxation within three years. The OBR's March 2024 projection has debt peaking at 98.8% of GDP in 2025/26 before stabilising — leaving almost no fiscal headroom. In the narrow sense the debt is sustainable: it is rollable, markets continue to lend, and gilt yields have not repriced in a repeat of the September 2022 mini-budget episode, which added 150 basis points to ten-year yields in days. The case for concern centres on composition (heavily inflation-linked), the interest bill, and demographics — the OBR estimates age-related spending will add 10% of GDP by 2070 without reform. The case for less concern: at over 200% of GDP in 1946, the UK reduced debt through growth without a crisis. The central projection requires no additional fiscal action, provided the economy grows as expected.</p>
+            <p>Labour's fiscal rules, set at the Autumn Budget 2024, require public sector net financial liabilities to be falling as a share of GDP by the fifth year of the forecast and current spending to be covered by taxation within three years. The OBR's March 2024 projection has debt peaking at 98.8% of GDP in 2025/26 before stabilising — leaving almost no fiscal headroom.<Cite nums={3} /> In the narrow sense the debt is sustainable: it is rollable, markets continue to lend, and gilt yields have not repriced in a repeat of the September 2022 mini-budget episode, which added 150 basis points to ten-year yields in days. The case for concern centres on composition (heavily inflation-linked), the interest bill, and demographics — the OBR estimates age-related spending will add 10% of GDP by 2070 without reform. The case for less concern: at over 200% of GDP in 1946, the UK reduced debt through growth without a crisis. The central projection requires no additional fiscal action, provided the economy grows as expected.</p>
           </ScrollReveal>
         </div>
 
@@ -241,6 +249,10 @@ export default function PublicDebtPage() {
             source="Source: ONS — Public Sector Finances 2023/24; OBR — Economic and Fiscal Outlook March 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <ScrollReveal>

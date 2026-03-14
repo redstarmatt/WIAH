@@ -9,6 +9,16 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Bank of England', dataset: 'Monetary Policy Summary and Minutes', url: 'https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes', date: '2023' },
+  { num: 2, name: 'UK Finance', dataset: 'Mortgage Arrears and Possessions Data', url: 'https://www.ukfinance.org.uk/data-and-research/data/mortgages', date: '2024' },
+  { num: 3, name: 'Ministry of Justice', dataset: 'Mortgage and Landlord Possession Statistics', url: 'https://www.gov.uk/government/statistics/mortgage-and-landlord-possession-statistics', date: '2024' },
+  { num: 4, name: 'FCA', dataset: 'Financial Lives Survey 2023', url: 'https://www.fca.org.uk/publications/research/financial-lives', date: '2023' },
+  { num: 5, name: 'HM Treasury', dataset: 'Mortgage Charter', url: 'https://www.gov.uk/government/publications/mortgage-charter', date: '2023' },
+];
 
 // ── Types ──────────────────────────────────────────────────────────────────────
 
@@ -138,10 +148,10 @@ export default function MortgageStressPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Between December 2021 and August 2023, the Bank of England raised its base rate fourteen consecutive times, from 0.1% to 5.25% — the fastest tightening cycle in a generation. The impact on mortgage holders was immediate and severe. Around 1.4 million households on variable or tracker rates saw payments rise in lockstep with the base rate, many absorbing increases of hundreds of pounds a month with no warning. A further 1.6 million households on fixed-rate deals that expired between 2023 and 2025 faced repricing from around 2% to around 5%, translating to an average monthly payment jump from roughly &pound;750 to &pound;1,200 for a typical new fix. Mortgage possession claims filed in courts doubled within 18 months of rates beginning to rise. By Q3 2024, more than 100,000 households were in significant arrears — defined as owing at least 2.5% of the outstanding mortgage balance. The stress is concentrated among first-time buyers who purchased between 2020 and 2022 at historically low rates and historically high prices, and among borrowers in Northern England and Wales where mortgage distress is higher relative to local incomes.
+              Between December 2021 and August 2023, the Bank of England raised its base rate fourteen consecutive times, from 0.1% to 5.25% — the fastest tightening cycle in a generation.<Cite nums={1} /> The impact on mortgage holders was immediate and severe. Around 1.4 million households on variable or tracker rates saw payments rise in lockstep with the base rate, many absorbing increases of hundreds of pounds a month with no warning.<Cite nums={2} /> A further 1.6 million households on fixed-rate deals that expired between 2023 and 2025 faced repricing from around 2% to around 5%, translating to an average monthly payment jump from roughly &pound;750 to &pound;1,200 for a typical new fix.<Cite nums={2} /> Mortgage possession claims filed in courts doubled within 18 months of rates beginning to rise.<Cite nums={3} /> By Q3 2024, more than 100,000 households were in significant arrears — defined as owing at least 2.5% of the outstanding mortgage balance.<Cite nums={2} /> The stress is concentrated among first-time buyers who purchased between 2020 and 2022 at historically low rates and historically high prices, and among borrowers in Northern England and Wales where mortgage distress is higher relative to local incomes.
             </p>
             <p>
-              The headline numbers, however, conceal a more complicated reality. Actual repossessions remain well below 2008-09 levels, in large part because pre-action protocols now require lenders to demonstrate forbearance before seeking possession — a regulatory reform introduced after the financial crisis. The government&rsquo;s voluntary Mortgage Charter, agreed with major lenders in 2023, allows borrowers to take payment holidays of up to six months, switch temporarily to interest-only payments, or extend their mortgage term to reduce monthly costs. These measures have kept many households out of formal arrears, but they come at a price: term extensions and interest-only concessions reduce the monthly bill while increasing the total cost of the mortgage, sometimes by tens of thousands of pounds. The true scale of financial distress is therefore partially masked by forbearance mechanisms that defer rather than resolve the underlying affordability problem. With rates now easing but unlikely to return to pre-2022 levels, the question for millions of households is not whether the worst is over, but how much permanent damage the rate shock has done to their financial position.
+              The headline numbers, however, conceal a more complicated reality. Actual repossessions remain well below 2008-09 levels, in large part because pre-action protocols now require lenders to demonstrate forbearance before seeking possession — a regulatory reform introduced after the financial crisis.<Cite nums={3} /> The government&rsquo;s voluntary Mortgage Charter, agreed with major lenders in 2023, allows borrowers to take payment holidays of up to six months, switch temporarily to interest-only payments, or extend their mortgage term to reduce monthly costs.<Cite nums={5} /> These measures have kept many households out of formal arrears, but they come at a price: term extensions and interest-only concessions reduce the monthly bill while increasing the total cost of the mortgage, sometimes by tens of thousands of pounds. The true scale of financial distress is therefore partially masked by forbearance mechanisms that defer rather than resolve the underlying affordability problem.<Cite nums={4} /> With rates now easing but unlikely to return to pre-2022 levels, the question for millions of households is not whether the worst is over, but how much permanent damage the rate shock has done to their financial position.
             </p>
           </div>
         </section>
@@ -269,6 +279,10 @@ export default function MortgageStressPage() {
             source="Source: MoJ — Mortgage and Landlord Possession Statistics; UK Finance — Arrears and Possessions Data 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources & methodology */}
         <section id="sec-sources" className="border-t border-wiah-border pt-8 mt-12">

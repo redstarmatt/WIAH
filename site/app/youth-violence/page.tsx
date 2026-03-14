@@ -8,6 +8,8 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -27,6 +29,13 @@ interface YouthViolenceData {
     seriousViolence: ViolencePoint[];
   };
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Home Office', dataset: 'Police Recorded Crime — Serious youth violence offences', url: 'https://www.gov.uk/government/statistics/police-recorded-crime-open-data-tables', date: '2024' },
+  { num: 2, name: 'NHS Digital', dataset: 'Hospital Episode Statistics — Assault admissions (under-25s)', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/hospital-admitted-patient-care-activity', date: '2024' },
+  { num: 3, name: 'YMCA', dataset: 'Youth Services Spending Tracker', url: 'https://www.ymca.org.uk/research/youth-services-spending', date: '2023', note: '73% real-terms cut since 2010; 750+ youth centres closed since 2012' },
+  { num: 4, name: 'DfE', dataset: 'Permanent and fixed-period exclusions in England', date: '2019', note: 'Exclusions increased 50% between 2012 and 2019' },
+];
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -84,10 +93,12 @@ export default function YouthViolencePage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Serious youth violence in England and Wales has followed a distinctive pattern over the past decade: a sustained rise in police-recorded offences alongside a more complex picture from health data. Police forces recorded 28,500 serious violence offences involving under-25 victims in 2024, up from 18,200 in 2015. Hospital admissions for assault-related injuries among under-25s reached 7,100 — a figure that, unlike police records, cannot be inflated by changes in recording practice. Emergency departments in London, Birmingham, Manchester, and parts of South Yorkshire treat the majority of cases. The geography of youth violence is not evenly distributed; it clusters in areas of concentrated deprivation.</p>
-            <p>The drivers are structural and well-documented. Local authority spending on youth services fell by 73% in real terms between 2010 and 2023, according to the YMCA. Youth centres have closed across the country — more than 750 since 2012. School exclusions, which increased 50% between 2012 and 2019, are among the strongest predictors of involvement in serious violence. Children excluded from school are five times more likely to become both victims and perpetrators. The expansion of county lines drug networks has drawn younger children into violence, with some recruited as young as 10. Adverse childhood experiences — domestic abuse, parental imprisonment, neglect — feature in the backgrounds of virtually every young person caught up in serious violence.</p>
+            <p>Serious youth violence in England and Wales has followed a distinctive pattern over the past decade: a sustained rise in police-recorded offences alongside a more complex picture from health data. Police forces recorded 28,500 serious violence offences involving under-25 victims in 2024, up from 18,200 in 2015.<Cite nums={1} /> Hospital admissions for assault-related injuries among under-25s reached 7,100<Cite nums={2} /> — a figure that, unlike police records, cannot be inflated by changes in recording practice. Emergency departments in London, Birmingham, Manchester, and parts of South Yorkshire treat the majority of cases. The geography of youth violence is not evenly distributed; it clusters in areas of concentrated deprivation.</p>
+            <p>The drivers are structural and well-documented. Local authority spending on youth services fell by 73% in real terms between 2010 and 2023, according to the YMCA.<Cite nums={3} /> Youth centres have closed across the country — more than 750 since 2012. School exclusions, which increased 50% between 2012 and 2019, are among the strongest predictors of involvement in serious violence.<Cite nums={4} /> Children excluded from school are five times more likely to become both victims and perpetrators. The expansion of county lines drug networks has drawn younger children into violence, with some recruited as young as 10. Adverse childhood experiences — domestic abuse, parental imprisonment, neglect — feature in the backgrounds of virtually every young person caught up in serious violence.</p>
             </div>
         </section>
+
+        <div className="mt-6"><References items={editorialRefs} /></div>
 
         <SectionNav sections={[
           { id: 'sec-metrics', label: 'Metrics' },

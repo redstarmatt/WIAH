@@ -8,6 +8,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Annual Survey of Hours and Earnings (ASHE)', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/genderpaygapintheuk/2023', date: '2023' },
+  { num: 2, name: 'IFS', dataset: 'The Motherhood Penalty research', date: '2023' },
+  { num: 3, name: 'FTSE Women Leaders Review', dataset: 'Annual Review', url: 'https://www.ftsewomenleaders.com/', date: '2023' },
+  { num: 4, name: 'Gov.uk', dataset: 'Gender Pay Gap Service', url: 'https://gender-pay-gap.service.gov.uk/', date: '2023' },
+];
 
 // Gender pay gap full-time (%), 2012–2023
 const fullTimeGapPct = [19.7, 19.7, 19.1, 18.4, 18.1, 17.4, 17.1, 17.3, 15.5, 15.4, 14.9, 14.3];
@@ -70,8 +79,8 @@ export default function GenderPayGapPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Women working full-time in Britain earn 86p for every £1 earned by men — a median gender pay gap of 14.3%. When part-time workers are included the gap widens further, reflecting the disproportionate concentration of women in lower-paid roles. Financial services carries the largest sector gap at 28.1%, with a bonus gap of 40%. Since mandatory reporting was introduced in April 2017 for employers with 250 or more staff, 78% still report a gap in favour of men. The full-time gap has fallen from 19.7% in 2012 but is not projected to close for several more decades at current rates of change.</p>
-            <p>The gap is near-zero for women in their twenties, then widens sharply after childbirth: by the time a first child reaches age 12, mothers earn 33% less than fathers, according to the IFS. Women make up 77% of social care workers and 85% of NHS nurses but only 18% of engineers, and female-dominated sectors are systematically undervalued. Black women earn 20% less than white men; Pakistani and Bangladeshi women face the largest intersectional gaps. Shared Parental Leave has been taken up by only 2% of eligible fathers, doing little to redistribute caring responsibilities. Progress at boardroom level — FTSE 350 boards reached 40% female representation in 2023, up from 13% in 2012 — has not translated into the wider executive pipeline.</p>
+            <p>Women working full-time in Britain earn 86p for every £1 earned by men — a median gender pay gap of 14.3%.<Cite nums={[1]} /> When part-time workers are included the gap widens further, reflecting the disproportionate concentration of women in lower-paid roles. Financial services carries the largest sector gap at 28.1%, with a bonus gap of 40%.<Cite nums={[1]} /> Since mandatory reporting was introduced in April 2017 for employers with 250 or more staff, 78% still report a gap in favour of men.<Cite nums={[4]} /> The full-time gap has fallen from 19.7% in 2012 but is not projected to close for several more decades at current rates of change.<Cite nums={[1]} /></p>
+            <p>The gap is near-zero for women in their twenties, then widens sharply after childbirth: by the time a first child reaches age 12, mothers earn 33% less than fathers, according to the IFS.<Cite nums={[2]} /> Women make up 77% of social care workers and 85% of NHS nurses but only 18% of engineers, and female-dominated sectors are systematically undervalued. Black women earn 20% less than white men; Pakistani and Bangladeshi women face the largest intersectional gaps. Shared Parental Leave has been taken up by only 2% of eligible fathers, doing little to redistribute caring responsibilities. Progress at boardroom level — FTSE 350 boards reached 40% female representation in 2023, up from 13% in 2012 — has not translated into the wider executive pipeline.<Cite nums={[3]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -150,6 +159,10 @@ export default function GenderPayGapPage() {
             source="Source: ONS — Gender Pay Gap in the UK 2023. FTSE Women Leaders Review 2023. Gov.uk Gender Pay Gap Service."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

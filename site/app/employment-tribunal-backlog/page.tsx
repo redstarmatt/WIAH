@@ -8,6 +8,12 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'MoJ', dataset: 'Tribunal statistics quarterly', url: 'https://www.gov.uk/government/collections/tribunals-statistics', date: '2024' },
+];
 
 const pendingCasesData = [385, 370, 320, 290, 280, 260, 270, 310, 390, 470, 500, 480, 460, 445];
 const pendingCasesAnnotations: Annotation[] = [
@@ -134,8 +140,8 @@ export default function EmploymentTribunalBacklogPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on employment tribunals</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Employment tribunal cases take an average of 47 weeks to resolve — nearly a year. This wait, during which a claimant may be out of work and unable to secure a reference, represents a substantial barrier to justice. The backlog of pending cases peaked at around 500,000 during the COVID-19 pandemic and has reduced to 445,000, but remains 60% above pre-pandemic levels. Unfair dismissal, unpaid wages, and discrimination are the most common claim types.</p>
-              <p>The history of employment tribunal fees is a case study in access to justice. In 2013 the coalition government introduced fees of up to £1,200 per claim, with the stated intention of reducing vexatious claims and encouraging earlier settlement. Claims fell by 70% in the first year — a fall so extreme that the Supreme Court ruled in R (Unison) v Lord Chancellor [2017] that the fees regime was unlawful as it effectively prevented workers from exercising their statutory rights. Fees were abolished and partial refunds issued, but the tribunal system never fully recovered its pre-2013 capacity, and the backlog that built up post-2017 was then dramatically worsened by the pandemic.</p>
+              <p>Employment tribunal cases take an average of 47 weeks to resolve — nearly a year.<Cite nums={[1]} /> This wait, during which a claimant may be out of work and unable to secure a reference, represents a substantial barrier to justice. The backlog of pending cases peaked at around 500,000 during the COVID-19 pandemic and has reduced to 445,000, but remains 60% above pre-pandemic levels.<Cite nums={[1]} /> Unfair dismissal, unpaid wages, and discrimination are the most common claim types.</p>
+              <p>The history of employment tribunal fees is a case study in access to justice. In 2013 the coalition government introduced fees of up to £1,200 per claim, with the stated intention of reducing vexatious claims and encouraging earlier settlement. Claims fell by 70% in the first year — a fall so extreme that the Supreme Court ruled in R (Unison) v Lord Chancellor [2017] that the fees regime was unlawful as it effectively prevented workers from exercising their statutory rights.<Cite nums={[1]} /> Fees were abolished and partial refunds issued, but the tribunal system never fully recovered its pre-2013 capacity, and the backlog that built up post-2017 was then dramatically worsened by the pandemic.</p>
               <p>The practical effect of lengthy waits is that many valid claims are never brought or are settled at a discount because claimants cannot sustain the financial and emotional cost of waiting. Legal aid for employment tribunal claims was removed in 2013 and has not been restored. Citizens Advice and trade unions provide some representation, but the majority of claimants are unrepresented, at a disadvantage against employers with legal teams.</p>
             </div>
           </section>
@@ -151,6 +157,9 @@ export default function EmploymentTribunalBacklogPage() {
           />
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">

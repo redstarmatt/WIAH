@@ -8,6 +8,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS Digital', dataset: 'Health Survey for England — sleep quality module', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england', date: '2024' },
+  { num: 2, name: 'NHSBSA', dataset: 'Prescription Cost Analysis — BNF section 4.1.1', url: 'https://www.nhsbsa.nhs.uk/statistical-collections/prescription-cost-analysis-england', date: '2024' },
+  { num: 3, name: 'RAND Europe', dataset: 'Why Sleep Matters — the economic costs of insufficient sleep', url: 'https://www.rand.org/pubs/research_reports/RR1791.html', date: '2024' },
+  { num: 4, name: 'NHS Digital', dataset: 'Hospital Episode Statistics — G47 sleep disorders', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/hospital-episode-statistics', date: '2024' },
+];
 
 export default function SleepDisorderPrevalencePage() {
   // Poor sleep prevalence (%) — 2015–2024 (10 points)
@@ -172,12 +181,16 @@ export default function SleepDisorderPrevalencePage() {
           <section id="sec-context" className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">What the data shows</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Poor sleep is one of the most prevalent health conditions in Britain, yet it has historically been treated as a lifestyle issue rather than a clinical one. The Health Survey for England now shows more than one in three adults regularly sleeping badly — a figure that has risen steadily across the decade and spiked sharply during the COVID-19 pandemic. Unlike many post-pandemic health indicators, poor sleep prevalence has not returned to pre-2020 levels.</p>
-              <p>Young adults aged 18 to 24 consistently report the worst sleep of any age group — counterintuitively worse than older adults. The relationship between screen time, social media use, and sleep disruption is well-established: blue light exposure suppresses melatonin, and the anxiety-inducing properties of social media feeds can create ruminative thought patterns that delay sleep onset. Insomnia prescription rates have risen in parallel, though this reflects both greater clinical awareness and genuine worsening.</p>
-              <p>The economic cost estimate of £40 billion annually — from the RAND Europe modelling commissioned by Hult International — accounts for reduced productivity, higher absenteeism, and elevated long-term health costs. Sleep deprivation is associated with significantly elevated risk of cardiovascular disease, type 2 diabetes, depression, and dementia. The NHS cost implications alone are substantial, making the rollout of CBT-I as a first-line treatment one of the most cost-effective public health investments available.</p>
+              <p>Poor sleep is one of the most prevalent health conditions in Britain, yet it has historically been treated as a lifestyle issue rather than a clinical one. The Health Survey for England now shows more than one in three adults regularly sleeping badly — a figure that has risen steadily across the decade and spiked sharply during the COVID-19 pandemic.<Cite nums={1} /> Unlike many post-pandemic health indicators, poor sleep prevalence has not returned to pre-2020 levels.</p>
+              <p>Young adults aged 18 to 24 consistently report the worst sleep of any age group — counterintuitively worse than older adults.<Cite nums={1} /> The relationship between screen time, social media use, and sleep disruption is well-established: blue light exposure suppresses melatonin, and the anxiety-inducing properties of social media feeds can create ruminative thought patterns that delay sleep onset. Insomnia prescription rates have risen in parallel, though this reflects both greater clinical awareness and genuine worsening.<Cite nums={2} /></p>
+              <p>The economic cost estimate of £40 billion annually — from the RAND Europe modelling commissioned by Hult International — accounts for reduced productivity, higher absenteeism, and elevated long-term health costs.<Cite nums={3} /> Sleep deprivation is associated with significantly elevated risk of cardiovascular disease, type 2 diabetes, depression, and dementia. The NHS cost implications alone are substantial, making the rollout of CBT-I as a first-line treatment one of the most cost-effective public health investments available.<Cite nums={4} /></p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

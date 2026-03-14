@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Properties with Flood Re coverage (thousands), 2016–2024 — Flood Re
 const floodReValues = [0, 50, 100, 150, 180, 200, 220, 230, 240];
@@ -41,6 +43,12 @@ const floodAnnotations: Annotation[] = [
   { date: new Date(2019, 10, 1), label: '2019: Yorkshire and Midlands flooding' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Flood Re', dataset: 'Annual report and scheme statistics', url: 'https://www.floodre.co.uk/industry/data-and-reports/', date: '2024' },
+  { num: 2, name: 'Environment Agency', dataset: 'National flood risk assessment', url: 'https://www.gov.uk/government/collections/national-flood-risk-assessment', date: '2024' },
+  { num: 3, name: 'ABI', dataset: 'Household insurance premium data', url: 'https://www.abi.org.uk/data-and-resources/tools-and-resources/claims-portal/household-insurance-data/', date: '2024' },
+];
+
 export default function FloodInsuranceGapsPage() {
   return (
     <>
@@ -55,8 +63,8 @@ export default function FloodInsuranceGapsPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Flood Re, the reinsurance pool launched in April 2016, was designed to ensure that properties at high flood risk can access affordable home insurance. Under the scheme, insurers can cede the flood component of household policies to Flood Re — a not-for-profit entity — in exchange for a premium capped at a level related to council tax band. This prevents market failure in high-risk postcodes where commercial insurers would otherwise either refuse cover or charge prohibitive premiums. By 2024, approximately 240,000 properties had benefited from Flood Re cover, with premiums reduced by an average of 25–50% compared to the unsubsidised commercial rate.</p>
-            <p>However, significant gaps remain. Flood Re excludes properties built after 2009 (to avoid incentivising development in flood risk areas), leasehold flats, and small businesses — the last of which are particularly vulnerable. The scheme is also a transitional measure designed to run until 2039, after which it is expected to wind down as risk-reflective pricing and adaptation investment reduce the subsidy required. Climate change is increasing the number of properties at significant flood risk faster than investment in flood defences can protect them: the Environment Agency estimates this number has grown from around 185,000 in 2015 to approximately 220,000 in 2024. Insurance premiums for properties not eligible for Flood Re have risen around 55% since 2016.</p>
+            <p>Flood Re, the reinsurance pool launched in April 2016, was designed to ensure that properties at high flood risk can access affordable home insurance. Under the scheme, insurers can cede the flood component of household policies to Flood Re — a not-for-profit entity — in exchange for a premium capped at a level related to council tax band. This prevents market failure in high-risk postcodes where commercial insurers would otherwise either refuse cover or charge prohibitive premiums. By 2024, approximately 240,000 properties had benefited from Flood Re cover, with premiums reduced by an average of 25–50% compared to the unsubsidised commercial rate<Cite nums={1} />.</p>
+            <p>However, significant gaps remain. Flood Re excludes properties built after 2009 (to avoid incentivising development in flood risk areas), leasehold flats, and small businesses — the last of which are particularly vulnerable. The scheme is also a transitional measure designed to run until 2039, after which it is expected to wind down as risk-reflective pricing and adaptation investment reduce the subsidy required. Climate change is increasing the number of properties at significant flood risk faster than investment in flood defences can protect them: the Environment Agency estimates this number has grown from around 185,000 in 2015 to approximately 220,000 in 2024<Cite nums={2} />. Insurance premiums for properties not eligible for Flood Re have risen around 55% since 2016<Cite nums={3} />.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -134,6 +142,9 @@ export default function FloodInsuranceGapsPage() {
             source="Source: Flood Re — Transition Plan 2039 and Build Back Better 2023. Environment Agency — Flood risk investment tracker 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

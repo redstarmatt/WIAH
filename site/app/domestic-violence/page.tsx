@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Police-recorded DA crimes (thousands), 2013–2023 — Home Office
 const crimeValues = [430, 470, 520, 600, 680, 750, 820, 880, 840, 920, 945];
@@ -38,6 +40,13 @@ const crimeAnnotations: Annotation[] = [
   { date: new Date(2021, 5, 1), label: '2021: Domestic Abuse Act' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Crime Survey for England and Wales — Domestic Abuse', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/bulletins/domesticabuseinenglandandwalesoverview/latest', date: '2023' },
+  { num: 2, name: 'Home Office', dataset: 'Crime outcomes in England and Wales', url: 'https://www.gov.uk/government/collections/crime-outcomes-in-england-and-wales-statistics', date: '2023' },
+  { num: 3, name: 'Femicide Census', dataset: 'Annual data on killings of women by men', url: 'https://www.femicidecensus.org/', date: '2022' },
+  { num: 4, name: "Women's Aid", dataset: 'Annual Audit of Domestic Abuse Services', url: 'https://www.womensaid.org.uk/what-we-do/research-and-publications/annual-audit/', date: '2022/23' },
+];
+
 export default function DomesticViolencePage() {
   return (
     <>
@@ -52,8 +61,8 @@ export default function DomesticViolencePage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Crime Survey for England and Wales found 2.4 million adults experienced domestic abuse in the year to March 2023 — yet only 18% of incidents are reported to police. The Femicide Census recorded 76 women killed by a male partner or ex-partner in 2022, with an average of 12 prior police contacts before the fatal incident. Of over 900,000 domestic abuse crimes recorded in 2022/23, only 6% resulted in a charge — down from 14% in 2015. Victim withdrawal accounts for 48% of discontinued cases.</p>
-            <p>The Domestic Abuse Act 2021 introduced new protections, but infrastructure lags far behind. England has roughly 3,700 refuge beds — half the 7,400 the Istanbul Convention requires. Women's Aid reports 18,000 refuge requests were declined in 2022/23. Multi-Agency Risk Assessment Conferences (MARACs) handled 88,000 high-risk referrals, 70% involving repeat victims — evidence that intervention is coming too late.</p>
+            <p>The Crime Survey for England and Wales found 2.4 million adults experienced domestic abuse in the year to March 2023 — yet only 18% of incidents are reported to police.<Cite nums={1} /> The Femicide Census recorded 76 women killed by a male partner or ex-partner in 2022, with an average of 12 prior police contacts before the fatal incident.<Cite nums={3} /> Of over 900,000 domestic abuse crimes recorded in 2022/23, only 6% resulted in a charge — down from 14% in 2015.<Cite nums={2} /> Victim withdrawal accounts for 48% of discontinued cases.<Cite nums={2} /></p>
+            <p>The Domestic Abuse Act 2021 introduced new protections, but infrastructure lags far behind. England has roughly 3,700 refuge beds — half the 7,400 the Istanbul Convention requires. Women&apos;s Aid reports 18,000 refuge requests were declined in 2022/23.<Cite nums={4} /> Multi-Agency Risk Assessment Conferences (MARACs) handled 88,000 high-risk referrals, 70% involving repeat victims — evidence that intervention is coming too late.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -132,6 +141,10 @@ export default function DomesticViolencePage() {
             source="Source: ONS — Domestic abuse in England and Wales overview, 2023; Home Office — Crime outcomes 2022/23."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

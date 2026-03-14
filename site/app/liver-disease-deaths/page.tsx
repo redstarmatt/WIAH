@@ -9,6 +9,19 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+// ── References ───────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Death registrations — liver disease (ICD-10 K70-K77)', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Alcohol-specific deaths, England & Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/causesofdeath/bulletins/alcoholrelateddeathsintheunitedkingdom/latest', date: '2024' },
+  { num: 3, name: 'British Liver Trust', dataset: 'NAFLD prevalence estimates', url: 'https://britishlivertrust.org.uk/', date: '2024' },
+  { num: 4, name: 'ONS', dataset: 'Death registrations by age — liver disease', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths', date: '2024' },
+  { num: 5, name: 'ONS', dataset: 'Age-standardised liver disease mortality by region', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/causesofdeath', date: '2024' },
+  { num: 6, name: 'NHS England', dataset: 'Hepatitis C elimination programme', url: 'https://www.england.nhs.uk/publication/hepatitis-c-elimination/', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -123,9 +136,9 @@ export default function LiverDiseaseDeathsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK is one of the only countries in Western Europe where liver disease deaths have been rising consistently. Since 2001, total deaths from liver disease have increased by around 39%, from 9,231 to 12,802 per year. The pandemic accelerated the trend sharply: increased alcohol consumption during lockdowns pushed annual deaths above 13,000 in 2021. While there has been a modest retreat since that peak, deaths remain far above the long-run trajectory that existed before COVID-19.</p>
-            <p>Three factors drive the crisis. Alcohol-related liver disease accounts for roughly 45% of all liver deaths and has risen in step with cheap alcohol availability and a culture of heavy drinking that public health messaging has failed to dislodge. Non-alcoholic fatty liver disease (NAFLD), linked to obesity and type 2 diabetes, is the fastest-growing cause and now affects an estimated one in three UK adults, most of whom are undiagnosed. Viral hepatitis B and C, though now treatable, still causes preventable deaths because screening remains patchy and many infected people do not know their status.</p>
-            <p>Premature liver deaths -- those in people under 65 -- have risen even faster, up 43% since 2001. This is distinctive: most other major causes of death in the UK have falling premature mortality rates. The regional pattern is stark, with mortality rates in the North East nearly double those in the South East, closely mirroring patterns of deprivation, alcohol harm, and obesity prevalence.</p>
+            <p>The UK is one of the only countries in Western Europe where liver disease deaths have been rising consistently. Since 2001, total deaths from liver disease have increased by around 39%, from 9,231 to 12,802 per year.<Cite nums={1} /> The pandemic accelerated the trend sharply: increased alcohol consumption during lockdowns pushed annual deaths above 13,000 in 2021.<Cite nums={1} /> While there has been a modest retreat since that peak, deaths remain far above the long-run trajectory that existed before COVID-19.</p>
+            <p>Three factors drive the crisis. Alcohol-related liver disease accounts for roughly 45% of all liver deaths and has risen in step with cheap alcohol availability and a culture of heavy drinking that public health messaging has failed to dislodge.<Cite nums={2} /> Non-alcoholic fatty liver disease (NAFLD), linked to obesity and type 2 diabetes, is the fastest-growing cause and now affects an estimated one in three UK adults, most of whom are undiagnosed.<Cite nums={3} /> Viral hepatitis B and C, though now treatable, still causes preventable deaths because screening remains patchy and many infected people do not know their status.<Cite nums={6} /></p>
+            <p>Premature liver deaths -- those in people under 65 -- have risen even faster, up 43% since 2001.<Cite nums={4} /> This is distinctive: most other major causes of death in the UK have falling premature mortality rates. The regional pattern is stark, with mortality rates in the North East nearly double those in the South East, closely mirroring patterns of deprivation, alcohol harm, and obesity prevalence.<Cite nums={5} /></p>
           </div>
         </section>
 
@@ -274,6 +287,10 @@ export default function LiverDiseaseDeathsPage() {
             source="Source: NHS England — Hepatitis C elimination programme, 2024. WHO — Global hepatitis targets."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

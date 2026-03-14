@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ministry of Justice', dataset: 'Legal Aid Statistics — Quarterly 2024', url: 'https://www.gov.uk/government/collections/legal-aid-statistics', date: '2024' },
+  { num: 2, name: 'Law Society', dataset: 'Legal aid deserts report 2024', url: 'https://www.lawsociety.org.uk/campaigns/legal-aid', date: '2024' },
+  { num: 3, name: 'Ministry of Justice', dataset: 'LASPO Post-Implementation Review 2019', url: 'https://www.gov.uk/government/publications/post-implementation-review-of-part-1-of-laspo', date: '2019' },
+  { num: 4, name: 'Public Accounts Committee', dataset: 'Reports on legal aid sustainability, 2015–2023', date: '2023' },
+];
 
 export default function LegalAidPage() {
   const colour = '#6B7280';
@@ -160,12 +169,16 @@ export default function LegalAidPage() {
           <section className="max-w-2xl mb-12 mt-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">What the data shows</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>The Legal Aid, Sentencing and Punishment of Offenders Act 2012 (LASPO) was the most significant restriction on access to legal aid since the system was created in 1949. It removed almost all private family law, most housing disputes, clinical negligence, employment, and immigration cases from the scope of legal aid. Combined with fee rates that have been frozen in cash terms since the 1990s — representing a real-terms cut of around 40% — LASPO has made civil legal aid economically unviable for many law firms. Total civil legal aid cases have fallen from 302,000 in 2012 to approximately 135,000 in 2024.</p>
-              <p>The geographical consequences are severe. The Law Society identified in 2024 that 59% of local authority areas in England and Wales have no housing legal aid solicitor — they are &ldquo;legal aid deserts.&rdquo; For areas with housing problems — damp, disrepair, illegal evictions — this means travelling potentially hours to access advice. For criminal legal aid, 82 firms exited the market in 2023 alone, following the 15% fee increase offered in 2022 — a rate so low after decades of inflation that most criminal solicitors earn below the minimum wage per hour when legal aid work is properly costed.</p>
-              <p>The downstream costs of legal aid cuts fall elsewhere in the public sector. Studies consistently show that every £1 of housing legal aid generates £2.34 in savings elsewhere through prevented homelessness, reduced NHS usage, and avoided domestic violence. The Ministry of Justice's own research found that litigants in person — people representing themselves because they cannot access legal help — slow court proceedings by an average of 50 minutes per hearing. The false economy of legal aid cuts has been noted by the Public Accounts Committee in three successive reports since 2015.</p>
+              <p>The Legal Aid, Sentencing and Punishment of Offenders Act 2012 (LASPO) was the most significant restriction on access to legal aid since the system was created in 1949. It removed almost all private family law, most housing disputes, clinical negligence, employment, and immigration cases from the scope of legal aid. Combined with fee rates that have been frozen in cash terms since the 1990s — representing a real-terms cut of around 40% — LASPO has made civil legal aid economically unviable for many law firms.<Cite nums={1} /> Total civil legal aid cases have fallen from 302,000 in 2012 to approximately 135,000 in 2024.<Cite nums={1} /></p>
+              <p>The geographical consequences are severe. The Law Society identified in 2024 that 59% of local authority areas in England and Wales have no housing legal aid solicitor — they are &ldquo;legal aid deserts.&rdquo;<Cite nums={2} /> For areas with housing problems — damp, disrepair, illegal evictions — this means travelling potentially hours to access advice. For criminal legal aid, 82 firms exited the market in 2023 alone, following the 15% fee increase offered in 2022 — a rate so low after decades of inflation that most criminal solicitors earn below the minimum wage per hour when legal aid work is properly costed.</p>
+              <p>The downstream costs of legal aid cuts fall elsewhere in the public sector. Studies consistently show that every £1 of housing legal aid generates £2.34 in savings elsewhere through prevented homelessness, reduced NHS usage, and avoided domestic violence.<Cite nums={3} /> The Ministry of Justice's own research found that litigants in person — people representing themselves because they cannot access legal help — slow court proceedings by an average of 50 minutes per hearing. The false economy of legal aid cuts has been noted by the Public Accounts Committee in three successive reports since 2015.<Cite nums={4} /></p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

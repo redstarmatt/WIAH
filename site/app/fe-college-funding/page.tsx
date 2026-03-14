@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Institute for Fiscal Studies', dataset: 'Education spending in England', url: 'https://www.ifs.org.uk/tools_and_resources/fiscal_facts/education_spending_in_england', date: '2024' },
+  { num: 2, name: 'Department for Education', dataset: '16-18 Education and Training Participation', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/participation-in-education-training-and-employment', date: '2024' },
+  { num: 3, name: 'ONS', dataset: 'NEET Statistics', date: 'Q4 2023' },
+  { num: 4, name: 'Association of Colleges', dataset: 'FE funding shortfall analysis', date: '2024' },
+];
 
 export default function FeCollegeFundingPage() {
   // Chart 1: FE funding per student in real terms 2010-2024 (indexed to 2010=100)
@@ -145,13 +154,16 @@ export default function FeCollegeFundingPage() {
           <section id="sec-context" className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on FE college funding</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Between 2009-10 and 2019-20, 16-18 education funding per student in England fell by around 16% in real terms — a cut sustained over a decade that left college buildings unmaintained, courses cut, and teacher pay lagging further behind equivalent school roles each year. England now spends roughly 40% of what it spends per university student on each FE college student — a ratio that reflects a long-standing political preference for higher education that is visible nowhere more clearly than in the funding tables.</p>
-              <p>The consequences compound. Teachers paid less than school equivalents are harder to recruit and retain in vocational subjects, reducing the range and quality of provision. Buildings require investment of an estimated £2.7 billion simply to bring them to satisfactory standard. Colleges serving the most deprived communities — often those in ex-industrial towns with the highest NEET rates — face the sharpest student-to-funding squeeze because they cannot supplement income through higher-margin provision. The Association of Colleges estimates an average funding shortfall of £1,300 per student per year against what is needed to match school sixth form provision.</p>
+              <p>Between 2009-10 and 2019-20, 16-18 education funding per student in England fell by around 16% in real terms — a cut sustained over a decade that left college buildings unmaintained, courses cut, and teacher pay lagging further behind equivalent school roles each year.<Cite nums={[1]} /> England now spends roughly 40% of what it spends per university student on each FE college student — a ratio that reflects a long-standing political preference for higher education that is visible nowhere more clearly than in the funding tables.<Cite nums={[1]} /></p>
+              <p>The consequences compound. Teachers paid less than school equivalents are harder to recruit and retain in vocational subjects, reducing the range and quality of provision. Buildings require investment of an estimated £2.7 billion simply to bring them to satisfactory standard.<Cite nums={[4]} /> Colleges serving the most deprived communities — often those in ex-industrial towns with the highest NEET rates — face the sharpest student-to-funding squeeze because they cannot supplement income through higher-margin provision.<Cite nums={[3]} /> The Association of Colleges estimates an average funding shortfall of £1,300 per student per year against what is needed to match school sixth form provision.<Cite nums={[4]} /></p>
               <p>The partial uplift from 2019 and additional workforce funding in 2022 have improved the picture, but not reversed it. Meanwhile Germany and Denmark spend 50-80% more per vocational student than England. The skills gap this creates feeds directly into labour market shortages in construction, engineering, health, and social care — the sectors England most needs to grow.</p>
             </div>
           </section>
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-2">

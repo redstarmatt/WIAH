@@ -7,6 +7,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Patient Safety Incident Management System (PSIMS)', url: 'https://www.england.nhs.uk/patient-safety/patient-safety-incident-management-system/', date: '2024' },
+  { num: 2, name: 'NHS Resolution', dataset: 'Annual Report and Accounts', url: 'https://resolution.nhs.uk/resources/annual-report-and-accounts/', date: '2023/24' },
+  { num: 3, name: 'Donna Ockenden', dataset: 'Independent Review of Maternity Services at Shrewsbury and Telford NHS Trust', date: 'March 2022' },
+];
 
 export default function PatientSafetyIncidentsPage() {
   // Chart 1: NHS patient safety incidents 2015–2024 (millions)
@@ -136,12 +144,16 @@ export default function PatientSafetyIncidentsPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on patient safety</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Over 1.5 million patient safety incidents are reported to NHS England each year — around 11,000 of which result in severe harm or death. These figures require careful interpretation: higher reporting rates can indicate a healthier safety culture, where staff feel confident raising concerns, as much as more frequent harm. The NHS's National Reporting and Learning System was explicitly designed to encourage near-miss reporting precisely to identify systemic risk before it causes harm.</p>
-              <p>Clinical negligence costs have grown from £0.86 billion in 2010 to £2.4 billion in 2023/24. Maternity claims account for the largest category — roughly 60% of total cost despite being a small share of NHS activity. The Ockenden Review (2022) found systematic failures at Shrewsbury and Telford NHS Trust spanning two decades, resulting in avoidable deaths and brain injuries among hundreds of babies and mothers. Similar patterns emerged from the East Kent and Morecambe Bay reviews.</p>
-              <p>The burden of unsafe care falls disproportionately on those least able to advocate for themselves. Patients in maternity services, mental health inpatient units, and emergency departments account for a disproportionate share of serious incidents. Rising clinical negligence costs also represent a significant and growing pressure on NHS budgets — money spent on legal claims and settlements that cannot be spent on care.</p>
+              <p>Over 1.5 million patient safety incidents are reported to NHS England each year — around 11,000 of which result in severe harm or death.<Cite nums={1} /> These figures require careful interpretation: higher reporting rates can indicate a healthier safety culture, where staff feel confident raising concerns, as much as more frequent harm. The NHS's National Reporting and Learning System was explicitly designed to encourage near-miss reporting precisely to identify systemic risk before it causes harm.</p>
+              <p>Clinical negligence costs have grown from £0.86 billion in 2010 to £2.4 billion in 2023/24.<Cite nums={2} /> Maternity claims account for the largest category — roughly 60% of total cost despite being a small share of NHS activity. The Ockenden Review (2022) found systematic failures at Shrewsbury and Telford NHS Trust spanning two decades, resulting in avoidable deaths and brain injuries among hundreds of babies and mothers.<Cite nums={3} /> Similar patterns emerged from the East Kent and Morecambe Bay reviews.</p>
+              <p>The burden of unsafe care falls disproportionately on those least able to advocate for themselves. Patients in maternity services, mental health inpatient units, and emergency departments account for a disproportionate share of serious incidents.<Cite nums={1} /> Rising clinical negligence costs also represent a significant and growing pressure on NHS budgets — money spent on legal claims and settlements that cannot be spent on care.<Cite nums={2} /></p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

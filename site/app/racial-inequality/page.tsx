@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Ethnicity Pay Gaps in Great Britain (ASHE)', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours', date: '2024', note: 'Aggregate ethnic pay gap ~5.1%; Bangladeshi workers 20% less; Pakistani 16% less' },
+  { num: 2, name: 'IFS', dataset: 'Ethnic Penalties in the Labour Market', date: '2024', note: 'After controlling for education, age, region, and sector: Bangladeshi men earn 14% less, Black Caribbean men 9% less' },
+  { num: 3, name: 'ONS', dataset: 'Labour Force Survey', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes', date: '2024', note: 'Black unemployment ~7.5% vs white ~3.5%; ratio barely changed in 30 years' },
+  { num: 4, name: 'ONS', dataset: 'Wealth and Assets Survey', date: '2022', note: 'Black African household median wealth £34,000 vs white British £314,000 — a ninefold gap' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -89,8 +98,8 @@ export default function RacialInequalityPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK's ethnic pay gap — the percentage difference in median hourly earnings between ethnic minority workers and white British workers — stood at approximately 5.1% in 2024 according to the ONS Annual Survey of Hours and Earnings. This aggregate figure, however, masks extreme variation between groups. Bangladeshi workers earn 20% less than white British workers on a median hourly basis; Pakistani workers earn 16% less; Black African workers earn 8% less. Indian and Chinese workers earn slightly more than the white British median, reflecting high concentrations in professional and technical occupations, but this apparent advantage disappears when controlling for qualifications and location — a phenomenon known as the &ldquo;ethnic penalty.&rdquo; Research by the Institute for Fiscal Studies shows that even after controlling for education, age, region, and sector, Bangladeshi men earn 14% less than comparable white British men, and Black Caribbean men earn 9% less.</p>
-            <p>Unemployment disparities are starker and more persistent. Black workers in the UK face unemployment rates approximately twice those of white workers — a ratio that has barely changed in 30 years. In 2024, the unemployment rate for Black workers was approximately 7.5%, compared with 3.5% for white workers. During the COVID-19 pandemic, this ratio widened as ethnic minority workers were disproportionately concentrated in shutdown sectors (hospitality, retail, transport) and less likely to be able to work from home. Callback studies — where identical CVs are submitted with names signalling different ethnic backgrounds — consistently show that applicants with names perceived as Black, South Asian, or Muslim need to send 60–80% more applications to receive the same number of interview invitations as those with traditionally white British names. The government rejected mandatory ethnicity pay gap reporting (recommended by the Parker Review and the Commission on Race and Ethnic Disparities) in favour of voluntary guidance, and fewer than 50 large employers currently publish ethnicity pay data.</p>
+            <p>The UK's ethnic pay gap — the percentage difference in median hourly earnings between ethnic minority workers and white British workers — stood at approximately 5.1% in 2024 according to the ONS Annual Survey of Hours and Earnings.<Cite nums={1} /> This aggregate figure, however, masks extreme variation between groups. Bangladeshi workers earn 20% less than white British workers on a median hourly basis; Pakistani workers earn 16% less; Black African workers earn 8% less. Indian and Chinese workers earn slightly more than the white British median, reflecting high concentrations in professional and technical occupations, but this apparent advantage disappears when controlling for qualifications and location — a phenomenon known as the &ldquo;ethnic penalty.&rdquo; Research by the Institute for Fiscal Studies shows that even after controlling for education, age, region, and sector, Bangladeshi men earn 14% less than comparable white British men, and Black Caribbean men earn 9% less.<Cite nums={2} /></p>
+            <p>Unemployment disparities are starker and more persistent. Black workers in the UK face unemployment rates approximately twice those of white workers — a ratio that has barely changed in 30 years. In 2024, the unemployment rate for Black workers was approximately 7.5%, compared with 3.5% for white workers.<Cite nums={3} /> During the COVID-19 pandemic, this ratio widened as ethnic minority workers were disproportionately concentrated in shutdown sectors (hospitality, retail, transport) and less likely to be able to work from home. Callback studies — where identical CVs are submitted with names signalling different ethnic backgrounds — consistently show that applicants with names perceived as Black, South Asian, or Muslim need to send 60–80% more applications to receive the same number of interview invitations as those with traditionally white British names. The government rejected mandatory ethnicity pay gap reporting (recommended by the Parker Review and the Commission on Race and Ethnic Disparities) in favour of voluntary guidance, and fewer than 50 large employers currently publish ethnicity pay data.</p>
             </div>
         </section>
 
@@ -172,6 +181,10 @@ export default function RacialInequalityPage() {
             source="Source: ONS — ASHE Ethnicity Pay Gaps 2024; ONS — Labour Force Survey 2024; ONS — Wealth and Assets Survey 2022."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

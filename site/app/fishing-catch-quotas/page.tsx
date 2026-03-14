@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // UK fishing catch (thousand tonnes), 2015–2023 — MMO
 const catchValues = [700, 680, 660, 640, 620, 580, 620, 640, 630];
@@ -46,6 +48,12 @@ const catchAnnotations: Annotation[] = [
   { date: new Date(2021, 0, 1), label: '2021: Brexit — UK regains fishing control' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'MMO', dataset: 'UK sea fisheries statistics', url: 'https://www.gov.uk/government/statistics/uk-sea-fisheries-annual-statistics-report', date: '2023' },
+  { num: 2, name: 'MMO', dataset: 'UK quota management data', url: 'https://www.gov.uk/government/collections/uk-sea-fisheries-annual-statistics', date: '2023' },
+  { num: 3, name: 'JNCC', dataset: 'Marine Protected Areas: network analysis', date: '2024' },
+];
+
 export default function FishingCatchQuotasPage() {
   return (
     <>
@@ -60,8 +68,8 @@ export default function FishingCatchQuotasPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Brexit was presented in part as an opportunity to 'take back control' of UK waters and revitalise the fishing industry, which had been a focal point of sovereignty arguments in the referendum campaign. The UK-EU Trade and Cooperation Agreement (TCA) of January 2021 gave the UK increased quota shares for certain species over a five-and-a-half-year adjustment period. However, the practical benefits have been more limited than advocates predicted. UK fishing catch has been broadly flat since Brexit, at around 630,000 tonnes per year, and the quota utilisation rate — the proportion of allocated quota actually fished — has remained around 65–67%, meaning UK vessels are not catching everything they are entitled to.</p>
-            <p>The reasons are structural rather than political. UK fishing capacity has declined over decades: there are not enough vessels, enough crew, or enough processing capacity to catch the additional quota. The industry also faces a severe labour shortage following the end of free movement, as many crew members were EU nationals. Export challenges have been significant: around 70% of UK-caught fish is exported, primarily to the EU, but new border paperwork, checks, and delays added costs and spoilage risks, particularly for high-value shellfish. Scottish shellfish exporters, who depend on rapid overnight delivery to European markets, were among the hardest hit. The longer-term trajectory of fishing depends partly on stock health — North Sea cod remains at historically low levels.</p>
+            <p>Brexit was presented in part as an opportunity to 'take back control' of UK waters and revitalise the fishing industry, which had been a focal point of sovereignty arguments in the referendum campaign. The UK-EU Trade and Cooperation Agreement (TCA) of January 2021 gave the UK increased quota shares for certain species over a five-and-a-half-year adjustment period. However, the practical benefits have been more limited than advocates predicted. UK fishing catch has been broadly flat since Brexit, at around 630,000 tonnes per year<Cite nums={1} />, and the quota utilisation rate — the proportion of allocated quota actually fished — has remained around 65–67%<Cite nums={2} />, meaning UK vessels are not catching everything they are entitled to.</p>
+            <p>The reasons are structural rather than political. UK fishing capacity has declined over decades: there are not enough vessels, enough crew, or enough processing capacity to catch the additional quota. The industry also faces a severe labour shortage following the end of free movement, as many crew members were EU nationals. Export challenges have been significant: around 70% of UK-caught fish is exported, primarily to the EU<Cite nums={1} />, but new border paperwork, checks, and delays added costs and spoilage risks, particularly for high-value shellfish. Scottish shellfish exporters, who depend on rapid overnight delivery to European markets, were among the hardest hit. The longer-term trajectory of fishing depends partly on stock health — North Sea cod remains at historically low levels.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -139,6 +147,9 @@ export default function FishingCatchQuotasPage() {
             source="Source: MMO — UK sea fisheries statistics 2023. JNCC — Marine Protected Areas: network analysis 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

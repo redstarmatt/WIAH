@@ -8,6 +8,17 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+// -- References -------------------------------------------------------------
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Age UK / ELSA', dataset: 'Loneliness in Later Life — chronic loneliness prevalence', url: 'https://www.ageuk.org.uk/information-advice/health-wellbeing/loneliness/', date: '2024' },
+  { num: 2, name: 'Holt-Lunstad et al.', dataset: 'Meta-analysis — loneliness and premature mortality risk', url: 'https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1000316', date: '2015' },
+  { num: 3, name: 'ONS', dataset: 'Community Life Survey — family contact frequency', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing', date: '2024' },
+  { num: 4, name: 'NHS England', dataset: 'Social prescribing framework — link workers in primary care', url: 'https://www.england.nhs.uk/personalisedcare/social-prescribing/', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -75,7 +86,7 @@ export default function LonelinessElderlyPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Around 1.4 million people aged 65 and over in England experience chronic loneliness — defined as feeling lonely often or always for three months or more — up from approximately 1.2 million in 2015. Meta-analysis across multiple longitudinal studies, including ELSA, finds a 26% increased risk of premature mortality associated with chronic loneliness, with biological pathways including elevated cortisol, disrupted sleep, reduced immune function, and higher rates of cardiovascular disease and cognitive decline. One in ten people over 65 rarely or never sees family or friends in person; around 3.8 million older adults in England live alone, and bereavement is the single most common precipitant of isolation. The social prescribing framework, embedded in NHS primary care since 2019, represents the most significant policy response: link workers in GP practices can refer patients to community activities and befriending services as non-clinical interventions.</p>
+            <p>Around 1.4 million people aged 65 and over in England experience chronic loneliness — defined as feeling lonely often or always for three months or more — up from approximately 1.2 million in 2015.<Cite nums={1} /> Meta-analysis across multiple longitudinal studies, including ELSA, finds a 26% increased risk of premature mortality associated with chronic loneliness, with biological pathways including elevated cortisol, disrupted sleep, reduced immune function, and higher rates of cardiovascular disease and cognitive decline.<Cite nums={2} /> One in ten people over 65 rarely or never sees family or friends in person; around 3.8 million older adults in England live alone, and bereavement is the single most common precipitant of isolation.<Cite nums={3} /> The social prescribing framework, embedded in NHS primary care since 2019, represents the most significant policy response: link workers in GP practices can refer patients to community activities and befriending services as non-clinical interventions.<Cite nums={4} /></p>
             <p>The burden falls disproportionately on the most vulnerable older people, and those are precisely the ones hardest for policy to reach. Social prescribing works well for the mildly or moderately lonely with mobility and transport access; it is less effective for the most chronically isolated who face compound barriers of poverty, disability, and rural location. Digital connection — promoted as a partial solution post-pandemic — is least accessible to the over-75s with the highest isolation rates, who disproportionately lack internet access or devices. Rural areas, where transport links are poor and community infrastructure has eroded through pub, post office, and library closures, record significantly higher rates of elderly isolation than urban areas.</p>
           </div>
         </section>
@@ -136,6 +147,10 @@ export default function LonelinessElderlyPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

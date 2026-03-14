@@ -6,7 +6,15 @@ import MetricCard from '@/components/MetricCard';
 import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'HMRC', dataset: 'Inheritance Tax Statistics', url: 'https://www.gov.uk/government/collections/inheritance-tax-statistics', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Wealth and Assets Survey', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/debt/bulletins/wealthingreatbritainwave', date: '2024' },
+  { num: 3, name: 'Resolution Foundation', dataset: 'Intergenerational Audit', url: 'https://www.resolutionfoundation.org/research/intergenerational-audit', date: '2024' },
+];
 
 export default function InheritanceInequalityPage() {
   // Chart 1: Total inheritance flow in UK 2010–2024 (£bn)
@@ -144,12 +152,16 @@ export default function InheritanceInequalityPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on inherited wealth</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Britain is in the middle of the largest intergenerational wealth transfer in its history. Total inherited wealth has grown from approximately £55 billion per year in the mid-1990s to around £175 billion in 2024 — a more than threefold increase in real terms — with annual flows projected to exceed £250 billion by the mid-2030s. Property is the primary mechanism: house price inflation since the 1980s created substantial unearned wealth for owner-occupiers, particularly in London and the South East, which now passes to the next generation.</p>
-              <p>The top 10% of estates account for approximately 60% of all inherited wealth transferred, while roughly half of all adults receive no meaningful inheritance. Inheritance tax (IHT) is intended to moderate these transfers but only around 4% of estates pay any IHT at all, as the £325,000 threshold (frozen since 2009) and various reliefs reduce effective rates sharply. The combination of a frozen threshold and rising asset prices means the IHT base has eroded in real terms even as flows have grown.</p>
-              <p>Recipients of large inheritances are significantly more likely to move into owner-occupation, start a business, and exit paid employment — compressing opportunity for those who must build wealth from wages alone. Resolution Foundation research projects that by the 2040s, inheritance will account for a larger share of lifetime wealth inequality than it does today.</p>
+              <p>Britain is in the middle of the largest intergenerational wealth transfer in its history. Total inherited wealth has grown from approximately £55 billion per year in the mid-1990s to around £175 billion in 2024 — a more than threefold increase in real terms — with annual flows projected to exceed £250 billion by the mid-2030s.<Cite nums={[1, 3]} /> Property is the primary mechanism: house price inflation since the 1980s created substantial unearned wealth for owner-occupiers, particularly in London and the South East, which now passes to the next generation.</p>
+              <p>The top 10% of estates account for approximately 60% of all inherited wealth transferred, while roughly half of all adults receive no meaningful inheritance.<Cite nums={2} /> Inheritance tax (IHT) is intended to moderate these transfers but only around 4% of estates pay any IHT at all, as the £325,000 threshold (frozen since 2009) and various reliefs reduce effective rates sharply.<Cite nums={1} /> The combination of a frozen threshold and rising asset prices means the IHT base has eroded in real terms even as flows have grown.</p>
+              <p>Recipients of large inheritances are significantly more likely to move into owner-occupation, start a business, and exit paid employment — compressing opportunity for those who must build wealth from wages alone. Resolution Foundation research projects that by the 2040s, inheritance will account for a larger share of lifetime wealth inequality than it does today.<Cite nums={3} /></p>
             </div>
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

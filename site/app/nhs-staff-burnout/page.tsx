@@ -8,7 +8,16 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 import RelatedTopics from '@/components/RelatedTopics';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'NHS Staff Survey', date: '2023', note: '34% of staff report burnout (up from 28% in 2019); 57% would recommend NHS as workplace (down from 67%)' },
+  { num: 2, name: 'NHS Digital', dataset: 'NHS Vacancy Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/nhs-vacancies-survey', date: '2024', note: '~112,000 unfilled posts (8% vacancy rate); peaked at 133,000 (9.7%) in 2022' },
+  { num: 3, name: 'NHS England', dataset: 'Financial Accounts — Agency Spending', date: '2024', note: '£3bn spent on agency staff in 2023/24' },
+  { num: 4, name: 'NHS England', dataset: 'NHS Long Term Workforce Plan', date: '2023', note: 'Commits to doubling medical school places and 50% increase in GP training places' },
+];
 
 // ── Types ──────────────────────────────────────────────────────────────────────
 
@@ -132,10 +141,10 @@ export default function NHSStaffBurnoutPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The NHS Staff Survey — the largest workforce survey in the world, covering approximately 600,000 respondents annually — reveals a service under profound strain. In 2023, 34% of staff reported feeling burnt out, up from 28% in 2019. The proportion of staff who would recommend the NHS as a place to work fell from 67% to 57% over the same period, with morale lowest among ambulance staff and mental health nurses. Behind these figures sits a workforce crisis that predates the pandemic but was dramatically accelerated by it: the NHS in England carries roughly 112,000 unfilled posts — a vacancy rate of approximately 8% — and spent £3 billion on agency staff in 2023/24 to cover the shortfall. Sickness absence runs at 5.2%, double the private sector average of 2.6%, with 44% of staff reporting work-related stress and 30% experiencing musculoskeletal problems. The junior doctor strikes of 2023 and 2024, driven by a 35% real-terms pay erosion since 2008, reflected a workforce that increasingly feels undervalued, overworked, and unable to deliver the standard of care it trained for.
+              The NHS Staff Survey — the largest workforce survey in the world, covering approximately 600,000 respondents annually — reveals a service under profound strain. In 2023, 34% of staff reported feeling burnt out, up from 28% in 2019. The proportion of staff who would recommend the NHS as a place to work fell from 67% to 57% over the same period, with morale lowest among ambulance staff and mental health nurses.<Cite nums={1} /> Behind these figures sits a workforce crisis that predates the pandemic but was dramatically accelerated by it: the NHS in England carries roughly 112,000 unfilled posts — a vacancy rate of approximately 8% — and spent £3 billion on agency staff in 2023/24 to cover the shortfall.<Cite nums={[2, 3]} /> Sickness absence runs at 5.2%, double the private sector average of 2.6%, with 44% of staff reporting work-related stress and 30% experiencing musculoskeletal problems. The junior doctor strikes of 2023 and 2024, driven by a 35% real-terms pay erosion since 2008, reflected a workforce that increasingly feels undervalued, overworked, and unable to deliver the standard of care it trained for.
             </p>
             <p>
-              The structural causes are well-documented but slow to address. The NHS Long Term Workforce Plan, published in July 2023, promised a doubling of medical school places and a 50% increase in GP training places — but the funding to deliver these commitments remains unfirmed. In the meantime, international recruitment accounts for approximately 25% of new nurse registrations, creating a dependency risk that workforce planners acknowledge but have not resolved. Nursing turnover has eased since the worst of the post-pandemic exodus, falling from 12.5% to 10.8% between 2022 and 2024 following improved pay settlements, but it remains above pre-pandemic levels. The danger is circular: burnt-out staff leave, vacancies rise, remaining staff carry heavier workloads, burnout deepens, and the cycle repeats. Agency spending — at £3 billion annually — is both a symptom and a cost: every pound spent on temporary cover is a pound not spent on the permanent workforce, training, or the infrastructure that might ease the pressure in the first place.
+              The structural causes are well-documented but slow to address. The NHS Long Term Workforce Plan, published in July 2023, promised a doubling of medical school places and a 50% increase in GP training places — but the funding to deliver these commitments remains unfirmed.<Cite nums={4} /> In the meantime, international recruitment accounts for approximately 25% of new nurse registrations, creating a dependency risk that workforce planners acknowledge but have not resolved. Nursing turnover has eased since the worst of the post-pandemic exodus, falling from 12.5% to 10.8% between 2022 and 2024 following improved pay settlements, but it remains above pre-pandemic levels. The danger is circular: burnt-out staff leave, vacancies rise, remaining staff carry heavier workloads, burnout deepens, and the cycle repeats. Agency spending — at £3 billion annually — is both a symptom and a cost: every pound spent on temporary cover is a pound not spent on the permanent workforce, training, or the infrastructure that might ease the pressure in the first place.<Cite nums={3} />
             </p>
           </div>
         </section>
@@ -264,6 +273,9 @@ export default function NHSStaffBurnoutPage() {
           />
         </ScrollReveal>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         {/* Sources & methodology */}
         <section id="sec-sources" className="border-t border-wiah-border pt-8 mt-12">
           <h2 className="text-lg font-bold text-wiah-black mb-4">Sources &amp; methodology</h2>

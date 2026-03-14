@@ -9,6 +9,16 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'HM Land Registry', dataset: 'Annual Report and Accounts 2024', url: 'https://www.gov.uk/government/organisations/land-registry', date: '2024' },
+  { num: 2, name: 'Companies House', dataset: 'Register of Overseas Entities Statistics 2025', url: 'https://www.gov.uk/government/statistics/register-of-overseas-entities-statistics', date: '2025' },
+  { num: 3, name: 'Guy Shrubsole', dataset: 'Who Owns England? (2019)', date: '2019', note: 'Analysis of land concentration and registration gaps' },
+  { num: 4, name: 'CPRE / CRoW Act 2000', dataset: 'Right to Roam — Countryside and Rights of Way Act 2000', url: 'https://www.legislation.gov.uk/ukpga/2000/37/contents', date: '2000' },
+  { num: 5, name: 'Land Reform (Scotland) Act 2003', dataset: 'Legislation.gov.uk', url: 'https://www.legislation.gov.uk/asp/2003/2/contents', date: '2003' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -170,10 +180,10 @@ export default function LandOwnershipPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              England's land ownership structure is among the most concentrated in the developed world. Roughly 50% of the country is owned by fewer than 1% of the population — a pattern with roots stretching back to the Norman Conquest and reinforced by centuries of enclosure, inheritance law and agricultural subsidy. The aristocracy still holds an estimated 30% of land. The Crown Estate, Forestry Commission and Ministry of Defence are the largest institutional landowners, while the Church of England controls 105,000 acres. Agricultural land accounts for 70% of England's surface, much of it held in large estates that have remained in the same families for generations. Despite compulsory registration being introduced in 1990, approximately 17% of land in England and Wales has no registered owner at HM Land Registry — a gap largely explained by exemptions for land that has not changed hands since registration became mandatory, benefiting historic estates that have held their land longest.
+              England's land ownership structure is among the most concentrated in the developed world. Roughly 50% of the country is owned by fewer than 1% of the population — a pattern with roots stretching back to the Norman Conquest and reinforced by centuries of enclosure, inheritance law and agricultural subsidy.<Cite nums={3} /> The aristocracy still holds an estimated 30% of land. The Crown Estate, Forestry Commission and Ministry of Defence are the largest institutional landowners, while the Church of England controls 105,000 acres. Agricultural land accounts for 70% of England's surface, much of it held in large estates that have remained in the same families for generations. Despite compulsory registration being introduced in 1990, approximately 17% of land in England and Wales has no registered owner at HM Land Registry<Cite nums={1} /> — a gap largely explained by exemptions for land that has not changed hands since registration became mandatory, benefiting historic estates that have held their land longest.
             </p>
             <p>
-              Corporate and offshore ownership has added a new dimension to the opacity. Before the Register of Overseas Entities was introduced in 2022, an estimated 100,000 properties in England and Wales were held by companies registered in secrecy jurisdictions — from the British Virgin Islands to Jersey — with no requirement to disclose beneficial owners. The housing market consequences of concentrated ownership are direct and measurable: major housebuilders hold land banks of over one million plots with planning permission, a practice critics call strategic land-banking that inflates prices by restricting supply. When agricultural land receives planning permission its value can increase 100-fold or more, yet the UK captures only around 25% of this land value uplift for public benefit, compared with 90% in the Netherlands. Meanwhile, public access to land remains strikingly limited — the Countryside and Rights of Way Act 2000 opened just 8% of England to the right to roam, compared with 97% of land in Scotland following the Land Reform Act 2003. The question of who owns the land, and who benefits from it, sits beneath almost every other policy debate — from housing affordability to food security to biodiversity.
+              Corporate and offshore ownership has added a new dimension to the opacity. Before the Register of Overseas Entities was introduced in 2022, an estimated 100,000 properties in England and Wales were held by companies registered in secrecy jurisdictions — from the British Virgin Islands to Jersey — with no requirement to disclose beneficial owners.<Cite nums={2} /> The housing market consequences of concentrated ownership are direct and measurable: major housebuilders hold land banks of over one million plots with planning permission, a practice critics call strategic land-banking that inflates prices by restricting supply. When agricultural land receives planning permission its value can increase 100-fold or more, yet the UK captures only around 25% of this land value uplift for public benefit, compared with 90% in the Netherlands. Meanwhile, public access to land remains strikingly limited — the Countryside and Rights of Way Act 2000 opened just 8% of England to the right to roam,<Cite nums={4} /> compared with 97% of land in Scotland following the Land Reform Act 2003.<Cite nums={5} /> The question of who owns the land, and who benefits from it, sits beneath almost every other policy debate — from housing affordability to food security to biodiversity.
             </p>
           </div>
         </section>
@@ -267,6 +277,10 @@ export default function LandOwnershipPage() {
             source="Source: Companies House — Register of Overseas Entities statistics 2025; HM Land Registry annual report 2024."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">

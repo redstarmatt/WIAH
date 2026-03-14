@@ -8,6 +8,13 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NatCen', dataset: 'British Social Attitudes Survey — trust in government', url: 'https://natcen.ac.uk/our-research/research/british-social-attitudes', date: '2024' },
+  { num: 2, name: 'Ipsos', dataset: 'Veracity Index — trust in NHS', url: 'https://www.ipsos.com/en-uk/trust-in-professions-veracity-index', date: '2024' },
+];
 
 interface DataPoint {
   year: number;
@@ -93,7 +100,7 @@ export default function TrustInGovernmentPage() {
         <section className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Trust in government fell to 24% in 2024 — among the lowest in 40 years of measurement. Trust in the NHS remains higher at 65% but has also fallen sharply from pre-pandemic levels. The data below draws on official sources to show how this has changed over the past decade and where the pressures are most acute.
+              Trust in government fell to 24% in 2024 — among the lowest in 40 years of measurement.<Cite nums={1} /> Trust in the NHS remains higher at 65% but has also fallen sharply from pre-pandemic levels.<Cite nums={2} /> The data below draws on official sources to show how this has changed over the past decade and where the pressures are most acute.
             </p>
             <p>
               The figures reflect a structural pattern rather than a short-term fluctuation. Understanding the scale of the issue is the first step toward holding policymakers to account for the decisions that shape these outcomes.
@@ -171,6 +178,10 @@ export default function TrustInGovernmentPage() {
             source="Source: Cabinet Office \u2014 Ministerial Code 2024. Committee on Standards in Public Life \u2014 annual report."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

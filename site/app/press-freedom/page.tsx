@@ -8,6 +8,15 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Reporters Without Borders', dataset: 'World Press Freedom Index', url: 'https://rsf.org/en/index', date: '2024', note: 'UK ranked 23rd of 180 countries; improved from 40th in 2017; methodology changed in 2022' },
+  { num: 2, name: 'Ofcom', dataset: 'Media Nations Report', date: '2023', note: 'Three companies control ~90% of national newspaper circulation' },
+  { num: 3, name: 'Press Gazette', dataset: 'Local News Tracker', date: '2023', note: '320 local newspapers closed since 2009; 58% of local authority areas have no dedicated reporter' },
+  { num: 4, name: 'Cairncross Review', dataset: 'A Sustainable Future for Journalism', date: '2019', note: 'Recommended public funding for local journalism; government committed only £2m to Future News Fund' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -78,10 +87,10 @@ export default function PressFreedomPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The UK's press freedom position has fluctuated significantly over the past decade. Reporters Without Borders (RSF) ranked the UK 40th out of 180 countries in 2017 and 2018, reflecting concerns about mass surveillance legislation, the imprisonment of a journalist for contempt of court, and the use of anti-terrorism powers to intercept journalists' communications. The ranking improved to 23rd by 2024, partly due to the methodology change RSF introduced in 2022 and partly reflecting genuine improvements in the legal environment following successful challenges to surveillance overreach at the European Court of Human Rights. Nevertheless, the UK sits below all Nordic countries, most of Western Europe, and several developing nations — a position inconsistent with its self-image as a beacon of free expression.
+              The UK's press freedom position has fluctuated significantly over the past decade. Reporters Without Borders (RSF) ranked the UK 40th out of 180 countries in 2017 and 2018, reflecting concerns about mass surveillance legislation, the imprisonment of a journalist for contempt of court, and the use of anti-terrorism powers to intercept journalists' communications. The ranking improved to 23rd by 2024, partly due to the methodology change RSF introduced in 2022 and partly reflecting genuine improvements in the legal environment following successful challenges to surveillance overreach at the European Court of Human Rights.<Cite nums={1} /> Nevertheless, the UK sits below all Nordic countries, most of Western Europe, and several developing nations — a position inconsistent with its self-image as a beacon of free expression.
             </p>
             <p>
-              Ownership concentration is the structural issue that indices measure poorly. Three companies — News UK (Murdoch), DMG Media (Rothermere), and Reach plc — control approximately 90% of national newspaper circulation and significant online readership. Local journalism has contracted sharply: 320 local newspapers have closed since 2009, and the BBC estimates that 58% of local authority areas in England now have no dedicated local news reporter. The Cairncross Review (2019) recommended public funding for local journalism; the government accepted the principle but committed only £2 million to a Future News Fund, which the NUJ described as inadequate. Broadcast media is regulated by Ofcom with statutory impartiality requirements, but print and online media face no equivalent obligation, creating an asymmetric information environment.
+              Ownership concentration is the structural issue that indices measure poorly. Three companies — News UK (Murdoch), DMG Media (Rothermere), and Reach plc — control approximately 90% of national newspaper circulation and significant online readership.<Cite nums={2} /> Local journalism has contracted sharply: 320 local newspapers have closed since 2009, and the BBC estimates that 58% of local authority areas in England now have no dedicated local news reporter.<Cite nums={3} /> The Cairncross Review (2019) recommended public funding for local journalism; the government accepted the principle but committed only £2 million to a Future News Fund, which the NUJ described as inadequate.<Cite nums={4} /> Broadcast media is regulated by Ofcom with statutory impartiality requirements, but print and online media face no equivalent obligation, creating an asymmetric information environment.
             </p>
             </div>
         </section>
@@ -168,6 +177,10 @@ export default function PressFreedomPage() {
             )}
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         {/* Sources */}
         <section className="border-t border-wiah-border pt-8 mt-12">

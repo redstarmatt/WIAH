@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Small boat Channel crossings, 2018–2025 (annual arrivals)
 const crossingsData = [299, 1843, 8466, 28526, 45755, 29437, 36816, 19200];
@@ -52,6 +54,12 @@ const backlogAnnotations: Annotation[] = [
   { date: new Date(2023, 0, 1), label: '2023: Clearing backlog operation begins' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Home Office', dataset: 'Irregular Migration to the UK Statistics', url: 'https://www.gov.uk/government/collections/irregular-migration-to-the-uk', date: '2025' },
+  { num: 2, name: 'Home Office', dataset: 'Immigration System Statistics', url: 'https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables', date: '2025' },
+  { num: 3, name: 'Home Office', dataset: 'Returns Statistics', url: 'https://www.gov.uk/government/collections/migration-statistics', date: '2025' },
+];
+
 export default function BorderSecurityPage() {
   return (
     <>
@@ -66,8 +74,8 @@ export default function BorderSecurityPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Small boat crossings of the English Channel have become the defining border security issue of the 2020s. From 299 arrivals in 2018, the annual total rose to 45,755 in 2022 before falling to 29,437 in 2023 and rising again to 36,816 in 2024. These numbers are small relative to overall immigration — net migration to the UK was around 700,000 in 2024 — but the crossings are dangerous, visible, and politically charged. At least 70 people have died attempting the crossing since 2018. The route is controlled by organised criminal smuggling networks operating from northern France and Belgium, charging £3,000–£6,000 per person for a place on an overcrowded inflatable dinghy.</p>
-            <p>Successive governments have pursued deterrence-based strategies with limited measurable effect. The Rwanda deportation policy, announced in 2022 and declared unlawful by the Supreme Court in 2023, consumed approximately £700 million without removing a single asylum seeker. France has received over £500 million in UK funding since 2018 to increase beach patrols and disrupt launch sites. Interception rates have risen — around 40% of launch attempts are now prevented — but crossings continue because demand is driven by conflict, persecution, and the absence of safe legal routes to claim asylum in the UK. Meanwhile, enforced returns of failed asylum seekers have fallen from 12,400 in 2018 to under 3,000 in 2025, undermining the credibility of the system.</p>
+            <p>Small boat crossings of the English Channel have become the defining border security issue of the 2020s. From 299 arrivals in 2018, the annual total rose to 45,755 in 2022 before falling to 29,437 in 2023 and rising again to 36,816 in 2024.<Cite nums={1} /> These numbers are small relative to overall immigration — net migration to the UK was around 700,000 in 2024 — but the crossings are dangerous, visible, and politically charged. At least 70 people have died attempting the crossing since 2018.<Cite nums={1} /> The route is controlled by organised criminal smuggling networks operating from northern France and Belgium, charging £3,000–£6,000 per person for a place on an overcrowded inflatable dinghy.</p>
+            <p>Successive governments have pursued deterrence-based strategies with limited measurable effect. The Rwanda deportation policy, announced in 2022 and declared unlawful by the Supreme Court in 2023, consumed approximately £700 million without removing a single asylum seeker. France has received over £500 million in UK funding since 2018 to increase beach patrols and disrupt launch sites. Interception rates have risen — around 40% of launch attempts are now prevented — but crossings continue because demand is driven by conflict, persecution, and the absence of safe legal routes to claim asylum in the UK.<Cite nums={1} /> Meanwhile, enforced returns of failed asylum seekers have fallen from 12,400 in 2018 to under 3,000 in 2025, undermining the credibility of the system.<Cite nums={3} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -146,6 +154,10 @@ export default function BorderSecurityPage() {
             source="Source: Home Office — Immigration System Statistics, 2025."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

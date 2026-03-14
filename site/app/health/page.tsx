@@ -13,6 +13,20 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Referral to Treatment (RTT) waiting times', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/rtt-waiting-times/', date: '2024' },
+  { num: 2, name: 'NHS England', dataset: 'KH03 Bed Availability and Occupancy', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/bed-availability-and-occupancy/', date: '2024' },
+  { num: 3, name: 'NHS England', dataset: 'Ambulance Quality Indicators', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/ambulance-quality-indicators/', date: '2024' },
+  { num: 4, name: 'NHS England', dataset: 'A&E Attendances and Emergency Admissions', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/', date: '2024' },
+  { num: 5, name: 'NHS Digital', dataset: 'Appointments in General Practice', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/appointments-in-general-practice', date: '2024' },
+  { num: 6, name: 'NHS Digital', dataset: 'NHS Dental Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/nhs-dental-statistics', date: '2024' },
+  { num: 7, name: 'NHS England', dataset: 'NHS Talking Therapies monthly statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-for-anxiety-and-depression-monthly-statistics', date: '2024' },
+  { num: 8, name: 'UKHSA', dataset: 'Measles notifications and confirmed cases', url: 'https://www.gov.uk/government/publications/measles-confirmed-cases', date: '2024' },
+  { num: 9, name: 'ONS', dataset: 'National life tables', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/lifeexpectancies/datasets/nationallifetablesunitedkingdomreferencetables', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -713,35 +727,38 @@ export default function HealthPage() {
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
               The NHS waiting list has grown from 4.4 million before the pandemic to 7.6 million, with
-              over 300,000 people waiting more than a year. The 18-week treatment target has not been met
+              over 300,000 people waiting more than a year.<Cite nums={1} /> The 18-week treatment target has not been met
               since 2016. Behind the backlog lies a chain of bottlenecks: hospitals at 92% bed occupancy
-              (above the 85% safe maximum), roughly 100,000 beds down from 145,000 in 2010, ambulances
+              (above the 85% safe maximum), roughly 100,000 beds down from 145,000 in 2010,<Cite nums={2} /> ambulances
               queuing outside full A&amp;E departments. Cat 2 response times have doubled to 35 minutes
-              against an 18-minute target. The four-hour A&amp;E standard has not been met since 2015;
-              in 2024, only 70% of patients were seen within four hours. At the front door, average GP
-              waits have tripled to 21 days and each GP now covers around 2,300 patients. The problem is
+              against an 18-minute target.<Cite nums={3} /> The four-hour A&amp;E standard has not been met since 2015;
+              in 2024, only 70% of patients were seen within four hours.<Cite nums={4} /> At the front door, average GP
+              waits have tripled to 21 days and each GP now covers around 2,300 patients.<Cite nums={5} /> The problem is
               not effort — 76 million appointments a month — but arithmetic: demand has outgrown
               capacity at every stage.
             </p>
             <p>
               The strain reaches well beyond hospitals. The proportion of adults seen by an NHS dentist
-              has fallen from 57% to 49% in seven years. Referrals to NHS talking therapies have grown
+              has fallen from 57% to 49% in seven years.<Cite nums={6} /> Referrals to NHS talking therapies have grown
               from 1.1 million to 1.6 million since 2016, with the recovery rate slowly improving from
-              45% to 52%. The waiting list is not experienced equally: people in the most deprived areas
+              45% to 52%.<Cite nums={7} /> The waiting list is not experienced equally: people in the most deprived areas
               wait around four weeks longer than those in the least deprived, a gap that has doubled
-              since 2019. And the UK lost its WHO measles elimination status in 2019 after MMR
+              since 2019.<Cite nums={1} /> And the UK lost its WHO measles elimination status in 2019 after MMR
               vaccination rates fell below the 95% herd immunity threshold — a 2024 outbreak in the
-              West Midlands produced over 2,000 confirmed cases.
+              West Midlands produced over 2,000 confirmed cases.<Cite nums={8} />
             </p>
             <p>
               Life expectancy reveals something deeper than an operational crisis. For decades, the UK
               added roughly 0.2 years of life per year. After 2011, that improvement stalled. Male life
-              expectancy sits at 79.0 years, female at 83.0. COVID caused a visible dip, but the
+              expectancy sits at 79.0 years, female at 83.0.<Cite nums={9} /> COVID caused a visible dip, but the
               flatlining began nearly a decade earlier. The UK is not alone — similar slowdowns appeared
               across wealthy nations — but the stall coincided with austerity-driven cuts to public
               health, social care, and local government. The causes remain debated; the trend does not.
             </p>
             </div>
+          <div className="mt-6">
+            <References items={editorialRefs} />
+          </div>
         </section>
 
         <SectionNav sections={[

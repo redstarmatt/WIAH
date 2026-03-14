@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // UK airport passengers millions, 2016–2024 — CAA Airport Statistics
 const ukPassengersValues = [225, 232, 238, 244, 252, 74, 166, 210, 266];
@@ -47,6 +49,12 @@ const annotations: Annotation[] = [
   { date: new Date(2018, 0, 1), label: '2018: Government approves Heathrow third runway' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Civil Aviation Authority', dataset: 'Airport Statistics', url: 'https://www.caa.co.uk/data-and-analysis/uk-aviation-market/airports/', date: '2024' },
+  { num: 2, name: 'Airports Commission', dataset: 'Final Report — Economic Analysis', url: 'https://www.gov.uk/government/publications/airports-commission-final-report', date: '2015' },
+  { num: 3, name: 'Climate Change Committee', dataset: 'Aviation sector emissions analysis', date: '2023' },
+];
+
 export default function AirportCapacityUtilisationPage() {
   return (
     <>
@@ -61,8 +69,8 @@ export default function AirportCapacityUtilisationPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Heathrow — the UK's primary international hub — handled approximately 81 million passengers in 2024 at 97% of operational capacity, the highest utilisation of any major European hub. The Airports Commission concluded in 2015 that a third runway was the right answer to the UK's capacity needs; the government accepted this in 2018, but legal challenges, the pandemic, and net zero debates have delayed a development consent order indefinitely. Gatwick has a DCO application in progress for a second runway adding approximately 15 million passengers. The geographic constraint is acute: the absence of a strong second hub outside London-Heathrow limits connectivity for businesses and individuals in northern and western England, where international routes are often thin, infrequent, and expensive.</p>
-            <p>For passengers and businesses today, the capacity constraint translates into higher fares on popular routes where demand exceeds supply, limited slot availability for new services, and the absence of direct connections to secondary international destinations. Heathrow's slot allocation system, where most slots are historically held by incumbent airlines, creates a significant barrier for new route entry. The Airports Commission estimated the trade cost of no Heathrow expansion at £14 billion annually by 2030 — connectivity foregone through routes that cannot be established and investment that goes to competing hubs in Amsterdam, Paris, Frankfurt, and Dubai instead. Aviation's climate obligations complicate the picture further — the sector accounted for approximately 7% of UK greenhouse gas emissions in 2023, and the Climate Change Committee has been clear that demand growth must be constrained to reach net zero.</p>
+            <p>Heathrow — the UK's primary international hub — handled approximately 81 million passengers in 2024 at 97% of operational capacity, the highest utilisation of any major European hub.<Cite nums={1} /> The Airports Commission concluded in 2015 that a third runway was the right answer to the UK's capacity needs; the government accepted this in 2018, but legal challenges, the pandemic, and net zero debates have delayed a development consent order indefinitely.<Cite nums={2} /> Gatwick has a DCO application in progress for a second runway adding approximately 15 million passengers. The geographic constraint is acute: the absence of a strong second hub outside London-Heathrow limits connectivity for businesses and individuals in northern and western England, where international routes are often thin, infrequent, and expensive.</p>
+            <p>For passengers and businesses today, the capacity constraint translates into higher fares on popular routes where demand exceeds supply, limited slot availability for new services, and the absence of direct connections to secondary international destinations. Heathrow's slot allocation system, where most slots are historically held by incumbent airlines, creates a significant barrier for new route entry. The Airports Commission estimated the trade cost of no Heathrow expansion at £14 billion annually by 2030 — connectivity foregone through routes that cannot be established and investment that goes to competing hubs in Amsterdam, Paris, Frankfurt, and Dubai instead.<Cite nums={2} /> Aviation's climate obligations complicate the picture further — the sector accounted for approximately 7% of UK greenhouse gas emissions in 2023, and the Climate Change Committee has been clear that demand growth must be constrained to reach net zero.<Cite nums={3} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -141,6 +149,9 @@ export default function AirportCapacityUtilisationPage() {
             source="Source: CAA — Airport Statistics 2024. Manchester Airport Group — Annual Report 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

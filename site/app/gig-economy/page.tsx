@@ -8,6 +8,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'TUC / University of Hertfordshire', dataset: 'Living on the Gig Economy Survey', url: 'https://www.tuc.org.uk/research-analysis/reports/gig-economy', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Annual Survey of Hours and Earnings', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours', date: '2024' },
+  { num: 3, name: 'Supreme Court', dataset: 'Uber BV v Aslam [2021] UKSC 5', date: '2021' },
+];
 
 // Estimated gig workers (millions), 2016–2024
 const gigWorkersMillion = [2.8, 3.1, 3.4, 3.6, 3.8, 4.0, 4.2, 4.3, 4.4];
@@ -66,8 +74,8 @@ export default function GigEconomyPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK gig economy encompasses work arrangements where people are engaged on a task-by-task basis through digital platforms, without guaranteed minimum hours or an employment contract. TUC and University of Hertfordshire surveys estimate approximately 4.4 million people perform gig work as their primary income source in 2024 — up from 2.8 million in 2016. Ride-hailing, food delivery, cleaning, care work, and freelance professional services account for the largest categories. The sector grew rapidly as smartphone penetration and algorithmic matching made platform labour economically viable. During COVID-19, delivery worker numbers surged as lockdowns drove demand for food and grocery delivery; many remained after restrictions lifted.</p>
-            <p>The economics of gig work are significantly worse than headline rates suggest. Once vehicle costs, fuel, insurance, equipment, data, and unpaid waiting time are factored in, effective hourly earnings for delivery and ride-hailing workers fall substantially below the National Minimum Wage. A 2021 TUC survey found that 38% of gig workers earned less than the National Living Wage after costs, with delivery workers most exposed. Gig workers are classified as self-employed for National Insurance purposes, meaning neither they nor their engagers pay employer NI contributions, reducing access to contributory benefits. The 2021 Supreme Court ruling in Uber v Aslam established that Uber drivers are workers — not self-employed — entitling them to minimum wage and holiday pay. The ruling set a precedent but did not automatically extend to all platform workers.</p>
+            <p>The UK gig economy encompasses work arrangements where people are engaged on a task-by-task basis through digital platforms, without guaranteed minimum hours or an employment contract. TUC and University of Hertfordshire surveys estimate approximately 4.4 million people perform gig work as their primary income source in 2024 — up from 2.8 million in 2016.<Cite nums={[1]} /> Ride-hailing, food delivery, cleaning, care work, and freelance professional services account for the largest categories. The sector grew rapidly as smartphone penetration and algorithmic matching made platform labour economically viable. During COVID-19, delivery worker numbers surged as lockdowns drove demand for food and grocery delivery; many remained after restrictions lifted.</p>
+            <p>The economics of gig work are significantly worse than headline rates suggest. Once vehicle costs, fuel, insurance, equipment, data, and unpaid waiting time are factored in, effective hourly earnings for delivery and ride-hailing workers fall substantially below the National Minimum Wage. A 2021 TUC survey found that 38% of gig workers earned less than the National Living Wage after costs, with delivery workers most exposed.<Cite nums={[1]} /> Gig workers are classified as self-employed for National Insurance purposes, meaning neither they nor their engagers pay employer NI contributions, reducing access to contributory benefits. The 2021 Supreme Court ruling in Uber v Aslam established that Uber drivers are workers — not self-employed — entitling them to minimum wage and holiday pay.<Cite nums={[3]} /> The ruling set a precedent but did not automatically extend to all platform workers.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -146,6 +154,10 @@ export default function GigEconomyPage() {
             source="Source: TUC — Living on the Gig Economy 2024. ONS — Labour Force Survey 2024. Supreme Court — Uber BV v Aslam [2021] UKSC 5."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

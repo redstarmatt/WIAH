@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Cataract waiting list (thousands) and median wait (weeks), 2016–2025
 const waitingListData = [110, 118, 122, 128, 134, 95, 330, 480, 580, 650];
@@ -57,6 +59,12 @@ const throughputAnnotations: Annotation[] = [
   { date: new Date(2023, 0, 1), label: '2023: High-volume surgical hubs open at scale' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Referral to Treatment Waiting Times', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/referral-to-treatment-waiting-times/', date: '2025' },
+  { num: 2, name: 'NHS Digital', dataset: 'Hospital Episode Statistics — Cataract Surgery', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/hospital-admitted-patient-care-activity', date: '2025' },
+  { num: 3, name: 'GIRFT', dataset: 'Ophthalmology National Report', url: 'https://gettingitrightfirsttime.co.uk/surgical_specialties/ophthalmology/', date: '2023' },
+];
+
 export default function CataractWaitsPage() {
   return (
     <>
@@ -71,8 +79,8 @@ export default function CataractWaitsPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Cataract surgery is the highest-volume planned operation in the NHS. Before the pandemic, around 443,000 procedures were performed per year in England, with a median wait of roughly 9 weeks from referral to treatment. The operation takes less than 30 minutes, is performed under local anaesthetic, and has a success rate above 99%. When COVID-19 suspended elective surgery in March 2020, cataract operations dropped to around 198,000 for the year — fewer than half the usual volume. Demand, however, did not pause. Cataracts are age-related and progressive: an ageing population means referral volumes were already climbing before the pandemic, and the backlog that accumulated in 2020 has never been fully cleared.</p>
-            <p>By 2025, 650,000 people are waiting — a fivefold increase on 2019 — with a median wait of 41 weeks, more than double the NHS 18-week constitutional standard. The consequences are not trivial: patients waiting more than six months face measurable deterioration in visual acuity, increased falls risk (hip fractures among elderly patients with untreated cataracts cost the NHS far more than the surgery itself), loss of driving licences, social isolation, and depression. The elective recovery programme launched in 2022 has pushed surgical volumes back to around 438,000 per year — broadly back to pre-pandemic throughput — but this is barely enough to stabilise the backlog, let alone reduce it. High-volume surgical hubs — dedicated cataract centres capable of 30 or more operations per day — offer the most promising route to clearance, with 12 operational and 8 more planned by 2026.</p>
+            <p>Cataract surgery is the highest-volume planned operation in the NHS. Before the pandemic, around 443,000 procedures were performed per year in England, with a median wait of roughly 9 weeks from referral to treatment.<Cite nums={[1, 2]} /> The operation takes less than 30 minutes, is performed under local anaesthetic, and has a success rate above 99%. When COVID-19 suspended elective surgery in March 2020, cataract operations dropped to around 198,000 for the year — fewer than half the usual volume.<Cite nums={2} /> Demand, however, did not pause. Cataracts are age-related and progressive: an ageing population means referral volumes were already climbing before the pandemic, and the backlog that accumulated in 2020 has never been fully cleared.</p>
+            <p>By 2025, 650,000 people are waiting — a fivefold increase on 2019 — with a median wait of 41 weeks, more than double the NHS 18-week constitutional standard.<Cite nums={1} /> The consequences are not trivial: patients waiting more than six months face measurable deterioration in visual acuity, increased falls risk (hip fractures among elderly patients with untreated cataracts cost the NHS far more than the surgery itself), loss of driving licences, social isolation, and depression. The elective recovery programme launched in 2022 has pushed surgical volumes back to around 438,000 per year — broadly back to pre-pandemic throughput — but this is barely enough to stabilise the backlog, let alone reduce it.<Cite nums={2} /> High-volume surgical hubs — dedicated cataract centres capable of 30 or more operations per day — offer the most promising route to clearance, with 12 operational and 8 more planned by 2026.<Cite nums={3} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -152,6 +160,10 @@ export default function CataractWaitsPage() {
             source="Source: NHS England — Elective Recovery Programme 2024. GIRFT — Ophthalmology National Report 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

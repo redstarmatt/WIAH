@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Firefighter numbers (thousands), 2010–2024 — NFCC / Home Office
 const firefighterValues = [48.0, 47.5, 46.5, 45.5, 44.5, 43.8, 43.0, 42.5, 42.0, 41.8, 42.0, 41.5, 41.0, 40.8, 41.0];
@@ -49,6 +51,12 @@ const firefighterAnnotations: Annotation[] = [
   { date: new Date(2010, 0, 1), label: '2010: Austerity cuts begin' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Home Office / NFCC', dataset: 'Fire statistics and workforce data', url: 'https://www.gov.uk/government/collections/fire-statistics', date: '2024' },
+  { num: 2, name: 'Home Office', dataset: 'Fire statistics: response times', url: 'https://www.gov.uk/government/statistics/fire-statistics-monitor', date: '2024' },
+  { num: 3, name: 'HMICFRS', dataset: 'Fire and rescue service inspections', date: '2024' },
+];
+
 export default function FireServicePage() {
   return (
     <>
@@ -63,8 +71,8 @@ export default function FireServicePage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The fire and rescue service in England has experienced significant reductions in staffing and funding since 2010 as part of austerity-era local government cuts. Firefighter numbers fell from approximately 48,000 in 2010 to around 41,000 in 2024 — a reduction of 15%. Over the same period, fire stations have been closed and appliances decommissioned, contributing to a rise in average response times from 7.2 minutes in 2010 to 8.8 minutes in 2024. Every additional minute of response time in a dwelling fire substantially increases the risk of the fire becoming uncontrolled and the probability of fire-related deaths.</p>
-            <p>The paradox is that headline fire statistics have improved: dwelling fires fell from 50,000 in 2010 to around 34,000 in 2024, driven largely by the spread of smoke alarms, changes in household products (reduced flammability requirements), and changes in cooking patterns. This has allowed fire service leaders and politicians to argue that capacity reductions are sustainable. But the fire service's core role has diversified significantly beyond fighting fires — road traffic collisions, flooding response, building decontamination, and mutual aid in civil emergencies now constitute a major and growing part of demand. His Majesty's Inspectorate of Constabulary and Fire and Rescue Services (HMICFRS) has repeatedly found fire services to be 'inadequate' or 'requiring improvement' in areas including culture, diversity, and response capability.</p>
+            <p>The fire and rescue service in England has experienced significant reductions in staffing and funding since 2010 as part of austerity-era local government cuts. Firefighter numbers fell from approximately 48,000 in 2010 to around 41,000 in 2024 — a reduction of 15%.<Cite nums={[1]} /> Over the same period, fire stations have been closed and appliances decommissioned, contributing to a rise in average response times from 7.2 minutes in 2010 to 8.8 minutes in 2024.<Cite nums={[2]} /> Every additional minute of response time in a dwelling fire substantially increases the risk of the fire becoming uncontrolled and the probability of fire-related deaths.</p>
+            <p>The paradox is that headline fire statistics have improved: dwelling fires fell from 50,000 in 2010 to around 34,000 in 2024, driven largely by the spread of smoke alarms, changes in household products (reduced flammability requirements), and changes in cooking patterns.<Cite nums={[1]} /> This has allowed fire service leaders and politicians to argue that capacity reductions are sustainable. But the fire service's core role has diversified significantly beyond fighting fires — road traffic collisions, flooding response, building decontamination, and mutual aid in civil emergencies now constitute a major and growing part of demand. His Majesty's Inspectorate of Constabulary and Fire and Rescue Services (HMICFRS) has repeatedly found fire services to be 'inadequate' or 'requiring improvement' in areas including culture, diversity, and response capability.<Cite nums={[3]} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -145,6 +153,9 @@ export default function FireServicePage() {
             source="Source: Home Office — Fire statistics: dwelling fires 2024. NFCC — Prevention activity data 2023."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

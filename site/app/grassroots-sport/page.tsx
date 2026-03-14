@@ -8,6 +8,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Swim England / Sport England', dataset: 'Facilities tracker / State of the Nation report', url: 'https://www.sportengland.org/research-and-data/facilities', date: '2024' },
+  { num: 2, name: 'Sport England', dataset: 'Active Lives Adult Survey', url: 'https://www.sportengland.org/research-and-data/data/active-lives', date: '2024' },
+  { num: 3, name: 'Sport England', dataset: 'Active Lives Children Survey', url: 'https://www.sportengland.org/research-and-data/data/active-lives', date: '2024' },
+];
 
 // Sports/leisure facilities closed (cumulative), 2010–2024
 const facilitiesClosedCumulative = [0, 100, 200, 320, 440, 560, 640, 720, 800, 860, 920, 980, 1050, 1120, 1200];
@@ -72,8 +80,8 @@ export default function GrassrootsSportPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England lost 1,200 public sports and leisure facilities between 2010 and 2024 — an average of 86 per year across 14 years of local government financial pressure. Swimming pools account for the largest share: over 400 public pools closed in this period, with many more reducing operating hours. The pattern is geographically uneven. Facilities closed fastest in deprived areas where councils faced the most severe funding pressure and commercial replacement providers saw the least commercial opportunity. The result is that access to sport and physical activity has become more stratified by income and geography than at any point since the post-war expansion of municipal leisure provision.</p>
-            <p>The participation data tells a story of stagnation. The adult weekly sport participation rate reached 63% in 2019, fell during the pandemic, and had recovered only to 61.3% by 2024 — below the pre-pandemic peak. Child activity is particularly concerning: only 46% of children meet the Chief Medical Officer's guideline of 60 minutes of moderate-to-vigorous activity per day. The income gradient is steep — Sport England data consistently shows children from families in the lowest income quintile are 50% less likely to meet activity guidelines than those in the highest. The closure of free or low-cost council facilities, and the reduction of school sport in the curriculum since 2010, are the structural drivers.</p>
+            <p>England lost 1,200 public sports and leisure facilities between 2010 and 2024 — an average of 86 per year across 14 years of local government financial pressure.<Cite nums={1} /> Swimming pools account for the largest share: over 400 public pools closed in this period, with many more reducing operating hours.<Cite nums={1} /> The pattern is geographically uneven. Facilities closed fastest in deprived areas where councils faced the most severe funding pressure and commercial replacement providers saw the least commercial opportunity.</p>
+            <p>The participation data tells a story of stagnation. The adult weekly sport participation rate reached 63% in 2019, fell during the pandemic, and had recovered only to 61.3% by 2024 — below the pre-pandemic peak.<Cite nums={2} /> Child activity is particularly concerning: only 46% of children meet the Chief Medical Officer's guideline of 60 minutes of moderate-to-vigorous activity per day.<Cite nums={3} /> The income gradient is steep — Sport England data consistently shows children from families in the lowest income quintile are 50% less likely to meet activity guidelines than those in the highest.<Cite nums={3} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -152,6 +160,9 @@ export default function GrassrootsSportPage() {
             source="Source: Sport England — Active Lives 2024. DCMS — Multi-Sport Grassroots Facilities Programme progress report 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

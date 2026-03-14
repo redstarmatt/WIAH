@@ -8,6 +8,8 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // -- Types ------------------------------------------------------------------
 
@@ -28,6 +30,14 @@ interface DomesticAbuseOutcomesData {
 function yearToDate(y: number): Date {
   return new Date(y, 0, 1)
 }
+
+// -- References -------------------------------------------------------------
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Domestic Abuse in England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/bulletins/domesticabuseinenglandandwales', date: '2024' },
+  { num: 2, name: 'CPS', dataset: 'Violence Against Women and Girls Report', url: 'https://www.cps.gov.uk/statistics', date: '2023' },
+  { num: 3, name: 'Home Office', dataset: 'Domestic Abuse Act 2021 Statutory Guidance', url: 'https://www.gov.uk/government/publications/domestic-abuse-act-2021', date: '2023' },
+];
 
 // -- Page -------------------------------------------------------------------
 
@@ -87,8 +97,8 @@ export default function DomesticAbuseOutcomesPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Domestic abuse accounts for roughly one in five of all incidents attended by police in England and Wales — over 1.5 million calls per year. Yet only 9.8% result in prosecution: 91,000 prosecutions were initiated in 2023 against 1.5 million incidents recorded. The Domestic Abuse Act 2021 created the offence of controlling and coercive behaviour and introduced domestic abuse protection orders, but take-up of the new tools has been slow. Attrition between incident and prosecution happens at multiple stages: many victims do not support prosecution due to fear of retaliation, economic dependence, or distrust of the criminal justice system. Evidence-led prosecution — using body-worn camera footage, medical evidence, and 999 recordings without victim cooperation — has been developed but requires specialist resource not consistently deployed across forces. The court backlog, exceeding 65,000 Crown Court cases, means that charged perpetrators may wait over a year for trial, during which time victims remain at risk and frequently withdraw.</p>
-            <p>The conviction rate for cases that do reach court is 77%, suggesting well-evidenced prosecutions generally succeed; the problem is the vast gap between incident and charge. Specialist domestic abuse courts, independent domestic violence advisers (IDVAs), and multi-agency risk assessment conferences have all demonstrated improved outcomes for victims and increased successful prosecutions. The evidence base is strong — the constraint is funding: IDVAs and specialist courts require sustained resource from local authorities and police and crime commissioners who are themselves under significant budget pressure, producing a system that absorbs enormous resource at the incident end while investing far less in the specialist capacity that would convert more of those calls into protection and accountability.</p>
+            <p>Domestic abuse accounts for roughly one in five of all incidents attended by police in England and Wales — over 1.5 million calls per year.<Cite nums={1} /> Yet only 9.8% result in prosecution: 91,000 prosecutions were initiated in 2023 against 1.5 million incidents recorded.<Cite nums={2} /> The Domestic Abuse Act 2021 created the offence of controlling and coercive behaviour and introduced domestic abuse protection orders, but take-up of the new tools has been slow.<Cite nums={3} /> Attrition between incident and prosecution happens at multiple stages: many victims do not support prosecution due to fear of retaliation, economic dependence, or distrust of the criminal justice system. Evidence-led prosecution — using body-worn camera footage, medical evidence, and 999 recordings without victim cooperation — has been developed but requires specialist resource not consistently deployed across forces. The court backlog, exceeding 65,000 Crown Court cases, means that charged perpetrators may wait over a year for trial, during which time victims remain at risk and frequently withdraw.</p>
+            <p>The conviction rate for cases that do reach court is 77%, suggesting well-evidenced prosecutions generally succeed; the problem is the vast gap between incident and charge.<Cite nums={2} /> Specialist domestic abuse courts, independent domestic violence advisers (IDVAs), and multi-agency risk assessment conferences have all demonstrated improved outcomes for victims and increased successful prosecutions. The evidence base is strong — the constraint is funding: IDVAs and specialist courts require sustained resource from local authorities and police and crime commissioners who are themselves under significant budget pressure, producing a system that absorbs enormous resource at the incident end while investing far less in the specialist capacity that would convert more of those calls into protection and accountability.</p>
           </div>
         </section>
 
@@ -148,6 +158,10 @@ export default function DomesticAbuseOutcomesPage() {
             />
           </section>
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Average Band D council tax £/year, 2010–2024 (DLUHC)
 const councilTaxValues = [1196, 1196, 1196, 1200, 1252, 1337, 1439, 1484, 1530, 1591, 1671, 1756, 1898, 2065, 2171];
@@ -44,6 +46,12 @@ const annotations2: Annotation[] = [
   { date: new Date(2020, 5, 1), label: '2020: COVID grants (temporary)' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DLUHC', dataset: 'Council Tax Levels Set by Local Authorities', url: 'https://www.gov.uk/government/collections/council-tax-statistics', date: '2024' },
+  { num: 2, name: 'HM Treasury / DLUHC', dataset: 'Local Authority Revenue Expenditure and Financing', url: 'https://www.gov.uk/government/collections/local-authority-revenue-expenditure-and-financing', date: '2024' },
+  { num: 3, name: 'Institute for Fiscal Studies', dataset: 'Local Government Funding: The Picture in 2024', url: 'https://ifs.org.uk/publications/local-government-funding-picture-2024', date: '2024' },
+];
+
 export default function CouncilTaxPage() {
   return (
     <>
@@ -58,8 +66,8 @@ export default function CouncilTaxPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Council tax has risen every year since 2016 — yet local services have deteriorated in almost every area of provision. This paradox defines English local government in the 2020s. Central government grants — which historically funded the majority of council spending — have been cut by over 40% in real terms since 2010. Council tax revenue has risen, but from a much lower base and at a rate constrained by referendum limits (currently 5% per year including a 2% adult social care precept). The net result is that councils are collecting more from residents while spending less on them, as a growing share of income is consumed by the rocketing cost of adult social care, children's services, and temporary accommodation.</p>
-            <p>The average Band D council tax bill in England reached £2,171 in 2024 — up from £1,439 in 2010, and up 25% in real terms since 2016. These averages conceal enormous variation. In some London boroughs, bills remain under £1,500; in areas with high demand and low property values, bills exceed £2,500. The failure to revalue properties since 1991 means council tax is profoundly regressive: a £500,000 house in a northern town pays the same as a £100,000 house in the same band, while a £10 million mansion in London pays only three times as much as a £150,000 flat. This frozen 1991 valuation system has never been reformed, despite repeated calls from economists and housing experts.</p>
+            <p>Council tax has risen every year since 2016 — yet local services have deteriorated in almost every area of provision.<Cite nums={1} /> Central government grants — which historically funded the majority of council spending — have been cut by over 40% in real terms since 2010.<Cite nums={2} /> Council tax revenue has risen, but from a much lower base and at a rate constrained by referendum limits (currently 5% per year including a 2% adult social care precept). The net result is that councils are collecting more from residents while spending less on them, as a growing share of income is consumed by the rocketing cost of adult social care, children's services, and temporary accommodation.<Cite nums={3} /></p>
+            <p>The average Band D council tax bill in England reached £2,171 in 2024 — up from £1,439 in 2010, and up 25% in real terms since 2016.<Cite nums={1} /> These averages conceal enormous variation. In some London boroughs, bills remain under £1,500; in areas with high demand and low property values, bills exceed £2,500.<Cite nums={1} /> The failure to revalue properties since 1991 means council tax is profoundly regressive: a £500,000 house in a northern town pays the same as a £100,000 house in the same band, while a £10 million mansion in London pays only three times as much as a £150,000 flat.<Cite nums={3} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -138,6 +146,9 @@ export default function CouncilTaxPage() {
             source="Source: DLUHC — English Devolution Bill 2025. Combined authority spending reviews 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

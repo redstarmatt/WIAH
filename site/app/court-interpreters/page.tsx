@@ -8,6 +8,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // Interpreter complaints/failures per year, 2014–2024 (MOJ)
 const failuresValues = [8200, 8800, 9100, 9500, 9800, 10200, 10500, 7800, 8400, 9700, 10200];
@@ -46,6 +48,12 @@ const annotations2: Annotation[] = [
   { date: new Date(2012, 5, 1), label: '2012: Outsourcing begins — pay cut 40%' },
 ];
 
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ministry of Justice', dataset: 'Court Interpreting Services Statistics', url: 'https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service', date: '2024' },
+  { num: 2, name: 'NRPSI', dataset: 'Annual Report — Membership Statistics', url: 'https://www.nrpsi.org.uk', date: '2024' },
+  { num: 3, name: 'National Audit Office', dataset: 'Language Services in the Justice System', url: 'https://www.nao.org.uk', date: '2023' },
+];
+
 export default function CourtInterpretersPage() {
   return (
     <>
@@ -60,8 +68,8 @@ export default function CourtInterpretersPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>In 2012, the Ministry of Justice outsourced court interpreting to private contractors — first Capita, then thebigword from 2016 — replacing a system where courts booked qualified interpreters directly from the National Register of Public Service Interpreters. The National Audit Office found significant deterioration in quality. Pay rates for interpreters were cut by roughly 40%, and travel expenses were no longer reimbursed. NRPSI membership fell 30%, from 2,800 in 2012 to under 2,000 today. Qualified interpreters left the profession in large numbers, and those who remain are increasingly stretched across more than 300 languages spoken in the UK. Wrong-language bookings now affect more than 400 hearings a year.</p>
-            <p>When an interpreter fails to appear, or is incompetent, trials must be adjourned. Witnesses travel home and return weeks later, juries are dismissed and re-empanelled, defendants on remand spend additional weeks in custody, and victims wait even longer. The estimated cost to the court system is £18 million a year. Article 6 of the ECHR guarantees the right to a fair trial including the right to an interpreter. Video remote interpreting, expanded during COVID, now handles 60% of non-complex hearings, but quality concerns persist: nonverbal cues are lost on screen, audio lag causes confusion, and defendants cannot fully participate in their own cases.</p>
+            <p>In 2012, the Ministry of Justice outsourced court interpreting to private contractors — first Capita, then thebigword from 2016 — replacing a system where courts booked qualified interpreters directly from the National Register of Public Service Interpreters. The National Audit Office found significant deterioration in quality.<Cite nums={3} /> Pay rates for interpreters were cut by roughly 40%, and travel expenses were no longer reimbursed. NRPSI membership fell 30%, from 2,800 in 2012 to under 2,000 today.<Cite nums={2} /> Qualified interpreters left the profession in large numbers, and those who remain are increasingly stretched across more than 300 languages spoken in the UK. Wrong-language bookings now affect more than 400 hearings a year.<Cite nums={1} /></p>
+            <p>When an interpreter fails to appear, or is incompetent, trials must be adjourned. Witnesses travel home and return weeks later, juries are dismissed and re-empanelled, defendants on remand spend additional weeks in custody, and victims wait even longer. The estimated cost to the court system is £18 million a year.<Cite nums={3} /> Video remote interpreting, expanded during COVID, now handles 60% of non-complex hearings, but quality concerns persist: nonverbal cues are lost on screen, audio lag causes confusion, and defendants cannot fully participate in their own cases.<Cite nums={1} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -140,6 +148,9 @@ export default function CourtInterpretersPage() {
             source="Source: Ministry of Justice — Court Interpreting Services Statistics 2024. HMCTS Remote Hearing Pilot Evaluation 2024."
           />
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <section id="sec-sources" className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
           <div className="text-sm text-wiah-mid font-mono space-y-3">

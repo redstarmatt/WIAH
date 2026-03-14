@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'KH03 Bed Availability and Occupancy', date: '2024/25' },
+  { num: 2, name: 'Royal College of Psychiatrists', dataset: 'Bed occupancy safe limit guidance (85%)', date: '2024' },
+  { num: 3, name: 'NHS Digital', dataset: 'Mental Health Act Statistics — annual detentions', date: '2024/25' },
+  { num: 4, name: 'NHS England', dataset: 'Out of Area Placements in Mental Health Services', date: '2025' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -139,9 +148,9 @@ export default function MentalHealthCrisisBedsPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England had 33,100 mental health inpatient beds in 1998. Today that figure stands at around 17,400 -- a reduction of {bedReduction}% over 27 years, while the population has grown by over 10 million. The reduction was originally justified by the move towards &ldquo;care in the community,&rdquo; the idea that people would be treated closer to home through expanded community mental health services. Those community services were never funded at the scale required. The result is a system where acute beds are almost permanently full, crisis teams are overwhelmed, and people in severe psychiatric distress are turned away from hospital or detained under the Mental Health Act because voluntary admission is no longer available.</p>
-            <p>The Royal College of Psychiatrists considers occupancy above 85% to be unsafe -- it leaves no capacity for emergency admissions and forces premature discharges to free beds. The national average has been above 90% since 2017 and sits at 92.7% in 2025, with London trusts routinely exceeding 96%. When a local unit is full, patients are placed in out-of-area beds, sometimes hundreds of miles from family and support networks. These out-of-area placements (OAPs) peaked at 6,500 in 2019; the government target to eliminate them entirely has been missed repeatedly, though numbers have fallen to around 4,400 in 2025.</p>
-            <p>Detentions under the Mental Health Act have risen from 48,600 in 2010 to over 68,000 in 2025 -- a 40% increase. Black people are detained at more than four times the rate of white people, a disparity that has persisted for decades. The Mental Health Act reform, which received Royal Assent in 2025, aims to reduce detentions and address racial disparities, but implementation depends on the availability of community alternatives that currently do not exist at sufficient scale.</p>
+            <p>England had 33,100 mental health inpatient beds in 1998. Today that figure stands at around 17,400 -- a reduction of {bedReduction}% over 27 years<Cite nums={1} />, while the population has grown by over 10 million. The reduction was originally justified by the move towards &ldquo;care in the community,&rdquo; the idea that people would be treated closer to home through expanded community mental health services. Those community services were never funded at the scale required. The result is a system where acute beds are almost permanently full, crisis teams are overwhelmed, and people in severe psychiatric distress are turned away from hospital or detained under the Mental Health Act because voluntary admission is no longer available.</p>
+            <p>The Royal College of Psychiatrists considers occupancy above 85% to be unsafe<Cite nums={2} /> -- it leaves no capacity for emergency admissions and forces premature discharges to free beds. The national average has been above 90% since 2017 and sits at 92.7% in 2025, with London trusts routinely exceeding 96%.<Cite nums={1} /> When a local unit is full, patients are placed in out-of-area beds, sometimes hundreds of miles from family and support networks. These out-of-area placements (OAPs) peaked at 6,500 in 2019; the government target to eliminate them entirely has been missed repeatedly, though numbers have fallen to around 4,400 in 2025.<Cite nums={4} /></p>
+            <p>Detentions under the Mental Health Act have risen from 48,600 in 2010 to over 68,000 in 2025 -- a 40% increase.<Cite nums={3} /> Black people are detained at more than four times the rate of white people, a disparity that has persisted for decades. The Mental Health Act reform, which received Royal Assent in 2025, aims to reduce detentions and address racial disparities, but implementation depends on the availability of community alternatives that currently do not exist at sufficient scale.</p>
           </div>
         </section>
 
@@ -299,6 +308,10 @@ export default function MentalHealthCrisisBedsPage() {
             source="Source: NHS England — Out of Area Placements in Mental Health Services, monthly data, 2025."
           />
         </ScrollReveal>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>

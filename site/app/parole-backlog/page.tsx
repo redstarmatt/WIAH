@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Parole Board for England and Wales', dataset: 'Annual Report and Accounts', url: 'https://www.gov.uk/government/organisations/parole-board/about/statistics', date: '2024/25' },
+  { num: 2, name: 'Ministry of Justice', dataset: 'Offender Management Statistics', url: 'https://www.gov.uk/government/statistics/offender-management-statistics-quarterly', date: 'Q4 2024' },
+  { num: 3, name: 'HM Inspectorate of Prisons', dataset: 'Annual Report — IPP prisoner conditions', url: 'https://www.justiceinspectorates.gov.uk/hmiprisons/', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -152,14 +160,18 @@ export default function ParoleBacklogPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              When a prisoner reaches the end of their minimum tariff, they have a legal right to a Parole Board hearing to determine whether they can be safely released. That right is now routinely delayed by over a year. The backlog of cases awaiting a hearing has risen from around 6,200 in 2019 to over 12,400 in early 2025 — a doubling driven by a pandemic that froze hearings, a series of high-profile cases that triggered procedural reforms, and a prison system so overcrowded that moving prisoners to hearing-ready conditions has become logistically difficult.
+              When a prisoner reaches the end of their minimum tariff, they have a legal right to a Parole Board hearing to determine whether they can be safely released. That right is now routinely delayed by over a year. The backlog of cases awaiting a hearing has risen from around 6,200 in 2019 to over 12,400 in early 2025<Cite nums={1} /> — a doubling driven by a pandemic that froze hearings, a series of high-profile cases that triggered procedural reforms, and a prison system so overcrowded that moving prisoners to hearing-ready conditions has become logistically difficult.
             </p>
             <p>
-              The human cost is significant. More than 7,200 prisoners are currently held beyond their minimum tariff — legally detained past the point their sentence required. For indeterminate-sentence prisoners (IPP prisoners), many of whom received short minimum terms years ago, the backlog compounds an already Kafkaesque situation: they cannot demonstrate rehabilitation without access to courses, and they cannot access courses without a hearing date. The European Court of Human Rights has found the UK in violation of Article 5 (right to liberty) in multiple IPP cases. Meanwhile, every prisoner held beyond tariff occupies a cell in a system running at 99% capacity, creating a cascading pressure that worsens conditions for everyone.
+              The human cost is significant. More than 7,200 prisoners are currently held beyond their minimum tariff<Cite nums={2} /> — legally detained past the point their sentence required. For indeterminate-sentence prisoners (IPP prisoners), many of whom received short minimum terms years ago, the backlog compounds an already Kafkaesque situation: they cannot demonstrate rehabilitation without access to courses, and they cannot access courses without a hearing date. The European Court of Human Rights has found the UK in violation of Article 5 (right to liberty) in multiple IPP cases. Meanwhile, every prisoner held beyond tariff occupies a cell in a system running at 99% capacity<Cite nums={3} />, creating a cascading pressure that worsens conditions for everyone.
             </p>
             <p>
-              The Parole Board has recruited additional members and accelerated the use of remote hearings since 2021, completing around 8,200 oral hearings in 2024/25 — up from a COVID low of 5,200 but still insufficient to clear the growing caseload. The introduction of a ministerial veto power over release decisions in certain cases has added legal complexity, with judicial reviews absorbing Board resources. Without a sustained increase in hearing capacity, the backlog will continue to grow, and thousands of prisoners will remain locked in a system that has already determined their minimum punishment is complete.
+              The Parole Board has recruited additional members and accelerated the use of remote hearings since 2021, completing around 8,200 oral hearings in 2024/25 — up from a COVID low of 5,200<Cite nums={1} /> but still insufficient to clear the growing caseload. The introduction of a ministerial veto power over release decisions in certain cases has added legal complexity, with judicial reviews absorbing Board resources. Without a sustained increase in hearing capacity, the backlog will continue to grow, and thousands of prisoners will remain locked in a system that has already determined their minimum punishment is complete.
             </p>
+          </div>
+
+          <div className="mt-6">
+            <References items={editorialRefs} />
           </div>
         </section>
 

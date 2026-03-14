@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Average Weekly Earnings (EARN01) — real terms', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/averageweeklyearningsearn01', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Consumer Price Inflation — CPI peak 11.1%', url: 'https://www.ons.gov.uk/economy/inflationandpriceindices', date: '2023' },
+  { num: 3, name: 'ONS', dataset: 'Labour Force Survey — Economic Inactivity due to long-term sickness', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/inactivity', date: '2024', note: '2.8 million working-age adults inactive due to sickness' },
+];
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -211,11 +219,11 @@ export default function WorkPage() {
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
               Real average weekly pay hit £527 in 2024 — finally overtaking the
-              £499 recorded before the financial crisis in 2008. That gap took 15 years
+              £499 recorded before the financial crisis in 2008.<Cite nums={1} /> That gap took 15 years
               to close, the longest wage stagnation in modern British history. Two inflation
               shocks explain why: the first in 2011–12 eroded the tentative post-crash
               recovery, and the second in 2022–23 — when CPI peaked at 11.1%,
-              the worst since 1981 — wiped out nominal gains all over again. For the
+              the worst since 1981 — wiped out nominal gains all over again.<Cite nums={2} /> For the
               median worker, the practical effect was a decade and a half in which pay rises
               never outran the cost of living.
             </p>
@@ -223,7 +231,7 @@ export default function WorkPage() {
               Unemployment at 4.4% looks reassuring, but the headline masks a composition
               problem. The share of working-age adults economically inactive due to long-term
               sickness reached 8.4% in 2024, up from 6.0% in 2019 — roughly 2.8 million
-              people no longer in or seeking work. Mental health conditions, musculoskeletal
+              people no longer in or seeking work.<Cite nums={3} /> Mental health conditions, musculoskeletal
               disorders, and the lingering effects of long COVID all contribute, but the
               proximate cause is the NHS backlog: people who cannot get treated cannot return
               to work. Britain's health crisis and its labour-market crisis are, in
@@ -354,6 +362,10 @@ export default function WorkPage() {
               </p>
             </section>
           )}
+        </div>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
         </div>
 
         {/* Sources */}
