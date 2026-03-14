@@ -128,6 +128,13 @@ export default function TopicPage() {
           colour="#6B7280"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>The UK visa system operates at two speeds. Skilled worker visas, which employers pay a premium to sponsor, now have a median processing time of 12 days, down from 21 in 2022, reflecting a deliberate prioritisation of economically valuable migration.<Cite nums={1} /> Family visas tell a different story: the average wait is 60 days, with some applicants waiting over six months, separated from partners and children while caseworkers process complex eligibility requirements including the minimum income threshold, which rose to £29,000 in 2024. Across all categories, only 68% of applications are cleared within the published service standard, meaning one in three applicants faces delays beyond what the Home Office itself considers acceptable.</p>
+            <p>The backlogs that built up through 2021-22, driven by the simultaneous arrival of the post-Brexit points-based system, the Afghanistan resettlement scheme and the Ukraine visa programmes, have partially cleared but left lasting scars.<Cite nums={2} /> UKVI processing capacity was overwhelmed at precisely the moment demand spiked, and recovery has been uneven across visa types. The 2024 rollout of the eVisa system has reduced administrative friction for routine applications, but the underlying challenge is structural: the Home Office processes over 3 million visa decisions per year with a caseworker workforce that has not grown proportionately. For applicants in less commercially prioritised categories, particularly family reunion and settlement, the system remains slow, opaque and deeply stressful.</p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

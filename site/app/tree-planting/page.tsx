@@ -126,6 +126,13 @@ export default function TopicPage() {
           colour="#2A9D8F"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>The UK planted 13,700 hectares of new woodland in 2023-24, a gradual improvement from the low point of 9,200 hectares in 2019 but still less than half the 30,000 hectares per year the Climate Change Committee says is needed to meet net zero commitments.<Cite nums={1} /> Scotland accounts for roughly 70% of all UK planting, while England, which has the lowest woodland cover of any large European country at 10%, planted just 3,100 hectares. The bottleneck is not a lack of willing landowners but a planning and approval system that takes an average of two years to process applications, combined with grant schemes that have been redesigned repeatedly, undermining confidence among farmers and land managers considering long-term land use change.</p>
+            <p>The gap between ambition and delivery has consequences beyond carbon. Woodland creation is central to flood risk reduction, biodiversity recovery and water quality improvement, all areas where the UK is falling behind its own targets.<Cite nums={2} /> At the current planting rate, it would take over 60 years to reach the 30,000 hectare annual target cumulatively, and the trees planted today will take 15-20 years to reach meaningful carbon sequestration capacity. The 25 Year Environment Plan set a target of 12% woodland cover for England; at current rates, that target will not be met until well into the 2070s. Sustained acceleration requires not just more funding but a fundamental simplification of the approvals process.</p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },
