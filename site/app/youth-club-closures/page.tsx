@@ -242,7 +242,7 @@ export default function YouthClubClosuresPage() {
             title="What's improving"
             value="National Youth Guarantee"
             unit="Commitment to youth provision"
-            description="The National Youth Guarantee (2021) commits to a youth club, volunteering opportunity, and work experience place for every young person in England. Funding increased by £50 million in 2024, with a further £100 million committed in the 2025 spending review. The Uniformed Youth Fund supports Scout, Guide, and Cadet groups in areas of highest deprivation. The National Citizen Service programme reaches 90,000 young people per year. However, these investments fall far short of the £500 million annual real-terms gap compared with 2010 spending."
+            description={<>The National Youth Guarantee (2021) commits to a youth club, volunteering opportunity, and work experience place for every young person in England. Funding increased by £50 million in 2024, with a further £100 million committed in the 2025 spending review.<Cite nums={4} /> The Uniformed Youth Fund supports Scout, Guide, and Cadet groups in areas of highest deprivation. The National Citizen Service programme reaches 90,000 young people per year. However, these investments fall far short of the £500 million annual real-terms gap compared with 2010 spending.<Cite nums={2} /></>}
             source="Source: DCMS — National Youth Guarantee commitment 2021, updated 2024. MHCLG — Local authority revenue expenditure outturn."
           />
         </ScrollReveal>
@@ -273,6 +273,7 @@ export default function YouthClubClosuresPage() {
             </ul>
           </div>
         </section>
+        <References items={editorialRefs} />
               <RelatedTopics />
       </main>
     </>

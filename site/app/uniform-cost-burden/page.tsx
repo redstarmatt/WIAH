@@ -143,7 +143,7 @@ export default function UniformCostBurdenPage() {
               School uniform costs have risen 17% at primary and 19% at secondary since 2019 — significantly faster than general inflation over the same period.<Cite nums={1} /> The drivers are well understood: compulsory branded items (logoed polo shirts, blazers, PE kit) that can only be purchased from designated suppliers, often at high margins; specialist equipment requirements that go beyond the DfE's minimum definition; and the expectation of separate items for different weather, PE, and art activities. A secondary school pupil in full uniform — blazer, tie, PE kit, specialist shoes, bag, and all required extras — can cost parents over £600 before any optional items.
             </p>
             <p>
-              The School Uniform (Minimum Requirements) Regulations 2022 introduced requirements for schools to limit branded items to three (down from an unlimited number), ensure at least one affordable high-street alternative for each required item, and publish their uniform policies online. The impact has been modest: the regulations apply only to maintained schools and academies with older uniform policies, enforcement is light, and many schools have found ways to maintain branded requirements within the letter of the rules. Three in ten parents report going into debt — using credit cards, overdrafts, or buy-now-pay-later services — to cover uniform costs at the start of the school year.
+              The School Uniform (Minimum Requirements) Regulations 2022 introduced requirements for schools to limit branded items to three (down from an unlimited number), ensure at least one affordable high-street alternative for each required item, and publish their uniform policies online.<Cite nums={3} /> The impact has been modest: the regulations apply only to maintained schools and academies with older uniform policies, enforcement is light, and many schools have found ways to maintain branded requirements within the letter of the rules. Three in ten parents report going into debt — using credit cards, overdrafts, or buy-now-pay-later services — to cover uniform costs at the start of the school year.<Cite nums={2} />
             </p>
           </div>
         </section>
@@ -163,7 +163,7 @@ export default function UniformCostBurdenPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="+17% since 2019 · Logos and branded items biggest driver"
+              changeText={<>+17% since 2019 · Logos and branded items biggest driver<Cite nums={1} /></>}
               sparklineData={[289, 298, 310, 325, 337, 337]}
               href="#sec-costs"
             />
@@ -173,7 +173,7 @@ export default function UniformCostBurdenPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="+19% since 2019 · Specialist PE kit often costs extra · Blazers expensive"
+              changeText={<>+19% since 2019 · Specialist PE kit often costs extra · Blazers expensive<Cite nums={1} /></>}
               sparklineData={[372, 380, 398, 418, 435, 442]}
               href="#sec-costs"
             />
