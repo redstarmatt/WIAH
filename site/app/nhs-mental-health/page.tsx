@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Mental Health Five Year Forward View — Financial Tracking', url: 'https://www.england.nhs.uk/mental-health/taskforce/', date: '2024' },
+  { num: 2, name: 'NHS Confederation', dataset: 'Mental Health Funding and Parity of Esteem Analysis', url: 'https://www.nhsconfed.org/publications/mental-health-funding-analysis', date: '2024' },
+  { num: 3, name: "The King's Fund", dataset: 'Mental Health and NHS Funding', url: 'https://www.kingsfund.org.uk/topics/mental-health', date: '2024' },
+  { num: 4, name: 'NHS England', dataset: 'NHS Talking Therapies Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies', date: '2024' },
+];
 
 export default function NhsMentalHealthPage() {
   const mhSpend      = [11.4, 11.7, 11.9, 12.1, 12.4, 12.7, 13.0, 13.4, 13.8, 14.2];
@@ -152,9 +161,9 @@ export default function NhsMentalHealthPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on NHS mental health funding</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Mental ill health accounts for around 28% of the burden of disease in England — measured in terms of years lived with disability — but receives only around 13% of the NHS budget. This gap, described as the "parity of esteem" problem, has been acknowledged in policy for decades but has not been meaningfully closed. Nominal NHS mental health spending has grown from £11.4bn in 2015 to around £16bn in 2024. But after adjusting for inflation and the growth in the number of people needing services, real-terms per-patient funding has grown by only around 4% — compared to 36% growth in physical health per-patient funding over the same period.</p>
-              <p>The NHS Long Term Plan (2019) committed to genuinely increasing mental health's share of the NHS budget, with a series of milestones including expanding the IAPT (talking therapies) programme, investing in crisis resolution, and dramatically expanding children's mental health services. Progress against these milestones has been mixed. IAPT has expanded as planned. But the 4-week wait target for children's mental health — a commitment in the LTP — has been delayed repeatedly and was not met by its revised 2024 deadline. The Covid pandemic increased demand for mental health services by an estimated 20-30%, and the NHS entered that crisis with existing backlogs and staffing shortfalls that it has not yet resolved.</p>
-              <p>The workforce is the principal constraint. Mental health nursing numbers fell after 2010 and only recovered to 2010 levels by around 2020. Psychiatrist numbers remain inadequate relative to demand. Community mental health teams are the primary vehicle for treating severe mental illness in the community, but many operate at staffing levels that make meaningful therapeutic relationships difficult.</p>
+              <p>Mental ill health accounts for around 28% of the burden of disease in England — measured in terms of years lived with disability — but receives only around 13% of the NHS budget.<Cite nums={[1, 2]} /> This gap, described as the "parity of esteem" problem, has been acknowledged in policy for decades but has not been meaningfully closed. Nominal NHS mental health spending has grown from £11.4bn in 2015 to around £16bn in 2024.<Cite nums={1} /> But after adjusting for inflation and the growth in the number of people needing services, real-terms per-patient funding has grown by only around 4% — compared to 36% growth in physical health per-patient funding over the same period.<Cite nums={[2, 3]} /></p>
+              <p>The NHS Long Term Plan (2019) committed to genuinely increasing mental health's share of the NHS budget, with a series of milestones including expanding the IAPT (talking therapies) programme, investing in crisis resolution, and dramatically expanding children's mental health services.<Cite nums={1} /> Progress against these milestones has been mixed. IAPT has expanded as planned.<Cite nums={4} /> But the 4-week wait target for children's mental health — a commitment in the LTP — has been delayed repeatedly and was not met by its revised 2024 deadline. The Covid pandemic increased demand for mental health services by an estimated 20-30%, and the NHS entered that crisis with existing backlogs and staffing shortfalls that it has not yet resolved.<Cite nums={3} /></p>
+              <p>The workforce is the principal constraint. Mental health nursing numbers fell after 2010 and only recovered to 2010 levels by around 2020.<Cite nums={3} /> Psychiatrist numbers remain inadequate relative to demand. Community mental health teams are the primary vehicle for treating severe mental illness in the community, but many operate at staffing levels that make meaningful therapeutic relationships difficult.<Cite nums={2} /></p>
             </div>
           </section>
         </ScrollReveal>
@@ -168,6 +177,10 @@ export default function NhsMentalHealthPage() {
             <p>Mental health expenditure figures are NHS commissioner spend in England in nominal terms. Per-patient comparisons are real-terms, adjusted by GDP deflator and estimated patient population. All figures are for England unless otherwise stated.</p>
           </div>
         </section>
+
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
 
         <RelatedTopics />
       </main>

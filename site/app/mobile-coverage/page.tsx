@@ -123,7 +123,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Digital & Connectivity"
           question="Where in the UK Can't You Make a Call?"
-          finding="4% of UK premises still lack reliable indoor voice coverage from any operator. Rural areas are disproportionately affected, with parts of Wales, Scotland and Northern England having coverage from only one or two operators."
+          finding={<>4% of UK premises still lack reliable indoor voice coverage from any operator.<Cite nums={1} /> Rural areas are disproportionately affected, with parts of Wales, Scotland and Northern England having coverage from only one or two operators.<Cite nums={[1, 2]} /></>}
           colour="#264653"
         />
 
@@ -203,10 +203,6 @@ export default function TopicPage() {
           />
         </ScrollReveal>
 
-        <div className="mt-6">
-          <References items={editorialRefs} />
-        </div>
-
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
@@ -233,6 +229,8 @@ export default function TopicPage() {
             </ul>
           </div>
         </section>
+
+        <References items={editorialRefs} />
       </main>
     </>
   );

@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DLUHC', dataset: 'Housing Supply Statistics — Net Additional Dwellings', url: 'https://www.gov.uk/government/statistical-data-sets/live-tables-on-house-building', date: '2025' },
+  { num: 2, name: 'Homes England', dataset: 'MMC Programme Statistics', url: 'https://www.gov.uk/government/publications/homes-england-modern-methods-of-construction', date: '2025' },
+  { num: 3, name: 'NHBC', dataset: 'New Home Statistics Review', url: 'https://www.nhbc.co.uk/products-and-services/techzone/nhbc-standards/modern-methods-of-construction', date: '2025' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -130,10 +138,10 @@ export default function ModularHousingPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Modern Methods of Construction — factory-built homes that arrive on site largely pre-assembled — promised to transform UK housebuilding. Faster, cheaper, more consistent quality, lower carbon. The government set a target in 2019 that 25% of homes funded through Homes England would use MMC by 2025. That target will not be met. MMC accounts for just 3.1% of completions.
+              Modern Methods of Construction — factory-built homes that arrive on site largely pre-assembled — promised to transform UK housebuilding. Faster, cheaper, more consistent quality, lower carbon. The government set a target in 2019 that 25% of homes funded through Homes England would use MMC by 2025.<Cite nums={2} /> That target will not be met. MMC accounts for just 3.1% of completions.<Cite nums={1} />
             </p>
             <p>
-              The sector has been hit by a wave of high-profile insolvencies. Ilke Homes — backed by £100 million of Homes England funding — went into administration in 2023 with hundreds of jobs lost and half-built developments abandoned. House by Urban Splash, L&amp;G Modular and others followed. The causes vary: capital-intensive factory setup, planning delays, resistance from mortgage lenders and valuers, and the difficulty of competing against traditional housebuilders with established supply chains.
+              The sector has been hit by a wave of high-profile insolvencies. Ilke Homes — backed by £100 million of Homes England funding — went into administration in 2023 with hundreds of jobs lost and half-built developments abandoned.<Cite nums={2} /> House by Urban Splash, L&amp;G Modular and others followed. The causes vary: capital-intensive factory setup, planning delays, resistance from mortgage lenders and valuers, and the difficulty of competing against traditional housebuilders with established supply chains.<Cite nums={3} />
             </p>
           </div>
         </section>
@@ -241,6 +249,9 @@ export default function ModularHousingPage() {
             </ul>
           </div>
         </section>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
               <RelatedTopics />
       </main>
     </>

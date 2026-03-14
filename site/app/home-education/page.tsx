@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Department for Education', dataset: 'Elective Home Education Statistics', url: 'https://www.gov.uk/government/statistics/elective-home-education', date: '2025' },
+  { num: 2, name: "Children's Commissioner", dataset: 'Children Not in School', url: 'https://www.childrenscommissioner.gov.uk/report/children-not-in-school/', date: '2023' },
+  { num: 3, name: 'ADCS', dataset: 'Elective Home Education Survey', url: 'https://adcs.org.uk/safeguarding/article/elective-home-education-survey', date: '2025' },
+  { num: 4, name: 'UK Parliament', dataset: 'Schools Bill 2022 — Children Not in School Register', url: 'https://bills.parliament.uk/bills/3156', date: '2022' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -175,13 +184,13 @@ export default function HomeEducationPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Home education in England has undergone a quiet transformation. Before the pandemic, around 60,000 children were known to local authorities as electively home educated. By autumn 2025, that figure had reached 96,800 — a 61% increase in six years. The true number is almost certainly higher: England has no mandatory registration system for home-educated children, and the Children's Commissioner has estimated the real total could be 20-40% above official counts. That means somewhere between 116,000 and 135,000 children may be educated entirely outside the school system, with no routine oversight of their welfare or educational progress.
+              Home education in England has undergone a quiet transformation. Before the pandemic, around 60,000 children were known to local authorities as electively home educated. By autumn 2025, that figure had reached 96,800 — a 61% increase in six years.<Cite nums={1} /> The true number is almost certainly higher: England has no mandatory registration system for home-educated children, and the Children's Commissioner has estimated the real total could be 20-40% above official counts.<Cite nums={2} /> That means somewhere between 116,000 and 135,000 children may be educated entirely outside the school system, with no routine oversight of their welfare or educational progress.
             </p>
             <p>
-              The reasons families give for deregistering tell a story about what is going wrong inside schools. School anxiety and emotionally-based school avoidance now account for 41% of new deregistrations where a reason is recorded — nearly double the 22% recorded in 2019. Dissatisfaction with SEND provision is the second most common factor at 22%, reflecting a special educational needs system under severe strain: an estimated 63% of home-educated children identified as having SEND do not hold an Education, Health and Care Plan, meaning they left school without the formal support they were entitled to. Bullying accounts for a further 13%. Only 12% of families cite a positive philosophical preference for home education as their primary reason — the majority are, in effect, refugees from a system that failed them.
+              The reasons families give for deregistering tell a story about what is going wrong inside schools. School anxiety and emotionally-based school avoidance now account for 41% of new deregistrations where a reason is recorded — nearly double the 22% recorded in 2019.<Cite nums={3} /> Dissatisfaction with SEND provision is the second most common factor at 22%, reflecting a special educational needs system under severe strain: an estimated 63% of home-educated children identified as having SEND do not hold an Education, Health and Care Plan, meaning they left school without the formal support they were entitled to.<Cite nums={3} /> Bullying accounts for a further 13%. Only 12% of families cite a positive philosophical preference for home education as their primary reason — the majority are, in effect, refugees from a system that failed them.
             </p>
             <p>
-              The policy response has been halting. The Schools Bill 2022, which included provisions for a compulsory register of children not in school, fell when Parliament was prorogued. A revised Children Not in School register was proposed in 2024 and is progressing through legislation, but implementation remains uncertain. Meanwhile, local authority children's services — already stretched thin by rising demand for social care — have limited capacity to monitor the welfare of a home-educated population that has nearly tripled in a decade. The fundamental tension is between parents' legal right to educate their children at home and the state's duty to ensure every child receives a suitable education and is safeguarded from harm. The data suggests that for many families, deregistration is not an empowered choice but a last resort — and the system has no reliable way of knowing which is which.
+              The policy response has been halting. The Schools Bill 2022, which included provisions for a compulsory register of children not in school, fell when Parliament was prorogued.<Cite nums={4} /> A revised Children Not in School register was proposed in 2024 and is progressing through legislation, but implementation remains uncertain. Meanwhile, local authority children's services — already stretched thin by rising demand for social care — have limited capacity to monitor the welfare of a home-educated population that has nearly tripled in a decade. The fundamental tension is between parents' legal right to educate their children at home and the state's duty to ensure every child receives a suitable education and is safeguarded from harm. The data suggests that for many families, deregistration is not an empowered choice but a last resort — and the system has no reliable way of knowing which is which.
             </p>
           </div>
         </section>
@@ -375,6 +384,7 @@ export default function HomeEducationPage() {
           </div>
         </section>
 
+        <References items={editorialRefs} />
         <RelatedTopics />
       </main>
     </>

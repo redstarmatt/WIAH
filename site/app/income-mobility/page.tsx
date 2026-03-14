@@ -123,7 +123,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Poverty & Cost of Living"
           question="Can You Escape the Income You're Born Into?"
-          finding="Children born in the bottom income quintile have a 38% chance of remaining there in adulthood — far above the 20% expected if mobility were equal. The UK ranks 28th of 38 OECD nations."
+          finding={<>Children born in the bottom income quintile have a 38% chance of remaining there in adulthood — far above the 20% expected if mobility were equal.<Cite nums={1} /> The UK ranks 28th of 38 OECD nations.<Cite nums={2} /></>}
           colour="#F4A261"
         />
 
@@ -203,10 +203,6 @@ export default function TopicPage() {
           />
         </ScrollReveal>
 
-        <div className="mt-6">
-          <References items={editorialRefs} />
-        </div>
-
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
@@ -233,6 +229,8 @@ export default function TopicPage() {
             </ul>
           </div>
         </section>
+
+        <References items={editorialRefs} />
       </main>
     </>
   );

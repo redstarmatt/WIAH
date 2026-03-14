@@ -123,7 +123,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Environment & Climate"
           question="Are We Burning Too Much Rubbish?"
-          finding="Energy-from-waste capacity has doubled since 2014 and now handles more waste than landfill. The sector will enter the UK ETS in 2028, forcing major cost increases."
+          finding={<>Energy-from-waste capacity has doubled since 2014 and now handles more waste than landfill.<Cite nums={1} /> The sector will enter the UK ETS in 2028, forcing major cost increases.<Cite nums={2} /></>}
           colour="#2A9D8F"
         />
 
@@ -141,7 +141,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Doubled since 2014 · 54 operational plants"
+            changeText="Doubled since 2014 · 54 operational plants · Defra/EA data"
             sparklineData={[6.5, 7.5, 8.5, 9.5, 10.5, 11.5, 12.5, 13.5, 14.2, 14.9, 15.4]}
             href="#sec-coverage"
           />
@@ -161,7 +161,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="2% of UK total emissions · ETS inclusion 2028"
+            changeText="2% of UK total emissions · ETS inclusion 2028 · NAEI"
             sparklineData={[5.0, 5.8, 6.5, 7.2, 7.9, 8.5, 9.2, 10.0, 10.8, 11.2, 11.6]}
             href="#sec-coverage"
           />
@@ -203,10 +203,6 @@ export default function TopicPage() {
           />
         </ScrollReveal>
 
-        <div className="mt-6">
-          <References items={editorialRefs} />
-        </div>
-
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
@@ -233,6 +229,8 @@ export default function TopicPage() {
             </ul>
           </div>
         </section>
+
+        <References items={editorialRefs} />
       </main>
     </>
   );

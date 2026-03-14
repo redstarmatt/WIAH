@@ -9,6 +9,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -44,6 +46,15 @@ interface PrisonEducationData {
   educationBudget: EducationBudgetPoint[];
   vocationalCompletions: VocationalCompletionsPoint[];
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'HMPPS / Ofsted', dataset: 'Prison Education Framework Annual Statistics', url: 'https://www.gov.uk/government/statistics/prison-education-statistics', date: '2024' },
+  { num: 2, name: 'Ministry of Justice', dataset: 'Proven Reoffending Statistics', url: 'https://www.gov.uk/government/statistics/proven-reoffending-statistics', date: '2024' },
+  { num: 3, name: 'RAND Corporation', dataset: 'Evaluating the Effectiveness of Correctional Education', url: 'https://www.rand.org/pubs/research_reports/RR266.html', date: '2013' },
+  { num: 4, name: 'Dame Sally Coates', dataset: 'Unlocking Potential: A Review of Education in Prison', url: 'https://www.gov.uk/government/publications/unlocking-potential-a-review-of-education-in-prison', date: '2016' },
+  { num: 5, name: 'HMPPS', dataset: 'Prison Education Budget and Expenditure', url: 'https://www.gov.uk/government/publications/prison-education-expenditure', date: '2024' },
+  { num: 6, name: 'Ministry of Justice', dataset: 'Costs per Place and Costs per Prisoner', url: 'https://www.gov.uk/government/publications/prison-performance-statistics', date: '2024' },
+];
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -151,7 +162,7 @@ export default function PrisonEducationPage() {
         <TopicHeader
           topic="Prison Education"
           question="Is Prison Education Working?"
-          finding="Only 28% of prisoners engage in education each week — down from 36% in 2010. The education budget has been cut 40% in real terms since austerity began. 57% of prisoners enter custody with no formal qualifications. The evidence that education reduces reoffending is overwhelming, yet investment continues to fall short."
+          finding={<>Only 28% of prisoners engage in education each week — down from 36% in 2010.<Cite nums={1} /> The education budget has been cut 40% in real terms since austerity began.<Cite nums={5} /> 57% of prisoners enter custody with no formal qualifications. The evidence that education reduces reoffending is overwhelming, yet investment continues to fall short.<Cite nums={3} /></>}
           colour="#6B7280"
           preposition="with"
         />
@@ -160,9 +171,9 @@ export default function PrisonEducationPage() {
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
               Prison education in England is in a state of managed decline. The budget was cut by 40%
-              between 2010 and 2020, from £168 million to around £100 million, and has flatlined since.
+              between 2010 and 2020, from £168 million to around £100 million, and has flatlined since.<Cite nums={5} />
               Weekly participation has dropped from 36% to 28% over the same period, with COVID wiping
-              out a further two years of provision when classes were suspended entirely. The population
+              out a further two years of provision when classes were suspended entirely.<Cite nums={1} /> The population
               entering prison is among the most educationally disadvantaged in the country: 57% have no
               formal qualifications, around half have the reading ability of an eleven-year-old or below,
               and an estimated 30% have a learning disability or difficulty that has never been formally
@@ -172,20 +183,20 @@ export default function PrisonEducationPage() {
             <p>
               The evidence base for prison education is unusually strong. The RAND Corporation meta-analysis
               — the largest of its kind — found that prisoners who participate in educational programmes are
-              43% less likely to reoffend than those who do not. UK-specific research from the Ministry of
+              43% less likely to reoffend than those who do not.<Cite nums={3} /> UK-specific research from the Ministry of
               Justice confirms a significant reduction in proven reoffending among those who complete
-              vocational qualifications in custody. The Coates Review of 2016 laid out a comprehensive reform
+              vocational qualifications in custody.<Cite nums={2} /> The Coates Review of 2016 laid out a comprehensive reform
               blueprint, recommending a "prisoner learning account" that would follow individuals through the
-              gate. Most of its recommendations were accepted in principle. Few have been fully implemented.
+              gate.<Cite nums={4} /> Most of its recommendations were accepted in principle. Few have been fully implemented.
               The prison education contract, now managed through a dynamic purchasing system rather than a single
               national provider, has improved flexibility in some establishments but created inconsistency in
               others. Ofsted inspections continue to rate a significant proportion of prison education provision
               as requiring improvement.
             </p>
             <p>
-              The economics are stark. It costs approximately £47,000 per year to hold someone in prison. The
+              The economics are stark. It costs approximately £47,000 per year to hold someone in prison.<Cite nums={6} /> The
               proven reoffending rate sits stubbornly at 49% — meaning nearly half of all prisoners released
-              will commit another offence within twelve months. Each prevented reoffence saves the criminal
+              will commit another offence within twelve months.<Cite nums={2} /> Each prevented reoffence saves the criminal
               justice system an estimated £18,000 in police, court, and custody costs alone, before accounting
               for the cost to victims and communities. Investing in literacy, numeracy, and vocational
               qualifications during a custodial sentence is one of the highest-return interventions available
@@ -314,7 +325,7 @@ export default function PrisonEducationPage() {
           <PositiveCallout
             title="Education in prison works — the evidence is clear"
             value="43%"
-            description="Prisoners who participate in educational programmes are 43% less likely to reoffend than those who do not, according to the RAND Corporation meta-analysis of 30 years of international evidence. UK-specific data from the Ministry of Justice confirms that completing a vocational qualification in custody is associated with a significant reduction in proven reoffending within one year of release. The Coates Review estimated that a fully funded prison education system would pay for itself within two years through reduced reoffending costs alone. At £47,000 per prison place per year and a 49% reoffending rate, even modest improvements in educational outcomes generate substantial savings."
+            description={<>Prisoners who participate in educational programmes are 43% less likely to reoffend than those who do not, according to the RAND Corporation meta-analysis of 30 years of international evidence.<Cite nums={3} /> UK-specific data from the Ministry of Justice confirms that completing a vocational qualification in custody is associated with a significant reduction in proven reoffending within one year of release.<Cite nums={2} /> The Coates Review estimated that a fully funded prison education system would pay for itself within two years through reduced reoffending costs alone.<Cite nums={4} /> At £47,000 per prison place per year and a 49% reoffending rate, even modest improvements in educational outcomes generate substantial savings.<Cite nums={6} /></>}
             source="Source: RAND Corporation — Evaluating the Effectiveness of Correctional Education, 2013. Ministry of Justice — Proven Reoffending Statistics, 2024. Coates Review of Prison Education, 2016."
           />
         </ScrollReveal>
@@ -327,17 +338,17 @@ export default function PrisonEducationPage() {
             </h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
               <p>
-                The arithmetic is not complicated. It costs £47,000 a year to keep someone in prison. Nearly
-                half of those released are back within twelve months. Education is the single most
+                The arithmetic is not complicated. It costs £47,000 a year to keep someone in prison.<Cite nums={6} /> Nearly
+                half of those released are back within twelve months.<Cite nums={2} /> Education is the single most
                 evidence-backed intervention for breaking that cycle. And yet the budget has been cut by
                 40% since 2010, participation has fallen, and vocational course completions have dropped
-                from over 48,000 per year to under 35,000. The RAND Corporation found a 43% reduction
-                in reoffending among those who take part in education. The Ministry of Justice found
+                from over 48,000 per year to under 35,000.<Cite nums={[1, 5]} /> The RAND Corporation found a 43% reduction
+                in reoffending among those who take part in education.<Cite nums={3} /> The Ministry of Justice found
                 similar patterns in its own data. This is not a contested finding. It is one of the most
                 robust results in criminal justice research.
               </p>
               <p>
-                The Coates Review of 2016 set out a credible reform programme. Its central recommendation
+                The Coates Review of 2016 set out a credible reform programme.<Cite nums={4} /> Its central recommendation
                 — that every prisoner should have a personal learning plan, funded through a "prisoner
                 learning account" that follows them from reception to release and beyond — was accepted
                 by the government. Implementation has been slow and uneven. The shift from a single
@@ -374,6 +385,8 @@ export default function PrisonEducationPage() {
             </p>
           </div>
         </section>
+
+        <References items={editorialRefs} />
 
         <RelatedTopics />
       </main>

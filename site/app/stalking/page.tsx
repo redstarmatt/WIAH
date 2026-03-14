@@ -8,6 +8,8 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -33,6 +35,15 @@ interface StalkingData {
 function yearToDate(y: number): Date {
   return new Date(y, 5, 1);
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Crime in England and Wales — Police Recorded Crime', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/datasets/policeforceareadatatables', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Crime Survey for England and Wales — Stalking', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/articles/stalkingfindingsfromthecrimesurveyforenglandandwales/yearendingmarch2024', date: '2024' },
+  { num: 3, name: 'Home Office', dataset: 'Crime Outcomes in England and Wales', url: 'https://www.gov.uk/government/statistics/crime-outcomes-in-england-and-wales-2023-to-2024', date: '2024' },
+  { num: 4, name: 'HMICFRS', dataset: 'Living in Fear — Police and CPS Response to Harassment and Stalking', url: 'https://hmicfrs.justiceinspectorates.gov.uk/publications/living-in-fear-the-police-and-cps-response-to-harassment-and-stalking/', date: '2017' },
+  { num: 5, name: 'Suzy Lamplugh Trust', dataset: 'Out of Sight, Out of Mind — Stalking Report', url: 'https://www.suzylamplugh.org/pages/category/policy-and-research', date: '2023' },
+  { num: 6, name: 'Ministry of Justice', dataset: 'Family Court Statistics Quarterly — Stalking Protection Orders', url: 'https://www.gov.uk/government/collections/family-court-statistics-quarterly', date: '2024' },
+];
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -84,8 +95,8 @@ export default function StalkingPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Stalking became a specific criminal offence in England and Wales in 2012. Before that, behaviour now classified as stalking was prosecuted — when it was prosecuted at all — under the broader offence of harassment. The introduction of dedicated stalking offences, combined with changes to police recording practices, has driven an extraordinary rise in recorded crime: from 3,900 offences in 2015 to 131,000 in 2024. This increase is overwhelmingly a measurement effect, reflecting better recognition and recording rather than a sudden epidemic of new behaviour. The Crime Survey for England and Wales estimates that 1.5 million adults experience stalking each year — a figure that has been broadly stable for a decade.</p>
-            <p>Despite the surge in recording, the criminal justice response remains weak. The charge rate for stalking offences has fallen from 8.2% in 2015 to 2.5% in 2024. HMICFRS inspections have repeatedly found that police forces lack specialist knowledge of stalking behaviour, frequently miscategorise cases as lower-level harassment, and fail to conduct risk assessments designed to identify escalation patterns. The Suzy Lamplugh Trust, the leading stalking charity, reports that the average victim experiences 100 incidents before police take action. Stalking Protection Orders, introduced in 2020, were designed as a civil tool to provide immediate protection, but uptake has been slow: only 900 were issued in 2023, against an estimated need of tens of thousands.</p>
+            <p>Stalking became a specific criminal offence in England and Wales in 2012. Before that, behaviour now classified as stalking was prosecuted — when it was prosecuted at all — under the broader offence of harassment. The introduction of dedicated stalking offences, combined with changes to police recording practices, has driven an extraordinary rise in recorded crime: from 3,900 offences in 2015 to 131,000 in 2024.<Cite nums={1} /> This increase is overwhelmingly a measurement effect, reflecting better recognition and recording rather than a sudden epidemic of new behaviour. The Crime Survey for England and Wales estimates that 1.5 million adults experience stalking each year — a figure that has been broadly stable for a decade.<Cite nums={2} /></p>
+            <p>Despite the surge in recording, the criminal justice response remains weak. The charge rate for stalking offences has fallen from 8.2% in 2015 to 2.5% in 2024.<Cite nums={3} /> HMICFRS inspections have repeatedly found that police forces lack specialist knowledge of stalking behaviour, frequently miscategorise cases as lower-level harassment, and fail to conduct risk assessments designed to identify escalation patterns.<Cite nums={4} /> The Suzy Lamplugh Trust, the leading stalking charity, reports that the average victim experiences 100 incidents before police take action.<Cite nums={5} /> Stalking Protection Orders, introduced in 2020, were designed as a civil tool to provide immediate protection, but uptake has been slow: only 900 were issued in 2023, against an estimated need of tens of thousands.<Cite nums={6} /></p>
             </div>
         </section>
 
@@ -156,6 +167,7 @@ export default function StalkingPage() {
           </section>
         </ScrollReveal>
               <RelatedTopics />
+        <References refs={editorialRefs} />
       </main>
     </>
   );

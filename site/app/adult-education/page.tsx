@@ -8,6 +8,16 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Learning and Work Institute', dataset: 'Adult Participation in Learning Survey', url: 'https://learningandwork.org.uk/resources/research-and-reports/adult-participation-in-learning-survey/', date: '2024' },
+  { num: 2, name: 'ESFA', dataset: 'Adult Education Budget Allocations', url: 'https://www.gov.uk/government/publications/adult-education-budget-aeb-funding-rules', date: '2024' },
+  { num: 3, name: 'Lloyds Bank', dataset: 'UK Consumer Digital Index', url: 'https://www.lloydsbank.com/banking-with-us/whats-happening/consumer-digital-index.html', date: '2023' },
+  { num: 4, name: 'DfE', dataset: 'Employer Skills Survey', url: 'https://www.gov.uk/government/collections/employer-skills-survey', date: '2022' },
+  { num: 5, name: 'DfE', dataset: 'Further Education and Skills Statistics (ILR)', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/further-education-and-skills', date: '2024' },
+];
 
 // Adult learning participation rate (%), 2010–2024 — Learning and Work Institute
 const participationValues = [20.1, 19.8, 19.2, 18.7, 18.1, 17.6, 17.2, 16.8, 16.4, 16.1, 15.9, 15.7, 15.5, 15.4, 15.4];
@@ -68,8 +78,8 @@ export default function AdultEducationPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England has a quiet crisis in adult education. Since 2010, the Adult Education Budget has been cut by around 50% in real terms, falling from approximately £4.3 billion to £2.1 billion. The consequences are visible in every measure that matters: participation in adult learning has dropped from one in five adults to fewer than one in six, further education enrolments have fallen by over a quarter, and hundreds of community learning centres have closed. The people most affected are those who can least afford it — adults without Level 2 qualifications, those in insecure work, and communities in post-industrial towns where the further education college was often the only route to retraining. Employer investment in training has declined in parallel: the proportion of employers providing training fell from 66% in 2011 to 60% in 2022.</p>
-            <p>The digital skills gap compounds the problem. An estimated nine million adults in England lack basic digital skills — the ability to send an email, fill in an online form, or use a search engine safely. As public services, banking, and job applications have moved online, this gap has become a barrier not just to employment but to participation in daily life. ESOL (English for Speakers of Other Languages) provision has been hit particularly hard; waiting lists in London and other major cities stretch to eighteen months or two years. The green transition alone will require an estimated 480,000 workers in insulation, heat pump installation, and renewable energy — skills that barely exist at scale in the current workforce. The gap between what the economy demands and what the adult skills system can deliver continues to widen.</p>
+            <p>England has a quiet crisis in adult education. Since 2010, the Adult Education Budget has been cut by around 50% in real terms, falling from approximately £4.3 billion to £2.1 billion.<Cite nums={2} /> The consequences are visible in every measure that matters: participation in adult learning has dropped from one in five adults to fewer than one in six,<Cite nums={1} /> further education enrolments have fallen by over a quarter,<Cite nums={5} /> and hundreds of community learning centres have closed. The people most affected are those who can least afford it — adults without Level 2 qualifications, those in insecure work, and communities in post-industrial towns where the further education college was often the only route to retraining. Employer investment in training has declined in parallel: the proportion of employers providing training fell from 66% in 2011 to 60% in 2022.<Cite nums={4} /></p>
+            <p>The digital skills gap compounds the problem. An estimated nine million adults in England lack basic digital skills — the ability to send an email, fill in an online form, or use a search engine safely.<Cite nums={3} /> As public services, banking, and job applications have moved online, this gap has become a barrier not just to employment but to participation in daily life. ESOL (English for Speakers of Other Languages) provision has been hit particularly hard; waiting lists in London and other major cities stretch to eighteen months or two years. The green transition alone will require an estimated 480,000 workers in insulation, heat pump installation, and renewable energy — skills that barely exist at scale in the current workforce. The gap between what the economy demands and what the adult skills system can deliver continues to widen.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -156,6 +166,7 @@ export default function AdultEducationPage() {
             <p>AEB funding figures are adjusted for inflation using GDP deflators (2024 prices). They cover the core adult education budget only, not apprenticeships, traineeships, or 16–19 funding.</p>
           </div>
         </section>
+        <References items={editorialRefs} />
         <RelatedTopics />
       </main>
     </>

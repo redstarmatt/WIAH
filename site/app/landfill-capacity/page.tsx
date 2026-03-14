@@ -122,7 +122,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Environment & Climate"
           question="Is Britain Running Out of Landfill Space?"
-          finding="At current rates, England's landfill capacity could be exhausted within 10-15 years in some regions. Five counties already have no operational landfill capacity."
+          finding={<>At current rates, England{"'"}s landfill capacity could be exhausted within 10-15 years in some regions.<Cite nums={1} /> Five counties already have no operational landfill capacity.<Cite nums={1} /></>}
           colour="#2A9D8F"
         />
 
@@ -202,10 +202,6 @@ export default function TopicPage() {
           />
         </ScrollReveal>
 
-        <div className="mt-6">
-          <References items={editorialRefs} />
-        </div>
-
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
@@ -232,6 +228,8 @@ export default function TopicPage() {
             </ul>
           </div>
         </section>
+
+        <References items={editorialRefs} />
       </main>
     </>
   );

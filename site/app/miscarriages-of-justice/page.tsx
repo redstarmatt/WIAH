@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Criminal Cases Review Commission', dataset: 'Annual Report and Accounts', url: 'https://www.gov.uk/government/organisations/criminal-cases-review-commission', date: '2024' },
+  { num: 2, name: 'Post Office Horizon Inquiry', dataset: 'Inquiry Reports and Evidence', url: 'https://www.postofficehorizoninquiry.org.uk/', date: '2024' },
+  { num: 3, name: 'Ministry of Justice', dataset: 'Criminal Justice Statistics', url: 'https://www.gov.uk/government/collections/criminal-justice-statistics', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -78,14 +86,14 @@ export default function MiscarriagesOfJusticePage() {
         <TopicHeader
           topic="Miscarriages of Justice"
           question="How Many Wrongful Convictions Go Uncorrected?"
-          finding="The Criminal Cases Review Commission receives around 1,400 applications per year from people claiming wrongful conviction. It refers just 2% to the Court of Appeal — roughly 30 cases. The true scale of miscarriages of justice in England and Wales is unknown, but the system for correcting them is slow, under-resourced, and narrowly drawn."
+          finding={<>The Criminal Cases Review Commission receives around 1,400 applications per year from people claiming wrongful conviction. It refers just 2% to the Court of Appeal — roughly 30 cases.<Cite nums={1} /> The true scale of miscarriages of justice in England and Wales is unknown, but the system for correcting them is slow, under-resourced, and narrowly drawn.</>}
           colour="#6B7280"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The Criminal Cases Review Commission was established in 1997 following a series of high-profile wrongful convictions — the Birmingham Six, the Guildford Four, and others — that revealed systemic failures in the appeals process. Its role is to investigate potential miscarriages of justice and refer cases to the Court of Appeal where there is a &ldquo;real possibility&rdquo; that the conviction would be overturned. In its 28 years of operation, the CCRC has received more than 30,000 applications and referred approximately 800 cases, of which around 70% resulted in the conviction being quashed or the sentence varied.</p>
-            <p>The referral rate — consistently around 2% of applications — has been a persistent source of criticism. Campaigners argue that the &ldquo;real possibility&rdquo; test sets too high a threshold, particularly for cases that rely on new evidence of disclosure failures, unreliable forensic science, or witness recantation. The CCRC's budget has remained broadly flat in cash terms since 2010, representing a real-terms cut of around 30%. Average waiting times from application to decision have stretched to 16 months, with complex cases taking three years or more. Staff numbers have been reduced, and the organisation has acknowledged that resource constraints affect the depth of investigation it can undertake.</p>
+            <p>The Criminal Cases Review Commission was established in 1997 following a series of high-profile wrongful convictions — the Birmingham Six, the Guildford Four, and others — that revealed systemic failures in the appeals process. Its role is to investigate potential miscarriages of justice and refer cases to the Court of Appeal where there is a &ldquo;real possibility&rdquo; that the conviction would be overturned. In its 28 years of operation, the CCRC has received more than 30,000 applications and referred approximately 800 cases, of which around 70% resulted in the conviction being quashed or the sentence varied.<Cite nums={1} /></p>
+            <p>The referral rate — consistently around 2% of applications — has been a persistent source of criticism.<Cite nums={1} /> Campaigners argue that the &ldquo;real possibility&rdquo; test sets too high a threshold, particularly for cases that rely on new evidence of disclosure failures, unreliable forensic science, or witness recantation. The CCRC{"'"}s budget has remained broadly flat in cash terms since 2010, representing a real-terms cut of around 30%.<Cite nums={[1, 3]} /> Average waiting times from application to decision have stretched to 16 months, with complex cases taking three years or more. Staff numbers have been reduced, and the organisation has acknowledged that resource constraints affect the depth of investigation it can undertake.</p>
             </div>
         </section>
 
@@ -154,6 +162,8 @@ export default function MiscarriagesOfJusticePage() {
             />
           </section>
         </ScrollReveal>
+        <References items={editorialRefs} />
+
               <RelatedTopics />
       </main>
     </>

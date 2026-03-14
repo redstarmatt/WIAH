@@ -124,7 +124,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Digital & Connectivity"
           question="Who Still Can't Get Online?"
-          finding="Around 5 million UK adults remain offline, concentrated among over-75s, those with disabilities, and people in low-income households. Internet non-use correlates strongly with social isolation and exclusion from essential services."
+          finding={<>Around 5 million UK adults remain offline, concentrated among over-75s, those with disabilities, and people in low-income households.<Cite nums={1} /> Internet non-use correlates strongly with social isolation and exclusion from essential services.<Cite nums={2} /></>}
           colour="#264653"
         />
 
@@ -204,10 +204,6 @@ export default function TopicPage() {
           />
         </ScrollReveal>
 
-        <div className="mt-6">
-          <References items={editorialRefs} />
-        </div>
-
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
@@ -234,6 +230,8 @@ export default function TopicPage() {
             </ul>
           </div>
         </section>
+
+        <References items={editorialRefs} />
       </main>
     </>
   );

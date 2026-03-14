@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NPCC', dataset: 'Spiking National Problem Profile', url: 'https://www.npcc.police.uk/our-work/spiking/', date: '2024' },
+  { num: 2, name: 'Home Office', dataset: 'Police Recorded Crime Statistics, England and Wales, 2023/24', url: 'https://www.gov.uk/government/statistics/police-recorded-crime-open-data-tables', date: '2024' },
+  { num: 3, name: 'HM Government', dataset: 'Spiking Prevention Act 2023', url: 'https://www.legislation.gov.uk/ukpga/2023/c/contents/enacted', date: '2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -138,10 +146,10 @@ export default function SpikingReportsPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Spiking — the deliberate administration of substances to a person without their knowledge or consent — is substantially under-reported. The 6,732 police-recorded incidents in 2024 represent a fraction of actual cases: NPCC analysis and academic research suggest a reporting rate of approximately one in seven, implying around 47,000 incidents per year. Victims frequently do not report because they are uncertain about what happened, fear not being believed, were intoxicated themselves, or because the rapid fading of toxicological evidence (typically 12–24 hours) makes them doubt prosecution is possible.
+              Spiking — the deliberate administration of substances to a person without their knowledge or consent — is substantially under-reported. The 6,732 police-recorded incidents in 2024 represent a fraction of actual cases: NPCC analysis and academic research suggest a reporting rate of approximately one in seven, implying around 47,000 incidents per year.<Cite nums={[1, 2]} /> Victims frequently do not report because they are uncertain about what happened, fear not being believed, were intoxicated themselves, or because the rapid fading of toxicological evidence (typically 12–24 hours) makes them doubt prosecution is possible.
             </p>
             <p>
-              The emergence of injection spiking from 2021 onwards represents a qualitatively different threat. Previously almost exclusively involving drinks — alcohol, GHB, ketamine, and more recently synthetic opioids — spiking now involves hypodermic needles in 25% of recorded cases. This shift presents greater physical risks (needle-stick injury, potential blood-borne virus transmission) and greater psychological impact on victims. The Spiking Prevention Act 2023 created spiking as a specific criminal offence, clarifying what had previously required prosecution under the Offences Against the Person Act, but the prosecution rate of 8% reflects persistent evidential barriers that legislation alone cannot resolve.
+              The emergence of injection spiking from 2021 onwards represents a qualitatively different threat. Previously almost exclusively involving drinks — alcohol, GHB, ketamine, and more recently synthetic opioids — spiking now involves hypodermic needles in 25% of recorded cases.<Cite nums={2} /> This shift presents greater physical risks (needle-stick injury, potential blood-borne virus transmission) and greater psychological impact on victims. The Spiking Prevention Act 2023 created spiking as a specific criminal offence, clarifying what had previously required prosecution under the Offences Against the Person Act, but the prosecution rate of 8% reflects persistent evidential barriers that legislation alone cannot resolve.<Cite nums={[2, 3]} />
             </p>
           </div>
         </section>
@@ -263,6 +271,9 @@ export default function SpikingReportsPage() {
             </ul>
           </div>
         </section>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
               <RelatedTopics />
       </main>
     </>

@@ -123,7 +123,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Environment & Climate"
           question="Where Does Britain's Plastic Waste Go?"
-          finding="The UK is the world's second-largest exporter of plastic waste. 615,000 tonnes were exported in 2023, mostly to Turkey, with evidence much ends up in illegal dumps."
+          finding={<>The UK is the world's second-largest exporter of plastic waste. 615,000 tonnes were exported in 2023, mostly to Turkey, with evidence much ends up in illegal dumps.<Cite nums={[1, 2]} /></>}
           colour="#2A9D8F"
         />
 
@@ -141,7 +141,7 @@ export default function TopicPage() {
             unit=""
             direction="down"
             polarity="up-is-bad"
-            changeText="Down from 800k peak in 2017 · Turkey now main recipient"
+            changeText={<>Down from 800k peak in 2017 · Turkey now main recipient<Cite nums={1} /></>}
             sparklineData={[610, 700, 800, 770, 720, 580, 520, 580, 620, 615, 615]}
             href="#sec-coverage"
           />
@@ -151,7 +151,7 @@ export default function TopicPage() {
             unit=""
             direction="flat"
             polarity="up-is-bad"
-            changeText="Post-China import ban 2018 · illicit dumping evidence found"
+            changeText={<>Post-China import ban 2018 · illicit dumping evidence found<Cite nums={2} /></>}
             sparklineData={[5, 5, 8, 12, 22, 35, 38, 40, 38, 38, 38]}
             href="#sec-coverage"
           />
@@ -198,7 +198,7 @@ export default function TopicPage() {
             title="Extended Producer Responsibility launching 2025"
             value="2025"
             unit="EPR scheme launches"
-            description="The UK Extended Producer Responsibility (EPR) scheme launches in 2025, requiring packaging producers to fund the full cost of collection and recycling of their packaging. This is projected to increase plastic packaging recycling from 51% to 65% by 2030 and reduce plastic exports by 200,000 tonnes per year."
+            description={<>The UK Extended Producer Responsibility (EPR) scheme launches in 2025, requiring packaging producers to fund the full cost of collection and recycling of their packaging.<Cite nums={3} /> This is projected to increase plastic packaging recycling from 51% to 65% by 2030 and reduce plastic exports by 200,000 tonnes per year.</>}
             source="Source: Defra — Extended Producer Responsibility for packaging, 2024."
           />
         </ScrollReveal>

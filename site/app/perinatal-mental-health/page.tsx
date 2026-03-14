@@ -10,6 +10,14 @@ import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Perinatal Mental Health Programme', url: 'https://www.england.nhs.uk/mental-health/perinatal/', date: '2024' },
+  { num: 2, name: 'NHS Digital', dataset: 'Mental Health Services Data Set — Perinatal Dashboard', url: 'https://digital.nhs.uk/data-and-information/data-collections-and-data-sets/data-sets/mental-health-services-data-set', date: '2024' },
+  { num: 3, name: 'MBRRACE-UK', dataset: 'Maternal Mental Health and Mortality Report', url: 'https://www.npeu.ox.ac.uk/mbrrace-uk', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -65,8 +73,8 @@ export default function PerinatalMentalHealthPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Perinatal mental health conditions — arising during pregnancy or in the year following birth — affect approximately one in five women in the UK. NHS England's £365 million investment since 2016 has driven significant expansion: Mother and Baby Unit beds nearly doubled from 135 to 260 across 22 units, the proportion of women with perinatal mental health needs receiving specialist community care grew from 14% to 40%, and specialist teams now operate across all NHS regions. The programme is one of the more successful examples of deliberate NHS mental health investment in recent years, with specialist referrals rising from 188,000 in 2014 to 274,000 in 2024 as services expanded and awareness improved.</p>
-            <p>But 40% receiving specialist care means 60% are not. Coverage gaps are most pronounced in rural areas — where community teams cover large geographies with thin caseloads — and in areas of high deprivation, where need is greatest and pathways least well-established. Black and minority ethnic women have higher rates of perinatal mental illness but lower rates of referral and treatment, a disparity that remains insufficiently addressed despite a strong evidence base. Maternal mental health in early life is a significant determinant of child developmental outcomes; the consequences of unmet need compound across a generation.</p>
+            <p>Perinatal mental health conditions — arising during pregnancy or in the year following birth — affect approximately one in five women in the UK.<Cite nums={3} /> NHS England's £365 million investment since 2016 has driven significant expansion: Mother and Baby Unit beds nearly doubled from 135 to 260 across 22 units, the proportion of women with perinatal mental health needs receiving specialist community care grew from 14% to 40%, and specialist teams now operate across all NHS regions.<Cite nums={1} /> The programme is one of the more successful examples of deliberate NHS mental health investment in recent years, with specialist referrals rising from 188,000 in 2014 to 274,000 in 2024 as services expanded and awareness improved.<Cite nums={2} /></p>
+            <p>But 40% receiving specialist care means 60% are not.<Cite nums={1} /> Coverage gaps are most pronounced in rural areas — where community teams cover large geographies with thin caseloads — and in areas of high deprivation, where need is greatest and pathways least well-established.<Cite nums={2} /> Black and minority ethnic women have higher rates of perinatal mental illness but lower rates of referral and treatment, a disparity that remains insufficiently addressed despite a strong evidence base.<Cite nums={3} /> Maternal mental health in early life is a significant determinant of child developmental outcomes; the consequences of unmet need compound across a generation.</p>
           </div>
         </section>
 
@@ -148,6 +156,9 @@ export default function PerinatalMentalHealthPage() {
             <p>MBU bed counts include all commissioned specialist Mother and Baby Unit beds in England. 'Women receiving specialist care' includes both inpatient MBU placements and community perinatal mental health team contacts. Prevalence estimate of 1 in 5 covers all perinatal mental health conditions including postnatal depression, anxiety and PTSD.</p>
           </div>
         </section>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
               <RelatedTopics />
       </main>
     </>

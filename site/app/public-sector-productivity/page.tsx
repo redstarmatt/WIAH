@@ -122,7 +122,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Democracy & Governance"
           question="Is the Public Sector Getting More Efficient?"
-          finding="Public sector productivity is 6% below pre-pandemic levels and 12% below a long-run trend. NHS productivity is the largest drag — currently 10% below 2019 levels."
+          finding={<>Public sector productivity is 6% below pre-pandemic levels and 12% below a long-run trend.<Cite nums={1} /> NHS productivity is the largest drag — currently 10% below 2019 levels.<Cite nums={2} /></>}
           colour="#6B7280"
         />
 
@@ -140,7 +140,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Recovering slowly from -12% trough in 2021"
+            changeText={<>Recovering slowly from -12% trough in 2021<Cite nums={1} /></>}
             sparklineData={[-2, -2, -3, -3, -3, -12, -10, -8, -7, -6, -6]}
             href="#sec-coverage"
           />
@@ -150,7 +150,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Recovering from -22% pandemic trough · activity high but output low"
+            changeText={<>Recovering from -22% pandemic trough · activity high but output low<Cite nums={2} /></>}
             sparklineData={[0, 0, 0, 0, 0, -22, -18, -14, -12, -10, -10]}
             href="#sec-coverage"
           />
@@ -197,7 +197,7 @@ export default function TopicPage() {
             title="NHS productivity beginning to recover"
             value="+5pp"
             unit="NHS productivity improvement 2023-24"
-            description="NHS productivity improved by 5 percentage points in 2023-24 as elective activity increased and some pandemic disruption unwound. The Elective Recovery Fund supported 6 million additional procedures. Outpatient transformation (more telephone/video appointments) improved efficiency in some specialties."
+            description={<>NHS productivity improved by 5 percentage points in 2023-24 as elective activity increased and some pandemic disruption unwound.<Cite nums={2} /> The Elective Recovery Fund supported 6 million additional procedures. Outpatient transformation (more telephone/video appointments) improved efficiency in some specialties.</>}
             source="Source: ONS — Public sector productivity, 2025. NHS England — Operational productivity analysis, 2025."
           />
         </ScrollReveal>

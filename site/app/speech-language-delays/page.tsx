@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Department for Education', dataset: 'Early Years Foundation Stage Profile Results, 2023/24', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/early-years-foundation-stage-profile-results', date: '2024' },
+  { num: 2, name: 'NHS England', dataset: 'Community Services Statistics — SLT Waiting Times', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/community-services-statistics', date: '2024' },
+  { num: 3, name: 'RCSLT / NHS Digital', dataset: 'NHS Workforce Statistics — Speech and Language Therapists', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/nhs-workforce-statistics', date: '2024' },
+  { num: 4, name: 'Education Endowment Foundation', dataset: 'Nuffield Early Language Intervention (NELI) Evaluation', url: 'https://educationendowmentfoundation.org.uk/projects-and-evaluation/projects/nuffield-early-language-intervention', date: '2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -156,25 +165,25 @@ export default function SpeechLanguageDelaysPage() {
               Something has gone wrong with how young children learn to talk, and the data makes it
               impossible to look away. In 2015, roughly one in eight children arrived at primary
               school without the communication and language skills expected for their age. By 2024,
-              it was closer to one in six. The trajectory was already worsening before COVID-19, but
+              it was closer to one in six.<Cite nums={1} /> The trajectory was already worsening before COVID-19, but
               the pandemic accelerated it brutally. Lockdowns removed the rich, incidental language
               exposure that young children depend on — playgroups, nurseries, grandparents, the
               everyday background hum of human interaction. Children born in 2019 and 2020 entered
               school having spent their most critical language-development months in homes where
               exhausted parents were working remotely, where screens substituted for socialisation,
               and where face masks made lip-reading impossible for toddlers still learning to decode
-              speech. The cohort effect is measurable and may persist for years.
+              speech. The cohort effect is measurable and may persist for years.<Cite nums={1} />
             </p>
             <p>
               The system that is supposed to catch and support these children is buckling. NHS speech
               and language therapy referrals have risen from 142,000 in 2015 to 245,000 in 2024 — a
-              72% increase. But the workforce has moved in the opposite direction: the number of
+              72% increase.<Cite nums={2} /> But the workforce has moved in the opposite direction: the number of
               full-time equivalent speech and language therapists in England has fallen from 16,800
               to 14,500 over the same period, a 14% decline driven by poor pay relative to
               comparable allied health professions, limited career progression, and rising caseloads
-              that make the work unsustainable. The result is predictable. In 2019, 19% of children
+              that make the work unsustainable.<Cite nums={3} /> The result is predictable. In 2019, 19% of children
               referred for speech therapy waited more than 18 weeks. By 2024, that figure had
-              doubled to 38%. Behind each percentage point are children missing the window when
+              doubled to 38%.<Cite nums={2} /> Behind each percentage point are children missing the window when
               intervention is most effective — the period before age five when the brain is most
               plastic and responsive to language support.
             </p>
@@ -185,7 +194,7 @@ export default function SpeechLanguageDelaysPage() {
               the pandemic. Without intervention, poor early language is strongly predictive of
               lower educational attainment, reduced employment prospects, and worse mental health
               outcomes. The evidence base for early speech and language intervention is robust — it
-              works, it is cost-effective, and it changes life trajectories. The question is not
+              works, it is cost-effective, and it changes life trajectories.<Cite nums={4} /> The question is not
               whether we know what to do, but whether the system has the capacity to do it.
             </p>
           </div>
@@ -350,6 +359,9 @@ export default function SpeechLanguageDelaysPage() {
           </div>
         </section>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <RelatedTopics />
       </main>
     </>

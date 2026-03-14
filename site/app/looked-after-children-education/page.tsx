@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DfE', dataset: 'Outcomes for Children Looked After by Local Authorities in England', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/outcomes-for-children-in-need-including-children-looked-after-by-local-authorities-in-england', date: '2024' },
+  { num: 2, name: 'DfE', dataset: 'Permanent Exclusions and Suspensions in England', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/permanent-and-fixed-period-exclusions-in-england', date: '2024' },
+  { num: 3, name: 'DfE', dataset: 'Children Looked After in England including adoptions', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions', date: '2024' },
+];
 
 export default function LookedAfterChildrenEducationPage() {
   // GCSE attainment 2014–2024: LAC vs all pupils (grade 4+ English and maths)
@@ -60,7 +68,7 @@ export default function LookedAfterChildrenEducationPage() {
         <TopicHeader
           topic="Education"
           question="How Are Children in Care Doing in School?"
-          finding="Only 15% of looked-after children achieve grade 4+ in English and maths GCSE — compared to 65% of all pupils — a gap that has narrowed by only 3 percentage points in a decade."
+          finding={<>Only 15% of looked-after children achieve grade 4+ in English and maths GCSE — compared to 65% of all pupils — a gap that has narrowed by only 3 percentage points in a decade.<Cite nums={1} /></>}
           colour="#E63946"
           preposition="on"
         />
@@ -155,9 +163,9 @@ export default function LookedAfterChildrenEducationPage() {
           <section id="sec-context" className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">The data on children in care education</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>Looked-after children — those in local authority care, typically in foster placements, children's homes, or kinship arrangements — represent the most educationally disadvantaged identifiable group in England. In 2024, just 15% of looked-after children achieved grade 4 or above in both English and maths at GCSE, compared with 65% of all pupils — a 50 percentage point gap that has persisted despite a decade of sustained policy attention. Pupil Premium Plus funding of £2,570 per pupil per year, statutory oversight by Virtual School Heads, and strengthened Personal Education Plans have all contributed to modest improvement, but the structural drivers — placement instability, developmental trauma, and the concentration of children with the highest needs — remain largely unchanged.</p>
-              <p>Approximately one in three looked-after children changes school mid-year, against under 5% of all pupils, compounding the educational disruption caused by trauma. Children who have experienced the most placement changes show the lowest attainment and the highest rates of persistent absence. The attainment gap is widest for children who have been in care the longest — a counterintuitive finding that reflects the severity of needs that lead to long-term care, rather than care itself causing harm. The 38% NEET rate for care leavers at age 19, compared with 12% for all young people, extends the educational disadvantage well beyond school.</p>
-              <p>Geographic and demographic inequalities are substantial. Children from Black and mixed-heritage backgrounds are overrepresented in the care system relative to their share of the population. Some local authorities show markedly lower attainment for looked-after children than comparable areas, reflecting differences in placement stability, school quality, and the quality of virtual school head interventions. The data consistently shows that where placement stability is maintained — particularly in long-term foster care — educational outcomes improve markedly. Stability, not institutional response, is the primary determinant of outcome.</p>
+              <p>Looked-after children — those in local authority care, typically in foster placements, children{"'"}s homes, or kinship arrangements — represent the most educationally disadvantaged identifiable group in England. In 2024, just 15% of looked-after children achieved grade 4 or above in both English and maths at GCSE, compared with 65% of all pupils — a 50 percentage point gap that has persisted despite a decade of sustained policy attention.<Cite nums={1} /> Pupil Premium Plus funding of £2,570 per pupil per year, statutory oversight by Virtual School Heads, and strengthened Personal Education Plans have all contributed to modest improvement, but the structural drivers — placement instability, developmental trauma, and the concentration of children with the highest needs — remain largely unchanged.</p>
+              <p>Approximately one in three looked-after children changes school mid-year, against under 5% of all pupils, compounding the educational disruption caused by trauma.<Cite nums={3} /> Children who have experienced the most placement changes show the lowest attainment and the highest rates of persistent absence. The attainment gap is widest for children who have been in care the longest — a counterintuitive finding that reflects the severity of needs that lead to long-term care, rather than care itself causing harm. The 38% NEET rate for care leavers at age 19, compared with 12% for all young people, extends the educational disadvantage well beyond school.<Cite nums={1} /></p>
+              <p>Geographic and demographic inequalities are substantial. Children from Black and mixed-heritage backgrounds are overrepresented in the care system relative to their share of the population.<Cite nums={3} /> Some local authorities show markedly lower attainment for looked-after children than comparable areas, reflecting differences in placement stability, school quality, and the quality of virtual school head interventions. The data consistently shows that where placement stability is maintained — particularly in long-term foster care — educational outcomes improve markedly.<Cite nums={1} /> Stability, not institutional response, is the primary determinant of outcome.</p>
             </div>
           </section>
         </ScrollReveal>
@@ -170,6 +178,8 @@ export default function LookedAfterChildrenEducationPage() {
             <p>Note: 2020 GCSE data was affected by teacher-assessed grades — year-on-year comparison with 2019 and 2021 requires caution. The looked-after population changes in composition each year. All figures are for England only.</p>
           </div>
         </section>
+
+        <References items={editorialRefs} />
 
         <RelatedTopics />
       </main>

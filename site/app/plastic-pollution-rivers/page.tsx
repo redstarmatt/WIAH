@@ -123,7 +123,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Environment & Climate"
           question="How Much Plastic Is Getting Into Britain's Rivers?"
-          finding="An estimated 70,000 tonnes of plastic enters Britain's rivers each year. Microplastics are found in every tested river, and just 14% of rivers have good ecological status."
+          finding={<>An estimated 70,000 tonnes of plastic enters Britain's rivers each year.<Cite nums={2} /> Microplastics are found in every tested river, and just 14% of rivers have good ecological status.<Cite nums={1} /></>}
           colour="#2A9D8F"
         />
 
@@ -151,7 +151,7 @@ export default function TopicPage() {
             unit=""
             direction="flat"
             polarity="up-is-good"
-            changeText="Target was 75% by 2027 · already missed"
+            changeText={<>Target was 75% by 2027 · already missed<Cite nums={1} /></>}
             sparklineData={[17, 16, 16, 15, 15, 15, 14, 14, 14, 14, 14]}
             href="#sec-coverage"
           />
@@ -161,7 +161,7 @@ export default function TopicPage() {
             unit=""
             direction="flat"
             polarity="up-is-bad"
-            changeText="Every English river tested contains microplastics"
+            changeText={<>Every English river tested contains microplastics<Cite nums={2} /></>}
             sparklineData={[85, 88, 92, 95, 97, 99, 100, 100, 100, 100, 100]}
             href="#sec-coverage"
           />
@@ -198,7 +198,7 @@ export default function TopicPage() {
             title="Storm Overflow Discharge Reduction Plan agreed"
             value="2035"
             unit="target to eliminate serious harm from storm overflows"
-            description="The Storm Overflow Discharge Reduction Plan requires water companies to eliminate all storm overflows causing serious environmental harm by 2035. The Environment Act 2021 created statutory duties on water companies to reduce discharges. Ofwat fined water companies £2.3bn for pollution offences in 2023-24."
+            description={<>The Storm Overflow Discharge Reduction Plan requires water companies to eliminate all storm overflows causing serious environmental harm by 2035.<Cite nums={3} /> The Environment Act 2021 created statutory duties on water companies to reduce discharges. Ofwat fined water companies £2.3bn for pollution offences in 2023-24.</>}
             source="Source: DEFRA — Storm overflow discharge reduction plan, 2024."
           />
         </ScrollReveal>

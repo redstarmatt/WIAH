@@ -1,9 +1,10 @@
+import React from 'react';
 import SiteName from './SiteName';
 
 interface TopicHeaderProps {
   topic: string;
   question: string;
-  finding: string;
+  finding: React.ReactNode;
   colour?: string;
   preposition?: string;
 }

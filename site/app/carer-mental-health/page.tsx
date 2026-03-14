@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Carers UK', dataset: 'State of Caring Annual Survey', url: 'https://www.carersuk.org/media-centre/press-releases/state-of-caring-report', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Labour Force Survey — Unpaid Care', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/socialcare', date: '2024' },
+  { num: 3, name: 'UK Parliament', dataset: "Carer's Leave Act 2023", url: 'https://www.legislation.gov.uk/ukpga/2023/18/contents/enacted', date: '2023' },
+  { num: 4, name: 'NHS England', dataset: 'GP Patient Survey — Carer Identification', url: 'https://www.england.nhs.uk/gp/gpfv/redesign/gpdp/carers/', date: '2024' },
+];
 
 // % of carers reporting poor mental health and % accessing support, 2015–2024
 const poorMentalHealthData = [61, 62, 64, 65, 67, 68, 72, 73, 72, 72];
@@ -71,8 +80,8 @@ export default function CarerMentalHealthPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Britain's 10.6 million unpaid carers — people providing informal care to a family member, partner, or friend with illness, disability, or a mental health condition — face significant and largely unaddressed health consequences. The annual Carers UK State of Caring survey consistently finds rates of poor mental health in the carer population far above the general adult population. In 2024, 72% of carers reported their mental health had been negatively affected by caring — a proportion that has risen from 61% in 2015, with the sharpest deterioration during the pandemic period when carers faced intensified isolation and reduced access to the respite and community services that provide relief. Yet access to mental health support has moved in the opposite direction: only 24% of carers report accessing any form of mental health support in 2024, down from 34% in 2015.</p>
-            <p>The physical health toll is equally severe: 67% of carers report physical health impacts from their caring role — back problems from manual handling, sleep deprivation, and the general health consequences of sustained high-stress caregiving without adequate rest. An estimated 600 carers leave paid employment every day as caring responsibilities become incompatible with work, at an ONS-estimated annual cost of £1.3 billion in lost economic output, concentrated among women, who provide the majority of unpaid care. The Carer's Leave Act 2022 — which gave working carers 5 days of unpaid leave per year from April 2024 — is an important but insufficient step. Evidence from Carers UK surveys suggests most carers need not days but weeks of regular respite to avoid breakdown, and respite services have been cut significantly in local authority budgets.</p>
+            <p>Britain's 10.6 million unpaid carers — people providing informal care to a family member, partner, or friend with illness, disability, or a mental health condition — face significant and largely unaddressed health consequences.<Cite nums={2} /> The annual Carers UK State of Caring survey consistently finds rates of poor mental health in the carer population far above the general adult population. In 2024, 72% of carers reported their mental health had been negatively affected by caring — a proportion that has risen from 61% in 2015, with the sharpest deterioration during the pandemic period when carers faced intensified isolation and reduced access to the respite and community services that provide relief.<Cite nums={1} /> Yet access to mental health support has moved in the opposite direction: only 24% of carers report accessing any form of mental health support in 2024, down from 34% in 2015.<Cite nums={1} /></p>
+            <p>The physical health toll is equally severe: 67% of carers report physical health impacts from their caring role — back problems from manual handling, sleep deprivation, and the general health consequences of sustained high-stress caregiving without adequate rest.<Cite nums={1} /> An estimated 600 carers leave paid employment every day as caring responsibilities become incompatible with work, at an ONS-estimated annual cost of £1.3 billion in lost economic output, concentrated among women, who provide the majority of unpaid care.<Cite nums={2} /> The Carer's Leave Act 2022 — which gave working carers 5 days of unpaid leave per year from April 2024 — is an important but insufficient step.<Cite nums={3} /> Evidence from Carers UK surveys suggests most carers need not days but weeks of regular respite to avoid breakdown, and respite services have been cut significantly in local authority budgets.<Cite nums={1} /></p>
           </div>
         </section>
         <SectionNav sections={[
@@ -160,6 +169,7 @@ export default function CarerMentalHealthPage() {
             <p className="mt-2">Mental health data from Carers UK annual survey of approximately 7,000 carers. Employment impact estimates combine Carers UK survey data with ONS Labour Force Survey analysis. All figures refer to unpaid carers in the UK. Respondents self-select; results weighted for age and caring intensity.</p>
           </div>
         </section>
+        <References items={editorialRefs} />
         <RelatedTopics />
       </main>
     </>
