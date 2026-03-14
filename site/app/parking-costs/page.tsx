@@ -122,7 +122,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Transport & Infrastructure"
           question="What Are the Hidden Costs of Driving?"
-          finding="Average city centre day parking permits reached £24 in 2024. Councils collected £1.8bn in parking revenue and 285 towns have removed free parking since 2015."
+          finding={<>Average city centre day parking permits reached £24 in 2024.<Cite nums={2} /> Councils collected £1.8bn in parking revenue and 285 towns have removed free parking since 2015.<Cite nums={1} /></>}
           colour="#264653"
         />
 
@@ -140,7 +140,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="+85% since 2015 · London average £45, provincial cities £18"
+            changeText={<>+85% since 2015 · London average £45, provincial cities £18<Cite nums={2} /></>}
             sparklineData={[13, 14, 15, 16, 17, 18, 17, 20, 22, 23, 24]}
             href="#sec-coverage"
           />
@@ -150,7 +150,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Up from £1.2bn in 2015 · net surplus £860m after costs"
+            changeText={<>Up from £1.2bn in 2015 · net surplus £860m after costs<Cite nums={1} /></>}
             sparklineData={[1.2, 1.25, 1.3, 1.35, 1.4, 1.2, 1.4, 1.55, 1.65, 1.75, 1.8]}
             href="#sec-coverage"
           />
@@ -160,7 +160,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="To balance council budgets · footfall impact debated"
+            changeText={<>To balance council budgets · footfall impact debated<Cite nums={2} /></>}
             sparklineData={[0, 25, 55, 90, 125, 155, 190, 225, 255, 275, 285]}
             href="#sec-coverage"
           />
@@ -197,7 +197,7 @@ export default function TopicPage() {
             title="Parking revenue funds public transport"
             value="£860m"
             unit="net parking surplus funds transport"
-            description="The £860m net surplus from parking is legally required to be used for transport purposes. Many councils use it to subsidise bus services, active travel infrastructure and concessionary fares. Bristol's parking levy has funded 12 new bus routes. The Road Safety Foundation links rising parking charges to increased pedestrian-friendly streets."
+            description={<>The £860m net surplus from parking is legally required to be used for transport purposes.<Cite nums={1} /> Many councils use it to subsidise bus services, active travel infrastructure and concessionary fares.<Cite nums={1} /> Bristol&apos;s parking levy has funded 12 new bus routes.<Cite nums={2} /> The Road Safety Foundation links rising parking charges to increased pedestrian-friendly streets.<Cite nums={2} /></>}
             source="Source: DLUHC — Local authority parking revenues, 2025."
           />
         </ScrollReveal>

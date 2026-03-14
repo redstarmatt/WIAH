@@ -123,7 +123,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Economy & Work"
           question="Where Is Investment Actually Going?"
-          finding="London and the South East received £2,943 per head in public investment in 2024-25 versus £1,644 in the North East — a gap that has persisted despite levelling-up rhetoric."
+          finding={<>London and the South East received £2,943 per head in public investment in 2024-25 versus £1,644 in the North East — a gap that has persisted despite levelling-up rhetoric.<Cite nums={1} /></>}
           colour="#6B7280"
         />
 
@@ -141,7 +141,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="+£400 since 2015 · transport dominant"
+            changeText={<>+£400 since 2015 · transport dominant<Cite nums={1} /></>}
             sparklineData={[2543, 2600, 2650, 2700, 2750, 2650, 2750, 2820, 2880, 2920, 2943]}
             href="#sec-coverage"
           />
@@ -151,7 +151,7 @@ export default function TopicPage() {
             unit=""
             direction="flat"
             polarity="up-is-bad"
-            changeText="+£100 since 2015 · gap barely narrowed"
+            changeText={<>+£100 since 2015 · gap barely narrowed<Cite nums={1} /></>}
             sparklineData={[1544, 1560, 1570, 1580, 1590, 1560, 1600, 1620, 1630, 1640, 1644]}
             href="#sec-coverage"
           />
