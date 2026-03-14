@@ -51,7 +51,7 @@ const annotations: Annotation[] = [
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'OECD', dataset: 'PIAAC Survey of Adult Skills', url: 'https://www.oecd.org/skills/piaac/', date: '2024' },
-  { num: 2, name: 'National Literacy Trust', dataset: 'Adult Literacy Statistics', date: '2024' },
+  { num: 2, name: 'National Literacy Trust', dataset: 'Adult Literacy Statistics', url: 'https://literacytrust.org.uk/research-services/', date: '2024' },
   { num: 3, name: 'Learning and Work Institute', dataset: 'Adult Education Budget Analysis; ESOL Provision Survey', url: 'https://learningandwork.org.uk', date: '2024' },
 ];
 

@@ -14,7 +14,7 @@ import RelatedTopics from '@/components/RelatedTopics';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'UKHSA', dataset: 'Point Prevalence Survey of Healthcare-Associated Infections', url: 'https://www.gov.uk/government/publications/healthcare-associated-infections-hcai-point-prevalence-survey', date: '2022', note: 'Estimated 300,000 HAIs per year in England' },
-  { num: 2, name: 'Public Health England', dataset: 'Healthcare-Associated Infections: Annual Cost to the NHS', date: '2018', note: 'Estimated annual cost of HAIs over £1 billion' },
+  { num: 2, name: 'Public Health England', dataset: 'Healthcare-Associated Infections: Annual Cost to the NHS', url: 'https://www.gov.uk/government/organisations/uk-health-security-agency/about/statistics', date: '2018', note: 'Estimated annual cost of HAIs over £1 billion' },
   { num: 3, name: 'UKHSA', dataset: 'C.difficile Infections in England — Annual Summary', url: 'https://www.gov.uk/government/statistics/c-difficile-infection-annual-data', date: '2023', note: 'Peak of 55,000 cases in 2007/08; 13,000 by 2019; 14,200 in 2023' },
   { num: 4, name: 'UKHSA', dataset: 'MRSA Bloodstream Infections — Annual Summary', url: 'https://www.gov.uk/government/statistics/mrsa-bacteraemia-annual-data', date: '2023' },
 ];

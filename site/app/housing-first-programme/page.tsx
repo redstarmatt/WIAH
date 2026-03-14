@@ -15,7 +15,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'Crisis / ICH', dataset: 'Housing First Evaluation — UK Pilot Programmes', url: 'https://www.crisis.org.uk/ending-homelessness/homelessness-knowledge-hub/housing-models-and-access/housing-first/', date: '2022', note: '85-87% housing retention vs 47-49% for traditional routes' },
   { num: 2, name: 'Housing First England / Homeless Link', dataset: 'Annual Survey of Programmes', url: 'https://www.housingfirstengland.org/', date: '2024', note: '2,300 participants; 1% of homelessness funding' },
   { num: 3, name: 'Manchester Housing First Evaluation', dataset: 'Cost-Benefit Analysis', date: '2022', note: 'Cost saving £5,000-£15,000 per person per year' },
-  { num: 4, name: 'DLUHC', dataset: 'Temporary Accommodation Statistics', date: '2024', note: '£1.7bn annual bill for local authorities on emergency shelters' },
+  { num: 4, name: 'DLUHC', dataset: 'Temporary Accommodation Statistics', url: 'https://www.gov.uk/government/organisations/ministry-of-housing-communities-and-local-government/about/statistics', date: '2024', note: '£1.7bn annual bill for local authorities on emergency shelters' },
 ];
 
 export default function HousingFirstProgrammePage() {

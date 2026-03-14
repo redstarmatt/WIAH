@@ -15,7 +15,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'OHID', dataset: 'National Dental Epidemiology Programme — Oral Health Survey of 5-year-old children', url: 'https://www.gov.uk/government/statistics/oral-health-survey-of-5-year-old-children', date: '2023' },
   { num: 2, name: 'PHE / OHID', dataset: 'Water Fluoridation Health Monitoring Report', url: 'https://www.gov.uk/government/publications/water-fluoridation-health-monitoring-report-for-england-2022', date: '2022' },
-  { num: 3, name: 'OHID / GP Patient Survey', dataset: 'Adult Dental Health — Access to NHS Dental Services', date: '2025' },
+  { num: 3, name: 'OHID / GP Patient Survey', dataset: 'Adult Dental Health — Access to NHS Dental Services', url: 'https://www.gov.uk/government/organisations/office-for-health-improvement-and-disparities/about/statistics', date: '2025' },
   { num: 4, name: 'NHS BSA', dataset: 'NHS Dental Statistics for England', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/nhs-dental-statistics', date: '2025' },
   { num: 5, name: 'NHS England', dataset: 'Hospital Episode Statistics — Tooth Extractions in Children', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/hospital-admitted-patient-care-activity', date: '2025' },
 ];

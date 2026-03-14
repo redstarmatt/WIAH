@@ -14,8 +14,8 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'PAGB / ONS', dataset: 'OTC Medicine Price Tracker / Consumer Price Index health sub-components', date: '2024' },
   { num: 2, name: 'Healthwatch England', dataset: 'Access to medicines survey — affordability analysis', date: '2024' },
-  { num: 3, name: 'NHS BSA', dataset: 'NHS Prescription Charge schedule and exemption statistics', date: '2024' },
-  { num: 4, name: 'NHS England', dataset: 'Pharmacy First scheme — primary care statistics', date: '2024' },
+  { num: 3, name: 'NHS BSA', dataset: 'NHS Prescription Charge schedule and exemption statistics', url: 'https://www.nhsbsa.nhs.uk/statistical-collections', date: '2024' },
+  { num: 4, name: 'NHS England', dataset: 'Pharmacy First scheme — primary care statistics', url: 'https://www.england.nhs.uk/statistics/', date: '2024' },
 ];
 
 interface OTCMedicineData {

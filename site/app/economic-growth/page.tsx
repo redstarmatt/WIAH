@@ -15,7 +15,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'GDP statistical bulletin', url: 'https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/grossdomesticproductpreliminaryestimate/latest', date: '2023' },
   { num: 2, name: 'IMF', dataset: 'World Economic Outlook', url: 'https://www.imf.org/en/Publications/WEO', date: '2023' },
   { num: 3, name: 'ONS', dataset: 'International comparisons of productivity', url: 'https://www.ons.gov.uk/economy/economicoutputandproductivity/productivitymeasures/articles/internationalcomparisonsofproductivityfinalestimates/latest', date: '2023' },
-  { num: 4, name: 'OBR', dataset: 'Economic and Fiscal Outlook', date: '2025' },
+  { num: 4, name: 'OBR', dataset: 'Economic and Fiscal Outlook', url: 'https://obr.uk/efo/economic-and-fiscal-outlook-march-2024/', date: '2025' },
 ];
 
 // UK annual GDP growth (%), 2010–2023 — ONS

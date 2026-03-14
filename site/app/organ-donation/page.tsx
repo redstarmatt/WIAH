@@ -12,9 +12,9 @@ import Cite from '@/components/Cite';
 import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
-  { num: 1, name: 'NHS Blood and Transplant', dataset: 'Organ Donation and Transplantation Activity Report', date: '2024' },
-  { num: 2, name: 'NHSBT', dataset: 'Potential Donor Audit — Family consent rates', date: '2024' },
-  { num: 3, name: 'NHSBT', dataset: 'Organ Donation — Ethnicity and waiting times analysis', date: '2024' },
+  { num: 1, name: 'NHS Blood and Transplant', dataset: 'Organ Donation and Transplantation Activity Report', url: 'https://www.nhsbt.nhs.uk/how-you-can-help/blood-donation/why-give-blood/data-and-statistics/', date: '2024' },
+  { num: 2, name: 'NHSBT', dataset: 'Potential Donor Audit — Family consent rates', url: 'https://www.nhsbt.nhs.uk/how-you-can-help/blood-donation/why-give-blood/data-and-statistics/', date: '2024' },
+  { num: 3, name: 'NHSBT', dataset: 'Organ Donation — Ethnicity and waiting times analysis', url: 'https://www.nhsbt.nhs.uk/how-you-can-help/blood-donation/why-give-blood/data-and-statistics/', date: '2024' },
 ];
 
 // -- Types ------------------------------------------------------------------

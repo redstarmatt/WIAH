@@ -13,7 +13,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Vrije Universiteit Amsterdam', dataset: 'Discovery and quantification of plastic particle pollution in human blood (Leslie et al.)', date: '2022', note: 'Published in Environment International' },
   { num: 2, name: 'CEFAS / Plymouth Marine Laboratory', dataset: 'UK freshwater microplastic monitoring programme', url: 'https://www.cefas.co.uk/research/ocean-processes/marine-litter/microplastics/', date: '2024' },
-  { num: 3, name: 'DEFRA', dataset: 'Environmental Protection (Microbeads) (England) Regulations', date: '2018' },
+  { num: 3, name: 'DEFRA', dataset: 'Environmental Protection (Microbeads) (England) Regulations', url: 'https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs/about/statistics', date: '2018' },
 ];
 
 export default function MicroplasticsContaminationPage() {

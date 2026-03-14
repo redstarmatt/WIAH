@@ -15,7 +15,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'Shelter / Resolution Foundation', dataset: 'LHA Affordability Analysis', date: '2024', note: 'Only 5% of privately rented homes affordable at LHA rates' },
   { num: 2, name: 'Valuation Office Agency', dataset: 'Local Housing Allowance Rates', url: 'https://www.gov.uk/guidance/local-housing-allowance', date: '2024', note: 'LHA reduced to 30th percentile in 2011; frozen 2016-2020 and 2020-2024' },
   { num: 3, name: 'DWP', dataset: 'Housing Benefit and UC Housing Cost Statistics', url: 'https://www.gov.uk/government/collections/dwp-statistics-publications', date: '2024', note: '1.8 million households facing LHA shortfall; average gap £345/month' },
-  { num: 4, name: 'DLUHC', dataset: 'Statutory Homelessness Statistics', date: '2024', note: 'Section 21 evictions: 24% of homelessness applications; £25,000/yr temporary accommodation cost' },
+  { num: 4, name: 'DLUHC', dataset: 'Statutory Homelessness Statistics', url: 'https://www.gov.uk/government/organisations/ministry-of-housing-communities-and-local-government/about/statistics', date: '2024', note: 'Section 21 evictions: 24% of homelessness applications; £25,000/yr temporary accommodation cost' },
 ];
 
 export default function HousingBenefitPage() {

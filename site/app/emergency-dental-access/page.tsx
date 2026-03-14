@@ -13,8 +13,8 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS Business Services Authority', dataset: 'NHS Dental Statistics for England', url: 'https://www.nhsbsa.nhs.uk/statistical-collections/dental-statistics-england', date: '2024' },
-  { num: 2, name: 'Healthwatch England', dataset: 'Dental access survey', date: '2024' },
-  { num: 3, name: 'British Dental Association', dataset: 'Workforce analysis', date: '2024' },
+  { num: 2, name: 'Healthwatch England', dataset: 'Dental access survey', url: 'https://www.healthwatch.co.uk/reports-library', date: '2024' },
+  { num: 3, name: 'British Dental Association', dataset: 'Workforce analysis', url: 'https://bda.org/advice/Dentistry/nhs-dentistry/Pages/nhs-dentistry.aspx', date: '2024' },
 ];
 
 export default function EmergencyDentalAccessPage() {

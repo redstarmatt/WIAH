@@ -14,8 +14,8 @@ import RelatedTopics from '@/components/RelatedTopics';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS England', dataset: 'Hospital Car Parking Report 2022/23', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/estates-returns-information-collection/', date: '2023', note: '£214 million revenue; 80% of trusts still charging qualifying patients' },
-  { num: 2, name: 'NHS England', dataset: 'NHS Long Term Plan — Parking Pledge', date: '2019', note: 'Free parking commitment for qualifying patients' },
-  { num: 3, name: 'NHS England', dataset: 'Car Parking Policy Guidance', date: '2023', note: 'Average hourly charge £2.20; 22% increase since 2019' },
+  { num: 2, name: 'NHS England', dataset: 'NHS Long Term Plan — Parking Pledge', url: 'https://www.england.nhs.uk/statistics/', date: '2019', note: 'Free parking commitment for qualifying patients' },
+  { num: 3, name: 'NHS England', dataset: 'Car Parking Policy Guidance', url: 'https://www.england.nhs.uk/statistics/', date: '2023', note: 'Average hourly charge £2.20; 22% increase since 2019' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

@@ -15,7 +15,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'COMEAP', dataset: 'Mortality effects of long-term exposure to particulate air pollution in the UK', url: 'https://www.gov.uk/government/publications/comeap-mortality-effects-of-long-term-exposure-to-particulate-air-pollution-in-the-uk', date: '2024' },
   { num: 2, name: 'DEFRA', dataset: 'UK Air Quality Archive — PM2.5 and NO2 monitoring data', url: 'https://uk-air.defra.gov.uk/', date: '2024' },
   { num: 3, name: 'WHO', dataset: 'Global Air Quality Guidelines 2021', url: 'https://www.who.int/publications/i/item/9789240034228', date: '2021' },
-  { num: 4, name: 'DEFRA', dataset: 'Air Quality Economic Analysis programme', date: '2023' },
+  { num: 4, name: 'DEFRA', dataset: 'Air Quality Economic Analysis programme', url: 'https://www.gov.uk/government/collections/air-quality-statistics', date: '2023' },
 ];
 
 export default function AirQualityPage() {

@@ -18,7 +18,7 @@ const editorialRefs: Reference[] = [
   { num: 3, name: 'NSPCC', dataset: 'Online grooming age profile analysis', url: 'https://www.nspcc.org.uk/about-us/news-opinion/online-grooming-crimes-rise/', date: 'Jan 2025' },
   { num: 4, name: 'Internet Watch Foundation', dataset: 'Annual Report — Encryption and grooming detection', url: 'https://www.iwf.org.uk/annual-report/', date: '2024' },
   { num: 5, name: 'Home Office', dataset: 'Crime Outcomes in England and Wales', url: 'https://www.gov.uk/government/statistics/crime-outcomes-in-england-and-wales', date: 'Mar 2025' },
-  { num: 6, name: 'Ofcom', dataset: 'Online Safety Act implementation report', date: '2024' },
+  { num: 6, name: 'Ofcom', dataset: 'Online Safety Act implementation report', url: 'https://www.ofcom.org.uk/research-and-data', date: '2024' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

@@ -16,7 +16,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'HM Passport Office', dataset: 'Passport application processing times', url: 'https://www.gov.uk/government/organisations/hm-passport-office', date: '2025' },
   { num: 2, name: 'National Audit Office', dataset: 'HM Passport Office: responding to the surge in demand', url: 'https://www.nao.org.uk/reports/hm-passport-office', date: '2023' },
   { num: 3, name: 'Home Office', dataset: 'Immigration and passport statistics', url: 'https://www.gov.uk/government/collections/migration-statistics', date: '2024' },
-  { num: 4, name: 'HMPO', dataset: 'Passport fees schedule', date: '2023' },
+  { num: 4, name: 'HMPO', dataset: 'Passport fees schedule', url: 'https://www.gov.uk/government/organisations/hm-passport-office', date: '2023' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

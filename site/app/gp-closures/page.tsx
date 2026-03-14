@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS Digital', dataset: 'GP Workforce Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/general-and-personal-medical-services', date: '2024' },
   { num: 2, name: 'BMA', dataset: 'General Practice Analysis', date: '2024' },
-  { num: 3, name: 'NHS England', dataset: 'NHS Long Term Plan', date: '2019' },
+  { num: 3, name: 'NHS England', dataset: 'NHS Long Term Plan', url: 'https://www.england.nhs.uk/statistics/', date: '2019' },
 ];
 
 export default function GpClosuresPage() {

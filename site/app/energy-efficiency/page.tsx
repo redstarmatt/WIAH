@@ -12,7 +12,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DLUHC', dataset: 'English Housing Survey', url: 'https://www.gov.uk/government/collections/english-housing-survey', date: '2024' },
-  { num: 2, name: 'BEIS / Climate Change Committee', dataset: 'Progress in reducing emissions', date: '2024' },
+  { num: 2, name: 'BEIS / Climate Change Committee', dataset: 'Progress in reducing emissions', url: 'https://www.theccc.org.uk/publication/progress-in-reducing-emissions-2024-report-to-parliament/', date: '2024' },
   { num: 3, name: 'European Environment Agency', dataset: 'Residential heat loss and energy performance data', url: 'https://www.eea.europa.eu/en/topics/in-depth/energy-efficiency', date: '2024' },
 ];
 

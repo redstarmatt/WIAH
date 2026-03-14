@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DEFRA / Environment Agency', dataset: 'Packaging Recycling Statistics', url: 'https://www.gov.uk/government/statistical-data-sets/env23-uk-waste-data-and-management', date: 'Dec 2024' },
   { num: 2, name: 'Eurostat', dataset: 'Packaging Waste Statistics', url: 'https://ec.europa.eu/eurostat/statistics-explained/index.php/Packaging_waste_statistics', date: 'Dec 2024' },
-  { num: 3, name: 'DEFRA', dataset: 'Extended Producer Responsibility for Packaging — regulations', date: '2025' },
+  { num: 3, name: 'DEFRA', dataset: 'Extended Producer Responsibility for Packaging — regulations', url: 'https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs/about/statistics', date: '2025' },
 ];
 
 export default function PackagingWasteRecyclingPage() {

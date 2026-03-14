@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Coram Family & Childcare', dataset: 'UK Childcare Survey', url: 'https://www.coramfcc.org.uk/research-publications/uk-childcare-survey', date: '2023' },
   { num: 2, name: 'Ofsted', dataset: 'Childcare Places Survey', url: 'https://www.gov.uk/government/collections/ofsted-annual-report', date: '2023' },
-  { num: 3, name: 'TUC', dataset: 'Childcare and Work Survey', date: '2023' },
+  { num: 3, name: 'TUC', dataset: 'Childcare and Work Survey', url: 'https://www.tuc.org.uk/research-analysis', date: '2023' },
   { num: 4, name: 'DfE', dataset: 'Childcare and Early Years Survey', url: 'https://www.gov.uk/government/collections/statistics-childcare-and-early-years', date: '2023' },
 ];
 

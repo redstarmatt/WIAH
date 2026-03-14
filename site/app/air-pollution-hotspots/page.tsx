@@ -59,7 +59,7 @@ const annotations: Annotation[] = [
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DEFRA', dataset: 'Air quality statistics (AURN)', url: 'https://www.gov.uk/government/collections/air-quality-statistics', date: '2025' },
   { num: 2, name: 'COMEAP', dataset: 'Long-term exposure mortality estimates', url: 'https://www.gov.uk/government/groups/committee-on-the-medical-effects-of-air-pollutants-comeap', date: '2024' },
-  { num: 3, name: 'TfL', dataset: 'ULEZ impact assessment', date: '2024' },
+  { num: 3, name: 'TfL', dataset: 'ULEZ impact assessment', url: 'https://tfl.gov.uk/corporate/publications-and-reports/', date: '2024' },
 ];
 
 export default function AirPollutionHotspotsPage() {

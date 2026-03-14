@@ -59,7 +59,7 @@ const annotations: Annotation[] = [
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Ofcom', dataset: 'Connected Nations Report', url: 'https://www.ofcom.org.uk/research-and-data/telecoms-research/connected-nations', date: '2025' },
   { num: 2, name: 'DSIT', dataset: 'UK Gigabit Programme Statistics', url: 'https://www.gov.uk/guidance/project-gigabit-programme', date: '2025' },
-  { num: 3, name: 'DSIT', dataset: 'Shared Rural Network Progress Report', date: '2025' },
+  { num: 3, name: 'DSIT', dataset: 'Shared Rural Network Progress Report', url: 'https://www.gov.uk/government/organisations/department-for-science-innovation-and-technology/about/statistics', date: '2025' },
 ];
 
 export default function FiveGCoverageInequalityPage() {

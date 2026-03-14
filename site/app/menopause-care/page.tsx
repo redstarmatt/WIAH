@@ -14,8 +14,8 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Menopause Charity', dataset: 'Patient experience survey', date: '2023' },
-  { num: 2, name: 'NHS BSA', dataset: 'Prescription Cost Analysis — HRT items dispensed', date: '2023' },
-  { num: 3, name: 'NICE', dataset: 'Menopause: Diagnosis and Management (NG23)', date: '2015' },
+  { num: 2, name: 'NHS BSA', dataset: 'Prescription Cost Analysis — HRT items dispensed', url: 'https://www.nhsbsa.nhs.uk/statistical-collections', date: '2023' },
+  { num: 3, name: 'NICE', dataset: 'Menopause: Diagnosis and Management (NG23)', url: 'https://www.nice.org.uk/guidance', date: '2015' },
   { num: 4, name: 'British Menopause Society', dataset: 'GP Survey on Menopause Confidence', date: '2021' },
 ];
 

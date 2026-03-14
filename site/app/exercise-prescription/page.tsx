@@ -45,7 +45,7 @@ const activeAnnotations: Annotation[] = [
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Sport England', dataset: 'Active Lives Survey', url: 'https://www.sportengland.org/research-and-data/data/active-lives', date: '2024' },
   { num: 2, name: 'NHS England', dataset: 'Social prescribing referral data', url: 'https://www.england.nhs.uk/personalisedcare/social-prescribing/', date: '2024' },
-  { num: 3, name: 'Public Health England', dataset: 'Everybody Active, Every Day — inactivity cost estimate', date: '2023' },
+  { num: 3, name: 'Public Health England', dataset: 'Everybody Active, Every Day — inactivity cost estimate', url: 'https://www.gov.uk/government/publications/everybody-active-every-day-a-framework-to-embed-physical-activity-into-daily-life', date: '2023' },
   { num: 4, name: 'NICE', dataset: 'Physical activity: exercise referral schemes (PH54)', url: 'https://www.nice.org.uk/guidance/ph54', date: '2014' },
 ];
 

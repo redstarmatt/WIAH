@@ -13,8 +13,8 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Hospice UK', dataset: 'Hospice accounts and funding data', date: '2024' },
-  { num: 2, name: 'ONS', dataset: 'Deaths registered by place of occurrence, England', date: '2024' },
-  { num: 3, name: 'NHS England', dataset: 'Palliative and end of life care profiles (OHID Fingertips)', date: '2024' },
+  { num: 2, name: 'ONS', dataset: 'Deaths registered by place of occurrence, England', url: 'https://www.ons.gov.uk/', date: '2024' },
+  { num: 3, name: 'NHS England', dataset: 'Palliative and end of life care profiles (OHID Fingertips)', url: 'https://www.england.nhs.uk/statistics/', date: '2024' },
 ];
 
 // -- Types ------------------------------------------------------------------

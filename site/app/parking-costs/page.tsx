@@ -12,7 +12,7 @@ import Cite from '@/components/Cite';
 import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
-  { num: 1, name: 'DLUHC', dataset: 'Local authority parking revenues and expenditure', date: '2025' },
+  { num: 1, name: 'DLUHC', dataset: 'Local authority parking revenues and expenditure', url: 'https://www.gov.uk/government/organisations/ministry-of-housing-communities-and-local-government/about/statistics', date: '2025' },
   { num: 2, name: 'RAC Foundation', dataset: 'Parking on urban roads survey — city centre parking costs', date: '2024' },
 ];
 

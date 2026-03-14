@@ -14,8 +14,8 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Labour Force Survey: economic inactivity by reason', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/economicinactivity', date: '2023' },
   { num: 2, name: 'DWP', dataset: 'Inactivity and health statistics', url: 'https://www.gov.uk/government/organisations/department-for-work-pensions', date: '2023' },
-  { num: 3, name: 'OBR', dataset: 'Economic and Fiscal Outlook', date: '2023' },
-  { num: 4, name: 'Resolution Foundation', dataset: 'Health and economic inactivity analysis', date: '2023' },
+  { num: 3, name: 'OBR', dataset: 'Economic and Fiscal Outlook', url: 'https://obr.uk/efo/economic-and-fiscal-outlook-march-2024/', date: '2023' },
+  { num: 4, name: 'Resolution Foundation', dataset: 'Health and economic inactivity analysis', url: 'https://www.resolutionfoundation.org/publications/', date: '2023' },
 ];
 
 // Inactive due to long-term sickness (millions), 2015–2025 — ONS LFS

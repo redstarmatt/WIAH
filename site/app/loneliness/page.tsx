@@ -18,7 +18,7 @@ const editorialRefs: Reference[] = [
   { num: 2, name: 'Holt-Lunstad et al.', dataset: 'Meta-analysis — loneliness mortality risk (PLOS Medicine)', url: 'https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1000316', date: '2015' },
   { num: 3, name: 'Campaign to End Loneliness', dataset: 'Health impact estimates — heart disease, stroke, dementia risk', url: 'https://www.campaigntoendloneliness.org/', date: '2024' },
   { num: 4, name: 'ONS', dataset: 'Loneliness rates by characteristic — demographic breakdown', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing/datasets/lonelinessratesbycharacteristic', date: '2024' },
-  { num: 5, name: 'DCMS', dataset: 'National Strategy on Loneliness — A Connected Society', date: '2018' },
+  { num: 5, name: 'DCMS', dataset: 'National Strategy on Loneliness — A Connected Society', url: 'https://www.gov.uk/government/organisations/department-for-culture-media-sport/about/statistics', date: '2018' },
 ];
 
 const oftenAlwaysData = [3.1, 3.2, 3.3, 3.4, 3.5, 4.2, 3.9, 3.8, 3.83];

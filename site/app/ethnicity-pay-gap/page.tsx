@@ -51,7 +51,7 @@ const gapAnnotations: Annotation[] = [
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Annual Survey of Hours and Earnings — ethnicity pay gaps', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/articles/ethnicitypaygapsingreatbritain/2012to2022', date: '2023' },
-  { num: 2, name: 'EHRC', dataset: 'Pay gap reporting tracker', date: '2023' },
+  { num: 2, name: 'EHRC', dataset: 'Pay gap reporting tracker', url: 'https://www.equalityhumanrights.com/en/our-work/news/pay-reporting', date: '2023' },
 ];
 
 export default function EthnicityPayGapPage() {

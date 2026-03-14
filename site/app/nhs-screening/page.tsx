@@ -31,8 +31,8 @@ interface NHSScreeningData {
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS Digital', dataset: 'Cancer Screening Programmes Data', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/cervical-screening-programme', date: '2022', note: 'Cervical screening uptake fell from 79% (2010) to 71% (2022); breast screening from 72% to 65%' },
-  { num: 2, name: 'NHS Digital', dataset: 'Bowel Cancer Screening Programme Statistics', date: '2023', note: 'Bowel screening uptake at 68%, target 75%; 16,000 bowel cancer deaths/year in UK' },
-  { num: 3, name: 'NHS Digital', dataset: 'Cancer Screening — Deprivation Analysis', date: '2022', note: 'Cervical screening: 78% in least deprived vs 63% in most deprived areas' },
+  { num: 2, name: 'NHS Digital', dataset: 'Bowel Cancer Screening Programme Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical', date: '2023', note: 'Bowel screening uptake at 68%, target 75%; 16,000 bowel cancer deaths/year in UK' },
+  { num: 3, name: 'NHS Digital', dataset: 'Cancer Screening — Deprivation Analysis', url: 'https://digital.nhs.uk/data-and-information/publications/statistical', date: '2022', note: 'Cervical screening: 78% in least deprived vs 63% in most deprived areas' },
 ];
 
 // ── Helpers ──────────────────────────────────────────────────────────────────

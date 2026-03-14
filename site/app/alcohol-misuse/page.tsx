@@ -52,9 +52,9 @@ const annotations: Annotation[] = [
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Alcohol-specific deaths in the UK', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/causesofdeath/bulletins/alcoholspecificdeathsintheuk', date: '2024' },
-  { num: 2, name: 'NHS Digital', dataset: 'Statistics on Alcohol, England', date: '2024' },
+  { num: 2, name: 'NHS Digital', dataset: 'Statistics on Alcohol, England', url: 'https://digital.nhs.uk/data-and-information/publications/statistical', date: '2024' },
   { num: 3, name: 'OHID / NDTMS', dataset: 'Adult substance misuse treatment statistics', url: 'https://www.gov.uk/government/collections/statistics-from-the-national-drug-treatment-monitoring-system-ndtms', date: '2024' },
-  { num: 4, name: 'Public Health Scotland', dataset: 'Evaluating the impact of minimum unit pricing', date: '2023' },
+  { num: 4, name: 'Public Health Scotland', dataset: 'Evaluating the impact of minimum unit pricing', url: 'https://www.publichealthscotland.scot/publications/', date: '2023' },
 ];
 
 export default function AlcoholMisusePage() {

@@ -10,8 +10,8 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'UK Health Security Agency', dataset: 'Air quality and health statistics', url: 'https://www.gov.uk/government/publications/air-quality-and-health', date: 'Mar 2024' },
-  { num: 2, name: 'ONS / NHS England', dataset: 'Air Quality Deaths statistics' },
-  { num: 3, name: 'WHO', dataset: 'Global Air Quality Guidelines', date: '2021' },
+  { num: 2, name: 'ONS / NHS England', dataset: 'Air Quality Deaths statistics', url: 'https://www.ons.gov.uk/' },
+  { num: 3, name: 'WHO', dataset: 'Global Air Quality Guidelines', url: 'https://www.who.int/data', date: '2021' },
 ];
 
 export default function AirQualityDeathsPage() {

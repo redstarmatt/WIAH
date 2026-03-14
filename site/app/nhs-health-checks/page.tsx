@@ -29,8 +29,8 @@ interface NhsHealthChecksData {
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS England', dataset: 'NHS Health Check Programme Data', url: 'https://www.england.nhs.uk/ourwork/prevention/heartdisease/nhs-health-check/', date: '2023', note: 'Only 48% uptake in 2023, down from 58% in 2015; 624,000 checks completed vs 980,000 pre-pandemic' },
-  { num: 2, name: 'NHS England', dataset: 'NHS Health Check Modelling — Cardiovascular Prevention', date: '2023', note: '1,600 cases of Type 2 diabetes and 20,500 high cardiovascular risk detected annually; 66% target would prevent 4,000+ heart attacks and strokes' },
-  { num: 3, name: 'Public Health England', dataset: 'NHS Health Check Inequalities Analysis (IMD quintiles)', date: '2023', note: '18pp deprivation gap: 57% uptake in wealthiest vs 39% in most deprived quintile' },
+  { num: 2, name: 'NHS England', dataset: 'NHS Health Check Modelling — Cardiovascular Prevention', url: 'https://www.england.nhs.uk/statistics/', date: '2023', note: '1,600 cases of Type 2 diabetes and 20,500 high cardiovascular risk detected annually; 66% target would prevent 4,000+ heart attacks and strokes' },
+  { num: 3, name: 'Public Health England', dataset: 'NHS Health Check Inequalities Analysis (IMD quintiles)', url: 'https://www.gov.uk/government/organisations/uk-health-security-agency/about/statistics', date: '2023', note: '18pp deprivation gap: 57% uptake in wealthiest vs 39% in most deprived quintile' },
 ];
 
 function yearToDate(y: number): Date {

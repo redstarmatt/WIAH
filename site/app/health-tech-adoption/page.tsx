@@ -13,9 +13,9 @@ import Cite from '@/components/Cite';
 import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
-  { num: 1, name: 'NHS England', dataset: 'Digital Maturity Assessment', date: '2025' },
-  { num: 2, name: 'NHS Digital', dataset: 'Appointments in General Practice', date: '2025' },
-  { num: 3, name: 'NHSX / NHS AI Lab', dataset: 'AI Programme Dashboard', date: '2025' },
+  { num: 1, name: 'NHS England', dataset: 'Digital Maturity Assessment', url: 'https://www.england.nhs.uk/statistics/', date: '2025' },
+  { num: 2, name: 'NHS Digital', dataset: 'Appointments in General Practice', url: 'https://digital.nhs.uk/data-and-information/publications/statistical', date: '2025' },
+  { num: 3, name: 'NHSX / NHS AI Lab', dataset: 'AI Programme Dashboard', url: 'https://www.england.nhs.uk/statistics/', date: '2025' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

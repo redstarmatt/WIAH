@@ -13,7 +13,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Annual Survey of Hours and Earnings (ASHE)', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/genderpaygapintheuk/2023', date: '2023' },
-  { num: 2, name: 'IFS', dataset: 'The Motherhood Penalty research', date: '2023' },
+  { num: 2, name: 'IFS', dataset: 'The Motherhood Penalty research', url: 'https://ifs.org.uk/publications', date: '2023' },
   { num: 3, name: 'FTSE Women Leaders Review', dataset: 'Annual Review', url: 'https://www.ftsewomenleaders.com/', date: '2023' },
   { num: 4, name: 'Gov.uk', dataset: 'Gender Pay Gap Service', url: 'https://gender-pay-gap.service.gov.uk/', date: '2023' },
 ];
