@@ -126,6 +126,13 @@ export default function TopicPage() {
           colour="#6B7280"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>The seventy-one-fold increase in National Referral Mechanism referrals since 2012 reflects better detection rather than a proportionate rise in exploitation. Before the Modern Slavery Act 2015, most victims were invisible to the system: police, border officials and local authorities lacked both the training and the legal framework to identify them. The Act created a statutory duty to refer, and the introduction of first responder organisations across the NHS, councils and charities dramatically widened the net. Labour exploitation, particularly in construction, agriculture, food processing and hand car washes, has overtaken sexual exploitation as the most commonly reported form, accounting for 42% of referrals.<Cite nums={1} /></p>
+            <p>Albanian nationals now represent the largest single nationality group among referrals, driven by organised criminal networks trafficking people into cannabis cultivation, county lines drug dealing and forced labour. The 2022 Nationality and Borders Act introduced a new public order disqualification allowing the Home Office to withhold support from potential victims with criminal convictions, a measure that charities argue deters genuine victims from coming forward. Decision-making backlogs remain severe: the average wait for a conclusive grounds decision exceeds 500 days, leaving thousands of people in legal limbo, unable to work and dependent on minimal subsistence support from the Salvation Army.<Cite nums={2} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

@@ -125,6 +125,13 @@ export default function TopicPage() {
           colour="#6B7280"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>The UK removed 19,212 people in 2024, a figure that has fallen steadily from a peak of over 65,000 in 2005. The decline reflects systemic constraints rather than a lack of political will: return agreements with origin countries have lapsed, legal challenges delay individual cases for months or years, and pandemic-era disruption permanently reduced operational capacity. Enforced removals now account for a shrinking share of total returns, with four in ten removal attempts failing due to legal injunctions, medical interventions, or logistical breakdowns at the point of departure.<Cite nums={1} /></p>
+            <p>The gap between rhetoric and reality is widest when returns are measured against estimated illegal entries. Roughly 40,000 people crossed the Channel in small boats in 2024 alone, meaning the removal system processes a fraction of annual irregular arrivals. Successive governments have announced targets and created new legal powers — the Nationality and Borders Act, the Illegal Migration Act, the Rwanda scheme — yet the structural bottleneck remains the same: limited detention estate, overstretched immigration tribunals, and a shortage of return agreements with key countries of origin.<Cite nums={1} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

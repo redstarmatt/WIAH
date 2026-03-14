@@ -127,6 +127,13 @@ export default function TopicPage() {
           colour="#264653"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Mobile connectivity is now essential infrastructure, yet around 1.1 million UK premises cannot reliably make a voice call indoors from any operator. The problem is overwhelmingly rural: parts of mid-Wales, the Scottish Highlands and the Northumberland borders have coverage from just one network, leaving residents with no fallback if that operator suffers an outage. This is not simply an inconvenience. In areas without landline alternatives, single-operator coverage means emergency calls can fail entirely, and businesses that depend on mobile connectivity face a structural economic disadvantage compared to urban competitors.<Cite nums={1} /></p>
+            <p>The Shared Rural Network, a public-private partnership signed in 2020, was designed to close these gaps by requiring operators to share masts in underserved areas. Progress has been slower than planned. The programme targets 95% geographic 4G coverage by the end of 2026, but Ofcom data shows coverage at 92% of landmass as of 2025, and the most difficult final percentage points involve terrain and planning constraints that make each additional mast disproportionately expensive. Meanwhile, the rollout of 5G has been almost exclusively urban, widening the digital divide between city and countryside even as the baseline slowly improves.<Cite nums={2} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

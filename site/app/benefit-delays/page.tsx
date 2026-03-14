@@ -129,6 +129,13 @@ export default function TopicPage() {
           colour="#F4A261"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Universal Credit was designed to simplify the welfare system by merging six legacy benefits into a single monthly payment. A decade into that transition, the system pays four in five claimants on time — but the one in five who miss out face destitution by design. Late payments trigger a cascade of hardship: rent arrears, council tax debt, food bank referrals. The five-week wait for a first payment, built into UC&apos;s architecture, remains the single biggest driver of delays, pushing new claimants toward advance loans that reduce future entitlements.<Cite nums={2} /></p>
+            <p>The error picture is equally stark. DWP&apos;s own estimates put annual overpayments at £9.7 billion and underpayments at £2.6 billion — a combined error rate approaching 5% of total welfare spending. Overpayments are aggressively recovered through deductions from future benefits, reducing already-inadequate incomes. Underpayments, disproportionately concentrated in state pension and disability benefits, often go undetected for years. The system simultaneously takes too much from some claimants and pays too little to others, with the poorest households bearing the cost in both directions.<Cite nums={1} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

@@ -128,6 +128,13 @@ export default function TopicPage() {
           colour="#264653"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Around 8 million UK adults cannot perform basic digital tasks — completing an online form, managing email, navigating a search engine. This is not merely an inconvenience: as government services, banking, healthcare booking, and job applications migrate online, digital exclusion increasingly mirrors social exclusion. The affected population skews older, poorer, and more likely to have a disability. Covid-19 forced a one-off acceleration in digital adoption, but the pace of improvement has since stalled, leaving a hard-to-reach cohort for whom cost, confidence, and motivation remain significant barriers.<Cite nums={1} /></p>
+            <p>At the other end of the spectrum, employers report a growing shortage of advanced digital skills. Over half now struggle to hire staff with the technical capabilities they need, up from 39% in 2019, driven partly by the rapid emergence of AI and data science roles that the education system has not kept pace with. Government-funded bootcamps have scaled to 24,000 completions per year, but this remains marginal against an economy-wide gap that DCMS estimates costs £22 billion annually in lost productivity. The UK faces a two-tier problem: too many adults locked out of basic participation, and too few with the advanced skills the economy demands.<Cite nums={2} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },
