@@ -122,7 +122,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Environment & Climate"
           question="Is Britain Planting Enough Trees?"
-          finding="The UK planted 13,700 hectares of trees in 2023-24 — less than half the 30,000 hectares per year the Climate Change Committee recommends to meet net zero targets."
+          finding={<>The UK planted 13,700 hectares of trees in 2023-24<Cite nums={1} /> — less than half the 30,000 hectares per year the Climate Change Committee recommends to meet net zero targets.<Cite nums={2} /></>}
           colour="#2A9D8F"
         />
 
@@ -140,7 +140,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-good"
-            changeText="Up from 10,500 in 2021 · Scotland accounts for 70%"
+            changeText={<>Up from 10,500 in 2021 · Scotland accounts for 70%<Cite nums={1} /></>}
             sparklineData={[8800, 9200, 9600, 10000, 10500, 10800, 10500, 12000, 13000, 13500, 13700]}
             href="#sec-coverage"
           />
@@ -150,7 +150,7 @@ export default function TopicPage() {
             unit="/year"
             direction="flat"
             polarity="up-is-good"
-            changeText="For net zero woodland cover · needs doubling"
+            changeText={<>For net zero woodland cover · needs doubling<Cite nums={2} /></>}
             sparklineData={[30000, 30000, 30000, 30000, 30000, 30000, 30000, 30000, 30000, 30000, 30000]}
             href="#sec-coverage"
           />
@@ -197,7 +197,7 @@ export default function TopicPage() {
             title="Scotland leading UK tree planting"
             value="9,600 ha"
             unit="Scotland planted in 2023-24"
-            description="Scotland planted 9,600 hectares in 2023-24 — well ahead of its 18,000 ha/year target and the most of any UK nation. The Scottish Government's Woodland Creation Planning Grant and Forestry Grant Scheme provide strong support. Northern Ireland tripled planting rates since 2020."
+            description={<>Scotland planted 9,600 hectares in 2023-24 — well ahead of its 18,000 ha/year target and the most of any UK nation.<Cite nums={1} /> The Scottish Government's Woodland Creation Planning Grant and Forestry Grant Scheme provide strong support. Northern Ireland tripled planting rates since 2020.</>}
             source="Source: Forestry Commission — UK and England woodland statistics, 2025."
           />
         </ScrollReveal>

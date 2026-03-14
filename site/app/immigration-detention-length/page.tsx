@@ -122,7 +122,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Immigration & Population"
           question="How Long Are Migrants Held in Detention?"
-          finding="26,297 people entered immigration detention in 2024. Average stays have increased to 38 days, with 24% held for over 28 days despite legal guidance against prolonged detention."
+          finding={<>26,297 people entered immigration detention in 2024. Average stays have increased to 38 days, with 24% held for over 28 days despite legal guidance against prolonged detention.<Cite nums={1} /></>}
           colour="#6B7280"
         />
 
@@ -140,7 +140,7 @@ export default function TopicPage() {
             unit=""
             direction="down"
             polarity="up-is-bad"
-            changeText="Down from 32,559 peak in 2017 · capacity constraints"
+            changeText={<>Down from 32,559 peak in 2017 · capacity constraints<Cite nums={1} /></>}
             sparklineData={[27993, 32559, 28919, 27849, 26773, 11356, 19374, 24426, 26009, 26297, 25000]}
             href="#sec-coverage"
           />
@@ -150,7 +150,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Up from 29 days in 2019 · no statutory time limit"
+            changeText={<>Up from 29 days in 2019 · no statutory time limit<Cite nums={1} /></>}
             sparklineData={[25, 26, 27, 28, 29, 32, 35, 37, 38, 38, 38]}
             href="#sec-coverage"
           />
@@ -160,7 +160,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Up from 18% in 2019 · no statutory limit in UK unlike EU"
+            changeText={<>Up from 18% in 2019 · no statutory limit in UK unlike EU<Cite nums={1} /></>}
             sparklineData={[16, 16, 17, 17, 18, 20, 21, 22, 23, 24, 24]}
             href="#sec-coverage"
           />
@@ -197,7 +197,7 @@ export default function TopicPage() {
             title="Alternatives to detention expanding"
             value="6,000"
             unit="on Home Detention Curfew 2024"
-            description="The Home Office has expanded alternatives to detention, including Home Detention Curfew (electronic tagging) for 6,000 people in 2024. The UNHCR-backed case management scheme supports vulnerable individuals through immigration processes without detention, achieving 95% compliance with reporting requirements."
+            description={<>The Home Office has expanded alternatives to detention, including Home Detention Curfew (electronic tagging) for 6,000 people in 2024.<Cite nums={2} /> The UNHCR-backed case management scheme supports vulnerable individuals through immigration processes without detention, achieving 95% compliance with reporting requirements.<Cite nums={2} /></>}
             source="Source: Home Office Immigration statistics, 2025."
           />
         </ScrollReveal>

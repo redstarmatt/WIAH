@@ -124,7 +124,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Immigration & Population"
           question="How Long Does It Take to Get a UK Visa?"
-          finding="Skilled worker visa median processing fell to 12 days, but family visas average 60 days with some waiting over 6 months. Only 68% of applications are cleared within target."
+          finding={<>Skilled worker visa median processing fell to 12 days, but family visas average 60 days with some waiting over 6 months.<Cite nums={1} /> Only 68% of applications are cleared within target.<Cite nums={2} /></>}
           colour="#6B7280"
         />
 
@@ -199,7 +199,7 @@ export default function TopicPage() {
             title="Digital visa system launched"
             value="2024"
             unit="eVisa system fully deployed"
-            description="The UK's eVisa system replaced physical stamps in 2024, reducing processing time for many routine applications and cutting administrative errors. Priority visa services offer 5-day processing for an additional fee, and the UKVI digital transformation programme has reduced manual processing by 40%."
+            description={<>The UK&rsquo;s eVisa system replaced physical stamps in 2024, reducing processing time for many routine applications and cutting administrative errors.<Cite nums={2} /> Priority visa services offer 5-day processing for an additional fee, and the UKVI digital transformation programme has reduced manual processing by 40%.</>}
             source="Source: Home Office — Immigration statistics, 2025."
           />
         </ScrollReveal>

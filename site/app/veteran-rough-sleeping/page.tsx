@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'MHCLG', dataset: 'Rough Sleeping Snapshot in England, Autumn 2023', url: 'https://www.gov.uk/government/statistics/rough-sleeping-snapshot-in-england-autumn-2023', date: '2024', note: '320 veterans on a single night, down 45% from 2010 peak' },
+  { num: 2, name: "Office for Veterans' Affairs", dataset: 'Op FORTITUDE Annual Report', url: 'https://www.gov.uk/government/publications/veterans-strategy-action-plan-2022-to-2024', date: '2024', note: '1,200+ veterans housed since 2021' },
+  { num: 3, name: 'DLUHC', dataset: 'Statutory Homelessness Statistics', url: 'https://www.gov.uk/government/collections/homelessness-statistics', date: '2024', note: 'Veteran assessments down 32% since 2012' },
+  { num: 4, name: 'Forces in Mind Trust', dataset: 'Veterans and homelessness research', url: 'https://www.fim-trust.org/', date: '2023', note: 'True homelessness estimated 3-5x visible count' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -138,7 +147,7 @@ export default function VeteranRoughSleepingPage() {
         <TopicHeader
           topic="Veteran Rough Sleeping"
           question="Are Veterans Still Sleeping Rough?"
-          finding="320 veterans were found sleeping rough in England on a single night in autumn 2023 — down from a peak of 580 in 2010. Dedicated programmes like Op FORTITUDE and the Armed Forces Covenant housing duty are making measurable progress, but self-declaration undercounting means the true figure is almost certainly higher."
+          finding={<>320 veterans were found sleeping rough in England on a single night in autumn 2023 — down from a peak of 580 in 2010.<Cite nums={1} /> Dedicated programmes like Op FORTITUDE and the Armed Forces Covenant housing duty are making measurable progress,<Cite nums={2} /> but self-declaration undercounting means the true figure is almost certainly higher.<Cite nums={4} /></>}
           colour="#6B7280"
           preposition="with"
         />
@@ -146,13 +155,13 @@ export default function VeteranRoughSleepingPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The headline figure of 320 veterans sleeping rough on any given night in England comes from the annual MHCLG autumn snapshot — a mix of actual street counts and local authority estimates conducted on a single night. It represents a 45% fall from the 580 recorded in 2010, and the decline has been broadly sustained through two distinct phases: gradual improvement through better local outreach from 2010 to 2019, and then a sharper drop in 2020 when the government&rsquo;s &ldquo;Everyone In&rdquo; COVID response temporarily housed almost all rough sleepers. The count rebounded slightly after pandemic protections ended but settled at a lower baseline, suggesting some of the emergency interventions created lasting housing pathways.
+              The headline figure of 320 veterans sleeping rough on any given night in England comes from the annual MHCLG autumn snapshot — a mix of actual street counts and local authority estimates conducted on a single night. It represents a 45% fall from the 580 recorded in 2010, and the decline has been broadly sustained through two distinct phases: gradual improvement through better local outreach from 2010 to 2019, and then a sharper drop in 2020 when the government&rsquo;s &ldquo;Everyone In&rdquo; COVID response temporarily housed almost all rough sleepers. The count rebounded slightly after pandemic protections ended but settled at a lower baseline, suggesting some of the emergency interventions created lasting housing pathways.<Cite nums={1} />
             </p>
             <p>
-              Op FORTITUDE, launched in 2021, is the most significant dedicated intervention. Run by the Office for Veterans&rsquo; Affairs with the Royal British Legion and other charities, it provides a single referral route connecting rough-sleeping veterans to specialist housing, mental health support, and employment services. Since launch, the programme has helped over 1,200 veterans into settled accommodation. Meanwhile, the Armed Forces Covenant housing duty — made law in the Armed Forces Act 2021 — requires local authorities to give &ldquo;due regard&rdquo; to veterans&rsquo; service when making housing decisions. The number of specialist veteran housing units has nearly doubled since 2015, reaching an estimated 12,300 in 2023. Veteran homelessness assessments by local authorities have also fallen, from 8,700 in 2012 to 5,900 in 2023 — a 32% reduction.
+              Op FORTITUDE, launched in 2021, is the most significant dedicated intervention. Run by the Office for Veterans&rsquo; Affairs with the Royal British Legion and other charities, it provides a single referral route connecting rough-sleeping veterans to specialist housing, mental health support, and employment services. Since launch, the programme has helped over 1,200 veterans into settled accommodation.<Cite nums={2} /> Meanwhile, the Armed Forces Covenant housing duty — made law in the Armed Forces Act 2021 — requires local authorities to give &ldquo;due regard&rdquo; to veterans&rsquo; service when making housing decisions. The number of specialist veteran housing units has nearly doubled since 2015, reaching an estimated 12,300 in 2023. Veteran homelessness assessments by local authorities have also fallen, from 8,700 in 2012 to 5,900 in 2023 — a 32% reduction.<Cite nums={3} />
             </p>
             <p>
-              But there are structural problems these figures cannot capture. Veteran status in homelessness data relies on self-declaration during outreach encounters or local authority assessments. Many veterans do not disclose their service — some because they do not see it as relevant, others because of stigma or distrust of institutions. Research by the Forces in Mind Trust estimates the true number of veterans experiencing homelessness in any form — including sofa-surfing, temporary accommodation, and hidden homelessness — could be three to five times the visible rough sleeping count. Mental health conditions, particularly PTSD and complex trauma, substance misuse, and relationship breakdown remain the dominant drivers. The progress is real, but the denominator is almost certainly larger than anyone is counting.
+              But there are structural problems these figures cannot capture. Veteran status in homelessness data relies on self-declaration during outreach encounters or local authority assessments. Many veterans do not disclose their service — some because they do not see it as relevant, others because of stigma or distrust of institutions. Research by the Forces in Mind Trust estimates the true number of veterans experiencing homelessness in any form — including sofa-surfing, temporary accommodation, and hidden homelessness — could be three to five times the visible rough sleeping count. Mental health conditions, particularly PTSD and complex trauma, substance misuse, and relationship breakdown remain the dominant drivers. The progress is real, but the denominator is almost certainly larger than anyone is counting.<Cite nums={4} />
             </p>
           </div>
         </section>
@@ -313,7 +322,7 @@ export default function VeteranRoughSleepingPage() {
             title="Op FORTITUDE delivering measurable results"
             value="1,200+"
             unit="veterans housed since 2021"
-            description="Op FORTITUDE, launched in 2021 by the Office for Veterans' Affairs in partnership with the Royal British Legion, SSAFA, and other service charities, provides a single referral pathway connecting rough-sleeping veterans directly to specialist housing, mental health support, and employment services. Since launch, the programme has helped over 1,200 veterans into settled accommodation. The model — a dedicated navigator working across statutory and charitable sectors — has been adopted as a template for veteran support across England, and the Armed Forces Covenant housing duty now gives veterans legal weight in local authority housing decisions."
+            description={<>Op FORTITUDE, launched in 2021 by the Office for Veterans&rsquo; Affairs in partnership with the Royal British Legion, SSAFA, and other service charities, provides a single referral pathway connecting rough-sleeping veterans directly to specialist housing, mental health support, and employment services. Since launch, the programme has helped over 1,200 veterans into settled accommodation.<Cite nums={2} /> The model — a dedicated navigator working across statutory and charitable sectors — has been adopted as a template for veteran support across England, and the Armed Forces Covenant housing duty now gives veterans legal weight in local authority housing decisions.</>}
             source="Source: Office for Veterans' Affairs — Op FORTITUDE Annual Report, 2024. MHCLG — Rough Sleeping Snapshot, Autumn 2023."
           />
         </ScrollReveal>
@@ -336,6 +345,8 @@ export default function VeteranRoughSleepingPage() {
             </p>
           </div>
         </section>
+
+        <div className="mt-6 max-w-2xl"><References items={editorialRefs} /></div>
 
         <RelatedTopics />
       </main>

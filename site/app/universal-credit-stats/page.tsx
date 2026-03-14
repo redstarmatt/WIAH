@@ -8,6 +8,14 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DWP', dataset: 'Universal Credit statistics', url: 'https://www.gov.uk/government/collections/universal-credit-statistics', date: '2025', note: '7.5 million claimants, 26% with deductions' },
+  { num: 2, name: 'DWP', dataset: 'Evaluation of deduction policy reform', url: 'https://www.gov.uk/government/publications/universal-credit-evaluation', date: '2024', note: 'Deduction cap reduced to 15% from April 2023' },
+  { num: 3, name: 'DWP', dataset: 'Universal Credit advances and hardship payments', url: 'https://www.gov.uk/government/statistics/universal-credit-statistics', date: '2025', note: '850,000+ take advance per year' },
+];
 
 interface DataPoint {
   year: number;
@@ -86,14 +94,14 @@ export default function UniversalCreditStatsPage() {
         <TopicHeader
           topic="Poverty & Cost of Living"
           question="Does Universal Credit Actually Work?"
-          finding="7.5 million people claim Universal Credit; 1 in 4 experience deductions that reduce their payment. The 5-week wait for first payment affects 850,000 new claimants per year."
+          finding={<>7.5 million people claim Universal Credit; 1 in 4 experience deductions that reduce their payment.<Cite nums={1} /> The 5-week wait for first payment affects 850,000 new claimants per year.<Cite nums={3} /></>}
           colour="#F4A261"
         />
 
         <section className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              7.5 million people claim Universal Credit; 1 in 4 experience deductions that reduce their payment. The 5-week wait for first payment affects 850,000 new claimants per year. The data below draws on official sources to show how this has changed over the past decade and where the pressures are most acute.
+              7.5 million people claim Universal Credit; 1 in 4 experience deductions that reduce their payment.<Cite nums={1} /> The 5-week wait for first payment affects 850,000 new claimants per year.<Cite nums={3} /> The data below draws on official sources to show how this has changed over the past decade and where the pressures are most acute.
             </p>
             <p>
               The figures reflect a structural pattern rather than a short-term fluctuation. Understanding the scale of the issue is the first step toward holding policymakers to account for the decisions that shape these outcomes.
@@ -167,7 +175,7 @@ export default function UniversalCreditStatsPage() {
             title="Deduction cap reduced to 15%"
             value="15%"
             unit="maximum deduction cap from 2023"
-            description="The maximum rate of UC deductions was reduced from 25% to 15% of the standard allowance from April 2023, returning an average of \u00a357 per month to those affected. The 5-week wait policy was not changed but the maximum repayment term for advance loans was extended to 24 months. DWP also improved the 'trusted partner' system allowing food banks to request emergency payments for clients in hardship."
+            description={<>The maximum rate of UC deductions was reduced from 25% to 15% of the standard allowance from April 2023, returning an average of {"\u00a3"}57 per month to those affected.<Cite nums={2} /> The 5-week wait policy was not changed but the maximum repayment term for advance loans was extended to 24 months.<Cite nums={3} /> DWP also improved the &lsquo;trusted partner&rsquo; system allowing food banks to request emergency payments for clients in hardship.</>}
             source="Source: DWP \u2014 Universal Credit statistics, 2025. DWP \u2014 Evaluation of deduction policy reform, 2024."
           />
         </ScrollReveal>
@@ -197,6 +205,8 @@ export default function UniversalCreditStatsPage() {
             </ul>
           </div>
         </section>
+
+        <div className="mt-6 max-w-2xl"><References items={editorialRefs} /></div>
       </main>
     </>
   );

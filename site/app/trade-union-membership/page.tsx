@@ -122,7 +122,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Economy & Work"
           question="Are Trade Unions Coming Back?"
-          finding="Union membership fell from 53% of workers in 1979 to 22.3% in 2024, but has stabilised. Private sector membership stands at just 12.8% while public sector remains at 50%."
+          finding={<>Union membership fell from 53% of workers in 1979 to 22.3% in 2024, but has stabilised.<Cite nums={1} /> Private sector membership stands at just 12.8% while public sector remains at 50%.</>}
           colour="#6B7280"
         />
 
@@ -140,7 +140,7 @@ export default function TopicPage() {
             unit=""
             direction="flat"
             polarity="up-is-bad"
-            changeText="Stabilised after decades of decline from 53% in 1979"
+            changeText={<>Stabilised after decades of decline from 53% in 1979<Cite nums={1} /></>}
             sparklineData={[25.0, 24.7, 24.0, 23.4, 23.5, 23.7, 23.3, 23.0, 22.7, 22.3, 22.3]}
             href="#sec-coverage"
           />
@@ -160,7 +160,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Highest since 1989 · rail, NHS and civil service"
+            changeText={<>Highest since 1989 · rail, NHS and civil service<Cite nums={2} /></>}
             sparklineData={[0.2, 0.1, 0.2, 0.3, 0.2, 0.2, 0.2, 2.5, 2.7, 1.5, 0.8]}
             href="#sec-coverage"
           />
@@ -197,7 +197,7 @@ export default function TopicPage() {
             title="Membership among young workers growing"
             value="+3pp"
             unit="18-24 union membership since 2019"
-            description="Trade union membership among 18-24 year olds has grown 3 percentage points since 2019, bucking the long-term trend. Young workers in warehousing, retail and fast food have been at the forefront of organising campaigns. The 2024 Employment Rights Bill strengthens rights to organise and removes some barriers to industrial action."
+            description={<>Trade union membership among 18-24 year olds has grown 3 percentage points since 2019, bucking the long-term trend.<Cite nums={1} /> Young workers in warehousing, retail and fast food have been at the forefront of organising campaigns. The 2024 Employment Rights Bill strengthens rights to organise and removes some barriers to industrial action.</>}
             source="Source: BEIS — Trade union statistics, 2025."
           />
         </ScrollReveal>

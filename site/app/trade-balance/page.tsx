@@ -122,7 +122,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Economy & Work"
           question="Is Britain Paying Its Way in the World?"
-          finding="The UK has run a persistent trade deficit since 1998. The goods deficit widened post-Brexit while a services surplus partially offset it, leaving an overall deficit of £37bn."
+          finding={<>The UK has run a persistent trade deficit since 1998. The goods deficit widened post-Brexit while a services surplus partially offset it, leaving an overall deficit of £37bn.<Cite nums={1} /></>}
           colour="#6B7280"
         />
 
@@ -140,7 +140,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Goods deficit £233bn partly offset by services surplus"
+            changeText={<>Goods deficit £233bn partly offset by services surplus<Cite nums={1} /></>}
             sparklineData={[20, 22, 18, 24, 28, 36, 30, 38, 40, 38, 37]}
             href="#sec-coverage"
           />
@@ -150,7 +150,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="+£68bn since 2015 · manufactured goods gap widened post-Brexit"
+            changeText={<>+£68bn since 2015 · manufactured goods gap widened post-Brexit<Cite nums={1} /></>}
             sparklineData={[165, 170, 175, 180, 182, 185, 190, 210, 225, 228, 233]}
             href="#sec-coverage"
           />
@@ -160,7 +160,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-good"
-            changeText="+£70bn since 2015 · financial & professional services dominant"
+            changeText={<>+£70bn since 2015 · financial &amp; professional services dominant<Cite nums={2} /></>}
             sparklineData={[126, 132, 140, 146, 152, 145, 155, 165, 180, 190, 196]}
             href="#sec-coverage"
           />
@@ -197,7 +197,7 @@ export default function TopicPage() {
             title="Services exports at record high"
             value="£452bn"
             unit="UK services exports in 2024"
-            description="UK services exports reached a record £452 billion in 2024, driven by financial services, professional services and higher education. The UK remains the world's second-largest services exporter."
+            description={<>UK services exports reached a record £452 billion in 2024, driven by financial services, professional services and higher education.<Cite nums={2} /> The UK remains the world's second-largest services exporter.</>}
             source="Source: ONS UK trade in services, 2025."
           />
         </ScrollReveal>

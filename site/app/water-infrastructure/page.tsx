@@ -7,6 +7,15 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ofwat', dataset: 'Water Company Performance Reports — burst and leakage data', url: 'https://www.ofwat.gov.uk/regulated-companies/company-obligations/resilience/', date: '2024' },
+  { num: 2, name: 'Water UK', dataset: 'Annual Review — industry investment data', url: 'https://www.water.org.uk/publication/water-uk-annual-review/', date: '2024' },
+  { num: 3, name: 'Ofwat', dataset: 'PR24 Final Determinations', url: 'https://www.ofwat.gov.uk/wp-content/uploads/2024/07/PR24-final-determinations-overview.pdf', date: '2024', note: '£96bn investment programme; average 36% bill increase' },
+  { num: 4, name: 'Water Industry Research', dataset: 'Pipe age and asset condition estimates', url: 'https://www.ukwir.org/', date: '2024' },
+];
 
 export default function WaterInfrastructurePage() {
   // Water main bursts per day 2010–2024
@@ -49,16 +58,16 @@ export default function WaterInfrastructurePage() {
         <TopicHeader
           topic="Water Infrastructure"
           question="How Old and Broken is Britain's Water Infrastructure?"
-          finding="Water mains burst 84 times a day on average — the oldest pipes date to the Victorian era — and water companies spent less on infrastructure in real terms in 2023 than in 2010."
+          finding={<>Water mains burst 84 times a day on average — the oldest pipes date to the Victorian era — and water companies spent less on infrastructure in real terms in 2023 than in 2010.<Cite nums={[1, 2]} /></>}
           colour="#264653"
           preposition="in"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England and Wales's water network comprises approximately 345,000 kilometres of water mains, serving 56 million customers through 17 privatised water companies. An estimated 25% of pipes are over 100 years old, with Victorian-era infrastructure still in daily use across much of London and the North West. Water mains burst an average of 84 times every day — around 31,000 bursts per year — releasing treated water and causing supply disruptions, road collapses, and property flooding.</p>
-            <p>Water companies spent £5.4 billion on capital investment in 2023, compared with £5.8 billion in 2010 in real terms — a real-terms decline even as the volume and age of assets requiring replacement has grown. The shortfall accumulated over a decade of Ofwat price reviews that allowed companies to distribute dividends while deferring maintenance investment. Thames Water, the largest company, is currently under financial restructuring with £16 billion of debt accumulated partly through leveraged buyouts, and has repeatedly missed its infrastructure targets.</p>
-            <p>The Ofwat PR24 price review, finalised in 2024, allows water companies to raise bills by an average of 36% over the next five years to fund a £96 billion investment programme — the largest in the industry's history. Whether this translates into reduced burst rates and improved infrastructure condition will be the test over the next decade.</p>
+            <p>England and Wales's water network comprises approximately 345,000 kilometres of water mains, serving 56 million customers through 17 privatised water companies.<Cite nums={2} /> An estimated 25% of pipes are over 100 years old, with Victorian-era infrastructure still in daily use across much of London and the North West.<Cite nums={4} /> Water mains burst an average of 84 times every day — around 31,000 bursts per year — releasing treated water and causing supply disruptions, road collapses, and property flooding.<Cite nums={1} /></p>
+            <p>Water companies spent £5.4 billion on capital investment in 2023, compared with £5.8 billion in 2010 in real terms — a real-terms decline even as the volume and age of assets requiring replacement has grown.<Cite nums={2} /> The shortfall accumulated over a decade of Ofwat price reviews that allowed companies to distribute dividends while deferring maintenance investment. Thames Water, the largest company, is currently under financial restructuring with £16 billion of debt accumulated partly through leveraged buyouts, and has repeatedly missed its infrastructure targets.</p>
+            <p>The Ofwat PR24 price review, finalised in 2024, allows water companies to raise bills by an average of 36% over the next five years to fund a £96 billion investment programme — the largest in the industry's history.<Cite nums={3} /> Whether this translates into reduced burst rates and improved infrastructure condition will be the test over the next decade.</p>
           </div>
         </section>
 
@@ -76,7 +85,7 @@ export default function WaterInfrastructurePage() {
               value="84"
               direction="up"
               polarity="up-is-bad"
-              changeText="~31,000 bursts/year · oldest pipes Victorian era"
+              changeText={<>~31,000 bursts/year · oldest pipes Victorian era<Cite nums={1} /></>}
               sparklineData={[72, 74, 76, 78, 80, 82, 84, 86, 88, 84, 82, 84, 86, 84, 84]}
               source="Ofwat — Water Company Performance Reports 2024"
             />
@@ -85,7 +94,7 @@ export default function WaterInfrastructurePage() {
               value="5.4"
               direction="down"
               polarity="down-is-bad"
-              changeText="down from £5.8bn in 2010 · real-terms fall despite ageing assets"
+              changeText={<>down from £5.8bn in 2010 · real-terms fall despite ageing assets<Cite nums={2} /></>}
               sparklineData={[5.8, 5.6, 5.5, 5.4, 5.3, 5.2, 5.0, 4.9, 4.8, 4.6, 5.1, 5.3, 5.5, 5.4, 5.4]}
               source="Ofwat — Annual Reports / Water UK 2024"
             />
@@ -94,7 +103,7 @@ export default function WaterInfrastructurePage() {
               value="75+"
               direction="up"
               polarity="up-is-bad"
-              changeText="25% of pipes over 100 years old · Victorian infrastructure still in use"
+              changeText={<>25% of pipes over 100 years old · Victorian infrastructure still in use<Cite nums={4} /></>}
               sparklineData={[68, 69, 70, 71, 72, 73, 74, 74, 75, 75, 75, 75, 75, 75, 75]}
               source="Water Industry Research / Ofwat — 2024"
             />
@@ -147,6 +156,7 @@ export default function WaterInfrastructurePage() {
             <p>Burst data is self-reported by water companies to Ofwat as part of annual performance reporting. Investment figures are deflated to 2023–24 prices using HM Treasury GDP deflators. Pipe age estimates from Water Industry Research and company asset registers. PR24 = Ofwat's 2024 periodic review determining prices 2025–2030.</p>
           </div>
         </section>
+        <References items={editorialRefs} />
         <RelatedTopics />
       </main>
     </>

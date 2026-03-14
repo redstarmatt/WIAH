@@ -126,7 +126,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Environment & Climate"
           question="How Much Money Is Made from Illegal Waste?"
-          finding="Waste crime costs the English economy £924 million per year. Environment Agency prosecutions have fallen due to resource cuts despite the problem growing significantly."
+          finding={<>Waste crime costs the English economy £924 million per year.<Cite nums={1} /> Environment Agency prosecutions have fallen due to resource cuts despite the problem growing significantly.<Cite nums={2} /></>}
           colour="#2A9D8F"
         />
 
@@ -201,7 +201,7 @@ export default function TopicPage() {
             title="Digital waste tracking launching 2025"
             value="2025"
             unit="mandatory digital waste tracking"
-            description="From 2025, all UK waste movements must be recorded in the EA's digital waste tracking system — a significant shift from paper-based consignment notes that were easily falsified. The system is estimated to reduce waste fraud by £500m/year by making illegal diversions visible in real time."
+            description={<>From 2025, all UK waste movements must be recorded in the EA&rsquo;s digital waste tracking system — a significant shift from paper-based consignment notes that were easily falsified.<Cite nums={3} /> The system is estimated to reduce waste fraud by £500m/year by making illegal diversions visible in real time.</>}
             source="Source: EA — Digital waste tracking implementation, 2024."
           />
         </ScrollReveal>

@@ -124,7 +124,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Poverty & Cost of Living"
           question="Is Britain Becoming More Unequal?"
-          finding="The Gini coefficient for household income has stabilised at 0.33 — similar to 1990 levels but higher than most comparable European countries. Top 10% earn 9x bottom 10%."
+          finding={<>The Gini coefficient for household income has stabilised at 0.33 — similar to 1990 levels but higher than most comparable European countries.<Cite nums={1} /> Top 10% earn 9x bottom 10%.<Cite nums={2} /></>}
           colour="#F4A261"
         />
 
@@ -142,7 +142,7 @@ export default function TopicPage() {
             unit=""
             direction="flat"
             polarity="up-is-bad"
-            changeText="Stable for decade · higher than Germany 0.29, France 0.31"
+            changeText={<>Stable for decade · higher than Germany 0.29, France 0.31<Cite nums={1} /></>}
             sparklineData={[0.34, 0.34, 0.33, 0.33, 0.34, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33]}
             href="#sec-coverage"
           />
@@ -152,7 +152,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="9x bottom 10% · gap from financial assets"
+            changeText={<>9x bottom 10% · gap from financial assets<Cite nums={2} /></>}
             sparklineData={[65000, 67000, 69000, 70000, 71000, 70000, 72000, 74000, 75000, 76000, 77000]}
             href="#sec-coverage"
           />
@@ -162,7 +162,7 @@ export default function TopicPage() {
             unit=""
             direction="flat"
             polarity="up-is-bad"
-            changeText="Was 7x in 1980 · financial assets main driver"
+            changeText={<>Was 7x in 1980 · financial assets main driver<Cite nums={2} /></>}
             sparklineData={[8.5, 8.6, 8.7, 8.8, 8.9, 8.8, 8.9, 9.0, 9.0, 9.0, 9.0]}
             href="#sec-coverage"
           />
@@ -199,7 +199,7 @@ export default function TopicPage() {
             title="National Living Wage raised income floor"
             value="£12.21"
             unit="National Living Wage 2025"
-            description="The National Living Wage has risen from £7.20 in 2016 to £12.21 in 2025 — a 70% increase. The Low Pay Commission estimates this has raised wages for 2.5 million workers and partially offset inequality growth at the bottom. The Minimum Wage now covers workers from age 21."
+            description={<>The National Living Wage has risen from £7.20 in 2016 to £12.21 in 2025 — a 70% increase.<Cite nums={3} /> The Low Pay Commission estimates this has raised wages for 2.5 million workers and partially offset inequality growth at the bottom.<Cite nums={3} /> The Minimum Wage now covers workers from age 21.<Cite nums={3} /></>}
             source="Source: BEIS — National Living Wage uprating, 2025."
           />
         </ScrollReveal>

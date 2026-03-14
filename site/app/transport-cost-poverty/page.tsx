@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ORR / ONS', dataset: 'Rail Fares Index / Average Weekly Earnings', url: 'https://dataportal.orr.gov.uk/statistics/finance/rail-fares/', date: '2023' },
+  { num: 2, name: 'DfT', dataset: 'Bus Statistics — BUS01', url: 'https://www.gov.uk/government/statistical-data-sets/bus-statistics-data-tables-bus01', date: '2023', note: 'Rural bus routes halved since 2010' },
+  { num: 3, name: 'Campaign for Better Transport', dataset: 'Buses in Crisis', url: 'https://bettertransport.org.uk/research', date: '2023', note: 'Transport poverty rate for car-free rural households' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -71,13 +79,13 @@ export default function TransportCostPovertyPage() {
         <TopicHeader
           topic="Transport Cost Poverty"
           question="Is Getting Around Too Expensive for Low-Income Families?"
-          finding="Car-free households in rural areas spend 20% or more of their income on transport — while train fares have risen 54% since 2010 versus 28% wage growth."
+          finding={<>Car-free households in rural areas spend 20% or more of their income on transport<Cite nums={3} /> — while train fares have risen 54% since 2010 versus 28% wage growth.<Cite nums={1} /></>}
           colour="#E63946"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Train fares have risen 54% since 2010 while average wages grew only 28% in nominal terms — a 26 percentage point affordability gap. The rural bus network has halved: approximately 16,000 routes operated in 2010, falling to around 8,200 by 2023 as commercial viability and local authority funding declined in tandem. The Bus Service Operators Grant has been repeatedly reduced in real terms; the Bus Back Better strategy's promised £3 billion transformation fund has not materialised at the scale needed to reverse a decade of route withdrawal. Car-free rural households — disproportionately elderly, low-income, or disabled — can spend more than 20% of household income on transport, compared to 10–15% for the wider population.</p>
+            <p>Train fares have risen 54% since 2010 while average wages grew only 28% in nominal terms — a 26 percentage point affordability gap.<Cite nums={1} /> The rural bus network has halved: approximately 16,000 routes operated in 2010, falling to around 8,200 by 2023 as commercial viability and local authority funding declined in tandem.<Cite nums={2} /> The Bus Service Operators Grant has been repeatedly reduced in real terms; the Bus Back Better strategy's promised £3 billion transformation fund has not materialised at the scale needed to reverse a decade of route withdrawal. Car-free rural households — disproportionately elderly, low-income, or disabled — can spend more than 20% of household income on transport, compared to 10–15% for the wider population.<Cite nums={3} /></p>
             <p>The consequences of transport poverty extend far beyond inconvenience: limited affordable transport reduces access to employment, healthcare, education, and social participation. People unable to afford travel to job interviews or training are structurally excluded from the labour market; those who cannot afford hospital transport miss clinical appointments. Electric vehicle incentives and EV infrastructure investment have primarily benefited higher-income households with off-street parking, widening the gap between car-dependent and car-free households rather than reducing it. Transport cost is categorised as a household expenditure choice in national statistics, rendering the scale of transport poverty largely invisible to policymakers.</p>
           </div>
         </section>
@@ -149,6 +157,9 @@ export default function TransportCostPovertyPage() {
             <p>Train fare index uses ORR regulated fares data indexed to 2010=100. Wage index uses ONS AWE total pay (including bonuses) indexed to 2010=100. Rural bus route count from DfT supported and commercial routes combined; rural defined as areas outside urban settlements of 10,000+ population. Transport poverty rate from CBT research into expenditure patterns of car-free households in rural local authorities.</p>
           </div>
         </section>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
               <RelatedTopics />
       </main>
     </>

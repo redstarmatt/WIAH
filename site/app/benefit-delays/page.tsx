@@ -125,7 +125,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Poverty & Cost of Living"
           question="Are Benefits Being Paid On Time?"
-          finding="DWP paid only 82% of UC claims on time in 2023-24. Error rates cost £9.7 billion in overpayments and £2.6 billion in underpayments per year."
+          finding={<>DWP paid only 82% of UC claims on time in 2023-24.<Cite nums={2} /> Error rates cost £9.7 billion in overpayments and £2.6 billion in underpayments per year.<Cite nums={1} /></>}
           colour="#F4A261"
         />
 
@@ -143,7 +143,7 @@ export default function TopicPage() {
             unit=""
             direction="down"
             polarity="up-is-good"
-            changeText="Down from 88% in 2019 · capacity under strain"
+            changeText={<>Down from 88% in 2019 · capacity under strain<Cite nums={2} /></>}
             sparklineData={[90, 89, 88, 87, 87, 84, 83, 82, 82, 82, 82]}
             href="#sec-coverage"
           />
@@ -153,7 +153,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="3.6% of welfare spending · reclaimed from vulnerable claimants"
+            changeText={<>3.6% of welfare spending · reclaimed from vulnerable claimants<Cite nums={1} /></>}
             sparklineData={[5.2, 5.5, 5.8, 6.1, 6.4, 6.8, 7.5, 8.5, 9.1, 9.4, 9.7]}
             href="#sec-coverage"
           />
@@ -163,7 +163,7 @@ export default function TopicPage() {
             unit=""
             direction="flat"
             polarity="up-is-bad"
-            changeText="Poorest miss out · state pension biggest component"
+            changeText={<>Poorest miss out · state pension biggest component<Cite nums={1} /></>}
             sparklineData={[1.8, 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.6, 2.6]}
             href="#sec-coverage"
           />
@@ -200,7 +200,7 @@ export default function TopicPage() {
             title="Single payment system reduces complexity"
             value="94%"
             unit="claimants on UC vs legacy benefits"
-            description="Universal Credit now covers 94% of claimants that were previously on legacy benefits, streamlining payments. The DWP's AI-powered fraud detection system identified £2.1bn in potential fraud in 2024. Automation of change of circumstances has reduced processing errors for 2.3 million claimants."
+            description={<>Universal Credit now covers 94% of claimants that were previously on legacy benefits, streamlining payments.<Cite nums={2} /> The DWP&apos;s AI-powered fraud detection system identified £2.1bn in potential fraud in 2024.<Cite nums={3} /> Automation of change of circumstances has reduced processing errors for 2.3 million claimants.<Cite nums={3} /></>}
             source="Source: DWP — Annual report and accounts, 2024-25."
           />
         </ScrollReveal>

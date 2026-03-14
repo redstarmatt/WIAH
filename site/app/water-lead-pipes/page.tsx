@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'WHO', dataset: 'Guidelines for Drinking-water Quality — Lead', url: 'https://www.who.int/publications/i/item/9789240045064', date: '2022', note: 'No safe level of lead exposure' },
+  { num: 2, name: 'Drinking Water Inspectorate', dataset: 'Lead in drinking water — regulatory standard', url: 'https://www.dwi.gov.uk/', date: '2023' },
+  { num: 3, name: 'Water UK', dataset: 'Lead Pipe Survey — estimate of 6 million homes', url: 'https://www.water.org.uk/', date: '2024' },
+  { num: 4, name: 'Ofwat', dataset: 'PR24 Final Determinations — lead pipe replacement targets', url: 'https://www.ofwat.gov.uk/regulated-companies/price-review/2024-price-review/', date: '2024', note: '600,000 replacements/year target by 2030' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -111,17 +120,17 @@ export default function WaterLeadPipesPage() {
         <TopicHeader
           topic="Lead Pipes in Water"
           question="How Many Homes Still Have Lead Water Pipes?"
-          finding="An estimated 6 million homes in the UK still have lead supply pipes, predominantly in houses built before 1970. Lead levels in tap water can exceed WHO guidelines in older properties, particularly where water is soft."
+          finding={<>An estimated 6 million homes in the UK still have lead supply pipes, predominantly in houses built before 1970.<Cite nums={3} /> Lead levels in tap water can exceed WHO guidelines in older properties, particularly where water is soft.<Cite nums={1} /></>}
           colour="#264653"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The World Health Organisation revised its guidance on lead in drinking water in 2022 to state that there is no safe level of lead exposure, removing a previous threshold and increasing the urgency of pipe replacement programmes globally. In England and Wales, the Drinking Water Inspectorate enforces a lead standard of 10 micrograms per litre — a standard that some older properties with lead pipes and soft water (which is more corrosive to lead) routinely exceed, particularly from the first draw of water after the pipe has been standing.
+              The World Health Organisation revised its guidance on lead in drinking water in 2022 to state that there is no safe level of lead exposure, removing a previous threshold and increasing the urgency of pipe replacement programmes globally.<Cite nums={1} /> In England and Wales, the Drinking Water Inspectorate enforces a lead standard of 10 micrograms per litre — a standard that some older properties with lead pipes and soft water (which is more corrosive to lead) routinely exceed, particularly from the first draw of water after the pipe has been standing.<Cite nums={2} />
             </p>
             <p>
-              The scale of the problem is poorly understood because there is no national register of lead supply pipes. Water UK's estimate of 6 million homes is derived from company records and property age data, with a range of 5.5–8 million. At the current replacement rate of 72,000 per year, it would take 83 years to replace all lead service pipes — down from an estimated 130 years in 2020 as companies have accelerated. Ofwat's PR24 price review requires companies to accelerate to 600,000 replacements per year by 2030 — an eightfold increase that would reduce the completion timeline to approximately 10 years for the most tractable portion of the problem. Whether this target is achievable given supply chain constraints in skilled plumbers remains to be seen.
+              The scale of the problem is poorly understood because there is no national register of lead supply pipes. Water UK's estimate of 6 million homes is derived from company records and property age data, with a range of 5.5–8 million.<Cite nums={3} /> At the current replacement rate of 72,000 per year, it would take 83 years to replace all lead service pipes — down from an estimated 130 years in 2020 as companies have accelerated. Ofwat's PR24 price review requires companies to accelerate to 600,000 replacements per year by 2030 — an eightfold increase that would reduce the completion timeline to approximately 10 years for the most tractable portion of the problem.<Cite nums={4} /> Whether this target is achievable given supply chain constraints in skilled plumbers remains to be seen.
             </p>
           </div>
         </section>
@@ -141,7 +150,7 @@ export default function WaterLeadPipesPage() {
               unit=""
               direction="down"
               polarity="up-is-bad"
-              changeText="Estimate · Pre-1970 properties · Soft water areas worst · No safe level (WHO 2022)"
+              changeText={<>Estimate · Pre-1970 properties · Soft water areas worst · No safe level (WHO 2022)<Cite nums={[1, 3]} /></>}
               sparklineData={[6.0, 5.9, 5.8, 5.7, 5.6]}
               href="#sec-replacement"
             />
@@ -151,7 +160,7 @@ export default function WaterLeadPipesPage() {
               unit=""
               direction="up"
               polarity="up-is-good"
-              changeText="+60% since 2020 · But 83 years to complete at this rate · Target: 600,000/year"
+              changeText={<>+60% since 2020 · But 83 years to complete at this rate · Target: 600,000/year<Cite nums={4} /></>}
               sparklineData={[45, 52, 58, 65, 72]}
               href="#sec-replacement"
             />
@@ -209,7 +218,7 @@ export default function WaterLeadPipesPage() {
             title="What's improving"
             value="600,000"
             unit="replacements per year target by 2030"
-            description="Ofwat's PR24 price review requires water companies to accelerate lead pipe replacement to 600,000 per year by 2030, backed by ring-fenced capital investment. Partial lead pipe replacement (company-side only) is being actively discouraged as WHO evidence shows it can temporarily worsen leaching. The Drinking Water Inspectorate is increasing monitoring of lead levels in areas with high concentrations of older housing. Some water companies are running pro-active customer contact programmes to identify homes with lead internal plumbing."
+            description={<>Ofwat's PR24 price review requires water companies to accelerate lead pipe replacement to 600,000 per year by 2030, backed by ring-fenced capital investment.<Cite nums={4} /> Partial lead pipe replacement (company-side only) is being actively discouraged as WHO evidence shows it can temporarily worsen leaching.<Cite nums={1} /> The Drinking Water Inspectorate is increasing monitoring of lead levels in areas with high concentrations of older housing.<Cite nums={2} /> Some water companies are running pro-active customer contact programmes to identify homes with lead internal plumbing.</>}
             source="Source: Ofwat PR24 Final Determinations December 2024 · Water UK Lead Pipe Survey 2024 · DWI Annual Report 2023."
           />
         </ScrollReveal>
@@ -240,6 +249,7 @@ export default function WaterLeadPipesPage() {
             </ul>
           </div>
         </section>
+        <References items={editorialRefs} />
               <RelatedTopics />
       </main>
     </>

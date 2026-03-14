@@ -9,6 +9,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import PositiveCallout from '@/components/PositiveCallout';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -26,6 +28,16 @@ interface StudentMentalHealthData {
 function yearToDate(y: string): Date {
   return new Date(parseInt(y), 5, 1);
 }
+
+// ── References ───────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'HESA', dataset: 'Student Record Data — Mental Health Disclosures', url: 'https://www.hesa.ac.uk/data-and-analysis/students', date: '2023', note: '25% of students disclosed a mental health condition in 2023, up from 8% in 2015' },
+  { num: 2, name: 'Student Minds', dataset: 'University Mental Health Survey', url: 'https://www.studentminds.org.uk/research.html', date: '2023', note: '64% of students experience mental health difficulties during their degree' },
+  { num: 3, name: 'AMOSSHE', dataset: 'University Counselling Services Demand Analysis', url: 'https://www.amosshe.org.uk/resources', date: '2023', note: 'Counselling demand up 50% since 2018; staffing grew only 20%' },
+  { num: 4, name: 'Office for Students', dataset: 'Student Suicide Data and Mental Health Programme', url: 'https://www.officeforstudents.org.uk/advice-and-guidance/student-wellbeing-and-protection/student-mental-health/', date: '2024', note: '74 student suspected suicides in 2021-22; £15m mental health programme' },
+  { num: 5, name: 'Student Minds', dataset: 'University Mental Health Charter', url: 'https://universitymentalhealthcharter.org.uk/', date: '2024', note: '130+ universities signed up to Charter quality standards' },
+];
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -69,17 +81,17 @@ export default function StudentMentalHealthPage() {
         <TopicHeader
           topic="Student Mental Health"
           question="Is There a Student Mental Health Crisis?"
-          finding="University counselling services are overwhelmed — demand has risen 50% in five years while funding has not kept pace — with 1 in 4 students reporting a mental health condition and 74 student deaths from suspected suicide recorded in 2021–22."
+          finding={<>University counselling services are overwhelmed — demand has risen 50% in five years while funding has not kept pace<Cite nums={3} /> — with 1 in 4 students reporting a mental health condition<Cite nums={1} /> and 74 student deaths from suspected suicide recorded in 2021–22.<Cite nums={4} /></>}
           colour="#E63946"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The number of students disclosing a mental health condition to their university has tripled in a decade — from 8% in 2015 to 25% in 2023, according to HESA student record data. This extraordinary rise has multiple drivers: genuine increases in the prevalence of mental health difficulties, particularly anxiety and depression among young people; greater awareness and reduced stigma making disclosure more likely; expanded university systems for capturing wellbeing information; and the specific strains of higher education itself — financial pressure, housing insecurity, academic competition, loneliness, and the transition away from family support. Research by Student Minds found that 64% of students experience mental health difficulties at some point during their degree, with first-year students and those from disadvantaged backgrounds most vulnerable.
+              The number of students disclosing a mental health condition to their university has tripled in a decade — from 8% in 2015 to 25% in 2023, according to HESA student record data.<Cite nums={1} /> This extraordinary rise has multiple drivers: genuine increases in the prevalence of mental health difficulties, particularly anxiety and depression among young people; greater awareness and reduced stigma making disclosure more likely; expanded university systems for capturing wellbeing information; and the specific strains of higher education itself — financial pressure, housing insecurity, academic competition, loneliness, and the transition away from family support. Research by Student Minds found that 64% of students experience mental health difficulties at some point during their degree, with first-year students and those from disadvantaged backgrounds most vulnerable.<Cite nums={2} />
             </p>
             <p>
-              University counselling and mental health services are operating beyond capacity. The Association of Managers of Student Services in Higher Education (AMOSSHE) reported in 2023 that demand for counselling had risen 50% since 2018, while staffing had grown by only 20% and waiting lists had extended from days to weeks at many institutions. Students with acute needs — those in crisis or at immediate risk — are triaged to the front, but those with moderate anxiety or depression may wait eight to twelve weeks for an appointment, by which point their academic performance has often been significantly affected. The tension between the university as a pastoral institution and the university as a competitive business is stark: institutions compete on metrics that do not include mental health outcomes, creating weak incentives for the sustained investment the sector needs.
+              University counselling and mental health services are operating beyond capacity. The Association of Managers of Student Services in Higher Education (AMOSSHE) reported in 2023 that demand for counselling had risen 50% since 2018, while staffing had grown by only 20% and waiting lists had extended from days to weeks at many institutions.<Cite nums={3} /> Students with acute needs — those in crisis or at immediate risk — are triaged to the front, but those with moderate anxiety or depression may wait eight to twelve weeks for an appointment, by which point their academic performance has often been significantly affected. The tension between the university as a pastoral institution and the university as a competitive business is stark: institutions compete on metrics that do not include mental health outcomes, creating weak incentives for the sustained investment the sector needs.
             </p>
             </div>
         </section>
@@ -97,7 +109,7 @@ export default function StudentMentalHealthPage() {
               value="1 in 4"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 1 in 12 in 2015 · 64% experience difficulties at some point"
+              changeText={<>Up from 1 in 12 in 2015 · 64% experience difficulties at some point<Cite nums={[1, 2]} /></>}
               sparklineData={[8, 10, 13, 16, 19, 21, 23, 25]}
               source="HESA / Student Minds · University Mental Health Survey 2023"
               href="#sec-disclosure"
@@ -107,7 +119,7 @@ export default function StudentMentalHealthPage() {
               value="+50%"
               direction="up"
               polarity="up-is-bad"
-              changeText="Demand up 50% · Staffing grew only 20% · Waits now 8–12 weeks"
+              changeText={<>Demand up 50% · Staffing grew only 20% · Waits now 8–12 weeks<Cite nums={3} /></>}
               sparklineData={[100, 108, 118, 130, 138, 148, 150]}
               source="AMOSSHE · University counselling demand analysis 2023"
               href="#sec-disclosure"
@@ -117,7 +129,7 @@ export default function StudentMentalHealthPage() {
               value="74"
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from ~65 in 2018–19 · Disproportionate among deprived and disabled students"
+              changeText={<>Up from ~65 in 2018–19 · Disproportionate among deprived and disabled students<Cite nums={4} /></>}
               sparklineData={[65, 67, 68, 70, 62, 72, 74]}
               source="UMHAN / Office for Students · Student suicide data 2022"
               href="#sec-disclosure"
@@ -172,7 +184,7 @@ export default function StudentMentalHealthPage() {
             title="What is improving"
             value="130+"
             unit="universities signed up"
-            description="Student Minds and the University Mental Health Charter have driven significant improvements in early intervention — 130&plus; universities have now signed up to the Charter's quality standards, and several have achieved Charter Award status. The Office for Students' £15m mental health programme (2022–25) is funding collaborative approaches across higher education institutions."
+            description={<>Student Minds and the University Mental Health Charter have driven significant improvements in early intervention — 130+ universities have now signed up to the Charter&apos;s quality standards, and several have achieved Charter Award status.<Cite nums={5} /> The Office for Students&apos; £15m mental health programme (2022–25) is funding collaborative approaches across higher education institutions.<Cite nums={4} /></>}
             source="Student Minds · University Mental Health Charter 2024 · Office for Students · Mental health programme 2024"
           />
         </ScrollReveal>
@@ -202,6 +214,7 @@ export default function StudentMentalHealthPage() {
           )}
         </section>
               <RelatedTopics />
+        <References items={editorialRefs} />
       </main>
     </>
   );

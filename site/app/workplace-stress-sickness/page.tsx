@@ -9,6 +9,8 @@ import type { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // -- Types ------------------------------------------------------------------
 
@@ -21,6 +23,12 @@ interface TimeSeriesRow {
 interface WorkplaceStressData {
   timeSeries: TimeSeriesRow[]
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'HSE', dataset: 'Work-related Stress, Depression or Anxiety Statistics in Great Britain', url: 'https://www.hse.gov.uk/statistics/causdis/stress.pdf', date: '2023', note: '17.1 million working days lost to work-related stress per year; 73% increase since 2015 when 9.9 million days were lost' },
+  { num: 2, name: 'HSE', dataset: 'Cost to Britain of workplace injuries and new cases of work-related ill health', url: 'https://www.hse.gov.uk/statistics/cost.htm', date: '2023', note: 'Economic cost of work-related stress estimated at approximately £28 billion per year' },
+  { num: 3, name: 'ONS', dataset: 'Labour Force Survey — Self-reported work-related illness', url: 'https://www.ons.gov.uk/surveys/informationforhouseholdsandindividuals/labourforcesurvey', date: '2023', note: '5.6% of workforce affected; healthcare, education and public administration worst-affected sectors' },
+];
 
 function yearToDate(y: number): Date {
   return new Date(y, 0, 1)
@@ -57,13 +65,13 @@ export default function WorkplaceStressSicknessPage() {
         <TopicHeader
           topic="Workplace Stress"
           question="Is Stress Breaking the Workforce?"
-          finding="Work-related stress and mental ill-health now account for over 17 million lost working days a year — more than any other cause of workplace absence."
+          finding={<>Work-related stress and mental ill-health now account for over 17 million lost working days a year — more than any other cause of workplace absence.<Cite nums={1} /></>}
           colour="#F4A261"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Work-related stress, depression, and anxiety now account for 17.1 million lost working days per year in Great Britain — the single largest cause of occupational ill health and absence, and a 73% increase since 2015 when 9.9 million days were lost. The trend predates COVID and has not reversed: 2023 matched the elevated levels of 2022, suggesting the post-pandemic peak has become the new baseline. Healthcare, education, and public administration are the worst-affected sectors, where the causes are well-documented: chronic understaffing, lack of control over working conditions, and exposure to traumatic or emotionally demanding situations. The NHS workforce crisis and the teacher recruitment emergency both have workplace stress as a central driver and consequence. The HSE estimates the economic cost at approximately £28 billion per year in lost productivity, staff turnover, and healthcare expenditure.</p>
+            <p>Work-related stress, depression, and anxiety now account for 17.1 million lost working days per year in Great Britain — the single largest cause of occupational ill health and absence, and a 73% increase since 2015 when 9.9 million days were lost.<Cite nums={1} /> The trend predates COVID and has not reversed: 2023 matched the elevated levels of 2022, suggesting the post-pandemic peak has become the new baseline. Healthcare, education, and public administration are the worst-affected sectors, where the causes are well-documented: chronic understaffing, lack of control over working conditions, and exposure to traumatic or emotionally demanding situations.<Cite nums={3} /> The NHS workforce crisis and the teacher recruitment emergency both have workplace stress as a central driver and consequence. The HSE estimates the economic cost at approximately £28 billion per year in lost productivity, staff turnover, and healthcare expenditure.<Cite nums={2} /></p>
             <p>Employer responses have been uneven and largely inadequate. Large employers have adopted Employee Assistance Programmes, mental health first aiders, and wellbeing apps — interventions with a weak evidence base that address symptoms rather than causes: a mental health first aider cannot compensate for chronic understaffing. The HSE's Management Standards framework is voluntary and unenforced, meaning the employers most likely to apply it are those already managing stress effectively. HSE inspection capacity has declined significantly over the past decade, and the rise of remote working, always-on communications, and gig economy arrangements has created new stressors that existing health and safety regulation was not designed to address.</p>
           </div>
         </section>
@@ -136,6 +144,7 @@ export default function WorkplaceStressSicknessPage() {
             <p>Data derived from the Labour Force Survey self-reported module. Figures cover cases where the worker believed their condition was caused or made worse by their work. Days lost are estimated from average absence durations. Data covers Great Britain; Northern Ireland reported separately.</p>
           </div>
         </section>
+        <References items={editorialRefs} />
               <RelatedTopics />
       </main>
     </>
