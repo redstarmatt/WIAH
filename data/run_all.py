@@ -60,6 +60,8 @@ PIPELINES = [
     ("life-expectancy","health",        DATA_DIR / "pipelines" / "life-expectancy"),
     # Universities
     ("universities",   "universities",  DATA_DIR / "pipelines" / "universities"),
+    # Road safety (STATS19)
+    ("road-safety",    "road-safety",   DATA_DIR / "pipelines" / "road-safety"),
 ]
 
 
