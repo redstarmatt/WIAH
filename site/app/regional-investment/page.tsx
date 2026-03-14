@@ -161,7 +161,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Widened by £300 since 2015 · HS2 cancellation worsened"
+            changeText={<>Widened by £300 since 2015 · HS2 cancellation worsened<Cite nums={3} /></>}
             sparklineData={[999, 1040, 1080, 1120, 1160, 1090, 1150, 1200, 1250, 1280, 1299]}
             href="#sec-coverage"
           />
@@ -198,7 +198,7 @@ export default function TopicPage() {
             title="Investment Zones delivering private commitments"
             value="£3.4bn"
             unit="private commitments in Investment Zones"
-            description="Investment Zones in the North and Midlands attracted £3.4bn in private sector commitments by 2025. Freeports in Teesside, Humber and Liverpool generated 5,000 jobs."
+            description={<>Investment Zones in the North and Midlands attracted £3.4bn in private sector commitments by 2025.<Cite nums={2} /> Freeports in Teesside, Humber and Liverpool generated 5,000 jobs.<Cite nums={2} /></>}
             source="Source: DLUHC Investment Zones and Freeports Progress Report, 2025."
           />
         </ScrollReveal>
