@@ -123,7 +123,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Immigration & Population"
           question="How Many Refugees Is Britain Resettling?"
-          finding="The UK has resettled 39,000 refugees under formal resettlement schemes since 2015. Afghan and Ukrainian arrivals exceeded 200,000 but stretched resettlement infrastructure."
+          finding={<>The UK has resettled 39,000 refugees under formal resettlement schemes since 2015.<Cite nums={1} /> Afghan and Ukrainian arrivals exceeded 200,000 but stretched resettlement infrastructure.<Cite nums={2} /></>}
           colour="#6B7280"
         />
 
@@ -141,7 +141,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-good"
-            changeText="Since 2015 · Vulnerable Persons Resettlement Scheme led"
+            changeText={<>Since 2015 · Vulnerable Persons Resettlement Scheme led<Cite nums={1} /></>}
             sparklineData={[1000, 3500, 6500, 11000, 16000, 18500, 21000, 26000, 31000, 36000, 39000]}
             href="#sec-coverage"
           />
@@ -151,7 +151,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-good"
-            changeText="Since Feb 2022 · 70% still in UK, 30% returned"
+            changeText={<>Since Feb 2022 · 70% still in UK, 30% returned<Cite nums={2} /></>}
             sparklineData={[0, 0, 0, 0, 0, 0, 0, 150000, 195000, 210000, 219000]}
             href="#sec-coverage"
           />
@@ -161,7 +161,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-good"
-            changeText="Up from 58% in 2020 · target is 80%"
+            changeText={<>Up from 58% in 2020 · target is 80%<Cite nums={1} /></>}
             sparklineData={[60, 62, 65, 67, 68, 58, 62, 68, 70, 71, 72]}
             href="#sec-coverage"
           />
@@ -198,7 +198,7 @@ export default function TopicPage() {
             title="UK resettlement record among largest in Europe"
             value="39,000"
             unit="formal resettlement places since 2015"
-            description="The UK has resettled more refugees per capita under formal schemes than most comparable European nations. The Community Sponsorship model, where local groups support refugee families, has placed over 1,000 families. The Welcome Hub network supports refugees into employment, with 65% in work within 18 months."
+            description={<>The UK has resettled more refugees per capita under formal schemes than most comparable European nations.<Cite nums={3} /> The Community Sponsorship model, where local groups support refugee families, has placed over 1,000 families.<Cite nums={1} /> The Welcome Hub network supports refugees into employment, with 65% in work within 18 months.</>}
             source="Source: Home Office — Resettlement statistics, 2025."
           />
         </ScrollReveal>

@@ -122,7 +122,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Environment & Climate"
           question="Which Materials Is Britain Actually Recycling?"
-          finding="Paper and glass recycling exceed 80%, but plastic packaging recycling is just 51% — well below targets. Nearly 1 million tonnes of plastic packaging are consumed annually."
+          finding={<>Paper and glass recycling exceed 80%, but plastic packaging recycling is just 51% — well below targets.<Cite nums={1} /> Nearly 1 million tonnes of plastic packaging are consumed annually.<Cite nums={1} /></>}
           colour="#2A9D8F"
         />
 
@@ -140,7 +140,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-good"
-            changeText="Up from 40% in 2015 · target 70% by 2030"
+            changeText={<>Up from 40% in 2015 · target 70% by 2030<Cite nums={1} /></>}
             sparklineData={[40, 42, 44, 45, 46, 46, 47, 49, 50, 51, 51]}
             href="#sec-coverage"
           />
@@ -150,7 +150,7 @@ export default function TopicPage() {
             unit=""
             direction="flat"
             polarity="up-is-good"
-            changeText="Stable near target · high material quality"
+            changeText={<>Stable near target · high material quality<Cite nums={1} /></>}
             sparklineData={[75, 76, 77, 78, 79, 80, 81, 82, 82, 82, 82]}
             href="#sec-coverage"
           />
@@ -160,7 +160,7 @@ export default function TopicPage() {
             unit=""
             direction="flat"
             polarity="up-is-bad"
-            changeText="Barely changed since 2015 · single-use reductions offset"
+            changeText={<>Barely changed since 2015 · single-use reductions offset<Cite nums={1} /></>}
             sparklineData={[990, 985, 980, 975, 970, 960, 955, 950, 950, 950, 950]}
             href="#sec-coverage"
           />
@@ -197,7 +197,7 @@ export default function TopicPage() {
             title="UK Plastics Pact making progress"
             value="66%"
             unit="of plastic packaging now reusable or recyclable"
-            description="The UK Plastics Pact, signed by over 150 businesses, has increased the proportion of plastic packaging that is reusable, recyclable or compostable from 59% in 2018 to 66% in 2024. Single-use plastic straws, cutlery and plates were banned in 2023, removing 1.5 billion items annually."
+            description={<>The UK Plastics Pact, signed by over 150 businesses, has increased the proportion of plastic packaging that is reusable, recyclable or compostable from 59% in 2018 to 66% in 2024.<Cite nums={2} /> Single-use plastic straws, cutlery and plates were banned in 2023, removing 1.5 billion items annually.<Cite nums={1} /></>}
             source="Source: WRAP — UK Plastics Pact annual report, 2025."
           />
         </ScrollReveal>
