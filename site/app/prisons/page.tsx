@@ -14,10 +14,10 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Ministry of Justice', dataset: 'Prison Population Statistics', url: 'https://www.gov.uk/government/collections/prison-population-statistics', date: '2024' },
   { num: 2, name: 'Ministry of Justice', dataset: 'Crown Court Statistics', url: 'https://www.gov.uk/government/statistics/criminal-court-statistics-quarterly', date: '2024' },
-  { num: 3, name: 'Ministry of Justice', dataset: 'End of Custody Supervised Licence Statistics', date: '2024' },
+  { num: 3, name: 'Ministry of Justice', dataset: 'End of Custody Supervised Licence Statistics', url: 'https://www.gov.uk/government/collections/prisons-and-probation-statistics', date: '2024' },
   { num: 4, name: 'Ministry of Justice', dataset: 'Proven Reoffending Statistics', url: 'https://www.gov.uk/government/statistics/proven-reoffending-statistics-quarterly-bulletin-england-and-wales', date: '2024' },
   { num: 5, name: 'Howard League for Penal Reform', dataset: 'Reoffending Analysis', url: 'https://howardleague.org/', date: '2024' },
-  { num: 6, name: 'Institute for Fiscal Studies', dataset: 'Short Custodial Sentences and Reoffending Outcomes', date: '2023' },
+  { num: 6, name: 'Institute for Fiscal Studies', dataset: 'Short Custodial Sentences and Reoffending Outcomes', url: 'https://ifs.org.uk/publications', date: '2023' },
 ];
 
 interface PrisonsData {

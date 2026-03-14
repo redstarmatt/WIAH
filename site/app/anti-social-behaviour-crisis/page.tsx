@@ -52,9 +52,9 @@ const annotations: Annotation[] = [
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Crime Survey for England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice', date: '2024' },
-  { num: 2, name: 'Home Office', dataset: 'ASB Enforcement Statistics', date: '2024' },
+  { num: 2, name: 'Home Office', dataset: 'ASB Enforcement Statistics', url: 'https://www.gov.uk/government/organisations/home-office/about/statistics', date: '2024' },
   { num: 3, name: 'HMICFRS', dataset: 'Anti-Social Behaviour Thematic Inspection', url: 'https://www.justiceinspectorates.gov.uk/hmicfrs/', date: '2023' },
-  { num: 4, name: 'Home Office', dataset: 'ASB Action Plan Progress Report', date: '2024' },
+  { num: 4, name: 'Home Office', dataset: 'ASB Action Plan Progress Report', url: 'https://www.gov.uk/government/organisations/home-office/about/statistics', date: '2024' },
 ];
 
 export default function AntiSocialBehaviourCrisisPage() {

@@ -13,7 +13,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Skills for Care', dataset: 'The State of the Adult Social Care Sector and Workforce in England', url: 'https://www.skillsforcare.org.uk/Adult-Social-Care-Workforce-Data/Workforce-intelligence/publications/national-information/The-state-of-the-adult-social-care-sector-and-workforce-in-England.aspx', date: '2023' },
-  { num: 2, name: 'ADASS', dataset: 'Spring and Autumn Survey — vacancy rates and workforce pressure', date: '2023' },
+  { num: 2, name: 'ADASS', dataset: 'Spring and Autumn Survey — vacancy rates and workforce pressure', url: 'https://www.adass.org.uk/adass-publications', date: '2023' },
   { num: 3, name: 'Home Office', dataset: 'Immigration Statistics — Health and Care Worker visa', url: 'https://www.gov.uk/government/collections/immigration-statistics', date: '2023' },
 ];
 

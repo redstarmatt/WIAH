@@ -10,7 +10,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'The Pensions Regulator', dataset: 'Automatic Enrolment Declaration of Compliance Report', url: 'https://www.thepensionsregulator.gov.uk/en/document-library/research-and-analysis/automatic-enrolment-declaration-of-compliance-report', date: 'Jan 2024' },
-  { num: 2, name: 'ONS / Government Statistical Service', dataset: 'Pension Auto-Enrolment Statistics', date: '2024', note: '88% of eligible workers enrolled; minimum contributions remain below adequate level' },
+  { num: 2, name: 'ONS / Government Statistical Service', dataset: 'Pension Auto-Enrolment Statistics', url: 'https://www.ons.gov.uk/', date: '2024', note: '88% of eligible workers enrolled; minimum contributions remain below adequate level' },
 ];
 
 export default function PensionAutoEnrolmentPage() {

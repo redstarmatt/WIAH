@@ -55,7 +55,7 @@ const floodAnnotations: Annotation[] = [
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Environment Agency', dataset: 'National flood risk assessment', url: 'https://www.gov.uk/government/collections/national-flood-risk-assessment', date: '2024' },
   { num: 2, name: 'Environment Agency', dataset: 'Flood defence investment tracker', url: 'https://www.gov.uk/government/publications/flood-and-coastal-defence-programme-tracker', date: '2024' },
-  { num: 3, name: 'Environment Agency', dataset: 'Asset performance indicators', date: '2024' },
+  { num: 3, name: 'Environment Agency', dataset: 'Asset performance indicators', url: 'https://www.gov.uk/government/collections/national-flood-risk-assessment', date: '2024' },
 ];
 
 export default function FloodRiskPage() {

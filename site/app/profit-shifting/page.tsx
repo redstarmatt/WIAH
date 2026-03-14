@@ -13,7 +13,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'HMRC', dataset: 'Measuring Tax Gaps', url: 'https://www.gov.uk/government/statistics/measuring-tax-gaps', date: '2023' },
-  { num: 2, name: 'HMRC', dataset: 'Large Business Compliance Activity and Yield Statistics', date: '2023' },
+  { num: 2, name: 'HMRC', dataset: 'Large Business Compliance Activity and Yield Statistics', url: 'https://www.gov.uk/government/collections/hmrc-statistics', date: '2023' },
   { num: 3, name: 'OECD', dataset: 'BEPS Action Plan and Pillar Two Global Minimum Tax', url: 'https://www.oecd.org/tax/beps/', date: '2024' },
 ];
 

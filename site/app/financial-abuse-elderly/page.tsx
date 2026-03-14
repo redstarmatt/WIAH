@@ -13,9 +13,9 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS Digital', dataset: 'Safeguarding Adults annual collection', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/safeguarding-adults', date: '2024' },
-  { num: 2, name: 'Age UK / Action on Elder Abuse', dataset: 'Elder financial abuse prevalence survey', date: '2024' },
-  { num: 3, name: 'UK Finance', dataset: 'Annual Fraud Report', date: '2023' },
-  { num: 4, name: 'CPS / Home Office', dataset: 'Prosecution data on elder financial abuse', date: '2024' },
+  { num: 2, name: 'Age UK / Action on Elder Abuse', dataset: 'Elder financial abuse prevalence survey', url: 'https://www.ageuk.org.uk/our-impact/policy-research/data-and-trends/', date: '2024' },
+  { num: 3, name: 'UK Finance', dataset: 'Annual Fraud Report', url: 'https://www.ukfinance.org.uk/policy-and-guidance/reports-publications', date: '2023' },
+  { num: 4, name: 'CPS / Home Office', dataset: 'Prosecution data on elder financial abuse', url: 'https://www.gov.uk/government/statistics/crime-outcomes-in-england-and-wales-statistics', date: '2024' },
 ];
 
 export default function FinancialAbuseElderlyPage() {

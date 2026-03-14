@@ -46,8 +46,8 @@ const gamblingAnnotations: Annotation[] = [
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Gambling Commission', dataset: 'Participation and problem gambling survey', url: 'https://www.gamblingcommission.gov.uk/statistics-and-research/publication/gambling-participation-in-great-britain-behaviour-awareness-and-attitudes', date: '2023' },
   { num: 2, name: 'Gambling Commission', dataset: 'Industry statistics', url: 'https://www.gamblingcommission.gov.uk/statistics-and-research/publication/industry-statistics', date: '2024' },
-  { num: 3, name: 'DCMS', dataset: 'FOBT review', date: '2019' },
-  { num: 4, name: 'DCMS', dataset: 'Gambling Act Review White Paper', date: '2023' },
+  { num: 3, name: 'DCMS', dataset: 'FOBT review', url: 'https://www.gov.uk/government/publications/review-of-gaming-machines-and-social-responsibility-measures', date: '2019' },
+  { num: 4, name: 'DCMS', dataset: 'Gambling Act Review White Paper', url: 'https://www.gov.uk/government/publications/high-stakes-gambling-reform-for-the-digital-age', date: '2023' },
 ];
 
 export default function FixedOddsBettingReformPage() {

@@ -15,7 +15,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Crime Survey for England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice', date: '2024' },
   { num: 2, name: 'HMICFRS', dataset: 'Fraud inspection report', url: 'https://www.justiceinspectorates.gov.uk/hmicfrs/', date: '2019' },
   { num: 3, name: 'Home Office', dataset: 'Crime Outcomes in England and Wales', url: 'https://www.gov.uk/government/statistics/crime-outcomes-in-england-and-wales-statistics', date: '2024' },
-  { num: 4, name: 'UK Finance', dataset: 'Annual Fraud Report 2024' },
+  { num: 4, name: 'UK Finance', dataset: 'Annual Fraud Report 2024', url: 'https://www.ukfinance.org.uk/policy-and-guidance/reports-publications' },
 ];
 
 // Estimated fraud offences (millions), 2015–2024

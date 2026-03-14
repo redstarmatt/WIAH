@@ -13,8 +13,8 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'HM Treasury', dataset: 'PFI and PF2 Annual Data', url: 'https://www.gov.uk/government/collections/private-finance-initiative-and-private-finance-2-projects-data', date: '2025', note: 'PFI committed £42bn in repayments on projects originally worth £13bn; 3.2x multiplier' },
-  { num: 2, name: 'HM Treasury', dataset: 'PFI Programme Closure', date: '2018', note: 'Treasury formally ended PFI and PF2 programme in 2018; no new contracts signed' },
-  { num: 3, name: 'NHS England', dataset: 'NHS PFI Trust Analysis', date: '2024', note: '118 NHS trusts still in PFI contracts; down from 127 in 2018' },
+  { num: 2, name: 'HM Treasury', dataset: 'PFI Programme Closure', url: 'https://www.gov.uk/government/organisations/hm-treasury', date: '2018', note: 'Treasury formally ended PFI and PF2 programme in 2018; no new contracts signed' },
+  { num: 3, name: 'NHS England', dataset: 'NHS PFI Trust Analysis', url: 'https://www.england.nhs.uk/statistics/', date: '2024', note: '118 NHS trusts still in PFI contracts; down from 127 in 2018' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

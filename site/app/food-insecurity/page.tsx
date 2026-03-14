@@ -14,8 +14,8 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Trussell Trust', dataset: 'Annual food bank statistics', url: 'https://www.trusselltrust.org/news-and-blog/latest-stats/', date: '2024' },
   { num: 2, name: 'Action for Children', dataset: 'Child Food Poverty Tracker 2024', url: 'https://foodfoundation.org.uk', date: '2024' },
-  { num: 3, name: 'ONS', dataset: 'Understanding Society household longitudinal study', date: 'January 2023' },
-  { num: 4, name: 'Department for Education', dataset: 'Free school meals eligibility expansion', date: '2023' },
+  { num: 3, name: 'ONS', dataset: 'Understanding Society household longitudinal study', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure', date: 'January 2023' },
+  { num: 4, name: 'Department for Education', dataset: 'Free school meals eligibility expansion', url: 'https://www.gov.uk/government/publications/free-school-meals-guidance', date: '2023' },
 ];
 
 // Trussell Trust parcels (millions), 2012–2024

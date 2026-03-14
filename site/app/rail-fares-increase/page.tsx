@@ -13,7 +13,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ORR', dataset: 'Rail Fares Statistics', url: 'https://dataportal.orr.gov.uk/statistics/finance/rail-fares/', date: '2025', note: 'Real fares increase of 94% since 1995; wages rose 50% over same period' },
-  { num: 2, name: 'DfT', dataset: 'Williams-Shapps Plan for Rail', date: '2022', note: 'Great British Railways committed to simplifying fares system' },
+  { num: 2, name: 'DfT', dataset: 'Williams-Shapps Plan for Rail', url: 'https://www.gov.uk/government/organisations/department-for-transport', date: '2022', note: 'Great British Railways committed to simplifying fares system' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

@@ -68,7 +68,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Crime in England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice', date: '2024' },
   { num: 2, name: 'CPS', dataset: 'Violence Against Women and Girls Report', url: 'https://www.cps.gov.uk/publication/violence-against-women-and-girls', date: '2023/24' },
   { num: 3, name: 'Home Office', dataset: 'Crime Outcomes in England and Wales', url: 'https://www.gov.uk/government/statistics/crime-outcomes-in-england-and-wales', date: '2023/24' },
-  { num: 4, name: 'Home Office', dataset: 'Operation Soteria Evaluation', date: '2024' },
+  { num: 4, name: 'Home Office', dataset: 'Operation Soteria Evaluation', url: 'https://www.gov.uk/government/organisations/home-office', date: '2024' },
 ];
 
 // ── Page ─────────────────────────────────────────────────────────────────────

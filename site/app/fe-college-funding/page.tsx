@@ -14,8 +14,8 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Institute for Fiscal Studies', dataset: 'Education spending in England', url: 'https://www.ifs.org.uk/tools_and_resources/fiscal_facts/education_spending_in_england', date: '2024' },
   { num: 2, name: 'Department for Education', dataset: '16-18 Education and Training Participation', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/participation-in-education-training-and-employment', date: '2024' },
-  { num: 3, name: 'ONS', dataset: 'NEET Statistics', date: 'Q4 2023' },
-  { num: 4, name: 'Association of Colleges', dataset: 'FE funding shortfall analysis', date: '2024' },
+  { num: 3, name: 'ONS', dataset: 'NEET Statistics', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/bulletins/youngpeoplenotineducationemploymentortrainingneet/latest', date: 'Q4 2023' },
+  { num: 4, name: 'Association of Colleges', dataset: 'FE funding shortfall analysis', url: 'https://www.aoc.co.uk/policy-campaigns/funding-and-finance', date: '2024' },
 ];
 
 export default function FeCollegeFundingPage() {

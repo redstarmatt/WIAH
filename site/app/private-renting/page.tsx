@@ -17,7 +17,7 @@ const editorialRefs: Reference[] = [
   { num: 2, name: 'MHCLG', dataset: 'English Housing Survey 2022/23', url: 'https://www.gov.uk/government/collections/english-housing-survey', date: '2023' },
   { num: 3, name: 'Rightmove', dataset: 'Rental Market Tracker', date: '2023' },
   { num: 4, name: 'MoJ', dataset: 'Mortgage and Landlord Possession Statistics', url: 'https://www.gov.uk/government/statistics/mortgage-and-landlord-possession-statistics', date: '2023' },
-  { num: 5, name: 'HMRC', dataset: 'Section 24 Mortgage Interest Relief Changes', date: '2020' },
+  { num: 5, name: 'HMRC', dataset: 'Section 24 Mortgage Interest Relief Changes', url: 'https://www.gov.uk/government/collections/hmrc-statistics', date: '2020' },
 ];
 
 // ── Types ──────────────────────────────────────────────────────────────────────

@@ -12,7 +12,7 @@ import Cite from '@/components/Cite';
 import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
-  { num: 1, name: 'Charity Commission', dataset: 'Independent School Charitable Accounts', date: '2024' },
+  { num: 1, name: 'Charity Commission', dataset: 'Independent School Charitable Accounts', url: 'https://www.gov.uk/government/organisations/charity-commission', date: '2024' },
   { num: 2, name: 'Independent Schools Council', dataset: 'ISC Annual Census 2024', url: 'https://www.isc.co.uk/research/', date: '2024' },
   { num: 3, name: 'DfE', dataset: 'Schools, Pupils and Their Characteristics', url: 'https://explore-education-statistics.service.gov.uk/', date: '2024' },
   { num: 4, name: 'Sutton Trust', dataset: 'Elitist Britain 2024', url: 'https://www.suttontrust.com/', date: '2024' },

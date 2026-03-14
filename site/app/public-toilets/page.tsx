@@ -13,7 +13,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'British Toilet Association / BBC FOI', dataset: 'Public Toilet Provision Surveys', url: 'https://www.britishtoilet.org.uk', date: '2024', note: 'England had ~5,600 council-maintained toilets in 2000; fell by over 50% to ~2,700 by 2024' },
   { num: 2, name: 'RSPH', dataset: 'Taking the P*** Report', url: 'https://www.rsph.org.uk', date: '2019', note: '4 in 10 people restrict time outside home due to inadequate toilet access; 36% of over-65s limit outings' },
-  { num: 3, name: 'NAO / IFS', dataset: 'Local Government Funding Analysis', date: '2020', note: 'Total central government funding to councils fell 49% in real terms between 2010/11 and 2019/20' },
+  { num: 3, name: 'NAO / IFS', dataset: 'Local Government Funding Analysis', url: 'https://www.nao.org.uk/', date: '2020', note: 'Total central government funding to councils fell 49% in real terms between 2010/11 and 2019/20' },
 ];
 
 export default function PublicToiletsPage() {

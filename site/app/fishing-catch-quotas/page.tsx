@@ -51,7 +51,7 @@ const catchAnnotations: Annotation[] = [
 const editorialRefs: Reference[] = [
   { num: 1, name: 'MMO', dataset: 'UK sea fisheries statistics', url: 'https://www.gov.uk/government/statistics/uk-sea-fisheries-annual-statistics-report', date: '2023' },
   { num: 2, name: 'MMO', dataset: 'UK quota management data', url: 'https://www.gov.uk/government/collections/uk-sea-fisheries-annual-statistics', date: '2023' },
-  { num: 3, name: 'JNCC', dataset: 'Marine Protected Areas: network analysis', date: '2024' },
+  { num: 3, name: 'JNCC', dataset: 'Marine Protected Areas: network analysis', url: 'https://jncc.gov.uk/our-work/marine-protected-areas/', date: '2024' },
 ];
 
 export default function FishingCatchQuotasPage() {

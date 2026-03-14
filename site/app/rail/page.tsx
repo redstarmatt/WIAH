@@ -15,7 +15,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ORR', dataset: 'National Rail Trends', url: 'https://dataportal.orr.gov.uk/statistics/usage/passenger-rail-usage/', date: '2024', note: '1.74 billion passenger journeys in 2019; COVID cut to 390 million; recovered to 1.61 billion (93%) by 2024' },
   { num: 2, name: 'ORR', dataset: 'Punctuality Statistics', url: 'https://dataportal.orr.gov.uk/statistics/performance/passenger-rail-performance/', date: '2024', note: 'On-Time metric fell to 71.7% in 2023 — worst since statistic introduced; cancellations rose to 4.4% in 2022' },
-  { num: 3, name: 'DfT', dataset: 'Emergency Recovery Measures Agreements', date: '2022', note: 'Government absorbed all revenue risk during COVID costing over £10 billion between 2020 and 2022' },
+  { num: 3, name: 'DfT', dataset: 'Emergency Recovery Measures Agreements', url: 'https://www.gov.uk/government/organisations/department-for-transport', date: '2022', note: 'Government absorbed all revenue risk during COVID costing over £10 billion between 2020 and 2022' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

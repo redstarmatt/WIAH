@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Annual Survey of Hours and Earnings (ASHE)', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/genderpaygapintheuk/2024', date: '2024' },
   { num: 2, name: 'Gov.uk', dataset: 'Gender Pay Gap Service', url: 'https://gender-pay-gap.service.gov.uk/', date: '2024' },
-  { num: 3, name: 'IFS', dataset: 'The Motherhood Penalty research', date: '2024' },
+  { num: 3, name: 'IFS', dataset: 'The Motherhood Penalty research', url: 'https://ifs.org.uk/research/labour-markets', date: '2024' },
 ];
 
 // Full-time gender pay gap (%), 2015–2025

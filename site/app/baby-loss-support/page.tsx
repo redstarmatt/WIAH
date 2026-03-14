@@ -65,7 +65,7 @@ const annotations2: Annotation[] = [
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'MBRRACE-UK', dataset: 'Perinatal Mortality Surveillance Report', url: 'https://www.npeu.ox.ac.uk/mbrrace-uk/reports', date: '2024' },
-  { num: 2, name: 'NHS England', dataset: "Saving Babies' Lives Care Bundle Version 3", date: '2023' },
+  { num: 2, name: 'NHS England', dataset: "Saving Babies' Lives Care Bundle Version 3", url: 'https://www.england.nhs.uk/statistics/', date: '2023' },
   { num: 3, name: 'Sands', dataset: 'Bereavement Care Survey', url: 'https://www.sands.org.uk/professionals/sands-professionals/bereavement-care-audit', date: '2024' },
   { num: 4, name: 'National Bereavement Care Pathway', dataset: 'National Standards', url: 'https://nbcpathway.org.uk/', date: '2021' },
   { num: 5, name: 'Miscarriage Association', dataset: 'Pregnancy Loss Statistics', url: 'https://www.miscarriageassociation.org.uk/', date: '2024' },

@@ -14,9 +14,9 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Home Office', dataset: 'Police Workforce Statistics', url: 'https://www.gov.uk/government/collections/police-workforce-england-and-wales', date: '2024', note: '147,000 officers in 2024; fell from 143,000 in 2010 to 122,400 by 2018; 40% of officers have fewer than five years service' },
-  { num: 2, name: 'Home Office', dataset: 'Police Uplift Programme — Final Report', date: '2023', note: '20,000-officer uplift met target; pushed numbers to record 149,566 by March 2022' },
+  { num: 2, name: 'Home Office', dataset: 'Police Uplift Programme — Final Report', url: 'https://www.gov.uk/government/organisations/home-office/about/statistics', date: '2023', note: '20,000-officer uplift met target; pushed numbers to record 149,566 by March 2022' },
   { num: 3, name: 'HMICFRS', dataset: 'State of Policing — Annual Assessment', url: 'https://www.justiceinspectorates.gov.uk/hmicfrs/publications/state-of-policing', date: '2024', note: 'Average emergency response time 9.4 minutes; detective shortfalls at 15% nationally' },
-  { num: 4, name: 'Home Office', dataset: 'Neighbourhood Policing Statistics', date: '2023', note: 'Dedicated neighbourhood officers fell from 20,000 in 2015 to under 12,000 by 2023' },
+  { num: 4, name: 'Home Office', dataset: 'Neighbourhood Policing Statistics', url: 'https://www.gov.uk/government/organisations/home-office/about/statistics', date: '2023', note: 'Dedicated neighbourhood officers fell from 20,000 in 2015 to under 12,000 by 2023' },
 ];
 
 // -- Types ------------------------------------------------------------------

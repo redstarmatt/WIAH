@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DLUHC', dataset: 'English Housing Survey 2022–23', url: 'https://www.gov.uk/government/collections/english-housing-survey', date: '2023' },
   { num: 2, name: 'DLUHC', dataset: 'Housing Health and Safety Rating System Guidance', url: 'https://www.gov.uk/government/publications/housing-health-and-safety-rating-system-guidance-for-landlords-and-property-related-professionals', date: '2023' },
-  { num: 3, name: 'DLUHC', dataset: 'Awaab\'s Law — Damp and Mould Consultation', date: '2023' },
+  { num: 3, name: 'DLUHC', dataset: 'Awaab\'s Law — Damp and Mould Consultation', url: 'https://www.gov.uk/government/organisations/ministry-of-housing-communities-and-local-government', date: '2023' },
 ];
 
 // -- Types ------------------------------------------------------------------

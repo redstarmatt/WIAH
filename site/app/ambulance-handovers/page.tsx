@@ -53,7 +53,7 @@ const annotations: Annotation[] = [
 const editorialRefs: Reference[] = [
   { num: 1, name: 'NHS England', dataset: 'Ambulance Quality Indicators', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/ambulance-quality-indicators/', date: '2024' },
   { num: 2, name: 'Association of Ambulance Chief Executives', dataset: 'Handover delay mortality estimates', date: '2023' },
-  { num: 3, name: 'NHS England', dataset: 'Urgent and Emergency Care Recovery Plan', date: '2023' },
+  { num: 3, name: 'NHS England', dataset: 'Urgent and Emergency Care Recovery Plan', url: 'https://www.england.nhs.uk/statistics/', date: '2023' },
 ];
 
 export default function AmbulanceHandoversPage() {

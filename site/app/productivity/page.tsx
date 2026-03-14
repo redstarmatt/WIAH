@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Labour Productivity', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/labourproductivity', date: '2023' },
-  { num: 2, name: 'ONS', dataset: 'National Accounts — Business Investment', date: '2023' },
+  { num: 2, name: 'ONS', dataset: 'National Accounts — Business Investment', url: 'https://www.ons.gov.uk/economy/nationalaccounts', date: '2023' },
   { num: 3, name: 'OBR', dataset: 'Economic and Fiscal Outlook — Business Investment Analysis', url: 'https://obr.uk/', date: '2023' },
   { num: 4, name: 'LSE Centre for Economic Performance', dataset: 'World Management Survey — UK Productivity Gap', url: 'https://cep.lse.ac.uk/', date: '2023' },
   { num: 5, name: 'The Productivity Institute', dataset: 'UK Productivity Gap Analysis', url: 'https://www.productivity.ac.uk/', date: '2024' },

@@ -53,7 +53,7 @@ const annotations: Annotation[] = [
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Alcohol-specific deaths in the UK', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/causesofdeath/bulletins/alcoholspecificdeathsintheuk', date: 'Feb 2026' },
   { num: 2, name: 'NHS Digital', dataset: 'Statistics on Alcohol, England', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/statistics-on-alcohol', date: 'Feb 2026' },
-  { num: 3, name: 'Public Health Scotland', dataset: 'Evaluating the impact of minimum unit pricing', date: '2023' },
+  { num: 3, name: 'Public Health Scotland', dataset: 'Evaluating the impact of minimum unit pricing', url: 'https://www.publichealthscotland.scot/publications/', date: '2023' },
 ];
 
 export default function AlcoholSpecificDeathsPage() {

@@ -46,8 +46,8 @@ const damageCostSeries: Series[] = [
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Environment Agency', dataset: 'National Flood Risk Assessment (NaFRA2)', url: 'https://www.gov.uk/flood-and-coastal-erosion-risk-management-research-reports/national-flood-and-coastal-erosion-risk-register', date: '2024' },
   { num: 2, name: 'Environment Agency', dataset: 'Long-term investment scenarios for flood and coastal erosion risk management', url: 'https://www.gov.uk/government/publications/flood-and-coastal-erosion-risk-management-long-term-investment-scenarios', date: '2024' },
-  { num: 3, name: 'Environment Agency / DLUHC', dataset: 'Planning in flood risk areas analysis', date: '2023' },
-  { num: 4, name: 'Flood Re', dataset: 'Reinsurance scheme data', date: '2024' },
+  { num: 3, name: 'Environment Agency / DLUHC', dataset: 'Planning in flood risk areas analysis', url: 'https://www.gov.uk/government/collections/planning-practice-guidance', date: '2023' },
+  { num: 4, name: 'Flood Re', dataset: 'Reinsurance scheme data', url: 'https://www.floodre.co.uk/industry/data-and-insights/', date: '2024' },
 ];
 
 export default function FloodingPage() {

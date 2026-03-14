@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Cabinet Office', dataset: 'Civil Service Statistics', url: 'https://www.gov.uk/government/statistics/civil-service-statistics', date: '2024', note: 'Civil service contracted from 492,000 in 2010 to 384,000 by 2016; recovered to 514,000 by 2024' },
-  { num: 2, name: 'DLUHC / ONS', dataset: 'Local Government Employment Statistics', date: '2024', note: 'Local government workforce fell from 2.98M in 2010 to 2.44M by 2016; at 2.62M in 2024, still 12% below pre-austerity' },
+  { num: 2, name: 'DLUHC / ONS', dataset: 'Local Government Employment Statistics', url: 'https://www.gov.uk/government/organisations/ministry-of-housing-communities-and-local-government', date: '2024', note: 'Local government workforce fell from 2.98M in 2010 to 2.44M by 2016; at 2.62M in 2024, still 12% below pre-austerity' },
   { num: 3, name: 'NHS Digital', dataset: 'NHS Workforce Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/nhs-workforce-statistics', date: '2024', note: 'NHS grew from 1.16M in 2015 to 1.48M in 2024; 27% increase' },
 ];
 

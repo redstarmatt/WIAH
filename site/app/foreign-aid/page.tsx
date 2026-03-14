@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'FCDO', dataset: 'Statistics on International Development', url: 'https://www.gov.uk/government/collections/statistics-on-international-development', date: '2024' },
   { num: 2, name: 'ICAI', dataset: 'Independent Commission for Aid Impact Annual Review', url: 'https://icai.independent.gov.uk/', date: '2024' },
-  { num: 3, name: 'House of Commons International Development Committee', dataset: 'Impact of 0.7% to 0.5% cut' },
+  { num: 3, name: 'House of Commons International Development Committee', dataset: 'Impact of 0.7% to 0.5% cut', url: 'https://committees.parliament.uk/committee/98/international-development-committee/publications/' },
 ];
 
 // UK ODA as % of GNI, 2015–2024

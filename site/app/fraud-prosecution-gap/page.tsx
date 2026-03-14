@@ -15,7 +15,7 @@ const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Crime Survey for England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice', date: '2024' },
   { num: 2, name: 'HMICFRS', dataset: 'State of Policing reports', url: 'https://www.justiceinspectorates.gov.uk/hmicfrs/', date: '2024' },
   { num: 3, name: 'Home Office', dataset: 'Crime outcomes in England and Wales', url: 'https://www.gov.uk/government/statistics/crime-outcomes-in-england-and-wales-statistics', date: '2024' },
-  { num: 4, name: 'NCA', dataset: 'National Strategic Assessment of Serious and Organised Crime' },
+  { num: 4, name: 'NCA', dataset: 'National Strategic Assessment of Serious and Organised Crime', url: 'https://www.nationalcrimeagency.gov.uk/who-we-are/publications/national-strategic-assessments' },
 ];
 
 // Fraud as share of all crime (%), 2015–2024

@@ -48,7 +48,7 @@ const inspectorAnnotations: Annotation[] = [
 ];
 
 const editorialRefs: Reference[] = [
-  { num: 1, name: 'Food Standards Agency', dataset: 'Annual report on foodborne illness', date: '2024' },
+  { num: 1, name: 'Food Standards Agency', dataset: 'Annual report on foodborne illness', url: 'https://www.food.gov.uk/research/foodborne-disease', date: '2024' },
   { num: 2, name: 'Food Standards Agency', dataset: 'Food Hygiene Rating Scheme statistics', url: 'https://www.food.gov.uk/safety-hygiene/food-hygiene-rating-scheme', date: '2024' },
   { num: 3, name: 'Food Standards Agency', dataset: 'Local authority enforcement monitoring', url: 'https://www.food.gov.uk/business-guidance/local-authority-enforcement', date: '2024' },
 ];

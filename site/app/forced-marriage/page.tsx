@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'FCDO Forced Marriage Unit', dataset: 'Forced Marriage Unit Statistics', url: 'https://www.gov.uk/government/collections/forced-marriage-unit-statistics', date: 'Nov 2024' },
   { num: 2, name: 'Ministry of Justice', dataset: 'Family Court Statistics Quarterly', url: 'https://www.gov.uk/government/collections/family-court-statistics-quarterly', date: 'Nov 2024' },
-  { num: 3, name: 'Karma Nirvana', dataset: 'Annual report 2023' },
+  { num: 3, name: 'Karma Nirvana', dataset: 'Annual report 2023', url: 'https://karmanirvana.org.uk/about/reports/', date: 'Nov 2024' },
 ];
 
 // FMU cases, 2011–2023

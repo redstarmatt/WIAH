@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DfT', dataset: 'Transport Statistics Great Britain', url: 'https://www.gov.uk/government/statistics/transport-statistics-great-britain-2024', date: '2024' },
   { num: 2, name: 'ORR', dataset: 'Freight rail usage statistics', url: 'https://www.orr.gov.uk/monitoring-regulation/rail/freight', date: '2024' },
-  { num: 3, name: 'Eurostat', dataset: 'Freight transport statistics', date: '2024' },
+  { num: 3, name: 'Eurostat', dataset: 'Freight transport statistics', url: 'https://ec.europa.eu/eurostat/statistics-explained/index.php/Freight_transport_statistics_-_modal_split', date: '2024' },
 ];
 
 // Road freight share (%), 2015–2025

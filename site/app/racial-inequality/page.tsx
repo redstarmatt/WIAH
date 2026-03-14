@@ -14,9 +14,9 @@ import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
   { num: 1, name: 'ONS', dataset: 'Ethnicity Pay Gaps in Great Britain (ASHE)', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours', date: '2024', note: 'Aggregate ethnic pay gap ~5.1%; Bangladeshi workers 20% less; Pakistani 16% less' },
-  { num: 2, name: 'IFS', dataset: 'Ethnic Penalties in the Labour Market', date: '2024', note: 'After controlling for education, age, region, and sector: Bangladeshi men earn 14% less, Black Caribbean men 9% less' },
+  { num: 2, name: 'IFS', dataset: 'Ethnic Penalties in the Labour Market', url: 'https://ifs.org.uk/publications', date: '2024', note: 'After controlling for education, age, region, and sector: Bangladeshi men earn 14% less, Black Caribbean men 9% less' },
   { num: 3, name: 'ONS', dataset: 'Labour Force Survey', url: 'https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes', date: '2024', note: 'Black unemployment ~7.5% vs white ~3.5%; ratio barely changed in 30 years' },
-  { num: 4, name: 'ONS', dataset: 'Wealth and Assets Survey', date: '2022', note: 'Black African household median wealth £34,000 vs white British £314,000 — a ninefold gap' },
+  { num: 4, name: 'ONS', dataset: 'Wealth and Assets Survey', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/bulletins/wealthingreatbritainwave/previousReleases', date: '2022', note: 'Black African household median wealth £34,000 vs white British £314,000 — a ninefold gap' },
 ];
 
 // ── Types ────────────────────────────────────────────────────────────────────

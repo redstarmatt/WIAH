@@ -12,8 +12,8 @@ import Cite from '@/components/Cite';
 import References, { Reference } from '@/components/References';
 
 const editorialRefs: Reference[] = [
-  { num: 1, name: 'FCA', dataset: 'Consumer Credit Market Study', date: '2024', note: 'Payday loan volumes fell 95% after 2015 price cap' },
-  { num: 2, name: 'FCA', dataset: 'Financial Lives Survey', date: '2024', note: 'BNPL lending reached £19bn, used by 17 million people' },
+  { num: 1, name: 'FCA', dataset: 'Consumer Credit Market Study', url: 'https://www.fca.org.uk/data', date: '2024', note: 'Payday loan volumes fell 95% after 2015 price cap' },
+  { num: 2, name: 'FCA', dataset: 'Financial Lives Survey', url: 'https://www.fca.org.uk/data', date: '2024', note: 'BNPL lending reached £19bn, used by 17 million people' },
   { num: 3, name: 'Illegal Money Lending Teams / Centre for Responsible Credit', dataset: 'Annual Report', date: '2024', note: 'Estimated 1.1 million people using illegal lenders' },
 ];
 

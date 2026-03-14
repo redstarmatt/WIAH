@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'DfE', dataset: 'Schools, pupils and their characteristics', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/school-pupils-and-their-characteristics', date: '2024' },
   { num: 2, name: 'CPAG', dataset: 'Free school meals eligibility analysis', url: 'https://cpag.org.uk/policy-and-research/policy-reports/free-school-meals', date: '2024' },
-  { num: 3, name: 'DfE', dataset: 'School census 2024' },
+  { num: 3, name: 'DfE', dataset: 'School census 2024', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/school-census' },
 ];
 
 // Children eligible for FSM (thousands), 2017–2024

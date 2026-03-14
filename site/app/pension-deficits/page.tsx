@@ -14,7 +14,7 @@ import References, { Reference } from '@/components/References';
 const editorialRefs: Reference[] = [
   { num: 1, name: 'Pension Protection Fund', dataset: 'PPF 7800 Index', url: 'https://www.ppf.co.uk/levy-payers/PPF-7800-index', date: '2023', note: 'Aggregate funding position swung from -£710bn to +£380bn' },
   { num: 2, name: 'PPF / The Pensions Regulator', dataset: 'The Purple Book — DB landscape', url: 'https://www.ppf.co.uk/our-organisation/the-purple-book', date: '2023', note: 'Active DB membership fell from 5m to 1.5m' },
-  { num: 3, name: 'HM Treasury', dataset: 'Mansion House Reforms', date: '2023', note: 'Aims to channel DB surpluses into productive investment' },
+  { num: 3, name: 'HM Treasury', dataset: 'Mansion House Reforms', url: 'https://www.gov.uk/government/organisations/hm-treasury/about/statistics', date: '2023', note: 'Aims to channel DB surpluses into productive investment' },
 ];
 
 export default function PensionDeficitsPage() {
