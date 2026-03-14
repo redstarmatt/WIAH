@@ -123,7 +123,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Immigration & Population"
           question="Who Is Actually Migrating to the UK?"
-          finding="Net migration peaked at 906,000 in June 2023; students account for 40% of arrivals and work visas 37%. Emigration is concentrated among UK nationals leaving permanently."
+          finding={<>Net migration peaked at 906,000 in June 2023; students account for 40% of arrivals and work visas 37%.<Cite nums={1} /> Emigration is concentrated among UK nationals leaving permanently.<Cite nums={1} /></>}
           colour="#6B7280"
         />
 
@@ -141,7 +141,7 @@ export default function TopicPage() {
             unit=""
             direction="down"
             polarity="up-is-bad"
-            changeText="Down from 906k peak · estimated 728k in 2024"
+            changeText={<>Down from 906k peak · estimated 728k in 2024<Cite nums={1} /></>}
             sparklineData={[330, 320, 280, 270, 240, 185, 490, 745, 906, 728, 600]}
             href="#sec-coverage"
           />
@@ -151,7 +151,7 @@ export default function TopicPage() {
             unit=""
             direction="down"
             polarity="up-is-bad"
-            changeText="Including dependants · down from peak of 682k"
+            changeText={<>Including dependants · down from peak of 682k<Cite nums={2} /></>}
             sparklineData={[168, 185, 201, 218, 220, 162, 380, 596, 682, 446, 380]}
             href="#sec-coverage"
           />
@@ -161,7 +161,7 @@ export default function TopicPage() {
             unit=""
             direction="down"
             polarity="up-is-bad"
-            changeText="Down from 309k peak · health and care dominant"
+            changeText={<>Down from 309k peak · health and care dominant<Cite nums={2} /></>}
             sparklineData={[80, 85, 90, 95, 95, 65, 145, 240, 309, 268, 230]}
             href="#sec-coverage"
           />
@@ -198,7 +198,7 @@ export default function TopicPage() {
             title="Graduate visas support international students"
             value="133,000"
             unit="Graduate visas granted 2024"
-            description="The Graduate visa route allows international students to remain in the UK for 2 years after completing their degree. 133,000 were granted in 2024, supporting UK higher education income of £26bn per year from international students."
+            description={<>The Graduate visa route allows international students to remain in the UK for 2 years after completing their degree.<Cite nums={2} /> 133,000 were granted in 2024, supporting UK higher education income of £26bn per year from international students.<Cite nums={3} /></>}
             source="Source: Home Office Immigration statistics, 2025. Universities UK, 2025."
           />
         </ScrollReveal>

@@ -151,7 +151,7 @@ export default function TopicPage() {
             unit=""
             direction="flat"
             polarity="up-is-bad"
-            changeText="2.5% of all materials collected for recycling"
+            changeText={<>2.5% of all materials collected for recycling<Cite nums={1} /></>}
             sparklineData={[480, 490, 500, 510, 515, 520, 520, 522, 523, 525, 525]}
             href="#sec-coverage"
           />
