@@ -122,7 +122,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Immigration & Population"
           question="How Many Modern Slavery Victims Are Being Found?"
-          finding="17,004 potential victims of modern slavery were referred to the National Referral Mechanism in 2024 — 71 times more than in 2012. Albanian nationals are the largest single group."
+          finding={<>17,004 potential victims of modern slavery were referred to the National Referral Mechanism in 2024 — 71 times more than in 2012.<Cite nums={1} /> Albanian nationals are the largest single group.<Cite nums={1} /></>}
           colour="#6B7280"
         />
 
@@ -140,7 +140,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="71x the 2012 level of 238 · Albanian nationals largest group"
+            changeText={<>71x the 2012 level of 238 · Albanian nationals largest group<Cite nums={1} /></>}
             sparklineData={[3266, 3805, 5145, 6985, 10627, 10613, 12727, 14670, 16938, 17004, 16800]}
             href="#sec-coverage"
           />
@@ -150,7 +150,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Positive conclusive grounds decisions · many more waiting"
+            changeText={<>Positive conclusive grounds decisions · many more waiting<Cite nums={1} /></>}
             sparklineData={[1400, 1800, 2500, 3600, 5100, 5200, 6100, 7200, 8100, 8400, 8200]}
             href="#sec-coverage"
           />
@@ -160,7 +160,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Now #1 referral type · construction, food processing, car washes"
+            changeText={<>Now #1 referral type · construction, food processing, car washes<Cite nums={1} /></>}
             sparklineData={[28, 30, 32, 34, 36, 38, 39, 40, 41, 42, 42]}
             href="#sec-coverage"
           />
@@ -197,7 +197,7 @@ export default function TopicPage() {
             title="Modern Slavery Act remains landmark law"
             value="2015"
             unit="Modern Slavery Act passed"
-            description="The UK's 2015 Modern Slavery Act remains one of the world's most comprehensive. The Independent Anti-Slavery Commissioner coordinates a multi-agency response and the Government's Modern Slavery Unit funds specialist NGO support. The UK has invested £200m in global anti-slavery programmes since 2015."
+            description={<>The UK&apos;s 2015 Modern Slavery Act remains one of the world&apos;s most comprehensive.<Cite nums={2} /> The Independent Anti-Slavery Commissioner coordinates a multi-agency response and the Government&apos;s Modern Slavery Unit funds specialist NGO support.<Cite nums={2} /> The UK has invested £200m in global anti-slavery programmes since 2015.<Cite nums={1} /></>}
             source="Source: Home Office — Modern Slavery statistics, 2025."
           />
         </ScrollReveal>

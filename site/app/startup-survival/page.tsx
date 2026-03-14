@@ -122,7 +122,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Economy & Work"
           question="Why Are Fewer New Businesses Making It?"
-          finding="UK business survival rates have fallen across all age cohorts since 2019. Food, retail and hospitality see the lowest survival rates at under 35% at five years."
+          finding={<>UK business survival rates have fallen across all age cohorts since 2019.<Cite nums={1} /> Food, retail and hospitality see the lowest survival rates at under 35% at five years.<Cite nums={1} /></>}
           colour="#6B7280"
         />
 
@@ -140,7 +140,7 @@ export default function TopicPage() {
             unit=""
             direction="down"
             polarity="up-is-good"
-            changeText="Down from 63% in 2017 · hospitality 42%"
+            changeText={<>Down from 63% in 2017 · hospitality 42%<Cite nums={1} /></>}
             sparklineData={[63, 62, 61, 60, 59, 58, 57, 56, 57, 58, 58]}
             href="#sec-coverage"
           />
@@ -150,7 +150,7 @@ export default function TopicPage() {
             unit=""
             direction="down"
             polarity="up-is-good"
-            changeText="Down from 38% in 2017 · energy and labour cost pressures"
+            changeText={<>Down from 38% in 2017 · energy and labour cost pressures<Cite nums={1} /></>}
             sparklineData={[38, 37, 36, 35, 34, 31, 30, 30, 31, 32, 32]}
             href="#sec-coverage"
           />
@@ -160,7 +160,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-good"
-            changeText="Online retail 58% 5yr survival vs 40% physical"
+            changeText={<>Online retail 58% 5yr survival vs 40% physical<Cite nums={2} /></>}
             sparklineData={[5, 6, 7, 8, 10, 12, 14, 15, 16, 17, 18]}
             href="#sec-coverage"
           />
@@ -197,7 +197,7 @@ export default function TopicPage() {
             title="Online retail survival strong"
             value="58%"
             unit="5-year survival for online retail"
-            description="Online retail businesses survive at 58% at five years vs 40% for physical retail. UK unicorn production has grown, with 150 active unicorn companies in 2025."
+            description={<>Online retail businesses survive at 58% at five years vs 40% for physical retail.<Cite nums={2} /> UK unicorn production has grown, with 150 active unicorn companies in 2025.<Cite nums={2} /></>}
             source="Source: ONS Business demography, 2025. British Business Bank, 2025."
           />
         </ScrollReveal>

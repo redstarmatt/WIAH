@@ -8,6 +8,8 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -46,6 +48,14 @@ interface TopicData {
 }
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Surfers Against Sewage', dataset: 'Water Quality Illness Tracker', url: 'https://www.sas.org.uk/water-quality/', date: '2024' },
+  { num: 2, name: 'Environment Agency', dataset: 'Event Duration Monitoring — Storm Overflows', url: 'https://environment.data.gov.uk/dataset/21e15f12-0df8-4bfc-b763-45226c16a8ac', date: '2024' },
+  { num: 3, name: 'Environment Agency', dataset: 'Bathing Water Quality Classifications', url: 'https://environment.data.gov.uk/bwq/profiles/', date: '2024' },
+  { num: 4, name: 'University of Exeter', dataset: 'Sewage Pollution and Human Health — Research Programme', url: 'https://www.exeter.ac.uk/research/esi/', date: '2023' },
+  { num: 5, name: 'Sport England', dataset: 'Active Lives Adult Survey — Open Water Swimming', url: 'https://www.sportengland.org/research-and-data/data/active-lives', date: '2024' },
+];
 
 function yearToDate(y: number): Date {
   return new Date(y, 5, 1);
@@ -201,10 +211,10 @@ export default function SewageHealthPage() {
         <ScrollReveal>
           <section className="mb-12 max-w-2xl">
             <p className="text-base text-wiah-black leading-relaxed mb-4">
-              The evidence linking sewage pollution to human illness is no longer circumstantial. Researchers at the Universities of Exeter and Bangor have documented a consistent pattern: when water companies discharge untreated sewage through combined sewer overflows, E. coli and intestinal enterococci levels at nearby bathing sites spike beyond safe limits — often within hours. The health consequences follow predictably. Gastroenteritis is the most commonly reported illness, followed by ear, nose and throat infections and skin rashes. Surfers Against Sewage, which runs the largest crowd-sourced water quality illness tracker in the UK, recorded 1,924 reports of sickness at bathing sites in 2024, more than double the 847 logged in 2018. More than 50 monitored bathing sites regularly exceed safe bacterial limits after heavy rain. Children are particularly vulnerable — they swallow more water while swimming and their immature immune systems are less equipped to fight waterborne pathogens. The estimated cost to the NHS of treating waterborne illness stands at around £140 million per year.
+              The evidence linking sewage pollution to human illness is no longer circumstantial. Researchers at the Universities of Exeter and Bangor have documented a consistent pattern: when water companies discharge untreated sewage through combined sewer overflows, E. coli and intestinal enterococci levels at nearby bathing sites spike beyond safe limits — often within hours.<Cite nums={4} /> The health consequences follow predictably. Gastroenteritis is the most commonly reported illness, followed by ear, nose and throat infections and skin rashes. Surfers Against Sewage, which runs the largest crowd-sourced water quality illness tracker in the UK, recorded 1,924 reports of sickness at bathing sites in 2024, more than double the 847 logged in 2018.<Cite nums={1} /> More than 50 monitored bathing sites regularly exceed safe bacterial limits after heavy rain.<Cite nums={3} /> Children are particularly vulnerable — they swallow more water while swimming and their immature immune systems are less equipped to fight waterborne pathogens. The estimated cost to the NHS of treating waterborne illness stands at around £140 million per year.<Cite nums={4} />
             </p>
             <p className="text-base text-wiah-black leading-relaxed">
-              These risks are growing in parallel with participation. The open water swimming boom has brought 7.5 million people into rivers, lakes and coastal waters — up from 4.1 million in 2019. Yet the Environment Agency&apos;s real-time alerts system, launched in 2024, covers only England&apos;s 430 or so designated bathing waters. It does not cover rivers, where wild swimming is most popular and where 93% of waterways fail to meet good ecological status. There is a deeper concern, too: sewage entering waterways carries antibiotic-resistant bacteria, contributing to the growing crisis of antimicrobial resistance. Water company self-monitoring data from the Event Duration Monitoring programme shows that discharge events correlate closely with reported illness clusters, typically within a 48-hour window. The pattern is clear: more sewage, more swimmers, more illness. What remains absent is a systematic NHS surveillance programme that could quantify the true scale of harm — the 1,924 reports almost certainly represent a fraction of actual cases, since most people do not connect a stomach bug to the river they swam in three days earlier.
+              These risks are growing in parallel with participation. The open water swimming boom has brought 7.5 million people into rivers, lakes and coastal waters — up from 4.1 million in 2019.<Cite nums={5} /> Yet the Environment Agency&apos;s real-time alerts system, launched in 2024, covers only England&apos;s 430 or so designated bathing waters.<Cite nums={3} /> It does not cover rivers, where wild swimming is most popular and where 93% of waterways fail to meet good ecological status. There is a deeper concern, too: sewage entering waterways carries antibiotic-resistant bacteria, contributing to the growing crisis of antimicrobial resistance. Water company self-monitoring data from the Event Duration Monitoring programme shows that discharge events correlate closely with reported illness clusters, typically within a 48-hour window.<Cite nums={[1, 2]} /> The pattern is clear: more sewage, more swimmers, more illness. What remains absent is a systematic NHS surveillance programme that could quantify the true scale of harm — the 1,924 reports almost certainly represent a fraction of actual cases, since most people do not connect a stomach bug to the river they swam in three days earlier.<Cite nums={1} />
             </p>
           </section>
         </ScrollReveal>
@@ -285,6 +295,7 @@ export default function SewageHealthPage() {
             </ul>
           </div>
         </section>
+        <References items={editorialRefs} />
       </main>
     </>
   );

@@ -8,6 +8,16 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Environment Agency', dataset: 'The State of the Environment: Soil', url: 'https://www.gov.uk/government/publications/state-of-the-environment', date: '2019' },
+  { num: 2, name: 'DEFRA', dataset: 'Soil Health Monitoring Scheme', url: 'https://www.gov.uk/government/publications/soil-health-monitoring', date: '2024' },
+  { num: 3, name: 'Parliamentary Office of Science and Technology', dataset: 'Soil Degradation POSTnote', url: 'https://post.parliament.uk/research-briefings/post-pn-0502/', date: '2015' },
+  { num: 4, name: 'IUCN UK Peatland Programme', dataset: 'UK Peatland Strategy 2018–2040', url: 'https://www.iucn-uk-peatlandprogramme.org/uk-peatland-strategy-2018-2040', date: '2018' },
+  { num: 5, name: 'Centre for Ecology & Hydrology', dataset: 'Countryside Survey — Soils Report', url: 'https://www.ceh.ac.uk/our-science/projects/countryside-survey', date: '2007' },
+];
 
 interface SoilHealthData {
   national: {
@@ -62,8 +72,8 @@ export default function SoilHealthPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK has approximately 10.9 million hectares of agricultural land, accounting for 72% of the country's total land area. The Environment Agency estimated in 2019 that 2.9 billion tonnes of soil are eroded each year, with intensive arable farming — concentrated in East Anglia, the East Midlands, and Yorkshire — driving the worst losses. DEFRA's Soil Health Monitoring Scheme, launched in 2023, aims to provide the first comprehensive baseline assessment. Early results suggest that 45% of arable soils have low organic carbon content, a key indicator of long-term fertility. The Parliamentary Office of Science and Technology estimated that degraded soil costs the UK economy £1.4 billion annually through lost productivity, increased flooding, and water treatment costs.</p>
-            <p>Soil organic matter in England has declined measurably over the past two decades. The Countryside Survey, which ran from 1978 to 2007, documented a significant drop in carbon content across arable and improved grassland soils. Intensive tillage, monoculture cropping, and heavy fertiliser use accelerate the breakdown of organic matter, while compaction from heavy machinery reduces water infiltration. Peat soils, which store an estimated 3.2 billion tonnes of carbon across the UK, are particularly vulnerable — the International Union for Conservation of Nature found that 80% of UK peatlands are in a damaged or degraded state, releasing an estimated 23 million tonnes of CO2 equivalent per year. The trend is towards further degradation without large-scale intervention.</p>
+            <p>The UK has approximately 10.9 million hectares of agricultural land, accounting for 72% of the country's total land area. The Environment Agency estimated in 2019 that 2.9 billion tonnes of soil are eroded each year, with intensive arable farming — concentrated in East Anglia, the East Midlands, and Yorkshire — driving the worst losses.<Cite nums={1} /> DEFRA's Soil Health Monitoring Scheme, launched in 2023, aims to provide the first comprehensive baseline assessment. Early results suggest that 45% of arable soils have low organic carbon content, a key indicator of long-term fertility.<Cite nums={2} /> The Parliamentary Office of Science and Technology estimated that degraded soil costs the UK economy £1.4 billion annually through lost productivity, increased flooding, and water treatment costs.<Cite nums={3} /></p>
+            <p>Soil organic matter in England has declined measurably over the past two decades. The Countryside Survey, which ran from 1978 to 2007, documented a significant drop in carbon content across arable and improved grassland soils.<Cite nums={5} /> Intensive tillage, monoculture cropping, and heavy fertiliser use accelerate the breakdown of organic matter, while compaction from heavy machinery reduces water infiltration. Peat soils, which store an estimated 3.2 billion tonnes of carbon across the UK, are particularly vulnerable — the International Union for Conservation of Nature found that 80% of UK peatlands are in a damaged or degraded state, releasing an estimated 23 million tonnes of CO2 equivalent per year.<Cite nums={4} /> The trend is towards further degradation without large-scale intervention.</p>
             </div>
         </section>
 
@@ -132,6 +142,10 @@ export default function SoilHealthPage() {
             />
           </section>
         </ScrollReveal>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
               <RelatedTopics />
       </main>
     </>

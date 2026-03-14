@@ -8,6 +8,8 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import PositiveCallout from '@/components/PositiveCallout'
 import ScrollReveal from '@/components/ScrollReveal'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -31,6 +33,13 @@ interface YoungCarersData {
   caregivingHours: CaringHours[]
   byConditionCaredFor: ConditionCaredFor[]
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Census 2021 — Unpaid care by age', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/socialcare/articles/unpaidcarebyagesexanddeprivationenglandandwales/census2021', date: '2021', note: 'Approximately 800,000 young carers recorded in the UK' },
+  { num: 2, name: 'Carers Trust', dataset: 'Young Carers Survey', url: 'https://carers.org/what-we-do/our-survey-results', date: '2023', note: '27% of young carers miss school regularly; average absence 48 days per year' },
+  { num: 3, name: 'Carers Trust', dataset: 'Young Carers and Mental Health', url: 'https://carers.org/what-we-do/our-survey-results', date: '2023', note: '42% of young carers report mental health difficulties — three times the rate of non-carers' },
+  { num: 4, name: 'UK Parliament', dataset: 'Care Act 2014 / Children and Families Act 2014', url: 'https://www.legislation.gov.uk/ukpga/2014/23', date: '2014', note: 'Gave young carers the right to a needs assessment from their local authority' },
+];
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -94,15 +103,15 @@ export default function YoungCarersPage() {
         <TopicHeader
           topic="Young Carers"
           question="How many children are caring for adults?"
-          finding="800,000 children in the UK are providing unpaid care for a family member, often missing school and missing out on childhood — yet most are invisible to the services that could support them."
+          finding={<>800,000 children in the UK are providing unpaid care for a family member, often missing school and missing out on childhood — yet most are invisible to the services that could support them.<Cite nums={1} /></>}
           colour="#264653"
         />
 
         {/* Context section */}
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The 2021 Census recorded approximately 800,000 young carers in the UK—children and young people under 18 who provide unpaid care for a parent, sibling, or other family member living with illness, disability, or addiction. Researchers and charities consider this a significant undercount. Families do not readily identify a child as a carer; children themselves often regard what they do as simply &ldquo;helping out.&rdquo; Estimates accounting for unidentified carers put the true figure above one million. Many are caring for multiple hours a day, managing medication, providing physical assistance, or acting as translators and emotional supports for parents with mental illness.</p>
-            <p>The educational and psychological toll is substantial. Young carers miss an average of 48 days of school per year—three times the general average—and 27% miss school regularly because of caring responsibilities. The cumulative absence directly depresses attainment: young carers are significantly less likely to achieve five GCSEs at grade C or above than their peers. The mental health consequences are equally stark. Around 42% of young carers report experiencing mental health difficulties, three times the rate of non-carers the same age. Higher rates of depression, anxiety, and social isolation compound the academic disadvantage. A quarter report having no-one they can turn to for support, which itself is a symptom of a system that has failed to find them.</p>
+            <p>The 2021 Census recorded approximately 800,000 young carers in the UK—children and young people under 18 who provide unpaid care for a parent, sibling, or other family member living with illness, disability, or addiction.<Cite nums={1} /> Researchers and charities consider this a significant undercount. Families do not readily identify a child as a carer; children themselves often regard what they do as simply &ldquo;helping out.&rdquo; Estimates accounting for unidentified carers put the true figure above one million. Many are caring for multiple hours a day, managing medication, providing physical assistance, or acting as translators and emotional supports for parents with mental illness.</p>
+            <p>The educational and psychological toll is substantial. Young carers miss an average of 48 days of school per year—three times the general average—and 27% miss school regularly because of caring responsibilities.<Cite nums={2} /> The cumulative absence directly depresses attainment: young carers are significantly less likely to achieve five GCSEs at grade C or above than their peers. The mental health consequences are equally stark. Around 42% of young carers report experiencing mental health difficulties, three times the rate of non-carers the same age.<Cite nums={3} /> Higher rates of depression, anxiety, and social isolation compound the academic disadvantage. A quarter report having no-one they can turn to for support, which itself is a symptom of a system that has failed to find them.</p>
             </div>
         </section>
 
@@ -240,11 +249,12 @@ export default function YoungCarersPage() {
         <PositiveCallout
           title="Young Carers Act gives rights to support"
           value="Right to support"
-          description="The Care Act 2014 and Children and Families Act 2014 gave young carers the right to a needs assessment from their local authority and established a duty on local authorities to consider the impact of caring on a child's wellbeing. But only a minority of young carers are identified, and fewer still receive any formal support."
+          description={<>The Care Act 2014 and Children and Families Act 2014 gave young carers the right to a needs assessment from their local authority and established a duty on local authorities to consider the impact of caring on a child's wellbeing.<Cite nums={4} /> But only a minority of young carers are identified, and fewer still receive any formal support.</>}
           source="Source: UK legislation — Care Act 2014, Children and Families Act 2014."
         />
         </ScrollReveal>
 
+        <References items={editorialRefs} />
               <RelatedTopics />
       </main>
     </>

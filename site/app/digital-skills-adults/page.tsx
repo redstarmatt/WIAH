@@ -124,7 +124,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Digital & Connectivity"
           question="Does the UK Workforce Have the Digital Skills It Needs?"
-          finding="Around 8 million UK adults lack the basic digital skills needed for everyday work and life. The digital skills gap costs the UK economy an estimated £22 billion per year in lost productivity, and demand for advanced digital skills is outpacing supply."
+          finding={<>Around 8 million UK adults lack the basic digital skills needed for everyday work and life.<Cite nums={1} /> The digital skills gap costs the UK economy an estimated £22 billion per year in lost productivity, and demand for advanced digital skills is outpacing supply.<Cite nums={2} /></>}
           colour="#264653"
         />
 
@@ -142,7 +142,7 @@ export default function TopicPage() {
             unit=""
             direction="down"
             polarity="up-is-bad"
-            changeText="Down from 12.6M in 2015 · Pace of improvement slowing"
+            changeText={<>Down from 12.6M in 2015 · Pace of improvement slowing<Cite nums={1} /></>}
             sparklineData={[12.6, 12.0, 11.4, 10.8, 10.2, 9.6, 9.1, 8.7, 8.4, 8.2, 8.0]}
             href="#sec-coverage"
           />
@@ -152,7 +152,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Up from 39% in 2019 · AI creating new skill gaps"
+            changeText={<>Up from 39% in 2019 · AI creating new skill gaps<Cite nums={2} /></>}
             sparklineData={[35, 36, 37, 38, 39, 41, 43, 46, 48, 50, 52]}
             href="#sec-coverage"
           />
@@ -162,7 +162,7 @@ export default function TopicPage() {
             unit="/year"
             direction="up"
             polarity="up-is-good"
-            changeText="Up from 3K in 2021 · Shortage still large relative to need"
+            changeText={<>Up from 3K in 2021 · Shortage still large relative to need<Cite nums={3} /></>}
             sparklineData={[0, 0, 0, 0, 0, 0, 3000, 8000, 14000, 19000, 24000]}
             href="#sec-coverage"
           />
@@ -199,14 +199,11 @@ export default function TopicPage() {
             title="What's improving"
             value="£22bn"
             unit="Potential GDP gain from closing skills gap"
-            description="Government-funded digital skills bootcamps delivered 24,000 completions in 2025. The Digital Skills Partnership coordinates employer investment in skills training. The new Digital Entitlement allows adults without Level 3 digital qualifications to access funded training. UK Cyber Security Council is developing standardised qualifications for the cybersecurity workforce."
+            description={<>Government-funded digital skills bootcamps delivered 24,000 completions in 2025.<Cite nums={3} /> The Digital Skills Partnership coordinates employer investment in skills training.<Cite nums={2} /> The new Digital Entitlement allows adults without Level 3 digital qualifications to access funded training. UK Cyber Security Council is developing standardised qualifications for the cybersecurity workforce.<Cite nums={2} /></>}
             source="Source: DCMS — UK Digital Strategy, 2025. DfE — Further Education: outcome-based success measures, 2025."
           />
         </ScrollReveal>
 
-        <div className="mt-6">
-          <References items={editorialRefs} />
-        </div>
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
@@ -233,6 +230,7 @@ export default function TopicPage() {
             </ul>
           </div>
         </section>
+        <References items={editorialRefs} />
       </main>
     </>
   );

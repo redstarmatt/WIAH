@@ -9,6 +9,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import PositiveCallout from '@/components/PositiveCallout';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: "King's Centre for Military Health Research", dataset: 'Veteran mental health cohort study', url: 'https://www.kcl.ac.uk/kcmhr', date: '2023', note: '6% PTSD prevalence, 15% common mental health disorders' },
+  { num: 2, name: 'NHS England', dataset: 'Op COURAGE Veterans Mental Health Service statistics', url: 'https://www.england.nhs.uk/mental-health/adults/veterans/', date: '2023', note: '21,000 referrals, 17,000 treated annually' },
+  { num: 3, name: "Office for Veterans' Affairs", dataset: "Veterans' Strategy Action Plan 2022\u201324", url: 'https://www.gov.uk/government/publications/veterans-strategy-action-plan-2022-to-2024', date: '2024' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -78,17 +86,17 @@ export default function VeteranMentalHealthPage() {
         <TopicHeader
           topic="Veteran Mental Health"
           question="Are We Looking After Veterans' Mental Health?"
-          finding="Around 6% of UK veterans — some 120,000 people — have probable PTSD or another common mental health disorder related to their service, but many face years-long waits for specialist treatment and encounter stigma that prevents them seeking help at all."
+          finding={<>Around 6% of UK veterans — some 120,000 people — have probable PTSD or another common mental health disorder related to their service,<Cite nums={1} /> but many face years-long waits for specialist treatment and encounter stigma that prevents them seeking help at all.</>}
           colour="#264653"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The United Kingdom has approximately 2.4 million veterans — people who have served in the armed forces and subsequently left. Research by the King's Centre for Military Health Research, based on longitudinal cohort studies tracking personnel from service through to civilian life, estimates that around 6% have probable post-traumatic stress disorder (PTSD) and a further 15% experience common mental health problems including anxiety and depression at clinical levels. That translates to roughly 120,000 veterans with probable PTSD and around 360,000 with significant mental health needs. Combat exposure, particularly among those who served in Iraq and Afghanistan, is the strongest predictor of PTSD, but non-combat traumas including sexual assault, bullying, and adverse childhood experiences also feature prominently in veteran mental health presentations.
+              The United Kingdom has approximately 2.4 million veterans — people who have served in the armed forces and subsequently left. Research by the King's Centre for Military Health Research, based on longitudinal cohort studies tracking personnel from service through to civilian life, estimates that around 6% have probable post-traumatic stress disorder (PTSD) and a further 15% experience common mental health problems including anxiety and depression at clinical levels.<Cite nums={1} /> That translates to roughly 120,000 veterans with probable PTSD and around 360,000 with significant mental health needs. Combat exposure, particularly among those who served in Iraq and Afghanistan, is the strongest predictor of PTSD, but non-combat traumas including sexual assault, bullying, and adverse childhood experiences also feature prominently in veteran mental health presentations.
             </p>
             <p>
-              The dedicated NHS service for veterans — Op COURAGE (the Veterans' Mental Health and Wellbeing Service) — has grown significantly since its launch in 2017, with referrals rising from 8,000 in its first year to over 21,000 in 2023. The service operates through four regional hubs — North, South, London &amp; South East, and the Midlands — and provides assessment, brief intervention, and longer-term treatment including evidence-based trauma therapies such as EMDR and trauma-focused CBT. Despite this growth, Op COURAGE serves only around 17,000 veterans annually against an estimated need affecting hundreds of thousands — a gap that reflects both capacity constraints and significant under-referral from GPs, many of whom do not routinely ask patients about military service.
+              The dedicated NHS service for veterans — Op COURAGE (the Veterans' Mental Health and Wellbeing Service) — has grown significantly since its launch in 2017, with referrals rising from 8,000 in its first year to over 21,000 in 2023.<Cite nums={2} /> The service operates through four regional hubs — North, South, London &amp; South East, and the Midlands — and provides assessment, brief intervention, and longer-term treatment including evidence-based trauma therapies such as EMDR and trauma-focused CBT. Despite this growth, Op COURAGE serves only around 17,000 veterans annually against an estimated need affecting hundreds of thousands — a gap that reflects both capacity constraints and significant under-referral from GPs, many of whom do not routinely ask patients about military service.<Cite nums={[1, 2]} />
             </p>
             </div>
         </section>
@@ -182,7 +190,7 @@ export default function VeteranMentalHealthPage() {
           <PositiveCallout
             title="What is improving"
             value="Op COURAGE"
-            description="Op COURAGE has grown from 8,000 referrals in 2017 to over 21,000 in 2023 — a 163% increase. The Veterans' Mental Health Transition, Intervention and Liaison Service (TILS) has improved early identification at point of service departure. The Veterans' Strategy Action Plan 2022–24 commits to reducing average waits and expanding community-based provision."
+            description={<>Op COURAGE has grown from 8,000 referrals in 2017 to over 21,000 in 2023 — a 163% increase.<Cite nums={2} /> The Veterans&rsquo; Mental Health Transition, Intervention and Liaison Service (TILS) has improved early identification at point of service departure. The Veterans&rsquo; Strategy Action Plan 2022–24 commits to reducing average waits and expanding community-based provision.<Cite nums={3} /></>}
             source="NHS England · Office for Veterans' Affairs · Veterans' Strategy Action Plan 2022–24"
           />
         </ScrollReveal>
@@ -211,6 +219,8 @@ export default function VeteranMentalHealthPage() {
             </div>
           )}
         </section>
+        <div className="mt-6 max-w-2xl"><References items={editorialRefs} /></div>
+
               <RelatedTopics />
       </main>
     </>

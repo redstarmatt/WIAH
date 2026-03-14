@@ -8,6 +8,15 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'ONS', dataset: 'Wealth and Assets Survey', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/bulletins/totalwealthingreatbritain/latest', date: '2024', note: 'Top 10% own 57% of wealth; bottom 50% own 4%' },
+  { num: 2, name: 'ONS', dataset: 'Financial wealth Gini coefficient', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth', date: '2024', note: 'Gini 0.87 — among highest in OECD' },
+  { num: 3, name: 'HMRC', dataset: 'Help to Save statistics', url: 'https://www.gov.uk/government/statistics/help-to-save-statistics', date: '2025' },
+  { num: 4, name: 'DWP', dataset: 'Wealth distribution evaluation', url: 'https://www.gov.uk/government/publications', date: '2024' },
+];
 
 interface DataPoint {
   year: number;
@@ -86,14 +95,14 @@ export default function WealthGiniPage() {
         <TopicHeader
           topic="Poverty & Cost of Living"
           question="How Unequal Is British Wealth?"
-          finding="The wealthiest 10% of households own 57% of all UK wealth; the bottom 50% own just 4%. The financial wealth Gini coefficient stands at 0.87 \u2014 one of the highest in Europe."
+          finding={<>The wealthiest 10% of households own 57% of all UK wealth; the bottom 50% own just 4%.<Cite nums={1} /> The financial wealth Gini coefficient stands at 0.87 — one of the highest in Europe.<Cite nums={2} /></>}
           colour="#F4A261"
         />
 
         <section className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The wealthiest 10% of households own 57% of all UK wealth; the bottom 50% own just 4%. The financial wealth Gini coefficient stands at 0.87 — one of the highest in Europe. The data below draws on official sources to show how this has changed over the past decade and where the pressures are most acute.
+              The wealthiest 10% of households own 57% of all UK wealth; the bottom 50% own just 4%.<Cite nums={1} /> The financial wealth Gini coefficient stands at 0.87 — one of the highest in Europe.<Cite nums={2} /> The data below draws on official sources to show how this has changed over the past decade and where the pressures are most acute.
             </p>
             <p>
               The figures reflect a structural pattern rather than a short-term fluctuation. Understanding the scale of the issue is the first step toward holding policymakers to account for the decisions that shape these outcomes.
@@ -114,7 +123,7 @@ export default function WealthGiniPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Up from 53% in 2006 \u00b7 driven by property"
+            changeText={<>Up from 53% in 2006 · driven by property<Cite nums={1} /></>}
             sparklineData={[53,53,54,54,55,55,55,56,56,57,57]}
             href="#sec-chart1"
           />
@@ -134,7 +143,7 @@ export default function WealthGiniPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Near maximum \u00b7 among highest in OECD"
+            changeText={<>Near maximum · among highest in OECD<Cite nums={2} /></>}
             sparklineData={[0.84,0.84,0.85,0.85,0.85,0.86,0.86,0.86,0.87,0.87,0.87]}
             href="#sec-chart1"
           />
@@ -167,7 +176,7 @@ export default function WealthGiniPage() {
             title="Help to Save extended"
             value="120,000+"
             unit="low-income savers using Help to Save"
-            description="The government extended the Help to Save scheme beyond its original end date, allowing low-income working people to save \u00a31-\u00a350 per month and receive a 50p government bonus for every \u00a31 saved. Over 120,000 accounts are now active. Evaluation shows participants are three times more likely to have emergency savings after two years compared to a control group."
+            description={<>The government extended the Help to Save scheme beyond its original end date, allowing low-income working people to save £1-£50 per month and receive a 50p government bonus for every £1 saved. Over 120,000 accounts are now active.<Cite nums={3} /> Evaluation shows participants are three times more likely to have emergency savings after two years compared to a control group.<Cite nums={4} /></>}
             source="Source: HMRC \u2014 Help to Save statistics, 2025. DWP \u2014 Wealth distribution evaluation, 2024."
           />
         </ScrollReveal>
@@ -197,6 +206,7 @@ export default function WealthGiniPage() {
             </ul>
           </div>
         </section>
+        <References items={editorialRefs} />
       </main>
     </>
   );

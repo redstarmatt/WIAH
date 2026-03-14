@@ -121,7 +121,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Immigration & Population"
           question="How Many People Are Actually Being Removed?"
-          finding="19,212 people were returned from the UK in 2024 — down from a peak of 65,000 in 2005 and far below government targets. Returns represent just 2% of illegal entries."
+          finding={<>19,212 people were returned from the UK in 2024 — down from a peak of 65,000 in 2005 and far below government targets.<Cite nums={1} /> Returns represent just 2% of illegal entries.<Cite nums={1} /></>}
           colour="#6B7280"
         />
 
@@ -139,7 +139,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-good"
-            changeText="Up from 14,259 in 2022 · still 70% below 2005 peak"
+            changeText={<>Up from 14,259 in 2022 · still 70% below 2005 peak<Cite nums={1} /></>}
             sparklineData={[32885, 28644, 27094, 24580, 20261, 14313, 17274, 14259, 16479, 19212, 21000]}
             href="#sec-coverage"
           />
@@ -149,7 +149,7 @@ export default function TopicPage() {
             unit=""
             direction="down"
             polarity="up-is-good"
-            changeText="Down from 48% in 2020 · legal challenges main cause"
+            changeText={<>Down from 48% in 2020 · legal challenges main cause<Cite nums={1} /></>}
             sparklineData={[32, 33, 34, 36, 38, 48, 46, 44, 43, 42, 41]}
             href="#sec-coverage"
           />
@@ -159,7 +159,7 @@ export default function TopicPage() {
             unit=""
             direction="flat"
             polarity="up-is-bad"
-            changeText="Estimated 40,000+ channel crossings not removed"
+            changeText={<>Estimated 40,000+ channel crossings not removed<Cite nums={1} /></>}
             sparklineData={[8, 7, 7, 6, 5, 4, 3, 2, 2, 2, 2]}
             href="#sec-coverage"
           />
@@ -196,14 +196,11 @@ export default function TopicPage() {
             title="Returns rising from 2022 low"
             value="+35%"
             unit="increase in returns 2022-2024"
-            description="Total returns increased 35% from the 2022 low of 14,259 to 19,212 in 2024. Voluntary returns supported by Assisted Voluntary Return schemes cost 20x less than enforced removals and have fewer legal barriers. The 2024 Illegal Migration Act created new powers to speed removals."
+            description={<>Total returns increased 35% from the 2022 low of 14,259 to 19,212 in 2024.<Cite nums={1} /> Voluntary returns supported by Assisted Voluntary Return schemes cost 20x less than enforced removals and have fewer legal barriers. The 2024 Illegal Migration Act created new powers to speed removals.<Cite nums={1} /></>}
             source="Source: Home Office Immigration statistics — returns, 2025."
           />
         </ScrollReveal>
 
-        <div className="mt-6">
-          <References items={editorialRefs} />
-        </div>
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
@@ -230,6 +227,7 @@ export default function TopicPage() {
             </ul>
           </div>
         </section>
+        <References items={editorialRefs} />
       </main>
     </>
   );

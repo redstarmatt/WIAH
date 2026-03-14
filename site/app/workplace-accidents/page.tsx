@@ -123,7 +123,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Economy & Work"
           question="Is Britain's Workplace Getting Safer?"
-          finding="138 workers were killed at work in 2024/25 — construction and agriculture remain the most dangerous sectors. Non-fatal injuries have fallen long-term but costs are rising."
+          finding={<>138 workers were killed at work in 2024/25 — construction and agriculture remain the most dangerous sectors.<Cite nums={1} /> Non-fatal injuries have fallen long-term but costs are rising.<Cite nums={[2, 3]} /></>}
           colour="#6B7280"
         />
 
@@ -141,7 +141,7 @@ export default function TopicPage() {
             unit=""
             direction="down"
             polarity="up-is-bad"
-            changeText="Down from 175 in 2015 · construction 32% of total"
+            changeText={<>Down from 175 in 2015 · construction 32% of total<Cite nums={1} /></>}
             sparklineData={[175, 168, 162, 157, 149, 142, 141, 123, 135, 141, 138]}
             href="#sec-coverage"
           />
@@ -151,7 +151,7 @@ export default function TopicPage() {
             unit=""
             direction="flat"
             polarity="up-is-bad"
-            changeText="Self-reported via LFS · actual rate much higher than RIDDOR"
+            changeText={<>Self-reported via LFS · actual rate much higher than RIDDOR<Cite nums={2} /></>}
             sparklineData={[621, 619, 609, 599, 581, 565, 549, 531, 543, 558, 561]}
             href="#sec-coverage"
           />
@@ -161,7 +161,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Including lost output and healthcare costs"
+            changeText={<>Including lost output and healthcare costs<Cite nums={3} /></>}
             sparklineData={[15.2, 15.8, 16.3, 16.8, 17.1, 17.5, 18.0, 18.9, 19.5, 20.1, 20.7]}
             href="#sec-coverage"
           />
@@ -198,7 +198,7 @@ export default function TopicPage() {
             title="Fatal injury rate at historic low"
             value="0.42"
             unit="per 100,000 workers (2024/25)"
-            description="The fatal injury rate of 0.42 per 100,000 workers is the lowest on record, reflecting decades of improved safety regulation and enforcement. The Health and Safety Executive's fatal five campaign has cut construction fatalities by 40% in a decade. The UK has one of the lowest workplace fatality rates in Europe."
+            description={<>The fatal injury rate of 0.42 per 100,000 workers is the lowest on record, reflecting decades of improved safety regulation and enforcement.<Cite nums={1} /> The Health and Safety Executive's fatal five campaign has cut construction fatalities by 40% in a decade. The UK has one of the lowest workplace fatality rates in Europe.</>}
             source="Source: HSE — Statistics on fatal injuries in the workplace, 2025."
           />
         </ScrollReveal>
@@ -229,6 +229,7 @@ export default function TopicPage() {
             </ul>
           </div>
         </section>
+        <References items={editorialRefs} />
       </main>
     </>
   );

@@ -8,12 +8,22 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 interface YoungPeopleCareData {
   childrenInCare: Array<{ year: number; children: number }>
   careLeaverOutcomes: Array<{ outcome: string; percent: number }>
   placementTypes2023: Array<{ type: string; percent: number }>
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DfE', dataset: 'Children looked after in England including adoptions', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions', date: '2023', note: '83,840 children in local authority care at March 2023, up 38% from 60,900 in 2009' },
+  { num: 2, name: 'Child Welfare Inequalities Project', dataset: 'Inequalities in child welfare intervention rates', url: 'https://www.coventry.ac.uk/research/research-directories/current-projects/child-welfare-inequality-uk/', date: '2022', note: 'Children in the most deprived 10% of areas are 10 times more likely to be in care than those in the least deprived 10%' },
+  { num: 3, name: 'DfE', dataset: 'Care leavers aged 17 to 21 in England', url: 'https://explore-education-statistics.service.gov.uk/find-statistics/children-looked-after-in-england-including-adoptions', date: '2023', note: '34% of care leavers NEET at 19–21 vs 11% of all young people; only 6% enter university' },
+  { num: 4, name: 'MacAlister Review', dataset: 'Independent Review of Children\'s Social Care', url: 'https://www.gov.uk/government/groups/independent-review-of-childrens-social-care', date: '2022', note: 'Found profit-making residential care providers charging over £300,000 per child per year' },
+  { num: 5, name: 'DfE', dataset: 'Children\'s Social Care National Framework', url: 'https://www.gov.uk/government/publications/childrens-social-care-national-framework', date: '2023', note: 'Adopted some MacAlister recommendations but left others unfunded' },
+];
 
 function yearToDate(y: number): Date {
   return new Date(y, 5, 1)
@@ -49,14 +59,14 @@ export default function YoungPeopleCarePage() {
         <TopicHeader
           topic="Children in Care"
           question="What happens to children who grow up in the care system?"
-          finding="83,840 children were in local authority care in England in 2023 — up 38% since 2009. Only 6% of care leavers go to university, versus 43% of all young people. One in three care leavers is not in education, employment or training at age 19–21."
+          finding={<>83,840 children were in local authority care in England in 2023 — up 38% since 2009.<Cite nums={1} /> Only 6% of care leavers go to university, versus 43% of all young people. One in three care leavers is not in education, employment or training at age 19–21.<Cite nums={3} /></>}
           colour="#E63946"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>83,840 children were in local authority care in England at March 2023 — a record, and 38% higher than the 60,900 in care in 2009. The overwhelming drivers are poverty and domestic abuse, not deliberate harm: the Child Welfare Inequalities Project found that children in the most deprived 10% of areas are 10 times more likely to be in care than those in the least deprived 10%. Outcomes for those who have been in care are dramatically worse than for the general population across almost every measure: only 6% enter university at 19 (vs 43% of all young people), 34% are NEET at age 19–21 (vs 11%), 25% become known to the criminal justice system before age 21, and an estimated 20% are homeless within two years of leaving care. The MacAlister review in 2022 found a market of profit-making residential care providers charging over £300,000 per child per year for placements associated with the poorest outcomes.</p>
-            <p>The transition out of care — typically between 16 and 18 — is often the most dangerous moment, exposing young people to independent living far earlier than peers from stable families. The Staying Put programme allows care leavers to remain with foster carers until 21, but it does not cover those in residential care, and its uptake is uneven across local authorities. University participation has risen from 3% to 6% since 2012, but 6% remains a fraction of 43%. The 2023 Children's Social Care National Framework adopted some MacAlister recommendations but left others unfunded, and the fundamental challenge — how to support care leavers into a world of insecure work and unaffordable housing — remains incompletely answered.</p>
+            <p>83,840 children were in local authority care in England at March 2023 — a record, and 38% higher than the 60,900 in care in 2009.<Cite nums={1} /> The overwhelming drivers are poverty and domestic abuse, not deliberate harm: the Child Welfare Inequalities Project found that children in the most deprived 10% of areas are 10 times more likely to be in care than those in the least deprived 10%.<Cite nums={2} /> Outcomes for those who have been in care are dramatically worse than for the general population across almost every measure: only 6% enter university at 19 (vs 43% of all young people), 34% are NEET at age 19–21 (vs 11%), 25% become known to the criminal justice system before age 21, and an estimated 20% are homeless within two years of leaving care.<Cite nums={3} /> The MacAlister review in 2022 found a market of profit-making residential care providers charging over £300,000 per child per year for placements associated with the poorest outcomes.<Cite nums={4} /></p>
+            <p>The transition out of care — typically between 16 and 18 — is often the most dangerous moment, exposing young people to independent living far earlier than peers from stable families. The Staying Put programme allows care leavers to remain with foster carers until 21, but it does not cover those in residential care, and its uptake is uneven across local authorities. University participation has risen from 3% to 6% since 2012, but 6% remains a fraction of 43%.<Cite nums={3} /> The 2023 Children's Social Care National Framework adopted some MacAlister recommendations but left others unfunded, and the fundamental challenge — how to support care leavers into a world of insecure work and unaffordable housing — remains incompletely answered.<Cite nums={5} /></p>
           </div>
         </section>
 
@@ -126,6 +136,7 @@ export default function YoungPeopleCarePage() {
             <p>Children in care figures represent a point-in-time count at 31 March. They include children accommodated under Section 20 (voluntary arrangements) and those subject to care orders. EET status covers education, employment, and training including part-time study and apprenticeships. University participation draws on UCAS matched data.</p>
           </div>
         </section>
+        <References items={editorialRefs} />
               <RelatedTopics />
       </main>
     </>

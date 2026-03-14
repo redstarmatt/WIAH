@@ -123,7 +123,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Environment & Climate"
           question="Where Does Britain's Rubbish Actually Go?"
-          finding="Landfill now accounts for just 5.5% of waste treatment, down from 80% in 2000. Incineration handles 49%, but recycling stagnated while burning accelerated."
+          finding={<>Landfill now accounts for just 5.5% of waste treatment, down from 80% in 2000.<Cite nums={1} /> Incineration handles 49%, but recycling stagnated while burning accelerated.<Cite nums={2} /></>}
           colour="#2A9D8F"
         />
 
@@ -198,7 +198,7 @@ export default function TopicPage() {
             title="Landfill nearly eliminated"
             value="5.5%"
             unit="landfill share in 2025"
-            description="England has reduced landfill from 80% of waste treatment in 2000 to 5.5% in 2025 — one of the fastest declines in Europe. The UK will introduce a Consistent Collection service for all English councils from 2026, mandating collection of the same recyclables, which is projected to increase recycling rates by 4-6 percentage points."
+            description={<>England has reduced landfill from 80% of waste treatment in 2000 to 5.5% in 2025 — one of the fastest declines in Europe.<Cite nums={1} /> The UK will introduce a Consistent Collection service for all English councils from 2026, mandating collection of the same recyclables, which is projected to increase recycling rates by 4-6 percentage points.<Cite nums={3} /></>}
             source="Source: Defra — UK statistics on waste, 2025."
           />
         </ScrollReveal>

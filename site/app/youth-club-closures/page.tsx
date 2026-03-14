@@ -9,6 +9,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -54,6 +56,13 @@ interface YouthClubsData {
     knownIssues: string[];
   };
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NYA', dataset: 'National Youth Agency — State of the Youth Sector report', url: 'https://www.nya.org.uk/research/', date: '2024', note: '4,500 youth clubs and services closed between 2010 and 2024; qualified youth worker numbers fell from 6,800 to 2,000' },
+  { num: 2, name: 'MHCLG', dataset: 'Local authority revenue expenditure outturn — youth services', url: 'https://www.gov.uk/government/collections/local-authority-revenue-expenditure-and-financing', date: '2024', note: 'Youth service spending fell from £1.03 billion in 2010 to £512 million in 2024' },
+  { num: 3, name: 'Journal of Public Economics', dataset: 'Youth services cuts and youth violence', url: 'https://doi.org/10.1016/j.jpubeco.2022.104757', date: '2022', note: 'Each £1 million cut in youth services associated with a 1.4% increase in youth violence within three years' },
+  { num: 4, name: 'DCMS', dataset: 'National Youth Guarantee commitment', url: 'https://www.gov.uk/government/publications/national-youth-guarantee', date: '2024', note: 'Funding increased by £50 million in 2024, with further £100 million committed in 2025 spending review' },
+];
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -144,17 +153,17 @@ export default function YouthClubClosuresPage() {
         <TopicHeader
           topic="Youth Club Closures"
           question="What Happens When Nowhere Is Open for Young People?"
-          finding="4,500 youth clubs and services closed between 2010 and 2024 — more than half of all provision. Youth worker numbers fell 70%. Academics have found a direct correlation between youth service cuts and increases in youth violence in affected areas."
+          finding={<>4,500 youth clubs and services closed between 2010 and 2024 — more than half of all provision.<Cite nums={1} /> Youth worker numbers fell 70%.<Cite nums={1} /> Academics have found a direct correlation between youth service cuts and increases in youth violence in affected areas.<Cite nums={3} /></>}
           colour="#F4A261"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              The dismantling of youth services since 2010 is one of the least visible but most consequential consequences of austerity. Local authority youth service spending fell from £1.03 billion in 2010 to £512 million in 2024 — a 50% cut in nominal terms, and a deeper cut of around 60% in real terms. The NYA estimates 4,500 youth clubs and services have closed over this period. Qualified youth worker numbers have fallen from 6,800 to 2,000 — a 70% reduction. What replaced them, in the main, was nothing.
+              The dismantling of youth services since 2010 is one of the least visible but most consequential consequences of austerity. Local authority youth service spending fell from £1.03 billion in 2010 to £512 million in 2024 — a 50% cut in nominal terms, and a deeper cut of around 60% in real terms.<Cite nums={2} /> The NYA estimates 4,500 youth clubs and services have closed over this period. Qualified youth worker numbers have fallen from 6,800 to 2,000 — a 70% reduction.<Cite nums={1} /> What replaced them, in the main, was nothing.
             </p>
             <p>
-              The consequences have been traced directly by researchers. A 2022 study in the <em>Journal of Public Economics</em> found that each £1 million cut in youth services in a local authority was associated with a 1.4% increase in youth violence within three years. Youth knife crime has more than doubled since 2010 in England. Whether the relationship is causal is contested by some researchers, but the timing, geography and magnitude of the correlation is striking — the cuts were deepest in urban areas, and youth violence rises have been sharpest in those same places. The social return on investment from youth services — estimated at £3.20 for every £1 spent — means that even from a purely fiscal perspective, the cuts have likely cost more than they saved.
+              The consequences have been traced directly by researchers. A 2022 study in the <em>Journal of Public Economics</em> found that each £1 million cut in youth services in a local authority was associated with a 1.4% increase in youth violence within three years.<Cite nums={3} /> Youth knife crime has more than doubled since 2010 in England. Whether the relationship is causal is contested by some researchers, but the timing, geography and magnitude of the correlation is striking — the cuts were deepest in urban areas, and youth violence rises have been sharpest in those same places. The social return on investment from youth services — estimated at £3.20 for every £1 spent — means that even from a purely fiscal perspective, the cuts have likely cost more than they saved.
             </p>
           </div>
         </section>
@@ -233,7 +242,7 @@ export default function YouthClubClosuresPage() {
             title="What's improving"
             value="National Youth Guarantee"
             unit="Commitment to youth provision"
-            description="The National Youth Guarantee (2021) commits to a youth club, volunteering opportunity, and work experience place for every young person in England. Funding increased by £50 million in 2024, with a further £100 million committed in the 2025 spending review. The Uniformed Youth Fund supports Scout, Guide, and Cadet groups in areas of highest deprivation. The National Citizen Service programme reaches 90,000 young people per year. However, these investments fall far short of the £500 million annual real-terms gap compared with 2010 spending."
+            description={<>The National Youth Guarantee (2021) commits to a youth club, volunteering opportunity, and work experience place for every young person in England. Funding increased by £50 million in 2024, with a further £100 million committed in the 2025 spending review.<Cite nums={4} /> The Uniformed Youth Fund supports Scout, Guide, and Cadet groups in areas of highest deprivation. The National Citizen Service programme reaches 90,000 young people per year. However, these investments fall far short of the £500 million annual real-terms gap compared with 2010 spending.<Cite nums={2} /></>}
             source="Source: DCMS — National Youth Guarantee commitment 2021, updated 2024. MHCLG — Local authority revenue expenditure outturn."
           />
         </ScrollReveal>
@@ -264,6 +273,7 @@ export default function YouthClubClosuresPage() {
             </ul>
           </div>
         </section>
+        <References items={editorialRefs} />
               <RelatedTopics />
       </main>
     </>

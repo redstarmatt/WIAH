@@ -123,7 +123,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Democracy & Governance"
           question="What Did PFI Contracts Actually Cost?"
-          finding="PFI and PF2 contracts committed the public sector to £42 billion in repayments on projects originally worth £13 billion. Hospitals and schools are still paying contracts that ended years ago."
+          finding={<>PFI and PF2 contracts committed the public sector to £42 billion in repayments on projects originally worth £13 billion.<Cite nums={1} /> Hospitals and schools are still paying contracts that ended years ago.<Cite nums={3} /></>}
           colour="#6B7280"
         />
 
@@ -141,7 +141,7 @@ export default function TopicPage() {
             unit=""
             direction="flat"
             polarity="up-is-bad"
-            changeText="Committed payments to 2040s · declining as contracts expire"
+            changeText={<>Committed payments to 2040s · declining as contracts expire<Cite nums={1} /></>}
             sparklineData={[58, 55, 52, 50, 48, 46, 44, 43, 42, 42, 42]}
             href="#sec-coverage"
           />
@@ -161,7 +161,7 @@ export default function TopicPage() {
             unit=""
             direction="down"
             polarity="up-is-bad"
-            changeText="Down from 127 in 2018 as contracts expire"
+            changeText={<>Down from 127 in 2018 as contracts expire<Cite nums={3} /></>}
             sparklineData={[127, 127, 126, 125, 124, 123, 122, 121, 120, 119, 118]}
             href="#sec-coverage"
           />
@@ -198,7 +198,7 @@ export default function TopicPage() {
             title="PFI programme ended permanently"
             value="2018"
             unit="PFI and PF2 programme closed"
-            description="The Treasury formally ended the PFI and PF2 programme in 2018, meaning no new contracts will be signed. Contracts are expiring from the late 2020s. The Infrastructure and Projects Authority monitors all active contracts. Some trusts have successfully bought out PFI contracts early at significant discounts."
+            description={<>The Treasury formally ended the PFI and PF2 programme in 2018, meaning no new contracts will be signed.<Cite nums={2} /> Contracts are expiring from the late 2020s. The Infrastructure and Projects Authority monitors all active contracts. Some trusts have successfully bought out PFI contracts early at significant discounts.<Cite nums={1} /></>}
             source="Source: HMT — PFI and PF2 annual data, 2025."
           />
         </ScrollReveal>

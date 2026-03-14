@@ -8,6 +8,15 @@ import LineChart, { Series } from '@/components/charts/LineChart'
 import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Environment Agency', dataset: 'Water stressed areas — final classification', url: 'https://www.gov.uk/government/publications/water-stressed-areas-2021-classification', date: '2021' },
+  { num: 2, name: 'Environment Agency', dataset: 'Water Resources Long Term Planning Framework', url: 'https://www.gov.uk/government/publications/water-resources-planning-and-regulation', date: '2024', note: '5bn litres/day deficit projected by 2050' },
+  { num: 3, name: 'Ofwat', dataset: 'Water Resources Management Plans (WRMPs)', url: 'https://www.ofwat.gov.uk/regulated-companies/company-obligations/water-resources/', date: '2024' },
+  { num: 4, name: 'Defra', dataset: 'Plan for Water', url: 'https://www.gov.uk/government/publications/plan-for-water-our-integrated-plan-for-delivering-clean-and-plentiful-water', date: '2023', note: 'Halve leakage by 2050 target' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -62,14 +71,14 @@ export default function WaterStressRegionsPage() {
         <TopicHeader
           topic="Water Stress Regions"
           question="Is Britain Running Out of Water?"
-          finding="South East England faces a supply-demand deficit of 5 billion litres per day by 2050 — yet no major new reservoir has been built since 1991."
+          finding={<>South East England faces a supply-demand deficit of 5 billion litres per day by 2050 — yet no major new reservoir has been built since 1991.<Cite nums={2} /></>}
           colour="#264653"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>Britain's water stress is concentrated in the South East, which holds roughly 30% of the UK population but receives less rainfall than Paris, drawing on chalk aquifers and river systems already under significant pressure. The Environment Agency has classified ten water resource zones as currently in high stress, up from six in 2015, and projects a supply-demand deficit of around 5 billion litres per day by 2050 — driven by population growth, reduced summer rainfall from climate change, and aging infrastructure losing approximately 3 billion litres per day to leakage. No major new reservoir has been built since Carsington in Derbyshire was completed in 1991; the Abingdon reservoir in Oxfordshire has been in planning for over 20 years. Nine water companies imposed hosepipe bans in summer 2022 following an exceptionally dry spring, illustrating how quickly England's water systems can move from comfortable to constrained.</p>
-            <p>Without investment in new supply infrastructure, leakage reduction, and mandatory water efficiency standards in new buildings, hosepipe bans and supply restrictions are likely to become a regular summer occurrence in the South East. The structural mismatch between where people live and where rainfall falls cannot be resolved through conservation alone; yet the regulatory framework — which requires water companies to exhaust demand management before new supply is approved — has in practice delayed action for decades. Leakage has fallen 35% since the mid-1990s, but progress has slowed in older, more complex pipe networks, and the 2023 Plan for Water's target of halving leakage by 2050 will not be met at current rates.</p>
+            <p>Britain's water stress is concentrated in the South East, which holds roughly 30% of the UK population but receives less rainfall than Paris, drawing on chalk aquifers and river systems already under significant pressure. The Environment Agency has classified ten water resource zones as currently in high stress, up from six in 2015,<Cite nums={1} /> and projects a supply-demand deficit of around 5 billion litres per day by 2050 — driven by population growth, reduced summer rainfall from climate change, and aging infrastructure losing approximately 3 billion litres per day to leakage.<Cite nums={2} /> No major new reservoir has been built since Carsington in Derbyshire was completed in 1991; the Abingdon reservoir in Oxfordshire has been in planning for over 20 years. Nine water companies imposed hosepipe bans in summer 2022 following an exceptionally dry spring, illustrating how quickly England's water systems can move from comfortable to constrained.<Cite nums={3} /></p>
+            <p>Without investment in new supply infrastructure, leakage reduction, and mandatory water efficiency standards in new buildings, hosepipe bans and supply restrictions are likely to become a regular summer occurrence in the South East. The structural mismatch between where people live and where rainfall falls cannot be resolved through conservation alone; yet the regulatory framework — which requires water companies to exhaust demand management before new supply is approved — has in practice delayed action for decades.<Cite nums={3} /> Leakage has fallen 35% since the mid-1990s, but progress has slowed in older, more complex pipe networks, and the 2023 Plan for Water's target of halving leakage by 2050 will not be met at current rates.<Cite nums={4} /></p>
           </div>
         </section>
 
@@ -87,7 +96,7 @@ export default function WaterStressRegionsPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 6 in 2015 · SE worst affected"
+              changeText={<>Up from 6 in 2015 · SE worst affected<Cite nums={1} /></>}
               sparklineData={[6, 7, 7, 8, 9, 9, 10]}
               href="#sec-chart"source="Environment Agency · 2024"
             />
@@ -97,7 +106,7 @@ export default function WaterStressRegionsPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="No major reservoir built since 1991"
+              changeText={<>No major reservoir built since 1991<Cite nums={2} /></>}
               sparklineData={[3.1, 4.0, 4.8, 5.0, 5.1]}
               href="#sec-chart"source="Environment Agency · WRMP 2024"
             />
@@ -139,6 +148,7 @@ export default function WaterStressRegionsPage() {
             <p>Water stress classifications use Environment Agency methodology assessing current and projected supply-demand balance in each water resource zone, accounting for population growth, climate change and environmental flow requirements. Supply-demand gap projections are from central scenarios in Water Resources Management Plans submitted by water companies to the Secretary of State.</p>
           </div>
         </section>
+        <References items={editorialRefs} />
               <RelatedTopics />
       </main>
     </>

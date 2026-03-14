@@ -8,6 +8,14 @@ import LineChart, { Series } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Sport England', dataset: 'Active Lives Adult Survey, November 2023/24', url: 'https://www.sportengland.org/research-and-data/data/active-lives', date: '2024' },
+  { num: 2, name: 'DCMS', dataset: 'Get Active: A Strategy for the Future of Sport and Physical Activity', url: 'https://www.gov.uk/government/publications/get-active-a-strategy-for-the-future-of-sport-and-physical-activity', date: '2023' },
+  { num: 3, name: 'Swim England', dataset: 'Facilities Report — State of the Nation's Swimming Pool Stock', url: 'https://www.swimming.org/swimengland/facilities-report/', date: '2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -78,10 +86,10 @@ export default function SportParticipationPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              Physical inactivity costs the NHS an estimated £1.2 billion per year and is linked to one in six deaths in the UK, making it a public health issue of comparable scale to smoking. Sport England's Active Lives Adult Survey — the most comprehensive measure of activity in England — shows that 63.5% of adults meet the Chief Medical Officer's guideline of 150 minutes of moderate-intensity activity per week. But 25.4% of adults are classified as &ldquo;inactive,&rdquo; doing fewer than 30 minutes per week — a figure that has barely moved since the survey began in 2016. The pandemic caused a sharp dip, with inactivity peaking at 27.5% in 2020/21, but the recovery to pre-pandemic levels has stalled rather than improved.
+              Physical inactivity costs the NHS an estimated £1.2 billion per year and is linked to one in six deaths in the UK, making it a public health issue of comparable scale to smoking. Sport England's Active Lives Adult Survey — the most comprehensive measure of activity in England — shows that 63.5% of adults meet the Chief Medical Officer's guideline of 150 minutes of moderate-intensity activity per week. But 25.4% of adults are classified as &ldquo;inactive,&rdquo; doing fewer than 30 minutes per week — a figure that has barely moved since the survey began in 2016.<Cite nums={1} /> The pandemic caused a sharp dip, with inactivity peaking at 27.5% in 2020/21, but the recovery to pre-pandemic levels has stalled rather than improved.<Cite nums={1} />
             </p>
             <p>
-              The government's Sporting Future strategy (2015) and its successor, Get Active (2023), both set ambitions to reduce inactivity by 500,000 people. Progress has been marginal. Sport England has invested £2.3 billion of National Lottery and government funding since 2017 through its strategy Uniting the Movement, with a deliberate shift from funding elite and traditional sport toward community programmes targeting underactive populations. Early evidence suggests some success in reaching older adults and women through programmes like This Girl Can, which generated measurable increases in awareness but more modest changes in sustained behaviour. Swimming pool and leisure centre closures — 400 public pools have closed since 2010 — have eroded the infrastructure on which many activity programmes depend, particularly in deprived areas.
+              The government's Sporting Future strategy (2015) and its successor, Get Active (2023), both set ambitions to reduce inactivity by 500,000 people.<Cite nums={2} /> Progress has been marginal. Sport England has invested £2.3 billion of National Lottery and government funding since 2017 through its strategy Uniting the Movement, with a deliberate shift from funding elite and traditional sport toward community programmes targeting underactive populations.<Cite nums={1} /> Early evidence suggests some success in reaching older adults and women through programmes like This Girl Can, which generated measurable increases in awareness but more modest changes in sustained behaviour. Swimming pool and leisure centre closures — 400 public pools have closed since 2010 — have eroded the infrastructure on which many activity programmes depend, particularly in deprived areas.<Cite nums={3} />
             </p>
             </div>
         </section>
@@ -194,6 +202,9 @@ export default function SportParticipationPage() {
             </div>
           )}
         </section>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
               <RelatedTopics />
       </main>
     </>

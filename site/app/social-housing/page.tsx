@@ -9,6 +9,8 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -65,6 +67,14 @@ interface SocialHousingData {
     knownIssues: string[];
   };
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'DLUHC', dataset: 'Affordable Housing Supply Statistics', url: 'https://www.gov.uk/government/collections/affordable-housing-supply', date: '2024' },
+  { num: 2, name: 'DLUHC', dataset: 'Local Authority Housing Statistics — Waiting Lists', url: 'https://www.gov.uk/government/collections/local-authority-housing-data', date: '2024' },
+  { num: 3, name: 'DLUHC', dataset: 'Right to Buy Sales Statistics', url: 'https://www.gov.uk/government/collections/right-to-buy-sales', date: '2024' },
+  { num: 4, name: 'DLUHC', dataset: 'Statutory Homelessness — Temporary Accommodation', url: 'https://www.gov.uk/government/collections/homelessness-statistics', date: '2024' },
+  { num: 5, name: 'Homes England', dataset: 'Affordable Homes Programme 2021–2026', url: 'https://www.gov.uk/government/publications/affordable-homes-programme-2021-to-2026', date: '2024' },
+];
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -132,10 +142,10 @@ export default function SocialHousingPage() {
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              England completed 7,500 social rented homes in 2023 — the lowest annual total since the 1920s and an 81% collapse from 39,500 in 2010. Against that trickle of supply, 1.29 million households sit on council waiting lists, up from 1.14 million in 2018. The supply-to-waiting ratio is roughly 1:170: for every new social let, 170 households queue. Lists did fall between 2013 and 2018, from 1.73 million to 1.14 million, but only because councils tightened eligibility — not because need shrank. Rough sleeping reached 4,255 and over 100,000 households were in temporary accommodation, confirming that underlying demand never stopped growing.
+              England completed 7,500 social rented homes in 2023 — the lowest annual total since the 1920s and an 81% collapse from 39,500 in 2010.<Cite nums={1} /> Against that trickle of supply, 1.29 million households sit on council waiting lists, up from 1.14 million in 2018.<Cite nums={2} /> The supply-to-waiting ratio is roughly 1:170: for every new social let, 170 households queue. Lists did fall between 2013 and 2018, from 1.73 million to 1.14 million, but only because councils tightened eligibility — not because need shrank. Rough sleeping reached 4,255 and over 100,000 households were in temporary accommodation, confirming that underlying demand never stopped growing.<Cite nums={4} />
             </p>
             <p>
-              Right to Buy has removed 1.8 million council homes from the social stock since 1980, with discounts of up to 70% of market value. In 2012 the government raised the maximum discount from £75,000 to £96,000, accelerating sales further. Replacement has run at approximately one new social home for every eight sold — a cumulative shortfall exceeding 1.5 million units. In the worst London boroughs the ratio is 1:31. Labour has proposed mandatory one-for-one replacement with receipts retained locally, but the measure has not yet been legislated and the structural deficit widens each year.
+              Right to Buy has removed 1.8 million council homes from the social stock since 1980, with discounts of up to 70% of market value.<Cite nums={3} /> In 2012 the government raised the maximum discount from £75,000 to £96,000, accelerating sales further. Replacement has run at approximately one new social home for every eight sold — a cumulative shortfall exceeding 1.5 million units.<Cite nums={[1, 3]} /> In the worst London boroughs the ratio is 1:31. Labour has proposed mandatory one-for-one replacement with receipts retained locally, but the measure has not yet been legislated and the structural deficit widens each year.
             </p>
             </div>
         </section>
@@ -244,6 +254,10 @@ export default function SocialHousingPage() {
             </ul>
           </div>
         </section>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
               <RelatedTopics />
       </main>
 

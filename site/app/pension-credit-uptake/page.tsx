@@ -122,7 +122,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Poverty & Cost of Living"
           question="Why Are Pensioners Not Claiming What They're Owed?"
-          finding="£2.2 billion of Pension Credit goes unclaimed each year by 880,000 eligible pensioners, equivalent to £4 per day each being denied their entitlement."
+          finding={<>£2.2 billion of Pension Credit goes unclaimed each year by 880,000 eligible pensioners, equivalent to £4 per day each being denied their entitlement.<Cite nums={1} /></>}
           colour="#F4A261"
         />
 
@@ -140,7 +140,7 @@ export default function TopicPage() {
             unit=""
             direction="flat"
             polarity="up-is-bad"
-            changeText="Roughly constant for a decade · DWP estimation method unchanged"
+            changeText={<>Roughly constant for a decade · DWP estimation method unchanged<Cite nums={1} /></>}
             sparklineData={[1.8, 1.9, 2.0, 2.1, 2.1, 2.1, 2.2, 2.2, 2.2, 2.2, 2.2]}
             href="#sec-coverage"
           />
@@ -150,7 +150,7 @@ export default function TopicPage() {
             unit=""
             direction="flat"
             polarity="up-is-bad"
-            changeText="Disproportionately older, private renter, single person"
+            changeText={<>Disproportionately older, private renter, single person<Cite nums={1} /></>}
             sparklineData={[850, 860, 870, 875, 880, 875, 875, 880, 880, 880, 880]}
             href="#sec-coverage"
           />
@@ -160,7 +160,7 @@ export default function TopicPage() {
             unit=""
             direction="flat"
             polarity="up-is-bad"
-            changeText="Unchanged for decade despite campaigns · stigma barrier"
+            changeText={<>Unchanged for decade despite campaigns · stigma barrier<Cite nums={2} /></>}
             sparklineData={[63, 63, 63, 63, 63, 63, 63, 63, 63, 63, 63]}
             href="#sec-coverage"
           />
@@ -197,7 +197,7 @@ export default function TopicPage() {
             title="Awareness campaign reaches 1 million pensioners"
             value="£1.7bn"
             unit="unclaimed Pension Credit identified 2024 campaign"
-            description="The 2024 Pension Credit awareness campaign, triggered by winter fuel payment cuts, reached over 1 million eligible pensioners. New claims rose 20% in Q4 2024. The government announced plans to auto-enrol eligible Housing Benefit recipients into Pension Credit, which could reach an additional 120,000 people."
+            description={<>The 2024 Pension Credit awareness campaign, triggered by winter fuel payment cuts, reached over 1 million eligible pensioners.<Cite nums={2} /> New claims rose 20% in Q4 2024.<Cite nums={2} /> The government announced plans to auto-enrol eligible Housing Benefit recipients into Pension Credit, which could reach an additional 120,000 people.<Cite nums={1} /></>}
             source="Source: DWP — Pension Credit statistics and take-up estimate, 2025."
           />
         </ScrollReveal>

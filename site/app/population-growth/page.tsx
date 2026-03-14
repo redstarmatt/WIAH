@@ -123,7 +123,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Immigration & Population"
           question="What Is Driving Britain's Population Growth?"
-          finding="The UK population grew by 906,000 in 2023, almost entirely through net migration. Natural population change — births minus deaths — is near zero for the first time."
+          finding={<>The UK population grew by 906,000 in 2023, almost entirely through net migration.<Cite nums={1} /> Natural population change — births minus deaths — is near zero for the first time.<Cite nums={2} /></>}
           colour="#6B7280"
         />
 
@@ -141,7 +141,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Largest ever recorded · 98% from net migration"
+            changeText={<>Largest ever recorded · 98% from net migration<Cite nums={1} /></>}
             sparklineData={[400, 430, 460, 480, 500, 220, 500, 700, 850, 906, 780]}
             href="#sec-coverage"
           />
@@ -161,7 +161,7 @@ export default function TopicPage() {
             unit="/yr"
             direction="down"
             polarity="up-is-bad"
-            changeText="Near zero for first time · UK fertility rate 1.41"
+            changeText={<>Near zero for first time · UK fertility rate 1.41<Cite nums={2} /></>}
             sparklineData={[180, 160, 140, 120, 100, 75, 50, 25, 18, 18, 18]}
             href="#sec-coverage"
           />
@@ -198,7 +198,7 @@ export default function TopicPage() {
             title="Working-age population growing"
             value="43.7m"
             unit="working-age population 2025"
-            description="Net migration has increased the working-age population, supporting economic output and tax receipts. OBR forecasts show migration keeping the dependency ratio lower than it would otherwise be. NHS international recruitment brought in 100,000 nurses and doctors between 2021 and 2024."
+            description={<>Net migration has increased the working-age population, supporting economic output and tax receipts.<Cite nums={1} /> OBR forecasts show migration keeping the dependency ratio lower than it would otherwise be.<Cite nums={3} /> NHS international recruitment brought in 100,000 nurses and doctors between 2021 and 2024.</>}
             source="Source: ONS Population estimates, 2025. OBR Fiscal Sustainability Report, 2024."
           />
         </ScrollReveal>

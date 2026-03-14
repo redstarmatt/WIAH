@@ -123,7 +123,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Economy & Work"
           question="Where Is Investment Actually Going?"
-          finding="London and the South East received £2,943 per head in public investment in 2024-25 versus £1,644 in the North East — a gap that has persisted despite levelling-up rhetoric."
+          finding={<>London and the South East received £2,943 per head in public investment in 2024-25 versus £1,644 in the North East — a gap that has persisted despite levelling-up rhetoric.<Cite nums={1} /></>}
           colour="#6B7280"
         />
 
@@ -141,7 +141,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="+£400 since 2015 · transport dominant"
+            changeText={<>+£400 since 2015 · transport dominant<Cite nums={1} /></>}
             sparklineData={[2543, 2600, 2650, 2700, 2750, 2650, 2750, 2820, 2880, 2920, 2943]}
             href="#sec-coverage"
           />
@@ -151,7 +151,7 @@ export default function TopicPage() {
             unit=""
             direction="flat"
             polarity="up-is-bad"
-            changeText="+£100 since 2015 · gap barely narrowed"
+            changeText={<>+£100 since 2015 · gap barely narrowed<Cite nums={1} /></>}
             sparklineData={[1544, 1560, 1570, 1580, 1590, 1560, 1600, 1620, 1630, 1640, 1644]}
             href="#sec-coverage"
           />
@@ -161,7 +161,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Widened by £300 since 2015 · HS2 cancellation worsened"
+            changeText={<>Widened by £300 since 2015 · HS2 cancellation worsened<Cite nums={3} /></>}
             sparklineData={[999, 1040, 1080, 1120, 1160, 1090, 1150, 1200, 1250, 1280, 1299]}
             href="#sec-coverage"
           />
@@ -198,7 +198,7 @@ export default function TopicPage() {
             title="Investment Zones delivering private commitments"
             value="£3.4bn"
             unit="private commitments in Investment Zones"
-            description="Investment Zones in the North and Midlands attracted £3.4bn in private sector commitments by 2025. Freeports in Teesside, Humber and Liverpool generated 5,000 jobs."
+            description={<>Investment Zones in the North and Midlands attracted £3.4bn in private sector commitments by 2025.<Cite nums={2} /> Freeports in Teesside, Humber and Liverpool generated 5,000 jobs.<Cite nums={2} /></>}
             source="Source: DLUHC Investment Zones and Freeports Progress Report, 2025."
           />
         </ScrollReveal>

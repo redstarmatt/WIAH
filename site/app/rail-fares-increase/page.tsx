@@ -122,7 +122,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Transport & Infrastructure"
           question="Are Rail Fares Outpacing Wages?"
-          finding="UK rail fares have increased 94% in real terms since 1995 while wages rose 50%. The UK has some of the most expensive rail travel in Europe as a share of income."
+          finding={<>UK rail fares have increased 94% in real terms since 1995 while wages rose 50%.<Cite nums={1} /> The UK has some of the most expensive rail travel in Europe as a share of income.</>}
           colour="#264653"
         />
 
@@ -140,7 +140,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Real terms · wages rose 50% over same period"
+            changeText={<>Real terms · wages rose 50% over same period<Cite nums={1} /></>}
             sparklineData={[55, 60, 64, 68, 71, 73, 76, 79, 83, 88, 94]}
             href="#sec-coverage"
           />
@@ -150,7 +150,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Above inflation · RPI-linked formula since 1994"
+            changeText={<>Above inflation · RPI-linked formula since 1994<Cite nums={1} /></>}
             sparklineData={[2.6, 2.2, 3.4, 3.1, 2.8, 2.6, 2.6, 3.8, 5.9, 4.9, 4.9]}
             href="#sec-coverage"
           />
@@ -197,7 +197,7 @@ export default function TopicPage() {
             title="Great British Railways will simplify fares"
             value="2025+"
             unit="GBR fares simplification"
-            description="Great British Railways, the planned unified rail body, committed to simplifying the UK's notoriously complex fares system. Flexible season tickets for hybrid workers were introduced in 2021. The government's Williams-Shapps review recommended capping fares at inflation for regulated products."
+            description={<>Great British Railways, the planned unified rail body, committed to simplifying the UK's notoriously complex fares system.<Cite nums={2} /> Flexible season tickets for hybrid workers were introduced in 2021. The government's Williams-Shapps review recommended capping fares at inflation for regulated products.<Cite nums={[1, 2]} /></>}
             source="Source: ORR — Rail fares statistics, 2025. DfT — Williams-Shapps Plan for Rail, 2022."
           />
         </ScrollReveal>

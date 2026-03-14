@@ -125,7 +125,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Digital & Connectivity"
           question="How Many People Work the Gig Economy — and What Does It Cost Them?"
-          finding="Around 4.4 million UK workers are in the gig economy, up from 1.2 million in 2015. Most earn below the equivalent minimum wage when costs are factored in, and just 6% receive sick pay. The Supreme Court's Uber ruling changed employment status law but enforcement remains limited."
+          finding={<>Around 4.4 million UK workers are in the gig economy, up from 1.2 million in 2015.<Cite nums={1} /> Most earn below the equivalent minimum wage when costs are factored in, and just 6% receive sick pay.<Cite nums={2} /> The Supreme Court's Uber ruling changed employment status law but enforcement remains limited.<Cite nums={3} /></>}
           colour="#264653"
         />
 
@@ -143,7 +143,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Up from 1.2M in 2015 · 14% of workforce"
+            changeText={<>Up from 1.2M in 2015 · 14% of workforce<Cite nums={1} /></>}
             sparklineData={[1.2, 1.5, 1.9, 2.4, 2.9, 3.5, 3.8, 4.0, 4.2, 4.3, 4.4]}
             href="#sec-coverage"
           />
@@ -153,7 +153,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-good"
-            changeText="Up from 2% pre-Uber ruling · Still very low"
+            changeText={<>Up from 2% pre-Uber ruling · Still very low<Cite nums={2} /></>}
             sparklineData={[2, 2, 2, 3, 3, 3, 5, 5, 6, 6, 6]}
             href="#sec-coverage"
           />
@@ -200,7 +200,7 @@ export default function TopicPage() {
             title="What's improving"
             value="Worker status"
             unit="Supreme Court ruling enforced"
-            description="The Supreme Court's 2021 ruling classifying Uber drivers as 'workers' rather than self-employed established a legal right to minimum wage, holiday pay and pension auto-enrolment. The Employment Rights Bill (2024) proposes extending these rights to more platform workers. HMRC enforcement of employment status has increased, with over £1 billion recovered from misclassification cases."
+            description={<>The Supreme Court's 2021 ruling classifying Uber drivers as 'workers' rather than self-employed established a legal right to minimum wage, holiday pay and pension auto-enrolment.<Cite nums={3} /> The Employment Rights Bill (2024) proposes extending these rights to more platform workers.<Cite nums={4} /> HMRC enforcement of employment status has increased, with over £1 billion recovered from misclassification cases.</>}
             source="Source: TUC — Living on the Margins, 2025. DWP — Labour market participation, 2025."
           />
         </ScrollReveal>

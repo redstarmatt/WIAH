@@ -9,6 +9,14 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Child Poverty Action Group', dataset: 'Cost of a Child 2024', url: 'https://cpag.org.uk/policy-and-campaigns/report/cost-child', date: '2024' },
+  { num: 2, name: 'Citizens Advice', dataset: 'Back to School Costs Survey 2024', url: 'https://www.citizensadvice.org.uk', date: '2024', note: '30% of parents going into debt for uniform' },
+  { num: 3, name: 'UK Government', dataset: 'School Uniform (Minimum Requirements) Regulations 2022', url: 'https://www.legislation.gov.uk/uksi/2022/1098', date: '2022' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -125,17 +133,17 @@ export default function UniformCostBurdenPage() {
         <TopicHeader
           topic="School Uniform Costs"
           question="Can Families Afford the School Uniform?"
-          finding="The average cost of a primary school uniform is £337 per child per year, rising to £442 at secondary. Three in ten parents go into debt to buy school uniforms. The Uniform Cost Regulations 2022 have had limited impact."
+          finding={<>The average cost of a primary school uniform is £337 per child per year, rising to £442 at secondary.<Cite nums={1} /> Three in ten parents go into debt to buy school uniforms.<Cite nums={2} /> The Uniform Cost Regulations 2022 have had limited impact.<Cite nums={3} /></>}
           colour="#2A9D8F"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
             <p>
-              School uniform costs have risen 17% at primary and 19% at secondary since 2019 — significantly faster than general inflation over the same period. The drivers are well understood: compulsory branded items (logoed polo shirts, blazers, PE kit) that can only be purchased from designated suppliers, often at high margins; specialist equipment requirements that go beyond the DfE's minimum definition; and the expectation of separate items for different weather, PE, and art activities. A secondary school pupil in full uniform — blazer, tie, PE kit, specialist shoes, bag, and all required extras — can cost parents over £600 before any optional items.
+              School uniform costs have risen 17% at primary and 19% at secondary since 2019 — significantly faster than general inflation over the same period.<Cite nums={1} /> The drivers are well understood: compulsory branded items (logoed polo shirts, blazers, PE kit) that can only be purchased from designated suppliers, often at high margins; specialist equipment requirements that go beyond the DfE's minimum definition; and the expectation of separate items for different weather, PE, and art activities. A secondary school pupil in full uniform — blazer, tie, PE kit, specialist shoes, bag, and all required extras — can cost parents over £600 before any optional items.
             </p>
             <p>
-              The School Uniform (Minimum Requirements) Regulations 2022 introduced requirements for schools to limit branded items to three (down from an unlimited number), ensure at least one affordable high-street alternative for each required item, and publish their uniform policies online. The impact has been modest: the regulations apply only to maintained schools and academies with older uniform policies, enforcement is light, and many schools have found ways to maintain branded requirements within the letter of the rules. Three in ten parents report going into debt — using credit cards, overdrafts, or buy-now-pay-later services — to cover uniform costs at the start of the school year.
+              The School Uniform (Minimum Requirements) Regulations 2022 introduced requirements for schools to limit branded items to three (down from an unlimited number), ensure at least one affordable high-street alternative for each required item, and publish their uniform policies online.<Cite nums={3} /> The impact has been modest: the regulations apply only to maintained schools and academies with older uniform policies, enforcement is light, and many schools have found ways to maintain branded requirements within the letter of the rules. Three in ten parents report going into debt — using credit cards, overdrafts, or buy-now-pay-later services — to cover uniform costs at the start of the school year.<Cite nums={2} />
             </p>
           </div>
         </section>
@@ -155,7 +163,7 @@ export default function UniformCostBurdenPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="+17% since 2019 · Logos and branded items biggest driver"
+              changeText={<>+17% since 2019 · Logos and branded items biggest driver<Cite nums={1} /></>}
               sparklineData={[289, 298, 310, 325, 337, 337]}
               href="#sec-costs"
             />
@@ -165,7 +173,7 @@ export default function UniformCostBurdenPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="+19% since 2019 · Specialist PE kit often costs extra · Blazers expensive"
+              changeText={<>+19% since 2019 · Specialist PE kit often costs extra · Blazers expensive<Cite nums={1} /></>}
               sparklineData={[372, 380, 398, 418, 435, 442]}
               href="#sec-costs"
             />
@@ -175,7 +183,7 @@ export default function UniformCostBurdenPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 22% in 2021 · Credit, overdraft, BNPL · Second-hand markets growing"
+              changeText={<>Up from 22% in 2021 · Credit, overdraft, BNPL · Second-hand markets growing<Cite nums={2} /></>}
               sparklineData={[22, 25, 28, 30]}
               href="#sec-costs"
             />
@@ -213,7 +221,7 @@ export default function UniformCostBurdenPage() {
             title="What's improving"
             value="Uniform exchange"
             unit="schemes in every council area"
-            description="The School Uniform (Minimum Requirements) Regulations 2022 require schools to limit branded items to three per uniform and ensure affordable alternatives exist at high-street retailers for every required item. Many councils now run uniform exchange schemes allowing families to donate and collect good-condition second-hand uniform at no cost. The Labour government is considering extending the scope of uniform regulations to cover pricing directly. Scotland already restricts the number of branded items more strictly and provides uniform grants to low-income families as a right rather than a discretionary payment."
+            description={<>The School Uniform (Minimum Requirements) Regulations 2022 require schools to limit branded items to three per uniform and ensure affordable alternatives exist at high-street retailers for every required item.<Cite nums={3} /> Many councils now run uniform exchange schemes allowing families to donate and collect good-condition second-hand uniform at no cost. The Labour government is considering extending the scope of uniform regulations to cover pricing directly. Scotland already restricts the number of branded items more strictly and provides uniform grants to low-income families as a right rather than a discretionary payment.</>}
             source="Source: Child Poverty Action Group Cost of a Child 2024 · Citizens Advice Back to School Costs Survey 2024."
           />
         </ScrollReveal>
@@ -244,6 +252,9 @@ export default function UniformCostBurdenPage() {
             </ul>
           </div>
         </section>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
               <RelatedTopics />
       </main>
     </>

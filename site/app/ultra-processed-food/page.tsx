@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NDNS / BMJ', dataset: 'National Diet and Nutrition Survey; BMJ UPF series', url: 'https://www.gov.uk/government/collections/national-diet-and-nutrition-survey', date: '2024' },
+  { num: 2, name: 'Food Foundation', dataset: 'The Broken Plate — diet inequality by income', url: 'https://foodfoundation.org.uk', date: '2024', note: 'Income decile analysis of UPF consumption' },
+  { num: 3, name: 'BMJ', dataset: 'UPF and human health: a systematic review', url: 'https://www.bmj.com/content/381/bmj-2023-075294', date: '2023', note: 'Longitudinal evidence on UPF and health outcomes' },
+  { num: 4, name: 'FSA', dataset: 'UPF labelling consultation 2025', url: 'https://www.food.gov.uk', date: '2025' },
+];
 
 // UPF share of total calorie intake (%), 2008–2024, England/UK
 const upfShareAll = [46, 47, 48, 49, 50, 51, 52, 53, 53, 54, 55, 55, 56, 57, 57, 57, 57];
@@ -64,15 +73,15 @@ export default function UltraProcessedFoodPage() {
         <TopicHeader
           topic="Ultra-Processed Food"
           question="How Much Ultra-Processed Food Do We Eat?"
-          finding="Ultra-processed food now accounts for 57% of average UK calorie intake — the highest in Europe — with low-income households consuming significantly more."
+          finding={<>Ultra-processed food now accounts for 57% of average UK calorie intake — the highest in Europe<Cite nums={1} /> — with low-income households consuming significantly more.<Cite nums={2} /></>}
           colour="#E63946"
           preposition="with"
         />
 
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The UK has the highest rate of ultra-processed food consumption in Europe. The NOVA classification system — developed by Brazilian researchers and now adopted by the WHO — groups foods into four categories based on the degree of industrial processing. NOVA group 4, ultra-processed foods, includes products formulated with industrial additives, emulsifiers, flavour enhancers and preservatives not found in home cooking: mass-produced bread, breakfast cereals, reconstituted meat products, fizzy drinks, flavoured yoghurts, packaged snacks and ready meals.</p>
-            <p>The health evidence has hardened significantly since 2018. A series of large-scale longitudinal studies — including cohorts from France, Brazil, Australia and the UK — have consistently found associations between high UPF consumption and elevated risks of obesity, type 2 diabetes, cardiovascular disease, depression, inflammatory bowel disease and all-cause mortality. The estimated cost to the NHS and wider economy exceeds £8 billion per year by 2024, including direct treatment costs for diet-related conditions and lost productivity.</p>
+            <p>The UK has the highest rate of ultra-processed food consumption in Europe.<Cite nums={1} /> The NOVA classification system — developed by Brazilian researchers and now adopted by the WHO — groups foods into four categories based on the degree of industrial processing. NOVA group 4, ultra-processed foods, includes products formulated with industrial additives, emulsifiers, flavour enhancers and preservatives not found in home cooking: mass-produced bread, breakfast cereals, reconstituted meat products, fizzy drinks, flavoured yoghurts, packaged snacks and ready meals.</p>
+            <p>The health evidence has hardened significantly since 2018. A series of large-scale longitudinal studies — including cohorts from France, Brazil, Australia and the UK — have consistently found associations between high UPF consumption and elevated risks of obesity, type 2 diabetes, cardiovascular disease, depression, inflammatory bowel disease and all-cause mortality.<Cite nums={3} /> The estimated cost to the NHS and wider economy exceeds £8 billion per year by 2024, including direct treatment costs for diet-related conditions and lost productivity.</p>
           </div>
         </section>
 
@@ -90,7 +99,7 @@ export default function UltraProcessedFoodPage() {
               value="57%"
               direction="up"
               polarity="up-is-bad"
-              changeText="up from 46% in 2008 · highest in Europe"
+              changeText={<>up from 46% in 2008 · highest in Europe<Cite nums={1} /></>}
               sparklineData={[46, 48, 50, 52, 53, 55, 56, 57, 57]}
               source="BMJ / NDNS — UK National Diet and Nutrition Survey 2024"
               href="#sec-chart1"
@@ -100,7 +109,7 @@ export default function UltraProcessedFoodPage() {
               value="65%"
               direction="up"
               polarity="up-is-bad"
-              changeText="vs 48% in highest earners · 17pp inequality gap"
+              changeText={<>vs 48% in highest earners · 17pp inequality gap<Cite nums={2} /></>}
               sparklineData={[58, 60, 62, 63, 64, 65, 65, 65, 65]}
               source="NDNS / NCMP — income decile analysis 2024"
               href="#sec-chart2"
@@ -161,7 +170,7 @@ export default function UltraProcessedFoodPage() {
             title="UK government action is beginning — though campaigners say it is too slow"
             value="2025"
             unit="UPF labelling consultation launched"
-            description="The Food Standards Agency launched a consultation in 2025 on mandatory front-of-pack labelling for ultra-processed food, building on the Nutri-Score and traffic light systems already in use. The sugar levy (2018) has already reduced sugar content in soft drinks by 28% — evidence that fiscal measures change product formulation faster than consumer choice. Seven major food manufacturers have voluntarily committed to reformulation targets for 2025–2027. The NHS has also added UPF reduction to the NHS Health Check framework for the first time."
+            description={<>The Food Standards Agency launched a consultation in 2025 on mandatory front-of-pack labelling for ultra-processed food, building on the Nutri-Score and traffic light systems already in use.<Cite nums={4} /> The sugar levy (2018) has already reduced sugar content in soft drinks by 28% — evidence that fiscal measures change product formulation faster than consumer choice. Seven major food manufacturers have voluntarily committed to reformulation targets for 2025–2027.</>}
             source="Source: FSA — UPF labelling consultation 2025. OHID — Sugar reduction programme progress 2024."
           />
         </ScrollReveal>
@@ -170,7 +179,7 @@ export default function UltraProcessedFoodPage() {
           <section className="max-w-2xl mb-12">
             <h2 className="text-xl font-bold text-wiah-black mb-4">What the data shows</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>The UPF share of UK diets has risen continuously since measurement began in the 2000s, and the pace has not slowed despite growing public awareness of the issue. The 57% average figure conceals a wide range: children and adolescents are closer to 65–66%, and the lowest-income households — who face the greatest price pressure and have the least access to fresh food retail — are disproportionately reliant on processed foods.</p>
+              <p>The UPF share of UK diets has risen continuously since measurement began in the 2000s, and the pace has not slowed despite growing public awareness of the issue.<Cite nums={1} /> The 57% average figure conceals a wide range: children and adolescents are closer to 65–66%, and the lowest-income households — who face the greatest price pressure and have the least access to fresh food retail — are disproportionately reliant on processed foods.<Cite nums={2} /></p>
               <p>The price mechanism matters enormously. Ultra-processed foods are designed to be cheap, shelf-stable and palatable. Per calorie, they are significantly cheaper than whole foods in UK supermarkets — a relationship that has widened during the cost-of-living crisis. For a household on a tight budget, the rational economic choice is often a high-UPF diet, even when nutritional awareness is high. This is not a failure of education; it is a failure of the food pricing environment.</p>
               <p>The health cost projection of £8.1 billion per year is a conservative estimate focused on direct NHS treatment costs and some productivity losses. It does not include wider social costs — carer time, benefits paid due to diet-related disability, or the effect of childhood obesity on educational attainment. The full societal cost of the UK's ultra-processed food dependence is likely to be substantially higher, and the lag between dietary exposure and clinical disease means the peak cost is still in the future.</p>
             </div>
@@ -193,6 +202,9 @@ export default function UltraProcessedFoodPage() {
           </div>
         </section>
 
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
         <RelatedTopics />
       </main>
     </>

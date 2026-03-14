@@ -124,7 +124,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Digital & Connectivity"
           question="Is the UK Tech Sector Creating Jobs That Last?"
-          finding="The UK tech sector employs 1.84 million people, the third largest in Europe, but concentration in London and the South East is extreme. UK tech employment grew 40% faster than the overall economy since 2015, but the 2023 tech downturn brought over 50,000 redundancies."
+          finding={<>The UK tech sector employs 1.84 million people, the third largest in Europe, but concentration in London and the South East is extreme.<Cite nums={1} /> UK tech employment grew 40% faster than the overall economy since 2015, but the 2023 tech downturn brought over 50,000 redundancies.<Cite nums={[2, 3]} /></>}
           colour="#264653"
         />
 
@@ -142,7 +142,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-good"
-            changeText="Up from 1.18M in 2015 · 3rd largest in Europe"
+            changeText={<>Up from 1.18M in 2015 · 3rd largest in Europe<Cite nums={1} /></>}
             sparklineData={[1.18, 1.24, 1.3, 1.38, 1.45, 1.52, 1.62, 1.74, 1.8, 1.82, 1.84]}
             href="#sec-coverage"
           />
@@ -152,7 +152,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-good"
-            changeText="Up from 38% in 2015 · Regional spread improving slowly"
+            changeText={<>Up from 38% in 2015 · Regional spread improving slowly<Cite nums={2} /></>}
             sparklineData={[38, 38, 39, 39, 40, 41, 42, 43, 43, 44, 44]}
             href="#sec-coverage"
           />
@@ -162,7 +162,7 @@ export default function TopicPage() {
             unit=""
             direction="flat"
             polarity="up-is-bad"
-            changeText="2023 downturn · Global pattern · Hiring recovering"
+            changeText={<>2023 downturn · Global pattern · Hiring recovering<Cite nums={3} /></>}
             sparklineData={[5, 6, 7, 8, 9, 10, 12, 15, 52, 28, 18]}
             href="#sec-coverage"
           />
@@ -199,7 +199,7 @@ export default function TopicPage() {
             title="What's improving"
             value="£18bn"
             unit="UK tech investment (2024)"
-            description="The UK attracted £18 billion in tech investment in 2024, retaining its position as Europe's leading tech investment destination. Regional tech hubs in Manchester, Edinburgh, Bristol and Leeds are growing faster than London in percentage terms. The Mayfield Review has driven skills investment through sector skills bootcamps."
+            description={<>The UK attracted £18 billion in tech investment in 2024, retaining its position as Europe&apos;s leading tech investment destination.<Cite nums={1} /> Regional tech hubs in Manchester, Edinburgh, Bristol and Leeds are growing faster than London in percentage terms.<Cite nums={2} /> The Mayfield Review has driven skills investment through sector skills bootcamps.<Cite nums={1} /></>}
             source="Source: Technation — UK Tech Nation Report, 2025. ONS — Business Register and Employment Survey, 2025."
           />
         </ScrollReveal>

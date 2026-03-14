@@ -9,6 +9,15 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'NHS Talking Therapies Annual Report', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/iapt-monthly-return/', date: '2023' },
+  { num: 2, name: 'NHS England', dataset: 'KH03 Bed Availability and Occupancy', url: 'https://www.england.nhs.uk/statistics/statistical-work-areas/bed-availability-and-occupancy/', date: '2023' },
+  { num: 3, name: 'NHS Digital', dataset: 'Mental Health of Children and Young People in England', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-of-children-and-young-people-in-england', date: '2023' },
+  { num: 4, name: 'NHS Digital', dataset: 'Adult Psychiatric Morbidity Survey', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/adult-psychiatric-morbidity-survey', date: '2023' },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -166,7 +175,7 @@ export default function MentalHealthPage() {
         <TopicHeader
           topic="Mental Health"
           question="Can You Actually Get Mental Health Support on the NHS?"
-          finding="1.9 million people are waiting for NHS mental health care. NHS talking therapies (IAPT) see 1.2 million people a year, but only 51% achieve recovery. CAMHS waiting times average 18 weeks for a first appointment. Mental health beds have fallen 27% since 2010."
+          finding={<>1.9 million people are waiting for NHS mental health care. NHS talking therapies (IAPT) see 1.2 million people a year, but only 51% achieve recovery.<Cite nums={1} /> CAMHS waiting times average 18 weeks for a first appointment.<Cite nums={3} /> Mental health beds have fallen 27% since 2010.<Cite nums={2} /></>}
           colour="#264653"
         />
       </div>
@@ -262,11 +271,11 @@ export default function MentalHealthPage() {
       <section className="max-w-2xl mx-auto px-6 py-12 border-b border-wiah-border text-wiah-black">
         <div className="text-base leading-[1.7] space-y-4">
           <p>
-            One in six adults experiences a mental health problem in any given week, yet an estimated 1.9 million people are now waiting for NHS mental health care of all kinds. NHS Talking Therapies received 1.4 million referrals in 2022/23 and 51% achieved clinical recovery — but that headline masks severe strain in CAMHS, where 35% of GP referrals are rejected at triage and those accepted wait an average of 18 weeks. Among 16–24-year-olds, 27% have a probable mental disorder — nearly double the rate recorded in 2000.
+            One in six adults experiences a mental health problem in any given week, yet an estimated 1.9 million people are now waiting for NHS mental health care of all kinds.<Cite nums={4} /> NHS Talking Therapies received 1.4 million referrals in 2022/23 and 51% achieved clinical recovery — but that headline masks severe strain in CAMHS, where 35% of GP referrals are rejected at triage and those accepted wait an average of 18 weeks.<Cite nums={[1, 3]} /> Among 16-24-year-olds, 27% have a probable mental disorder — nearly double the rate recorded in 2000.<Cite nums={3} />
           </p>
 
           <p>
-            Inpatient beds have been cut 25% since 2010, forcing over 1,000 patients annually into out-of-area placements at a cost of £6 million per month. The NHS Long-Term Plan (2019) committed £2.3 billion and 10,000 additional staff. The Mental Health Act — last substantively reformed in 1983 — awaits replacement: a Mental Health Bill introduced in 2024 proposes ending indefinite detention for personality disorder and curbing police use of Section 136.
+            Inpatient beds have been cut 25% since 2010, forcing over 1,000 patients annually into out-of-area placements at a cost of £6 million per month.<Cite nums={2} /> The NHS Long-Term Plan (2019) committed £2.3 billion and 10,000 additional staff. The Mental Health Act — last substantively reformed in 1983 — awaits replacement: a Mental Health Bill introduced in 2024 proposes ending indefinite detention for personality disorder and curbing police use of Section 136.
           </p>
         </div>
       </section>
@@ -298,6 +307,8 @@ export default function MentalHealthPage() {
         { id: 'beds', label: 'Mental health beds' },
         { id: 'agegroup', label: 'By age group' },
       ]} />
+        <References items={editorialRefs} />
+
             <RelatedTopics />
       </main>
   );

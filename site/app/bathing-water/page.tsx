@@ -8,6 +8,16 @@ import PositiveCallout from '@/components/PositiveCallout';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Environment Agency', dataset: 'Bathing Water Quality Annual Classifications', url: 'https://environment.data.gov.uk/bwq/profiles/', date: '2024' },
+  { num: 2, name: 'Environment Agency', dataset: 'Event Duration Monitoring — Storm Overflow Annual Returns', url: 'https://www.gov.uk/government/collections/storm-overflows-data', date: '2024' },
+  { num: 3, name: 'Ofwat', dataset: 'Final Determinations PR24', url: 'https://www.ofwat.gov.uk/regulated-companies/price-review/2024-price-review/', date: '2024' },
+  { num: 4, name: 'DEFRA', dataset: 'Storm Overflows Discharge Reduction Plan', url: 'https://www.gov.uk/government/publications/storm-overflows-discharge-reduction-plan', date: '2022' },
+  { num: 5, name: 'Environment Agency', dataset: 'Southern Water prosecution', url: 'https://www.gov.uk/government/news/southern-water-fined-90-million-for-deliberately-dumping-sewage', date: '2021' },
+];
 
 // Bathing waters at Excellent rating (%), England, 2013–2024 — Environment Agency
 const excellentValues = [72, 70, 68, 67, 66, 65, 63, 62, 61, 60, 60, 60];
@@ -75,8 +85,8 @@ export default function BathingWaterPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England has 424 designated bathing waters — stretches of coast, rivers, and lakes where the Environment Agency monitors water quality against bacterial standards set by the EU Bathing Water Directive (retained in UK law). The proportion rated Excellent has fallen steadily from 72% in 2013 to 60% in 2024, while the proportion rated Poor or Sufficient — signalling bacterial contamination that poses a health risk — has risen from 5% to 11%. Sewage discharged from combined sewer overflows (CSOs) during heavy rainfall is the primary cause of failures. In 2023, the Environment Agency recorded 3.6 million hours of sewage discharges from CSOs across England — equivalent to over 400 years of continuous flow. The true figure was unknown until mandatory continuous monitoring was introduced, because water companies were simply not required to measure what they were discharging.</p>
-            <p>The political response has been significant but delayed. The Environment Act 2021 placed new duties on water companies to progressively reduce the adverse impact of sewage discharges, and required continuous electronic monitoring of every storm overflow by the end of 2025. Ofwat's 2024 price review requires water companies to invest £56 billion between 2025 and 2030, with a target of reducing sewage spill hours by 40% by 2035 and eliminating harmful overflows entirely by 2050. Several water companies face substantial fines for historical failures: Southern Water was fined £90 million in 2021, and Thames Water faces enforcement action over billions of litres of unlawful discharges. But critics note that the targets are set over decades, investment plans rely on bill increases, and no individual executives have faced criminal prosecution despite evidence of systematic under-reporting.</p>
+            <p>England has 424 designated bathing waters — stretches of coast, rivers, and lakes where the Environment Agency monitors water quality against bacterial standards set by the EU Bathing Water Directive (retained in UK law). The proportion rated Excellent has fallen steadily from 72% in 2013 to 60% in 2024, while the proportion rated Poor or Sufficient — signalling bacterial contamination that poses a health risk — has risen from 5% to 11%.<Cite nums={1} /> Sewage discharged from combined sewer overflows (CSOs) during heavy rainfall is the primary cause of failures. In 2023, the Environment Agency recorded 3.6 million hours of sewage discharges from CSOs across England — equivalent to over 400 years of continuous flow.<Cite nums={2} /> The true figure was unknown until mandatory continuous monitoring was introduced, because water companies were simply not required to measure what they were discharging.</p>
+            <p>The political response has been significant but delayed. The Environment Act 2021 placed new duties on water companies to progressively reduce the adverse impact of sewage discharges, and required continuous electronic monitoring of every storm overflow by the end of 2025.<Cite nums={4} /> Ofwat's 2024 price review requires water companies to invest £56 billion between 2025 and 2030, with a target of reducing sewage spill hours by 40% by 2035 and eliminating harmful overflows entirely by 2050.<Cite nums={3} /> Several water companies face substantial fines for historical failures: Southern Water was fined £90 million in 2021,<Cite nums={5} /> and Thames Water faces enforcement action over billions of litres of unlawful discharges. But critics note that the targets are set over decades, investment plans rely on bill increases, and no individual executives have faced criminal prosecution despite evidence of systematic under-reporting.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -163,6 +173,7 @@ export default function BathingWaterPage() {
             <p>Bathing water classifications are based on the four-year rolling geometric mean of bacterial concentrations. A site rated Excellent typically has very low contamination throughout the season. Poor-rated sites are subject to a permanent bathing advisory, advising against swimming. Discharge hours data prior to 2021 should be treated with caution as monitoring coverage was partial.</p>
           </div>
         </section>
+        <References items={editorialRefs} />
         <RelatedTopics />
       </main>
     </>

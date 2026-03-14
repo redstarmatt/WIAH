@@ -9,6 +9,15 @@ import ScrollReveal from '@/components/ScrollReveal'
 import SectionNav from '@/components/SectionNav'
 import PositiveCallout from '@/components/PositiveCallout'
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'UK Health Security Agency', dataset: 'Sexually Transmitted Infections and Screening for Chlamydia in England', url: 'https://www.gov.uk/government/statistics/sexually-transmitted-infections-stis-annual-data-tables', date: '2024' },
+  { num: 2, name: 'BASHH / UKHSA', dataset: 'Sexual Health Clinic Survey and GUMCAD', url: 'https://www.gov.uk/government/publications/gumcad-sti-surveillance-system', date: '2024' },
+  { num: 3, name: 'ONS', dataset: 'Conceptions in England and Wales', url: 'https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/conceptionandfertilityrates', date: '2024' },
+  { num: 4, name: 'OHID', dataset: 'Public Health Profiles — Sexual and Reproductive Health', url: 'https://fingertips.phe.org.uk/profile/sexualhealth', date: '2024' },
+];
 
 // -- Types ------------------------------------------------------------------
 
@@ -96,8 +105,8 @@ export default function SexualHealthPage() {
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>England diagnoses over 430,000 new STIs each year, with gonorrhoea and syphilis surging to levels not seen since the 1970s while chlamydia diagnoses have fallen. The infrastructure for managing sexual health has been systematically reduced: since commissioning transferred to local authorities in 2013, specialist clinics fell from 297 to 176 — a 41% reduction — and the public health grant funding them has been cut over 25% in real terms since 2015. Online testing grew from fewer than 200,000 orders in 2016 to over 3.5 million in 2024, partially compensating for clinic closures for asymptomatic cases but not for those needing physical examination or complex care. New HIV diagnoses have fallen 35% since 2014, driven by PrEP, treatment as prevention, and expanded testing — a genuine success — though late diagnosis still accounts for 42% of new cases. The under-18 conception rate fell from 42 per 1,000 in 2007 to 14 per 1,000 in 2022 — the lowest on record and one of the longest-running positive trends in UK public health.</p>
-            <p>The burden is not evenly distributed. Young people aged 15–24 account for nearly half of all STI diagnoses despite representing 12% of the population; Black ethnic groups have chlamydia and gonorrhoea rates two to three times the national average; men who have sex with men face disproportionate rates of syphilis and gonorrhoea. These disparities reflect both structural barriers to access and the consequences of targeted screening programmes that have been scaled back. Rural populations face clinic waits significantly longer than urban areas, and the growing antibiotic resistance in gonorrhoea poses a risk that falls most heavily on those with the fewest alternative testing or treatment options.</p>
+            <p>England diagnoses over 430,000 new STIs each year, with gonorrhoea and syphilis surging to levels not seen since the 1970s while chlamydia diagnoses have fallen.<Cite nums={1} /> The infrastructure for managing sexual health has been systematically reduced: since commissioning transferred to local authorities in 2013, specialist clinics fell from 297 to 176 — a 41% reduction — and the public health grant funding them has been cut over 25% in real terms since 2015.<Cite nums={2} /> Online testing grew from fewer than 200,000 orders in 2016 to over 3.5 million in 2024, partially compensating for clinic closures for asymptomatic cases but not for those needing physical examination or complex care.<Cite nums={1} /> New HIV diagnoses have fallen 35% since 2014, driven by PrEP, treatment as prevention, and expanded testing — a genuine success — though late diagnosis still accounts for 42% of new cases.<Cite nums={4} /> The under-18 conception rate fell from 42 per 1,000 in 2007 to 14 per 1,000 in 2022 — the lowest on record and one of the longest-running positive trends in UK public health.<Cite nums={3} /></p>
+            <p>The burden is not evenly distributed. Young people aged 15-24 account for nearly half of all STI diagnoses despite representing 12% of the population; Black ethnic groups have chlamydia and gonorrhoea rates two to three times the national average; men who have sex with men face disproportionate rates of syphilis and gonorrhoea.<Cite nums={[1, 4]} /> These disparities reflect both structural barriers to access and the consequences of targeted screening programmes that have been scaled back. Rural populations face clinic waits significantly longer than urban areas, and the growing antibiotic resistance in gonorrhoea poses a risk that falls most heavily on those with the fewest alternative testing or treatment options.<Cite nums={1} /></p>
           </div>
         </section>
 
@@ -206,6 +215,10 @@ export default function SexualHealthPage() {
             <p>STI diagnoses cover all infections reported through sexual health clinics in England. Online testing services increasingly captured in GUMCAD from 2020 onwards. Clinic counts reflect specialist sexual health services (GUM clinics and integrated services); some GP-based testing not included. The 2020 dip reflects COVID-related clinic closures and reduced testing, not a genuine decline in STI incidence.</p>
           </div>
         </section>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
+
               <RelatedTopics />
       </main>
     </>

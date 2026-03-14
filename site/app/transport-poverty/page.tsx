@@ -123,7 +123,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Transport & Infrastructure"
           question="Can Low-Income Households Afford to Get Around?"
-          finding="Transport costs for low-income households have risen 40% since 2010. 2.3 million households are in transport poverty — unable to afford reliable access to work, healthcare and education."
+          finding={<>Transport costs for low-income households have risen 40% since 2010.<Cite nums={1} /> 2.3 million households are in transport poverty — unable to afford reliable access to work, healthcare and education.<Cite nums={2} /></>}
           preposition="with"
           colour="#264653"
         />
@@ -142,7 +142,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-bad"
-            changeText="Spending 10%+ of income on transport · 8% of all HHs"
+            changeText={<>Spending 10%+ of income on transport · 8% of all HHs<Cite nums={2} /></>}
             sparklineData={[1.8, 1.9, 2.0, 2.0, 2.1, 2.1, 2.1, 2.1, 2.2, 2.3, 2.3]}
             href="#sec-coverage"
           />
@@ -152,7 +152,7 @@ export default function TopicPage() {
             unit="since 2010"
             direction="up"
             polarity="up-is-bad"
-            changeText="Bus and rail fares rose faster than general inflation"
+            changeText={<>Bus and rail fares rose faster than general inflation<Cite nums={1} /></>}
             sparklineData={[0, 4, 8, 12, 16, 20, 24, 28, 33, 37, 40]}
             href="#sec-coverage"
           />
@@ -162,7 +162,7 @@ export default function TopicPage() {
             unit=""
             direction="flat"
             polarity="up-is-bad"
-            changeText="Bus cuts mean 3,000 routes removed since 2010"
+            changeText={<>Bus cuts mean 3,000 routes removed since 2010<Cite nums={2} /></>}
             sparklineData={[20, 20, 21, 21, 21, 22, 22, 22, 23, 23, 23]}
             href="#sec-coverage"
           />
@@ -199,7 +199,7 @@ export default function TopicPage() {
             title="Bus Back Better funding allocated"
             value="£3bn"
             unit="Bus Service Improvement Plans 2021"
-            description="The Bus Back Better national strategy allocated £3bn for Bus Service Improvement Plans, allowing local transport authorities to restore routes and subsidise fares. The Universal Bus Pass (for over 60s) has been maintained, protecting 11 million free pass holders. Concessionary travel saves low-income elderly passengers an estimated £2,400 per year."
+            description={<>The Bus Back Better national strategy allocated £3bn for Bus Service Improvement Plans, allowing local transport authorities to restore routes and subsidise fares.<Cite nums={3} /> The Universal Bus Pass (for over 60s) has been maintained, protecting 11 million free pass holders. Concessionary travel saves low-income elderly passengers an estimated £2,400 per year.</>}
             source="Source: DfT — Bus statistics, 2025."
           />
         </ScrollReveal>

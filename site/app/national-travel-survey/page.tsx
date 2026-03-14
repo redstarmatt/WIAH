@@ -122,7 +122,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Transport & Infrastructure"
           question="How Does Britain Actually Get Around?"
-          finding="Car dominance has increased — 63% of trips are by car, cycling accounts for just 1.5% of trips, and public transport fell then partially recovered post-pandemic."
+          finding={<>Car dominance has increased — 63% of trips are by car, cycling accounts for just 1.5% of trips, and public transport fell then partially recovered post-pandemic.<Cite nums={1} /></>}
           colour="#264653"
         />
 
@@ -140,7 +140,7 @@ export default function TopicPage() {
             unit=""
             direction="flat"
             polarity="up-is-bad"
-            changeText="Broadly unchanged since 2000 · slight post-pandemic rise"
+            changeText={<>Broadly unchanged since 2000 · slight post-pandemic rise<Cite nums={1} /></>}
             sparklineData={[62, 62, 62, 62, 62, 62, 55, 62, 63, 63, 63]}
             href="#sec-coverage"
           />
@@ -150,7 +150,7 @@ export default function TopicPage() {
             unit=""
             direction="up"
             polarity="up-is-good"
-            changeText="Up from 1.0% in 2015 · still tiny vs Netherlands 27%"
+            changeText={<>Up from 1.0% in 2015 · still tiny vs Netherlands 27%<Cite nums={1} /></>}
             sparklineData={[1.0, 1.1, 1.1, 1.2, 1.2, 1.3, 2.0, 1.8, 1.5, 1.5, 1.5]}
             href="#sec-coverage"
           />
@@ -160,7 +160,7 @@ export default function TopicPage() {
             unit=""
             direction="down"
             polarity="up-is-bad"
-            changeText="Down from 10% pre-pandemic · partially recovered"
+            changeText={<>Down from 10% pre-pandemic · partially recovered<Cite nums={1} /></>}
             sparklineData={[10, 10, 10, 10, 10, 8, 3, 6, 7, 7, 7]}
             href="#sec-coverage"
           />
@@ -197,7 +197,7 @@ export default function TopicPage() {
             title="Active Travel England investing £1bn by 2025"
             value="£1bn"
             unit="active travel investment 2021-25"
-            description="Active Travel England was established in 2022 to fund and mandate cycling and walking infrastructure. £1bn was committed to Cycling and Walking Investment Strategy 2 for 2021-25. Cycle superhighways in London increased cycling trips 35% on those corridors. E-bike subsidies are being trialled in low-income areas."
+            description={<>Active Travel England was established in 2022 to fund and mandate cycling and walking infrastructure.<Cite nums={2} /> £1bn was committed to Cycling and Walking Investment Strategy 2 for 2021-25.<Cite nums={2} /> Cycle superhighways in London increased cycling trips 35% on those corridors.<Cite nums={1} /> E-bike subsidies are being trialled in low-income areas.<Cite nums={2} /></>}
             source="Source: DfT — National Travel Survey, 2025. Active Travel England, 2025."
           />
         </ScrollReveal>

@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Ofwat', dataset: 'Water Company Performance Report — leakage data', url: 'https://www.ofwat.gov.uk/regulated-companies/performance/comparative-performance-of-the-water-companies/', date: '2024' },
+  { num: 2, name: 'Ofwat', dataset: 'PR19 Final Determinations — leakage reduction targets', url: 'https://www.ofwat.gov.uk/regulated-companies/price-review/2019-price-review/final-determinations/', date: '2019' },
+  { num: 3, name: 'Ofwat', dataset: 'PR24 Final Determinations', url: 'https://www.ofwat.gov.uk/regulated-companies/price-review/2024-price-review/', date: '2024', note: '£96bn investment programme' },
+];
 
 export default function WaterCompanyLeakagePage() {
   const totalLeakageData = [3464, 3410, 3352, 3311, 3277, 3213, 3185, 3156, 3121, 3080, 3043, 3011, 2982, 3000];
@@ -83,7 +91,7 @@ export default function WaterCompanyLeakagePage() {
         <TopicHeader
           topic="Water"
           question="How Much Water Is Leaking from Britain's Pipes?"
-          finding="Water companies lose 3 billion litres per day to leakage — equivalent to 1 in 5 litres treated — and most companies are missing their leakage reduction targets."
+          finding={<>Water companies lose 3 billion litres per day to leakage — equivalent to 1 in 5 litres treated — and most companies are missing their leakage reduction targets.<Cite nums={1} /></>}
           colour="#264653"
         />
 
@@ -94,7 +102,7 @@ export default function WaterCompanyLeakagePage() {
               value="3.0"
               direction="down"
               polarity="up-is-bad"
-              changeText="down from 3.5bn in 2010 · still far above Ofwat target of 2.4bn"
+              changeText={<>down from 3.5bn in 2010 · still far above Ofwat target of 2.4bn<Cite nums={2} /></>}
               sparklineData={[3.4, 3.35, 3.28, 3.21, 3.15, 3.08, 3.0]}
               source="Ofwat — Water Company Performance Report 2024"
             />
@@ -112,7 +120,7 @@ export default function WaterCompanyLeakagePage() {
               value="10"
               direction="up"
               polarity="up-is-bad"
-              changeText="10 of 17 companies missing their own PR19 targets"
+              changeText={<>10 of 17 companies missing their own PR19 targets<Cite nums={2} /></>}
               sparklineData={[5, 6, 7, 8, 9, 10, 10]}
               source="Ofwat — 2024"
             />
@@ -162,7 +170,7 @@ export default function WaterCompanyLeakagePage() {
             title="Leakage Falling"
             value="14"
             unit="%"
-            description="Total leakage in England and Wales has fallen by 14% since 2010 — a genuine reduction driven by regulatory pressure and improved leak detection technology. Acoustic sensors, satellite monitoring, and district metering have all helped. The challenge is accelerating the pace of reduction while water companies face growing financial constraints."
+            description={<>Total leakage in England and Wales has fallen by 14% since 2010 — a genuine reduction driven by regulatory pressure and improved leak detection technology.<Cite nums={1} /> Acoustic sensors, satellite monitoring, and district metering have all helped. The challenge is accelerating the pace of reduction while water companies face growing financial constraints.</>}
             source="Ofwat, Water Company Performance Data"
           />
         </ScrollReveal>
@@ -171,9 +179,9 @@ export default function WaterCompanyLeakagePage() {
           <section id="sec-context" className="max-w-2xl mb-12 mt-8">
             <h2 className="text-xl font-bold text-wiah-black mb-4">3 billion litres lost every day — and most companies are falling short</h2>
             <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-              <p>England and Wales loses around 3 billion litres of treated water to leakage every day — roughly 20% of all water put into the distribution system. That is equivalent to the daily water use of 20 million people, flowing not into homes and businesses but out of cracked Victorian pipes into the ground. In the context of growing water stress — driven by climate change reducing reliable rainfall and population growth increasing demand — this level of waste represents a strategic infrastructure failure.</p>
-              <p>Ofwat set ambitious leakage reduction targets in the 2019 price review (PR19): companies were required to cut leakage by 16% by 2025. Most are failing to meet these commitments. Of the 17 water companies in England and Wales, 10 are missing their own PR19 leakage targets. Thames Water — which accounts for the largest single share of total leakage — has been placed under special regulatory oversight following financial difficulties. The 2019 price review targets were themselves a floor, not an ambition: independent analysis suggests leakage of under 2 billion litres per day is technically achievable.</p>
-              <p>The water industry's financial structure complicates the picture. Companies carry combined debt of around £60 billion, accumulated through leveraged buyouts since privatisation. Interest payments on this debt compete with capital investment for cash. Accelerating leakage reduction requires major infrastructure spending — replacing pipes, installing smart meters, deploying real-time monitoring. Under regulatory pressure from Ofwat and government, PR24 (the 2024 price review) requires further leakage reductions alongside investment in sewage overflow elimination, storm overflow management, and resilience to climate variability.</p>
+              <p>England and Wales loses around 3 billion litres of treated water to leakage every day — roughly 20% of all water put into the distribution system.<Cite nums={1} /> That is equivalent to the daily water use of 20 million people, flowing not into homes and businesses but out of cracked Victorian pipes into the ground. In the context of growing water stress — driven by climate change reducing reliable rainfall and population growth increasing demand — this level of waste represents a strategic infrastructure failure.</p>
+              <p>Ofwat set ambitious leakage reduction targets in the 2019 price review (PR19): companies were required to cut leakage by 16% by 2025.<Cite nums={2} /> Most are failing to meet these commitments. Of the 17 water companies in England and Wales, 10 are missing their own PR19 leakage targets.<Cite nums={1} /> Thames Water — which accounts for the largest single share of total leakage — has been placed under special regulatory oversight following financial difficulties. The 2019 price review targets were themselves a floor, not an ambition: independent analysis suggests leakage of under 2 billion litres per day is technically achievable.</p>
+              <p>The water industry's financial structure complicates the picture. Companies carry combined debt of around £60 billion, accumulated through leveraged buyouts since privatisation. Interest payments on this debt compete with capital investment for cash. Accelerating leakage reduction requires major infrastructure spending — replacing pipes, installing smart meters, deploying real-time monitoring. Under regulatory pressure from Ofwat and government, PR24 (the 2024 price review) requires further leakage reductions alongside investment in sewage overflow elimination, storm overflow management, and resilience to climate variability.<Cite nums={3} /></p>
             </div>
           </section>
         </ScrollReveal>
@@ -186,6 +194,7 @@ export default function WaterCompanyLeakagePage() {
           </div>
         </section>
 
+        <References items={editorialRefs} />
         <RelatedTopics />
       </main>
     </>

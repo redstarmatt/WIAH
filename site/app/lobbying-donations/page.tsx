@@ -125,7 +125,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Democracy & Governance"
           question="Who Is Buying Access to Government?"
-          finding="£20.3 million was declared in political donations in Q4 2024. The lobbying register covers fewer than 1,000 consultants while 6,000+ lobbying contacts with government occur each year."
+          finding={<>&pound;20.3 million was declared in political donations in Q4 2024.<Cite nums={1} /> The lobbying register covers fewer than 1,000 consultants while 6,000+ lobbying contacts with government occur each year.<Cite nums={[2, 3]} /></>}
           colour="#6B7280"
         />
 
@@ -205,10 +205,6 @@ export default function TopicPage() {
           />
         </ScrollReveal>
 
-        <div className="mt-6">
-          <References items={editorialRefs} />
-        </div>
-
         {/* Sources */}
         <section className="mt-16 pt-8 border-t border-wiah-border max-w-2xl">
           <h2 className="text-xl font-bold text-wiah-black mb-4">Sources &amp; Methodology</h2>
@@ -235,6 +231,8 @@ export default function TopicPage() {
             </ul>
           </div>
         </section>
+
+        <References items={editorialRefs} />
       </main>
     </>
   );

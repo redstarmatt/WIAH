@@ -8,6 +8,16 @@ import ScrollReveal from '@/components/ScrollReveal';
 import PositiveCallout from '@/components/PositiveCallout';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'NHS England', dataset: 'Mental Health of Children and Young People in England Survey', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-of-children-and-young-people-in-england', date: '2023' },
+  { num: 2, name: 'NHS Digital', dataset: 'CAMHS Activity Data / Mental Health Services Monthly Statistics', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-services-monthly-statistics', date: '2024' },
+  { num: 3, name: 'NHS Digital', dataset: 'Hospital Episode Statistics — Self-Harm Admissions', url: 'https://digital.nhs.uk/data-and-information/publications/statistical/hospital-admitted-patient-care-activity', date: '2024' },
+  { num: 4, name: 'NHS England', dataset: "Children and Young People's Eating Disorder Waiting Times", url: 'https://www.england.nhs.uk/mental-health/cyp/', date: '2024' },
+  { num: 5, name: "Children's Commissioner", dataset: 'Children\'s Mental Health Services', url: 'https://www.childrenscommissioner.gov.uk/report/childrens-mental-health-services/', date: '2023' },
+];
 
 // CAMHS waiting list (thousands) and self-harm hospital admissions per 100k, 2016–2024
 const camhsWaitingData = [42, 48, 55, 65, 78, 90, 115, 127, 132];
@@ -71,8 +81,8 @@ export default function ChildMentalHealthPage() {
         />
         <section className="max-w-2xl mt-4 mb-10">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>One in five children aged 8–16 in England now has a probable mental health condition — up from one in nine in 2017. Hospital admissions for self-harm among under-18s have risen 56% since 2016, and eating disorder referrals to CAMHS increased 91% during the pandemic years, with girls aged 13–17 the most affected group. CAMHS waiting lists stood at 132,000 in 2024 — more than three times the 42,000 recorded in 2016 — and around half of those referred wait more than 18 weeks. Some children wait over two years. Mental Health Support Teams in schools covered 35% of England's schools by 2024; 30% of trusts breach the four-week eating disorder waiting time standard.</p>
-            <p>The Children's Commissioner estimates 70% of children with mental health problems do not receive the right treatment at the right time. The average age of onset for anxiety disorders is 11; the average wait for treatment in England after referral has extended to over six months for many services. The majority of child mental health spending flows to crisis and inpatient services rather than community and early intervention, meaning the system responds to acute breakdown rather than preventing it. Girls are three times more likely than boys to be admitted to hospital for self-harm, and access to services is substantially worse in rural areas and in the most deprived communities. The ambition of the NHS Long Term Plan to provide access to NHS-funded mental health support for an additional 345,000 children by 2023–24 was not met on time.</p>
+            <p>One in five children aged 8–16 in England now has a probable mental health condition — up from one in nine in 2017.<Cite nums={1} /> Hospital admissions for self-harm among under-18s have risen 56% since 2016,<Cite nums={3} /> and eating disorder referrals to CAMHS increased 91% during the pandemic years, with girls aged 13–17 the most affected group.<Cite nums={4} /> CAMHS waiting lists stood at 132,000 in 2024 — more than three times the 42,000 recorded in 2016 — and around half of those referred wait more than 18 weeks.<Cite nums={2} /> Some children wait over two years. Mental Health Support Teams in schools covered 35% of England's schools by 2024; 30% of trusts breach the four-week eating disorder waiting time standard.<Cite nums={4} /></p>
+            <p>The Children's Commissioner estimates 70% of children with mental health problems do not receive the right treatment at the right time.<Cite nums={5} /> The average age of onset for anxiety disorders is 11; the average wait for treatment in England after referral has extended to over six months for many services. The majority of child mental health spending flows to crisis and inpatient services rather than community and early intervention, meaning the system responds to acute breakdown rather than preventing it. Girls are three times more likely than boys to be admitted to hospital for self-harm,<Cite nums={3} /> and access to services is substantially worse in rural areas and in the most deprived communities. The ambition of the NHS Long Term Plan to provide access to NHS-funded mental health support for an additional 345,000 children by 2023–24 was not met on time.</p>
           </div>
         </section>
         <SectionNav sections={[
@@ -160,6 +170,7 @@ export default function ChildMentalHealthPage() {
             <p className="mt-2">CAMHS waiting list is point-in-time snapshot. Self-harm admission rates per 100,000 population standardised to mid-year estimates. Probable mental health condition data from NHS Mental Health of Children and Young People in England surveys (2017, 2020, 2023). All data relates to England only.</p>
           </div>
         </section>
+        <References items={editorialRefs} />
         <RelatedTopics />
       </main>
     </>
