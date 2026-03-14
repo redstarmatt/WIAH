@@ -166,6 +166,13 @@ export default function SewageHealthPage() {
           colour="#E63946"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>The link between sewage discharges and human illness is now supported by a growing body of evidence. Surfers Against Sewage tracked 1,924 illness reports at bathing sites in 2024, more than double the 847 recorded in 2018, with gastroenteritis, ear and throat infections, and skin rashes the most common complaints. University of Exeter research has documented a consistent pattern: when water companies release untreated sewage through combined sewer overflows, bacterial concentrations at nearby bathing sites spike beyond safe limits within hours, and illness clusters follow within 48 hours. The 464,000 discharge events recorded by the Environment Agency's monitoring programme in 2023 represent a systemic failure of ageing Victorian infrastructure overwhelmed by population growth and increasingly intense rainfall.<Cite nums={1} /></p>
+            <p>The health risks are growing in parallel with exposure. The open water swimming boom has brought 7.5 million people into rivers, lakes and coastal waters, up from 4.1 million in 2019, yet the regulatory framework has not kept pace. The Environment Agency's real-time discharge alerts, launched in 2024, cover only the 430 designated bathing waters in England — not the rivers where wild swimming is most popular and where 93% of waterways fail to meet good ecological status. Children are disproportionately vulnerable, swallowing more water while swimming and facing greater risk from waterborne pathogens. The 1,924 reported illnesses almost certainly undercount the true burden, since most people do not connect a stomach bug to the water they swam in days earlier, and no systematic NHS surveillance programme exists to capture the full picture.<Cite nums={2} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-illness-trend', label: 'Illness reports' },

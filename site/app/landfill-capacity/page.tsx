@@ -126,6 +126,13 @@ export default function TopicPage() {
           colour="#2A9D8F"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>England has approximately 300 million tonnes of permitted landfill capacity remaining, a figure that is falling by around 20 million tonnes per year. At current depletion rates, several regions — particularly the South East and East of England — face exhaustion within a decade. Five counties already have no operational non-hazardous landfill, forcing waste to travel 100 miles or more for disposal. New landfill planning permissions have become exceptionally rare since 2018, meaning the finite stock of permitted capacity is unlikely to be replenished. The problem is not abstract: when local landfill closes, disposal costs rise and waste miles increase, with consequences for emissions, road wear, and council budgets.<Cite nums={1} /></p>
+            <p>The decline of landfill is partly a policy success — the landfill tax, now at £102.10 per tonne, was designed to make burial the last resort, and recycling rates have risen from 11% in 2000 to around 44% today. But recycling has plateaued, and the gap has been filled not by further waste reduction but by incineration, which now handles more residual waste than landfill. The risk is that the UK transitions from one disposal dependency to another without addressing the upstream problem: too much waste is produced in the first place. Defra&apos;s Resources and Waste Strategy sets ambitious targets for extended producer responsibility and deposit return schemes, but implementation has been repeatedly delayed.<Cite nums={2} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

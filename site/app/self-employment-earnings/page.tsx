@@ -127,6 +127,13 @@ export default function TopicPage() {
           colour="#6B7280"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>The UK's 4.2 million self-employed workers earn a median of £16,300 per year — 45% less than the median for employees doing comparable work. This gap has widened steadily since 2010 and accelerated sharply during the pandemic, when self-employed incomes fell faster and recovered more slowly than employee wages. The composition of self-employment has shifted: while it once skewed towards skilled tradespeople and professionals, a growing share now comprises low-paid, low-autonomy work in sectors like construction subcontracting, private hire driving and platform-based delivery. Unlike employees, the self-employed have no entitlement to the National Minimum Wage, no statutory sick pay, and no automatic protection against unfair dismissal.<Cite nums={1} /></p>
+            <p>The long-term consequences extend well beyond current earnings. Some 65% of self-employed workers have no pension savings at all, because they are excluded from the workplace auto-enrolment scheme that has transformed retirement saving for employees since 2012. This creates a looming crisis: millions of people will reach retirement age with nothing beyond the state pension, which itself replaces a smaller share of income for lower earners. The Self-Employment Income Support Scheme during the pandemic demonstrated both the scale of vulnerability — 2.9 million people claimed £28.7 billion in grants — and the limitations of the safety net, since newly self-employed workers and those with mixed income were excluded entirely. HMRC is exploring pension auto-enrolment through the Making Tax Digital programme, but progress has been slow.<Cite nums={2} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

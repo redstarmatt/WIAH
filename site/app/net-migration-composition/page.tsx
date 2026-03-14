@@ -127,6 +127,13 @@ export default function TopicPage() {
           colour="#6B7280"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>The headline net migration figure of 906,000 in June 2023 obscures a composition that is almost entirely different from a decade ago. The end of EU free movement after Brexit has been offset, and more than offset, by a sharp rise in non-EU arrivals on student and work visas. Students and their dependants account for roughly 40% of all immigration, driven by universities that have become heavily dependent on international fee income. Health and care worker visas make up the majority of the work route, filling vacancies in a sector where domestic recruitment has consistently fallen short. These are not accidental flows: they are the direct product of a points-based immigration system designed to channel migration into economically useful categories.<Cite nums={1} /></p>
+            <p>Less discussed is the emigration side of the ledger. An increasing number of UK-born nationals are leaving permanently, concentrated among working-age professionals relocating to Australia, Canada and EU countries. This outflow reduces net migration but also represents a loss of skills and tax revenue that rarely features in the political debate. The ONS has acknowledged significant uncertainty in its estimates, particularly around student departures: whether international graduates leave when their visas expire or transition to work routes affects the net figure by tens of thousands. The government tightened dependant visa rules in early 2024, which has already reduced student-route arrivals, but the underlying tension between universities' financial dependence on international students and political pressure to reduce migration numbers remains unresolved.<Cite nums={2} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

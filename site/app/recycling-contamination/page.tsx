@@ -127,6 +127,13 @@ export default function TopicPage() {
           colour="#2A9D8F"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Britain's recycling system has a contamination problem rooted in confusion rather than apathy. Some 82% of UK residents place non-recyclable items in their recycling bins, not because they do not care but because the rules vary so dramatically between councils that even well-intentioned households get it wrong. There are over 300 different collection systems operating across England alone — what is recyclable in one borough is landfill in the next. The result is that 525,000 tonnes of collected recycling are rejected annually as contaminated, sent instead to landfill or incineration. This costs councils an estimated £52 million per year in wasted collection, sorting and disposal fees, at a time when local authority budgets are already under severe pressure.<Cite nums={1} /></p>
+            <p>The problem extends beyond households. Contaminated loads rejected by UK reprocessors have historically been exported, contributing to the global waste trade that saw countries like Turkey, Malaysia and Poland receiving British recycling of questionable quality. China's 2018 National Sword policy, which banned imports of contaminated recyclables, exposed how dependent the UK system was on exporting the problem. Domestically, food waste is the single largest contaminant — residual food on packaging and loose food waste placed in dry recycling bins renders entire loads unprocessable. Defra's Simpler Recycling reforms, requiring all English councils to collect the same core materials from 2026, should reduce confusion, but success depends on sustained public communication and adequate funding for council infrastructure upgrades.<Cite nums={2} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

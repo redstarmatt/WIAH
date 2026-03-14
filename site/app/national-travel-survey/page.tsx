@@ -126,6 +126,13 @@ export default function TopicPage() {
           colour="#264653"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Britain remains a car-dependent nation by design. Six decades of transport policy oriented around road building have produced a system in which 63% of all trips are made by car, a share that has barely shifted since the turn of the century. The pandemic briefly disrupted patterns but ultimately reinforced them: public transport usage collapsed and has only partially recovered, while car trips rebounded quickly. Outside London, bus services have been cut by a third since 2010 due to local authority funding reductions, leaving many areas with no viable alternative to driving. For the poorest fifth of households, who are least likely to own a car, this translates directly into reduced access to employment, healthcare and education.<Cite nums={1} /></p>
+            <p>Cycling accounts for just 1.5% of trips nationally, compared with 27% in the Netherlands and 18% in Denmark. The gap is not cultural but infrastructural: the Netherlands invested consistently in segregated cycling networks for fifty years, while Britain has delivered fragmented, often paint-only cycle lanes that end abruptly. Active Travel England, established in 2021 with a mandate to fund and quality-assure cycling and walking infrastructure, represents a shift in approach, but its budget of roughly £200 million per year is modest against the scale of the road network. The fundamental challenge is that retrofitting car-centric suburbs and towns for active travel requires sustained capital investment over decades, not single spending rounds.<Cite nums={2} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

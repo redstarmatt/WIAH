@@ -128,6 +128,13 @@ export default function TopicPage() {
           colour="#F4A261"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Britain&apos;s Gini coefficient has sat at around 0.33 for a decade — roughly where it landed after the sharp rise in inequality during the 1980s. This stability is deceptive. It masks divergent forces: the National Living Wage has raised incomes at the bottom, while returns on financial assets and property have concentrated gains at the top. The result is a society where headline inequality appears frozen, but the gap between those with wealth and those without continues to widen. The UK&apos;s Gini remains higher than Germany (0.29), France (0.31), and most of Scandinavia.<Cite nums={1} /></p>
+            <p>The ratio between top and bottom decile incomes — 9 to 1 — illustrates the lived reality more plainly than a coefficient. A household in the top 10% has a median income of £77,000; one in the bottom 10% survives on roughly £8,500 after housing costs. The tax and benefits system compresses this gap significantly — original market income inequality is far higher — but the redistributive effort required to hold inequality steady has grown as pre-tax disparities have widened. Housing costs, which fall disproportionately on lower-income renters, further erode the purchasing power the benefits system is designed to protect.<Cite nums={2} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

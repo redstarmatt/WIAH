@@ -128,6 +128,13 @@ export default function TopicPage() {
           colour="#264653"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Around 5 million UK adults do not use the internet — a figure that has fallen from 7.4 million in 2015 but is now declining at a much slower rate. The remaining non-users are concentrated among over-75s, disabled people, and those in the lowest income quintile, groups for whom the barriers are not primarily infrastructural but a combination of cost, confidence, and perceived relevance. As the easy gains of broadband rollout are exhausted, each further percentage point of digital inclusion becomes harder and more expensive to achieve. The pandemic briefly accelerated adoption, but the underlying trajectory has since reverted.<Cite nums={1} /></p>
+            <p>The consequences of being offline are no longer marginal. Government services from Universal Credit claims to GP appointment booking now default to digital channels. Banking, energy tariff comparison, and job applications increasingly assume internet access. Ofcom research shows that non-users are significantly more likely to experience social isolation, to miss out on cheaper deals available only online, and to have worse health outcomes — not because the internet causes good health, but because it mediates access to information, services, and social connection that correlate with it. The 22-percentage-point gap in home internet access between the richest and poorest households is narrowing, but it remains a reliable proxy for broader inequality.<Cite nums={2} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

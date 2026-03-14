@@ -127,6 +127,13 @@ export default function TopicPage() {
           colour="#2A9D8F"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Britain has achieved one of Europe's fastest reductions in landfill, cutting the share of waste sent to tips from 80% in 2000 to just 5.5% today, driven by escalating landfill tax that now stands at over £100 per tonne.<Cite nums={1} /> But where the waste goes instead tells a more complicated story. Incineration, rebranded as energy-from-waste, now handles 49% of municipal waste, having doubled its share since 2014. The UK has built 17.3 million tonnes of annual incineration capacity, much of it locked in 25-year contracts with local authorities that guarantee minimum waste volumes.<Cite nums={2} /> These contracts create a perverse incentive: councils need to feed the incinerators, which works directly against efforts to reduce waste or increase recycling.</p>
+            <p>Recycling, meanwhile, has stagnated at around 44% for a decade, well below the EU average of 48% and far short of the UK's own target of 65% by 2035. The plateau reflects inconsistent collection systems, with different councils accepting different materials, contamination rates that make some collected recyclables unprocessable, and the loss of export markets after China's 2018 ban on importing mixed recyclables. The Consistent Collection regulations taking effect from 2026 will mandate uniform kerbside collection of the same core materials across all English councils, which Defra projects will lift recycling rates by four to six percentage points. Whether that is sufficient to shift the balance back from burning to recycling remains to be seen.</p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

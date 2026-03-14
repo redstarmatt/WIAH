@@ -127,6 +127,13 @@ export default function TopicPage() {
           colour="#6B7280"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Britain's population grew by 906,000 in 2023, the largest annual increase ever recorded, driven almost entirely by net migration. Natural population change — the gap between births and deaths — contributed just 18,000, effectively zero in demographic terms. The UK's total fertility rate has fallen to 1.41 children per woman, well below the 2.1 replacement level and among the lowest in its history. This means that without migration, the population would be static or shrinking. The shift has been rapid: as recently as 2012, natural change accounted for roughly half of population growth.<Cite nums={1} /></p>
+            <p>The scale of recent migration reflects specific policy choices and global events rather than a single trend. Post-Brexit visa routes for health and social care workers, combined with schemes for Hong Kong BN(O) holders, Afghan evacuees and Ukrainian refugees, created multiple large inflows simultaneously. Student visa numbers also surged, with dependants adding further volume. The OBR has noted that migration supports the public finances by expanding the working-age tax base and slowing the rise in the dependency ratio. But the infrastructure implications — housing, GP capacity, school places — follow with a lag, creating visible pressure in areas absorbing the fastest growth.<Cite nums={2} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

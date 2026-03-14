@@ -127,6 +127,13 @@ export default function TopicPage() {
           colour="#6B7280"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Since 2015, the UK has resettled 39,000 refugees through formal government schemes — principally the Vulnerable Persons Resettlement Scheme for Syrians, followed by the Afghan Citizens Resettlement Scheme and the UK Resettlement Scheme. These programmes select refugees from UNHCR camps based on vulnerability criteria and provide structured support including housing, language tuition and welfare access on arrival. By international standards, this is a credible record: the UK has resettled more people per capita under formal schemes than most comparable European nations, though far fewer than Canada or Australia. The Community Sponsorship model, where local groups take responsibility for refugee families, has added over 1,000 placements and shown strong integration outcomes.<Cite nums={1} /></p>
+            <p>The Afghan and Ukrainian crises tested this infrastructure to breaking point. More than 200,000 people arrived under emergency routes — the Afghan Relocations and Assistance Policy, Operation Warm Welcome, and the Homes for Ukraine scheme — in a compressed timeframe that overwhelmed the existing resettlement system. Hotels and military barracks were repurposed as temporary accommodation, with thousands of Afghan families still in bridging hotels more than three years after evacuation. The Homes for Ukraine scheme, which relied on private households offering spare rooms, secured housing for 219,000 Ukrainians but created its own fragility: when host arrangements broke down, local authorities faced homelessness presentations they had no capacity to absorb. The gap between emergency response and long-term settlement remains the central challenge.<Cite nums={2} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

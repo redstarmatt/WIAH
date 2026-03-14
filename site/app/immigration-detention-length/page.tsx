@@ -126,6 +126,13 @@ export default function TopicPage() {
           colour="#6B7280"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>The UK is the only country in Europe with no statutory maximum time limit on immigration detention. In 2024, 26,297 people were held in immigration removal centres, with average stays rising to 38 days — up from 29 days in 2019. Nearly a quarter were detained for more than 28 days, the threshold that successive parliamentary committees have described as a marker of prolonged detention. The increase reflects a system under strain: as return agreements with origin countries collapse and legal challenges multiply, individuals remain in detention not because removal is imminent, but because the state has no clear alternative.<Cite nums={1} /></p>
+            <p>Prolonged detention carries significant costs — both human and financial. The Home Office spends over £100 per detainee per day, and detention is associated with severe mental health deterioration, particularly among those with pre-existing trauma. The High Court has repeatedly found individual cases of unlawful detention, yet the systemic pattern persists. Alternatives to detention, including electronic tagging and community-based case management, have shown high compliance rates at a fraction of the cost, but their expansion has been slow relative to the scale of the detained population.<Cite nums={2} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

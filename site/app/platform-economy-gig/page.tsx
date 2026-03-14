@@ -129,6 +129,13 @@ export default function TopicPage() {
           colour="#264653"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>The gig economy has nearly quadrupled in a decade, growing from 1.2 million workers in 2015 to 4.4 million today — roughly 14% of the UK workforce. This expansion was driven by platform companies whose business models depend on classifying workers as self-employed, thereby avoiding obligations around minimum wage, sick pay, holiday entitlement and pension contributions. The result is a two-tier labour market: platform workers bear the costs of fuel, vehicle maintenance and insurance while earning, on average, £1.20 per hour below the National Minimum Wage once those expenses are deducted. Just 6% receive any form of sick pay, leaving millions without basic income protection during illness.<Cite nums={1} /></p>
+            <p>The Supreme Court's landmark 2021 ruling in Uber v Aslam established that drivers were "workers" rather than self-employed contractors, entitling them to minimum wage and holiday pay. Yet enforcement remains patchy. Many platforms restructured contracts to maintain effective self-employment status, and HMRC lacks the resources to audit compliance at scale. The Employment Rights Bill, introduced in 2023, proposes extending worker protections to more platform-based roles, but its passage has been slow. Meanwhile, the pandemic accelerated dependence on gig work — delivery riders and couriers became essential workers in practice while remaining precarious workers in law.<Cite nums={2} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

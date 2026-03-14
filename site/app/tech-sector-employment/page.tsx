@@ -128,6 +128,13 @@ export default function TopicPage() {
           colour="#264653"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>The UK tech sector now employs 1.84 million people, up from 1.18 million in 2015, making it the third largest in Europe behind Germany and France.<Cite nums={1} /> This growth outpaced the wider economy by roughly 40% over the same period, driven by expansion in software development, cloud services and fintech. But the headline figures mask extreme geographic concentration: 56% of tech employment sits within London and the South East, and while regional hubs in Manchester, Edinburgh and Bristol are growing in percentage terms, the absolute gap continues to widen. For workers outside the capital, the UK tech boom has been largely something that happens elsewhere.</p>
+            <p>The 2023 downturn exposed the fragility beneath the growth story. Over 50,000 redundancies hit the sector as global big tech contractions, a startup funding drought and rising interest rates collided.<Cite nums={3} /> The correction was sharpest in late-stage startups that had hired aggressively during the pandemic remote-work surge. Hiring has since recovered, with vacancies climbing through 2024, but the episode revealed how dependent UK tech employment is on venture capital cycles originating in Silicon Valley.<Cite nums={2} /> The structural question remains whether the sector can build durable employment outside London and beyond the venture-funded ecosystem.</p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

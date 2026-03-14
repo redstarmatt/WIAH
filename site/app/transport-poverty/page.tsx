@@ -128,6 +128,13 @@ export default function TopicPage() {
           colour="#264653"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Transport costs for the poorest fifth of households have risen 40% since 2010, outpacing general inflation by a significant margin.<Cite nums={1} /> Bus and rail fares, which low-income households depend on disproportionately, have increased far faster than motoring costs, creating a regressive transport system where those with the fewest options pay the most per mile. An estimated 2.3 million households now spend more than 10% of their income on transport, the commonly used threshold for transport poverty. For these families, the cost of getting to work, hospital appointments or school is not a minor inconvenience but a binding constraint on economic participation.</p>
+            <p>The problem is compounded by service cuts. Since 2010, over 3,000 bus routes have been reduced or withdrawn entirely, predominantly in rural and deprived urban areas where commercial operators cannot run profitably.<Cite nums={2} /> The result is a growing geography of disconnection: communities where accessing employment, healthcare and education without a car is effectively impossible. Local authority funding for supported bus services has been cut by more than half in real terms since 2010, and while the Bus Back Better strategy committed £3 billion to restoration, delivery has been uneven. Transport poverty is not just an affordability problem; it is a structural barrier to social mobility that existing policy has failed to reverse.</p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

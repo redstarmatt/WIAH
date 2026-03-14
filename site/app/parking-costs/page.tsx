@@ -126,6 +126,13 @@ export default function TopicPage() {
           colour="#264653"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Parking has become one of the largest hidden costs of car ownership in Britain. Average city centre day rates have risen 85% since 2015 to reach £24, with London averaging £45 and some central boroughs exceeding £60. This is not simply inflation: councils facing severe budget constraints after a decade of austerity have turned to parking charges and enforcement as one of their few remaining revenue-raising tools. Some 285 towns have removed free parking since 2015, and the total net surplus from council parking operations now exceeds £860 million annually. By law, this surplus must be spent on transport purposes, and many authorities use it to subsidise bus services and maintain roads, creating an odd dynamic in which drivers effectively cross-subsidise public transport.<Cite nums={1} /></p>
+            <p>The impact falls unevenly. In towns where public transport alternatives are poor, particularly across the Midlands, the North and rural areas, removing free parking can reduce high street footfall without offering a viable alternative. Retailers and business groups argue that charging deters shoppers, while transport planners counter that free parking subsidises car use at the expense of more space-efficient modes. The rise of workplace parking levies, pioneered by Nottingham and now being considered by several other cities, represents an emerging approach that hypothecates revenue directly to public transport investment. But for most drivers in most places, the trend is clear: the true cost of a car journey increasingly extends well beyond fuel and insurance, and parking policy is being used as a demand management tool whether or not it is explicitly described as one.<Cite nums={2} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

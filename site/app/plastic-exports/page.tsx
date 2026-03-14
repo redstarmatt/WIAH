@@ -127,6 +127,13 @@ export default function TopicPage() {
           colour="#2A9D8F"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Britain exports more plastic waste per person than almost any other country. In 2023, 615,000 tonnes left the UK, the vast majority to Turkey, which replaced China as the primary destination after Beijing imposed its National Sword import ban in 2018. The shift was not a pivot to higher-quality recycling: investigative reporting by the BBC and Greenpeace has documented UK-origin plastic waste dumped in open fields, burned in roadside fires and left in illegal landfills across southern Turkey. Around 31% of exported plastic cannot be traced to a verified recycling facility, raising serious questions about whether the UK is genuinely recycling this material or simply paying to make it someone else's problem.<Cite nums={1} /></p>
+            <p>The export model persists because it is cheaper than building domestic reprocessing capacity. The UK has only a handful of plastic reprocessing plants capable of handling mixed post-consumer waste, and planning applications for new facilities routinely face local opposition. The Basel Convention amendments, which tightened rules on exporting contaminated or mixed plastic waste in 2021, have had limited practical effect because enforcement is weak and shipment inspections are infrequent. The Extended Producer Responsibility scheme launching in 2025 should, in theory, create financial incentives for producers to design packaging that can be recycled domestically. But without significant investment in UK sorting and reprocessing infrastructure, the risk is that export volumes simply shift to new destinations with even less regulatory oversight.<Cite nums={2} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

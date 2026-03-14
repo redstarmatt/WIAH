@@ -128,6 +128,13 @@ export default function TopicPage() {
           colour="#6B7280"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Local elections in England consistently draw fewer than four in ten eligible voters to the polls — a figure that has barely shifted in two decades. The contrast with general elections, where turnout typically reaches 60-67%, is stark: councils control billions in spending on housing, social care, planning, and local transport, yet the democratic mandate for these decisions rests on the participation of a minority. In some urban wards, turnout falls below 15%, meaning a candidate can win a seat on a local authority with a few hundred votes. The pattern is not random — low turnout correlates strongly with deprivation, younger populations, and areas with high renter concentrations.<Cite nums={1} /></p>
+            <p>The causes are structural as much as cultural. Local elections receive minimal media coverage, candidates are often unknown to voters, and the complexity of the electoral cycle — with thirds of councils elected in rotation — makes it difficult to understand what is being decided. The introduction of voter ID requirements in 2023 added a further barrier, with the Electoral Commission estimating that thousands were turned away at polling stations. Where directly elected mayors contest seats, turnout rises to around 41%, suggesting that a visible, personalised contest with clear powers can engage voters in ways that traditional council elections do not. But mayoral authorities cover only a fraction of England&apos;s population.<Cite nums={2} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

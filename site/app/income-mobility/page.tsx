@@ -127,6 +127,13 @@ export default function TopicPage() {
           colour="#F4A261"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>A child born into the poorest fifth of British households has a 38% chance of remaining there as an adult — nearly double the 20% that would occur if income were unrelated to parental background. The UK&apos;s intergenerational earnings elasticity of 0.46 places it 28th out of 38 OECD nations, behind France, Germany, and all of Scandinavia. The mechanisms are well documented: childhood poverty constrains educational attainment, which limits access to professional occupations, which determines lifetime earnings. Geography compounds the effect — mobility is lowest in former industrial towns in the North East, East Midlands, and coastal communities where the labour market offers fewer routes upward.<Cite nums={1} /></p>
+            <p>Education is both the primary engine of mobility and its main bottleneck. Children from the wealthiest fifth are roughly twice as likely to obtain a degree as those from the poorest fifth, a gap that widened during the pandemic as learning loss fell disproportionately on disadvantaged pupils. University widening participation initiatives have increased low-income enrolment, but graduate outcomes still diverge sharply by socioeconomic background: those from professional families are more likely to enter higher-paying occupations regardless of degree classification. The OECD estimates it takes five generations for a family at the bottom of the UK income distribution to reach the mean — longer than in almost any other developed economy.<Cite nums={2} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },

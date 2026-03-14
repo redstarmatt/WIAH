@@ -127,6 +127,13 @@ export default function TopicPage() {
           colour="#6B7280"
         />
 
+        <section className="max-w-2xl mt-4 mb-10">
+          <div className="text-base text-wiah-black leading-[1.7] space-y-4">
+            <p>Public investment in the UK remains sharply tilted towards London and the South East, despite a decade of rhetoric about rebalancing the economy. In 2024-25, identifiable public expenditure on economic affairs — principally transport infrastructure — stood at £2,943 per head in London compared with £1,644 in the North East, a gap of nearly £1,300 per person. This disparity has widened by £300 since 2015. Transport spending is the dominant driver: Crossrail alone cost £18.9 billion, while the cancellation of HS2's northern leg in 2023 removed the single largest planned investment in the regions. The IFS has estimated that London receives roughly 2.5 times more transport capital spending per head than any English region outside the South East.<Cite nums={1} /></p>
+            <p>The levelling-up agenda attempted to address this through competitive funding pots — the Levelling Up Fund, Towns Fund, and UK Shared Prosperity Fund — but these programmes were small relative to the scale of the gap and created their own inefficiencies. Councils spent significant resources preparing bids with no guarantee of success, and funding was often allocated in politically salient rather than economically optimal ways. Private investment follows public investment, compounding the imbalance: regions with better transport, digital infrastructure and research facilities attract more business capital. Investment Zones and Freeports in the North and Midlands have attracted £3.4 billion in private commitments, but these remain modest against the structural deficit in regional infrastructure built up over decades of centralised spending decisions.<Cite nums={2} /></p>
+          </div>
+        </section>
+
         <SectionNav sections={[
           { id: 'sec-overview', label: 'Overview' },
           { id: 'sec-chart1', label: 'Chart 1' },
