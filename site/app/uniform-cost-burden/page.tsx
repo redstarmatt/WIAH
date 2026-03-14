@@ -183,7 +183,7 @@ export default function UniformCostBurdenPage() {
               unit=""
               direction="up"
               polarity="up-is-bad"
-              changeText="Up from 22% in 2021 · Credit, overdraft, BNPL · Second-hand markets growing"
+              changeText={<>Up from 22% in 2021 · Credit, overdraft, BNPL · Second-hand markets growing<Cite nums={2} /></>}
               sparklineData={[22, 25, 28, 30]}
               href="#sec-costs"
             />
@@ -221,7 +221,7 @@ export default function UniformCostBurdenPage() {
             title="What's improving"
             value="Uniform exchange"
             unit="schemes in every council area"
-            description="The School Uniform (Minimum Requirements) Regulations 2022 require schools to limit branded items to three per uniform and ensure affordable alternatives exist at high-street retailers for every required item. Many councils now run uniform exchange schemes allowing families to donate and collect good-condition second-hand uniform at no cost. The Labour government is considering extending the scope of uniform regulations to cover pricing directly. Scotland already restricts the number of branded items more strictly and provides uniform grants to low-income families as a right rather than a discretionary payment."
+            description={<>The School Uniform (Minimum Requirements) Regulations 2022 require schools to limit branded items to three per uniform and ensure affordable alternatives exist at high-street retailers for every required item.<Cite nums={3} /> Many councils now run uniform exchange schemes allowing families to donate and collect good-condition second-hand uniform at no cost. The Labour government is considering extending the scope of uniform regulations to cover pricing directly. Scotland already restricts the number of branded items more strictly and provides uniform grants to low-income families as a right rather than a discretionary payment.</>}
             source="Source: Child Poverty Action Group Cost of a Child 2024 · Citizens Advice Back to School Costs Survey 2024."
           />
         </ScrollReveal>
@@ -252,6 +252,9 @@ export default function UniformCostBurdenPage() {
             </ul>
           </div>
         </section>
+        <div className="mt-6">
+          <References items={editorialRefs} />
+        </div>
               <RelatedTopics />
       </main>
     </>

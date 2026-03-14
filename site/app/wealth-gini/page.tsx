@@ -176,7 +176,7 @@ export default function WealthGiniPage() {
             title="Help to Save extended"
             value="120,000+"
             unit="low-income savers using Help to Save"
-            description="The government extended the Help to Save scheme beyond its original end date, allowing low-income working people to save \u00a31-\u00a350 per month and receive a 50p government bonus for every \u00a31 saved. Over 120,000 accounts are now active. Evaluation shows participants are three times more likely to have emergency savings after two years compared to a control group."
+            description={<>The government extended the Help to Save scheme beyond its original end date, allowing low-income working people to save £1-£50 per month and receive a 50p government bonus for every £1 saved. Over 120,000 accounts are now active.<Cite nums={3} /> Evaluation shows participants are three times more likely to have emergency savings after two years compared to a control group.<Cite nums={4} /></>}
             source="Source: HMRC \u2014 Help to Save statistics, 2025. DWP \u2014 Wealth distribution evaluation, 2024."
           />
         </ScrollReveal>
@@ -206,6 +206,7 @@ export default function WealthGiniPage() {
             </ul>
           </div>
         </section>
+        <References items={editorialRefs} />
       </main>
     </>
   );

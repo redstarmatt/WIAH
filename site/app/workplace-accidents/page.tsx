@@ -123,7 +123,7 @@ export default function TopicPage() {
         <TopicHeader
           topic="Economy & Work"
           question="Is Britain's Workplace Getting Safer?"
-          finding="138 workers were killed at work in 2024/25 — construction and agriculture remain the most dangerous sectors. Non-fatal injuries have fallen long-term but costs are rising."
+          finding={<>138 workers were killed at work in 2024/25 — construction and agriculture remain the most dangerous sectors.<Cite nums={1} /> Non-fatal injuries have fallen long-term but costs are rising.<Cite nums={[2, 3]} /></>}
           colour="#6B7280"
         />
 
@@ -141,7 +141,7 @@ export default function TopicPage() {
             unit=""
             direction="down"
             polarity="up-is-bad"
-            changeText="Down from 175 in 2015 · construction 32% of total"
+            changeText={<>Down from 175 in 2015 · construction 32% of total<Cite nums={1} /></>}
             sparklineData={[175, 168, 162, 157, 149, 142, 141, 123, 135, 141, 138]}
             href="#sec-coverage"
           />
@@ -151,7 +151,7 @@ export default function TopicPage() {
             unit=""
             direction="flat"
             polarity="up-is-bad"
-            changeText="Self-reported via LFS · actual rate much higher than RIDDOR"
+            changeText={<>Self-reported via LFS · actual rate much higher than RIDDOR<Cite nums={2} /></>}
             sparklineData={[621, 619, 609, 599, 581, 565, 549, 531, 543, 558, 561]}
             href="#sec-coverage"
           />

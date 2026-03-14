@@ -8,6 +8,8 @@ import LineChart, { Series, Annotation } from '@/components/charts/LineChart';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionNav from '@/components/SectionNav';
 import RelatedTopics from '@/components/RelatedTopics';
+import Cite from '@/components/Cite';
+import References, { Reference } from '@/components/References';
 
 interface YouthJusticeData {
   national: {
@@ -16,6 +18,13 @@ interface YouthJusticeData {
     byEthnicity: { group: string; pctOfCustody: number }[];
   };
 }
+
+const editorialRefs: Reference[] = [
+  { num: 1, name: 'Youth Justice Board', dataset: 'Annual Workload Data and Establishment Census', url: 'https://www.gov.uk/government/organisations/youth-justice-board-for-england-and-wales', date: '2024', note: '430 children in custody in 2024, down 86% from 3,006 in 2008; 47% experienced abuse or neglect, 60% have been in care' },
+  { num: 2, name: 'Ministry of Justice', dataset: 'Youth Reoffending Statistics', url: 'https://www.gov.uk/government/statistics/youth-reoffending-statistics', date: '2024', note: 'Reoffending within 12 months of leaving custody sits at around 68%, barely moved in a decade' },
+  { num: 3, name: 'Youth Justice Board', dataset: 'Disproportionality Analysis — Annual Workload Data', url: 'https://www.gov.uk/government/organisations/youth-justice-board-for-england-and-wales', date: '2024', note: 'Black children are 5% of 10–17 population but 29% of custody population — sixfold overrepresentation' },
+  { num: 4, name: 'Lammy Review', dataset: 'An Independent Review into the Treatment of, and Outcomes for, Black, Asian and Minority Ethnic Individuals in the Criminal Justice System', url: 'https://www.gov.uk/government/publications/lammy-review-final-report', date: '2017', note: 'Documented racial disparity at every stage from stop-and-search to custody' },
+];
 
 function yearToDate(y: number): Date {
   return new Date(y, 5, 1);
@@ -63,15 +72,15 @@ export default function YouthJusticePage() {
         <TopicHeader
           topic="Youth Justice"
           question="Are We Locking Up Too Many Children?"
-          finding="The number of children in custody in England and Wales has fallen dramatically — from over 3,000 in 2008 to around 430 in 2024. But those who remain in custody are disproportionately children of colour and children with complex needs. Reoffending rates for young people leaving custody remain high, and the secure estate faces persistent concerns about violence, self-harm, and inadequate education."
+          finding={<>The number of children in custody in England and Wales has fallen dramatically — from over 3,000 in 2008 to around 430 in 2024.<Cite nums={1} /> But those who remain in custody are disproportionately children of colour and children with complex needs.<Cite nums={3} /> Reoffending rates for young people leaving custody remain high, and the secure estate faces persistent concerns about violence, self-harm, and inadequate education.<Cite nums={2} /></>}
           colour="#6B7280"
           preposition="in"
         />
 
         <section id="sec-context" className="max-w-2xl mt-4 mb-12">
           <div className="text-base text-wiah-black leading-[1.7] space-y-4">
-            <p>The decline in children in custody is one of the most striking achievements in modern UK criminal justice. In 2008 there were 3,006 children held in custody in England and Wales; by 2024 that figure had fallen to 430 — an 86% reduction sustained over 15 years, driven by Youth Offending Teams, diversion from prosecution, and a consistent policy preference for non-custodial outcomes. Over 70% of children dealt with by the justice system now receive non-custodial disposals. But what the aggregate number obscures is who remains: the 430 in custody are disproportionately those with the most complex multiple needs — 47% have experienced abuse or neglect, 60% have been in local authority care, and 68% have identified mental health needs. Reoffending within 12 months of leaving custody sits at around 68%, barely moved in a decade. Children in custody receive on average 2–3 hours of education per day, and in 2022/23 there were 1,034 self-harm incidents across the youth custody estate.</p>
-            <p>Racial disparity is the system's most persistent structural failure. Black children make up approximately 5% of the 10–17 population but 29% of the youth custody population — a sixfold overrepresentation that begins at the point of stop-and-search and compounds at every subsequent stage. The Lammy Review in 2017 documented this in detail; nearly a decade later progress has been limited. Knife possession charges among under-18s have risen even as overall custody has fallen, creating political pressure for more punitive responses that cuts against the diversion model responsible for the long-run improvement.</p>
+            <p>The decline in children in custody is one of the most striking achievements in modern UK criminal justice. In 2008 there were 3,006 children held in custody in England and Wales; by 2024 that figure had fallen to 430 — an 86% reduction sustained over 15 years, driven by Youth Offending Teams, diversion from prosecution, and a consistent policy preference for non-custodial outcomes.<Cite nums={1} /> Over 70% of children dealt with by the justice system now receive non-custodial disposals. But what the aggregate number obscures is who remains: the 430 in custody are disproportionately those with the most complex multiple needs — 47% have experienced abuse or neglect, 60% have been in local authority care, and 68% have identified mental health needs.<Cite nums={1} /> Reoffending within 12 months of leaving custody sits at around 68%, barely moved in a decade.<Cite nums={2} /> Children in custody receive on average 2–3 hours of education per day, and in 2022/23 there were 1,034 self-harm incidents across the youth custody estate.</p>
+            <p>Racial disparity is the system's most persistent structural failure. Black children make up approximately 5% of the 10–17 population but 29% of the youth custody population — a sixfold overrepresentation that begins at the point of stop-and-search and compounds at every subsequent stage.<Cite nums={3} /> The Lammy Review in 2017 documented this in detail; nearly a decade later progress has been limited.<Cite nums={4} /> Knife possession charges among under-18s have risen even as overall custody has fallen, creating political pressure for more punitive responses that cuts against the diversion model responsible for the long-run improvement.</p>
           </div>
         </section>
 
