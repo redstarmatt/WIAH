@@ -3,5 +3,5 @@ builder = "nixpacks"
 buildCommand = "cd site && npm install && npm run build"
 
 [deploy]
-startCommand = "cd site && npm start"
+startCommand = "cd site && npm start -- -p ${PORT:-3000}"
 healthcheckPath = "/"
